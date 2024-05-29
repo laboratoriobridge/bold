@@ -1,10 +1,10 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
-import { CSSProperties, useRef, useEffect, useCallback } from 'react'
+import { CSSProperties, useRef, useEffect, useCallback, useState } from 'react'
 import { Theme, useStyles, useTheme } from '../../styles'
 import { Tooltip } from '../Tooltip'
 import { Button } from '../Button'
-import { Icon, Icons } from '../Icon'
+import { Icon } from '../Icon'
 import { useLocale } from '../../i18n'
 
 export interface ActionableToastProps {
@@ -36,6 +36,7 @@ export function ActionableToast(props: ActionableToastProps) {
   const timeoutRef = useRef<number | undefined>(undefined)
   const { classes } = useStyles(createStyles)
   const theme = useTheme()
+  const [isVisible, setIsVisible] = useState(true)
 
   const handleCloseClick = () => {
     onClose()
@@ -51,7 +52,10 @@ export function ActionableToast(props: ActionableToastProps) {
 
   const startTimer = useCallback(() => {
     timeoutRef.current = window.setTimeout(() => {
-      removeToast(id)
+      setIsVisible(false)
+      timeoutRef.current = window.setTimeout(() => {
+        removeToast(id)
+      }, 500)
     }, secondsVisible * 1000)
   }, [id, removeToast, secondsVisible])
 
@@ -61,7 +65,11 @@ export function ActionableToast(props: ActionableToastProps) {
   }, [secondsVisible, id, startTimer])
 
   return (
-    <div className={classes.container} onMouseEnter={clearTimer} onMouseLeave={startTimer}>
+    <div
+      className={`${classes.container} ${isVisible ? 'visible' : 'hidden'}`}
+      onMouseEnter={clearTimer}
+      onMouseLeave={startTimer}
+    >
       <div className={classes.headerWrapper}>
         {!!newToast && <div aria-hidden='true' className={classes.marker} />}
         <div
@@ -106,7 +114,7 @@ export function ActionableToast(props: ActionableToastProps) {
 
 const createStyles = (theme: Theme) => ({
   container: {
-    transition: 'opacity 0.5s ease-out',
+    transition: 'opacity 0.5s ease-out, transform 0.5s ease-out',
     borderRadius: '2px',
     border: '1px',
     display: 'flex',
@@ -119,6 +127,8 @@ const createStyles = (theme: Theme) => ({
     backgroundColor: 'white',
     padding: '0 0.5rem 0.5rem 0',
     boxShadow: theme.shadows.outer[80],
+    [`&.hidden`]: { opacity: 0, transform: 'translateY(-1.25rem)' },
+    [`&.visible`]: { opacity: 1, transform: 'translateY(0)' },
   } as CSSProperties,
   toastMessage: {
     fontWeight: 'normal',
