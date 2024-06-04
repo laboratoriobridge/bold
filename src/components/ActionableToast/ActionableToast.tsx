@@ -12,9 +12,9 @@ export interface ActionableToastProps {
   message: React.ReactNode
   buttonLabel?: React.ReactNode
   newToast?: boolean
-  action?: () => void
-  onClose?: () => void
-  removeToast: (id: number) => void
+  action?(): void
+  onClose?(): void
+  removeToast(id: number): void
 }
 
 export function ActionableToast(props: ActionableToastProps) {
@@ -31,7 +31,7 @@ export function ActionableToast(props: ActionableToastProps) {
   } = props
 
   const locale = useLocale()
-  const timeoutRef = useRef<number | undefined>(undefined)
+  const timeoutRef = useRef<number>(null)
   const { classes } = useStyles(createStyles)
   const [isVisible, setIsVisible] = useState(false)
 
@@ -43,14 +43,14 @@ export function ActionableToast(props: ActionableToastProps) {
   const clearTimer = () => {
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current)
-      timeoutRef.current = undefined
+      timeoutRef.current = null
     }
   }
 
   const startTimer = useCallback(() => {
-    timeoutRef.current = window.setTimeout(() => {
+    timeoutRef.current = setTimeout(() => {
       setIsVisible(false)
-      timeoutRef.current = window.setTimeout(() => {
+      timeoutRef.current = setTimeout(() => {
         removeToast(id)
       }, 500)
     }, secondsVisible * 1000)
