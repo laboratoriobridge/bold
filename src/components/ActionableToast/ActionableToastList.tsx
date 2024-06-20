@@ -4,12 +4,13 @@ import { ActionableToast, ActionableToastProps } from './ActionableToast'
 
 export interface ActionableToastListProps {
   marginTop?: number
+  marginRight?: number
   data: ActionableToastProps[]
 }
 
 export function ActionableToastList(props: ActionableToastListProps) {
-  const { data, marginTop = 1 } = props
-  const { classes } = useStyles(() => createStyles(marginTop))
+  const { data, marginTop = 1, marginRight = 1.5 } = props
+  const { classes } = useStyles(() => createStyles(marginTop, marginRight))
 
   return (
     data.length > 0 && (
@@ -33,7 +34,7 @@ export function ActionableToastList(props: ActionableToastListProps) {
   )
 }
 
-const createStyles = (marginTop: number) => ({
+const createStyles = (marginTop: number, marginRight: number) => ({
   container: {
     position: 'fixed',
     padding: '0',
@@ -43,7 +44,7 @@ const createStyles = (marginTop: number) => ({
     maxHeight: '100vh',
     overflow: 'hidden',
     top: `${marginTop}rem`,
-    right: '1.5rem',
+    right: `${marginRight}rem`,
     zIndex: 20,
   } as CSSProperties,
 })
