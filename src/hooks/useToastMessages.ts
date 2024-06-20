@@ -8,6 +8,7 @@ export interface ToastMessagesInterface {
   message: React.ReactNode
   buttonLabel?: React.ReactNode
   action?: () => void
+  onClose?: () => void
 }
 
 export function useToastMessages(): {
@@ -21,7 +22,7 @@ export function useToastMessages(): {
   }
 
   const showToast = (props: ToastMessagesInterface) => {
-    const { message, newToast = false, title, buttonLabel, action, secondsVisible = 5 } = props
+    const { message, newToast = false, title, buttonLabel, action, secondsVisible = 5, onClose } = props
 
     const toast = {
       id: Date.now(),
@@ -32,6 +33,7 @@ export function useToastMessages(): {
       buttonLabel: buttonLabel,
       removeToast,
       secondsVisible,
+      onClose,
     }
 
     setToastMessages((prevToasts) => [...prevToasts, toast])
