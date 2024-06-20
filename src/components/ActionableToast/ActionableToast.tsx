@@ -148,7 +148,7 @@ const createStyles = (theme: Theme) => ({
     display: 'flex',
     justifyContent: 'flex-start',
     alignItems: 'center',
-    padding: '0 1rem 0.5rem 1rem',
+    padding: '0 0 0.25rem 1rem',
     marginTop: '1rem',
   } as CSSProperties,
   marker: {
@@ -160,6 +160,5 @@ const createStyles = (theme: Theme) => ({
   } as CSSProperties,
   title: {
     color: theme.pallete.primary.main,
-    padding: '0 0 0.25rem 1rem',
   } as CSSProperties,
 })
