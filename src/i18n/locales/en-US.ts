@@ -55,6 +55,14 @@ const locale = {
     isOver: 'Drop the item here to insert into the table',
     isNotOver: 'Drag items to insert into table',
   },
+  ageRange: {
+    separator: 'until',
+    minimumPlaceholder: 'Minimum age',
+    maximumPlaceholder: 'Maximum age',
+    years: 'Years',
+    months: 'Months',
+    days: 'Days',
+  },
 }
 
 export default locale

@@ -57,6 +57,14 @@ const locale: LocaleConfiguration = {
     isOver: 'Solte o item aqui para inserir na tabela',
     isNotOver: 'Arraste os itens para inserir na tabela',
   },
+  ageRange: {
+    separator: 'até',
+    minimumPlaceholder: 'Idade mínima',
+    maximumPlaceholder: 'Idade máxima',
+    years: 'Anos',
+    months: 'Meses',
+    days: 'Dias',
+  },
 }
 
 export default locale
