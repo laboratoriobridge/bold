@@ -62,6 +62,7 @@ const locale = {
     years: 'Years',
     months: 'Months',
     days: 'Days',
+    onlyOneUnitOption: "There is only one option to this field, so it's disabled",
   },
 }
 

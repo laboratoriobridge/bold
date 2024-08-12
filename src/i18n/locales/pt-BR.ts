@@ -64,6 +64,7 @@ const locale: LocaleConfiguration = {
     years: 'Anos',
     months: 'Meses',
     days: 'Dias',
+    onlyOneUnitOption: 'Só existe uma única opção a ser escolhida para esse campo, logo está desabilitado',
   },
 }
 
