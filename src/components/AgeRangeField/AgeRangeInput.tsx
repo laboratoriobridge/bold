@@ -13,8 +13,6 @@ import { Tooltip } from '../Tooltip'
 export interface AgeRangeInputProps {
   value: AgeRange
 
-  min?: number
-  max?: number
   maxLength?: number
   disabled?: boolean
   clearable?: boolean
@@ -52,8 +50,6 @@ export function AgeRangeInput(props: AgeRangeInputProps) {
     value,
     firstValuePlaceholder,
     secondValuePlaceholder,
-    min,
-    max,
     maxLength,
     disabled,
     clearable,
@@ -164,6 +160,8 @@ export function AgeRangeInput(props: AgeRangeInputProps) {
 
   const hasOnlyOneUnitOption = unitOptions.length === 1
 
+  console.log(firstValuePlaceholder, firstValuePlaceholder ?? locale.ageRange.minimumPlaceholder)
+
   return (
     <FocusManagerContainer onFocusIn={onFocus} onFocusOut={handleBlur}>
       <div className={classNameDiv}>
@@ -176,8 +174,6 @@ export function AgeRangeInput(props: AgeRangeInputProps) {
             style={classes.numberField}
             maxLength={maxLength}
             placeholder={firstValuePlaceholder ?? locale.ageRange.minimumPlaceholder}
-            min={min}
-            max={max}
             onChange={handleChangeFirstValue}
           />
         </div>
@@ -193,8 +189,6 @@ export function AgeRangeInput(props: AgeRangeInputProps) {
             style={classes.numberField}
             maxLength={maxLength}
             placeholder={secondValuePlaceholder ?? locale.ageRange.maximumPlaceholder}
-            min={min}
-            max={max}
             onChange={handleChangeSecondValue}
           />
         </div>

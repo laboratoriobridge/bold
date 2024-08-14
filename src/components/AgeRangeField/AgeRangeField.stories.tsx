@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 import { action } from '@storybook/addon-actions'
-import { boolean, text, array, select, optionsKnob, number } from '@storybook/addon-knobs'
+import { boolean, text, optionsKnob, number } from '@storybook/addon-knobs'
 import { isEmpty } from 'lodash'
 import { AgeRange, AgeRangeUnitEnum } from './AgeRangeInput'
 import { AgeRangeField } from './AgeRangeField'
@@ -10,43 +10,44 @@ export default {
   title: 'Components/AgeRangeField',
 }
 
-const ageRangeUnitOptions: AgeRangeUnitEnum[] = [AgeRangeUnitEnum.DAYS, AgeRangeUnitEnum.MONTHS, AgeRangeUnitEnum.YEARS]
+const optionsAgeRangeUnitEnum = {
+  Days: AgeRangeUnitEnum.DAYS,
+  Months: AgeRangeUnitEnum.MONTHS,
+  Years: AgeRangeUnitEnum.YEARS,
+}
+
+const defaultOption = []
 
 export const Default = () => {
-  const [value, setValue] = useState<AgeRange>({ unit: AgeRangeUnitEnum.DAYS })
+  const [value, setValue] = useState<AgeRange>({ unit: AgeRangeUnitEnum.YEARS })
 
   const handleChange = (selectedAgeRange: AgeRange) => {
     setValue(selectedAgeRange)
+    action('changed')(selectedAgeRange)
   }
 
-  return <AgeRangeField value={value} clearable onChange={handleChange} />
-}
-
-export const MinMax = () => {
-  const [value, setValue] = useState<AgeRange>({ unit: AgeRangeUnitEnum.DAYS })
-
-  const handleChange = (selectedAgeRange: AgeRange) => {
-    setValue(selectedAgeRange)
-  }
-
-  return <AgeRangeField value={value} clearable onChange={handleChange} min={2} max={10} />
-}
-
-export const RemovingUnitOptions = () => {
   const error = text('error', '')
+
+  const unitsToExclude = optionsKnob('unitOptionsToExclude', optionsAgeRangeUnitEnum, defaultOption, {
+    display: 'multi-select',
+  })
 
   return (
     <AgeRangeField
-      value={{ unit: AgeRangeUnitEnum.YEARS }}
-      onChange={action('changed')}
+      value={value}
+      onChange={handleChange}
       clearable={boolean('clearable', true)}
       required={boolean('required', true)}
       label={text('label', 'Text label')}
       disabled={boolean('disabled', false)}
+      unitOptionsToExclude={Array.isArray(unitsToExclude) ? unitsToExclude : [unitsToExclude]}
+      maxLength={number('maxLength', 3)}
       error={error}
       invalid={isEmpty(error) ? false : true}
-      // maxLength={number('maxLength', 2)}
-      unitOptionsToExclude={[AgeRangeUnitEnum.DAYS]}
+      firstValuePlaceholder={text('firstValuePlaceholder', null)}
+      secondValuePlaceholder={text('secondValuePlaceholder', null)}
+      onFocus={action('focus')}
+      onBlur={action('blur')}
     />
   )
 }
