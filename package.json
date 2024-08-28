@@ -124,7 +124,7 @@
     "uglifyjs-webpack-plugin": "2.2.0",
     "url-loader": "4.1.0",
     "waait": "1.0.5",
-    "webpack": "4.43.0",
+    "webpack": "5.94.0",
     "webpack-cli": "3.3.12"
   },
   "loki": {
