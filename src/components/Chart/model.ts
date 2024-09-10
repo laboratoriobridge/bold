@@ -90,6 +90,7 @@ export interface ReferenceArea<XDomain> {
   tickColor?: string
   stroke?: boolean
   strokeColor?: string
+  dashed?: boolean
 }
 
 export interface ReferenceAreaWithPercents<XDomain> extends ReferenceArea<XDomain> {
