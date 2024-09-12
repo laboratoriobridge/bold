@@ -136,7 +136,7 @@ const referenceAreas: ReferenceArea<number>[] = [
     ],
     color: '#ffeed6',
     tickColor: '#b58b00',
-    dashed: true,
+    dashed: false,
   },
   {
     name: 'Area 3',
