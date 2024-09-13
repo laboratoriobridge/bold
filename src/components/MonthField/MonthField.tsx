@@ -7,6 +7,7 @@ import { composeHandlers, composeRefs } from '../../util/react'
 import { FocusManagerContainer } from '../FocusManagerContainer'
 import { MonthPicker, MonthPickerProps, ReferenceMonth } from '../MonthPicker'
 import { disabledByMonth, isSameReferenceMonth } from '../MonthRangePicker/util'
+import { isValidReferenceMonth } from '../Calendar/util'
 import { MonthInput, MonthInputProps } from './MonthInput'
 
 export interface MonthFieldProps extends MonthInputProps {
@@ -32,7 +33,14 @@ export function MonthField(props: MonthFieldProps) {
   })
 
   useEffect(() => {
-    setVisibleMonth(value)
+    setVisibleMonth(
+      isValidReferenceMonth(value)
+        ? value
+        : {
+            month: new Date().getMonth(),
+            year: new Date().getFullYear(),
+          }
+    )
   }, [value])
 
   const {

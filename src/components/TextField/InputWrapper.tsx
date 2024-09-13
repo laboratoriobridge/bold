@@ -3,11 +3,10 @@ import React, { CSSProperties, Ref } from 'react'
 import { useLocale } from '../../i18n'
 import { Theme, useStyles } from '../../styles'
 import { Button, ButtonProps } from '../Button'
-import { Icons } from '../Icon/generated/types'
-import { Icon } from '../Icon/Icon'
+import { Icon, IconImage } from '../Icon/Icon'
 
 export interface InputWrapperProps extends React.HTMLAttributes<HTMLDivElement> {
-  icon?: Icons
+  icon?: IconImage
   iconPosition?: 'left' | 'right'
   iconAriaLabel?: string
   iconDisabled?: boolean

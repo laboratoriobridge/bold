@@ -1,7 +1,7 @@
-import { Cell, HFlow, Icon, Icons, Text, Theme, useStyles } from 'bold-ui'
+import { Cell, HFlow, Icon, IconImage, Text, Theme, useStyles } from 'bold-ui'
 import React from 'react'
 export interface CardProps {
-  icon: Icons
+  icon: IconImage
   children: React.ReactNode
 }
 

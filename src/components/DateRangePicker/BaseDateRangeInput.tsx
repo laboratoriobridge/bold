@@ -5,7 +5,7 @@ import { useLocale } from '../../i18n'
 import { ExternalStyles, focusBoxShadow, Theme, useStyles } from '../../styles'
 import { composeRefs } from '../../util/react'
 import { DateInput } from '../DateField'
-import { Icons, Icon } from '../Icon'
+import { IconImage, Icon } from '../Icon'
 import { Button } from '..'
 
 export interface DateRange {
@@ -46,10 +46,10 @@ export interface BaseDateRangeInputProps {
 
   /**
    * Set an icon in range date input button.
-   * When this prop is not declared, date field will be
-   * shown without a icon.
+   * If this prop is not set, the date field will be
+   * displayed without an icon.
    */
-  icon?: Icons
+  icon?: IconImage
 
   /**
    *  Reference an invalid state.

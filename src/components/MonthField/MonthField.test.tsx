@@ -13,6 +13,12 @@ describe('Component presentation', () => {
     fireEvent.focus(container.querySelector('input'))
     expect(container).toMatchSnapshot()
   })
+  ;['', null, false, undefined].forEach((value: any) => {
+    it(`should gracefully treat "${value}" as value`, () => {
+      const { container } = render(<MonthField value={value} />)
+      fireEvent.focus(container.querySelector('input'))
+    })
+  })
 })
 
 describe('Component behavior', () => {
