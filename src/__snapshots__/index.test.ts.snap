@@ -2,6 +2,8 @@
 
 exports[`should export components to global namespace 1`] = `
 Array [
+  "ActionableToast",
+  "ActionableToastList",
   "Alert",
   "Breadcrumbs",
   "ButtonBase",

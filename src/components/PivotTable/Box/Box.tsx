@@ -1,11 +1,11 @@
 import { SerializedStyles } from '@emotion/core'
 import React, { CSSProperties, ReactElement } from 'react'
 import { Theme, useStyles } from '../../../styles'
-import { Icon, Icons } from '../../Icon'
+import { Icon, IconImage } from '../../Icon'
 
 export interface BoxProps {
   styles?: SerializedStyles
-  icon?: Icons
+  icon?: IconImage
   rotation?: '0' | '90'
   label: string
   children: ReactElement
