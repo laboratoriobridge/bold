@@ -29,6 +29,7 @@ function ListBoxInner<T>(props: ListBoxProps<T>, ref: Ref<HTMLDivElement>) {
     createNewItem,
     isItemSelected,
     onItemClick,
+    tabIndex,
     ...rest
   } = props
   const { classes } = useStyles(createStyles)
@@ -36,8 +37,8 @@ function ListBoxInner<T>(props: ListBoxProps<T>, ref: Ref<HTMLDivElement>) {
   const { CreateItem, AppendItem, EmptyItem, Item, LoadingItem, PrependItem } = components
 
   return (
-    <div ref={ref} {...rest}>
-      <ul className={classes.list}>
+    <div ref={ref} tabIndex={tabIndex} {...rest}>
+      <ul className={classes.list} tabIndex={tabIndex}>
         {PrependItem && <PrependItem />}
         {loading && <LoadingItem />}
         {!loading && createNewItem && !items?.length && <CreateItem />}
