@@ -43,7 +43,7 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
     itemToString,
     menuMinWidth,
     openOnFocus = true,
-    clearFilterOnSelect = true,
+    clearFilterOnSelect = false,
     onClear,
     onChange,
     onFocus,
@@ -175,7 +175,10 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
 
   const handleWrapperClick = () => inputRef.current.focus()
   const handleItemClick = useCallback(
-    (item: T) => (isSelected(item) ? removeSelectedItem(item) : addSelectedItem(item)),
+    (item: T) => {
+      isSelected(item) ? removeSelectedItem(item) : addSelectedItem(item)
+      clearFilterOnSelect && setInputValue('')
+    },
     [isSelected, removeSelectedItem, addSelectedItem]
   )
   const handleItemRemove = useCallback(

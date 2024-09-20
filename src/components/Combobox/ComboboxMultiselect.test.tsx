@@ -544,7 +544,7 @@ describe('async loading', () => {
 })
 
 describe('filtering', () => {
-  it('should keep the current filter after an item is selected', async () => {
+  it('should clear the current filter and the input value after menu is closed', async () => {
     const { container } = render(<ComboboxTest />)
     const input = container.querySelector('input')!
 
@@ -554,21 +554,45 @@ describe('filtering', () => {
     await waitFor(() => expect(container.querySelectorAll('li')).toHaveLength(4))
 
     fireEvent.click(container.querySelectorAll('li')[0])
-
-    expect(input.value).toEqual('pe')
-    expect(container.querySelectorAll('li')).toHaveLength(4)
-  })
-  it('should clear the current filter and the input value after menu is closed', async () => {
-    const { container } = render(<ComboboxTest />)
-    const input = container.querySelector('input')!
-
-    fireEvent.focus(input)
-    fireEvent.change(input, { target: { value: 'pe' } })
-    fireEvent.click(container.querySelectorAll('li')[0])
     fireEvent.blur(input)
 
     expect(container.querySelectorAll('li')).toHaveLength(0)
     expect(input.value).toEqual('')
+  })
+
+  it('should clear the current filter and the input value after an item is selected if clearFilterOnSelect is true', async () => {
+    const { container } = render(<ComboboxTest clearFilterOnSelect={true} />)
+    const input = container.querySelector('input')!
+
+    fireEvent.focus(input)
+    fireEvent.change(input, { target: { value: 'pe' } })
+
+    await waitFor(() => expect(container.querySelectorAll('li')).toHaveLength(4))
+
+    fireEvent.click(container.querySelectorAll('li')[0])
+
+    await waitFor(() => expect(input.value).toEqual(''))
+    await waitFor(() => expect(container.querySelectorAll('li')).toHaveLength(fruits.length))
+  })
+
+  it('should not clear the current filter and the input value after an item is selected if clearFilterOnSelect is false', async () => {
+    const { container } = render(<ComboboxTest clearFilterOnSelect={false} />)
+    const input = container.querySelector('input')!
+
+    fireEvent.focus(input)
+    fireEvent.change(input, { target: { value: 'pe' } })
+
+    await waitFor(() => expect(container.querySelectorAll('li')).toHaveLength(4))
+
+    fireEvent.click(container.querySelectorAll('li')[0])
+
+    expect(container.querySelectorAll('li')).toHaveLength(4)
+    expect(input.value).toEqual('pe')
+
+    fireEvent.click(container.querySelectorAll('li')[1])
+
+    expect(container.querySelectorAll('li')).toHaveLength(4)
+    expect(input.value).toEqual('pe')
   })
 })
 
