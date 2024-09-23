@@ -37,7 +37,7 @@ export function renderSeries<XDomain>(
 }
 
 export function renderReferenceAreas(refArea: ReferenceArea<any>, index: number, colorScheme: ChartColorScheme) {
-  const { strokeColor, color: refAreaColor, tickColor, stroke, name } = refArea
+  const { strokeColor, color: refAreaColor, tickColor, stroke, name, strokeType } = refArea
 
   const cs = getChartColorScheme(colorScheme)
   const color = refAreaColor ?? cs[index % cs.length]
@@ -51,7 +51,7 @@ export function renderReferenceAreas(refArea: ReferenceArea<any>, index: number,
       stackId='refAreaStack'
       label={false}
       strokeWidth={stroke === false ? 0 : 1}
-      strokeDasharray='6 4'
+      strokeDasharray={strokeType === 'dashed' || strokeType === undefined ? '6 4' : '0'}
       connectNulls={true}
       isRange={true}
       legendType='none'
