@@ -280,9 +280,7 @@ function comboboxMultiselectStateReducer<T>(
     case useCombobox.stateChangeTypes.InputBlur:
       return {
         ...changes,
-        ...(!changes.selectedItem && {
-          inputValue: '',
-        }),
+        inputValue: '',
       }
     default:
       return changes

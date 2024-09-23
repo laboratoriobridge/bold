@@ -544,21 +544,28 @@ describe('async loading', () => {
 })
 
 describe('filtering', () => {
-  it('should clear the current filter and the input value after menu is closed', async () => {
-    const { container } = render(<ComboboxTest />)
-    const input = container.querySelector('input')!
+  test.each`
+    clearFilterOnSelect
+    ${true}
+    ${false}
+  `(
+    'should clear the current filter and the input value after menu is closed (clearFilterOnSelect: $clearFilterOnSelect)',
+    async ({ clearFilterOnSelect }) => {
+      const { container } = render(<ComboboxTest clearFilterOnSelect={clearFilterOnSelect} />)
+      const input = container.querySelector('input')!
 
-    fireEvent.focus(input)
-    fireEvent.change(input, { target: { value: 'pe' } })
+      fireEvent.focus(input)
+      fireEvent.change(input, { target: { value: 'pe' } })
 
-    await waitFor(() => expect(container.querySelectorAll('li')).toHaveLength(4))
+      await waitFor(() => expect(container.querySelectorAll('li')).toHaveLength(4))
 
-    fireEvent.click(container.querySelectorAll('li')[0])
-    fireEvent.blur(input)
+      fireEvent.click(container.querySelectorAll('li')[0])
+      fireEvent.blur(input)
 
-    expect(container.querySelectorAll('li')).toHaveLength(0)
-    expect(input.value).toEqual('')
-  })
+      expect(container.querySelectorAll('li')).toHaveLength(0)
+      expect(input.value).toEqual('')
+    }
+  )
 
   it('should clear the current filter and the input value after an item is selected if clearFilterOnSelect is true', async () => {
     const { container } = render(<ComboboxTest clearFilterOnSelect={true} />)
