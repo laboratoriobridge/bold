@@ -22,6 +22,7 @@ export function ReferenceAreaTick(props: ReferenceTickProps) {
   const theme = useTheme()
 
   const nameLines = splitIntoLines(ref.name, MAX_CHARS_PER_LINE)
+  const description = ref.description
 
   return (
     <>
@@ -43,16 +44,17 @@ export function ReferenceAreaTick(props: ReferenceTickProps) {
             )
         )}
       </text>
-      {ref.description && (
+      {description && (
         <text
           x={x + TICK_X_DISLOCATION}
           y={y + 5 + nameLines.length * TICK_Y_DISLOCATION}
           dx={TICK_X_DISLOCATION}
           dy={TICK_Y_DISLOCATION}
           textAnchor='start'
-          fill={theme.pallete.text.main}
+          fill={description.color ?? theme.pallete.text.main}
+          style={description.style}
         >
-          {splitIntoLines(ref.description, MAX_CHARS_PER_LINE).map(
+          {splitIntoLines(description.text, MAX_CHARS_PER_LINE).map(
             (descriptionPart, i) =>
               descriptionPart && (
                 <tspan

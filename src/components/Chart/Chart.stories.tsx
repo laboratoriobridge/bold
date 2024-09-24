@@ -104,7 +104,7 @@ const pieData: PieChartDataPoint[] = [
 const referenceAreas: ReferenceArea<number>[] = [
   {
     name: 'Area 1',
-    description: 'Area 1 desc',
+    description: { text: 'Area 1 desc', color: '#f75b60' },
     area: [
       { x: 0, upperLimit: 2000 },
       { x: 20, upperLimit: 2000 },
