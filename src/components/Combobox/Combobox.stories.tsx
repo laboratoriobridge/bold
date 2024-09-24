@@ -174,6 +174,7 @@ export const MultiSelect = () => {
       clearable={boolean('clearable', true)}
       disabled={boolean('disabled', false)}
       openOnFocus={boolean('openOnFocus', true)}
+      clearFilterOnSelect={boolean('clearFilterOnSelect', true)}
       open={select('open', [undefined, true, false], undefined)}
       loading={boolean('loading', false)}
       onChange={action('changed')}

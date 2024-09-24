@@ -3,6 +3,7 @@ import matchSorter from 'match-sorter'
 import React, { CSSProperties, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { usePopper } from 'react-popper'
 import { isNil } from 'lodash'
+import { useLocale } from '../../i18n'
 import { Theme, useStyles } from '../../styles'
 import { composeHandlers, composeRefs } from '../../util/react'
 import { FormControl } from '../FormControl'
@@ -22,6 +23,7 @@ export interface ComboboxMultiselectProps<T>
   onChange?: (newValue: T[]) => void
   itemIsEqual(a: T, b: T): boolean
   components?: Partial<ComboboxMultiselectComponents<T>>
+  clearFilterOnSelect?: boolean
 }
 
 export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: ComboboxMultiselectProps<T>) {
@@ -41,6 +43,7 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
     itemToString,
     menuMinWidth,
     openOnFocus = true,
+    clearFilterOnSelect = false,
     onClear,
     onChange,
     onFocus,
@@ -58,6 +61,7 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
   } = props
 
   const [itemsLoaded, setItemsLoaded] = useState(false)
+  const locale = useLocale()
 
   const isAsync = typeof items === 'function'
   const getItems = useCallback((query: string) => (typeof items === 'function' ? items(query) : filter(items, query)), [
@@ -120,6 +124,7 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
     getItemProps,
     openMenu,
     setInputValue,
+    toggleMenu,
   } = useCombobox<T>({
     defaultHighlightedIndex: 0,
     selectedItem: null,
@@ -130,7 +135,7 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
     onInputValueChange: ({ inputValue }) => composeHandlers(loadItems, onFilterChange)(inputValue),
     onSelectedItemChange: ({ selectedItem }) => {
       isSelected(selectedItem) ? removeSelectedItem(selectedItem) : addSelectedItem(selectedItem)
-      setInputValue('')
+      clearFilterOnSelect && setInputValue('')
     },
     onIsOpenChange: ({ isOpen, inputValue }) => {
       isOpen && !itemsLoaded && loadItems(inputValue)
@@ -170,7 +175,10 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
 
   const handleWrapperClick = () => inputRef.current.focus()
   const handleItemClick = useCallback(
-    (item: T) => (isSelected(item) ? removeSelectedItem(item) : addSelectedItem(item)),
+    (item: T) => {
+      isSelected(item) ? removeSelectedItem(item) : addSelectedItem(item)
+      clearFilterOnSelect && setInputValue('')
+    },
     [isSelected, removeSelectedItem, addSelectedItem]
   )
   const handleItemRemove = useCallback(
@@ -190,6 +198,11 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
     [components]
   )
 
+  const handleIconClick = useCallback(() => {
+    toggleMenu()
+    inputRef.current?.focus()
+  }, [toggleMenu])
+
   return (
     <div {...downshiftComboboxProps}>
       <FormControl {...formControlProps} labelId={internalLabelId} {...downshiftLabelProps}>
@@ -199,10 +212,13 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
           onClick={handleWrapperClick}
           clearVisible={clearable && !!selectedItems.length}
           onClear={composeHandlers(reset, onClear)}
+          icon={isOpen ? 'angleUp' : 'angleDown'}
+          iconAriaLabel={isOpen ? locale.combobox.hideOptions : locale.combobox.showOptions}
+          iconPosition='right'
+          onIconClick={handleIconClick}
         >
           {selectedItems.map((selectedItem, index) => (
             <SelectedItem
-              style={classes.selectedItem}
               key={`selected-item-${index}`}
               onRemove={handleItemRemove(selectedItem)}
               disabled={disabled}
@@ -264,16 +280,18 @@ function comboboxMultiselectStateReducer<T>(
     case useCombobox.stateChangeTypes.InputBlur:
       return {
         ...changes,
-        ...(!changes.selectedItem && {
-          inputValue: '',
-        }),
+        inputValue: '',
       }
     default:
       return changes
   }
 }
 
-export const createStyles = (theme: Theme, { disabled }: ComboboxMultiselectProps<any>, hasSelectedItems: boolean) => {
+export const createStyles = (
+  theme: Theme,
+  { disabled, clearable }: ComboboxMultiselectProps<any>,
+  hasSelectedItems: boolean
+) => {
   const parts = createStyleParts(theme)
   return {
     wrapper: {
@@ -281,6 +299,7 @@ export const createStyles = (theme: Theme, { disabled }: ComboboxMultiselectProp
       cursor: 'text',
 
       display: 'flex',
+      gap: '0.25rem',
       flexWrap: 'wrap',
       alignItems: 'center',
 
@@ -288,6 +307,8 @@ export const createStyles = (theme: Theme, { disabled }: ComboboxMultiselectProp
       '&:hover': !disabled && parts.hover,
       '&:active': !disabled && parts.active,
       '&:focus-within': !disabled && parts.focus,
+
+      paddingRight: clearable && hasSelectedItems ? '5rem' : '3rem',
     } as CSSProperties,
 
     disabled: parts.disabled,
@@ -297,10 +318,6 @@ export const createStyles = (theme: Theme, { disabled }: ComboboxMultiselectProp
       '&:focus-within': parts.invalid[':not(:disabled):focus'],
     } as CSSProperties,
 
-    selectedItem: {
-      marginRight: '0.25rem',
-    } as CSSProperties,
-
     input: {
       fontFamily: theme.typography.fontFamily,
       fontSize: theme.typography.sizes.text,
@@ -308,11 +325,18 @@ export const createStyles = (theme: Theme, { disabled }: ComboboxMultiselectProp
       lineHeight: '1rem',
       background: theme.pallete.surface.main,
       padding: 0,
+      paddingRight: '0 !important',
+      minWidth: '5rem',
       flex: 1,
       border: 0,
       outline: 0,
       '::placeholder': parts.placeholder,
       ':disabled': parts.disabled,
+      '~ span': {
+        top: 0,
+        right: 0,
+        bottom: 0,
+      },
     } as CSSProperties,
 
     menu: {
