@@ -4,8 +4,8 @@ import { Aggregators } from './Aggregators'
 import { Aggregator } from './model-aggregator'
 import { COUNT_AGGREGATOR } from './util-aggregator'
 
-describe('PivotTable - Aggregator', () => {
-  type Teste = {
+describe('PivotTable - Aggregators', () => {
+  type Test = {
     name: string
   }
 
@@ -15,9 +15,9 @@ describe('PivotTable - Aggregator', () => {
 
   const handleAggregator = (aggregator: Aggregator) => null
 
-  const handleAggregatorKey = (key: keyof Teste) => null
+  const handleAggregatorKey = (key: keyof Test) => null
 
-  const keyMapping: Map<keyof Teste, KeyMapping> = new Map([['name', { keyName: 'Name' }]])
+  const keyMapping: Map<keyof Test, KeyMapping> = new Map([['name', { keyName: 'Name' }]])
 
   it('should render correctly', () => {
     const { container } = render(
