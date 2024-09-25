@@ -91,6 +91,7 @@ interface ReferenceAreaDescription {
 export interface ReferenceArea<XDomain> {
   name: string
   description?: ReferenceAreaDescription
+  textYOffset?: number
   area: ReferenceAreaRange<XDomain>[]
   color?: string
   tickColor?: string

@@ -23,6 +23,7 @@ export function ReferenceAreaTick(props: ReferenceTickProps) {
 
   const nameLines = splitIntoLines(ref.name, MAX_CHARS_PER_LINE)
   const description = ref.description
+  const textYOffset = ref.textYOffset ?? 0
 
   return (
     <>
@@ -38,7 +39,7 @@ export function ReferenceAreaTick(props: ReferenceTickProps) {
         {nameLines.map(
           (namePart, i) =>
             namePart && (
-              <tspan key={namePart} dx={TICK_X_DISLOCATION} dy={(i + 1) * TICK_Y_DISLOCATION} x={x} y={y}>
+              <tspan key={namePart} dx={TICK_X_DISLOCATION} dy={(i + 1) * TICK_Y_DISLOCATION} x={x} y={y + textYOffset}>
                 {namePart}
               </tspan>
             )
@@ -62,7 +63,7 @@ export function ReferenceAreaTick(props: ReferenceTickProps) {
                   dx={TICK_X_DISLOCATION}
                   dy={(i + 1) * TICK_Y_DISLOCATION}
                   x={x}
-                  y={y + 5 + nameLines.length * TICK_Y_DISLOCATION}
+                  y={y + 5 + nameLines.length * TICK_Y_DISLOCATION + textYOffset}
                 >
                   {descriptionPart}
                 </tspan>
