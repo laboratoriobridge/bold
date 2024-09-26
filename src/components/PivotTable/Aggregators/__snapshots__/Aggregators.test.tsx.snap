@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PivotTable - Aggregator should render correctly 1`] = `
+exports[`PivotTable - Aggregators should render correctly 1`] = `
 .emotion-12 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -188,7 +188,7 @@ exports[`PivotTable - Aggregator should render correctly 1`] = `
 </div>
 `;
 
-exports[`PivotTable - Aggregator should render correctly with numberKeys 1`] = `
+exports[`PivotTable - Aggregators should render correctly with numberKeys 1`] = `
 .emotion-27 {
   display: -webkit-box;
   display: -webkit-flex;
