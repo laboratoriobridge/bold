@@ -11,7 +11,7 @@ export default {
 
 type Fruit = {
   name: string
-  size?: string
+  size: string
 }
 
 type KeyMapping = {

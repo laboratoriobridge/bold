@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
-import React from 'react'
 
 import { Radio } from '../../Radio'
 import { Select } from '../../Select'
