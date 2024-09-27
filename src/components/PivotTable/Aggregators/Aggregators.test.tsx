@@ -1,32 +1,34 @@
 import { render } from '@testing-library/react'
 import React from 'react'
 import { Aggregators } from './Aggregators'
-import { Aggregator } from './model-aggregator'
-import { COUNT_AGGREGATOR } from './util-aggregator'
+import { Aggregator, AggregatorEnum, KeyMap } from './model-aggregator'
 
 describe('PivotTable - Aggregators', () => {
   type Test = {
     name: string
   }
 
-  type KeyMapping = {
-    keyName: string
-  }
-
   const handleAggregator = (aggregator: Aggregator) => null
 
   const handleAggregatorKey = (key: keyof Test) => null
 
-  const keyMapping: Map<keyof Test, KeyMapping> = new Map([['name', { keyName: 'Name' }]])
+  const keyMapping: KeyMap<Test> = new Map([['name', { keyName: 'Name' }]])
+
+  const TEST_AGGREGATOR: Aggregator = {
+    id: AggregatorEnum.COUNT,
+    label: 'Test',
+    value: undefined,
+    keyDependent: false,
+  }
 
   it('should render correctly', () => {
     const { container } = render(
-      <Aggregators
+      <Aggregators<Test>
         numberKeys={[]}
-        keyMapping={keyMapping}
+        keyMap={keyMapping}
         handleAggregatorChange={handleAggregator}
         handleAggregatorKeyChange={handleAggregatorKey}
-        aggregator={COUNT_AGGREGATOR}
+        aggregator={TEST_AGGREGATOR}
         aggregatorKey={'name'}
       />
     )
@@ -35,12 +37,12 @@ describe('PivotTable - Aggregators', () => {
 
   it('should render correctly with numberKeys', () => {
     const { container } = render(
-      <Aggregators
+      <Aggregators<Test>
         numberKeys={['name']}
-        keyMapping={keyMapping}
+        keyMap={keyMapping}
         handleAggregatorChange={handleAggregator}
         handleAggregatorKeyChange={handleAggregatorKey}
-        aggregator={COUNT_AGGREGATOR}
+        aggregator={TEST_AGGREGATOR}
         aggregatorKey={'name'}
       />
     )

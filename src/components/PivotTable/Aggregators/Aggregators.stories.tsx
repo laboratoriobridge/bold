@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 
-import { boolean } from '@storybook/addon-knobs'
+import { optionsKnob } from '@storybook/addon-knobs'
+import { useLocale } from '../../../i18n'
 import { Aggregators } from './Aggregators'
-import { Aggregator } from './model-aggregator'
-import { COUNT_AGGREGATOR } from './util-aggregator'
+import { Aggregator, KeyMap } from './model-aggregator'
+import { getCountAndPercentageAggregator } from './util-aggregator'
 
 export default {
   title: 'Components/PivotTable/Aggregators',
@@ -14,36 +15,41 @@ type Fruit = {
   size: string
 }
 
-type KeyMapping = {
-  keyName: string
-}
-
-const keyMapping: Map<keyof Fruit, KeyMapping> = new Map([
+const keyMapping: KeyMap<Fruit> = new Map([
   ['name', { keyName: 'Name' }],
   ['size', { keyName: 'Size' }],
 ])
 
-const numberKeys = ['name', 'size']
+const numberKeyOptions = {
+  Empty: [],
+  Name: ['name'],
+  'Name and Size': ['name', 'size'],
+}
 
 export const Default = () => {
-  const [aggregator, setAggregator] = useState<Aggregator>(COUNT_AGGREGATOR)
+  const locale = useLocale()
+
+  const initialAggregator = getCountAndPercentageAggregator(locale.aggregators.COUNT, locale.aggregators.PERCENTAGE)
+    .COUNT_AGGREGATOR
+
+  const [aggregator, setAggregator] = useState<Aggregator>(initialAggregator)
 
   const [aggregatorKey, setAggregatorKey] = useState<keyof Fruit>()
 
-  const handleAggregator = (aggregator: Aggregator) => {
+  const handleAggregatorChange = (aggregator: Aggregator) => {
     setAggregator(() => aggregator)
   }
 
-  const handleAggregatorKey = (key: keyof Fruit) => setAggregatorKey(key)
+  const handleAggregatorKeyChange = (key: keyof Fruit) => setAggregatorKey(key)
 
-  const isNumberKeys = boolean('numberKeys', false)
+  const numberKeys = optionsKnob('Number Keys', numberKeyOptions, [], { display: 'select' }) as Array<keyof Fruit>
 
   return (
-    <Aggregators
-      numberKeys={isNumberKeys ? (numberKeys as string[]) : []}
-      keyMapping={keyMapping}
-      handleAggregatorChange={handleAggregator}
-      handleAggregatorKeyChange={handleAggregatorKey}
+    <Aggregators<Fruit>
+      numberKeys={numberKeys}
+      keyMap={keyMapping}
+      handleAggregatorChange={handleAggregatorChange}
+      handleAggregatorKeyChange={handleAggregatorKeyChange}
       aggregator={aggregator}
       aggregatorKey={aggregatorKey}
     />

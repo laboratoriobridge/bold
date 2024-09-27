@@ -46,6 +46,13 @@ const locale = {
       other: 'results',
     },
   },
+  aggregators: {
+    COUNT: 'Count',
+    AVERAGE: 'Average',
+    MAXIMUM: 'Maximum',
+    MINIMUM: 'Minimum',
+    PERCENTAGE: 'Percentage',
+  },
   draggable: {
     search: 'Search',
     allItems: 'All items',

@@ -4,31 +4,43 @@ import { css, jsx } from '@emotion/core'
 import { Radio } from '../../Radio'
 import { Select } from '../../Select'
 import { VFlow } from '../../VFlow'
-import { Aggregator } from './model-aggregator'
-import { AGGREGATORS, KEY_NOT_DEPENDENT_AGGREGATORS, KEY_DEPENDENT_AGGREGATORS } from './util-aggregator'
+import { useLocale } from '../../../i18n'
+import { Aggregator, KeyMap } from './model-aggregator'
+import { getAggregators, getKeyDependentAndNotDependentAggregators } from './util-aggregator'
 
-export type AggregatorsProps<T extends any> = {
-  numberKeys: string[]
-  keyMapping: Map<
-    keyof T,
-    { keyName: string; formatter?: (value: string) => string; ordenator?: (a: string, b: string) => number }
-  >
+type AggregatorsProps<T extends object> = {
+  numberKeys: Array<keyof T>
+  keyMap: KeyMap<T>
   handleAggregatorChange: (aggregator: Aggregator) => void
   handleAggregatorKeyChange: (key: keyof T) => void
   aggregator: Aggregator
   aggregatorKey: keyof T
 }
 
-export function Aggregators<T extends any>(props: AggregatorsProps<T>) {
-  const { numberKeys, keyMapping, handleAggregatorKeyChange, handleAggregatorChange, aggregator, aggregatorKey } = props
+export function Aggregators<T extends object>(props: AggregatorsProps<T>) {
+  const locale = useLocale()
+
+  const { numberKeys, keyMap, handleAggregatorKeyChange, handleAggregatorChange, aggregator, aggregatorKey } = props
 
   const styles = createStyles()
 
-  const itemToString = (item: keyof T | null) => (item ? keyMapping.get(item).keyName || (item as string) : '')
+  const itemToString = (item: keyof T | null) => (item ? keyMap.get(item).keyName || (item as string) : '')
 
   const handleKeySelect = (item: keyof T) => {
     handleAggregatorKeyChange(item)
   }
+
+  const AGGREGATORS = getAggregators(
+    locale.aggregators.COUNT,
+    locale.aggregators.PERCENTAGE,
+    locale.aggregators.AVERAGE,
+    locale.aggregators.MAXIMUM,
+    locale.aggregators.MINIMUM
+  )
+
+  const [KEY_DEPENDENT_AGGREGATORS, KEY_NOT_DEPENDENT_AGGREGATORS] = getKeyDependentAndNotDependentAggregators(
+    AGGREGATORS
+  )
 
   const handleAggregatorSelect = (evt: React.ChangeEvent<HTMLInputElement>) => {
     const idx = Number(evt.target.value)
@@ -53,7 +65,7 @@ export function Aggregators<T extends any>(props: AggregatorsProps<T>) {
           </div>
         ))}
       </div>
-      {KEY_DEPENDENT_AGGREGATORS.includes(aggregator) && (
+      {KEY_DEPENDENT_AGGREGATORS.some((item) => item.id === aggregator.id) && (
         <Select<keyof T>
           disabled={numberKeysIsEmpty}
           items={numberKeys as Array<keyof T>}
