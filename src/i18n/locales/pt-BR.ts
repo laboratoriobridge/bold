@@ -49,11 +49,11 @@ const locale: LocaleConfiguration = {
     },
   },
   aggregators: {
-    COUNT: 'Contagem',
-    AVERAGE: 'Média',
-    MAXIMUM: 'Máximo',
-    MINIMUM: 'Mínimo',
-    PERCENTAGE: 'Porcentagem',
+    count: 'Contagem',
+    average: 'Média',
+    maximum: 'Máximo',
+    minimum: 'Mínimo',
+    percentage: 'Porcentagem',
   },
   draggable: {
     search: 'Pesquisa',

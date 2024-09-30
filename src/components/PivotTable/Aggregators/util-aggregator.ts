@@ -1,54 +1,52 @@
-import { partition } from 'lodash'
+import { Aggregator, AggregatorEnum, AggregatorLabels } from './model-aggregator'
 
-import { Aggregator, AggregatorEnum } from './model-aggregator'
-
-export const getCountAndPercentageAggregator = (countLabel, percentageLabel) => {
-  const COUNT_AGGREGATOR: Aggregator = {
+export const getCountAndPercentageAggregator = (aggregatorLabels: AggregatorLabels) => {
+  const countAggregator: Aggregator = {
     id: AggregatorEnum.COUNT,
-    label: countLabel,
+    label: aggregatorLabels.count,
     value: undefined,
     keyDependent: false,
   }
 
-  const PERCENTAGE_AGGREGATOR: Aggregator = {
+  const percentageAggregator: Aggregator = {
     id: AggregatorEnum.PERCENTAGE,
-    label: percentageLabel,
+    label: aggregatorLabels.percentage,
     value: (values: number[], total: number): number => (values.reduce((prev, curr) => prev + curr, 0) * 100) / total,
     keyDependent: false,
-    chain: [COUNT_AGGREGATOR],
+    chain: [countAggregator],
     suffix: '%',
   }
 
-  return { COUNT_AGGREGATOR, PERCENTAGE_AGGREGATOR }
+  return { countAggregator, percentageAggregator }
 }
 
-export const getAggregators = (countLabel, percentageLabel, averageLabel, maximumLabel, minimumLabel) => {
-  const { COUNT_AGGREGATOR, PERCENTAGE_AGGREGATOR } = getCountAndPercentageAggregator(countLabel, percentageLabel)
+export const getAggregators = (aggregatorLabels: AggregatorLabels) => {
+  const { countAggregator, percentageAggregator } = getCountAndPercentageAggregator(aggregatorLabels)
 
   return [
-    COUNT_AGGREGATOR,
-    PERCENTAGE_AGGREGATOR,
+    countAggregator,
+    percentageAggregator,
     {
       id: AggregatorEnum.AVERAGE,
-      label: averageLabel,
+      label: aggregatorLabels.average,
       value: (values: number[]): number => values.reduce((prev, curr) => prev + curr, 0) / values.length,
       keyDependent: true,
     },
     {
       id: AggregatorEnum.MAXIMUM,
-      label: maximumLabel,
+      label: aggregatorLabels.maximum,
       value: (values: number[]): number => values.reduce((prev, curr) => (prev > curr ? prev : curr)),
       keyDependent: true,
     },
     {
       id: AggregatorEnum.MINIMUM,
-      label: minimumLabel,
+      label: aggregatorLabels.minimum,
       value: (values: number[]): number => values.reduce((prev, curr) => (prev < curr ? prev : curr)),
       keyDependent: true,
     },
   ]
 }
 
-export const getKeyDependentAndNotDependentAggregators = (AGGREGATORS: Aggregator[]) => {
-  return partition(AGGREGATORS, (agg) => agg.keyDependent)
+export const getKeyNotDependentAggregators = (AGGREGATORS: Aggregator[]) => {
+  return AGGREGATORS.filter((agg) => !agg.keyDependent)
 }

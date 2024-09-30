@@ -6,6 +6,7 @@ import { useLocale, useStyles } from '../../..'
 import { InternalDraggable } from '../Draggable/InternalDraggable'
 
 import { InternalFilterDraggable } from '../Draggable/InternalFilterDraggable'
+import { KeyMap } from '../model/model-keyMap'
 import { droppableCreateStyles } from './style'
 import { DroppableFilter } from './types/Filter'
 
@@ -23,10 +24,7 @@ export interface DroppableProps<T> {
   /**
    * Map of all the keys to a display name of the key and a formatter and ordenator for the filter options
    */
-  keyMapping: Map<
-    keyof T,
-    { keyName: string; formatter?: (value: string) => string; ordenator?: (a: string, b: string) => number }
-  >
+  keyMap: KeyMap<T>
 
   /**
    * Array of keys currently present in this component
@@ -72,7 +70,7 @@ export interface DragItem<T> {
 }
 
 export function Droppable<T>(props: DroppableProps<T>) {
-  const { name, keyState, keyMapping, accept, filter, handleKeyUpdate, onKeyNav } = props
+  const { name, keyState, keyMap, accept, filter, handleKeyUpdate, onKeyNav } = props
 
   if (filter) {
     if (filter.keys.size === 0)
@@ -131,7 +129,7 @@ export function Droppable<T>(props: DroppableProps<T>) {
               name={key}
               filterItems={filterOptions}
               selectedItems={filter.state.get(key) || new Set<string>()}
-              value={keyMapping.get(key) ? keyMapping.get(key).keyName : (key as string)}
+              value={keyMap.get(key) ? keyMap.get(key).keyName : (key as string)}
               onFilterUpdate={filter.handleUpdate}
               origin={name}
               onDragEnd={() => deleteByKey(key)}
@@ -144,7 +142,7 @@ export function Droppable<T>(props: DroppableProps<T>) {
               key={key as string}
               type={accept}
               name={key}
-              value={keyMapping.get(key) ? keyMapping.get(key).keyName : (key as string)}
+              value={keyMap.get(key) ? keyMap.get(key).keyName : (key as string)}
               origin={name}
               onDragEnd={() => deleteByKey(key)}
               onKeyNav={onKeyNav}
@@ -152,7 +150,7 @@ export function Droppable<T>(props: DroppableProps<T>) {
           )
         }
       }),
-    [keyState, filter, accept, keyMapping, name, onKeyNav, deleteByKey]
+    [keyState, filter, accept, keyMap, name, onKeyNav, deleteByKey]
   )
 
   const hasKeys = keyState.length > 0

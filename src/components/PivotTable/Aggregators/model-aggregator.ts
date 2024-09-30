@@ -6,6 +6,14 @@ export enum AggregatorEnum {
   MINIMUM = 'MINIMUM',
 }
 
+export interface AggregatorLabels {
+  count: string
+  percentage: string
+  average: string
+  maximum: string
+  minimum: string
+}
+
 export type AggregatorFunction = (values: number[], total?: number) => number
 
 export type Aggregator = {
@@ -16,11 +24,3 @@ export type Aggregator = {
   chain?: Aggregator[]
   suffix?: string
 }
-
-type KeyConfig = {
-  keyName: string
-  formatter?: (value: string) => string
-  ordenator?: (a: string, b: string) => number
-}
-
-export type KeyMap<T extends any> = Map<keyof T, KeyConfig>

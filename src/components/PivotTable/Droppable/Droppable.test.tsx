@@ -3,6 +3,7 @@ import { HTML5Backend } from 'react-dnd-html5-backend'
 import { DndProvider } from 'react-dnd'
 import React from 'react'
 
+import { KeyMap } from '../model/model-keyMap'
 import { Droppable, DroppableProps } from './Droppable'
 import { DroppableFilter } from './types/Filter'
 type Fruit = {
@@ -15,7 +16,7 @@ type KeyMapping = {
   ordenator?: (a: string, b: string) => number
 }
 
-const keyMapping = new Map<keyof Fruit, KeyMapping>([
+const keyMap: KeyMap<Fruit> = new Map([
   ['name', { keyName: 'Name' }],
   ['size', { keyName: 'Size' }],
 ])
@@ -57,7 +58,7 @@ const createDefaultComponent = (props: Partial<DroppableProps<Fruit>> = {}) => (
       name={'droppable-1'}
       keyState={['name']}
       accept={'fruit-table'}
-      keyMapping={keyMapping}
+      keyMap={keyMap}
       handleKeyUpdate={() => {}}
       {...props}
     />
@@ -65,7 +66,7 @@ const createDefaultComponent = (props: Partial<DroppableProps<Fruit>> = {}) => (
       name={'droppable-2'}
       keyState={[]}
       accept={'fruit-table'}
-      keyMapping={new Map<keyof Fruit, KeyMapping>()}
+      keyMap={new Map<keyof Fruit, KeyMapping>()}
       handleKeyUpdate={() => {}}
       {...props}
     />
@@ -78,7 +79,7 @@ const createFilterComponent = (props: Partial<DroppableProps<Fruit>> = {}) => (
       name={'droppable-1'}
       keyState={['name']}
       accept={'fruit-table'}
-      keyMapping={new Map<keyof Fruit, KeyMapping>()}
+      keyMap={new Map<keyof Fruit, KeyMapping>()}
       handleKeyUpdate={() => {}}
       filter={filter}
       {...props}
@@ -87,7 +88,7 @@ const createFilterComponent = (props: Partial<DroppableProps<Fruit>> = {}) => (
       name={'droppable-2'}
       keyState={[]}
       accept={'fruit-table'}
-      keyMapping={keyMapping}
+      keyMap={keyMap}
       handleKeyUpdate={() => {}}
       filter={filter}
       {...props}

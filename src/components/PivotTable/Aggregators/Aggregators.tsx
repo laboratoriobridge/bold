@@ -5,10 +5,11 @@ import { Radio } from '../../Radio'
 import { Select } from '../../Select'
 import { VFlow } from '../../VFlow'
 import { useLocale } from '../../../i18n'
-import { Aggregator, KeyMap } from './model-aggregator'
-import { getAggregators, getKeyDependentAndNotDependentAggregators } from './util-aggregator'
+import { KeyMap } from '../model/model-keyMap'
+import { Aggregator } from './model-aggregator'
+import { getAggregators, getKeyNotDependentAggregators } from './util-aggregator'
 
-type AggregatorsProps<T extends object> = {
+interface AggregatorsProps<T extends object> {
   numberKeys: Array<keyof T>
   keyMap: KeyMap<T>
   handleAggregatorChange: (aggregator: Aggregator) => void
@@ -30,17 +31,9 @@ export function Aggregators<T extends object>(props: AggregatorsProps<T>) {
     handleAggregatorKeyChange(item)
   }
 
-  const AGGREGATORS = getAggregators(
-    locale.aggregators.COUNT,
-    locale.aggregators.PERCENTAGE,
-    locale.aggregators.AVERAGE,
-    locale.aggregators.MAXIMUM,
-    locale.aggregators.MINIMUM
-  )
+  const AGGREGATORS = getAggregators(locale.aggregators)
 
-  const [KEY_DEPENDENT_AGGREGATORS, KEY_NOT_DEPENDENT_AGGREGATORS] = getKeyDependentAndNotDependentAggregators(
-    AGGREGATORS
-  )
+  const keyNotDependentAggregators = getKeyNotDependentAggregators(AGGREGATORS)
 
   const handleAggregatorSelect = (evt: React.ChangeEvent<HTMLInputElement>) => {
     const idx = Number(evt.target.value)
@@ -52,7 +45,7 @@ export function Aggregators<T extends object>(props: AggregatorsProps<T>) {
   return (
     <VFlow>
       <div css={styles.container}>
-        {(numberKeysIsEmpty ? KEY_NOT_DEPENDENT_AGGREGATORS : AGGREGATORS).map((f, idx) => (
+        {(numberKeysIsEmpty ? keyNotDependentAggregators : AGGREGATORS).map((f, idx) => (
           <div key={f.id} css={styles.wrapper}>
             <Radio
               name='aggregator'
@@ -65,7 +58,7 @@ export function Aggregators<T extends object>(props: AggregatorsProps<T>) {
           </div>
         ))}
       </div>
-      {KEY_DEPENDENT_AGGREGATORS.some((item) => item.id === aggregator.id) && (
+      {aggregator.keyDependent && (
         <Select<keyof T>
           disabled={numberKeysIsEmpty}
           items={numberKeys as Array<keyof T>}

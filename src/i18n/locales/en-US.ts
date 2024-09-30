@@ -47,11 +47,11 @@ const locale = {
     },
   },
   aggregators: {
-    COUNT: 'Count',
-    AVERAGE: 'Average',
-    MAXIMUM: 'Maximum',
-    MINIMUM: 'Minimum',
-    PERCENTAGE: 'Percentage',
+    count: 'Count',
+    average: 'Average',
+    maximum: 'Maximum',
+    minimum: 'Minimum',
+    percentage: 'Percentage',
   },
   draggable: {
     search: 'Search',

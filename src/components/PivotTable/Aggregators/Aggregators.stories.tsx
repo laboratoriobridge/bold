@@ -2,8 +2,9 @@ import React, { useState } from 'react'
 
 import { optionsKnob } from '@storybook/addon-knobs'
 import { useLocale } from '../../../i18n'
+import { KeyMap } from '../model/model-keyMap'
 import { Aggregators } from './Aggregators'
-import { Aggregator, KeyMap } from './model-aggregator'
+import { Aggregator } from './model-aggregator'
 import { getCountAndPercentageAggregator } from './util-aggregator'
 
 export default {
@@ -15,7 +16,7 @@ type Fruit = {
   size: string
 }
 
-const keyMapping: KeyMap<Fruit> = new Map([
+const keyMap: KeyMap<Fruit> = new Map([
   ['name', { keyName: 'Name' }],
   ['size', { keyName: 'Size' }],
 ])
@@ -29,8 +30,7 @@ const numberKeyOptions = {
 export const Default = () => {
   const locale = useLocale()
 
-  const initialAggregator = getCountAndPercentageAggregator(locale.aggregators.COUNT, locale.aggregators.PERCENTAGE)
-    .COUNT_AGGREGATOR
+  const initialAggregator = getCountAndPercentageAggregator(locale.aggregators).countAggregator
 
   const [aggregator, setAggregator] = useState<Aggregator>(initialAggregator)
 
@@ -47,7 +47,7 @@ export const Default = () => {
   return (
     <Aggregators<Fruit>
       numberKeys={numberKeys}
-      keyMap={keyMapping}
+      keyMap={keyMap}
       handleAggregatorChange={handleAggregatorChange}
       handleAggregatorKeyChange={handleAggregatorKeyChange}
       aggregator={aggregator}
