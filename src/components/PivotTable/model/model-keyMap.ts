@@ -4,4 +4,4 @@ type KeyConfig = {
   ordenator?: (a: string, b: string) => number
 }
 
-export type KeyMap<T extends any> = Map<keyof T, KeyConfig>
+export type KeyMap<T extends object> = Map<keyof T, KeyConfig>

@@ -31,13 +31,13 @@ export function Aggregators<T extends object>(props: AggregatorsProps<T>) {
     handleAggregatorKeyChange(item)
   }
 
-  const AGGREGATORS = getAggregators(locale.aggregators)
+  const aggregators = getAggregators(locale.aggregators)
 
-  const keyNotDependentAggregators = getKeyNotDependentAggregators(AGGREGATORS)
+  const keyNotDependentAggregators = getKeyNotDependentAggregators(aggregators)
 
   const handleAggregatorSelect = (evt: React.ChangeEvent<HTMLInputElement>) => {
     const idx = Number(evt.target.value)
-    handleAggregatorChange(AGGREGATORS[idx])
+    handleAggregatorChange(aggregators[idx])
   }
 
   const numberKeysIsEmpty = numberKeys.length === 0
@@ -45,7 +45,7 @@ export function Aggregators<T extends object>(props: AggregatorsProps<T>) {
   return (
     <VFlow>
       <div css={styles.container}>
-        {(numberKeysIsEmpty ? keyNotDependentAggregators : AGGREGATORS).map((f, idx) => (
+        {(numberKeysIsEmpty ? keyNotDependentAggregators : aggregators).map((f, idx) => (
           <div key={f.id} css={styles.wrapper}>
             <Radio
               name='aggregator'
