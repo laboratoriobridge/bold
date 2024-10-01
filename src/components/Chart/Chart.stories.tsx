@@ -105,6 +105,7 @@ const referenceAreas: ReferenceArea<number>[] = [
   {
     name: 'Area 1',
     description: { text: 'Area 1 desc' },
+    textYOffset: -11,
     area: [
       { x: 0, upperLimit: 2000 },
       { x: 20, upperLimit: 2000 },

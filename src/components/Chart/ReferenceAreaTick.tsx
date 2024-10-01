@@ -25,6 +25,8 @@ export function ReferenceAreaTick(props: ReferenceTickProps) {
   const description = ref.description
   const textYOffset = ref.textYOffset ?? 0
 
+  const rectangleHeight = (ref.areaPercents.slice(-1)[0].percent / 100) * height - TICK_MARGIN / 2
+
   return (
     <>
       <text
@@ -77,7 +79,7 @@ export function ReferenceAreaTick(props: ReferenceTickProps) {
         dx={15}
         dy={TICK_MARGIN / 2}
         width={4}
-        height={(ref.areaPercents.slice(-1)[0].percent / 100) * height - TICK_MARGIN / 2}
+        height={rectangleHeight}
         fill={ref.tickColor ?? ref.color}
       />
     </>
