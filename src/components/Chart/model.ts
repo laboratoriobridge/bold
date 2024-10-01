@@ -86,6 +86,7 @@ interface ReferenceAreaDescription {
   text: string
   color?: string
   style?: CSSProperties
+  align?: 'top' | 'bottom'
 }
 
 export interface ReferenceArea<XDomain> {

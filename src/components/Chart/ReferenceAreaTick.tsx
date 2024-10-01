@@ -23,9 +23,14 @@ export function ReferenceAreaTick(props: ReferenceTickProps) {
 
   const nameLines = splitIntoLines(ref.name, MAX_CHARS_PER_LINE)
   const description = ref.description
+  const descriptionLinesNumber = description?.text ? splitIntoLines(description.text, MAX_CHARS_PER_LINE).length : 0
   const textYOffset = ref.textYOffset ?? 0
 
   const rectangleHeight = (ref.areaPercents.slice(-1)[0].percent / 100) * height - TICK_MARGIN / 2
+  const alignDescriptionOffset =
+    ref.description?.align === 'bottom'
+      ? rectangleHeight - nameLines.length * 15 - descriptionLinesNumber * 5 - TICK_MARGIN
+      : 0
 
   return (
     <>
@@ -65,7 +70,7 @@ export function ReferenceAreaTick(props: ReferenceTickProps) {
                   dx={TICK_X_DISLOCATION}
                   dy={(i + 1) * TICK_Y_DISLOCATION}
                   x={x}
-                  y={y + 5 + nameLines.length * TICK_Y_DISLOCATION + textYOffset}
+                  y={y + 5 + nameLines.length * TICK_Y_DISLOCATION + textYOffset + alignDescriptionOffset}
                 >
                   {descriptionPart}
                 </tspan>
