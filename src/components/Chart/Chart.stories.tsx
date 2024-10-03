@@ -104,7 +104,13 @@ const pieData: PieChartDataPoint[] = [
 const referenceAreas: ReferenceArea<number>[] = [
   {
     name: 'Area 1',
-    description: 'Area 1 desc',
+    description: {
+      text: 'Area 1 desc',
+      align: 'bottom',
+      color: '#f75b60',
+      style: { fontWeight: 'bold' },
+    },
+    textYOffset: -11,
     area: [
       { x: 0, upperLimit: 2000 },
       { x: 20, upperLimit: 2000 },
@@ -123,6 +129,7 @@ const referenceAreas: ReferenceArea<number>[] = [
   },
   {
     name: 'Area 2',
+    description: { text: 'Area 2 desc', align: 'top' },
     area: [
       { x: 0, upperLimit: 5000 },
       { x: 20, upperLimit: 5000 },
