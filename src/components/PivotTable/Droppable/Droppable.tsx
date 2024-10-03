@@ -10,7 +10,7 @@ import { KeyMap } from '../model/model-keyMap'
 import { droppableCreateStyles } from './style'
 import { DroppableFilter } from './types/Filter'
 
-export interface DroppableProps<T> {
+export interface DroppableProps<T extends object> {
   /**
    * The name of the droppable, as an identifier
    */
@@ -69,7 +69,7 @@ export interface DragItem<T> {
   origin: string
 }
 
-export function Droppable<T>(props: DroppableProps<T>) {
+export function Droppable<T extends object>(props: DroppableProps<T>) {
   const { name, keyState, keyMap, accept, filter, handleKeyUpdate, onKeyNav } = props
 
   if (filter) {
