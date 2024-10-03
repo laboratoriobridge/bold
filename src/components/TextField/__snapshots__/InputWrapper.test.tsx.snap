@@ -279,6 +279,20 @@ exports[`should render correctly with left position 1`] = `
   color: #D01E29;
 }
 
+.emotion-0 {
+  fill: currentColor;
+  font-size: 1.5rem;
+}
+
+.emotion-4 {
+  position: relative;
+}
+
+.emotion-4 input {
+  padding-left: 2.5rem;
+  padding-right: 2rem;
+}
+
 .emotion-3 {
   position: absolute;
   background-color: transparent;
@@ -299,20 +313,6 @@ exports[`should render correctly with left position 1`] = `
   top: 1px;
   bottom: 1px;
   left: 1px;
-}
-
-.emotion-0 {
-  fill: currentColor;
-  font-size: 1.5rem;
-}
-
-.emotion-4 {
-  position: relative;
-}
-
-.emotion-4 input {
-  padding-left: 2.5rem;
-  padding-right: 2rem;
 }
 
 .emotion-2 {
