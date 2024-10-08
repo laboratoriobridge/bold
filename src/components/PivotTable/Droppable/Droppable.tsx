@@ -150,7 +150,7 @@ export function Droppable<T extends object>(props: DroppableProps<T>) {
           )
         }
       }),
-    [keyState, accept, keyMapping, name, onKeyNav, deleteByKey]
+    [keyState, accept, filter, keyMapping, name, onKeyNav, deleteByKey]
   )
 
   const hasKeys = keyState.length > 0
