@@ -24,7 +24,7 @@ export interface DroppableProps<T extends object> {
   /**
    * Map of all the keys to a display name of the key and a formatter and ordenator for the filter options
    */
-  keyMap: KeyMap<T>
+  keyMapping: KeyMap<T>
 
   /**
    * Array of keys currently present in this component
@@ -70,7 +70,7 @@ export interface DragItem<T> {
 }
 
 export function Droppable<T extends object>(props: DroppableProps<T>) {
-  const { name, keyState, keyMap, accept, filter, handleKeyUpdate, onKeyNav } = props
+  const { name, keyState, keyMapping, accept, filter, handleKeyUpdate, onKeyNav } = props
 
   if (filter) {
     if (filter.keys.size === 0)
@@ -129,7 +129,7 @@ export function Droppable<T extends object>(props: DroppableProps<T>) {
               name={key}
               filterItems={filterOptions}
               selectedItems={filter.state.get(key) || new Set<string>()}
-              value={keyMap.get(key) ? keyMap.get(key).keyName : (key as string)}
+              value={keyMapping.get(key) ? keyMapping.get(key).keyName : (key as string)}
               onFilterUpdate={filter.handleUpdate}
               origin={name}
               onDragEnd={() => deleteByKey(key)}
@@ -142,7 +142,7 @@ export function Droppable<T extends object>(props: DroppableProps<T>) {
               key={key as string}
               type={accept}
               name={key}
-              value={keyMap.get(key) ? keyMap.get(key).keyName : (key as string)}
+              value={keyMapping.get(key) ? keyMapping.get(key).keyName : (key as string)}
               origin={name}
               onDragEnd={() => deleteByKey(key)}
               onKeyNav={onKeyNav}
@@ -150,7 +150,7 @@ export function Droppable<T extends object>(props: DroppableProps<T>) {
           )
         }
       }),
-    [keyState, filter, accept, keyMap, name, onKeyNav, deleteByKey]
+    [keyState, accept, keyMapping, name, onKeyNav, deleteByKey]
   )
 
   const hasKeys = keyState.length > 0

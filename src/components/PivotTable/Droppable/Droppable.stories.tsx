@@ -16,7 +16,7 @@ type Fruit = {
   size?: string
 }
 
-const keyMap: KeyMap<Fruit> = new Map([
+const keyMapping: KeyMap<Fruit> = new Map([
   ['name', { keyName: 'Name' }],
   ['size', { keyName: 'Size' }],
 ])
@@ -59,7 +59,7 @@ export const Default = () => {
             name='table1'
             keyState={defaultKeys}
             accept={'fruit-table'}
-            keyMap={keyMap}
+            keyMapping={keyMapping}
             handleKeyUpdate={setDefaultKeys}
             filter={filter}
           />
@@ -69,7 +69,7 @@ export const Default = () => {
             name='table2'
             keyState={rowKeys}
             accept={'fruit-table'}
-            keyMap={keyMap}
+            keyMapping={keyMapping}
             handleKeyUpdate={setRowKeys}
             filter={filter}
           />

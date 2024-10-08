@@ -16,7 +16,7 @@ type KeyMapping = {
   ordenator?: (a: string, b: string) => number
 }
 
-const keyMap: KeyMap<Fruit> = new Map([
+const keyMapping: KeyMap<Fruit> = new Map([
   ['name', { keyName: 'Name' }],
   ['size', { keyName: 'Size' }],
 ])
@@ -58,7 +58,7 @@ const createDefaultComponent = (props: Partial<DroppableProps<Fruit>> = {}) => (
       name={'droppable-1'}
       keyState={['name']}
       accept={'fruit-table'}
-      keyMap={keyMap}
+      keyMapping={keyMapping}
       handleKeyUpdate={() => {}}
       {...props}
     />
@@ -66,7 +66,7 @@ const createDefaultComponent = (props: Partial<DroppableProps<Fruit>> = {}) => (
       name={'droppable-2'}
       keyState={[]}
       accept={'fruit-table'}
-      keyMap={new Map<keyof Fruit, KeyMapping>()}
+      keyMapping={new Map<keyof Fruit, KeyMapping>()}
       handleKeyUpdate={() => {}}
       {...props}
     />
@@ -79,7 +79,7 @@ const createFilterComponent = (props: Partial<DroppableProps<Fruit>> = {}) => (
       name={'droppable-1'}
       keyState={['name']}
       accept={'fruit-table'}
-      keyMap={new Map<keyof Fruit, KeyMapping>()}
+      keyMapping={new Map<keyof Fruit, KeyMapping>()}
       handleKeyUpdate={() => {}}
       filter={filter}
       {...props}
@@ -88,7 +88,7 @@ const createFilterComponent = (props: Partial<DroppableProps<Fruit>> = {}) => (
       name={'droppable-2'}
       keyState={[]}
       accept={'fruit-table'}
-      keyMap={keyMap}
+      keyMapping={keyMapping}
       handleKeyUpdate={() => {}}
       filter={filter}
       {...props}

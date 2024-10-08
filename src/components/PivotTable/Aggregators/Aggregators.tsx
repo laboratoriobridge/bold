@@ -6,12 +6,12 @@ import { Select } from '../../Select'
 import { VFlow } from '../../VFlow'
 import { useLocale } from '../../../i18n'
 import { KeyMap } from '../model/model-keyMap'
-import { Aggregator } from './model-aggregator'
-import { getAggregators, getKeyNotDependentAggregators } from './util-aggregator'
+import { Aggregator } from './model'
+import { getAggregators, getKeyNotDependentAggregators } from './utils'
 
 interface AggregatorsProps<T extends object> {
   numberKeys: Array<keyof T>
-  keyMap: KeyMap<T>
+  keyMapping: KeyMap<T>
   handleAggregatorChange: (aggregator: Aggregator) => void
   handleAggregatorKeyChange: (key: keyof T) => void
   aggregator: Aggregator
@@ -21,11 +21,11 @@ interface AggregatorsProps<T extends object> {
 export function Aggregators<T extends object>(props: AggregatorsProps<T>) {
   const locale = useLocale()
 
-  const { numberKeys, keyMap, handleAggregatorKeyChange, handleAggregatorChange, aggregator, aggregatorKey } = props
+  const { numberKeys, keyMapping, handleAggregatorKeyChange, handleAggregatorChange, aggregator, aggregatorKey } = props
 
   const styles = createStyles()
 
-  const itemToString = (item: keyof T | null) => (item ? keyMap.get(item).keyName || (item as string) : '')
+  const itemToString = (item: keyof T | null) => (item ? keyMapping.get(item).keyName || (item as string) : '')
 
   const handleKeySelect = (item: keyof T) => {
     handleAggregatorKeyChange(item)
