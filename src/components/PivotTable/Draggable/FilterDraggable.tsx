@@ -5,7 +5,7 @@ import { DraggableProps } from './Draggable'
 
 import { InternalFilterDraggable } from './InternalFilterDraggable'
 
-export interface FilterDraggableProps<T> extends DraggableProps<T> {
+export interface FilterDraggableProps<T extends object> extends DraggableProps<T> {
   /**
    * The items that should appear on the list
    */
@@ -27,7 +27,7 @@ export interface FilterDraggableProps<T> extends DraggableProps<T> {
   formatter?: (value: string) => string
 }
 
-export function FilterDraggable<T>(props: FilterDraggableProps<T>) {
+export function FilterDraggable<T extends object>(props: FilterDraggableProps<T>) {
   return (
     <DndProvider backend={HTML5Backend}>
       <InternalFilterDraggable {...props} />
