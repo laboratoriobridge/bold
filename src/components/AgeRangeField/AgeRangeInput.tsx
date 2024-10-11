@@ -2,16 +2,19 @@ import React, { CSSProperties, useState } from 'react'
 import { isEmpty } from 'lodash'
 import { TextInput } from '../TextField'
 import { ExternalStyles, Theme, colors, focusBoxShadow, useStyles } from '../../styles'
-import { LocaleConfiguration, useLocale } from '../../i18n'
+import { useLocale } from '../../i18n'
 import { Button } from '../Button'
 import { Text } from '../Text'
 import { Icon } from '../Icon'
 import { Dropdown, DropdownItem } from '../Dropdown'
 import { FocusManagerContainer } from '../FocusManagerContainer'
 import { Tooltip } from '../Tooltip'
+import { convertUnitAgeRangeEnumToLocaleText } from './converter'
+import { AgeRange, AgeRangeUnitEnum } from './model'
+import { getAvaibleAgeRangeUnits } from './util'
 
 export interface AgeRangeInputProps {
-  value: AgeRange
+  value?: AgeRange
 
   maxLength?: number
   disabled?: boolean
@@ -23,27 +26,13 @@ export interface AgeRangeInputProps {
   /**
    *  Receive external styles.
    */
-  style?: ExternalStyles[]
+  style?: ExternalStyles
   unitOptionsToExclude?: AgeRangeUnitEnum[]
 
   onChange?(ageRange: AgeRange): void
   onFocus?(e: React.FocusEvent<HTMLDivElement>): void
   onBlur?(e: React.FocusEvent<HTMLDivElement>): void
 }
-
-export enum AgeRangeUnitEnum {
-  YEARS,
-  MONTHS,
-  DAYS,
-}
-
-export interface AgeRange {
-  firstValue?: number
-  secondValue?: number
-  unit: AgeRangeUnitEnum
-}
-
-const UNIT_OPTIONS = [AgeRangeUnitEnum.YEARS, AgeRangeUnitEnum.MONTHS, AgeRangeUnitEnum.DAYS]
 
 export function AgeRangeInput(props: AgeRangeInputProps) {
   const {
@@ -67,7 +56,7 @@ export function AgeRangeInput(props: AgeRangeInputProps) {
   const classNameDiv = css(classes.div, invalid && classes.invalid, props.style)
   const locale = useLocale()
 
-  if (value?.unit && unitOptionsToExclude && unitOptionsToExclude.includes(value.unit)) {
+  if (unitOptionsToExclude?.includes(value?.unit)) {
     throw new Error(
       `You selected ${convertUnitAgeRangeEnumToLocaleText(
         value.unit,
@@ -122,8 +111,8 @@ export function AgeRangeInput(props: AgeRangeInputProps) {
 
   const handleChangeUnit = (unit: AgeRangeUnitEnum) => {
     const newAgeRange: AgeRange = {
-      firstValue: null,
-      secondValue: null,
+      firstValue: undefined,
+      secondValue: undefined,
       unit,
     }
 
@@ -148,19 +137,8 @@ export function AgeRangeInput(props: AgeRangeInputProps) {
     onBlur?.(event)
   }
 
-  let unitOptions = UNIT_OPTIONS
-
-  if (unitOptionsToExclude && unitOptionsToExclude.length > 0) {
-    unitOptions = unitOptions.filter((unit) => !unitOptionsToExclude.includes(unit))
-  }
-
-  if (unitOptions.length === 0) {
-    throw new Error('You must provide an unit option.')
-  }
-
-  const hasOnlyOneUnitOption = unitOptions.length === 1
-
-  console.log(firstValuePlaceholder, firstValuePlaceholder ?? locale.ageRange.minimumPlaceholder)
+  const avaibleUnitOptions = getAvaibleAgeRangeUnits(unitOptionsToExclude)
+  const hasOnlyOneUnitOption = avaibleUnitOptions.length === 1
 
   return (
     <FocusManagerContainer onFocusIn={onFocus} onFocusOut={handleBlur}>
@@ -168,6 +146,7 @@ export function AgeRangeInput(props: AgeRangeInputProps) {
         <div className={classes.fieldWrapper}>
           <TextInput
             name='firstValue'
+            data-testid='age-range-first-input'
             value={value?.firstValue ?? ''}
             clearable={clearable}
             disabled={disabled}
@@ -183,6 +162,7 @@ export function AgeRangeInput(props: AgeRangeInputProps) {
         <div className={classes.fieldWrapper}>
           <TextInput
             name='secondValue'
+            data-testid='age-range-second-input'
             value={value?.secondValue ?? ''}
             clearable={clearable}
             disabled={disabled}
@@ -202,12 +182,17 @@ export function AgeRangeInput(props: AgeRangeInputProps) {
               innerRef={setAnchorRef}
               onClick={handleClick}
               style={classes.button}
+              data-testid='age-range-unit-button'
             >
               <Text style={classes.buttonText}>{convertUnitAgeRangeEnumToLocaleText(value?.unit, locale)}</Text>
               <Icon style={classes.icon} icon={open ? 'angleUp' : 'angleDown'} />
               <Dropdown anchorRef={anchorRef} open={open} onClose={handleClose} style={classes.dropdown}>
-                {unitOptions.map((unitOption) => (
-                  <DropdownItem key={unitOption} onClick={() => handleChangeUnit(unitOption)}>
+                {avaibleUnitOptions.map((unitOption) => (
+                  <DropdownItem
+                    data-testid={`age-range-unit-option-${unitOption}`}
+                    key={unitOption}
+                    onClick={() => handleChangeUnit(unitOption)}
+                  >
                     {convertUnitAgeRangeEnumToLocaleText(unitOption, locale)}
                   </DropdownItem>
                 ))}
@@ -218,22 +203,6 @@ export function AgeRangeInput(props: AgeRangeInputProps) {
       </div>
     </FocusManagerContainer>
   )
-}
-
-function convertUnitAgeRangeEnumToLocaleText(ageRangeUnitEnum: AgeRangeUnitEnum, locale: LocaleConfiguration): string {
-  switch (ageRangeUnitEnum) {
-    case AgeRangeUnitEnum.YEARS:
-      return locale.ageRange.years
-
-    case AgeRangeUnitEnum.MONTHS:
-      return locale.ageRange.months
-
-    case AgeRangeUnitEnum.DAYS:
-      return locale.ageRange.days
-
-    default:
-      return ''
-  }
 }
 
 const createStyles = (theme: Theme, disabled: boolean) => {

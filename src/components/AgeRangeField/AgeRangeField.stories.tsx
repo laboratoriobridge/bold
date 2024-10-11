@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { action } from '@storybook/addon-actions'
 import { boolean, text, optionsKnob, number } from '@storybook/addon-knobs'
 import { isEmpty } from 'lodash'
-import { AgeRange, AgeRangeUnitEnum } from './AgeRangeInput'
+import { AgeRange, AgeRangeUnitEnum } from './model'
 import { AgeRangeField } from './AgeRangeField'
 
 export default {
