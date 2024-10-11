@@ -19,7 +19,7 @@ describe('AgeRangeField', () => {
 
     it('should render correctly with placeholders', () => {
       const { container } = render(
-        <AgeRangeField label='My label' firstValuePlaceholder='first value' secondValuePlaceholder='second value' />
+        <AgeRangeField label='My label' placeholders={{ first: 'first value', second: 'second value' }} />
       )
       expect(container).toMatchSnapshot()
     })
@@ -56,7 +56,7 @@ describe('AgeRangeField', () => {
       expect(container).toMatchSnapshot()
     })
 
-    it('should render correctly when unit option is avaliable', () => {
+    it('should render correctly when only one unit option is avaliable', () => {
       const { container, getByTestId } = render(
         <AgeRangeField
           value={{ unit: AgeRangeUnitEnum.DAYS }}

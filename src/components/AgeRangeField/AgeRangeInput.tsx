@@ -13,6 +13,11 @@ import { convertUnitAgeRangeEnumToLocaleText } from './converter'
 import { AgeRange, AgeRangeUnitEnum } from './model'
 import { getAvaibleAgeRangeUnits } from './util'
 
+interface Placeholders {
+  first?: string
+  second?: string
+}
+
 export interface AgeRangeInputProps {
   value?: AgeRange
 
@@ -20,8 +25,7 @@ export interface AgeRangeInputProps {
   disabled?: boolean
   clearable?: boolean
   invalid?: boolean
-  firstValuePlaceholder?: string
-  secondValuePlaceholder?: string
+  placeholders?: Placeholders
 
   /**
    *  Receive external styles.
@@ -37,8 +41,7 @@ export interface AgeRangeInputProps {
 export function AgeRangeInput(props: AgeRangeInputProps) {
   const {
     value,
-    firstValuePlaceholder,
-    secondValuePlaceholder,
+    placeholders,
     maxLength,
     disabled,
     clearable,
@@ -152,7 +155,7 @@ export function AgeRangeInput(props: AgeRangeInputProps) {
             disabled={disabled}
             style={classes.numberField}
             maxLength={maxLength}
-            placeholder={firstValuePlaceholder ?? locale.ageRange.minimumPlaceholder}
+            placeholder={placeholders?.first ?? locale.ageRange.minimumPlaceholder}
             onChange={handleChangeFirstValue}
           />
         </div>
@@ -168,7 +171,7 @@ export function AgeRangeInput(props: AgeRangeInputProps) {
             disabled={disabled}
             style={classes.numberField}
             maxLength={maxLength}
-            placeholder={secondValuePlaceholder ?? locale.ageRange.maximumPlaceholder}
+            placeholder={placeholders?.second ?? locale.ageRange.maximumPlaceholder}
             onChange={handleChangeSecondValue}
           />
         </div>
