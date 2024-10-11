@@ -7,8 +7,8 @@ import { Button } from '../Button'
 import { Text } from '../Text'
 import { Icon } from '../Icon'
 import { Dropdown, DropdownItem } from '../Dropdown'
-import { FocusManagerContainer } from '../FocusManagerContainer'
 import { Tooltip } from '../Tooltip'
+import { FocusManagerContainer } from '../FocusManagerContainer'
 import { convertUnitAgeRangeEnumToLocaleText } from './converter'
 import { AgeRange, AgeRangeUnitEnum } from './model'
 import { getAvaibleAgeRangeUnits } from './util'
@@ -114,8 +114,8 @@ export function AgeRangeInput(props: AgeRangeInputProps) {
 
   const handleChangeUnit = (unit: AgeRangeUnitEnum) => {
     const newAgeRange: AgeRange = {
-      firstValue: undefined,
-      secondValue: undefined,
+      firstValue: null,
+      secondValue: null,
       unit,
     }
 
@@ -127,24 +127,11 @@ export function AgeRangeInput(props: AgeRangeInputProps) {
     anchorRef.focus()
   }
 
-  const handleBlur = (event: React.FocusEvent<HTMLDivElement>) => {
-    if (value.firstValue && value?.secondValue && value.firstValue > value.secondValue) {
-      const ageRange: AgeRange = {
-        firstValue: value.secondValue,
-        secondValue: value.firstValue,
-        unit: value.unit,
-      }
-      onChange?.(ageRange)
-    }
-
-    onBlur?.(event)
-  }
-
   const avaibleUnitOptions = getAvaibleAgeRangeUnits(unitOptionsToExclude)
   const hasOnlyOneUnitOption = avaibleUnitOptions.length === 1
 
   return (
-    <FocusManagerContainer onFocusIn={onFocus} onFocusOut={handleBlur}>
+    <FocusManagerContainer onFocusIn={onFocus} onFocusOut={onBlur}>
       <div className={classNameDiv}>
         <div className={classes.fieldWrapper}>
           <TextInput

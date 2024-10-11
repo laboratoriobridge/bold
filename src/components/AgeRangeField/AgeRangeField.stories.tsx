@@ -44,8 +44,7 @@ export const Default = () => {
       maxLength={number('maxLength', 3)}
       error={error}
       invalid={isEmpty(error) ? false : true}
-      firstValuePlaceholder={text('firstValuePlaceholder', null)}
-      secondValuePlaceholder={text('secondValuePlaceholder', null)}
+      placeholders={{ first: text('firstPlaceholder', null), second: text('secondPlaceholder', null) }}
       onFocus={action('focus')}
       onBlur={action('blur')}
     />

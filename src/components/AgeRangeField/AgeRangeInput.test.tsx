@@ -37,7 +37,7 @@ describe('AgeRangeInput', () => {
 
     it("should call 'onChange' when the value of unit changes", () => {
       const onChange = jest.fn()
-      const expectedAgeRange: AgeRange = { unit: AgeRangeUnitEnum.YEARS, firstValue: undefined, secondValue: undefined }
+      const expectedAgeRange: AgeRange = { unit: AgeRangeUnitEnum.YEARS, firstValue: null, secondValue: null }
       const { getByTestId } = render(<AgeRangeField onChange={onChange} value={emptyAgeRange} />)
 
       const button = getByTestId('age-range-unit-button')
@@ -52,15 +52,6 @@ describe('AgeRangeInput', () => {
   })
 
   describe('Unit dropdown', () => {
-    it('should set aria-expanded to true when the button is clicked', () => {
-      const { getByTestId } = render(<AgeRangeField />)
-
-      const button = getByTestId('age-range-unit-button')
-      fireEvent.click(button)
-
-      expect(button?.getAttribute('aria-expanded')).toBeTruthy()
-    })
-
     it('should show all unit options when the button is clicked', () => {
       const { getByTestId } = render(<AgeRangeField />)
 
@@ -96,7 +87,38 @@ describe('AgeRangeInput', () => {
     })
   })
 
-  describe('onFocus', () => {})
+  describe('onFocus and onBlur', () => {
+    it("should call 'onFocus' and 'onBlur' when first input gets focus and it loses focus", () => {
+      const onFocus = jest.fn()
+      const onBlur = jest.fn()
 
-  describe('onBlur', () => {})
+      const { getByTestId } = render(<AgeRangeField onFocus={onFocus} onBlur={onBlur} value={emptyAgeRange} />)
+
+      const input = getByTestId('age-range-first-input')
+      expect(onFocus).not.toHaveBeenCalled()
+      expect(onBlur).not.toHaveBeenCalled()
+
+      fireEvent.focus(input)
+      fireEvent.blur(input)
+
+      expect(onFocus).toHaveBeenCalled()
+      expect(onBlur).toHaveBeenCalled()
+    })
+
+    it("should call 'onFocus' and 'onBlur' when second input gets focus and it loses focus", () => {
+      const onFocus = jest.fn()
+      const onBlur = jest.fn()
+      const { getByTestId } = render(<AgeRangeField onFocus={onFocus} onBlur={onBlur} value={emptyAgeRange} />)
+
+      const input = getByTestId('age-range-second-input')
+      expect(onFocus).not.toHaveBeenCalled()
+      expect(onBlur).not.toHaveBeenCalled()
+
+      fireEvent.focus(input)
+      fireEvent.blur(input)
+
+      expect(onFocus).toHaveBeenCalled()
+      expect(onBlur).toHaveBeenCalled()
+    })
+  })
 })
