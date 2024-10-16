@@ -1,3 +1,5 @@
+import { LocaleConfiguration } from '../../../i18n/LocaleContext'
+
 export enum AggregatorEnum {
   PERCENTAGE = 'PERCENTAGE',
   COUNT = 'COUNT',
@@ -6,13 +8,10 @@ export enum AggregatorEnum {
   MINIMUM = 'MINIMUM',
 }
 
-export interface AggregatorLabels {
-  count: string
-  percentage: string
-  average: string
-  maximum: string
-  minimum: string
-}
+export type AggregatorLabels = Pick<
+  LocaleConfiguration['aggregators'],
+  'count' | 'percentage' | 'average' | 'maximum' | 'minimum'
+>
 
 export type AggregatorFunction = (values: number[], total?: number) => number
 
