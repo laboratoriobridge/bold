@@ -48,6 +48,13 @@ const locale: LocaleConfiguration = {
       other: 'resultados',
     },
   },
+  aggregators: {
+    count: 'Contagem',
+    average: 'Média',
+    maximum: 'Máximo',
+    minimum: 'Mínimo',
+    percentage: 'Porcentagem',
+  },
   draggable: {
     search: 'Pesquisa',
     allItems: 'Todos os itens',

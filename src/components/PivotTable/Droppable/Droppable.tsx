@@ -6,10 +6,11 @@ import { useLocale, useStyles } from '../../..'
 import { InternalDraggable } from '../Draggable/InternalDraggable'
 
 import { InternalFilterDraggable } from '../Draggable/InternalFilterDraggable'
+import { KeyMap } from '../model/model-keyMap'
 import { droppableCreateStyles } from './style'
 import { DroppableFilter } from './types/Filter'
 
-export interface DroppableProps<T> {
+export interface DroppableProps<T extends object> {
   /**
    * The name of the droppable, as an identifier
    */
@@ -23,10 +24,7 @@ export interface DroppableProps<T> {
   /**
    * Map of all the keys to a display name of the key and a formatter and ordenator for the filter options
    */
-  keyMapping: Map<
-    keyof T,
-    { keyName: string; formatter?: (value: string) => string; ordenator?: (a: string, b: string) => number }
-  >
+  keyMapping: KeyMap<T>
 
   /**
    * Array of keys currently present in this component
@@ -71,7 +69,7 @@ export interface DragItem<T> {
   origin: string
 }
 
-export function Droppable<T>(props: DroppableProps<T>) {
+export function Droppable<T extends object>(props: DroppableProps<T>) {
   const { name, keyState, keyMapping, accept, filter, handleKeyUpdate, onKeyNav } = props
 
   if (filter) {
@@ -152,7 +150,7 @@ export function Droppable<T>(props: DroppableProps<T>) {
           )
         }
       }),
-    [keyState, filter, accept, keyMapping, name, onKeyNav, deleteByKey]
+    [keyState, accept, filter, keyMapping, name, onKeyNav, deleteByKey]
   )
 
   const hasKeys = keyState.length > 0
