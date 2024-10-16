@@ -13,7 +13,7 @@ export function MonthRangePickerInput(props: MonthRangePickerInputProps) {
 
   return (
     <FormControl {...getFormControlProps()}>
-      <BaseMonthRangeInput {...inputProps} {...rest} />
+      <BaseMonthRangeInput invalid={inputProps['aria-invalid']} {...inputProps} {...rest} />
     </FormControl>
   )
 }
