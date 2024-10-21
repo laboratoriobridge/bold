@@ -191,7 +191,6 @@ export function AgeRangeInput(props: AgeRangeInputProps) {
             maxLength={maxLength}
             placeholder={placeholders?.start ?? locale.ageRange.minimumPlaceholder}
             onChange={handleChangeStart}
-            min={10}
           />
         </div>
         <span className={classes.spanWrapper}>
@@ -208,7 +207,6 @@ export function AgeRangeInput(props: AgeRangeInputProps) {
             maxLength={maxLength}
             placeholder={placeholders?.end ?? locale.ageRange.maximumPlaceholder}
             onChange={handleChangeEnd}
-            max={15}
           />
         </div>
         <span className={classes.iconWrapper}>

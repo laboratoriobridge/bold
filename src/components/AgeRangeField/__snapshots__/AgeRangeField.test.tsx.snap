@@ -298,8 +298,8 @@ exports[`AgeRangeField render should accept style prop 1`] = `
               >
                 <input
                   class="emotion-0"
-                  data-testid="age-range-first-input"
-                  name="firstValue"
+                  data-testid="age-range-start-input"
+                  name="start"
                   placeholder="Minimum age"
                   type="text"
                   value=""
@@ -321,8 +321,8 @@ exports[`AgeRangeField render should accept style prop 1`] = `
               >
                 <input
                   class="emotion-0"
-                  data-testid="age-range-second-input"
-                  name="secondValue"
+                  data-testid="age-range-end-input"
+                  name="end"
                   placeholder="Maximum age"
                   type="text"
                   value=""
@@ -660,7 +660,7 @@ exports[`AgeRangeField render should render correctly 1`] = `
       >
         <label
           class="emotion-0"
-          id="label-9qarzdol4ds"
+          id="label-ipsim5ww1zs"
         >
           My label
         </label>
@@ -676,8 +676,8 @@ exports[`AgeRangeField render should render correctly 1`] = `
               >
                 <input
                   class="emotion-1"
-                  data-testid="age-range-first-input"
-                  name="firstValue"
+                  data-testid="age-range-start-input"
+                  name="start"
                   placeholder="Minimum age"
                   type="text"
                   value=""
@@ -699,8 +699,8 @@ exports[`AgeRangeField render should render correctly 1`] = `
               >
                 <input
                   class="emotion-1"
-                  data-testid="age-range-second-input"
-                  name="secondValue"
+                  data-testid="age-range-end-input"
+                  name="end"
                   placeholder="Maximum age"
                   type="text"
                   value=""
@@ -724,6 +724,371 @@ exports[`AgeRangeField render should render correctly 1`] = `
                   <svg
                     aria-hidden="true"
                     class="emotion-9"
+                    height="1em"
+                    role="img"
+                    viewBox="0 0 24 24"
+                    width="1em"
+                  >
+                    <path
+                      clip-rule="evenodd"
+                      d="M16.294 8.294a1 1 0 111.414 1.414l-5 5a1 1 0 01-1.414 0l-5.001-5a1 1 0 011.414-1.415l4.294 4.294 4.293-4.293z"
+                    />
+                  </svg>
+                </span>
+              </button>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`AgeRangeField render should render correctly when a name is given to the inputs 1`] = `
+.emotion-14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-13 {
+  display: inline-block;
+  margin-bottom: 0rem;
+  margin-top: 0rem;
+}
+
+.emotion-13:first-of-type {
+  margin-top: 0;
+}
+
+.emotion-13:last-of-type {
+  margin-bottom: 0;
+}
+
+.emotion-13:empty {
+  display: none;
+}
+
+.emotion-11 {
+  background-color: #FFFFFF;
+  border: 1px solid#AAAAB9;
+  border-radius: 2px;
+  cursor: default;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-transition: box-shadow .2s ease;
+  transition: box-shadow .2s ease;
+}
+
+.emotion-11:required {
+  box-shadow: none;
+}
+
+.emotion-11:not(:disabled):hover {
+  border-color: #8F8FA2;
+}
+
+.emotion-11:not(:disabled):active {
+  border-color: #0069D0;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
+}
+
+.emotion-11:focus-within:not(:disabled) {
+  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
+  outline: none;
+}
+
+.emotion-3 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: transparent;
+  cursor: default;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+.emotion-2 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.emotion-10 {
+  background-color: #F0F0F5;
+}
+
+.emotion-1 {
+  position: relative;
+}
+
+.emotion-0 {
+  background-color: #FFFFFF;
+  border: solid 1px #8F8FA2;
+  border-radius: 2px;
+  color: #24252E;
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  margin: 0;
+  padding: calc(0.5rem - 1px) 0.5rem;
+  width: 100%;
+  -webkit-transition-property: box-shadow;
+  transition-property: box-shadow;
+  -webkit-transition-duration: .2s;
+  transition-duration: .2s;
+  border: none;
+}
+
+.emotion-0[type="search"]::-webkit-search-decoration {
+  display: none;
+}
+
+.emotion-0[type="search"]::-webkit-search-cancel-button {
+  display: none;
+}
+
+.emotion-0[type="search"]::-webkit-search-results-button {
+  display: none;
+}
+
+.emotion-0[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
+.emotion-0:required {
+  box-shadow: none;
+}
+
+.emotion-0::-webkit-input-placeholder {
+  color: #696979;
+}
+
+.emotion-0::-moz-placeholder {
+  color: #696979;
+}
+
+.emotion-0:-ms-input-placeholder {
+  color: #696979;
+}
+
+.emotion-0::placeholder {
+  color: #696979;
+}
+
+.emotion-0:disabled {
+  border-color: #D3D4DD;
+  background-color: #F0F0F5;
+}
+
+.emotion-0:not(:disabled):hover {
+  border-color: #7A7B8E;
+}
+
+.emotion-0:not(:disabled):focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
+}
+
+.emotion-0:not(:disabled):active {
+  border-color: #0069D0;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
+}
+
+.emotion-0::-webkit-input-placeholder {
+  color: #696979;
+}
+
+.emotion-0::-moz-placeholder {
+  color: #696979;
+}
+
+.emotion-0:-ms-input-placeholder {
+  color: #696979;
+}
+
+.emotion-0::placeholder {
+  color: #696979;
+}
+
+.emotion-0:focus {
+  box-shadow: none !important;
+}
+
+.emotion-9 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5rem;
+  color: #24252E;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #24252E;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 0.875rem;
+  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
+  border-radius: 0;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 5.8rem;
+  padding: 0.25rem;
+  background-color: #F0F0F5;
+}
+
+.emotion-9 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-9:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-9:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0069D0;
+}
+
+.emotion-9:not(:disabled):hover {
+  background-color: rgba(58,58,71,0.1);
+}
+
+.emotion-9:focus {
+  box-shadow: none !important;
+}
+
+.emotion-7 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #24252E;
+  margin-left: 0.5rem;
+  width: 2.5rem;
+  margin-bottom: 0.15rem;
+}
+
+.emotion-8 {
+  fill: currentColor;
+  font-size: 1.5rem;
+  margin-left: 0.25rem;
+}
+
+<div>
+  <div
+    class="emotion-14"
+  >
+    <div
+      class="emotion-13"
+    >
+      <div
+        class="emotion-12"
+      >
+        <div>
+          <div
+            class="emotion-11"
+          >
+            <div
+              class="emotion-2"
+            >
+              <div
+                class="emotion-1"
+              >
+                <input
+                  class="emotion-0"
+                  data-testid="age-range-start-input"
+                  name="test-name.start"
+                  placeholder="Minimum age"
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+            <span
+              class="emotion-3"
+            >
+              <strong>
+                until
+              </strong>
+            </span>
+            <div
+              class="emotion-2"
+            >
+              <div
+                class="emotion-1"
+              >
+                <input
+                  class="emotion-0"
+                  data-testid="age-range-end-input"
+                  name="test-name.end"
+                  placeholder="Maximum age"
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+            <span
+              class="emotion-10"
+            >
+              <button
+                aria-haspopup="true"
+                class="emotion-9"
+                data-testid="age-range-unit-button"
+                tabindex="-1"
+                type="button"
+              >
+                <span>
+                  <span
+                    class="emotion-7"
+                  />
+                  <svg
+                    aria-hidden="true"
+                    class="emotion-8"
                     height="1em"
                     role="img"
                     viewBox="0 0 24 24"
@@ -1045,9 +1410,9 @@ exports[`AgeRangeField render should render correctly when disabled 1`] = `
               >
                 <input
                   class="emotion-0"
-                  data-testid="age-range-first-input"
+                  data-testid="age-range-start-input"
                   disabled=""
-                  name="firstValue"
+                  name="start"
                   placeholder="Minimum age"
                   type="text"
                   value=""
@@ -1069,9 +1434,9 @@ exports[`AgeRangeField render should render correctly when disabled 1`] = `
               >
                 <input
                   class="emotion-0"
-                  data-testid="age-range-second-input"
+                  data-testid="age-range-end-input"
                   disabled=""
-                  name="secondValue"
+                  name="end"
                   placeholder="Maximum age"
                   type="text"
                   value=""
@@ -1419,8 +1784,8 @@ exports[`AgeRangeField render should render correctly when invalid 1`] = `
               >
                 <input
                   class="emotion-0"
-                  data-testid="age-range-first-input"
-                  name="firstValue"
+                  data-testid="age-range-start-input"
+                  name="start"
                   placeholder="Minimum age"
                   type="text"
                   value=""
@@ -1442,8 +1807,8 @@ exports[`AgeRangeField render should render correctly when invalid 1`] = `
               >
                 <input
                   class="emotion-0"
-                  data-testid="age-range-second-input"
-                  name="secondValue"
+                  data-testid="age-range-end-input"
+                  name="end"
                   placeholder="Maximum age"
                   type="text"
                   value=""
@@ -1786,8 +2151,8 @@ exports[`AgeRangeField render should render correctly when only one unit option 
               >
                 <input
                   class="emotion-0"
-                  data-testid="age-range-first-input"
-                  name="firstValue"
+                  data-testid="age-range-start-input"
+                  name="start"
                   placeholder="Minimum age"
                   type="text"
                   value=""
@@ -1809,8 +2174,8 @@ exports[`AgeRangeField render should render correctly when only one unit option 
               >
                 <input
                   class="emotion-0"
-                  data-testid="age-range-second-input"
-                  name="secondValue"
+                  data-testid="age-range-end-input"
+                  name="end"
                   placeholder="Maximum age"
                   type="text"
                   value=""
@@ -2204,8 +2569,8 @@ exports[`AgeRangeField render should render correctly when unit dropdown is clic
               >
                 <input
                   class="emotion-0"
-                  data-testid="age-range-first-input"
-                  name="firstValue"
+                  data-testid="age-range-start-input"
+                  name="start"
                   placeholder="Minimum age"
                   type="text"
                   value=""
@@ -2227,8 +2592,8 @@ exports[`AgeRangeField render should render correctly when unit dropdown is clic
               >
                 <input
                   class="emotion-0"
-                  data-testid="age-range-second-input"
-                  name="secondValue"
+                  data-testid="age-range-end-input"
+                  name="end"
                   placeholder="Maximum age"
                   type="text"
                   value=""
@@ -2239,7 +2604,7 @@ exports[`AgeRangeField render should render correctly when unit dropdown is clic
               class="emotion-14"
             >
               <button
-                aria-controls="dropdown-3bwtd64u2ox"
+                aria-controls="dropdown-v6ytuym5nnh"
                 aria-expanded="true"
                 aria-haspopup="true"
                 class="emotion-13"
@@ -2266,7 +2631,7 @@ exports[`AgeRangeField render should render correctly when unit dropdown is clic
                   </svg>
                   <ul
                     class="emotion-12"
-                    id="dropdown-3bwtd64u2ox"
+                    id="dropdown-v6ytuym5nnh"
                     role="menu"
                   >
                     <li
@@ -2294,377 +2659,6 @@ exports[`AgeRangeField render should render correctly when unit dropdown is clic
                       Days
                     </li>
                   </ul>
-                </span>
-              </button>
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`AgeRangeField render should render correctly when unit option is avaliable 1`] = `
-.emotion-14 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.emotion-13 {
-  display: inline-block;
-  margin-bottom: 0rem;
-  margin-top: 0rem;
-}
-
-.emotion-13:first-of-type {
-  margin-top: 0;
-}
-
-.emotion-13:last-of-type {
-  margin-bottom: 0;
-}
-
-.emotion-13:empty {
-  display: none;
-}
-
-.emotion-11 {
-  background-color: #FFFFFF;
-  border: 1px solid#AAAAB9;
-  border-radius: 2px;
-  cursor: default;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  position: relative;
-  -webkit-transition: box-shadow .2s ease;
-  transition: box-shadow .2s ease;
-}
-
-.emotion-11:required {
-  box-shadow: none;
-}
-
-.emotion-11:not(:disabled):hover {
-  border-color: #8F8FA2;
-}
-
-.emotion-11:not(:disabled):active {
-  border-color: #0069D0;
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
-}
-
-.emotion-11:focus-within:not(:disabled) {
-  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
-  outline: none;
-}
-
-.emotion-3 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background: transparent;
-  cursor: default;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  position: relative;
-}
-
-.emotion-2 {
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-}
-
-.emotion-10 {
-  background-color: #F0F0F5;
-}
-
-.emotion-1 {
-  position: relative;
-}
-
-.emotion-0 {
-  background-color: #FFFFFF;
-  border: solid 1px #8F8FA2;
-  border-radius: 2px;
-  color: #24252E;
-  font-family: "IBM Plex Sans",sans-serif;
-  font-size: 0.8125rem;
-  line-height: 1rem;
-  margin: 0;
-  padding: calc(0.5rem - 1px) 0.5rem;
-  width: 100%;
-  -webkit-transition-property: box-shadow;
-  transition-property: box-shadow;
-  -webkit-transition-duration: .2s;
-  transition-duration: .2s;
-  border: none;
-}
-
-.emotion-0[type="search"]::-webkit-search-decoration {
-  display: none;
-}
-
-.emotion-0[type="search"]::-webkit-search-cancel-button {
-  display: none;
-}
-
-.emotion-0[type="search"]::-webkit-search-results-button {
-  display: none;
-}
-
-.emotion-0[type="search"]::-webkit-search-results-decoration {
-  display: none;
-}
-
-.emotion-0:required {
-  box-shadow: none;
-}
-
-.emotion-0::-webkit-input-placeholder {
-  color: #696979;
-}
-
-.emotion-0::-moz-placeholder {
-  color: #696979;
-}
-
-.emotion-0:-ms-input-placeholder {
-  color: #696979;
-}
-
-.emotion-0::placeholder {
-  color: #696979;
-}
-
-.emotion-0:disabled {
-  border-color: #D3D4DD;
-  background-color: #F0F0F5;
-}
-
-.emotion-0:not(:disabled):hover {
-  border-color: #7A7B8E;
-}
-
-.emotion-0:not(:disabled):focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
-}
-
-.emotion-0:not(:disabled):active {
-  border-color: #0069D0;
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
-}
-
-.emotion-0::-webkit-input-placeholder {
-  color: #696979;
-}
-
-.emotion-0::-moz-placeholder {
-  color: #696979;
-}
-
-.emotion-0:-ms-input-placeholder {
-  color: #696979;
-}
-
-.emotion-0::placeholder {
-  color: #696979;
-}
-
-.emotion-0:focus {
-  box-shadow: none !important;
-}
-
-.emotion-7 {
-  font-family: "IBM Plex Sans",sans-serif;
-  font-size: 0.8125rem;
-  line-height: 1.5;
-  color: #24252E;
-  margin-left: 0.5rem;
-  width: 2.5rem;
-  margin-bottom: 0.15rem;
-}
-
-.emotion-8 {
-  fill: currentColor;
-  font-size: 1.5rem;
-  margin-left: 0.25rem;
-}
-
-.emotion-9 {
-  font-family: "IBM Plex Sans",sans-serif;
-  font-size: 0.8125rem;
-  line-height: 1.5rem;
-  color: #24252E;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-transition: all .2s;
-  transition: all .2s;
-  font-weight: bold;
-  cursor: pointer;
-  background-color: transparent;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  color: #24252E;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font-size: 0.875rem;
-  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
-  cursor: not-allowed;
-  opacity: 0.5;
-  border-radius: 0;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 5.8rem;
-  padding: 0.25rem;
-  background-color: #F0F0F5;
-}
-
-.emotion-9 > span {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-}
-
-.emotion-9:not(:disabled):active {
-  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
-}
-
-.emotion-9:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0069D0;
-}
-
-.emotion-9:not(:disabled):hover {
-  background-color: rgba(58,58,71,0.1);
-}
-
-.emotion-9:focus {
-  box-shadow: none !important;
-}
-
-<div>
-  <div
-    class="emotion-14"
-  >
-    <div
-      class="emotion-13"
-    >
-      <div
-        class="emotion-12"
-      >
-        <div>
-          <div
-            class="emotion-11"
-          >
-            <div
-              class="emotion-2"
-            >
-              <div
-                class="emotion-1"
-              >
-                <input
-                  class="emotion-0"
-                  data-testid="age-range-first-input"
-                  name="firstValue"
-                  placeholder="Minimum age"
-                  type="text"
-                  value=""
-                />
-              </div>
-            </div>
-            <span
-              class="emotion-3"
-            >
-              <strong>
-                until
-              </strong>
-            </span>
-            <div
-              class="emotion-2"
-            >
-              <div
-                class="emotion-1"
-              >
-                <input
-                  class="emotion-0"
-                  data-testid="age-range-second-input"
-                  name="secondValue"
-                  placeholder="Maximum age"
-                  type="text"
-                  value=""
-                />
-              </div>
-            </div>
-            <span
-              class="emotion-10"
-            >
-              <button
-                aria-haspopup="true"
-                class="emotion-9"
-                data-testid="age-range-unit-button"
-                disabled=""
-                tabindex="-1"
-                title="There is only one option to this field, so it's disabled"
-                type="button"
-              >
-                <span>
-                  <span
-                    class="emotion-7"
-                  >
-                    Days
-                  </span>
-                  <svg
-                    aria-hidden="true"
-                    class="emotion-8"
-                    height="1em"
-                    role="img"
-                    viewBox="0 0 24 24"
-                    width="1em"
-                  >
-                    <path
-                      clip-rule="evenodd"
-                      d="M16.294 8.294a1 1 0 111.414 1.414l-5 5a1 1 0 01-1.414 0l-5.001-5a1 1 0 011.414-1.415l4.294 4.294 4.293-4.293z"
-                    />
-                  </svg>
                 </span>
               </button>
             </span>
@@ -2705,38 +2699,6 @@ exports[`AgeRangeField render should render correctly with error 1`] = `
   display: none;
 }
 
-.emotion-11 {
-  background-color: #FFFFFF;
-  border: 1px solid#AAAAB9;
-  border-radius: 2px;
-  cursor: default;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  position: relative;
-  -webkit-transition: box-shadow .2s ease;
-  transition: box-shadow .2s ease;
-}
-
-.emotion-11:required {
-  box-shadow: none;
-}
-
-.emotion-11:not(:disabled):hover {
-  border-color: #8F8FA2;
-}
-
-.emotion-11:not(:disabled):active {
-  border-color: #0069D0;
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
-}
-
-.emotion-11:focus-within:not(:disabled) {
-  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
-  outline: none;
-}
-
 .emotion-3 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -2950,6 +2912,44 @@ exports[`AgeRangeField render should render correctly with error 1`] = `
   margin-left: 0.25rem;
 }
 
+.emotion-11 {
+  background-color: #FFFFFF;
+  border: 1px solid#AAAAB9;
+  border-radius: 2px;
+  cursor: default;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-transition: box-shadow .2s ease;
+  transition: box-shadow .2s ease;
+  border: solid 1px #D01E29;
+}
+
+.emotion-11:required {
+  box-shadow: none;
+}
+
+.emotion-11:not(:disabled):hover {
+  border-color: #8F8FA2;
+}
+
+.emotion-11:not(:disabled):active {
+  border-color: #0069D0;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
+}
+
+.emotion-11:focus-within:not(:disabled) {
+  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
+  outline: none;
+}
+
+.emotion-11:focus-within:not(:disabled) {
+  border: solid 1px #D3D4DD;
+  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #D01E29;
+}
+
 .emotion-14 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2986,8 +2986,8 @@ exports[`AgeRangeField render should render correctly with error 1`] = `
               >
                 <input
                   class="emotion-0"
-                  data-testid="age-range-first-input"
-                  name="firstValue"
+                  data-testid="age-range-start-input"
+                  name="start"
                   placeholder="Minimum age"
                   type="text"
                   value=""
@@ -3009,8 +3009,8 @@ exports[`AgeRangeField render should render correctly with error 1`] = `
               >
                 <input
                   class="emotion-0"
-                  data-testid="age-range-second-input"
-                  name="secondValue"
+                  data-testid="age-range-end-input"
+                  name="end"
                   placeholder="Maximum age"
                   type="text"
                   value=""
@@ -3056,7 +3056,7 @@ exports[`AgeRangeField render should render correctly with error 1`] = `
     >
       <div
         class="emotion-14"
-        id="error-q35xejxm37m"
+        id="error-37ef9ouq182"
         role="alert"
       >
         Error
@@ -3359,7 +3359,7 @@ exports[`AgeRangeField render should render correctly with placeholders 1`] = `
       >
         <label
           class="emotion-0"
-          id="label-99aeyx19nlj"
+          id="label-klfcizjg69"
         >
           My label
         </label>
@@ -3375,8 +3375,8 @@ exports[`AgeRangeField render should render correctly with placeholders 1`] = `
               >
                 <input
                   class="emotion-1"
-                  data-testid="age-range-first-input"
-                  name="firstValue"
+                  data-testid="age-range-start-input"
+                  name="start"
                   placeholder="first value"
                   type="text"
                   value=""
@@ -3398,8 +3398,8 @@ exports[`AgeRangeField render should render correctly with placeholders 1`] = `
               >
                 <input
                   class="emotion-1"
-                  data-testid="age-range-second-input"
-                  name="secondValue"
+                  data-testid="age-range-end-input"
+                  name="end"
                   placeholder="second value"
                   type="text"
                   value=""
@@ -3740,8 +3740,8 @@ exports[`AgeRangeField render should render correctly with required 1`] = `
               >
                 <input
                   class="emotion-0"
-                  data-testid="age-range-first-input"
-                  name="firstValue"
+                  data-testid="age-range-start-input"
+                  name="start"
                   placeholder="Minimum age"
                   type="text"
                   value=""
@@ -3763,8 +3763,8 @@ exports[`AgeRangeField render should render correctly with required 1`] = `
               >
                 <input
                   class="emotion-0"
-                  data-testid="age-range-second-input"
-                  name="secondValue"
+                  data-testid="age-range-end-input"
+                  name="end"
                   placeholder="Maximum age"
                   type="text"
                   value=""
@@ -4139,7 +4139,7 @@ exports[`AgeRangeField render should render correctly with value 1`] = `
       >
         <label
           class="emotion-0"
-          id="label-v2tkctjagf"
+          id="label-a35c3juntgg"
         >
           My label
         </label>
@@ -4155,8 +4155,8 @@ exports[`AgeRangeField render should render correctly with value 1`] = `
               >
                 <input
                   class="emotion-1"
-                  data-testid="age-range-first-input"
-                  name="firstValue"
+                  data-testid="age-range-start-input"
+                  name="start"
                   placeholder="Minimum age"
                   type="text"
                   value="11"
@@ -4198,8 +4198,8 @@ exports[`AgeRangeField render should render correctly with value 1`] = `
               >
                 <input
                   class="emotion-1"
-                  data-testid="age-range-second-input"
-                  name="secondValue"
+                  data-testid="age-range-end-input"
+                  name="end"
                   placeholder="Maximum age"
                   type="text"
                   value="20"

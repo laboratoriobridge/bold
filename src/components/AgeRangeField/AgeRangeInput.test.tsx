@@ -15,26 +15,6 @@ describe('AgeRangeInput', () => {
     ).toThrowError("You selected Days, but it's an excluded unit option defined in 'unitOptionsToExclude' prop.")
   })
 
-  it('should use the given name to the inputs', () => {
-    const { getByTestId } = render(<AgeRangeField name='test-name' value={emptyAgeRange} />)
-
-    const startInput = getByTestId(START_INPUT_TEST_ID)
-    expect(startInput['name']).toEqual('test-name.start')
-
-    const endInput = getByTestId(END_INPUT_TEST_ID)
-    expect(endInput['name']).toEqual('test-name.end')
-  })
-
-  it('should use the given name to the inputs', () => {
-    const { getByTestId } = render(<AgeRangeField name='test-name' value={emptyAgeRange} />)
-
-    const startInput = getByTestId(START_INPUT_TEST_ID)
-    expect(startInput['name']).toEqual('test-name.start')
-
-    const endInput = getByTestId(END_INPUT_TEST_ID)
-    expect(endInput['name']).toEqual('test-name.end')
-  })
-
   describe('onChange', () => {
     it("should call 'onChange' when the value of start input changes", () => {
       const onChange = jest.fn()

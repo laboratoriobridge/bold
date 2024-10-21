@@ -12,15 +12,20 @@ describe('AgeRangeField', () => {
 
     it('should render correctly with value', () => {
       const { container } = render(
-        <AgeRangeField label='My label' value={{ firstValue: 11, secondValue: 20, unit: AgeRangeUnitEnum.DAYS }} />
+        <AgeRangeField label='My label' value={{ start: 11, end: 20, unit: AgeRangeUnitEnum.DAYS }} />
       )
       expect(container).toMatchSnapshot()
     })
 
     it('should render correctly with placeholders', () => {
       const { container } = render(
-        <AgeRangeField label='My label' placeholders={{ first: 'first value', second: 'second value' }} />
+        <AgeRangeField label='My label' placeholders={{ start: 'first value', end: 'second value' }} />
       )
+      expect(container).toMatchSnapshot()
+    })
+
+    it('should render correctly when a name is given to the inputs', () => {
+      const { container } = render(<AgeRangeField name='test-name' />)
       expect(container).toMatchSnapshot()
     })
 
