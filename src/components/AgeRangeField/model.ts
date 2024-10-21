@@ -5,8 +5,8 @@ export enum AgeRangeUnitEnum {
 }
 
 export interface AgeRange {
-  firstValue?: number | null
-  secondValue?: number | null
+  start?: number
+  end?: number
   unit: AgeRangeUnitEnum
 }
 

@@ -14,7 +14,7 @@ export function AgeRangeField(props: AgeRangeFieldProps) {
 
   return (
     <FormControl {...getFormControlProps()}>
-      <AgeRangeInput {...inputProps} {...rest} />
+      <AgeRangeInput invalid={inputProps['aria-invalid']} {...inputProps} {...rest} />
     </FormControl>
   )
 }

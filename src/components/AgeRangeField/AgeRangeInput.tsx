@@ -1,51 +1,98 @@
-import React, { CSSProperties, useState } from 'react'
 import { isEmpty } from 'lodash'
-import { TextInput } from '../TextField'
-import { ExternalStyles, Theme, colors, focusBoxShadow, useStyles } from '../../styles'
+import React, { CSSProperties, useState } from 'react'
 import { useLocale } from '../../i18n'
+import { ExternalStyles, Theme, colors, focusBoxShadow, useStyles } from '../../styles'
 import { Button } from '../Button'
-import { Text } from '../Text'
-import { Icon } from '../Icon'
 import { Dropdown, DropdownItem } from '../Dropdown'
-import { Tooltip } from '../Tooltip'
 import { FocusManagerContainer } from '../FocusManagerContainer'
+import { Icon } from '../Icon'
+import { Text } from '../Text'
+import { TextInput } from '../TextField'
+import { Tooltip } from '../Tooltip'
 import { convertUnitAgeRangeEnumToLocaleText } from './converter'
 import { AgeRange, AgeRangeUnitEnum } from './model'
 import { getAvaibleAgeRangeUnits } from './util'
 
 interface Placeholders {
-  first?: string
-  second?: string
+  start?: string
+  end?: string
 }
 
 export interface AgeRangeInputProps {
+  /**
+   * Set a AgeRange as initial value of the component
+   */
   value?: AgeRange
 
+  /**
+   * Component name
+   */
+  name?: string
+
+  /**
+   * Limit the length of the number
+   */
   maxLength?: number
+
+  /**
+   * Disable the age range input
+   */
   disabled?: boolean
+
+  /**
+   * Enable the "x" button to clear value in both of the inputs
+   */
   clearable?: boolean
+
+  /**
+   *  Reference an invalid state
+   */
   invalid?: boolean
+
+  /**
+   * Set placeholders in the inputs
+   */
   placeholders?: Placeholders
 
   /**
-   *  Receive external styles.
+   *  Receive external styles
    */
   style?: ExternalStyles
+
+  /**
+   * Set unit options that won't be shown on drop down menu
+   */
   unitOptionsToExclude?: AgeRangeUnitEnum[]
 
+  /**
+   * Called whenever the age range changes
+   * @param ageRange
+   */
   onChange?(ageRange: AgeRange): void
-  onFocus?(e: React.FocusEvent<HTMLDivElement>): void
-  onBlur?(e: React.FocusEvent<HTMLDivElement>): void
+
+  /**
+   * Called when the start or end input is focused
+   * @param focusEvent
+   */
+  onFocus?(focusEvent: React.FocusEvent<HTMLDivElement>): void
+
+  /**
+   * Called when the start or end input loses focus
+   * @param focusEvent
+   */
+  onBlur?(focusEvent: React.FocusEvent<HTMLDivElement>): void
 }
 
 export function AgeRangeInput(props: AgeRangeInputProps) {
   const {
     value,
-    placeholders,
+    name,
     maxLength,
     disabled,
     clearable,
     invalid,
+    placeholders,
+    style,
     unitOptionsToExclude,
     onChange,
     onFocus,
@@ -56,7 +103,7 @@ export function AgeRangeInput(props: AgeRangeInputProps) {
   const [open, setOpen] = useState(false)
 
   const { classes, css } = useStyles(createStyles, disabled)
-  const classNameDiv = css(classes.div, invalid && classes.invalid, props.style)
+  const classNameDiv = css(classes.div, invalid && classes.invalid, style)
   const locale = useLocale()
 
   if (unitOptionsToExclude?.includes(value?.unit)) {
@@ -68,44 +115,44 @@ export function AgeRangeInput(props: AgeRangeInputProps) {
     )
   }
 
-  const handleClick = () => setOpen((state) => !state)
+  const handleClickUnitOptionsButton = () => setOpen((state) => !state)
 
-  const handleChangeFirstValue = (e: React.ChangeEvent<HTMLInputElement>) => {
-    let firstValue: number = null
+  const handleChangeStart = (e: React.ChangeEvent<HTMLInputElement>) => {
+    let start: number = null
 
-    const firstValueText = e.currentTarget?.value
-    const firstValueParsed = parseInt(firstValueText)
+    const startText = e.currentTarget?.value
+    const startParsed = parseInt(startText)
 
-    if (!isNaN(firstValueParsed)) {
-      firstValue = firstValueParsed
-    } else if (!isEmpty(firstValueText)) {
-      firstValue = value?.firstValue
+    if (!isNaN(startParsed)) {
+      start = startParsed
+    } else if (!isEmpty(startText)) {
+      start = value?.start
     }
 
     const newAgeRange: AgeRange = {
-      firstValue,
-      secondValue: value?.secondValue,
+      start,
+      end: value?.end,
       unit: value?.unit,
     }
 
     onChange?.(newAgeRange)
   }
 
-  const handleChangeSecondValue = (e: React.ChangeEvent<HTMLInputElement>) => {
-    let secondValue: number = null
+  const handleChangeEnd = (e: React.ChangeEvent<HTMLInputElement>) => {
+    let end: number = null
 
-    const secondValueText = e.currentTarget?.value
-    const secondValueParsed = parseInt(secondValueText)
+    const endText = e.currentTarget?.value
+    const endParsed = parseInt(endText)
 
-    if (!isNaN(secondValueParsed)) {
-      secondValue = secondValueParsed
-    } else if (!isEmpty(secondValueText)) {
-      secondValue = value?.secondValue
+    if (!isNaN(endParsed)) {
+      end = endParsed
+    } else if (!isEmpty(endText)) {
+      end = value?.end
     }
 
     const newAgeRange: AgeRange = {
-      firstValue: value?.firstValue,
-      secondValue,
+      start: value?.start,
+      end,
       unit: value?.unit,
     }
 
@@ -114,8 +161,8 @@ export function AgeRangeInput(props: AgeRangeInputProps) {
 
   const handleChangeUnit = (unit: AgeRangeUnitEnum) => {
     const newAgeRange: AgeRange = {
-      firstValue: null,
-      secondValue: null,
+      start: undefined,
+      end: undefined,
       unit,
     }
 
@@ -135,15 +182,16 @@ export function AgeRangeInput(props: AgeRangeInputProps) {
       <div className={classNameDiv}>
         <div className={classes.fieldWrapper}>
           <TextInput
-            name='firstValue'
-            data-testid='age-range-first-input'
-            value={value?.firstValue ?? ''}
+            name={name ? `${name}.start` : 'start'}
+            data-testid='age-range-start-input'
+            value={value?.start}
             clearable={clearable}
             disabled={disabled}
             style={classes.numberField}
             maxLength={maxLength}
-            placeholder={placeholders?.first ?? locale.ageRange.minimumPlaceholder}
-            onChange={handleChangeFirstValue}
+            placeholder={placeholders?.start ?? locale.ageRange.minimumPlaceholder}
+            onChange={handleChangeStart}
+            min={10}
           />
         </div>
         <span className={classes.spanWrapper}>
@@ -151,15 +199,16 @@ export function AgeRangeInput(props: AgeRangeInputProps) {
         </span>
         <div className={classes.fieldWrapper}>
           <TextInput
-            name='secondValue'
-            data-testid='age-range-second-input'
-            value={value?.secondValue ?? ''}
+            name={name ? `${name}.end` : 'end'}
+            data-testid='age-range-end-input'
+            value={value?.end}
             clearable={clearable}
             disabled={disabled}
             style={classes.numberField}
             maxLength={maxLength}
-            placeholder={placeholders?.second ?? locale.ageRange.maximumPlaceholder}
-            onChange={handleChangeSecondValue}
+            placeholder={placeholders?.end ?? locale.ageRange.maximumPlaceholder}
+            onChange={handleChangeEnd}
+            max={15}
           />
         </div>
         <span className={classes.iconWrapper}>
@@ -170,7 +219,7 @@ export function AgeRangeInput(props: AgeRangeInputProps) {
               tabIndex={-1}
               disabled={disabled || hasOnlyOneUnitOption}
               innerRef={setAnchorRef}
-              onClick={handleClick}
+              onClick={handleClickUnitOptionsButton}
               style={classes.button}
               data-testid='age-range-unit-button'
             >

@@ -1,10 +1,9 @@
 import React, { useState } from 'react'
 
 import { action } from '@storybook/addon-actions'
-import { boolean, text, optionsKnob, number } from '@storybook/addon-knobs'
-import { isEmpty } from 'lodash'
-import { AgeRange, AgeRangeUnitEnum } from './model'
+import { boolean, number, optionsKnob, text } from '@storybook/addon-knobs'
 import { AgeRangeField } from './AgeRangeField'
+import { AgeRange, AgeRangeUnitEnum } from './model'
 
 export default {
   title: 'Components/AgeRangeField',
@@ -26,8 +25,6 @@ export const Default = () => {
     action('changed')(selectedAgeRange)
   }
 
-  const error = text('error', '')
-
   const unitsToExclude = optionsKnob('unitOptionsToExclude', optionsAgeRangeUnitEnum, defaultOption, {
     display: 'multi-select',
   })
@@ -38,13 +35,13 @@ export const Default = () => {
       onChange={handleChange}
       clearable={boolean('clearable', true)}
       required={boolean('required', true)}
+      name='ageRange'
       label={text('label', 'Text label')}
       disabled={boolean('disabled', false)}
       unitOptionsToExclude={Array.isArray(unitsToExclude) ? unitsToExclude : [unitsToExclude]}
       maxLength={number('maxLength', 3)}
-      error={error}
-      invalid={isEmpty(error) ? false : true}
-      placeholders={{ first: text('firstPlaceholder', null), second: text('secondPlaceholder', null) }}
+      error={text('error', '')}
+      placeholders={{ start: text('startPlacehold', null), end: text('endPlaceholder', null) }}
       onFocus={action('focus')}
       onBlur={action('blur')}
     />
