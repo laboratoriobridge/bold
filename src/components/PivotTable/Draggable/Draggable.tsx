@@ -4,7 +4,7 @@ import { HTML5Backend } from 'react-dnd-html5-backend'
 import { DroppableProps } from '../Droppable/Droppable'
 import { InternalDraggable } from './InternalDraggable'
 
-export interface DraggableProps<T> extends Pick<DroppableProps<T>, 'onKeyNav'> {
+export interface DraggableProps<T extends object> extends Pick<DroppableProps<T>, 'onKeyNav'> {
   /**
    * The name of the draggable, as an identifier
    */
@@ -32,7 +32,7 @@ export interface DraggableProps<T> extends Pick<DroppableProps<T>, 'onKeyNav'> {
   onDragEnd: () => void
 }
 
-export function Draggable<T>(props: DraggableProps<T>) {
+export function Draggable<T extends object>(props: DraggableProps<T>) {
   return (
     <DndProvider backend={HTML5Backend}>
       <InternalDraggable {...props} />

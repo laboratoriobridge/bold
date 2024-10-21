@@ -11,7 +11,7 @@ import { DraggableRow } from './DraggableRow'
 import { draggableCreateStyles } from './style'
 import { DraggableWrapper } from './DraggableWrapper'
 
-export function InternalFilterDraggable<T>(props: FilterDraggableProps<T>) {
+export function InternalFilterDraggable<T extends object>(props: FilterDraggableProps<T>) {
   const {
     name,
     origin,

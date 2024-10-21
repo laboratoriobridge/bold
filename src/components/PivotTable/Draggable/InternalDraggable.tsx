@@ -7,7 +7,7 @@ import { DraggableWrapper } from './DraggableWrapper'
 import { draggableCreateStyles } from './style'
 import { getKeyDirection } from './util'
 
-export function InternalDraggable<T>(props: DraggableProps<T>) {
+export function InternalDraggable<T extends object>(props: DraggableProps<T>) {
   const { name, origin, value, onDragEnd, onKeyNav, type } = props
 
   const { classes } = useStyles(draggableCreateStyles)
