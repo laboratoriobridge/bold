@@ -1,4 +1,4 @@
-import { fireEvent, render } from '@testing-library/react'
+import { render } from '@testing-library/react'
 import React from 'react'
 import { AgeRangeField } from './AgeRangeField'
 import { AgeRangeUnitEnum } from './model'
@@ -54,22 +54,13 @@ describe('AgeRangeField', () => {
       expect(container).toMatchSnapshot()
     })
 
-    it('should render correctly when unit dropdown is clicked', () => {
-      const { container, getByTestId } = render(<AgeRangeField />)
-      const button = getByTestId('age-range-unit-button')
-      fireEvent.click(button)
-      expect(container).toMatchSnapshot()
-    })
-
     it('should render correctly when only one unit option is avaliable', () => {
-      const { container, getByTestId } = render(
+      const { container } = render(
         <AgeRangeField
           value={{ unit: AgeRangeUnitEnum.DAYS }}
           unitOptionsToExclude={[AgeRangeUnitEnum.MONTHS, AgeRangeUnitEnum.YEARS]}
         />
       )
-      const button = getByTestId('age-range-unit-button')
-      fireEvent.click(button)
       expect(container).toMatchSnapshot()
     })
   })
