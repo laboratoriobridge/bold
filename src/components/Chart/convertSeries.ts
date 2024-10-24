@@ -1,12 +1,22 @@
+import { Moment } from 'moment'
 import createMonotoneCubicInterpolator from './createMonotoneCubicInterpolator'
-import { ChartSeries, DataPoint, ReferenceAreaWithPercents } from './model'
-import { getDataPointValue } from './util'
+import { ChartSeries, ChartSeriesDataPoint, DataPoint, ReferenceAreaWithPercents } from './model'
+import { getDataPointValue, getOutlierSeriesName } from './util'
 
 export function convertSeries<XDomain>(
   series: ChartSeries<XDomain>[],
   domainPoints: XDomain[],
-  refsAreas?: ReferenceAreaWithPercents<XDomain>[]
+  refsAreas?: ReferenceAreaWithPercents<XDomain>[],
+  seriesHasOutliers?: (seriesIndex: number, indexData: number) => boolean,
+  outlierTickValue?: number | Moment
 ): any[] {
+  const getOutlierSeriesConfig = (seriesName: string, seriesData: ChartSeriesDataPoint<XDomain>) => {
+    return {
+      [seriesName]: outlierTickValue,
+      [getOutlierSeriesName(seriesName)]: { value: getDataPointValue(seriesData), series: seriesName },
+    }
+  }
+
   const refs = (refsAreas ?? []).flatMap((refsAreas) => {
     return refsAreas.areaPercents.map((data, i) => {
       return {
@@ -17,11 +27,13 @@ export function convertSeries<XDomain>(
   })
 
   const data = (series ?? [])
-    .flatMap((serie) => {
-      return (serie.data as any[]).map((data: number | DataPoint<XDomain>, i: number) => {
+    .flatMap((serie, serieIndex) => {
+      return (serie.data as any[]).map((data: ChartSeriesDataPoint<XDomain>, dataIndex: number) => {
+        const hasOutliers = seriesHasOutliers && seriesHasOutliers(serieIndex, dataIndex)
+
         return {
-          x: (data as DataPoint<XDomain>).x ?? domainPoints[i],
-          [serie.name]: getDataPointValue(data),
+          x: (data as DataPoint<XDomain>).x ?? domainPoints[dataIndex],
+          ...(hasOutliers ? getOutlierSeriesConfig(serie.name, data) : { [serie.name]: getDataPointValue(data) }),
         }
       })
     })

@@ -22,7 +22,8 @@ import { RangeAreaTick } from './RangeAreaTick'
 import { renderAxis, renderReferenceAxis } from './renderAxis'
 import { renderReferenceAreas, renderSeries } from './renderSeries'
 import { renderTooltip } from './renderTooltip'
-import { getAxisDomainEnd, getAxisDomainInit, isInsideDomain } from './util'
+import { getAxisDomainEnd, getAxisDomainInit, getDomainMaxValue, getOutlierStepFromDomain } from './util'
+import { splitOutlierSeries } from './getOutlierSeries'
 
 export interface ChartProps<XDomain> {
   type?: SeriesType
@@ -34,6 +35,7 @@ export interface ChartProps<XDomain> {
   stacked?: boolean
   colorScheme?: ChartColorScheme
   showLegend?: boolean
+  outliers?: 'auto' | 'expand-domain'
   tooltip: TooltipOptions<XDomain>
   width?: number
   height: number
@@ -53,14 +55,37 @@ export function Chart<XDomain>(props: ChartProps<XDomain>) {
     rangeAreas,
     width,
     height,
+    outliers = 'expand-domain',
   } = props
 
   const theme = useTheme()
   const domainPoints = getDomainPoints(xAxis.domain)
-  const rangedSeries = adaptSeriesDataToRange(series, xAxis.domain, domainPoints)
-  const adaptedYDomain = adaptDomainToSeriesRange(yAxis?.domain, rangedSeries)
+  const { rangedSeries, outlierSeries, hasOutliers } = splitOutlierSeries(
+    series,
+    xAxis.domain,
+    domainPoints,
+    yAxis?.domain,
+    outliers
+  )
+  const adaptedYDomain = adaptDomainToSeriesRange(yAxis?.domain, rangedSeries, hasOutliers)
+  const yDomainPoints = getDomainPoints(adaptedYDomain, hasOutliers)
+
+  const seriesHasOutliers = (seriesIndex: number, dataIndex: number) => !!outlierSeries[seriesIndex]?.data[dataIndex]
+
+  const maxRange = getDomainMaxValue(adaptedYDomain)
+  const outlierStep = getOutlierStepFromDomain(adaptedYDomain)
+
+  // TODO: verificar essa logica
+  const outlierTickValue = typeof maxRange === 'number' ? maxRange + outlierStep : null
+
   const referenceAreasWithPercents = convertReferenceRangesToPercents(referenceAreas, adaptedYDomain as ValueRange)
-  const data = convertSeries(rangedSeries, domainPoints, referenceAreasWithPercents)
+  const data = convertSeries(
+    rangedSeries,
+    domainPoints,
+    referenceAreasWithPercents,
+    seriesHasOutliers,
+    outlierTickValue
+  )
 
   return (
     <ComposedChart
@@ -85,7 +110,7 @@ export function Chart<XDomain>(props: ChartProps<XDomain>) {
       {/*Legend must be present for the X axis title to be shown*/}
 
       {renderAxis('x', xAxis, xAxis.domain, domainPoints, false)}
-      {renderAxis('y', yAxis, adaptedYDomain, getDomainPoints(adaptedYDomain), false)}
+      {renderAxis('y', yAxis, adaptedYDomain, yDomainPoints, hasOutliers)}
       {referenceAreas && renderReferenceAxis('y', referenceAreasWithPercents)}
 
       {referenceAreas?.map((ra, i) => renderReferenceAreas(ra, i, colorScheme ?? 'default'))}
@@ -119,23 +144,23 @@ export function Chart<XDomain>(props: ChartProps<XDomain>) {
           : []),
       ])}
       {series.map((s, i) =>
-        renderSeries(type, s, i, xAxis, stacked, colorScheme ?? 'default', tooltip?.type === 'point', tooltip?.render)
+        renderSeries(
+          type,
+          s,
+          i,
+          xAxis,
+          stacked,
+          colorScheme ?? 'default',
+          tooltip?.type === 'point',
+          s.name,
+          tooltip?.render,
+          data
+        )
       )}
 
       {tooltip?.type === 'line' && renderTooltip(xAxis, yAxis, tooltip?.render)}
     </ComposedChart>
   )
-}
-
-function adaptSeriesDataToRange<XDomain>(
-  series: ChartSeries<XDomain>[],
-  rangeDomain: AxisDomain,
-  rangeDomainPoints: XDomain[]
-): ChartSeries<XDomain>[] {
-  return series.map((s) => ({
-    ...s,
-    data: (s.data as any[]).filter((d, i) => (d.x ? isInsideDomain(d.x, rangeDomain) : i < rangeDomainPoints.length)),
-  }))
 }
 
 Chart.defaultProps = {

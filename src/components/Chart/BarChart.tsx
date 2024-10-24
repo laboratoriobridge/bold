@@ -54,8 +54,8 @@ export function BarChart<YDomain>(props: BarChartProps<YDomain>) {
       />
       {/*Legend must be present for the X axis title to be shown*/}
 
-      {renderAxis('y', yAxis, yAxis.domain, domainPoints, true)}
-      {renderAxis('x', xAxis, adaptedXDomain, getDomainPoints(adaptedXDomain), true)}
+      {renderAxis('y', yAxis, yAxis.domain, domainPoints, false, true)}
+      {renderAxis('x', xAxis, adaptedXDomain, getDomainPoints(adaptedXDomain), false, true)}
 
       {series.map((s, i) =>
         renderBar(i, s, stacked, tooltip?.type === 'point', yAxis.domain, colorScheme ?? 'default', tooltip?.render)

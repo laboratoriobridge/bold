@@ -1,5 +1,6 @@
 import { Color } from 'csstype'
-import { CSSProperties, ReactElement } from 'react'
+import { CSSProperties } from 'react'
+import { Moment } from 'moment'
 import { blue, gray, orange, pink } from '../../styles/colors'
 
 const CHART_COLOR_SCHEMES = {
@@ -41,13 +42,16 @@ export interface DataPoint<XDomain, YDomain = number> {
   y: YDomain
 }
 
+export type ChartSeriesDataPoint<XDomain> = number | DataPoint<XDomain, number>
+
 export interface ChartSeries<XDomain> {
   type?: SeriesType
   name: string
-  data: number[] | DataPoint<XDomain>[]
+  data: ChartSeriesDataPoint<XDomain>[] | boolean[]
   color?: string
   dashed?: boolean
   dot?: false | DotShape
+  dataKey?: string
 }
 
 export interface BarChartSeries<YDomain> {
@@ -109,7 +113,11 @@ export interface AxisOptions {
   title?: string
   unit?: string
   domain?: AxisDomain
-  tickRenderer?: (tick: TickProps) => ReactElement<SVGElement>
+  tickRenderer?: (
+    tick: TickProps,
+    domainMaxValue: number | Moment | Date,
+    isOutlierIndicator?: boolean
+  ) => React.SVGProps<SVGElement>
 }
 
 export interface RangeSelectorOptions {
@@ -135,6 +143,8 @@ export interface TickProps {
   stroke?: string
   textAnchor?: string
   width?: number
+  isOutlierIndicator?: boolean
+  domainMaxValue?: number | Date
 }
 
 export interface CustomDotProps {
@@ -147,6 +157,11 @@ export interface CustomDotProps {
 export interface TooltipOptions<XDomain> {
   type: TooltipType
   render?: TooltipRenderer<XDomain>
+}
+
+export interface DataPointWithOutlier<XDomain> {
+  data: ChartSeriesDataPoint<XDomain>
+  isOutlier: boolean
 }
 
 export function isValueRange(x: AxisDomain): x is ValueRange {
