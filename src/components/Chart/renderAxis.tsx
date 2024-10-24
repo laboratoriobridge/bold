@@ -4,12 +4,14 @@ import { Label, XAxis, XAxisProps, YAxis, YAxisProps } from 'recharts'
 import { AxisDomain, AxisOptions, isValueRange, ReferenceAreaWithPercents, TickProps } from './model'
 import { ReferenceAreaTick } from './ReferenceAreaTick'
 import { defaultChartDateFormatter } from './util'
+import { Tick } from './Tick'
 
 export function renderAxis(
   axis: 'x' | 'y',
   options: AxisOptions,
   domain: AxisDomain,
   domainPoints: any[],
+  hasOutliers: boolean,
   isBar?: boolean
 ) {
   if (axis === 'x')
@@ -18,7 +20,7 @@ export function renderAxis(
         dataKey={isBar ? undefined : 'x'}
         axisLine={!isBar}
         tickLine={!isBar}
-        {...getAxisProps(domain, domainPoints, options)}
+        {...getAxisProps(domain, domainPoints, options, hasOutliers)}
       >
         {options.title && (
           <Label
@@ -37,7 +39,7 @@ export function renderAxis(
         axisLine={isBar}
         tickLine={isBar}
         yAxisId='data'
-        {...getAxisProps(domain, domainPoints, options)}
+        {...getAxisProps(domain, domainPoints, options, hasOutliers)}
       >
         {options?.title && (
           <Label
@@ -86,7 +88,13 @@ export function renderReferenceAxis(axis: 'x' | 'y', referenceAreas: ReferenceAr
     )
 }
 
-function getAxisProps(axisDomain: AxisDomain, domainPoints: any[], axisOptions: AxisOptions): XAxisProps & YAxisProps {
+function getAxisProps(
+  axisDomain: AxisDomain,
+  domainPoints: any[],
+  axisOptions: AxisOptions,
+  hasOutliers?: boolean
+): XAxisProps & YAxisProps {
+  const outliersIndex = hasOutliers ? domainPoints.length - 1 : -1
   if (!axisDomain || Array.isArray(axisDomain))
     return {
       type: Array.isArray(axisDomain) ? 'category' : 'number',
@@ -101,7 +109,15 @@ function getAxisProps(axisDomain: AxisDomain, domainPoints: any[], axisOptions: 
       domain: [axisDomain.init, axisDomain.end],
       ticks: domainPoints,
       interval: 0,
-      tick: axisOptions.tickRenderer ?? true,
+      tick: axisOptions.tickRenderer
+        ? (props) => axisOptions.tickRenderer(props, axisDomain.end, hasOutliers && props.index === outliersIndex)
+        : (props) => (
+            <Tick
+              {...props}
+              isOutlierIndicator={hasOutliers && props.index === outliersIndex}
+              domainMaxValue={axisDomain.end}
+            />
+          ),
     }
   else
     return {
@@ -110,10 +126,20 @@ function getAxisProps(axisDomain: AxisDomain, domainPoints: any[], axisOptions: 
       ticks: domainPoints,
       interval: 0,
       tickFormatter: (x) => (axisDomain.format ?? defaultChartDateFormatter)(new Date(x)),
-      tick: axisOptions.tickRenderer ? (props) => axisOptions.tickRenderer(convertTickProps(props)) : true,
+      tick: axisOptions.tickRenderer
+        ? (props) =>
+            axisOptions.tickRenderer(
+              convertTickProps(props),
+              axisDomain.end,
+              hasOutliers && props.index === outliersIndex
+            )
+        : (props) => (
+            <Tick {...props} isOutlierIndicator={hasOutliers && props.index === outliersIndex} end={axisDomain.end} />
+          ),
     }
 }
 
+// TODO: Talvez o problema da outra issue esteja aquitalvez o problema esteja aqui
 const convertTickProps = (props: any): TickProps => ({
   fill: props.fill,
   height: props.height,

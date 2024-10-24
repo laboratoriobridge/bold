@@ -13,6 +13,7 @@ import {
   ReferenceArea,
   SeriesType,
   TooltipRenderer,
+  getOutlierSeriesName,
 } from './model'
 import { SeriesLabel } from './SeriesLabel'
 
@@ -24,15 +25,17 @@ export function renderSeries<XDomain>(
   stacked: boolean,
   colorScheme: ChartColorScheme,
   showTooltip?: boolean,
-  tooltipRenderer?: TooltipRenderer<XDomain>
+  dataKey?: string,
+  tooltipRenderer?: TooltipRenderer<XDomain>,
+  data?: ReadonlyArray<object>
 ) {
   switch (series.type ?? chartType ?? SeriesType.Line) {
     case SeriesType.Line:
-      return renderLine(index, series, showTooltip, xAxis.domain, colorScheme, tooltipRenderer)
+      return renderLine(index, series, showTooltip, xAxis.domain, colorScheme, dataKey, tooltipRenderer, data)
     case SeriesType.Column:
       return renderColumn(index, series, stacked, showTooltip, xAxis.domain, colorScheme, tooltipRenderer)
     case SeriesType.Area:
-      return renderArea(index, series, showTooltip, xAxis.domain, stacked, colorScheme, tooltipRenderer)
+      return renderArea(index, series, showTooltip, xAxis.domain, stacked, colorScheme, dataKey, tooltipRenderer, data)
   }
 }
 
@@ -65,7 +68,9 @@ function renderLine<XDomain>(
   showTooltip: boolean,
   xDomain: AxisDomain,
   colorScheme: ChartColorScheme,
-  tooltipRenderer?: TooltipRenderer<XDomain>
+  dataKey: string,
+  tooltipRenderer?: TooltipRenderer<XDomain>,
+  data?: ReadonlyArray<object>
 ) {
   const { name, dashed, dot } = series
   const cs = getChartColorScheme(colorScheme)
@@ -73,7 +78,7 @@ function renderLine<XDomain>(
 
   return (
     <Line
-      {...getDefaultRenderProps(name, color)}
+      {...getDefaultRenderProps(name, color, dataKey)}
       activeDot={{ r: 12, fill: color, opacity: 0.3 }}
       dot={
         dot === false ? (
@@ -85,7 +90,14 @@ function renderLine<XDomain>(
       strokeWidth={2}
       yAxisId='data'
       connectNulls
-      label={<SeriesLabel seriesType={SeriesType.Line} color={color} />}
+      label={(dataPoint) => (
+        <SeriesLabel
+          outlierValue={data[dataPoint.index][getOutlierSeriesName(name)]}
+          seriesType={SeriesType.Line}
+          color={color}
+          {...dataPoint}
+        />
+      )}
       strokeDasharray={dashed && '6 4'}
       legendType={dot === false ? 'plainline' : (dot as LegendType) ?? 'circle'}
     />
@@ -99,7 +111,9 @@ function renderArea<XDomain>(
   xDomain: AxisDomain,
   stacked: boolean,
   colorScheme: ChartColorScheme,
-  tooltipRenderer?: TooltipRenderer<XDomain>
+  dataKey: string,
+  tooltipRenderer?: TooltipRenderer<XDomain>,
+  data?: ReadonlyArray<object>
 ) {
   const { name, dashed, dot } = series
   const cs = getChartColorScheme(colorScheme)
@@ -107,7 +121,7 @@ function renderArea<XDomain>(
 
   return (
     <Area
-      {...getDefaultRenderProps(name, color)}
+      {...getDefaultRenderProps(name, color, dataKey)}
       fillOpacity={0.1}
       dot={
         dot === false ? (
@@ -119,7 +133,15 @@ function renderArea<XDomain>(
       strokeWidth={2}
       yAxisId='data'
       connectNulls
-      label={<SeriesLabel seriesType={SeriesType.Line} color={color} />}
+      label={(dataPoint) => (
+        <SeriesLabel
+          outlierValue={data[dataPoint.index][getOutlierSeriesName(name)]}
+          seriesName={name}
+          seriesType={SeriesType.Line}
+          color={color}
+          {...dataPoint}
+        />
+      )}
       strokeDasharray={dashed && '6 4'}
       legendType={dot === false ? 'plainline' : (dot as LegendType) ?? 'circle'}
       stackId={stacked ? 'stackId' : undefined}
@@ -206,10 +228,10 @@ export function renderBar<YDomain>(
   )
 }
 
-function getDefaultRenderProps(name: string, color: string) {
+function getDefaultRenderProps(name: string, color: string, dataKey?: string) {
   return {
     key: name,
-    dataKey: name,
+    dataKey: dataKey ?? name,
     stroke: color,
     fill: color,
     isAnimationActive: false,

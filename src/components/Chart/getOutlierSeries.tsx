@@ -1,0 +1,55 @@
+import { AxisDomain, ChartSeries, DataPointWithOutlier, DataPoint, ChartSeriesDataPoint } from './model'
+import { isInsideDomain, getDomainMaxValue, isOutlier } from './util'
+
+export function splitOutlierSeries<XDomain>(
+  series: ChartSeries<XDomain>[],
+  xDomain: AxisDomain,
+  rangeDomainPoints: XDomain[],
+  yDomain: AxisDomain,
+  outliers: 'auto' | 'expand-domain'
+): {
+  rangedSeries: ChartSeries<XDomain>[]
+  outlierSeries: ChartSeries<XDomain>[]
+  hasOutliers: boolean
+} {
+  const [rangedSeries, outlierSeries] = series.reduce(
+    (serieAcc: [ChartSeries<XDomain>[], ChartSeries<XDomain>[]], seriesCur: ChartSeries<XDomain>) => {
+      const maxValue = getDomainMaxValue(yDomain)
+
+      const seriesData: DataPointWithOutlier<XDomain>[] = (seriesCur.data as any[])
+        .filter((d, i) => (d.x ? isInsideDomain(d.x, xDomain) : i < rangeDomainPoints.length))
+        .reduce((acc: DataPointWithOutlier<XDomain>[], cur: DataPoint<XDomain, number> | number) => {
+          if (outliers === 'auto' && isOutlier(cur, maxValue)) {
+            acc.push({ data: cur, isOutlier: true })
+          } else {
+            acc.push({ data: cur, isOutlier: false })
+          }
+          return acc
+        }, [] as DataPointWithOutlier<XDomain>[])
+
+      serieAcc[0].push({
+        ...seriesCur,
+        dataKey: seriesCur.dataKey ?? seriesCur.name,
+        data: seriesData.map((series) => series.data) as ChartSeriesDataPoint<XDomain>[],
+      })
+
+      serieAcc[1].push({
+        ...seriesCur,
+        name: `outlier${seriesCur.name}`,
+        dataKey: `outlier`,
+        data: seriesData.map((series) => series.isOutlier) as boolean[],
+      })
+
+      return serieAcc
+    },
+    [[], []] as [ChartSeries<XDomain>[], ChartSeries<XDomain>[]]
+  )
+
+  const hasOutliers = outlierSeries.some((s) => s.data.some((d) => d))
+
+  return {
+    rangedSeries,
+    outlierSeries,
+    hasOutliers,
+  }
+}
