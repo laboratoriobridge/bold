@@ -13,9 +13,9 @@ import {
   ReferenceArea,
   SeriesType,
   TooltipRenderer,
-  getOutlierSeriesName,
 } from './model'
 import { SeriesLabel } from './SeriesLabel'
+import { getOutlierSeriesName } from './util'
 
 export function renderSeries<XDomain>(
   chartType: SeriesType,

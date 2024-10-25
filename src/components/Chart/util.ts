@@ -17,7 +17,7 @@ export const getAxisDomainEnd = (x: AxisDomain): number | string =>
 
 export const defaultChartDateFormatter = (date: Date) => date.toLocaleDateString()
 
-export const getDomainNumericStep = (domain: AxisDomain) =>
+const getDomainNumericStep = (domain: AxisDomain) =>
   !domain || Array.isArray(domain) ? null : isValueRange(domain) ? domain.step : domain.step?.amount
 
 export const getDomainMaxValue = (domain: AxisDomain) => (!domain || Array.isArray(domain) ? null : domain.end)
