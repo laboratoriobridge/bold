@@ -17,17 +17,22 @@ export const getAxisDomainEnd = (x: AxisDomain): number | string =>
 
 export const defaultChartDateFormatter = (date: Date) => date.toLocaleDateString()
 
-const getDomainNumericStep = (domain: AxisDomain) =>
+const getDomainNumericStep = (domain: AxisDomain): number =>
   !domain || Array.isArray(domain) ? null : isValueRange(domain) ? domain.step : domain.step?.amount
 
-export const getDomainMaxValue = (domain: AxisDomain) => (!domain || Array.isArray(domain) ? null : domain.end)
+export const getDomainMaxValue = (domain: AxisDomain): number | Date =>
+  !domain || Array.isArray(domain) ? null : domain.end
 
-export function isOutlier<XDomain>(value: ChartSeriesDataPoint<XDomain>, max?: number | Date, min?: number | Date) {
+export function isOutlier<XDomain>(
+  value: ChartSeriesDataPoint<XDomain>,
+  max?: number | Date,
+  min?: number | Date
+): boolean {
   return max && getDataPointValue(value) > +max && (!min || getDataPointValue(value) < +min)
 }
 
-export const getOutlierStep = (tickStep: number) => (tickStep < 15 ? tickStep : Math.floor(tickStep / 3))
+export const getOutlierStep = (tickStep: number): number => (tickStep < 15 ? tickStep : Math.floor(tickStep / 3))
 
-export const getOutlierStepFromDomain = (domain: AxisDomain) => getOutlierStep(getDomainNumericStep(domain))
+export const getOutlierStepFromDomain = (domain: AxisDomain): number => getOutlierStep(getDomainNumericStep(domain))
 
-export const getOutlierSeriesName = (seriesName: string) => `outliers${seriesName}`
+export const getOutlierSeriesName = (seriesName: string): string => `outliers${seriesName}`
