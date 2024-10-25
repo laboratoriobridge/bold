@@ -1,4 +1,3 @@
-import { Moment } from 'moment'
 import createMonotoneCubicInterpolator from './createMonotoneCubicInterpolator'
 import { ChartSeries, ChartSeriesDataPoint, DataPoint, ReferenceAreaWithPercents } from './model'
 import { getDataPointValue, getOutlierSeriesName } from './util'
@@ -8,7 +7,7 @@ export function convertSeries<XDomain>(
   domainPoints: XDomain[],
   refsAreas?: ReferenceAreaWithPercents<XDomain>[],
   seriesHasOutliers?: (seriesIndex: number, indexData: number) => boolean,
-  outlierTickValue?: number | Moment
+  outlierTickValue?: number | Date
 ): any[] {
   const getOutlierSeriesConfig = (seriesName: string, seriesData: ChartSeriesDataPoint<XDomain>) => {
     return {
