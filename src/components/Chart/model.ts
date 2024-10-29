@@ -1,6 +1,5 @@
 import { Color } from 'csstype'
 import { CSSProperties } from 'react'
-import { Moment } from 'moment'
 import { blue, gray, orange, pink } from '../../styles/colors'
 
 const CHART_COLOR_SCHEMES = {
@@ -115,7 +114,7 @@ export interface AxisOptions {
   domain?: AxisDomain
   tickRenderer?: (
     tick: TickProps,
-    domainMaxValue: number | Moment | Date,
+    domainMaxValue: number | Date,
     isOutlierIndicator?: boolean
   ) => React.SVGProps<SVGElement>
 }
