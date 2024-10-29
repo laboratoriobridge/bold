@@ -28,7 +28,7 @@ function getDateRangeDomainPoints(domain: DateRange, hasOutliers: boolean = fals
   } while (currValue < endMillis)
   if (!points.includes(endMillis)) points.push(domain.end.valueOf())
   if (hasOutliers) {
-    const outlierStepAmount = getOutlierStep(step.amount) // Obtém o valor do outlier
+    const outlierStepAmount = getOutlierStep(step.amount)
     const outlierDate = addStepToDate(+domain.end, { amount: outlierStepAmount, unit: step.unit })
     points.push(outlierDate)
   }
