@@ -297,7 +297,7 @@ exports[`MonthRangePicker render should render correctly 1`] = `
                         <input
                           class="emotion-0"
                           name="start"
-                          placeholder="mm/dd/yyyy"
+                          placeholder="mm/yyyy"
                           type="text"
                           value=""
                         />
@@ -331,7 +331,7 @@ exports[`MonthRangePicker render should render correctly 1`] = `
                         <input
                           class="emotion-0"
                           name="end"
-                          placeholder="mm/dd/yyyy"
+                          placeholder="mm/yyyy"
                           type="text"
                           value=""
                         />
@@ -675,7 +675,7 @@ exports[`MonthRangePicker render should render correctly when disabled 1`] = `
                           class="emotion-0"
                           disabled=""
                           name="start"
-                          placeholder="mm/dd/yyyy"
+                          placeholder="mm/yyyy"
                           type="text"
                           value=""
                         />
@@ -710,7 +710,7 @@ exports[`MonthRangePicker render should render correctly when disabled 1`] = `
                           class="emotion-0"
                           disabled=""
                           name="end"
-                          placeholder="mm/dd/yyyy"
+                          placeholder="mm/yyyy"
                           type="text"
                           value=""
                         />
@@ -1062,7 +1062,7 @@ exports[`MonthRangePicker render should render correctly when invalid 1`] = `
                         <input
                           class="emotion-0"
                           name="start"
-                          placeholder="mm/dd/yyyy"
+                          placeholder="mm/yyyy"
                           type="text"
                           value=""
                         />
@@ -1096,7 +1096,7 @@ exports[`MonthRangePicker render should render correctly when invalid 1`] = `
                         <input
                           class="emotion-0"
                           name="end"
-                          placeholder="mm/dd/yyyy"
+                          placeholder="mm/yyyy"
                           type="text"
                           value=""
                         />
@@ -1592,7 +1592,7 @@ exports[`MonthRangePicker render should render correctly when opened 1`] = `
                         <input
                           class="emotion-0"
                           name="start"
-                          placeholder="mm/dd/yyyy"
+                          placeholder="mm/yyyy"
                           type="text"
                           value=""
                         />
@@ -1626,7 +1626,7 @@ exports[`MonthRangePicker render should render correctly when opened 1`] = `
                         <input
                           class="emotion-0"
                           name="end"
-                          placeholder="mm/dd/yyyy"
+                          placeholder="mm/yyyy"
                           type="text"
                           value=""
                         />

@@ -13,6 +13,9 @@ const locale: LocaleConfiguration = {
   dateInput: {
     placeholder: 'dd/mm/aaaa',
   },
+  monthInput: {
+    placeholder: 'mm/aaaa',
+  },
   formControl: {
     required: 'Campo obrigatório',
   },
