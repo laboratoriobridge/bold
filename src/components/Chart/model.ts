@@ -1,5 +1,5 @@
 import { Color } from 'csstype'
-import { CSSProperties, ReactElement } from 'react'
+import { ReactElement } from 'react'
 import { blue, gray, orange, pink } from '../../styles/colors'
 
 const CHART_COLOR_SCHEMES = {
@@ -82,20 +82,15 @@ export interface ReferenceAreaPercent<XDomain> {
   percent: number
 }
 
-interface ReferenceAreaDescription {
-  text: string
-  color?: string
-  style?: CSSProperties
-  align?: 'top' | 'bottom'
-}
-
 export interface ReferenceArea<XDomain> {
   name: string
-  description?: ReferenceAreaDescription
-  textYOffset?: number
+  nameColor?: string
+  nameAlignment?: 'central' | 'hanging'
+  description?: string
   area: ReferenceAreaRange<XDomain>[]
   color?: string
   tickColor?: string
+  tickType?: 'horizontal' | 'vertical'
   stroke?: boolean
   strokeColor?: string
   strokeType?: 'line' | 'dashed'

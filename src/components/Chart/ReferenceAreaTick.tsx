@@ -10,6 +10,10 @@ const TICK_MARGIN = 5
 const TICK_X_DISLOCATION = 15
 const TICK_Y_DISLOCATION = 15
 
+const TICK_HORIZONTAL_HEIGHT = 2
+const TICK_HORIZONTAL_WIDTH = 8
+const TICK_VERTICAL_WIDTH = 2
+
 export interface ReferenceTickProps extends TickProps {
   refTicks: Map<number, ReferenceAreaWithPercents<any>>
 }
@@ -23,11 +27,12 @@ export function ReferenceAreaTick(props: ReferenceTickProps) {
 
   const nameLines = splitIntoLines(ref.name, MAX_CHARS_PER_LINE)
   const description = ref.description
-  const textYOffset = ref.textYOffset ?? 0
 
-  const rectangleHeight = (ref.areaPercents.slice(-1)[0].percent / 100) * height - TICK_MARGIN / 2
-  const alignDescriptionOffset =
-    ref.description?.align === 'bottom' ? rectangleHeight : nameLines.length * TICK_Y_DISLOCATION + TICK_MARGIN
+  const dominantBaseline = ref.nameAlignment ?? 'hanging'
+
+  const rectangleDefaultHeight = (ref.areaPercents.slice(-1)[0].percent / 100) * height - TICK_MARGIN / 2
+  const rectangleHeight = ref.tickType === 'horizontal' ? TICK_HORIZONTAL_HEIGHT : rectangleDefaultHeight
+  const rectangleWidth = ref.tickType === 'horizontal' ? TICK_HORIZONTAL_WIDTH : TICK_VERTICAL_WIDTH
 
   return (
     <>
@@ -35,15 +40,17 @@ export function ReferenceAreaTick(props: ReferenceTickProps) {
         x={x}
         y={y}
         dx={TICK_X_DISLOCATION}
-        dy={TICK_Y_DISLOCATION}
+        dy={0}
         textAnchor='start'
-        fill={ref.tickColor ?? ref.color}
+        dominantBaseline={dominantBaseline}
+        fill={ref.nameColor ?? ref.tickColor ?? ref.color}
         style={{ fontWeight: 'bold' }}
       >
         {nameLines.map(
           (namePart, i) =>
             namePart && (
-              <tspan key={namePart} dx={TICK_X_DISLOCATION} dy={(i + 1) * TICK_Y_DISLOCATION} x={x} y={y + textYOffset}>
+              // TODO see alignemntBaseline prop to align all tspan on center (current only the first)
+              <tspan key={namePart} dx={TICK_X_DISLOCATION} dy={i * TICK_Y_DISLOCATION} x={x} y={y}>
                 {namePart}
               </tspan>
             )
@@ -54,20 +61,21 @@ export function ReferenceAreaTick(props: ReferenceTickProps) {
           x={x + TICK_X_DISLOCATION}
           y={y + 5 + nameLines.length * TICK_Y_DISLOCATION}
           dx={TICK_X_DISLOCATION}
-          dy={TICK_Y_DISLOCATION}
+          dy={0}
           textAnchor='start'
-          fill={description.color ?? theme.pallete.text.main}
-          style={description.style}
+          dominantBaseline={dominantBaseline}
+          fill={theme.pallete.text.main}
         >
-          {splitIntoLines(description.text, MAX_CHARS_PER_LINE).map(
+          {splitIntoLines(description, MAX_CHARS_PER_LINE).map(
             (descriptionPart, i) =>
               descriptionPart && (
                 <tspan
                   key={descriptionPart}
                   dx={TICK_X_DISLOCATION}
-                  dy={(i + 1) * TICK_Y_DISLOCATION}
+                  dy={i * TICK_Y_DISLOCATION}
                   x={x}
-                  y={y + textYOffset + alignDescriptionOffset}
+                  // TODO check if TICK_MARGIN was added along with description.align
+                  y={y + nameLines.length * TICK_Y_DISLOCATION + TICK_MARGIN}
                 >
                   {descriptionPart}
                 </tspan>
@@ -80,7 +88,7 @@ export function ReferenceAreaTick(props: ReferenceTickProps) {
         y={y}
         dx={15}
         dy={TICK_MARGIN / 2}
-        width={4}
+        width={rectangleWidth}
         height={rectangleHeight}
         fill={ref.tickColor ?? ref.color}
       />
