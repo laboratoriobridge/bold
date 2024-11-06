@@ -139,7 +139,6 @@ function getAxisProps(
     }
 }
 
-// TODO: Talvez o problema da outra issue esteja aquitalvez o problema esteja aqui
 const convertTickProps = (props: any): TickProps => ({
   fill: props.fill,
   height: props.height,
