@@ -19,14 +19,14 @@ describe('adaptDomainToSeriesRange', () => {
 describe('adaptDomainToDataRange', () => {
   it('should return domain when domain is null', () => {
     const domain = null
-    const dataValues = [18, 8]
+    const dataValues: number[] = [18, 8]
     const adaptedDomain = adaptDomainToDataRange(domain as any, dataValues)
 
     expect(adaptedDomain).toBeNull()
   })
 
   it('should return domain when dataValues is null', () => {
-    const domain = ['18', '8']
+    const domain: string[] = ['18', '8']
     const dataValues = null
     const adaptedDomain = adaptDomainToDataRange(domain, dataValues as any)
 
@@ -34,8 +34,8 @@ describe('adaptDomainToDataRange', () => {
   })
 
   it('should return dataValues when domain is a array', () => {
-    const domain = ['cat 1', 'cat 2', 'cat 3', 'cat 4', 'cat 5']
-    const dataValues = ['cat 1', 'cat 2', 'cat 3', 'cat 4', 'cat 5', 'cat 6', 'cat 7']
+    const domain: string[] = ['cat 1', 'cat 2', 'cat 3', 'cat 4', 'cat 5']
+    const dataValues: string[] = ['cat 1', 'cat 2', 'cat 3', 'cat 4', 'cat 5', 'cat 6', 'cat 7']
     const adaptedDomain = adaptDomainToDataRange(domain, dataValues)
 
     expect(adaptedDomain).toEqual(dataValues)
@@ -43,7 +43,7 @@ describe('adaptDomainToDataRange', () => {
 
   it('should return domain when numericDataValues is empty', () => {
     const domain = valueRangeDomain
-    const dataValues = ['invalid', 'text']
+    const dataValues: string[] = ['invalid', 'text']
 
     const result = adaptDomainToDataRange(domain, dataValues)
 
@@ -51,7 +51,7 @@ describe('adaptDomainToDataRange', () => {
   })
 
   describe('valueRangeDomain', () => {
-    const dataValues = [18, 8]
+    const dataValues: number[] = [18, 8]
 
     it('should adapt correctly value range domain to date range', () => {
       const domain = valueRangeDomain

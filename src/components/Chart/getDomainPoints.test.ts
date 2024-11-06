@@ -10,7 +10,7 @@ describe('getDomainPoints', () => {
   })
 
   it('should return the domain when domain is an array', () => {
-    const domain = ['cat 1', 'cat 2', 'cat 3', 'cat 4', 'cat 5']
+    const domain: string[] = ['cat 1', 'cat 2', 'cat 3', 'cat 4', 'cat 5']
     const domainPoints = getDomainPoints(domain)
 
     expect(domainPoints).toEqual(domain)

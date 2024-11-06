@@ -1,11 +1,11 @@
 import { splitOutlierSeries } from './getOutlierSeries'
-import { AxisDomain } from './model'
+import { AxisDomain, ChartSeries } from './model'
 
 describe('splitOutlierSeries', () => {
   const yDomain: AxisDomain = { init: 0, end: 100, step: 20 }
   const xDomain: AxisDomain = { init: 0, end: 5, step: 1 }
-  const domainPoints = [0, 1, 2, 3, 4, 5]
-  const chartSeries = [{ name: 'test', data: [20, 50, 120] }]
+  const domainPoints: number[] = [0, 1, 2, 3, 4, 5]
+  const chartSeries: ChartSeries<number>[] = [{ name: 'test', data: [20, 50, 120] }]
 
   it.each(['auto', 'expand-domain'] as const)(
     'should get outlier series from series with outlier when request outliers based on the suportOutlier param',
@@ -56,7 +56,7 @@ describe('splitOutlierSeries', () => {
   })
 
   it('should return hasOutliers as false if no values exceed yDomain', () => {
-    const series = [{ name: 'noOutliers', data: [10, 20, 30] }]
+    const series: ChartSeries<number>[] = [{ name: 'noOutliers', data: [10, 20, 30] }]
 
     const { outlierSeries, rangedSeries, hasOutliers } = splitOutlierSeries(
       series,

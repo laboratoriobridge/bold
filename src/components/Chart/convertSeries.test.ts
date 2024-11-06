@@ -2,8 +2,8 @@ import { convertSeries } from './convertSeries'
 import { ChartSeries, ReferenceAreaWithPercents } from './model'
 
 describe('convert series to Recharts format', () => {
-  const stringDomain = ['cat 1', 'cat 2', 'cat 3', 'cat 4', 'cat 5']
-  const numericDomainPoints = [0, 10, 20, 30, 40]
+  const stringDomain: string[] = ['cat 1', 'cat 2', 'cat 3', 'cat 4', 'cat 5']
+  const numericDomainPoints: number[] = [0, 10, 20, 30, 40]
   const seriesData: ChartSeries<string>[] = [
     {
       name: 'Test',
