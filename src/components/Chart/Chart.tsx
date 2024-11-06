@@ -75,7 +75,12 @@ export function Chart<XDomain>(props: ChartProps<XDomain>) {
   const maxRange = getDomainMaxValue(adaptedYDomain)
   const outlierStep = getOutlierStepFromDomain(adaptedYDomain)
 
-  const outlierTickValue = typeof maxRange === 'number' ? maxRange + outlierStep : maxRange.getTime() + outlierStep
+  const outlierTickValue =
+    typeof maxRange === 'number'
+      ? maxRange + outlierStep
+      : maxRange instanceof Date
+      ? new Date(maxRange.getTime() + outlierStep)
+      : null
 
   const referenceAreasWithPercents = convertReferenceRangesToPercents(referenceAreas, adaptedYDomain as ValueRange)
   const data = convertSeries(

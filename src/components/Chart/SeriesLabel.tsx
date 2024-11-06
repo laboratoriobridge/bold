@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { Icon } from '..'
-import { useWidthMeasure } from '../../hooks/useWidthMeasure'
+import { useWidth } from '../../hooks/useMeasure'
 import { SeriesType } from './model'
 
 export interface SeriesLabelProps {
@@ -15,7 +15,7 @@ export interface SeriesLabelProps {
 
 export function SeriesLabel<XDomain>(props: SeriesLabelProps) {
   const { seriesType, x, y, color, value, outlierValue } = props
-  const [refLabel, widthLabel] = useWidthMeasure<SVGTextElement>()
+  const [refLabel, widthLabel] = useWidth()
 
   switch (seriesType) {
     case SeriesType.Line:
