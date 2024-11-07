@@ -24,7 +24,7 @@ export function SeriesLabel<XDomain>(props: SeriesLabelProps) {
       return outlierValue?.value != null ? (
         <>
           <Icon icon='angleUp' scale={1} x={x - iconOffset} y={y - 25} style={{ fill: 'red' }} />
-          <text ref={refLabel} x={x} y={y} dy={-9} style={{ fill: color }} data-testid='Text.outlierPoint'>
+          <text ref={refLabel} x={x} y={y} dy={-9} style={{ fill: color }}>
             {outlierValue.value}
           </text>
         </>
