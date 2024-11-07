@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { Icon } from '..'
-import { useWidthMeasure } from '../../hooks/useWidthMeasure'
+import { useWidth } from '../../hooks/useMeasure'
 import { SeriesType } from './model'
 
 export interface SeriesLabelProps {
@@ -15,7 +15,7 @@ export interface SeriesLabelProps {
 
 export function SeriesLabel<XDomain>(props: SeriesLabelProps) {
   const { seriesType, x, y, color, value, outlierValue } = props
-  const [refLabel, widthLabel] = useWidthMeasure<SVGTextElement>()
+  const [refLabel, widthLabel] = useWidth()
 
   switch (seriesType) {
     case SeriesType.Line:
@@ -24,7 +24,7 @@ export function SeriesLabel<XDomain>(props: SeriesLabelProps) {
       return outlierValue?.value != null ? (
         <>
           <Icon icon='angleUp' scale={1} x={x - iconOffset} y={y - 25} style={{ fill: 'red' }} />
-          <text ref={refLabel} x={x} y={y} dy={-9} style={{ fill: color }}>
+          <text ref={refLabel} x={x} y={y} dy={-9} style={{ fill: color }} data-testid='Text.outlierPoint'>
             {outlierValue.value}
           </text>
         </>

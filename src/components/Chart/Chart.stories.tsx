@@ -216,6 +216,7 @@ export const lineChart = () => {
           tooltip={{ type: showTooltip ? 'point' : 'none' }}
           colorScheme={colorScheme}
           showLegend={showLegend}
+          outliers={'auto'}
         />
       </ChartBody>
       <ChartFooter>{footer}</ChartFooter>

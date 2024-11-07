@@ -287,7 +287,7 @@ exports[`BaseMonthRangeInput customization should allow a custom string in range
                 <input
                   class="emotion-0"
                   name="start"
-                  placeholder="mm/dd/yyyy"
+                  placeholder="mm/yyyy"
                   type="text"
                   value=""
                 />
@@ -321,7 +321,7 @@ exports[`BaseMonthRangeInput customization should allow a custom string in range
                 <input
                   class="emotion-0"
                   name="end"
-                  placeholder="mm/dd/yyyy"
+                  placeholder="mm/yyyy"
                   type="text"
                   value=""
                 />
@@ -646,7 +646,7 @@ exports[`BaseMonthRangeInput customization should allow enUS placeholder customi
                 <input
                   class="emotion-0"
                   name="start"
-                  placeholder="mm/dd/yyyy"
+                  placeholder="mm/yyyy"
                   type="text"
                   value=""
                 />
@@ -680,7 +680,7 @@ exports[`BaseMonthRangeInput customization should allow enUS placeholder customi
                 <input
                   class="emotion-0"
                   name="end"
-                  placeholder="mm/dd/yyyy"
+                  placeholder="mm/yyyy"
                   type="text"
                   value=""
                 />
@@ -1005,7 +1005,7 @@ exports[`BaseMonthRangeInput customization should allow enUs i18n in range separ
                 <input
                   class="emotion-0"
                   name="start"
-                  placeholder="mm/dd/yyyy"
+                  placeholder="mm/yyyy"
                   type="text"
                   value=""
                 />
@@ -1039,7 +1039,7 @@ exports[`BaseMonthRangeInput customization should allow enUs i18n in range separ
                 <input
                   class="emotion-0"
                   name="end"
-                  placeholder="mm/dd/yyyy"
+                  placeholder="mm/yyyy"
                   type="text"
                   value=""
                 />
@@ -1364,7 +1364,7 @@ exports[`BaseMonthRangeInput customization should allow ptBR placeholder customi
                 <input
                   class="emotion-0"
                   name="start"
-                  placeholder="dd/mm/aaaa"
+                  placeholder="mm/aaaa"
                   type="text"
                   value=""
                 />
@@ -1398,7 +1398,7 @@ exports[`BaseMonthRangeInput customization should allow ptBR placeholder customi
                 <input
                   class="emotion-0"
                   name="end"
-                  placeholder="dd/mm/aaaa"
+                  placeholder="mm/aaaa"
                   type="text"
                   value=""
                 />
@@ -1723,7 +1723,7 @@ exports[`BaseMonthRangeInput customization should allow ptBr i18n in range separ
                 <input
                   class="emotion-0"
                   name="start"
-                  placeholder="dd/mm/aaaa"
+                  placeholder="mm/aaaa"
                   type="text"
                   value=""
                 />
@@ -1757,7 +1757,7 @@ exports[`BaseMonthRangeInput customization should allow ptBr i18n in range separ
                 <input
                   class="emotion-0"
                   name="end"
-                  placeholder="dd/mm/aaaa"
+                  placeholder="mm/aaaa"
                   type="text"
                   value=""
                 />
@@ -2082,7 +2082,7 @@ exports[`BaseMonthRangeInput render should render correctly 1`] = `
                 <input
                   class="emotion-0"
                   name="start"
-                  placeholder="mm/dd/yyyy"
+                  placeholder="mm/yyyy"
                   type="text"
                   value=""
                 />
@@ -2116,7 +2116,7 @@ exports[`BaseMonthRangeInput render should render correctly 1`] = `
                 <input
                   class="emotion-0"
                   name="end"
-                  placeholder="mm/dd/yyyy"
+                  placeholder="mm/yyyy"
                   type="text"
                   value=""
                 />
@@ -2446,7 +2446,7 @@ exports[`BaseMonthRangeInput render should render correctly when disabled 1`] = 
                   class="emotion-0"
                   disabled=""
                   name="start"
-                  placeholder="mm/dd/yyyy"
+                  placeholder="mm/yyyy"
                   type="text"
                   value=""
                 />
@@ -2481,7 +2481,7 @@ exports[`BaseMonthRangeInput render should render correctly when disabled 1`] = 
                   class="emotion-0"
                   disabled=""
                   name="end"
-                  placeholder="mm/dd/yyyy"
+                  placeholder="mm/yyyy"
                   type="text"
                   value=""
                 />
@@ -2819,7 +2819,7 @@ exports[`BaseMonthRangeInput render should render correctly when invalid 1`] = `
                 <input
                   class="emotion-0"
                   name="start"
-                  placeholder="mm/dd/yyyy"
+                  placeholder="mm/yyyy"
                   type="text"
                   value=""
                 />
@@ -2853,7 +2853,7 @@ exports[`BaseMonthRangeInput render should render correctly when invalid 1`] = `
                 <input
                   class="emotion-0"
                   name="end"
-                  placeholder="mm/dd/yyyy"
+                  placeholder="mm/yyyy"
                   type="text"
                   value=""
                 />
