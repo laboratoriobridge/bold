@@ -1,4 +1,4 @@
-import { AxisDomain, DataPoint, isDateRange, isValueRange, ChartSeriesDataPoint } from './model'
+import { AxisDomain, DataPoint, isDateRange, isValueRange, ChartSeriesDataPoint, TickProps } from './model'
 
 export function getDataPointValue(dp: number | DataPoint<any>): number {
   if (typeof dp === 'number') return dp
@@ -36,3 +36,14 @@ export const getOutlierStep = (tickStep: number): number => (tickStep < 15 ? tic
 export const getOutlierStepFromDomain = (domain: AxisDomain): number => getOutlierStep(getDomainNumericStep(domain))
 
 export const getOutlierSeriesName = (seriesName: string): string => `outliers${seriesName}`
+
+export const convertTickProps = (props: any): TickProps => ({
+  fill: props.fill,
+  height: props.height,
+  payload: props.payload,
+  stroke: props.stroke,
+  textAnchor: props.textAnchor,
+  width: props.width,
+  x: props.x,
+  y: props.y,
+})
