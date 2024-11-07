@@ -21,14 +21,15 @@ export interface ReferenceTickProps extends TickProps {
 export function ReferenceAreaTick(props: ReferenceTickProps) {
   const { x, y, payload, refTicks, height } = props
 
-  const ref = refTicks.get(+payload.value)
-
   const theme = useTheme()
 
-  const nameLines = splitIntoLines(ref.name, MAX_CHARS_PER_LINE)
-  const description = ref.description
+  const ref = refTicks.get(+payload.value)
 
-  const dominantBaseline = ref.nameAlignment ?? 'hanging'
+  const nameLines = splitIntoLines(ref.name, MAX_CHARS_PER_LINE)
+
+  const nameHight = nameLines.length * TICK_Y_DISLOCATION
+  const nameYOffset = ref.nameAlignment === 'central' ? -nameHight / 2 : 0
+  const descriptionYOffset = ref.nameAlignment === 'central' ? nameHight / 2 : nameHight
 
   const rectangleDefaultHeight = (ref.areaPercents.slice(-1)[0].percent / 100) * height - TICK_MARGIN / 2
   const rectangleHeight = ref.tickType === 'horizontal' ? TICK_HORIZONTAL_HEIGHT : rectangleDefaultHeight
@@ -38,35 +39,34 @@ export function ReferenceAreaTick(props: ReferenceTickProps) {
     <>
       <text
         x={x}
-        y={y}
+        y={y + nameYOffset}
         dx={TICK_X_DISLOCATION}
         dy={0}
         textAnchor='start'
-        dominantBaseline={dominantBaseline}
+        dominantBaseline='hanging'
         fill={ref.nameColor ?? ref.tickColor ?? ref.color}
         style={{ fontWeight: 'bold' }}
       >
         {nameLines.map(
           (namePart, i) =>
             namePart && (
-              // TODO see alignemntBaseline prop to align all tspan on center (current only the first)
-              <tspan key={namePart} dx={TICK_X_DISLOCATION} dy={i * TICK_Y_DISLOCATION} x={x} y={y}>
+              <tspan key={namePart} dx={TICK_X_DISLOCATION} dy={i * TICK_Y_DISLOCATION} x={x} y={y + nameYOffset}>
                 {namePart}
               </tspan>
             )
         )}
       </text>
-      {description && (
+      {ref.description && (
         <text
           x={x + TICK_X_DISLOCATION}
-          y={y + 5 + nameLines.length * TICK_Y_DISLOCATION}
+          y={y + TICK_MARGIN + descriptionYOffset}
           dx={TICK_X_DISLOCATION}
           dy={0}
           textAnchor='start'
-          dominantBaseline={dominantBaseline}
+          dominantBaseline='hanging'
           fill={theme.pallete.text.main}
         >
-          {splitIntoLines(description, MAX_CHARS_PER_LINE).map(
+          {splitIntoLines(ref.description, MAX_CHARS_PER_LINE).map(
             (descriptionPart, i) =>
               descriptionPart && (
                 <tspan
@@ -74,8 +74,7 @@ export function ReferenceAreaTick(props: ReferenceTickProps) {
                   dx={TICK_X_DISLOCATION}
                   dy={i * TICK_Y_DISLOCATION}
                   x={x}
-                  // TODO check if TICK_MARGIN was added along with description.align
-                  y={y + nameLines.length * TICK_Y_DISLOCATION + TICK_MARGIN}
+                  y={y + TICK_MARGIN + descriptionYOffset}
                 >
                   {descriptionPart}
                 </tspan>
