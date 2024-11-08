@@ -82,18 +82,30 @@ export interface ReferenceAreaPercent<XDomain> {
   percent: number
 }
 
+interface ReferenceAreaName {
+  value: string
+  color?: string
+  alignment?: 'central' | 'hanging'
+}
+
+interface ReferenceAreaTick {
+  color?: string
+  kind?: 'horizontal' | 'vertical'
+}
+
+interface ReferenceAreaStroke {
+  show?: boolean
+  color?: string
+  kind?: 'line' | 'dashed'
+}
+
 export interface ReferenceArea<XDomain> {
-  name: string
-  nameColor?: string
-  nameAlignment?: 'central' | 'hanging'
+  name: ReferenceAreaName
   description?: string
   area: ReferenceAreaRange<XDomain>[]
   color?: string
-  tickColor?: string
-  tickType?: 'horizontal' | 'vertical'
-  stroke?: boolean
-  strokeColor?: string
-  strokeType?: 'line' | 'dashed'
+  tick?: ReferenceAreaTick
+  stroke?: ReferenceAreaStroke
 }
 
 export interface ReferenceAreaWithPercents<XDomain> extends ReferenceArea<XDomain> {

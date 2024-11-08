@@ -25,15 +25,10 @@ export function ReferenceAreaTick(props: ReferenceTickProps) {
 
   const ref = refTicks.get(+payload.value)
 
-  const nameLines = splitIntoLines(ref.name, MAX_CHARS_PER_LINE)
+  const nameLines = splitIntoLines(ref.name.value, MAX_CHARS_PER_LINE)
 
-  const nameHight = nameLines.length * TICK_Y_DISLOCATION
-  const nameYOffset = ref.nameAlignment === 'central' ? -nameHight / 2 : 0
-  const descriptionYOffset = ref.nameAlignment === 'central' ? nameHight / 2 : nameHight
-
-  const rectangleDefaultHeight = (ref.areaPercents.slice(-1)[0].percent / 100) * height - TICK_MARGIN / 2
-  const rectangleHeight = ref.tickType === 'horizontal' ? TICK_HORIZONTAL_HEIGHT : rectangleDefaultHeight
-  const rectangleWidth = ref.tickType === 'horizontal' ? TICK_HORIZONTAL_WIDTH : TICK_VERTICAL_WIDTH
+  const { nameYOffset, descriptionYOffset } = getTextYOffset(nameLines.length, ref)
+  const { rectangleHeight, rectangleWidth } = getRectangleDimensions(height, ref)
 
   return (
     <>
@@ -44,7 +39,7 @@ export function ReferenceAreaTick(props: ReferenceTickProps) {
         dy={0}
         textAnchor='start'
         dominantBaseline='hanging'
-        fill={ref.nameColor ?? ref.tickColor ?? ref.color}
+        fill={ref.name.color ?? ref.tick?.color ?? ref.color}
         style={{ fontWeight: 'bold' }}
       >
         {nameLines.map(
@@ -89,8 +84,26 @@ export function ReferenceAreaTick(props: ReferenceTickProps) {
         dy={TICK_MARGIN / 2}
         width={rectangleWidth}
         height={rectangleHeight}
-        fill={ref.tickColor ?? ref.color}
+        fill={ref.tick?.color ?? ref.color}
       />
     </>
   )
+}
+
+function getTextYOffset(nameLines: number, ref: ReferenceAreaWithPercents<any>) {
+  const nameHight = nameLines * TICK_Y_DISLOCATION
+
+  const nameYOffset = ref.name.alignment === 'central' ? -nameHight / 2 : 0
+  const descriptionYOffset = ref.name.alignment === 'central' ? nameHight / 2 : nameHight
+
+  return { nameYOffset, descriptionYOffset }
+}
+
+function getRectangleDimensions(height: number, ref: ReferenceAreaWithPercents<any>) {
+  const rectangleDefaultHeight = (ref.areaPercents.slice(-1)[0].percent / 100) * height - TICK_MARGIN / 2
+
+  const rectangleHeight = ref.tick?.kind === 'horizontal' ? TICK_HORIZONTAL_HEIGHT : rectangleDefaultHeight
+  const rectangleWidth = ref.tick?.kind === 'horizontal' ? TICK_HORIZONTAL_WIDTH : TICK_VERTICAL_WIDTH
+
+  return { rectangleHeight, rectangleWidth }
 }

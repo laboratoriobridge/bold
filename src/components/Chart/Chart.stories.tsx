@@ -107,7 +107,7 @@ const pieData: PieChartDataPoint[] = [
 
 const referenceAreas: ReferenceArea<number>[] = [
   {
-    name: 'Area 1',
+    name: { value: 'Area 1' },
     description: 'Area 1 desc',
     area: [
       { x: 0, upperLimit: 2000 },
@@ -122,11 +122,11 @@ const referenceAreas: ReferenceArea<number>[] = [
       { x: 700, upperLimit: 2000 },
     ],
     color: '#feeced',
-    tickColor: '#f75b60',
-    strokeType: 'dashed',
+    tick: { color: '#f75b60' },
+    stroke: { kind: 'dashed' },
   },
   {
-    name: 'Area 2',
+    name: { value: 'Area 2' },
     description: 'Area 2 desc',
     area: [
       { x: 0, upperLimit: 5000 },
@@ -140,11 +140,11 @@ const referenceAreas: ReferenceArea<number>[] = [
       { x: 700, upperLimit: 5000 },
     ],
     color: '#ffeed6',
-    tickColor: '#b58b00',
-    strokeType: 'line',
+    tick: { color: '#b58b00' },
+    stroke: { kind: 'line' },
   },
   {
-    name: 'Area 3',
+    name: { value: 'Area 3' },
     area: [
       { x: 0, upperLimit: 10000 },
       { x: 20, upperLimit: 10000 },
@@ -158,8 +158,8 @@ const referenceAreas: ReferenceArea<number>[] = [
       { x: 700, upperLimit: 10000 },
     ],
     color: '#e1f6df',
-    tickColor: '#40a42b',
-    stroke: false,
+    tick: { color: '#40a42b' },
+    stroke: { show: false },
   },
 ]
 
@@ -176,50 +176,37 @@ const generateArea = ({
 
 const boundedReferenceAreas: ReferenceArea<number>[] = [
   {
-    name: 'Empty',
+    name: { value: 'Empty' },
     area: generateArea({ length: 8, start: 2000, step: 350 }),
     color: 'none',
   },
   {
-    name: 'Lower limit',
-    nameAlignment: 'central',
+    name: { value: 'Lower limit', alignment: 'central' },
     area: generateArea({ length: 8, start: 2000, step: 350 }),
     color: purple.c90,
-    strokeColor: purple.c30,
-    strokeType: 'dashed',
-    tickColor: purple.c30,
-    tickType: 'horizontal',
+    stroke: { color: purple.c30, kind: 'dashed' },
+    tick: { color: purple.c30, kind: 'horizontal' },
   },
   {
-    name: 'Lower ref',
-    nameAlignment: 'central',
-    nameColor: purple.c30,
+    name: { value: 'Lower ref', alignment: 'central', color: purple.c30 },
     area: generateArea({ length: 8, start: 2500, step: 450 }),
     color: purple.c90,
-    strokeColor: purple.c30,
-    strokeType: 'line',
-    tickColor: purple.c30,
-    tickType: 'horizontal',
+    stroke: { color: purple.c30, kind: 'line' },
+    tick: { color: purple.c30, kind: 'horizontal' },
   },
   {
-    name: 'Upper ref',
-    nameAlignment: 'central',
+    name: { value: 'Upper ref', alignment: 'central' },
     area: generateArea({ length: 8, start: 3000, step: 650 }),
     color: purple.c70,
-    strokeColor: purple.c30,
-    strokeType: 'line',
-    tickColor: purple.c30,
-    tickType: 'horizontal',
+    stroke: { color: purple.c30, kind: 'line' },
+    tick: { color: purple.c30, kind: 'horizontal' },
   },
   {
-    name: 'Upper limit',
-    nameAlignment: 'central',
+    name: { value: 'Upper limit', alignment: 'central' },
     area: generateArea({ length: 8, start: 3500, step: 750 }),
     color: purple.c90,
-    strokeColor: purple.c60,
-    strokeType: 'dashed',
-    tickColor: purple.c30,
-    tickType: 'horizontal',
+    stroke: { color: purple.c30, kind: 'dashed' },
+    tick: { color: purple.c30, kind: 'horizontal' },
   },
 ]
 
