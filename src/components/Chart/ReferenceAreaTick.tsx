@@ -12,7 +12,7 @@ const TICK_Y_DISLOCATION = 15
 
 const TICK_HORIZONTAL_HEIGHT = 2
 const TICK_HORIZONTAL_WIDTH = 8
-const TICK_VERTICAL_WIDTH = 2
+const TICK_VERTICAL_WIDTH = 4
 
 export interface ReferenceTickProps extends TickProps {
   refTicks: Map<number, ReferenceAreaWithPercents<any>>
