@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { TickProps } from './model'
-import { convertTickProps } from './renderAxis'
+import { convertTickProps } from './util'
 
 export function Tick(props: TickProps) {
   const {
