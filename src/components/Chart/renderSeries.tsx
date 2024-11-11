@@ -170,7 +170,7 @@ function renderColumn<XDomain>(
   return (
     <Bar
       {...getDefaultRenderProps(name, color)}
-      stackId={stacked && 'stackId'}
+      stackId={stacked ? 'stackId' : undefined}
       yAxisId='data'
       shape={(props: BarShapeProps<XDomain>) => (
         <ChartTooltip
@@ -207,7 +207,7 @@ export function renderBar<YDomain>(
   return (
     <Bar
       {...getDefaultRenderProps(name, color)}
-      stackId={stacked && 'stackId'}
+      stackId={stacked ? 'stackId' : undefined}
       yAxisId='data'
       shape={(props) => (
         <ChartTooltip
