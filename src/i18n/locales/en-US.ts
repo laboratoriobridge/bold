@@ -11,6 +11,9 @@ const locale = {
   dateInput: {
     placeholder: 'mm/dd/yyyy',
   },
+  monthInput: {
+    placeholder: 'mm/yyyy',
+  },
   formControl: {
     required: 'Required field',
   },
