@@ -196,7 +196,6 @@ const boundedReferenceAreas: ReferenceArea<number>[] = [
   },
   {
     name: { value: 'Upper ref', alignment: 'central' },
-    description: 'Description',
     area: generateArea({ length: 8, start: 3000, step: 650 }),
     color: purple.c70,
     stroke: { color: purple.c30, kind: 'line' },
