@@ -9,11 +9,11 @@ describe('getDomainMaxValue', () => {
   })
 
   it('should return the domain end value when domain is an valid object', () => {
-    const domain: AxisDomain = { init: 10, end: 10, step: 10 }
+    const domain: AxisDomain = { init: 10, end: 15, step: 10 }
 
     const result = getDomainMaxValue(domain)
 
-    expect(result).toBe(10)
+    expect(result).toBe(15)
   })
 })
 

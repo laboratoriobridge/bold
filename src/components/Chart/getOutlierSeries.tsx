@@ -1,4 +1,4 @@
-import { AxisDomain, ChartSeries, DataPointWithOutlier, DataPoint, ChartSeriesDataPoint } from './model'
+import { AxisDomain, ChartSeries, DataPointWithOutlier, DataPoint, ChartSeriesDataPoint, OutliersType } from './model'
 import { isInsideDomain, getDomainMaxValue, isOutlier } from './util'
 
 export function splitOutlierSeries<XDomain>(
@@ -6,17 +6,17 @@ export function splitOutlierSeries<XDomain>(
   xDomain: AxisDomain,
   rangeDomainPoints: XDomain[],
   yDomain: AxisDomain,
-  outliers: 'auto' | 'expand-domain'
+  outliers: OutliersType
 ): {
   rangedSeries: ChartSeries<XDomain>[]
   outlierSeries: ChartSeries<XDomain>[]
   hasOutliers: boolean
 } {
   const [rangedSeries, outlierSeries] = series.reduce(
-    (serieAcc: [ChartSeries<XDomain>[], ChartSeries<XDomain>[]], seriesCur: ChartSeries<XDomain>) => {
+    (serieAcc: [ChartSeries<XDomain>[], ChartSeries<XDomain>[]], seriesCurr: ChartSeries<XDomain>) => {
       const maxValue = getDomainMaxValue(yDomain)
 
-      const seriesData: DataPointWithOutlier<XDomain>[] = (seriesCur.data as any[])
+      const seriesData: DataPointWithOutlier<XDomain>[] = (seriesCurr.data as any[])
         .filter((d, i) => (d.x ? isInsideDomain(d.x, xDomain) : i < rangeDomainPoints.length))
         .reduce((acc: DataPointWithOutlier<XDomain>[], cur: DataPoint<XDomain, number> | number) => {
           if (outliers === 'auto' && isOutlier(cur, maxValue)) {
@@ -28,14 +28,14 @@ export function splitOutlierSeries<XDomain>(
         }, [] as DataPointWithOutlier<XDomain>[])
 
       serieAcc[0].push({
-        ...seriesCur,
-        dataKey: seriesCur.dataKey ?? seriesCur.name,
+        ...seriesCurr,
+        dataKey: seriesCurr.dataKey ?? seriesCurr.name,
         data: seriesData.map((series) => series.data) as ChartSeriesDataPoint<XDomain>[],
       })
 
       serieAcc[1].push({
-        ...seriesCur,
-        name: `outlier${seriesCur.name}`,
+        ...seriesCurr,
+        name: `outlier${seriesCurr.name}`,
         dataKey: `outlier`,
         data: seriesData.map((series) => series.isOutlier) as boolean[],
       })

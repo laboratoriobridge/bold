@@ -1,6 +1,7 @@
 import { Color } from 'csstype'
 import { CSSProperties } from 'react'
 import { blue, gray, orange, pink } from '../../styles/colors'
+import { TickProps } from './Tick'
 
 const CHART_COLOR_SCHEMES = {
   blue: Object.values(blue).filter((_, i) => i % 2) as Color[],
@@ -25,6 +26,7 @@ export type ReferenceAreaDataPoint = number | DataPoint<number>
 export type AxisDomain = string[] | ValueRange | DateRange
 export type TooltipType = 'point' | 'line' | 'none'
 export type DotShape = 'circle' | 'square' | 'rect' | 'triangle' | 'diamond' | 'cross' | 'star' | 'happy'
+export type OutliersType = 'auto' | 'expand-domain'
 
 export type TooltipRenderer<XDomain> = (
   points?: (DataPoint<XDomain> & { seriesName: string })[]
@@ -123,27 +125,6 @@ export interface RangeSelectorOptions {
   label?: string
   options: { [x: string]: Partial<AxisDomain> }
   defaultOption?: string
-}
-
-export interface TickPayload {
-  coordinate: number
-  isShow: boolean
-  offset: number
-  tickCoord: number
-  value: any
-}
-
-export interface TickProps {
-  x?: number
-  y?: number
-  height?: number
-  payload?: TickPayload
-  fill?: string
-  stroke?: string
-  textAnchor?: string
-  width?: number
-  isOutlierIndicator?: boolean
-  domainMaxValue?: number | Date
 }
 
 export interface CustomDotProps {

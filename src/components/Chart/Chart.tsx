@@ -17,6 +17,7 @@ import {
   SeriesType,
   TooltipOptions,
   ValueRange,
+  OutliersType,
 } from './model'
 import { RangeAreaTick } from './RangeAreaTick'
 import { renderAxis, renderReferenceAxis } from './renderAxis'
@@ -35,7 +36,7 @@ export interface ChartProps<XDomain> {
   stacked?: boolean
   colorScheme?: ChartColorScheme
   showLegend?: boolean
-  outliers?: 'auto' | 'expand-domain'
+  outliers?: OutliersType
   tooltip: TooltipOptions<XDomain>
   width?: number
   height: number

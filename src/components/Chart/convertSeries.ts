@@ -6,7 +6,7 @@ export function convertSeries<XDomain>(
   series: ChartSeries<XDomain>[],
   domainPoints: XDomain[],
   refsAreas?: ReferenceAreaWithPercents<XDomain>[],
-  seriesHasOutliers?: (seriesIndex: number, indexData: number) => boolean,
+  seriesHasOutliers?: (seriesIndex: number, dataIndex: number) => boolean,
   outlierTickValue?: number | Date
 ): any[] {
   const getOutlierSeriesConfig = (seriesName: string, seriesData: ChartSeriesDataPoint<XDomain>) => {

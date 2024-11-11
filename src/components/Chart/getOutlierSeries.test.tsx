@@ -1,5 +1,5 @@
 import { splitOutlierSeries } from './getOutlierSeries'
-import { AxisDomain, ChartSeries } from './model'
+import { AxisDomain, ChartSeries, OutliersType } from './model'
 
 describe('splitOutlierSeries', () => {
   const yDomain: AxisDomain = { init: 0, end: 100, step: 20 }
@@ -7,19 +7,26 @@ describe('splitOutlierSeries', () => {
   const domainPoints: number[] = [0, 1, 2, 3, 4, 5]
   const chartSeries: ChartSeries<number>[] = [{ name: 'test', data: [20, 50, 120] }]
 
-  it.each(['auto', 'expand-domain'] as const)(
-    'should get outlier series from series with outlier when request outliers based on the suportOutlier param',
-    (outliers: 'auto' | 'expand-domain') => {
+  const outliersOptions: OutliersType[] = ['auto', 'expand-domain']
+
+  it.each(outliersOptions)(
+    'should get outlier series from series with outlier when request outliers based on the outlier type param',
+    (outliers) => {
       const series = chartSeries
+      const seriesFirstData = series[0]
 
       const { rangedSeries, outlierSeries } = splitOutlierSeries(series, xDomain, domainPoints, yDomain, outliers)
 
-      expect(outlierSeries[0]).toHaveProperty('name', 'outlier' + series[0].name)
-      expect(outlierSeries[0]).toHaveProperty('dataKey', 'outlier')
-      expect(outlierSeries[0]).toHaveProperty('data', [false, false, outliers === 'auto'])
-      expect(rangedSeries[0]).toHaveProperty('name', series[0].name)
-      expect(rangedSeries[0]).toHaveProperty('dataKey', series[0].name)
-      expect(rangedSeries[0]).toHaveProperty('data', series[0].data)
+      const outlierSeriesFirstResult = outlierSeries[0]
+      const rangedSeriesFirstResult = rangedSeries[0]
+
+      expect(outlierSeriesFirstResult).toHaveProperty('name', 'outlier' + seriesFirstData.name)
+      expect(outlierSeriesFirstResult).toHaveProperty('dataKey', 'outlier')
+      expect(outlierSeriesFirstResult).toHaveProperty('data', [false, false, outliers === 'auto'])
+
+      expect(rangedSeriesFirstResult).toHaveProperty('name', seriesFirstData.name)
+      expect(rangedSeriesFirstResult).toHaveProperty('dataKey', seriesFirstData.name)
+      expect(rangedSeriesFirstResult).toHaveProperty('data', seriesFirstData.data)
     }
   )
 
@@ -82,8 +89,8 @@ describe('splitOutlierSeries', () => {
       'auto'
     )
 
-    expect(outlierSeries[0].data).toEqual([])
-    expect(rangedSeries[0].data).toEqual([])
+    expect(outlierSeries[0].data).toHaveLength(0)
+    expect(rangedSeries[0].data).toHaveLength(0)
     expect(hasOutliers).toBe(false)
   })
 })
