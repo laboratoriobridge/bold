@@ -94,7 +94,7 @@ const lineSeriesDP: ChartSeries<number>[] = [
   singleLineSeries,
   {
     name: 'pv',
-    data: [2400, 1398, 9800, 3908, 4800, 3800],
+    data: [2400, 1398, 9800, 3908, 1800, 2800],
     dashed: true,
   },
 ]
@@ -147,7 +147,7 @@ const referenceAreas: ReferenceArea<number>[] = [
     name: { value: 'Area 3' },
     area: [
       { x: 0, upperLimit: 10000 },
-      { x: 20, upperLimit: 10000 },
+      { x: 20, upperLimit: 10000 }, // pq tem um step diferente? marcador de eixo muda?
       { x: 100, upperLimit: 10000 },
       { x: 120, upperLimit: 10000 },
       { x: 200, upperLimit: 10000 },
@@ -181,7 +181,7 @@ const boundedReferenceAreas: ReferenceArea<number>[] = [
     color: 'none',
   },
   {
-    name: { value: 'Lower limit', alignment: 'central' },
+    name: { value: 'Lower', alignment: 'central' },
     area: generateArea({ length: 8, start: 2000, step: 350 }),
     color: purple.c90,
     stroke: { color: purple.c30, kind: 'dashed' },
@@ -196,13 +196,14 @@ const boundedReferenceAreas: ReferenceArea<number>[] = [
   },
   {
     name: { value: 'Upper ref', alignment: 'central' },
+    description: 'Description',
     area: generateArea({ length: 8, start: 3000, step: 650 }),
     color: purple.c70,
     stroke: { color: purple.c30, kind: 'line' },
     tick: { color: purple.c30, kind: 'horizontal' },
   },
   {
-    name: { value: 'Upper limit', alignment: 'central' },
+    name: { value: 'Upper', alignment: 'central' },
     area: generateArea({ length: 8, start: 3500, step: 750 }),
     color: purple.c90,
     stroke: { color: purple.c30, kind: 'dashed' },
