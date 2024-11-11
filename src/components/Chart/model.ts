@@ -85,7 +85,7 @@ export interface ReferenceAreaPercent<XDomain> {
 interface ReferenceAreaName {
   value: string
   color?: string
-  alignment?: 'central' | 'hanging'
+  alignment?: 'central' | 'text-before-edge'
 }
 
 interface ReferenceAreaTick {

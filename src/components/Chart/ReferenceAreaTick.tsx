@@ -1,6 +1,7 @@
 import React from 'react'
 import { Rectangle } from 'recharts'
 
+import { last } from 'lodash'
 import { useTheme } from '../../styles'
 import { splitIntoLines } from '../../util/string'
 import { ReferenceAreaWithPercents, TickProps } from './model'
@@ -27,7 +28,7 @@ export function ReferenceAreaTick(props: ReferenceTickProps) {
 
   const nameLines = splitIntoLines(ref.name.value, MAX_CHARS_PER_LINE)
 
-  const { nameYOffset, descriptionYOffset } = getTextYOffset(nameLines.length, ref)
+  const { nameYOffset, descriptionYOffset, dominantBaseline } = getTextAlignmentParams(nameLines.length, ref)
   const { rectangleHeight, rectangleWidth } = getRectangleDimensions(height, ref)
 
   return (
@@ -38,7 +39,7 @@ export function ReferenceAreaTick(props: ReferenceTickProps) {
         dx={TICK_X_DISLOCATION}
         dy={0}
         textAnchor='start'
-        dominantBaseline='hanging'
+        dominantBaseline={dominantBaseline}
         fill={ref.name.color ?? ref.tick?.color ?? ref.color}
         style={{ fontWeight: 'bold' }}
       >
@@ -54,11 +55,11 @@ export function ReferenceAreaTick(props: ReferenceTickProps) {
       {ref.description && (
         <text
           x={x + TICK_X_DISLOCATION}
-          y={y + TICK_MARGIN + descriptionYOffset}
+          y={y + TICK_MARGIN + TICK_Y_DISLOCATION + descriptionYOffset}
           dx={TICK_X_DISLOCATION}
           dy={0}
           textAnchor='start'
-          dominantBaseline='hanging'
+          dominantBaseline={dominantBaseline}
           fill={theme.pallete.text.main}
         >
           {splitIntoLines(ref.description, MAX_CHARS_PER_LINE).map(
@@ -69,7 +70,7 @@ export function ReferenceAreaTick(props: ReferenceTickProps) {
                   dx={TICK_X_DISLOCATION}
                   dy={i * TICK_Y_DISLOCATION}
                   x={x}
-                  y={y + TICK_MARGIN + descriptionYOffset}
+                  y={y + TICK_MARGIN + TICK_Y_DISLOCATION + descriptionYOffset}
                 >
                   {descriptionPart}
                 </tspan>
@@ -80,7 +81,7 @@ export function ReferenceAreaTick(props: ReferenceTickProps) {
       <Rectangle
         x={x}
         y={y}
-        dx={15}
+        dx={TICK_X_DISLOCATION}
         dy={TICK_MARGIN / 2}
         width={rectangleWidth}
         height={rectangleHeight}
@@ -90,17 +91,18 @@ export function ReferenceAreaTick(props: ReferenceTickProps) {
   )
 }
 
-function getTextYOffset(nameLines: number, ref: ReferenceAreaWithPercents<any>) {
-  const nameHight = nameLines * TICK_Y_DISLOCATION
+function getTextAlignmentParams(nameLines: number, ref: ReferenceAreaWithPercents<any>) {
+  const dominantBaseline = ref.name.alignment ?? 'text-before-edge'
+  const nameExtraLinesHeight = nameLines > 1 ? (nameLines - 1) * TICK_Y_DISLOCATION : 0
 
-  const nameYOffset = ref.name.alignment === 'central' ? -nameHight / 2 : 0
-  const descriptionYOffset = ref.name.alignment === 'central' ? nameHight / 2 : nameHight
+  const nameYOffset = dominantBaseline === 'central' ? -nameExtraLinesHeight / 2 : 0
+  const descriptionYOffset = dominantBaseline === 'central' ? nameExtraLinesHeight / 2 : nameExtraLinesHeight
 
-  return { nameYOffset, descriptionYOffset }
+  return { nameYOffset, descriptionYOffset, dominantBaseline }
 }
 
 function getRectangleDimensions(height: number, ref: ReferenceAreaWithPercents<any>) {
-  const rectangleDefaultHeight = (ref.areaPercents.slice(-1)[0].percent / 100) * height - TICK_MARGIN / 2
+  const rectangleDefaultHeight = (last(ref.areaPercents).percent / 100) * height - TICK_MARGIN / 2
 
   const rectangleHeight = ref.tick?.kind === 'horizontal' ? TICK_HORIZONTAL_HEIGHT : rectangleDefaultHeight
   const rectangleWidth = ref.tick?.kind === 'horizontal' ? TICK_HORIZONTAL_WIDTH : TICK_VERTICAL_WIDTH
