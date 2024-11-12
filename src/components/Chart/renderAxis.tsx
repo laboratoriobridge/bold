@@ -110,7 +110,12 @@ function getAxisProps(
       ticks: domainPoints,
       interval: 0,
       tick: axisOptions.tickRenderer
-        ? (props) => axisOptions.tickRenderer(props, axisDomain.end, hasOutliers && props.index === outliersIndex)
+        ? (props) =>
+            axisOptions.tickRenderer(
+              convertTickProps(props),
+              axisDomain.end,
+              hasOutliers && props.index === outliersIndex
+            )
         : (props) => (
             <Tick
               {...props}

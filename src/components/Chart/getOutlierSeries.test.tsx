@@ -62,7 +62,7 @@ describe('splitOutlierSeries', () => {
     expect(hasOutliers).toBe(false)
   })
 
-  it('should return hasOutliers as false if no values exceed yDomain', () => {
+  it('should return hasOutliers as false if no values exceed yDomain and outliers is set to auto', () => {
     const series: ChartSeries<number>[] = [{ name: 'noOutliers', data: [10, 20, 30] }]
 
     const { outlierSeries, rangedSeries, hasOutliers } = splitOutlierSeries(
@@ -78,7 +78,7 @@ describe('splitOutlierSeries', () => {
     expect(hasOutliers).toBe(false)
   })
 
-  it('should handle series with empty data', () => {
+  it('should handle series with empty data when outliers is set to auto', () => {
     const series = [{ name: 'emptySeries', data: [] }]
 
     const { outlierSeries, rangedSeries, hasOutliers } = splitOutlierSeries(

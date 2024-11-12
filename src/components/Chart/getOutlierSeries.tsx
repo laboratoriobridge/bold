@@ -16,16 +16,11 @@ export function splitOutlierSeries<XDomain>(
     (serieAcc: [ChartSeries<XDomain>[], ChartSeries<XDomain>[]], seriesCurr: ChartSeries<XDomain>) => {
       const maxValue = getDomainMaxValue(yDomain)
 
-      const seriesData: DataPointWithOutlier<XDomain>[] = (seriesCurr.data as any[])
-        .filter((d, i) => (d.x ? isInsideDomain(d.x, xDomain) : i < rangeDomainPoints.length))
-        .reduce((acc: DataPointWithOutlier<XDomain>[], cur: DataPoint<XDomain, number> | number) => {
-          if (outliers === 'auto' && isOutlier(cur, maxValue)) {
-            acc.push({ data: cur, isOutlier: true })
-          } else {
-            acc.push({ data: cur, isOutlier: false })
-          }
-          return acc
-        }, [] as DataPointWithOutlier<XDomain>[])
+      const filteredData = (seriesCurr.data as DataPoint<XDomain, number>[]).filter((d, i) =>
+        d.x ? isInsideDomain(d.x, xDomain) : i < rangeDomainPoints.length
+      )
+
+      const seriesData: DataPointWithOutlier<XDomain>[] = reduceSeriesData(filteredData, maxValue, outliers)
 
       serieAcc[0].push({
         ...seriesCurr,
@@ -52,4 +47,19 @@ export function splitOutlierSeries<XDomain>(
     outlierSeries,
     hasOutliers,
   }
+}
+
+function reduceSeriesData<XDomain>(
+  data: (DataPoint<XDomain, number> | number)[],
+  maxValue: number | Date,
+  outliers: OutliersType
+): DataPointWithOutlier<XDomain>[] {
+  return data.reduce((acc: DataPointWithOutlier<XDomain>[], cur: DataPoint<XDomain, number> | number) => {
+    if (outliers === 'auto') {
+      acc.push({ data: cur, isOutlier: isOutlier(cur, maxValue) })
+    } else {
+      acc.push({ data: cur, isOutlier: false })
+    }
+    return acc
+  }, [])
 }

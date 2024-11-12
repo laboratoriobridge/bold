@@ -23,7 +23,7 @@ import { RangeAreaTick } from './RangeAreaTick'
 import { renderAxis, renderReferenceAxis } from './renderAxis'
 import { renderReferenceAreas, renderSeries } from './renderSeries'
 import { renderTooltip } from './renderTooltip'
-import { getAxisDomainEnd, getAxisDomainInit, getDomainMaxValue, getOutlierStepFromDomain } from './util'
+import { getAxisDomainEnd, getAxisDomainInit } from './util'
 import { splitOutlierSeries } from './getOutlierSeries'
 
 export interface ChartProps<XDomain> {
@@ -71,26 +71,8 @@ export function Chart<XDomain>(props: ChartProps<XDomain>) {
   const adaptedYDomain = adaptDomainToSeriesRange(yAxis?.domain, rangedSeries, hasOutliers)
   const yDomainPoints = getDomainPoints(adaptedYDomain, hasOutliers)
 
-  const seriesHasOutliers = (seriesIndex: number, dataIndex: number) => !!outlierSeries[seriesIndex]?.data[dataIndex]
-
-  const maxRange = getDomainMaxValue(adaptedYDomain)
-  const outlierStep = getOutlierStepFromDomain(adaptedYDomain)
-
-  const outlierTickValue =
-    typeof maxRange === 'number'
-      ? maxRange + outlierStep
-      : maxRange instanceof Date
-      ? new Date(maxRange.getTime() + outlierStep)
-      : null
-
   const referenceAreasWithPercents = convertReferenceRangesToPercents(referenceAreas, adaptedYDomain as ValueRange)
-  const data = convertSeries(
-    rangedSeries,
-    domainPoints,
-    referenceAreasWithPercents,
-    seriesHasOutliers,
-    outlierTickValue
-  )
+  const data = convertSeries(rangedSeries, domainPoints, adaptedYDomain, referenceAreasWithPercents, outlierSeries)
 
   return (
     <ComposedChart

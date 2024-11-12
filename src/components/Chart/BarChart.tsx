@@ -30,7 +30,7 @@ export function BarChart<YDomain>(props: BarChartProps<YDomain>) {
   const domainPoints = getDomainPoints(yAxis.domain)
   const rangedSeries = adaptSeriesDataToRange(series, yAxis.domain, domainPoints)
   const adaptedXDomain = adaptDomainToSeriesRange(xAxis?.domain, rangedSeries)
-  const data = convertSeries(rangedSeries, domainPoints, null)
+  const data = convertSeries(rangedSeries, domainPoints, null, null)
 
   return (
     <ComposedChart
