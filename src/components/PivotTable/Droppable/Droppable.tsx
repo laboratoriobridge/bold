@@ -150,7 +150,8 @@ export function Droppable<T extends object>(props: DroppableProps<T>) {
           )
         }
       }),
-    [keyState, accept, filter, keyMapping, name, onKeyNav, deleteByKey]
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [keyState, accept, keyMapping, name, filter, onKeyNav, deleteByKey]
   )
 
   const hasKeys = keyState.length > 0
