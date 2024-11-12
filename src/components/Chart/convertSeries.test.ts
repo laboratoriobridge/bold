@@ -1,5 +1,5 @@
 import { convertSeries } from './convertSeries'
-import { ChartSeries, ReferenceAreaWithPercents } from './model'
+import { ChartSeries, ReferenceAreaWithPercents, AxisDomain } from './model'
 
 describe('convert series to Recharts format', () => {
   const stringDomain: string[] = ['cat 1', 'cat 2', 'cat 3', 'cat 4', 'cat 5']
@@ -14,6 +14,7 @@ describe('convert series to Recharts format', () => {
       data: [5, 4, 3, 2, 1],
     },
   ]
+  const adaptedYDomain: AxisDomain = { init: 0, end: 100, step: 20 }
 
   it('should convert categories correctly', () => {
     const series = seriesData
@@ -21,7 +22,7 @@ describe('convert series to Recharts format', () => {
     const domain = stringDomain
     const domainPoints = domain
 
-    const seriesConverted = convertSeries(series, domainPoints, undefined)
+    const seriesConverted = convertSeries(series, domainPoints, adaptedYDomain, undefined)
 
     expect(seriesConverted).toMatchObject([
       { x: 'cat 1', Test: 1, Test2: 5 },
@@ -57,16 +58,14 @@ describe('convert series to Recharts format', () => {
     const domain = stringDomain
     const domainPoints = domain
 
-    const seriesHasOutliers = (seriesIndex: number, dataIndex: number) => !!outlierSeries[seriesIndex]?.data[dataIndex]
-
-    const seriesConverted = convertSeries(series, domainPoints, undefined, seriesHasOutliers, 46)
+    const seriesConverted = convertSeries(series, domainPoints, adaptedYDomain, undefined, outlierSeries)
 
     expect(seriesConverted).toMatchObject([
-      { x: 'cat 1', Test: 10, Test2: 46, outliersTest2: { series: 'Test2', value: 50 } },
+      { x: 'cat 1', Test: 10, Test2: 106, outliersTest2: { series: 'Test2', value: 50 } },
       { x: 'cat 2', Test: 20, Test2: 40 },
       { x: 'cat 3', Test: 30, Test2: 30 },
       { x: 'cat 4', Test: 40, Test2: 20 },
-      { x: 'cat 5', Test: 46, Test2: 10, outliersTest: { series: 'Test', value: 50 } },
+      { x: 'cat 5', Test: 106, Test2: 10, outliersTest: { series: 'Test', value: 50 } },
     ])
   })
 
@@ -86,7 +85,7 @@ describe('convert series to Recharts format', () => {
     const domain = stringDomain
     const domainPoints = domain
 
-    const seriesConverted = convertSeries(series, domainPoints, referenceAreas)
+    const seriesConverted = convertSeries(series, domainPoints, adaptedYDomain, referenceAreas)
 
     expect(seriesConverted).toMatchObject([
       { x: 'cat 1', Test: 1, Test2: 5, ref1: 0 },
@@ -118,7 +117,7 @@ describe('convert series to Recharts format', () => {
 
     const domainPoints = numericDomainPoints
 
-    const seriesConverted = convertSeries(series, domainPoints, undefined)
+    const seriesConverted = convertSeries(series, domainPoints, adaptedYDomain, undefined)
 
     expect(seriesConverted).toMatchObject([
       { x: 0, Test: 1, Test2: 5 },
@@ -165,17 +164,15 @@ describe('convert series to Recharts format', () => {
 
     const domainPoints = numericDomainPoints
 
-    const seriesHasOutliers = (seriesIndex: number, dataIndex: number) => !!outlierSeries[seriesIndex]?.data[dataIndex]
-
-    const seriesConverted = convertSeries(series, domainPoints, undefined, seriesHasOutliers, 46)
+    const seriesConverted = convertSeries(series, domainPoints, adaptedYDomain, undefined, outlierSeries)
 
     expect(seriesConverted).toMatchObject([
-      { x: 0, Test: 10, Test2: 46, outliersTest2: { series: 'Test2', value: 50 } },
+      { x: 0, Test: 10, Test2: 106, outliersTest2: { series: 'Test2', value: 50 } },
       { x: 10, Test: 20, Test2: 40 },
       { x: 15, Test3: 15 },
       { x: 20, Test: 30, Test2: 30, Test3: 20 },
       { x: 30, Test: 40, Test2: 20 },
-      { x: 40, Test: 46, Test2: 10, outliersTest: { series: 'Test', value: 50 } },
+      { x: 40, Test: 106, Test2: 10, outliersTest: { series: 'Test', value: 50 } },
     ])
   })
 
@@ -204,7 +201,7 @@ describe('convert series to Recharts format', () => {
 
     const domainPoints = [20, 30, 40, 50, 60]
 
-    const seriesConverted = convertSeries(series, domainPoints, referenceAreas)
+    const seriesConverted = convertSeries(series, domainPoints, adaptedYDomain, referenceAreas)
 
     expect(seriesConverted).toMatchObject([
       { x: 20, Test: 1, Test2: 5, ref1: 0 },
