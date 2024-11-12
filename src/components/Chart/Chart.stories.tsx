@@ -107,8 +107,7 @@ const pieData: PieChartDataPoint[] = [
 
 const referenceAreas: ReferenceArea<number>[] = [
   {
-    name: { value: 'Area 1' },
-    description: 'Area 1 desc',
+    label: { name: 'Area 1', description: 'Area 1 desc' },
     area: [
       { x: 0, upperLimit: 2000 },
       { x: 20, upperLimit: 2000 },
@@ -126,8 +125,8 @@ const referenceAreas: ReferenceArea<number>[] = [
     stroke: { kind: 'dashed' },
   },
   {
-    name: { value: 'Area 2' },
-    description: 'Area 2 desc',
+    label: { name: 'Area 2', description: 'Area 2 desc' },
+
     area: [
       { x: 0, upperLimit: 5000 },
       { x: 20, upperLimit: 5000 },
@@ -144,10 +143,10 @@ const referenceAreas: ReferenceArea<number>[] = [
     stroke: { kind: 'line' },
   },
   {
-    name: { value: 'Area 3' },
+    label: { name: 'Area 3' },
     area: [
       { x: 0, upperLimit: 10000 },
-      { x: 20, upperLimit: 10000 }, // pq tem um step diferente? marcador de eixo muda?
+      { x: 20, upperLimit: 10000 },
       { x: 100, upperLimit: 10000 },
       { x: 120, upperLimit: 10000 },
       { x: 200, upperLimit: 10000 },
@@ -176,33 +175,33 @@ const generateArea = ({
 
 const boundedReferenceAreas: ReferenceArea<number>[] = [
   {
-    name: { value: 'Empty' },
+    label: { name: 'Empty' },
     area: generateArea({ length: 8, start: 2000, step: 350 }),
     color: 'none',
   },
   {
-    name: { value: 'Lower', alignment: 'central' },
+    label: { name: 'Lower', alignment: 'central' },
     area: generateArea({ length: 8, start: 2000, step: 350 }),
     color: purple.c90,
     stroke: { color: purple.c30, kind: 'dashed' },
     tick: { color: purple.c30, kind: 'horizontal' },
   },
   {
-    name: { value: 'Lower ref', alignment: 'central', color: purple.c30 },
+    label: { name: 'Lower ref', alignment: 'central', color: purple.c30 },
     area: generateArea({ length: 8, start: 2500, step: 450 }),
     color: purple.c90,
     stroke: { color: purple.c30, kind: 'line' },
     tick: { color: purple.c30, kind: 'horizontal' },
   },
   {
-    name: { value: 'Upper ref', alignment: 'central' },
+    label: { name: 'Upper ref', alignment: 'central' },
     area: generateArea({ length: 8, start: 3000, step: 650 }),
     color: purple.c70,
     stroke: { color: purple.c30, kind: 'line' },
     tick: { color: purple.c30, kind: 'horizontal' },
   },
   {
-    name: { value: 'Upper', alignment: 'central' },
+    label: { name: 'Upper', alignment: 'central' },
     area: generateArea({ length: 8, start: 3500, step: 750 }),
     color: purple.c90,
     stroke: { color: purple.c30, kind: 'dashed' },

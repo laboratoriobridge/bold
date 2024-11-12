@@ -41,7 +41,7 @@ describe('convert series to Recharts format', () => {
 
     const referenceAreas: ReferenceAreaWithPercents<string>[] = [
       {
-        name: { value: 'ref1' },
+        label: { name: 'ref1' },
         area: [],
         areaPercents: [
           { x: 'cat 1', percent: 0 },
@@ -108,7 +108,7 @@ describe('convert series to Recharts format', () => {
 
     const referenceAreas: ReferenceAreaWithPercents<number>[] = [
       {
-        name: { value: 'ref1' },
+        label: { name: 'ref1' },
         area: [],
         areaPercents: [
           { x: 20, percent: 0 },

@@ -11,7 +11,7 @@ export function convertSeries<XDomain>(
     return refsAreas.areaPercents.map((data, i) => {
       return {
         x: data.x,
-        [refsAreas.name.value]: data.percent,
+        [refsAreas.label.name]: data.percent,
       }
     })
   })

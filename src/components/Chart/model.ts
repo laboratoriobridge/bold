@@ -82,8 +82,9 @@ export interface ReferenceAreaPercent<XDomain> {
   percent: number
 }
 
-interface ReferenceAreaName {
-  value: string
+interface ReferenceAreaLabel {
+  name: string
+  description?: string
   color?: string
   alignment?: 'central' | 'text-before-edge'
 }
@@ -100,8 +101,7 @@ interface ReferenceAreaStroke {
 }
 
 export interface ReferenceArea<XDomain> {
-  name: ReferenceAreaName
-  description?: string
+  label: ReferenceAreaLabel
   area: ReferenceAreaRange<XDomain>[]
   color?: string
   tick?: ReferenceAreaTick

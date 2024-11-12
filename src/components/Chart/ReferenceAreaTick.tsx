@@ -15,20 +15,20 @@ const TICK_HORIZONTAL_HEIGHT = 2
 const TICK_HORIZONTAL_WIDTH = 8
 const TICK_VERTICAL_WIDTH = 4
 
-export interface ReferenceTickProps extends TickProps {
+export interface ReferenceAreaTickProps extends TickProps {
   refTicks: Map<number, ReferenceAreaWithPercents<any>>
 }
 
-export function ReferenceAreaTick(props: ReferenceTickProps) {
+export function ReferenceAreaTick(props: ReferenceAreaTickProps) {
   const { x, y, payload, refTicks, height } = props
 
   const theme = useTheme()
 
   const ref = refTicks.get(+payload.value)
 
-  const nameLines = splitIntoLines(ref.name.value, MAX_CHARS_PER_LINE)
+  const nameLines = splitIntoLines(ref.label.name, MAX_CHARS_PER_LINE)
 
-  const { nameYOffset, descriptionYOffset, dominantBaseline } = getTextAlignmentParams(nameLines.length, ref)
+  const { nameYOffset, descriptionYOffset, dominantBaseline } = getLabelAlignmentParams(nameLines.length, ref)
   const { rectangleHeight, rectangleWidth } = getRectangleDimensions(height, ref)
 
   return (
@@ -40,7 +40,7 @@ export function ReferenceAreaTick(props: ReferenceTickProps) {
         dy={0}
         textAnchor='start'
         dominantBaseline={dominantBaseline}
-        fill={ref.name.color ?? ref.tick?.color ?? ref.color}
+        fill={ref.label.color ?? ref.tick?.color ?? ref.color}
         style={{ fontWeight: 'bold' }}
       >
         {nameLines.map(
@@ -52,7 +52,7 @@ export function ReferenceAreaTick(props: ReferenceTickProps) {
             )
         )}
       </text>
-      {ref.description && (
+      {ref.label.description && (
         <text
           x={x + TICK_X_DISLOCATION}
           y={y + TICK_MARGIN + TICK_Y_DISLOCATION + descriptionYOffset}
@@ -62,7 +62,7 @@ export function ReferenceAreaTick(props: ReferenceTickProps) {
           dominantBaseline={dominantBaseline}
           fill={theme.pallete.text.main}
         >
-          {splitIntoLines(ref.description, MAX_CHARS_PER_LINE).map(
+          {splitIntoLines(ref.label.description, MAX_CHARS_PER_LINE).map(
             (descriptionPart, i) =>
               descriptionPart && (
                 <tspan
@@ -91,8 +91,8 @@ export function ReferenceAreaTick(props: ReferenceTickProps) {
   )
 }
 
-function getTextAlignmentParams(nameLines: number, ref: ReferenceAreaWithPercents<any>) {
-  const dominantBaseline = ref.name.alignment ?? 'text-before-edge'
+function getLabelAlignmentParams(nameLines: number, ref: ReferenceAreaWithPercents<any>) {
+  const dominantBaseline = ref.label.alignment ?? 'text-before-edge'
   const nameExtraLinesHeight = nameLines > 1 ? (nameLines - 1) * TICK_Y_DISLOCATION : 0
 
   const nameYOffset = dominantBaseline === 'central' ? -nameExtraLinesHeight / 2 : 0

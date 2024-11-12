@@ -37,14 +37,14 @@ export function renderSeries<XDomain>(
 }
 
 export function renderReferenceAreas(refArea: ReferenceArea<any>, index: number, colorScheme: ChartColorScheme) {
-  const { color: refAreaColor, tick, stroke, name } = refArea
+  const { color: refAreaColor, tick, stroke, label: name } = refArea
 
   const cs = getChartColorScheme(colorScheme)
   const color = refAreaColor ?? cs[index % cs.length]
 
   return (
     <Area
-      {...getDefaultRenderProps(name.value, color)}
+      {...getDefaultRenderProps(name.name, color)}
       stroke={stroke?.color ?? tick?.color ?? color}
       type='monotone'
       yAxisId='refArea'
