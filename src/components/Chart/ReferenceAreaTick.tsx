@@ -3,7 +3,8 @@ import { Rectangle } from 'recharts'
 
 import { useTheme } from '../../styles'
 import { splitIntoLines } from '../../util/string'
-import { ReferenceAreaWithPercents, TickProps } from './model'
+import { ReferenceAreaWithPercents } from './model'
+import { TickProps } from './Tick'
 
 const MAX_CHARS_PER_LINE = 8
 const TICK_MARGIN = 5

@@ -1,5 +1,5 @@
 import { adaptDomainToDataRange, adaptDomainToSeriesRange } from './adaptDomainToData'
-import { ChartSeries, DateRange, ValueRange } from './model'
+import { ChartSeries, DateRange, ValueRange, DateRangeStep } from './model'
 
 const valueRangeDomain: ValueRange = { init: 10, end: 15, step: 5 }
 
@@ -51,14 +51,30 @@ describe('adaptDomainToDataRange', () => {
   })
 
   describe('valueRangeDomain', () => {
-    const dataValues: number[] = [18, 8]
+    const dataValues: number[] = [18, 12]
 
-    it('should adapt correctly value range domain to date range', () => {
+    it('should adapt correctly the init value range domain to data range', () => {
+      const domain = valueRangeDomain
+      const dataValues: number[] = [18, 8]
+      const adaptedDomain = adaptDomainToDataRange(domain, dataValues)
+
+      expect(adaptedDomain).toEqual({ init: 5, end: 20, step: 5 })
+    })
+
+    it('should adapt correctly the end value range domain to data range', () => {
       const domain = valueRangeDomain
       const data = dataValues
       const adaptedDomain = adaptDomainToDataRange(domain, data)
 
-      expect(adaptedDomain).toEqual({ init: 5, end: 20, step: 5 })
+      expect(adaptedDomain).toEqual({ init: 10, end: 20, step: 5 })
+    })
+
+    it('should not change the value range domain when domain init is less than data min value and domain end is less than data max value', () => {
+      const domain = valueRangeDomain
+      const data: number[] = [12, 14]
+      const adaptedDomain = adaptDomainToDataRange(domain, data)
+
+      expect(adaptedDomain).toEqual(valueRangeDomain)
     })
 
     it.each([
@@ -77,7 +93,7 @@ describe('adaptDomainToDataRange', () => {
 
       const result = adaptDomainToDataRange(domain, data, hasOutlier)
 
-      expect(result).toEqual({ init: 5, end: 15, step: 5 })
+      expect(result).toEqual(valueRangeDomain)
     })
   })
 
@@ -87,12 +103,17 @@ describe('adaptDomainToDataRange', () => {
       end: new Date('2020-04-16'),
       step: { unit: 'day', amount: 5 },
     }
-    const dataValues = [new Date('2020-04-10'), new Date('2020-04-17')]
+    const dataValues = [new Date('2020-04-12'), new Date('2020-04-15')]
 
     it('should adapt correctly date range domain to date range', () => {
-      const step = { unit: 'day', amount: 5 }
-      const domain = dateRangeDomain
+      const step: DateRangeStep = { unit: 'day', amount: 5 }
+      const domain: DateRange = {
+        init: new Date('2020-04-13'),
+        end: new Date('2020-04-14'),
+        step: step,
+      }
       const data = dataValues
+
       const adaptedDomain = adaptDomainToDataRange(domain, data) as DateRange
 
       expect({
@@ -104,6 +125,14 @@ describe('adaptDomainToDataRange', () => {
         end: +Date.parse('2020-04-18'),
         step: step,
       })
+    })
+
+    it('should not change the data range domain when domain init is less than data min value and domain end is less than data max value', () => {
+      const domain = dateRangeDomain
+      const data = dataValues
+      const adaptedDomain = adaptDomainToDataRange(domain, data)
+
+      expect(adaptedDomain).toEqual(dateRangeDomain)
     })
 
     it.each([
@@ -122,11 +151,7 @@ describe('adaptDomainToDataRange', () => {
 
       const result = adaptDomainToDataRange(domain, data, hasOutlier)
 
-      expect(result).toEqual({
-        init: new Date('2020-04-08'),
-        end: new Date('2020-04-16'),
-        step: { unit: 'day', amount: 5 },
-      })
+      expect(result).toEqual(dateRangeDomain)
     })
   })
 })

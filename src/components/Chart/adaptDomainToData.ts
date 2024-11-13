@@ -2,6 +2,8 @@ import { dateRangeStepToMillis } from './dateRangeStepToMillis'
 import { AxisDomain, ChartSeries, DateRange, isValueRange, ValueRange } from './model'
 import { getDataPointValue } from './util'
 
+const EXCEPTION_DOMAIN_MESSAGE = 'Domain init must be less than domain end'
+
 export function adaptDomainToSeriesRange<XDomain>(
   domain: AxisDomain,
   series: ChartSeries<XDomain>[],
@@ -27,7 +29,7 @@ export function adaptDomainToDataRange(
 }
 
 function adaptValueRangeDomainToData(domain: ValueRange, dataValues: number[], hasOutlier: boolean): ValueRange {
-  if (domain.init >= domain.end) throw Error('Domain init must be less than domain end')
+  if (domain.init >= domain.end) throw Error(EXCEPTION_DOMAIN_MESSAGE)
 
   const dataMin = Math.min(...dataValues)
   const dataMax = Math.max(...dataValues)
@@ -40,7 +42,7 @@ function adaptValueRangeDomainToData(domain: ValueRange, dataValues: number[], h
 }
 
 function adaptDateRangeDomainToData(domain: DateRange, dataValues: number[], hasOutlier: boolean): DateRange {
-  if (+domain.init >= +domain.end) throw Error('Domain init must be less than domain end')
+  if (+domain.init >= +domain.end) throw Error(EXCEPTION_DOMAIN_MESSAGE)
 
   const valueDomain = adaptValueRangeDomainToData(
     {

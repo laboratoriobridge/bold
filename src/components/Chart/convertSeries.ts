@@ -1,20 +1,15 @@
 import createMonotoneCubicInterpolator from './createMonotoneCubicInterpolator'
-import { ChartSeries, ChartSeriesDataPoint, DataPoint, ReferenceAreaWithPercents } from './model'
-import { getDataPointValue, getOutlierSeriesName } from './util'
+import { AxisDomain, ChartSeries, ChartSeriesDataPoint, DataPoint, ReferenceAreaWithPercents } from './model'
+import { getDataPointValue, getOutlierSeriesName, getDomainMaxValue, getOutlierStepFromDomain } from './util'
 
 export function convertSeries<XDomain>(
   series: ChartSeries<XDomain>[],
   domainPoints: XDomain[],
+  adaptedYDomain: AxisDomain,
   refsAreas?: ReferenceAreaWithPercents<XDomain>[],
-  seriesHasOutliers?: (seriesIndex: number, indexData: number) => boolean,
-  outlierTickValue?: number | Date
+  outlierSeries?: ChartSeries<XDomain>[]
 ): any[] {
-  const getOutlierSeriesConfig = (seriesName: string, seriesData: ChartSeriesDataPoint<XDomain>) => {
-    return {
-      [seriesName]: outlierTickValue,
-      [getOutlierSeriesName(seriesName)]: { value: getDataPointValue(seriesData), series: seriesName },
-    }
-  }
+  const outlierTickValue = getOutlierTickValue(adaptedYDomain)
 
   const refs = (refsAreas ?? []).flatMap((refsAreas) => {
     return refsAreas.areaPercents.map((data, i) => {
@@ -28,11 +23,13 @@ export function convertSeries<XDomain>(
   const data = (series ?? [])
     .flatMap((serie, serieIndex) => {
       return (serie.data as any[]).map((data: ChartSeriesDataPoint<XDomain>, dataIndex: number) => {
-        const hasOutliers = seriesHasOutliers && seriesHasOutliers(serieIndex, dataIndex)
+        const hasOutliers = outlierSeries && seriesHasOutliers(outlierSeries, serieIndex, dataIndex)
 
         return {
           x: (data as DataPoint<XDomain>).x ?? domainPoints[dataIndex],
-          ...(hasOutliers ? getOutlierSeriesConfig(serie.name, data) : { [serie.name]: getDataPointValue(data) }),
+          ...(hasOutliers
+            ? getOutlierSeriesConfig(serie.name, data, outlierTickValue)
+            : { [serie.name]: getDataPointValue(data) }),
         }
       })
     })
@@ -74,4 +71,35 @@ function getValuesInterpolators(orderedValues: any[], valueNames: Set<string>): 
     interpolators.set(vn, createMonotoneCubicInterpolator(xs, ys))
     return interpolators
   }, new Map<string, (x: number) => number>())
+}
+
+function getOutlierTickValue(adaptedYDomain: AxisDomain): number | Date {
+  const maxRange = getDomainMaxValue(adaptedYDomain)
+  const outlierStep = getOutlierStepFromDomain(adaptedYDomain)
+
+  const outlierTickValue =
+    typeof maxRange === 'number'
+      ? maxRange + outlierStep
+      : maxRange instanceof Date
+      ? new Date(maxRange.getTime() + outlierStep)
+      : null
+
+  return outlierTickValue
+}
+
+const seriesHasOutliers = <XDomain>(
+  outlierSeries: ChartSeries<XDomain>[],
+  seriesIndex: number,
+  dataIndex: number
+): boolean => !!outlierSeries[seriesIndex]?.data[dataIndex]
+
+const getOutlierSeriesConfig = <XDomain>(
+  seriesName: string,
+  seriesData: ChartSeriesDataPoint<XDomain>,
+  outlierTickValue: number | Date
+) => {
+  return {
+    [seriesName]: outlierTickValue,
+    [getOutlierSeriesName(seriesName)]: { value: getDataPointValue(seriesData), series: seriesName },
+  }
 }
