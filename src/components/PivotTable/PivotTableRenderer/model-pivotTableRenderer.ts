@@ -26,9 +26,14 @@ export type TableProps<T extends object> = {
 }
 
 export type TreeRoot = {
+  /**
+   * Category of data that the children of this node belong to
+   */
   nodeKey?: string
+  /**
+   * Count of values belonging to this node of the tree
+   */
   nodeValue?: number
-
   /**
    * Biggest leaf value under this node. Used to color the table cells
    */
