@@ -1,4 +1,5 @@
-import { AxisDomain, DataPoint, isDateRange, isValueRange, ChartSeriesDataPoint, TickProps } from './model'
+import { AxisDomain, DataPoint, isDateRange, isValueRange, ChartSeriesDataPoint } from './model'
+import { TickProps } from './Tick'
 
 export function getDataPointValue(dp: number | DataPoint<any>): number {
   if (typeof dp === 'number') return dp
