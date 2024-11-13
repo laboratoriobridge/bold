@@ -1,0 +1,636 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PivotTableCell should render correctly 1`] = `
+.emotion-19 {
+  position: relative;
+  height: 100%;
+}
+
+.emotion-18 {
+  max-width: 100%;
+  overflow: auto;
+  display: grid;
+  place-items: center center;
+  place-content: start start;
+}
+
+.emotion-21 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-20 {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.emotion-20:first-of-type {
+  margin-top: 0;
+}
+
+.emotion-20:last-of-type {
+  margin-bottom: 0;
+}
+
+.emotion-20:empty {
+  display: none;
+}
+
+.emotion-0 {
+  grid-area: 2/1/3/2;
+  background-color: #FFFFFF;
+  color: #24252E;
+  border-top: 1px solid #D3D4DD;
+  border-left: 1px solid #D3D4DD;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  font-weight: bold;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0.5rem 1rem;
+}
+
+.emotion-1 {
+  grid-area: 3/1/4/3;
+  background-color: #FFFFFF;
+  color: #24252E;
+  border-top: 1px solid #D3D4DD;
+  border-left: 1px solid #D3D4DD;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  font-weight: bold;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0.5rem 1rem;
+}
+
+.emotion-2 {
+  grid-area: 4/1/5/3;
+  background-color: #FFFFFF;
+  color: #24252E;
+  border-top: 1px solid #D3D4DD;
+  border-left: 1px solid #D3D4DD;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  font-weight: bold;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0.5rem 1rem;
+}
+
+.emotion-3 {
+  grid-area: 5/1/6/3;
+  background-color: #FFFFFF;
+  color: #24252E;
+  border-top: 1px solid #D3D4DD;
+  border-left: 1px solid #D3D4DD;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  font-weight: bold;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #D3D4DD;
+}
+
+.emotion-4 {
+  grid-area: 1/3/3/4;
+  background-color: #FFFFFF;
+  color: #24252E;
+  border-top: 1px solid #D3D4DD;
+  border-left: 1px solid #D3D4DD;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  font-weight: bold;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0.5rem 1rem;
+}
+
+.emotion-5 {
+  grid-area: 1/4/3/5;
+  background-color: #FFFFFF;
+  color: #24252E;
+  border-top: 1px solid #D3D4DD;
+  border-left: 1px solid #D3D4DD;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  font-weight: bold;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0.5rem 1rem;
+}
+
+.emotion-6 {
+  grid-area: 3/3/4/4;
+  background-color: #84AAFF;
+  color: #24252E;
+  border-top: 1px solid #D3D4DD;
+  border-left: 1px solid #D3D4DD;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  font-weight: normal;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0.5rem 1rem;
+}
+
+.emotion-7 {
+  grid-area: 4/3/5/4;
+  background-color: #84AAFF;
+  color: #24252E;
+  border-top: 1px solid #D3D4DD;
+  border-left: 1px solid #D3D4DD;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  font-weight: normal;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0.5rem 1rem;
+}
+
+.emotion-8 {
+  grid-area: 3/4/4/5;
+  background-color: #0069D0;
+  color: #FFFFFF;
+  border-top: 1px solid #D3D4DD;
+  border-left: 1px solid #D3D4DD;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  font-weight: normal;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0.5rem 1rem;
+}
+
+.emotion-9 {
+  grid-area: 4/4/5/5;
+  background-color: #002451;
+  color: #FFFFFF;
+  border-top: 1px solid #D3D4DD;
+  border-left: 1px solid #D3D4DD;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  font-weight: normal;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0.5rem 1rem;
+}
+
+.emotion-10 {
+  grid-area: 1/2/2/3;
+  background-color: #FFFFFF;
+  color: #24252E;
+  border-top: 1px solid #D3D4DD;
+  border-left: 1px solid #D3D4DD;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  font-weight: bold;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0.5rem 1rem;
+}
+
+.emotion-11 {
+  grid-area: 5/3/6/4;
+  background-color: #FFFFFF;
+  color: #24252E;
+  border-top: 1px solid #D3D4DD;
+  border-left: 1px solid #D3D4DD;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  font-weight: bold;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #D3D4DD;
+}
+
+.emotion-12 {
+  grid-area: 5/4/6/5;
+  background-color: #FFFFFF;
+  color: #24252E;
+  border-top: 1px solid #D3D4DD;
+  border-left: 1px solid #D3D4DD;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  font-weight: bold;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #D3D4DD;
+}
+
+.emotion-13 {
+  grid-area: 3/5/4/6;
+  background-color: #FFFFFF;
+  color: #24252E;
+  border-top: 1px solid #D3D4DD;
+  border-left: 1px solid #D3D4DD;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  font-weight: bold;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0.5rem 1rem;
+  border-right: 1px solid #D3D4DD;
+}
+
+.emotion-14 {
+  grid-area: 4/5/5/6;
+  background-color: #FFFFFF;
+  color: #24252E;
+  border-top: 1px solid #D3D4DD;
+  border-left: 1px solid #D3D4DD;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  font-weight: bold;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0.5rem 1rem;
+  border-right: 1px solid #D3D4DD;
+}
+
+.emotion-15 {
+  grid-area: 2/2/3/3;
+  background-color: #FFFFFF;
+  color: #24252E;
+  border-top: 1px solid #D3D4DD;
+  border-left: 1px solid #D3D4DD;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  font-weight: bold;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0.5rem 1rem;
+}
+
+.emotion-16 {
+  grid-area: 1/5/3/6;
+  background-color: #FFFFFF;
+  color: #24252E;
+  border-top: 1px solid #D3D4DD;
+  border-left: 1px solid #D3D4DD;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  font-weight: bold;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0.5rem 1rem;
+  border-right: 1px solid #D3D4DD;
+}
+
+.emotion-17 {
+  grid-area: 5/5/6/6;
+  background-color: #FFFFFF;
+  color: #24252E;
+  border-top: 1px solid #D3D4DD;
+  border-left: 1px solid #D3D4DD;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  font-weight: bold;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0.5rem 1rem;
+  border-right: 1px solid #D3D4DD;
+  border-bottom: 1px solid #D3D4DD;
+}
+
+<div>
+  <div
+    class="emotion-21"
+  >
+    <div
+      class="emotion-20"
+    >
+      <div
+        class="emotion-19"
+      >
+        <div
+          class="emotion-18"
+        >
+          <div
+            class="emotion-0"
+            data-columnnumber="1"
+            data-rownumber="2"
+          >
+            Name
+          </div>
+          <div
+            class="emotion-1"
+            data-columnnumber="1 2"
+            data-rownumber="3"
+          >
+            Broccoli
+          </div>
+          <div
+            class="emotion-2"
+            data-columnnumber="1 2"
+            data-rownumber="4"
+          >
+            Carrot
+          </div>
+          <div
+            class="emotion-3"
+            data-columnnumber="1 2"
+            data-rownumber="5"
+          >
+            Total
+          </div>
+          <div
+            class="emotion-4"
+            data-columnnumber="3"
+            data-rownumber="1 2"
+          >
+            1 kg
+          </div>
+          <div
+            class="emotion-5"
+            data-columnnumber="4"
+            data-rownumber="1 2"
+          >
+            2 kg
+          </div>
+          <div
+            class="emotion-6"
+            data-columnnumber="3"
+            data-rownumber="3"
+          >
+            1
+            
+          </div>
+          <div
+            class="emotion-7"
+            data-columnnumber="3"
+            data-rownumber="4"
+          >
+            1
+            
+          </div>
+          <div
+            class="emotion-8"
+            data-columnnumber="4"
+            data-rownumber="3"
+          >
+            2
+            
+          </div>
+          <div
+            class="emotion-9"
+            data-columnnumber="4"
+            data-rownumber="4"
+          >
+            3
+            
+          </div>
+          <div
+            class="emotion-10"
+            data-columnnumber="2"
+            data-rownumber="1"
+          >
+            Weight
+          </div>
+          <div
+            class="emotion-11"
+            data-columnnumber="3"
+            data-rownumber="5"
+          >
+            2
+            
+          </div>
+          <div
+            class="emotion-12"
+            data-columnnumber="4"
+            data-rownumber="5"
+          >
+            5
+            
+          </div>
+          <div
+            class="emotion-13"
+            data-columnnumber="5"
+            data-rownumber="3"
+          >
+            3
+            
+          </div>
+          <div
+            class="emotion-14"
+            data-columnnumber="5"
+            data-rownumber="4"
+          >
+            4
+            
+          </div>
+          <div
+            class="emotion-15"
+            data-columnnumber="2"
+            data-rownumber="2"
+          />
+          <div
+            class="emotion-16"
+            data-columnnumber="5"
+            data-rownumber="1 2"
+          >
+            Total
+          </div>
+          <div
+            class="emotion-17"
+            data-columnnumber="5"
+            data-rownumber="5"
+          >
+            7
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
