@@ -3,8 +3,8 @@ import { Label, XAxis, XAxisProps, YAxis, YAxisProps } from 'recharts'
 
 import { AxisDomain, AxisOptions, isValueRange, ReferenceAreaWithPercents } from './model'
 import { ReferenceAreaTick } from './ReferenceAreaTick'
-import { defaultChartDateFormatter } from './util'
-import { Tick, TickProps } from './Tick'
+import { convertTickProps, defaultChartDateFormatter } from './util'
+import { Tick } from './Tick'
 
 export function renderAxis(
   axis: 'x' | 'y',
@@ -143,17 +143,6 @@ function getAxisProps(
           ),
     }
 }
-
-const convertTickProps = (props: any): TickProps => ({
-  fill: props.fill,
-  height: props.height,
-  payload: props.payload,
-  stroke: props.stroke,
-  textAnchor: props.textAnchor,
-  width: props.width,
-  x: props.x,
-  y: props.y,
-})
 
 function getRefTicks(referenceAreas: ReferenceAreaWithPercents<any>[]): Map<number, ReferenceAreaWithPercents<any>> {
   return referenceAreas?.reduce(

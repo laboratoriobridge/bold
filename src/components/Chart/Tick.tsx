@@ -1,5 +1,6 @@
 import React from 'react'
 
+import { convertTickProps } from './util'
 interface TickPayload {
   coordinate: number
   isShow: boolean
@@ -26,5 +27,5 @@ export function Tick(props: TickProps) {
     payload: { value },
   } = props
 
-  return <text {...props}> {props.isOutlierIndicator ? `>${props.domainMaxValue}` : value} </text>
+  return <text {...convertTickProps(props)}> {props.isOutlierIndicator ? `>${props.domainMaxValue}` : value} </text>
 }
