@@ -51,7 +51,7 @@ export function getResult<T extends object>(
   data: Dictionary<T> & TreeRoot,
   increment: 'column' | 'row',
   keyMapping: KeyMap<T>,
-  onlyIncreaseSpanOnKeys?: Array<keyof T> // column or rows
+  onlyIncreaseSpanOnKeys?: Array<keyof T>
 ): NestingResult<T>[] {
   const stack: StackObj[] = []
 
@@ -73,12 +73,11 @@ export function getResult<T extends object>(
           let span = { value: 1 }
           let spanTree = [span]
           if (obj.spanTree) {
-            // If you should increase span, add one to each of the span before, else just copy the span values + your
             const myKeys = Object.keys(obj.data).filter((k) => !IGNORED_TREE_KEYS.includes(k))
             const lastSpan = obj.spanTree[0]
             if (myKeys.length > lastSpan.value && increaseSpan) {
               for (let i = 0; i < obj.spanTree.length; i++) {
-                obj.spanTree[i].value++ // Afeta o spanAux do ini
+                obj.spanTree[i].value++
               }
             }
             spanTree.push(...obj.spanTree)
@@ -93,11 +92,10 @@ export function getResult<T extends object>(
 
           const initialPosition: InitialPosition = {
             parentIni: parentIni,
-            spanAux: increaseSpan ? spanAux : { value: 0 }, // Fica com um objeto bizarro que é somado ali pra cima
+            spanAux: increaseSpan ? spanAux : { value: 0 },
             auxIni: iniAux,
           }
           result.push({
-            // salva o valor do nodo atual
             span: span,
             value: value,
             initialPosition: initialPosition,
@@ -108,7 +106,6 @@ export function getResult<T extends object>(
           })
 
           if (obj.data[key] instanceof GroupResult || obj.data[key].nodeKey === undefined) {
-            // Se o filho for um folha salva o total na ultima linha/coluna
             result.push({
               span: span,
               [increment]: rowOrColumn + 1,
@@ -119,7 +116,6 @@ export function getResult<T extends object>(
             })
           } else {
             stack.push({
-              // se não for folha, adiciona a key do nodo filho na pilha
               data: obj.data[key],
               spanTree: spanTree,
               [increment]: rowOrColumn + 1,
