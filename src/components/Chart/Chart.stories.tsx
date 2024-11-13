@@ -1,4 +1,4 @@
-import { array, boolean, date, number, object, radios, text } from '@storybook/addon-knobs'
+import { array, boolean, date, number, object, radios, text, select } from '@storybook/addon-knobs'
 import React, { useState } from 'react'
 import { Text } from '../Text'
 
@@ -17,6 +17,7 @@ import {
   RangeArea,
   ReferenceArea,
   SeriesType,
+  OutliersType,
 } from './model'
 import { PieChart } from './PieChart'
 
@@ -179,6 +180,8 @@ const lineSeriesDate: ChartSeries<Date>[] = [
   },
 ]
 
+const outliersOption: OutliersType[] = ['auto', 'expand-domain']
+
 export const lineChart = () => {
   const title = text('Title', 'Chart Title', 'Description')
   const showTooltip = boolean('Show Tooltip', true, 'Description')
@@ -204,6 +207,7 @@ export const lineChart = () => {
     'Axes'
   )
   const series = object('Series', lineSeries, 'Data')
+  const outliers = select('Outliers', outliersOption, 'auto', 'Description')
 
   return (
     <ChartContainer>
@@ -216,6 +220,7 @@ export const lineChart = () => {
           tooltip={{ type: showTooltip ? 'point' : 'none' }}
           colorScheme={colorScheme}
           showLegend={showLegend}
+          outliers={outliers}
         />
       </ChartBody>
       <ChartFooter>{footer}</ChartFooter>

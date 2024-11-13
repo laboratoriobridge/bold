@@ -1,6 +1,7 @@
 import { Color } from 'csstype'
-import { CSSProperties, ReactElement } from 'react'
+import { CSSProperties } from 'react'
 import { blue, gray, orange, pink } from '../../styles/colors'
+import { TickProps } from './Tick'
 
 const CHART_COLOR_SCHEMES = {
   blue: Object.values(blue).filter((_, i) => i % 2) as Color[],
@@ -25,6 +26,7 @@ export type ReferenceAreaDataPoint = number | DataPoint<number>
 export type AxisDomain = string[] | ValueRange | DateRange
 export type TooltipType = 'point' | 'line' | 'none'
 export type DotShape = 'circle' | 'square' | 'rect' | 'triangle' | 'diamond' | 'cross' | 'star' | 'happy'
+export type OutliersType = 'auto' | 'expand-domain'
 
 export type TooltipRenderer<XDomain> = (
   points?: (DataPoint<XDomain> & { seriesName: string })[]
@@ -41,13 +43,16 @@ export interface DataPoint<XDomain, YDomain = number> {
   y: YDomain
 }
 
+export type ChartSeriesDataPoint<XDomain> = number | DataPoint<XDomain, number>
+
 export interface ChartSeries<XDomain> {
   type?: SeriesType
   name: string
-  data: number[] | DataPoint<XDomain>[]
+  data: ChartSeriesDataPoint<XDomain>[] | boolean[]
   color?: string
   dashed?: boolean
   dot?: false | DotShape
+  dataKey?: string
 }
 
 export interface BarChartSeries<YDomain> {
@@ -109,32 +114,17 @@ export interface AxisOptions {
   title?: string
   unit?: string
   domain?: AxisDomain
-  tickRenderer?: (tick: TickProps) => ReactElement<SVGElement>
+  tickRenderer?: (
+    tick: TickProps,
+    domainMaxValue: number | Date,
+    isOutlierIndicator?: boolean
+  ) => React.SVGProps<SVGElement>
 }
 
 export interface RangeSelectorOptions {
   label?: string
   options: { [x: string]: Partial<AxisDomain> }
   defaultOption?: string
-}
-
-export interface TickPayload {
-  coordinate: number
-  isShow: boolean
-  offset: number
-  tickCoord: number
-  value: any
-}
-
-export interface TickProps {
-  x?: number
-  y?: number
-  height?: number
-  payload?: TickPayload
-  fill?: string
-  stroke?: string
-  textAnchor?: string
-  width?: number
 }
 
 export interface CustomDotProps {
@@ -147,6 +137,11 @@ export interface CustomDotProps {
 export interface TooltipOptions<XDomain> {
   type: TooltipType
   render?: TooltipRenderer<XDomain>
+}
+
+export interface DataPointWithOutlier<XDomain> {
+  data: ChartSeriesDataPoint<XDomain>
+  isOutlier: boolean
 }
 
 export function isValueRange(x: AxisDomain): x is ValueRange {

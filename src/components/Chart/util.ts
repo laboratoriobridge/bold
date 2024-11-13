@@ -1,4 +1,4 @@
-import { AxisDomain, DataPoint, isDateRange, isValueRange } from './model'
+import { AxisDomain, DataPoint, isDateRange, isValueRange, ChartSeriesDataPoint } from './model'
 
 export function getDataPointValue(dp: number | DataPoint<any>): number {
   if (typeof dp === 'number') return dp
@@ -16,3 +16,23 @@ export const getAxisDomainEnd = (x: AxisDomain): number | string =>
   isValueRange(x) || isDateRange(x) ? +x.end : x.length && x[x.length - 1]
 
 export const defaultChartDateFormatter = (date: Date) => date.toLocaleDateString()
+
+const getDomainNumericStep = (domain: AxisDomain): number =>
+  !domain || Array.isArray(domain) ? null : isValueRange(domain) ? domain.step : domain.step?.amount
+
+export const getDomainMaxValue = (domain: AxisDomain): number | Date =>
+  !domain || Array.isArray(domain) ? null : domain.end
+
+export function isOutlier<XDomain>(
+  value: ChartSeriesDataPoint<XDomain>,
+  max?: number | Date,
+  min?: number | Date
+): boolean {
+  return max && getDataPointValue(value) > +max && (!min || getDataPointValue(value) < +min)
+}
+
+export const getOutlierStep = (tickStep: number): number => (tickStep < 15 ? tickStep : Math.floor(tickStep / 3))
+
+export const getOutlierStepFromDomain = (domain: AxisDomain): number => getOutlierStep(getDomainNumericStep(domain))
+
+export const getOutlierSeriesName = (seriesName: string): string => `outliers${seriesName}`
