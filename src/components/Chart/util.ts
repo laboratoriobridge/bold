@@ -38,7 +38,7 @@ export const getOutlierStepFromDomain = (domain: AxisDomain): number => getOutli
 
 export const getOutlierSeriesName = (seriesName: string): string => `outliers${seriesName}`
 
-export const convertTickProps = (props: any): TickProps => ({
+export const convertTickProps = (props: any): Omit<TickProps, 'isOutlierIndicator' | 'domainMaxValue' | 'isAxisX'> => ({
   fill: props.fill,
   height: props.height,
   payload: props.payload,

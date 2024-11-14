@@ -1,5 +1,4 @@
 import { Color } from 'csstype'
-import { CSSProperties } from 'react'
 import { blue, gray, orange, pink } from '../../styles/colors'
 import { TickProps } from './Tick'
 
@@ -87,23 +86,30 @@ export interface ReferenceAreaPercent<XDomain> {
   percent: number
 }
 
-interface ReferenceAreaDescription {
-  text: string
+interface ReferenceAreaLabel {
+  name: string
+  description?: string
   color?: string
-  style?: CSSProperties
-  align?: 'top' | 'bottom'
+  alignment?: 'central' | 'text-before-edge'
+}
+
+interface ReferenceAreaTick {
+  color?: string
+  kind?: 'horizontal' | 'vertical'
+}
+
+interface ReferenceAreaStroke {
+  show?: boolean
+  color?: string
+  kind?: 'line' | 'dashed'
 }
 
 export interface ReferenceArea<XDomain> {
-  name: string
-  description?: ReferenceAreaDescription
-  textYOffset?: number
+  label: ReferenceAreaLabel
   area: ReferenceAreaRange<XDomain>[]
   color?: string
-  tickColor?: string
-  stroke?: boolean
-  strokeColor?: string
-  strokeType?: 'line' | 'dashed'
+  tick?: ReferenceAreaTick
+  stroke?: ReferenceAreaStroke
 }
 
 export interface ReferenceAreaWithPercents<XDomain> extends ReferenceArea<XDomain> {
@@ -117,6 +123,7 @@ export interface AxisOptions {
   tickRenderer?: (
     tick: TickProps,
     domainMaxValue: number | Date,
+    isAxisX: boolean,
     isOutlierIndicator?: boolean
   ) => React.SVGProps<SVGElement>
 }
