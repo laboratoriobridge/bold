@@ -123,6 +123,7 @@ export interface AxisOptions {
   tickRenderer?: (
     tick: TickProps,
     domainMaxValue: number | Date,
+    isAxisX: boolean,
     isOutlierIndicator?: boolean
   ) => React.SVGProps<SVGElement>
 }

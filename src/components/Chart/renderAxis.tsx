@@ -14,13 +14,15 @@ export function renderAxis(
   hasOutliers: boolean,
   isBar?: boolean
 ) {
-  if (axis === 'x')
+  const isAxisX = axis === 'x'
+
+  if (isAxisX)
     return (
       <XAxis
         dataKey={isBar ? undefined : 'x'}
         axisLine={!isBar}
         tickLine={!isBar}
-        {...getAxisProps(domain, domainPoints, options, hasOutliers)}
+        {...getAxisProps(domain, domainPoints, options, isAxisX, hasOutliers)}
       >
         {options.title && (
           <Label
@@ -39,7 +41,7 @@ export function renderAxis(
         axisLine={isBar}
         tickLine={isBar}
         yAxisId='data'
-        {...getAxisProps(domain, domainPoints, options, hasOutliers)}
+        {...getAxisProps(domain, domainPoints, options, isAxisX, hasOutliers)}
       >
         {options?.title && (
           <Label
@@ -92,6 +94,7 @@ function getAxisProps(
   axisDomain: AxisDomain,
   domainPoints: any[],
   axisOptions: AxisOptions,
+  isAxisX: boolean,
   hasOutliers?: boolean
 ): XAxisProps & YAxisProps {
   const outliersIndex = hasOutliers ? domainPoints.length - 1 : -1
@@ -114,6 +117,7 @@ function getAxisProps(
             axisOptions.tickRenderer(
               convertTickProps(props),
               axisDomain.end,
+              isAxisX,
               hasOutliers && props.index === outliersIndex
             )
         : (props) => (
@@ -121,6 +125,7 @@ function getAxisProps(
               {...props}
               isOutlierIndicator={hasOutliers && props.index === outliersIndex}
               domainMaxValue={axisDomain.end}
+              isAxisX={isAxisX}
             />
           ),
     }
@@ -136,10 +141,16 @@ function getAxisProps(
             axisOptions.tickRenderer(
               convertTickProps(props),
               axisDomain.end,
+              isAxisX,
               hasOutliers && props.index === outliersIndex
             )
         : (props) => (
-            <Tick {...props} isOutlierIndicator={hasOutliers && props.index === outliersIndex} end={axisDomain.end} />
+            <Tick
+              {...props}
+              isOutlierIndicator={hasOutliers && props.index === outliersIndex}
+              end={axisDomain.end}
+              isAxisX={isAxisX}
+            />
           ),
     }
 }

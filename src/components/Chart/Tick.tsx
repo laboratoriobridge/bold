@@ -1,6 +1,10 @@
 import React from 'react'
 
 import { convertTickProps } from './util'
+
+const TICK_VERTICAL_DISLOCATION_AXIS_X = 15
+const TICK_VERTICAL_DISLOCATION_AXIS_Y = 5
+
 interface TickPayload {
   coordinate: number
   isShow: boolean
@@ -20,6 +24,7 @@ export interface TickProps {
   width?: number
   isOutlierIndicator?: boolean
   domainMaxValue?: number | Date
+  isAxisX?: boolean
 }
 
 export function Tick(props: TickProps) {
@@ -27,5 +32,11 @@ export function Tick(props: TickProps) {
     payload: { value },
   } = props
 
-  return <text {...convertTickProps(props)}> {props.isOutlierIndicator ? `>${props.domainMaxValue}` : value} </text>
+  const dy = props.isAxisX ? TICK_VERTICAL_DISLOCATION_AXIS_X : TICK_VERTICAL_DISLOCATION_AXIS_Y
+
+  return (
+    <text dy={dy} {...convertTickProps(props)}>
+      {props.isOutlierIndicator ? `>${props.domainMaxValue}` : value}
+    </text>
+  )
 }
