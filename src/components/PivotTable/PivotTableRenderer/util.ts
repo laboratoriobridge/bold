@@ -1,4 +1,4 @@
-import { MutableRefObject, SetStateAction } from 'react'
+import { Dispatch, MutableRefObject, SetStateAction } from 'react'
 import { KeyMap } from '../model/model-keyMap'
 import {
   Dictionary,
@@ -55,7 +55,7 @@ export function getResult<T extends object>(
 ): NestingResult<T>[] {
   const stack: StackObj[] = []
 
-  stack.push({ data: data, [increment]: 1 })
+  stack.push({ data, [increment]: 1 })
 
   const result: NestingResult<T>[] = []
 
@@ -63,7 +63,7 @@ export function getResult<T extends object>(
     const obj = stack.shift()
     if (obj) {
       let spanAux: SpanValue
-      let iniAux: InitialPosition
+      let auxIni: InitialPosition
       const currentNodeKey = obj.data.nodeKey
       const increaseSpan = !onlyIncreaseSpanOnKeys || onlyIncreaseSpanOnKeys.includes(currentNodeKey)
       Object.keys(obj.data)
@@ -91,14 +91,14 @@ export function getResult<T extends object>(
           const path = obj.path ? obj.path + currentPath : currentPath
 
           const initialPosition: InitialPosition = {
-            parentIni: parentIni,
+            parentIni,
             spanAux: increaseSpan ? spanAux : { value: 0 },
-            auxIni: iniAux,
+            auxIni,
           }
           result.push({
-            span: span,
-            value: value,
-            initialPosition: initialPosition,
+            span,
+            value,
+            initialPosition,
             [increment]: rowOrColumn,
             path,
             key: obj.data.nodeKey,
@@ -123,7 +123,7 @@ export function getResult<T extends object>(
               path,
             })
           }
-          iniAux = initialPosition
+          auxIni = initialPosition
           spanAux = span
         })
     }
@@ -134,9 +134,9 @@ export function getResult<T extends object>(
 export function createHandleScroll(
   tableContainerRef: MutableRefObject<HTMLDivElement>,
   displayLeftShadow: boolean,
-  setDisplayLeftShadow: { (value: SetStateAction<boolean>): void; (arg0: boolean): void },
+  setDisplayLeftShadow: Dispatch<SetStateAction<boolean>>,
   displayRightShadow: boolean,
-  setDisplayRightShadow: { (value: SetStateAction<boolean>): void; (arg0: boolean): void }
+  setDisplayRightShadow: Dispatch<SetStateAction<boolean>>
 ) {
   return () => {
     if (tableContainerRef.current) {

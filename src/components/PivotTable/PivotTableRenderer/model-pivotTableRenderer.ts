@@ -12,7 +12,7 @@ export type TableProps<T extends object> = {
    */
   defaultTree: Dictionary<T> & TreeRoot
   /**
-   * A tree with the count of each occurence of a value relative to parent keys. Used to build the rows of the table
+   * A tree with the count of each occurrence of a value relative to parent keys. Used to build the rows of the table
    */
   complementaryTree?: Dictionary<T> & TreeRoot
   /**
@@ -41,11 +41,6 @@ export type TreeRoot = {
 }
 
 export type Dictionary<T extends any> = Record<string | number | symbol, T[] & TreeRoot>
-
-export interface OperationsPaths {
-  build: string
-  meta: string
-}
 
 export interface TreeMeta<T> {
   isEmpty: boolean

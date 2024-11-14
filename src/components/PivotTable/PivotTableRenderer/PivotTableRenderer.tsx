@@ -1,7 +1,5 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/core'
-
 import { ReactElement, useEffect, useRef, useState } from 'react'
+import React from 'react'
 import { VFlow } from '../..'
 import { useStyles } from '../../../styles'
 import { TableProps } from './model-pivotTableRenderer'

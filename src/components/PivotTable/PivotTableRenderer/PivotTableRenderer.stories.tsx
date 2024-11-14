@@ -84,7 +84,7 @@ export const AllTypes = () => {
   }
   const maxLeafValue = props.defaultTree.maxLeafValue
   return (
-    <PivotTableProvider maxValue={maxLeafValue} suffix={''}>
+    <PivotTableProvider maxValue={maxLeafValue} suffix=''>
       <PivotTableRenderer {...props}></PivotTableRenderer>
     </PivotTableProvider>
   )

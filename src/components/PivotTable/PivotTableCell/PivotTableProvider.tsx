@@ -20,7 +20,5 @@ export const PivotTableContext = React.createContext<PivotTableContextType>(unde
 export const PivotTableProvider = (props: PivotTableProvider) => {
   const { children, maxValue, suffix } = props
 
-  return (
-    <PivotTableContext.Provider value={{ maxValue: maxValue, suffix: suffix }}>{children}</PivotTableContext.Provider>
-  )
+  return <PivotTableContext.Provider value={{ maxValue, suffix }}>{children}</PivotTableContext.Provider>
 }

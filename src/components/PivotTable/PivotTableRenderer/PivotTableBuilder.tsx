@@ -175,7 +175,7 @@ function getHorizontal<T extends object>({
       <PivotTableCell
         types={new Set([PivotTableCellType.HEADER])}
         key={totalGridArea.toString()}
-        isEndRow={true}
+        isEndRow
         gridArea={totalGridArea}
       >
         Total
@@ -340,15 +340,10 @@ function getVertical<T extends object>({
 
     const gridArea = new GridArea(keys.length + 1, columnHeaderSpace, keys.length + 2, columnHeaderSpace + 1)
     divs.push(
-      <PivotTableCell
-        types={new Set([PivotTableCellType.HEADER])}
-        key={gridArea.toString()}
-        gridArea={gridArea}
-      ></PivotTableCell>,
+      <PivotTableCell types={new Set([PivotTableCellType.HEADER])} key={gridArea.toString()} gridArea={gridArea} />,
       <PivotTableCell
         types={new Set([PivotTableCellType.HEADER])}
         key={totaisGridArea.toString()}
-        isEndRow={false}
         isEndColumn={true}
         gridArea={totaisGridArea}
       >
@@ -403,7 +398,7 @@ function getVertical<T extends object>({
       <PivotTableCell
         types={new Set([PivotTableCellType.HEADER])}
         key={totaisGridArea.toString()}
-        isEndRow={true}
+        isEndRow
         isEndColumn={false}
         gridArea={totaisGridArea}
       >
