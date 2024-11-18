@@ -90,7 +90,7 @@ export type GetHorinzontalParams<T extends object> = {
   keys: Array<keyof T>
   data: Tree<T>
   keysMapping: KeyMap<T>
-  headerSpace?: number
+  rowHeaderSpace?: number
   mixedTable?: {
     totalKey?: keyof T
   }

@@ -1,8 +1,4 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/core'
-
-import { ReactElement } from 'react'
-
+import React, { ReactElement } from 'react'
 import { max } from 'lodash'
 import { KeyMap } from '../model'
 import { PivotTableCell } from '../PivotTableCell/PivotTableCell'
@@ -39,7 +35,7 @@ export function buildHorizontalTable<T extends object>(
     keys: rowKeys,
     data: defaultTree,
     keysMapping,
-    headerSpace: 2,
+    rowHeaderSpace: 2,
   })
 
   return horizontalDivs
@@ -58,7 +54,7 @@ export function buildRectangularTable<T extends object>(
     keys: rowKeys,
     data: defaultTree,
     keysMapping,
-    headerSpace: columnKeys.length + 1,
+    rowHeaderSpace: columnKeys.length + 1,
     mixedTable: {
       totalKey: columnKeys[0],
     },
@@ -88,7 +84,7 @@ function getHorizontal<T extends object>({
   keys,
   data,
   keysMapping,
-  headerSpace = 1,
+  rowHeaderSpace = 1,
   mixedTable,
 }: GetHorinzontalParams<T>): GetHorinzontalResults {
   let maxRowEnd = 0
@@ -96,28 +92,15 @@ function getHorizontal<T extends object>({
   const divs: ReactElement[] = []
   const rowTotalValues = new Map<string, number>()
   const cellPosition = new Set<string>()
+  const isMixedTable = mixedTable !== null && mixedTable !== undefined
+
+  buildHorizontalTableHeader<T>(keys, rowHeaderSpace, divs, keysMapping)
 
   /**
-   * Create vertical header
-   */
-  keys.forEach((k, idx) => {
-    const headerGridArea = new GridArea(headerSpace, idx + 1, headerSpace + 1, idx + 2)
-    divs.push(
-      <PivotTableCell
-        types={new Set([PivotTableCellType.HEADER])}
-        key={headerGridArea.toString()}
-        gridArea={headerGridArea}
-      >
-        {keysMapping.get(k).keyName}
-      </PivotTableCell>
-    )
-  })
-
-  /**
-   * Populate vertical keys
+   * Build values and keys
    */
   for (let result of results) {
-    if (mixedTable) {
+    if (isMixedTable) {
       if (result.key === mixedTable.totalKey) {
         const rowTotalValuesKey: string = result.path.replace(
           getCurrentPath(result.key.toString(), result.value.toString()),
@@ -134,7 +117,7 @@ function getHorizontal<T extends object>({
     const rowSpan = result.span.value
     const columnStart = result.column || 0
     const columnEnd = lastKey ? columnStart + 2 : columnStart + 1
-    const rowStart = getInitialPosition(result.initialPosition) + headerSpace
+    const rowStart = getInitialPosition(result.initialPosition) + rowHeaderSpace
     const rowEnd = rowStart + rowSpan
     maxRowEnd = max([rowEnd, maxRowEnd])
     maxColumnEnd = columnEnd > maxColumnEnd ? columnStart : maxColumnEnd
@@ -156,49 +139,17 @@ function getHorizontal<T extends object>({
     cellPosition.add(valuesGridArea.toString())
   }
 
-  /**
-   * Populate totals
-   */
-  let totaisGridArea: GridArea
-  if (mixedTable) {
-    totaisGridArea = new GridArea(maxRowEnd, 1, maxRowEnd + 1, keys.length + 2)
-  } else {
-    totaisGridArea = new GridArea(headerSpace, maxColumnEnd, headerSpace + 1, maxColumnEnd + 1)
-    const totalGridArea = new GridArea(maxRowEnd, 1, maxRowEnd + 1, maxColumnEnd)
-    const dataValueGridArea = new GridArea(maxRowEnd, maxColumnEnd, maxRowEnd + 1, maxColumnEnd + 1)
-    divs.push(
-      <PivotTableCell
-        types={new Set([PivotTableCellType.HEADER])}
-        key={totalGridArea.toString()}
-        isEndRow
-        gridArea={totalGridArea}
-      >
-        Total
-      </PivotTableCell>,
-      <PivotTableCell
-        types={new Set([PivotTableCellType.TOTAL, PivotTableCellType.GRANDTOTAL, PivotTableCellType.VALUE])}
-        key={dataValueGridArea.toString()}
-        isEndColumn
-        isEndRow
-        gridArea={dataValueGridArea}
-      >
-        {data.nodeValue}
-      </PivotTableCell>
-    )
-  }
-
-  divs.push(
-    <PivotTableCell
-      types={new Set([PivotTableCellType.HEADER])}
-      key={totaisGridArea.toString()}
-      isEndColumn={mixedTable === undefined}
-      isEndRow={mixedTable !== undefined}
-      gridArea={totaisGridArea}
-    >
-      {TOTAL}
-    </PivotTableCell>
+  buildHorizontalTableTotals<T>(
+    isMixedTable,
+    maxRowEnd,
+    keys,
+    rowHeaderSpace,
+    maxColumnEnd,
+    divs,
+    data.nodeValue,
+    cellPosition
   )
-  cellPosition.add(totaisGridArea.toString())
+
   return { divs, rowTotalValues, totalRowNumber: maxRowEnd, cellPosition }
 }
 
@@ -217,15 +168,17 @@ function getVertical<T extends object>({
   const mixedTableColumnTotals = new Map<number, number>()
   const cellPositions = mixedTable?.cellPosition || new Set<string>()
 
+  buildVerticalTableHeader<T>(keys, columnHeaderSpace, divs, keysMapping)
+
+  /**
+   * Build values and keys
+   */
   for (let result of results) {
     const value = result.value
     const columnSpan = result.span.value
     let rowStart = result.row || 0
     let columnStart = getInitialPosition(result.initialPosition) + columnHeaderSpace
     if (mixedTable) {
-      /**
-       * Collect totals, collect total position
-       */
       if (result.key === mixedTable.totalKey) {
         mixedTableColumnTotals.set(columnStart, result.total || 0)
       }
@@ -239,9 +192,6 @@ function getVertical<T extends object>({
         mixedTableStartRowCache.set(rows[rows.length - 1].path, rowStart)
       }
     }
-    /**
-     * Populate values
-     */
     const lastKey = mixedTable && result.key === keys[keys.length - 1]
     const rowEnd = lastKey ? rowStart + 2 : rowStart + 1
     const columnEnd = columnStart + columnSpan
@@ -270,39 +220,195 @@ function getVertical<T extends object>({
     cellPositions.add(gridArea.toString())
   }
 
-  /**
-   * Create horizontal header
-   */
-  divs.push(
-    ...keys.map((k, i) => {
-      const gridArea = new GridArea(i + 1, columnHeaderSpace, i + 2, columnHeaderSpace + 1)
-      return (
-        <PivotTableCell types={new Set([PivotTableCellType.HEADER])} key={gridArea.toString()} gridArea={gridArea}>
-          {keysMapping.get(k).keyName}
-        </PivotTableCell>
-      )
-    })
-  )
-
-  /**
-   * Populate totals
-   */
-  let totaisGridArea: GridArea
-  let dataValueGridArea: GridArea
   if (mixedTable) {
-    /**
-     * Populate horizontal totals
-     */
-    const totalRowNumber = mixedTable.totalRowNumber
-    totaisGridArea = new GridArea(1, maxColumnEnd + 1, keys.length + 2, maxColumnEnd + 2)
-    dataValueGridArea = new GridArea(totalRowNumber, maxColumnEnd + 1, totalRowNumber + 1, maxColumnEnd + 2)
+    buildMixedTableTotals<T>(
+      maxColumnEnd,
+      keys,
+      mixedTable.rowTotalValues,
+      mixedTableColumnTotals,
+      mixedTable.totalRowNumber,
+      divs,
+      cellPositions,
+      mixedTableStartRowCache,
+      columnHeaderSpace,
+      data.nodeValue
+    )
+  } else {
+    buildVerticalTableTotals(maxRowEnd, maxColumnEnd, divs, data.nodeValue)
+  }
+  return divs
+}
 
-    mixedTableColumnTotals.forEach((value, key) => {
-      const gridArea = new GridArea(totalRowNumber, key, totalRowNumber + 1, key + 1)
+function buildHorizontalTableHeader<T extends object>(
+  keys: (keyof T)[],
+  rowHeaderSpace: number,
+  divs: ReactElement[],
+  keysMapping: KeyMap<T>
+) {
+  keys.forEach((k, i) => {
+    const headerGridArea = new GridArea(rowHeaderSpace, i + 1, rowHeaderSpace + 1, i + 2)
+    divs.push(
+      <PivotTableCell
+        types={new Set([PivotTableCellType.HEADER])}
+        key={headerGridArea.toString()}
+        gridArea={headerGridArea}
+      >
+        {keysMapping.get(k).keyName}
+      </PivotTableCell>
+    )
+  })
+}
+
+function buildVerticalTableHeader<T extends object>(
+  keys: (keyof T)[],
+  columnHeaderSpace: number,
+  divs: React.ReactElement<any, string | React.JSXElementConstructor<any>>[],
+  keysMapping: KeyMap<T>
+) {
+  keys.forEach((k, i) => {
+    const headerGridArea = new GridArea(i + 1, columnHeaderSpace, i + 2, columnHeaderSpace + 1)
+    divs.push(
+      <PivotTableCell
+        types={new Set([PivotTableCellType.HEADER])}
+        key={headerGridArea.toString()}
+        gridArea={headerGridArea}
+      >
+        {keysMapping.get(k).keyName}
+      </PivotTableCell>
+    )
+  })
+}
+
+function buildMixedTableTotals<T extends object>(
+  maxColumnEnd: number,
+  keys: (keyof T)[],
+  mixedTableRowTotals: Map<string, number>,
+  mixedTableColumnTotals: Map<number, number>,
+  totalRowNumber: number,
+  divs: ReactElement[],
+  cellPositions: Set<string>,
+  mixedTableStartRowCache: Map<string, number>,
+  columnHeaderSpace: number,
+  grandtotal: number
+) {
+  const totalsGridArea = new GridArea(1, maxColumnEnd + 1, keys.length + 2, maxColumnEnd + 2)
+  const dataValueGridArea = new GridArea(totalRowNumber, maxColumnEnd + 1, totalRowNumber + 1, maxColumnEnd + 2)
+
+  mixedTableColumnTotals.forEach(buildMixedTableColumnTotals(totalRowNumber, divs, cellPositions))
+  mixedTableRowTotals.forEach(buildMixedTableRowTotals(mixedTableStartRowCache, maxColumnEnd, divs, cellPositions))
+
+  const gridArea = new GridArea(keys.length + 1, columnHeaderSpace, keys.length + 2, columnHeaderSpace + 1)
+  divs.push(
+    <PivotTableCell types={new Set([PivotTableCellType.HEADER])} key={gridArea.toString()} gridArea={gridArea} />,
+    <PivotTableCell
+      types={new Set([PivotTableCellType.HEADER])}
+      key={totalsGridArea.toString()}
+      isEndColumn
+      gridArea={totalsGridArea}
+    >
+      {TOTAL}
+    </PivotTableCell>,
+    <PivotTableCell
+      types={new Set([PivotTableCellType.TOTAL, PivotTableCellType.VALUE, PivotTableCellType.GRANDTOTAL])}
+      key={dataValueGridArea.toString()}
+      isEndColumn
+      isEndRow
+      gridArea={dataValueGridArea}
+    >
+      {grandtotal}
+    </PivotTableCell>
+  )
+  cellPositions.add(dataValueGridArea.toString())
+
+  for (let column = columnHeaderSpace + 1; column < maxColumnEnd + 2; column++) {
+    for (let row = keys.length + 2; row < totalRowNumber + 1; row++) {
+      const gridArea = new GridArea(row, column, row + 1, column + 1)
+      if (!cellPositions.has(gridArea.toString())) {
+        divs.push(
+          <PivotTableCell
+            types={new Set([PivotTableCellType.EMPTY])}
+            key={gridArea.toString()}
+            isEndRow={row === totalRowNumber}
+            isEndColumn={column === maxColumnEnd + 1}
+            gridArea={gridArea}
+          >
+            -
+          </PivotTableCell>
+        )
+      }
+    }
+  }
+}
+
+function buildVerticalTableTotals(maxRowEnd: number, maxColumnEnd: number, divs: ReactElement[], grandTotal: number) {
+  const totalsGridArea = new GridArea(maxRowEnd - 1, 1, maxRowEnd, 2)
+  const dataValueGridArea = new GridArea(maxRowEnd - 1, maxColumnEnd + 1, maxRowEnd, maxColumnEnd + 2)
+  const totalGridArea = new GridArea(1, maxColumnEnd + 1, maxRowEnd - 1, maxColumnEnd + 2)
+  divs.push(
+    <PivotTableCell
+      types={new Set([PivotTableCellType.HEADER])}
+      key={totalGridArea.toString()}
+      isEndColumn
+      gridArea={totalGridArea}
+    >
+      {TOTAL}
+    </PivotTableCell>,
+    <PivotTableCell
+      types={new Set([PivotTableCellType.HEADER])}
+      key={totalsGridArea.toString()}
+      isEndRow
+      isEndColumn={false}
+      gridArea={totalsGridArea}
+    >
+      {TOTAL}
+    </PivotTableCell>,
+    <PivotTableCell
+      types={new Set([PivotTableCellType.TOTAL, PivotTableCellType.VALUE, PivotTableCellType.GRANDTOTAL])}
+      key={dataValueGridArea.toString()}
+      isEndColumn
+      isEndRow
+      gridArea={dataValueGridArea}
+    >
+      {grandTotal}
+    </PivotTableCell>
+  )
+}
+
+function buildMixedTableColumnTotals(
+  totalRowNumber: number,
+  divs: ReactElement[],
+  cellPositions: Set<string>
+): (value: number, key: number, map: Map<number, number>) => void {
+  return (value, key) => {
+    const gridArea = new GridArea(totalRowNumber, key, totalRowNumber + 1, key + 1)
+    divs.push(
+      <PivotTableCell
+        types={new Set([PivotTableCellType.TOTAL, PivotTableCellType.VALUE])}
+        isEndRow
+        key={gridArea.toString()}
+        gridArea={gridArea}
+      >
+        {value}
+      </PivotTableCell>
+    )
+    cellPositions.add(gridArea.toString())
+  }
+}
+
+function buildMixedTableRowTotals(
+  mixedTableStartRowCache: Map<string, number>,
+  maxColumnEnd: number,
+  divs: ReactElement[],
+  cellPositions: Set<string>
+): (value: number, key: string, map: Map<string, number>) => void {
+  return (value, key) => {
+    const rowNumber = mixedTableStartRowCache.get(key)
+    if (rowNumber) {
+      const gridArea = new GridArea(rowNumber, maxColumnEnd + 1, rowNumber + 1, maxColumnEnd + 2)
       divs.push(
         <PivotTableCell
           types={new Set([PivotTableCellType.TOTAL, PivotTableCellType.VALUE])}
-          isEndRow
+          isEndColumn
           key={gridArea.toString()}
           gridArea={gridArea}
         >
@@ -310,105 +416,58 @@ function getVertical<T extends object>({
         </PivotTableCell>
       )
       cellPositions.add(gridArea.toString())
-    })
-
-    /**
-     * Populate vertical totals
-     */
-    mixedTable.rowTotalValues.forEach((value, key) => {
-      const rowNumber = mixedTableStartRowCache.get(key)
-      if (rowNumber) {
-        const gridArea = new GridArea(rowNumber, maxColumnEnd + 1, rowNumber + 1, maxColumnEnd + 2)
-        divs.push(
-          <PivotTableCell
-            types={new Set([PivotTableCellType.TOTAL, PivotTableCellType.VALUE])}
-            isEndColumn
-            key={gridArea.toString()}
-            gridArea={gridArea}
-          >
-            {value}
-          </PivotTableCell>
-        )
-        cellPositions.add(gridArea.toString())
-      }
-    })
-
-    const gridArea = new GridArea(keys.length + 1, columnHeaderSpace, keys.length + 2, columnHeaderSpace + 1)
-    divs.push(
-      <PivotTableCell types={new Set([PivotTableCellType.HEADER])} key={gridArea.toString()} gridArea={gridArea} />,
-      <PivotTableCell
-        types={new Set([PivotTableCellType.HEADER])}
-        key={totaisGridArea.toString()}
-        isEndColumn
-        gridArea={totaisGridArea}
-      >
-        {TOTAL}
-      </PivotTableCell>,
-      <PivotTableCell
-        types={new Set([PivotTableCellType.TOTAL, PivotTableCellType.VALUE, PivotTableCellType.GRANDTOTAL])}
-        key={dataValueGridArea.toString()}
-        isEndColumn
-        isEndRow
-        gridArea={dataValueGridArea}
-      >
-        {data.nodeValue}
-      </PivotTableCell>
-    )
-    cellPositions.add(dataValueGridArea.toString())
-
-    /**
-     * Fill empty cells
-     */
-    for (let column = columnHeaderSpace + 1; column < maxColumnEnd + 2; column++) {
-      for (let row = keys.length + 2; row < totalRowNumber + 1; row++) {
-        const gridArea = new GridArea(row, column, row + 1, column + 1)
-        if (!cellPositions.has(gridArea.toString())) {
-          divs.push(
-            <PivotTableCell
-              types={new Set([PivotTableCellType.EMPTY])}
-              key={gridArea.toString()}
-              isEndRow={row === totalRowNumber}
-              isEndColumn={column === maxColumnEnd + 1}
-              gridArea={gridArea}
-            >
-              -
-            </PivotTableCell>
-          )
-        }
-      }
     }
+  }
+}
+
+function buildHorizontalTableTotals<T extends object>(
+  isMixedTable: boolean,
+  maxRowEnd: number,
+  keys: (keyof T)[],
+  rowHeaderSpace: number,
+  maxColumnEnd: number,
+  divs: ReactElement[],
+  grandtotal: number,
+  cellPosition: Set<string>
+) {
+  let totalsGridArea: GridArea
+  if (isMixedTable) {
+    totalsGridArea = new GridArea(maxRowEnd, 1, maxRowEnd + 1, keys.length + 2)
   } else {
-    totaisGridArea = new GridArea(maxRowEnd - 1, 1, maxRowEnd, 2)
-    dataValueGridArea = new GridArea(maxRowEnd - 1, maxColumnEnd + 1, maxRowEnd, maxColumnEnd + 2)
-    const totalGridArea = new GridArea(1, maxColumnEnd + 1, maxRowEnd - 1, maxColumnEnd + 2)
+    totalsGridArea = new GridArea(rowHeaderSpace, maxColumnEnd, rowHeaderSpace + 1, maxColumnEnd + 1)
+    const totalGridArea = new GridArea(maxRowEnd, 1, maxRowEnd + 1, maxColumnEnd)
+    const dataValueGridArea = new GridArea(maxRowEnd, maxColumnEnd, maxRowEnd + 1, maxColumnEnd + 1)
     divs.push(
       <PivotTableCell
         types={new Set([PivotTableCellType.HEADER])}
         key={totalGridArea.toString()}
-        isEndColumn
+        isEndRow
         gridArea={totalGridArea}
       >
         {TOTAL}
       </PivotTableCell>,
       <PivotTableCell
-        types={new Set([PivotTableCellType.HEADER])}
-        key={totaisGridArea.toString()}
-        isEndRow
-        isEndColumn={false}
-        gridArea={totaisGridArea}
-      >
-        {TOTAL}
-      </PivotTableCell>,
-      <PivotTableCell
-        types={new Set([PivotTableCellType.TOTAL, PivotTableCellType.VALUE, PivotTableCellType.GRANDTOTAL])}
+        types={new Set([PivotTableCellType.TOTAL, PivotTableCellType.GRANDTOTAL, PivotTableCellType.VALUE])}
         key={dataValueGridArea.toString()}
         isEndColumn
         isEndRow
         gridArea={dataValueGridArea}
       >
-        {data.nodeValue}
+        {grandtotal}
       </PivotTableCell>
     )
   }
-  return divs
+
+  divs.push(
+    <PivotTableCell
+      types={new Set([PivotTableCellType.HEADER])}
+      key={totalsGridArea.toString()}
+      isEndColumn={!isMixedTable}
+      isEndRow={isMixedTable}
+      gridArea={totalsGridArea}
+    >
+      {TOTAL}
+    </PivotTableCell>
+  )
+  cellPosition.add(totalsGridArea.toString())
 }
