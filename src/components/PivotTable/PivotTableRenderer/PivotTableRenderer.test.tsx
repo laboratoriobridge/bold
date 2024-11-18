@@ -1,9 +1,9 @@
 import React from 'react'
 import { fireEvent, render } from '@testing-library/react'
-import { KeyConfig } from '../model/model-keyMap'
+import { KeyConfig } from '../model'
 import { PivotTableProvider } from '../PivotTableCell/PivotTableProvider'
 import { PivotTableRenderer } from './PivotTableRenderer'
-import { TableProps } from './model-pivotTableRenderer'
+import { TableProps } from './model'
 
 type Fruit = {
   name: string
@@ -86,7 +86,7 @@ const createComponent = () => {
   )
 }
 
-describe('PivotTableCell', () => {
+describe('PivotTableRenderer', () => {
   beforeEach(() => {})
 
   it('should render correctly', () => {

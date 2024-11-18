@@ -6,7 +6,7 @@ import { useLocale, useStyles } from '../../..'
 import { InternalDraggable } from '../Draggable/InternalDraggable'
 
 import { InternalFilterDraggable } from '../Draggable/InternalFilterDraggable'
-import { KeyMap } from '../model/model-keyMap'
+import { KeyMap } from '../model'
 import { droppableCreateStyles } from './style'
 import { DroppableFilter } from './types/Filter'
 

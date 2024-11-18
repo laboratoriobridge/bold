@@ -1,9 +1,8 @@
-import { ReactElement, useEffect, useRef, useState } from 'react'
+import { ReactElement, useCallback, useEffect, useRef, useState } from 'react'
 import React from 'react'
 import { VFlow } from '../..'
 import { useStyles } from '../../../styles'
-import { TableProps } from './model-pivotTableRenderer'
-import { createHandleScroll } from './util'
+import { TableProps } from './model'
 import { createPivotTableRenderStyles } from './styles'
 import { buildHorizontalTable, buildRectangularTable, buildVerticalTable } from './PivotTableBuilder'
 
@@ -31,13 +30,19 @@ export function PivotTableRenderer<T extends object>(props: TableProps<T>) {
     }
   }, [])
 
-  const handleScroll = createHandleScroll(
-    tableContainerRef,
-    displayLeftShadow,
-    setDisplayLeftShadow,
-    displayRightShadow,
-    setDisplayRightShadow
-  )
+  const handleScroll = useCallback(() => {
+    if (tableContainerRef.current) {
+      const displayRight =
+        tableContainerRef.current.scrollLeft !==
+        tableContainerRef.current.scrollWidth - tableContainerRef.current.clientWidth
+
+      const scrollLeftMargin = 10
+      const displayLeft = tableContainerRef.current.scrollLeft > scrollLeftMargin
+
+      setDisplayLeftShadow(displayLeft)
+      setDisplayRightShadow(displayRight)
+    }
+  }, [])
 
   return (
     <VFlow>

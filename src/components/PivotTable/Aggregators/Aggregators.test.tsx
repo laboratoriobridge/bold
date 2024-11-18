@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react'
 import React from 'react'
-import { KeyMap } from '../model/model-keyMap'
+import { KeyMap } from '../model'
 import { Aggregators } from './Aggregators'
 import { Aggregator, AggregatorEnum } from './model'
 

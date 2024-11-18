@@ -1,5 +1,5 @@
 import { ReactElement } from 'react'
-import { KeyMap } from '../model/model-keyMap'
+import { KeyMap } from '../model'
 
 export type TableProps<T extends object> = {
   /**
@@ -10,11 +10,11 @@ export type TableProps<T extends object> = {
    * A tree with the count of each occurence of a value relative to parent keys.
    * If the complementaryTree is not null, it is used to build the columns of the table
    */
-  defaultTree: Dictionary<T> & TreeRoot
+  defaultTree: Tree<T>
   /**
    * A tree with the count of each occurrence of a value relative to parent keys. Used to build the rows of the table
    */
-  complementaryTree?: Dictionary<T> & TreeRoot
+  complementaryTree?: Tree<T>
   /**
    * Ordered list of keys to be displayed as rows
    */
@@ -41,6 +41,7 @@ export type TreeRoot = {
 }
 
 export type Dictionary<T extends any> = Record<string | number | symbol, T[] & TreeRoot>
+export type Tree<T extends any> = Dictionary<T> & TreeRoot
 
 export interface TreeMeta<T> {
   isEmpty: boolean
@@ -87,7 +88,7 @@ export const IGNORED_TREE_KEYS = ['id', '__typename', 'nodeKey', 'nodeValue', 'm
 export type GetHorinzontalParams<T extends object> = {
   results: NestingResult<T>[]
   keys: Array<keyof T>
-  data: Dictionary<T> & TreeRoot
+  data: Tree<T>
   keysMapping: KeyMap<T>
   headerSpace?: number
   mixedTable?: {
@@ -105,7 +106,7 @@ export type GetHorinzontalResults = {
 export type GetVerticalProps<T extends object> = {
   results: NestingResult<T>[]
   keys: Array<keyof T>
-  data: Dictionary<T> & TreeRoot
+  data: Tree<T>
   keysMapping: KeyMap<T>
   columnHeaderSpace?: number
   mixedTable?: {

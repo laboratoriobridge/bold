@@ -1,4 +1,4 @@
-import { KeyConfig } from '../model/model-keyMap'
+import { KeyConfig } from '../model'
 import { getCurrentPath, getInitialPosition, getResult } from './util'
 
 type Fruit = {

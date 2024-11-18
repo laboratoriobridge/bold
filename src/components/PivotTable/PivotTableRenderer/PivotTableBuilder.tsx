@@ -3,22 +3,17 @@ import { jsx } from '@emotion/core'
 
 import { ReactElement } from 'react'
 
-import { KeyMap } from '../model/model-keyMap'
+import { max } from 'lodash'
+import { KeyMap } from '../model'
 import { PivotTableCell } from '../PivotTableCell/PivotTableCell'
 import { GridArea } from '../PivotTableCell/classes/GridArea'
 import { formatDecimalOrInteger } from '../../../util/number'
 import { PivotTableCellType } from '../PivotTableCell/model'
-import {
-  Dictionary,
-  GetHorinzontalParams,
-  GetHorinzontalResults,
-  GetVerticalProps,
-  TreeRoot,
-} from './model-pivotTableRenderer'
+import { GetHorinzontalParams, GetHorinzontalResults, GetVerticalProps, Tree } from './model'
 import { getCurrentPath, getInitialPosition, getResult, RESULT_PATH_KEY, TOTAL } from './util'
 
 export function buildVerticalTable<T extends object>(
-  defaultTree: Dictionary<T> & TreeRoot,
+  defaultTree: Tree<T>,
   keysMapping: KeyMap<T>,
   columnKeys: (keyof T)[]
 ): ReactElement[] {
@@ -30,11 +25,11 @@ export function buildVerticalTable<T extends object>(
     keysMapping,
   })
 
-  return [...verticalDivs]
+  return verticalDivs
 }
 
 export function buildHorizontalTable<T extends object>(
-  defaultTree: Dictionary<T> & TreeRoot,
+  defaultTree: Tree<T>,
   keysMapping: KeyMap<T>,
   rowKeys: (keyof T)[]
 ): ReactElement[] {
@@ -47,15 +42,15 @@ export function buildHorizontalTable<T extends object>(
     headerSpace: 2,
   })
 
-  return [...horizontalDivs]
+  return horizontalDivs
 }
 
 export function buildRectangularTable<T extends object>(
-  defaultTree: Dictionary<T> & TreeRoot,
+  defaultTree: Tree<T>,
   keysMapping: KeyMap<T>,
   rowKeys: (keyof T)[],
   columnKeys: (keyof T)[],
-  complementaryTree: Dictionary<T> & TreeRoot
+  complementaryTree: Tree<T>
 ): ReactElement[] {
   const rowResult = getResult(defaultTree, 'column', keysMapping, rowKeys)
   const { divs: horizontalDivs, rowTotalValues, totalRowNumber, cellPosition } = getHorizontal({
@@ -141,7 +136,7 @@ function getHorizontal<T extends object>({
     const columnEnd = lastKey ? columnStart + 2 : columnStart + 1
     const rowStart = getInitialPosition(result.initialPosition) + headerSpace
     const rowEnd = rowStart + rowSpan
-    maxRowEnd = rowEnd > maxRowEnd ? rowEnd : maxRowEnd
+    maxRowEnd = max([rowEnd, maxRowEnd])
     maxColumnEnd = columnEnd > maxColumnEnd ? columnStart : maxColumnEnd
 
     const valuesGridArea = new GridArea(rowStart, columnStart, rowEnd, columnEnd)
@@ -250,7 +245,7 @@ function getVertical<T extends object>({
     const lastKey = mixedTable && result.key === keys[keys.length - 1]
     const rowEnd = lastKey ? rowStart + 2 : rowStart + 1
     const columnEnd = columnStart + columnSpan
-    maxRowEnd = rowEnd > maxRowEnd ? rowEnd : maxRowEnd
+    maxRowEnd = max([rowEnd, maxRowEnd])
     maxColumnEnd = columnEnd > maxColumnEnd ? columnStart : maxColumnEnd
     const gridArea = new GridArea(rowStart, columnStart, rowEnd, columnEnd)
 
@@ -344,7 +339,7 @@ function getVertical<T extends object>({
       <PivotTableCell
         types={new Set([PivotTableCellType.HEADER])}
         key={totaisGridArea.toString()}
-        isEndColumn={true}
+        isEndColumn
         gridArea={totaisGridArea}
       >
         {TOTAL}

@@ -1,14 +1,5 @@
-import { Dispatch, MutableRefObject, SetStateAction } from 'react'
-import { KeyMap } from '../model/model-keyMap'
-import {
-  Dictionary,
-  IGNORED_TREE_KEYS,
-  InitialPosition,
-  NestingResult,
-  SpanValue,
-  StackObj,
-  TreeRoot,
-} from './model-pivotTableRenderer'
+import { KeyMap } from '../model'
+import { IGNORED_TREE_KEYS, InitialPosition, NestingResult, SpanValue, StackObj, Tree } from './model'
 import { GroupResult } from './classes/GroupResult'
 
 export const RESULT_PATH_KEY = 'RESULT'
@@ -48,7 +39,7 @@ export function getInitialPosition(ini: InitialPosition | undefined) {
 }
 
 export function getResult<T extends object>(
-  data: Dictionary<T> & TreeRoot,
+  data: Tree<T>,
   increment: 'column' | 'row',
   keyMapping: KeyMap<T>,
   onlyIncreaseSpanOnKeys?: Array<keyof T>
@@ -129,29 +120,4 @@ export function getResult<T extends object>(
     }
   }
   return result
-}
-
-export function createHandleScroll(
-  tableContainerRef: MutableRefObject<HTMLDivElement>,
-  displayLeftShadow: boolean,
-  setDisplayLeftShadow: Dispatch<SetStateAction<boolean>>,
-  displayRightShadow: boolean,
-  setDisplayRightShadow: Dispatch<SetStateAction<boolean>>
-) {
-  return () => {
-    if (tableContainerRef.current) {
-      const displayRight =
-        tableContainerRef.current.scrollLeft !==
-        tableContainerRef.current.scrollWidth - tableContainerRef.current.clientWidth
-
-      const displayLeft = tableContainerRef.current.scrollLeft > 10
-
-      if (displayLeftShadow !== displayLeft) {
-        setDisplayLeftShadow(displayLeft)
-      }
-      if (displayRight !== displayRightShadow) {
-        setDisplayRightShadow(displayRight)
-      }
-    }
-  }
 }

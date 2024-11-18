@@ -1,8 +1,8 @@
 import React from 'react'
-import { KeyConfig } from '../model/model-keyMap'
+import { KeyConfig } from '../model'
 import { PivotTableProvider } from '../PivotTableCell/PivotTableProvider'
 import { PivotTableRenderer } from './PivotTableRenderer'
-import { TableProps } from './model-pivotTableRenderer'
+import { TableProps } from './model'
 
 export default {
   title: 'Components/PivotTable/PivotTableRenderer',
@@ -15,9 +15,9 @@ type Fruit = {
 
 export const AllTypes = () => {
   const props: TableProps<Fruit> = {
-    keysMapping: new Map([
+    keysMapping: new Map<keyof Fruit, KeyConfig>([
       [
-        'name' as keyof Fruit,
+        'name',
         {
           keyName: 'Name',
           ordenator(a, b) {
@@ -26,10 +26,10 @@ export const AllTypes = () => {
           formatter(a) {
             return a[0].toLocaleUpperCase() + a.slice(1)
           },
-        } as KeyConfig,
+        },
       ],
       [
-        'size' as keyof Fruit,
+        'size',
         {
           keyName: 'Weight',
           ordenator(a, b) {
@@ -38,7 +38,7 @@ export const AllTypes = () => {
           formatter(a) {
             return a + ' kg'
           },
-        } as KeyConfig,
+        },
       ],
     ]),
     defaultTree: {
