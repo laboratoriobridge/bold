@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PivotTableCell should render correctly 1`] = `
+exports[`PivotTableRenderer should render correctly 1`] = `
 .emotion-19 {
   position: relative;
   height: 100%;
@@ -140,7 +140,7 @@ exports[`PivotTableCell should render correctly 1`] = `
 }
 
 .emotion-4 {
-  grid-area: 1/3/3/4;
+  grid-area: 1/2/2/3;
   background-color: #FFFFFF;
   color: #24252E;
   border-top: 1px solid #D3D4DD;
@@ -164,7 +164,7 @@ exports[`PivotTableCell should render correctly 1`] = `
 }
 
 .emotion-5 {
-  grid-area: 1/4/3/5;
+  grid-area: 1/3/3/4;
   background-color: #FFFFFF;
   color: #24252E;
   border-top: 1px solid #D3D4DD;
@@ -188,6 +188,30 @@ exports[`PivotTableCell should render correctly 1`] = `
 }
 
 .emotion-6 {
+  grid-area: 1/4/3/5;
+  background-color: #FFFFFF;
+  color: #24252E;
+  border-top: 1px solid #D3D4DD;
+  border-left: 1px solid #D3D4DD;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  font-weight: bold;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0.5rem 1rem;
+}
+
+.emotion-7 {
   grid-area: 3/3/4/4;
   background-color: #84AAFF;
   color: #24252E;
@@ -211,7 +235,7 @@ exports[`PivotTableCell should render correctly 1`] = `
   padding: 0.5rem 1rem;
 }
 
-.emotion-7 {
+.emotion-8 {
   grid-area: 4/3/5/4;
   background-color: #84AAFF;
   color: #24252E;
@@ -235,7 +259,7 @@ exports[`PivotTableCell should render correctly 1`] = `
   padding: 0.5rem 1rem;
 }
 
-.emotion-8 {
+.emotion-9 {
   grid-area: 3/4/4/5;
   background-color: #0069D0;
   color: #FFFFFF;
@@ -259,7 +283,7 @@ exports[`PivotTableCell should render correctly 1`] = `
   padding: 0.5rem 1rem;
 }
 
-.emotion-9 {
+.emotion-10 {
   grid-area: 4/4/5/5;
   background-color: #002451;
   color: #FFFFFF;
@@ -274,30 +298,6 @@ exports[`PivotTableCell should render correctly 1`] = `
   -ms-flex-pack: end;
   justify-content: flex-end;
   font-weight: normal;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  padding: 0.5rem 1rem;
-}
-
-.emotion-10 {
-  grid-area: 1/2/2/3;
-  background-color: #FFFFFF;
-  color: #24252E;
-  border-top: 1px solid #D3D4DD;
-  border-left: 1px solid #D3D4DD;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  font-weight: bold;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -525,20 +525,27 @@ exports[`PivotTableCell should render correctly 1`] = `
           </div>
           <div
             class="emotion-4"
+            data-columnnumber="2"
+            data-rownumber="1"
+          >
+            Weight
+          </div>
+          <div
+            class="emotion-5"
             data-columnnumber="3"
             data-rownumber="1 2"
           >
             1 kg
           </div>
           <div
-            class="emotion-5"
+            class="emotion-6"
             data-columnnumber="4"
             data-rownumber="1 2"
           >
             2 kg
           </div>
           <div
-            class="emotion-6"
+            class="emotion-7"
             data-columnnumber="3"
             data-rownumber="3"
           >
@@ -546,7 +553,7 @@ exports[`PivotTableCell should render correctly 1`] = `
             
           </div>
           <div
-            class="emotion-7"
+            class="emotion-8"
             data-columnnumber="3"
             data-rownumber="4"
           >
@@ -554,7 +561,7 @@ exports[`PivotTableCell should render correctly 1`] = `
             
           </div>
           <div
-            class="emotion-8"
+            class="emotion-9"
             data-columnnumber="4"
             data-rownumber="3"
           >
@@ -562,19 +569,12 @@ exports[`PivotTableCell should render correctly 1`] = `
             
           </div>
           <div
-            class="emotion-9"
+            class="emotion-10"
             data-columnnumber="4"
             data-rownumber="4"
           >
             3
             
-          </div>
-          <div
-            class="emotion-10"
-            data-columnnumber="2"
-            data-rownumber="1"
-          >
-            Weight
           </div>
           <div
             class="emotion-11"
