@@ -6,6 +6,8 @@ import { TableProps } from './model'
 import { createPivotTableRenderStyles } from './styles'
 import { buildHorizontalTable, buildRectangularTable, buildVerticalTable } from './PivotTableBuilder'
 
+const SCROLL_LEFT_SHADOW_MARGIN = 10
+
 export function PivotTableRenderer<T extends object>(props: TableProps<T>) {
   const { rowKeys, columnKeys, keysMapping, defaultTree, complementaryTree } = props
   const tableContainerRef = useRef<HTMLDivElement>(null)
@@ -36,8 +38,7 @@ export function PivotTableRenderer<T extends object>(props: TableProps<T>) {
         tableContainerRef.current.scrollLeft !==
         tableContainerRef.current.scrollWidth - tableContainerRef.current.clientWidth
 
-      const scrollLeftMargin = 10
-      const displayLeft = tableContainerRef.current.scrollLeft > scrollLeftMargin
+      const displayLeft = tableContainerRef.current.scrollLeft > SCROLL_LEFT_SHADOW_MARGIN
 
       setDisplayLeftShadow(displayLeft)
       setDisplayRightShadow(displayRight)

@@ -80,7 +80,7 @@ const createComponent = () => {
   }
   const maxLeafValue = props.defaultTree.maxLeafValue as number
   return (
-    <PivotTableProvider maxValue={maxLeafValue} suffix={''}>
+    <PivotTableProvider maxValue={maxLeafValue} suffix=''>
       <PivotTableRenderer {...props}></PivotTableRenderer>
     </PivotTableProvider>
   )
@@ -103,6 +103,8 @@ describe('PivotTableRenderer', () => {
     const cellBottomValue = container.querySelector('div[data-columnnumber="3"][data-rownumber="4"]')!!
     const cellColumnTotal = container.querySelector('div[data-columnnumber="3"][data-rownumber="5"]')!!
     const cellRowTotal = container.querySelector('div[data-columnnumber="5"][data-rownumber="3"]')!!
+
+    expect(window.getComputedStyle(cellToHover).backgroundColor).toEqual('rgb(132, 170, 255)')
 
     fireEvent.mouseEnter(cellToHover)
 

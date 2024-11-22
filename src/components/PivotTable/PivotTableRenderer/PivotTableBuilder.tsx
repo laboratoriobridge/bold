@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react'
-import { max } from 'lodash'
+import { isNil, max } from 'lodash'
 import { KeyMap } from '../model'
 import { PivotTableCell } from '../PivotTableCell/PivotTableCell'
 import { GridArea } from '../PivotTableCell/classes/GridArea'
@@ -76,7 +76,7 @@ export function buildRectangularTable<T extends object>(
     },
   })
 
-  return [...horizontalDivs, ...verticalDivs]
+  return horizontalDivs.concat(verticalDivs)
 }
 
 function getHorizontal<T extends object>({
@@ -92,7 +92,7 @@ function getHorizontal<T extends object>({
   const divs: ReactElement[] = []
   const rowTotalValues = new Map<string, number>()
   const cellPosition = new Set<string>()
-  const isMixedTable = mixedTable !== null && mixedTable !== undefined
+  const isMixedTable = !isNil(mixedTable)
 
   buildHorizontalTableHeader<T>(keys, rowHeaderSpace, divs, keysMapping)
 
