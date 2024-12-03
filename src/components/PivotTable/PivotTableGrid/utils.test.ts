@@ -1,5 +1,5 @@
 import { KeyConfig } from '../model'
-import { getCurrentPath, getInitialPosition, getResult } from './util'
+import { getCurrentPath, getCellInitialPosition, getListOfCellDataFromTree } from './util'
 
 type Fruit = {
   name: string
@@ -53,7 +53,7 @@ const keyMapping = new Map([
 
 describe('getResult', () => {
   it('Should describe the position and value of the table elements in the correct order', () => {
-    const result = getResult(defaultTree, 'column', keyMapping, ['name', 'size'])
+    const result = getListOfCellDataFromTree(defaultTree, 'column', keyMapping, ['name', 'size'])
     expect(result[0].path).toEqual('|name.Broccoli') // Path on the tree
     expect(result[0].column).toEqual(1) // which row or column it is on
     expect(result[0].value).toEqual('Broccoli') // value to be shown on the span
@@ -97,7 +97,7 @@ describe('getResult', () => {
   })
 
   it('Should calculate correct span sizes when not all keys are present on the filter', () => {
-    const result = getResult(defaultTree, 'row', keyMapping, ['name'])
+    const result = getListOfCellDataFromTree(defaultTree, 'row', keyMapping, ['name'])
     expect(result[0].path).toEqual('|name.Broccoli') // Path on the tree
     expect(result[0].row).toEqual(1) // which row or column it is on
     expect(result[0].value).toEqual('Broccoli') // value to be shown on the span
@@ -151,11 +151,11 @@ describe('getCurrentPath', () => {
 
 describe('getInitialPosition', () => {
   it('Should calculate accuratly the initial position of a span', () => {
-    const result = getResult(defaultTree, 'column', keyMapping, ['name', 'size'])
-    const initialPositionOfBroccoliHeaderSpan = getInitialPosition(result[0].initialPosition)
-    const initialPositionOfBroccoliValue2Span = getInitialPosition(result[5].initialPosition)
-    const initialPositionOfCarrotHeaderSpan = getInitialPosition(result[1].initialPosition)
-    const initialPositionOfCarrotValue2Span = getInitialPosition(result[9].initialPosition)
+    const result = getListOfCellDataFromTree(defaultTree, 'column', keyMapping, ['name', 'size'])
+    const initialPositionOfBroccoliHeaderSpan = getCellInitialPosition(result[0].initialPosition)
+    const initialPositionOfBroccoliValue2Span = getCellInitialPosition(result[5].initialPosition)
+    const initialPositionOfCarrotHeaderSpan = getCellInitialPosition(result[1].initialPosition)
+    const initialPositionOfCarrotValue2Span = getCellInitialPosition(result[9].initialPosition)
     expect(initialPositionOfBroccoliHeaderSpan).toEqual(1)
     expect(initialPositionOfBroccoliValue2Span).toEqual(2)
     expect(initialPositionOfCarrotHeaderSpan).toEqual(3)

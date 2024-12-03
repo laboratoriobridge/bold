@@ -2,15 +2,15 @@ import React from 'react'
 import { fireEvent, render } from '@testing-library/react'
 import { KeyConfig } from '../model'
 import { PivotTableProvider } from '../PivotTableCell/PivotTableProvider'
-import { PivotTableRenderer } from './PivotTableRenderer'
-import { TableProps } from './model'
+import { PivotTable } from './PivotTable'
+import { PivotTableProps } from './model'
 
 type Fruit = {
   name: string
   size: string
 }
 const createComponent = () => {
-  const props: TableProps<Fruit> = {
+  const props: PivotTableProps<Fruit> = {
     keysMapping: new Map([
       [
         'name' as keyof Fruit,
@@ -81,14 +81,12 @@ const createComponent = () => {
   const maxLeafValue = props.defaultTree.maxLeafValue as number
   return (
     <PivotTableProvider maxValue={maxLeafValue} suffix=''>
-      <PivotTableRenderer {...props}></PivotTableRenderer>
+      <PivotTable {...props}></PivotTable>
     </PivotTableProvider>
   )
 }
 
 describe('PivotTableRenderer', () => {
-  beforeEach(() => {})
-
   it('should render correctly', () => {
     const { container } = render(createComponent())
     expect(container).toMatchSnapshot()

@@ -1,11 +1,11 @@
 import React from 'react'
 import { KeyConfig } from '../model'
 import { PivotTableProvider } from '../PivotTableCell/PivotTableProvider'
-import { PivotTableRenderer } from './PivotTableRenderer'
-import { TableProps } from './model'
+import { PivotTable } from './PivotTable'
+import { PivotTableProps } from './model'
 
 export default {
-  title: 'Components/PivotTable/PivotTableRenderer',
+  title: 'Components/PivotTable/PivotTable',
 }
 
 type Fruit = {
@@ -13,8 +13,8 @@ type Fruit = {
   size: string
 }
 
-export const AllTypes = () => {
-  const props: TableProps<Fruit> = {
+export const Default = () => {
+  const props: PivotTableProps<Fruit> = {
     keysMapping: new Map<keyof Fruit, KeyConfig>([
       [
         'name',
@@ -85,7 +85,7 @@ export const AllTypes = () => {
   const maxLeafValue = props.defaultTree.maxLeafValue
   return (
     <PivotTableProvider maxValue={maxLeafValue} suffix=''>
-      <PivotTableRenderer {...props}></PivotTableRenderer>
+      <PivotTable {...props}></PivotTable>
     </PivotTableProvider>
   )
 }

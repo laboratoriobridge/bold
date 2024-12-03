@@ -1,7 +1,7 @@
-import { ReactElement } from 'react'
 import { KeyMap } from '../model'
+import { PivotTableCellProps } from '../PivotTableCell/PivotTableCell'
 
-export type TableProps<T extends object> = {
+export interface PivotTableProps<T extends object> {
   /**
    * Table keys mapped to their display names, value formatters and value ordenators
    */
@@ -10,11 +10,11 @@ export type TableProps<T extends object> = {
    * A tree with the count of each occurence of a value relative to parent keys.
    * If the complementaryTree is not null, it is used to build the columns of the table
    */
-  defaultTree: Tree<T>
+  defaultTree: PivotTableTreeNode<T>
   /**
    * A tree with the count of each occurrence of a value relative to parent keys. Used to build the rows of the table
    */
-  complementaryTree?: Tree<T>
+  complementaryTree?: PivotTableTreeNode<T>
   /**
    * Ordered list of keys to be displayed as rows
    */
@@ -25,7 +25,7 @@ export type TableProps<T extends object> = {
   columnKeys?: Array<keyof T>
 }
 
-export type TreeRoot = {
+export interface PivotTableTreeNodeValues {
   /**
    * Category of data that the children of this node belong to
    */
@@ -40,8 +40,8 @@ export type TreeRoot = {
   maxLeafValue?: number
 }
 
-export type Dictionary<T extends any> = Record<string | number | symbol, T[] & TreeRoot>
-export type Tree<T extends any> = Dictionary<T> & TreeRoot
+export type PivotTableTreeNodeChildren<T extends any> = Record<string | number | symbol, T[] & PivotTableTreeNodeValues>
+export type PivotTableTreeNode<T extends any> = PivotTableTreeNodeChildren<T> & PivotTableTreeNodeValues
 
 export interface TreeMeta<T> {
   isEmpty: boolean
@@ -49,16 +49,16 @@ export interface TreeMeta<T> {
   keyValues: Map<keyof T, Array<string>>
 }
 
-export type InitialPosition = {
-  parentIni?: InitialPosition
-  auxIni?: InitialPosition
-  spanAux?: SpanValue
+export interface CellInitialPosition {
+  parentIni?: CellInitialPosition
+  auxIni?: CellInitialPosition
+  cellSpan?: SpanValue
 }
 
-export type NestingResult<T> = {
-  span: SpanValue
+export interface NestingResult<T> {
+  cellSpan: SpanValue
   value: string | number
-  initialPosition: InitialPosition
+  initialPosition: CellInitialPosition
   path: string
   column?: number
   row?: number
@@ -66,10 +66,10 @@ export type NestingResult<T> = {
   total?: number
 }
 
-export type StackObj = {
-  data: any
+export interface StackObj {
+  treeNode: any
   spanTree?: SpanValue[]
-  parentIni?: InitialPosition
+  parentIni?: CellInitialPosition
   path?: string
   column?: number
   row?: number
@@ -85,10 +85,10 @@ export type FieldFiltersByKey<T> = Map<keyof T, Set<string>>
 
 export const IGNORED_TREE_KEYS = ['id', '__typename', 'nodeKey', 'nodeValue', 'maxLeafValue']
 
-export type GetHorinzontalParams<T extends object> = {
-  results: NestingResult<T>[]
+export interface GetHorinzontalParams<T extends object> {
+  cellData: NestingResult<T>[]
   keys: Array<keyof T>
-  data: Tree<T>
+  tree: PivotTableTreeNode<T>
   keysMapping: KeyMap<T>
   rowHeaderSpace?: number
   mixedTable?: {
@@ -96,17 +96,17 @@ export type GetHorinzontalParams<T extends object> = {
   }
 }
 
-export type GetHorinzontalResults = {
-  divs: ReactElement[]
+export interface GetHorinzontalResults {
+  divs: PivotTableCellProps[]
   rowTotalValues: Map<string, number>
   totalRowNumber: number
   cellPosition: Set<string>
 }
 
-export type GetVerticalProps<T extends object> = {
-  results: NestingResult<T>[]
+export interface GetVerticalProps<T extends object> {
+  cellData: NestingResult<T>[]
   keys: Array<keyof T>
-  data: Tree<T>
+  tree: PivotTableTreeNode<T>
   keysMapping: KeyMap<T>
   columnHeaderSpace?: number
   mixedTable?: {
