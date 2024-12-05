@@ -2,7 +2,7 @@ import React from 'react'
 import { fireEvent, render } from '@testing-library/react'
 import { KeyConfig } from '../model'
 import { PivotTableProvider } from '../PivotTableCell/PivotTableProvider'
-import { PivotTable } from './PivotTable'
+import { PivotTableGrid } from './PivotTableGrid'
 import { PivotTableProps } from './model'
 
 type Fruit = {
@@ -81,12 +81,12 @@ const createComponent = () => {
   const maxLeafValue = props.defaultTree.maxLeafValue as number
   return (
     <PivotTableProvider maxValue={maxLeafValue} suffix=''>
-      <PivotTable {...props}></PivotTable>
+      <PivotTableGrid {...props}></PivotTableGrid>
     </PivotTableProvider>
   )
 }
 
-describe('PivotTableRenderer', () => {
+describe('PivotTableGrid', () => {
   it('should render correctly', () => {
     const { container } = render(createComponent())
     expect(container).toMatchSnapshot()

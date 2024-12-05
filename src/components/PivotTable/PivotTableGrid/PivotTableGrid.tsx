@@ -1,21 +1,21 @@
-import { CSSProperties, ReactElement, useCallback, useEffect, useRef, useState } from 'react'
+import { CSSProperties, ReactElement, useCallback, useRef, useState } from 'react'
 import React from 'react'
 import { useStyles } from '../../../styles'
 import { KeyMap } from '../model'
 import { PivotTableCell, PivotTableCellProps } from '../PivotTableCell/PivotTableCell'
 import { PivotTableProps, PivotTableTreeNode } from './model'
-import { buildHorizontalTable, buildRectangularTable, buildVerticalTable } from './util'
+import { buildVerticalTable, buildMixedTable, buildHorizontalTable } from './util'
 
 const SCROLL_LEFT_SHADOW_MARGIN = 10
 
-export function PivotTable<T extends object>(props: PivotTableProps<T>) {
+export function PivotTableGrid<T extends object>(props: PivotTableProps<T>) {
   const { rowKeys, columnKeys, keysMapping, defaultTree, complementaryTree } = props
   const tableContainerRef = useRef<HTMLDivElement>(null)
   const [tableExceeds, setTableExceeds] = useState(false)
   const [displayRightShadow, setDisplayRightShadow] = useState(true)
   const [displayLeftShadow, setDisplayLeftShadow] = useState(false)
 
-  const { classes } = useStyles(createPivotTableRenderStyles)
+  const { classes } = useStyles(createPivotTableGridStyles)
 
   const tableCells: ReactElement[] = buildTable<T>(
     rowKeys,
@@ -25,11 +25,16 @@ export function PivotTable<T extends object>(props: PivotTableProps<T>) {
     keysMapping
   ).map(buildCells)
 
-  useEffect(() => {
-    if (tableContainerRef.current) {
-      setTableExceeds(tableContainerRef.current.scrollWidth > tableContainerRef.current.clientWidth)
-    }
-  }, [])
+  const setTableRef = useCallback(
+    (ref) => {
+      tableContainerRef.current = ref
+      if (tableContainerRef.current) {
+        const newTableExceeds = tableContainerRef.current.scrollWidth > tableContainerRef.current.clientWidth
+        if (tableExceeds !== newTableExceeds) setTableExceeds(newTableExceeds)
+      }
+    },
+    [tableExceeds]
+  )
 
   const handleScroll = useCallback(() => {
     if (tableContainerRef.current) {
@@ -50,7 +55,7 @@ export function PivotTable<T extends object>(props: PivotTableProps<T>) {
   return (
     <div className={classes.tableContainer}>
       {tableExceeds && displayLeftShadow && <div className={classes.leftShadow}></div>}
-      <div onScrollCapture={handleScroll} ref={tableContainerRef} className={classes.tableWrapper}>
+      <div onScrollCapture={handleScroll} ref={setTableRef} className={classes.tableWrapper}>
         {tableCells}
       </div>
       {tableExceeds && displayRightShadow && <div className={classes.rightShadow}></div>}
@@ -66,17 +71,18 @@ function buildTable<T extends object>(
   keysMapping: KeyMap<T>
 ): PivotTableCellProps[] {
   if (rowKeys?.length && complementaryTree?.nodeValue !== undefined && columnKeys?.length) {
-    return buildRectangularTable<T>(defaultTree, keysMapping, rowKeys, columnKeys, complementaryTree)
+    return buildMixedTable<T>(defaultTree, keysMapping, rowKeys, columnKeys, complementaryTree)
   } else if (rowKeys?.length) {
-    return buildHorizontalTable<T>(defaultTree, keysMapping, rowKeys)
+    return buildVerticalTable<T>(defaultTree, keysMapping, rowKeys)
   } else if (columnKeys?.length) {
-    return buildVerticalTable<T>(defaultTree, keysMapping, columnKeys)
+    return buildHorizontalTable<T>(defaultTree, keysMapping, columnKeys)
   }
   return []
 }
 
 function buildCells(props: PivotTableCellProps): ReactElement {
   const { types, gridArea, isEndColumn, isEndRow, children } = props
+  console.log(gridArea)
   return (
     <PivotTableCell
       types={types}
@@ -90,7 +96,7 @@ function buildCells(props: PivotTableCellProps): ReactElement {
   )
 }
 
-export const createPivotTableRenderStyles = () => ({
+const createPivotTableGridStyles = () => ({
   tableContainer: {
     position: 'relative',
     height: '100%',

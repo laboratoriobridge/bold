@@ -50,14 +50,14 @@ export interface TreeMeta<T> {
 }
 
 export interface CellInitialPosition {
-  parentIni?: CellInitialPosition
-  auxIni?: CellInitialPosition
+  parentInitialPosition?: CellInitialPosition
+  auxInitialPosition?: CellInitialPosition
   cellSpan?: SpanValue
 }
 
-export interface NestingResult<T> {
+export interface CellData<T> {
   cellSpan: SpanValue
-  value: string | number
+  cellValue: string | number
   initialPosition: CellInitialPosition
   path: string
   column?: number
@@ -68,7 +68,7 @@ export interface NestingResult<T> {
 
 export interface StackObj {
   treeNode: any
-  spanTree?: SpanValue[]
+  spanList?: SpanValue[]
   parentIni?: CellInitialPosition
   path?: string
   column?: number
@@ -85,8 +85,8 @@ export type FieldFiltersByKey<T> = Map<keyof T, Set<string>>
 
 export const IGNORED_TREE_KEYS = ['id', '__typename', 'nodeKey', 'nodeValue', 'maxLeafValue']
 
-export interface GetHorinzontalParams<T extends object> {
-  cellData: NestingResult<T>[]
+export interface VerticalTableProps<T extends object> {
+  cellData: CellData<T>[]
   keys: Array<keyof T>
   tree: PivotTableTreeNode<T>
   keysMapping: KeyMap<T>
@@ -96,24 +96,26 @@ export interface GetHorinzontalParams<T extends object> {
   }
 }
 
-export interface GetHorinzontalResults {
+export interface HorizontalTableResults {
   divs: PivotTableCellProps[]
   rowTotalValues: Map<string, number>
   totalRowNumber: number
   cellPosition: Set<string>
 }
 
-export interface GetVerticalProps<T extends object> {
-  cellData: NestingResult<T>[]
+export interface HorizontalTableProps<T extends object> {
+  cellData: CellData<T>[]
   keys: Array<keyof T>
   tree: PivotTableTreeNode<T>
   keysMapping: KeyMap<T>
   columnHeaderSpace?: number
-  mixedTable?: {
-    rowResult: NestingResult<T>[]
-    rowTotalValues: Map<string, number>
-    totalKey: keyof T
-    totalRowNumber: number
-    cellPosition: Set<string>
-  }
+  mixedTable?: MixedTableProps<T>
+}
+
+export interface MixedTableProps<T extends object> {
+  rowResult: CellData<T>[]
+  rowTotalValues: Map<string, number>
+  totalKey: keyof T
+  totalRowNumber: number
+  cellPosition: Set<string>
 }

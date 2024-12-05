@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PivotTableRenderer should render correctly 1`] = `
+exports[`PivotTableGrid should render correctly 1`] = `
 .emotion-19 {
   position: relative;
   height: 100%;
@@ -12,34 +12,6 @@ exports[`PivotTableRenderer should render correctly 1`] = `
   display: grid;
   place-items: center center;
   place-content: start start;
-}
-
-.emotion-21 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.emotion-20 {
-  display: inline-block;
-  margin-bottom: 0.5rem;
-  margin-top: 0.5rem;
-}
-
-.emotion-20:first-of-type {
-  margin-top: 0;
-}
-
-.emotion-20:last-of-type {
-  margin-bottom: 0;
-}
-
-.emotion-20:empty {
-  display: none;
 }
 
 .emotion-0 {
@@ -484,151 +456,143 @@ exports[`PivotTableRenderer should render correctly 1`] = `
 
 <div>
   <div
-    class="emotion-21"
+    class="emotion-19"
   >
     <div
-      class="emotion-20"
+      class="emotion-18"
     >
       <div
-        class="emotion-19"
+        class="emotion-0"
+        data-columnnumber="1"
+        data-rownumber="2"
       >
-        <div
-          class="emotion-18"
-        >
-          <div
-            class="emotion-0"
-            data-columnnumber="1"
-            data-rownumber="2"
-          >
-            Name
-          </div>
-          <div
-            class="emotion-1"
-            data-columnnumber="1 2"
-            data-rownumber="3"
-          >
-            Broccoli
-          </div>
-          <div
-            class="emotion-2"
-            data-columnnumber="1 2"
-            data-rownumber="4"
-          >
-            Carrot
-          </div>
-          <div
-            class="emotion-3"
-            data-columnnumber="1 2"
-            data-rownumber="5"
-          >
-            Total
-          </div>
-          <div
-            class="emotion-4"
-            data-columnnumber="2"
-            data-rownumber="1"
-          >
-            Weight
-          </div>
-          <div
-            class="emotion-5"
-            data-columnnumber="3"
-            data-rownumber="1 2"
-          >
-            1 kg
-          </div>
-          <div
-            class="emotion-6"
-            data-columnnumber="4"
-            data-rownumber="1 2"
-          >
-            2 kg
-          </div>
-          <div
-            class="emotion-7"
-            data-columnnumber="3"
-            data-rownumber="3"
-          >
-            1
-            
-          </div>
-          <div
-            class="emotion-8"
-            data-columnnumber="3"
-            data-rownumber="4"
-          >
-            1
-            
-          </div>
-          <div
-            class="emotion-9"
-            data-columnnumber="4"
-            data-rownumber="3"
-          >
-            2
-            
-          </div>
-          <div
-            class="emotion-10"
-            data-columnnumber="4"
-            data-rownumber="4"
-          >
-            3
-            
-          </div>
-          <div
-            class="emotion-11"
-            data-columnnumber="3"
-            data-rownumber="5"
-          >
-            2
-            
-          </div>
-          <div
-            class="emotion-12"
-            data-columnnumber="4"
-            data-rownumber="5"
-          >
-            5
-            
-          </div>
-          <div
-            class="emotion-13"
-            data-columnnumber="5"
-            data-rownumber="3"
-          >
-            3
-            
-          </div>
-          <div
-            class="emotion-14"
-            data-columnnumber="5"
-            data-rownumber="4"
-          >
-            4
-            
-          </div>
-          <div
-            class="emotion-15"
-            data-columnnumber="2"
-            data-rownumber="2"
-          />
-          <div
-            class="emotion-16"
-            data-columnnumber="5"
-            data-rownumber="1 2"
-          >
-            Total
-          </div>
-          <div
-            class="emotion-17"
-            data-columnnumber="5"
-            data-rownumber="5"
-          >
-            7
-            
-          </div>
-        </div>
+        Name
+      </div>
+      <div
+        class="emotion-1"
+        data-columnnumber="1 2"
+        data-rownumber="3"
+      >
+        Broccoli
+      </div>
+      <div
+        class="emotion-2"
+        data-columnnumber="1 2"
+        data-rownumber="4"
+      >
+        Carrot
+      </div>
+      <div
+        class="emotion-3"
+        data-columnnumber="1 2"
+        data-rownumber="5"
+      >
+        Total
+      </div>
+      <div
+        class="emotion-4"
+        data-columnnumber="2"
+        data-rownumber="1"
+      >
+        Weight
+      </div>
+      <div
+        class="emotion-5"
+        data-columnnumber="3"
+        data-rownumber="1 2"
+      >
+        1 kg
+      </div>
+      <div
+        class="emotion-6"
+        data-columnnumber="4"
+        data-rownumber="1 2"
+      >
+        2 kg
+      </div>
+      <div
+        class="emotion-7"
+        data-columnnumber="3"
+        data-rownumber="3"
+      >
+        1
+        
+      </div>
+      <div
+        class="emotion-8"
+        data-columnnumber="3"
+        data-rownumber="4"
+      >
+        1
+        
+      </div>
+      <div
+        class="emotion-9"
+        data-columnnumber="4"
+        data-rownumber="3"
+      >
+        2
+        
+      </div>
+      <div
+        class="emotion-10"
+        data-columnnumber="4"
+        data-rownumber="4"
+      >
+        3
+        
+      </div>
+      <div
+        class="emotion-11"
+        data-columnnumber="3"
+        data-rownumber="5"
+      >
+        2
+        
+      </div>
+      <div
+        class="emotion-12"
+        data-columnnumber="4"
+        data-rownumber="5"
+      >
+        5
+        
+      </div>
+      <div
+        class="emotion-13"
+        data-columnnumber="5"
+        data-rownumber="3"
+      >
+        3
+        
+      </div>
+      <div
+        class="emotion-14"
+        data-columnnumber="5"
+        data-rownumber="4"
+      >
+        4
+        
+      </div>
+      <div
+        class="emotion-15"
+        data-columnnumber="2"
+        data-rownumber="2"
+      />
+      <div
+        class="emotion-16"
+        data-columnnumber="5"
+        data-rownumber="1 2"
+      >
+        Total
+      </div>
+      <div
+        class="emotion-17"
+        data-columnnumber="5"
+        data-rownumber="5"
+      >
+        7
+        
       </div>
     </div>
   </div>

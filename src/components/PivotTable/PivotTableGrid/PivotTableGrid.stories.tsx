@@ -1,11 +1,11 @@
 import React from 'react'
 import { KeyConfig } from '../model'
 import { PivotTableProvider } from '../PivotTableCell/PivotTableProvider'
-import { PivotTable } from './PivotTable'
+import { PivotTableGrid } from './PivotTableGrid'
 import { PivotTableProps } from './model'
 
 export default {
-  title: 'Components/PivotTable/PivotTable',
+  title: 'Components/PivotTable/PivotTableGrid',
 }
 
 type Fruit = {
@@ -85,7 +85,7 @@ export const Default = () => {
   const maxLeafValue = props.defaultTree.maxLeafValue
   return (
     <PivotTableProvider maxValue={maxLeafValue} suffix=''>
-      <PivotTable {...props}></PivotTable>
+      <PivotTableGrid {...props}></PivotTableGrid>
     </PivotTableProvider>
   )
 }
