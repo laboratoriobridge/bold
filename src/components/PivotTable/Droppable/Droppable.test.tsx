@@ -3,7 +3,7 @@ import { HTML5Backend } from 'react-dnd-html5-backend'
 import { DndProvider } from 'react-dnd'
 import React from 'react'
 
-import { KeyMap } from '../model/model-keyMap'
+import { KeyMap } from '../model'
 import { Droppable, DroppableProps } from './Droppable'
 import { DroppableFilter } from './types/Filter'
 type Fruit = {

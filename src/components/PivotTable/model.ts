@@ -1,4 +1,4 @@
-type KeyConfig = {
+export type KeyConfig = {
   keyName: string
   formatter?: (value: string) => string
   ordenator?: (a: string, b: string) => number
