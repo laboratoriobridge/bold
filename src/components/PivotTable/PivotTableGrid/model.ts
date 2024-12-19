@@ -1,5 +1,4 @@
 import { KeyMap } from '../model'
-import { PivotTableCellProps } from '../PivotTableCell/PivotTableCell'
 
 export interface PivotTableProps<T extends object> {
   /**
@@ -40,82 +39,5 @@ export interface PivotTableTreeNodeValues {
   maxLeafValue?: number
 }
 
-export type PivotTableTreeNodeChildren<T extends any> = Record<string | number | symbol, T[] & PivotTableTreeNodeValues>
-export type PivotTableTreeNode<T extends any> = PivotTableTreeNodeChildren<T> & PivotTableTreeNodeValues
-
-export interface TreeMeta<T> {
-  isEmpty: boolean
-  numberKeys: string[]
-  keyValues: Map<keyof T, Array<string>>
-}
-
-export interface CellInitialPosition {
-  parentInitialPosition?: CellInitialPosition
-  auxInitialPosition?: CellInitialPosition
-  cellSpan?: SpanValue
-}
-
-export interface CellData<T> {
-  cellSpan: SpanValue
-  cellValue: string | number
-  initialPosition: CellInitialPosition
-  path: string
-  column?: number
-  row?: number
-  key: keyof T
-  total?: number
-}
-
-export interface StackObj {
-  treeNode: any
-  spanList?: SpanValue[]
-  parentIni?: CellInitialPosition
-  path?: string
-  column?: number
-  row?: number
-}
-
-export type SpanValue = {
-  value: number
-}
-
-export type FieldValuesByKey<T> = Map<keyof T, Array<string>>
-
-export type FieldFiltersByKey<T> = Map<keyof T, Set<string>>
-
-export const IGNORED_TREE_KEYS = ['id', '__typename', 'nodeKey', 'nodeValue', 'maxLeafValue']
-
-export interface VerticalTableProps<T extends object> {
-  cellData: CellData<T>[]
-  keys: Array<keyof T>
-  tree: PivotTableTreeNode<T>
-  keysMapping: KeyMap<T>
-  rowHeaderSpace?: number
-  mixedTable?: {
-    totalKey?: keyof T
-  }
-}
-
-export interface HorizontalTableResults {
-  divs: PivotTableCellProps[]
-  rowTotalValues: Map<string, number>
-  totalRowNumber: number
-  cellPosition: Set<string>
-}
-
-export interface HorizontalTableProps<T extends object> {
-  cellData: CellData<T>[]
-  keys: Array<keyof T>
-  tree: PivotTableTreeNode<T>
-  keysMapping: KeyMap<T>
-  columnHeaderSpace?: number
-  mixedTable?: MixedTableProps<T>
-}
-
-export interface MixedTableProps<T extends object> {
-  rowResult: CellData<T>[]
-  rowTotalValues: Map<string, number>
-  totalKey: keyof T
-  totalRowNumber: number
-  cellPosition: Set<string>
-}
+export type PivotTableTreeNode<T extends any> = Record<string | number | symbol, T[] & PivotTableTreeNodeValues> &
+  PivotTableTreeNodeValues

@@ -1,10 +1,9 @@
-import { CSSProperties, ReactElement, useCallback, useRef, useState } from 'react'
+import { CSSProperties, useCallback, useRef, useState } from 'react'
 import React from 'react'
 import { useStyles } from '../../../styles'
-import { KeyMap } from '../model'
-import { PivotTableCell, PivotTableCellProps } from '../PivotTableCell/PivotTableCell'
-import { PivotTableProps, PivotTableTreeNode } from './model'
-import { buildVerticalTable, buildMixedTable, buildHorizontalTable } from './util'
+import { PivotTableCell } from '../PivotTableCell/PivotTableCell'
+import { PivotTableProps } from './model'
+import { buildTable } from './buildTable'
 
 const SCROLL_LEFT_SHADOW_MARGIN = 10
 
@@ -17,13 +16,7 @@ export function PivotTableGrid<T extends object>(props: PivotTableProps<T>) {
 
   const { classes } = useStyles(createPivotTableGridStyles)
 
-  const tableCells: ReactElement[] = buildTable<T>(
-    rowKeys,
-    complementaryTree,
-    columnKeys,
-    defaultTree,
-    keysMapping
-  ).map(buildCells)
+  const cells = buildTable<T>(rowKeys, columnKeys, defaultTree, complementaryTree, keysMapping)
 
   const setTableRef = useCallback(
     (ref) => {
@@ -56,43 +49,20 @@ export function PivotTableGrid<T extends object>(props: PivotTableProps<T>) {
     <div className={classes.tableContainer}>
       {tableExceeds && displayLeftShadow && <div className={classes.leftShadow}></div>}
       <div onScrollCapture={handleScroll} ref={setTableRef} className={classes.tableWrapper}>
-        {tableCells}
+        {cells.map((cell) => (
+          <PivotTableCell
+            types={cell.types}
+            gridArea={cell.gridArea}
+            isEndColumn={cell.isEndColumn}
+            isEndRow={cell.isEndRow}
+            key={cell.gridArea.toString()}
+          >
+            {cell.children}
+          </PivotTableCell>
+        ))}
       </div>
       {tableExceeds && displayRightShadow && <div className={classes.rightShadow}></div>}
     </div>
-  )
-}
-
-function buildTable<T extends object>(
-  rowKeys: (keyof T)[],
-  complementaryTree: PivotTableTreeNode<T>,
-  columnKeys: (keyof T)[],
-  defaultTree: PivotTableTreeNode<T>,
-  keysMapping: KeyMap<T>
-): PivotTableCellProps[] {
-  if (rowKeys?.length && complementaryTree?.nodeValue !== undefined && columnKeys?.length) {
-    return buildMixedTable<T>(defaultTree, keysMapping, rowKeys, columnKeys, complementaryTree)
-  } else if (rowKeys?.length) {
-    return buildVerticalTable<T>(defaultTree, keysMapping, rowKeys)
-  } else if (columnKeys?.length) {
-    return buildHorizontalTable<T>(defaultTree, keysMapping, columnKeys)
-  }
-  return []
-}
-
-function buildCells(props: PivotTableCellProps): ReactElement {
-  const { types, gridArea, isEndColumn, isEndRow, children } = props
-  console.log(gridArea)
-  return (
-    <PivotTableCell
-      types={types}
-      gridArea={gridArea}
-      isEndColumn={isEndColumn}
-      isEndRow={isEndRow}
-      key={gridArea.toString()}
-    >
-      {children}
-    </PivotTableCell>
   )
 }
 

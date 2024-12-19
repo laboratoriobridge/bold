@@ -1,7 +1,7 @@
 import { KeyConfig } from '../model'
 import { GridArea } from '../PivotTableCell/classes/GridArea'
 import { PivotTableCellType } from '../PivotTableCell/model'
-import { buildVerticalTable, buildHorizontalTable, buildMixedTable } from './util'
+import { buildTable } from './buildTable'
 
 type Fruit = {
   name: string
@@ -50,7 +50,7 @@ const keyMapping = new Map([
 
 describe('buildHorizontalTable', () => {
   it('Should build the props of a horizontal table correctly', () => {
-    const cellList = buildHorizontalTable(oneKeyTree, keyMapping, ['name'])
+    const cellList = buildTable([], ['name'], oneKeyTree, {}, keyMapping)
     expect(cellList).toContainEqual({
       types: new Set([PivotTableCellType.HEADER]),
       gridArea: new GridArea(1, 1, 2, 2),
@@ -102,7 +102,7 @@ describe('buildHorizontalTable', () => {
 
 describe('buildVerticalTable', () => {
   it('Should build the props of a vertical table correctly', () => {
-    const cellList = buildVerticalTable(oneKeyTree, keyMapping, ['name'])
+    const cellList = buildTable(['name'], [], oneKeyTree, {}, keyMapping)
     expect(cellList).toContainEqual({
       types: new Set([PivotTableCellType.HEADER]),
       gridArea: new GridArea(2, 1, 3, 2),
@@ -179,7 +179,7 @@ describe('buildMixedTable', () => {
         broccoli: { nodeValue: 1 },
       },
     } as any
-    const cellList = buildMixedTable(defaultTree, keyMapping, ['name'], ['size'], complementaryTree)
+    const cellList = buildTable(['name'], ['size'], defaultTree, complementaryTree, keyMapping)
     expect(cellList).toContainEqual({
       types: new Set([PivotTableCellType.HEADER]),
       gridArea: new GridArea(2, 1, 3, 2),
@@ -241,15 +241,3 @@ describe('buildMixedTable', () => {
     })
   })
 })
-
-// [{"children": "Name", "gridArea": {"columnEnd": 2, "columnStart": 1, "rowEnd": 3, "rowStart": 2}, "types": Set {"header"}},
-//   {"children": "Broccoli", "gridArea": {"columnEnd": 3, "columnStart": 1, "rowEnd": 4, "rowStart": 3}, "isEndColumn": false, "types": Set {"header"}},
-//   {"children": "Total", "gridArea": {"columnEnd": 3, "columnStart": 1, "rowEnd": 5, "rowStart": 4}, "isEndColumn": false, "isEndRow": true, "types": Set {"header"}},
-//   {"children": "Weight", "gridArea": {"columnEnd": 3, "columnStart": 2, "rowEnd": 2, "rowStart": 1}, "types": Set {"header"}},
-//   {"children": "1 kg", "gridArea": {"columnEnd": 4, "columnStart": 3, "rowEnd": 3, "rowStart": 1}, "types": Set {"header"}},
-//   {"children": "1", "gridArea": {"columnEnd": 4, "columnStart": 3, "rowEnd": 4, "rowStart": 3}, "isEndRow": false, "types": Set {"value"}},
-//   {"children": 1, "gridArea": {"columnEnd": 4, "columnStart": 3, "rowEnd": 5, "rowStart": 4}, "isEndRow": true, "types": Set {"total", "value"}},
-//   {"children": 1, "gridArea": {"columnEnd": 5, "columnStart": 4, "rowEnd": 4, "rowStart": 3}, "isEndColumn": true, "types": Set {"total", "value"}},
-//   {"gridArea": {"columnEnd": 3, "columnStart": 2, "rowEnd": 3, "rowStart": 2}, "types": Set {"header"}},
-//   {"children": "Total", "gridArea": {"columnEnd": 5, "columnStart": 4, "rowEnd": 3, "rowStart": 1}, "isEndColumn": true, "types": Set {"header"}},
-//   {"children": 1, "gridArea": {"columnEnd": 5, "columnStart": 4, "rowEnd": 5, "rowStart": 4}, "isEndColumn": true, "isEndRow": true, "types": Set {"total", "value", "grandtotal"}}]

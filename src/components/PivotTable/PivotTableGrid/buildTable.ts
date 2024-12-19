@@ -4,25 +4,97 @@ import { GridArea } from '../PivotTableCell/classes/GridArea'
 import { PivotTableCellType } from '../PivotTableCell/model'
 import { PivotTableCellProps } from '../PivotTableCell/PivotTableCell'
 import { formatDecimalOrInteger } from '../../../util/number'
-import {
-  VerticalTableProps,
-  HorizontalTableResults,
-  HorizontalTableProps,
-  IGNORED_TREE_KEYS,
-  CellInitialPosition,
-  CellData,
-  StackObj,
-  PivotTableTreeNode,
-  SpanValue,
-  MixedTableProps,
-} from './model'
+import { PivotTableTreeNode } from './model'
+
+interface VerticalTableProps<T extends object> {
+  cellData: PivotTableCellModel<T>[]
+  keys: Array<keyof T>
+  tree: PivotTableTreeNode<T>
+  keysMapping: KeyMap<T>
+  rowHeaderSpace?: number
+  mixedTable?: {
+    totalKey?: keyof T
+  }
+}
+
+interface VerticalTableResults {
+  divs: PivotTableCellProps[]
+  rowTotalValues: Map<string, number>
+  totalRowNumber: number
+  cellPositions: string[]
+}
+
+interface HorizontalTableProps<T extends object> {
+  cellData: PivotTableCellModel<T>[]
+  keys: Array<keyof T>
+  tree: PivotTableTreeNode<T>
+  keysMapping: KeyMap<T>
+  columnHeaderSpace?: number
+  mixedTable?: MixedTableProps<T>
+}
+
+interface MixedTableProps<T extends object> {
+  rowResult: PivotTableCellModel<T>[]
+  rowTotalValues: Map<string, number>
+  totalKey: keyof T
+  totalRowNumber: number
+  cellPositions: string[]
+}
+
+interface CellInitialPosition {
+  parentInitialPosition?: CellInitialPosition
+  auxInitialPosition?: CellInitialPosition
+  cellSpan?: SpanValue
+}
+
+interface PivotTableCellModel<T> {
+  cellSpan: SpanValue
+  cellValue: string | number
+  initialPosition: CellInitialPosition
+  path: string
+  column?: number
+  row?: number
+  key: keyof T
+  total?: number
+}
+
+interface SpanValue {
+  value: number
+}
+
+interface StackObj {
+  treeNode: any
+  spanList?: SpanValue[]
+  parentIni?: CellInitialPosition
+  path?: string
+  column?: number
+  row?: number
+}
 
 const RESULT_PATH_KEY = 'RESULT'
 const PATH_SEPARATOR = '|'
 const TOTAL = 'Total'
 const EMPTY = '-'
+const IGNORED_TREE_KEYS = ['id', '__typename', 'nodeKey', 'nodeValue', 'maxLeafValue']
 
-export function buildHorizontalTable<T extends object>(
+export function buildTable<T extends object>(
+  rowKeys: (keyof T)[],
+  columnKeys: (keyof T)[],
+  defaultTree: PivotTableTreeNode<T>,
+  complementaryTree: PivotTableTreeNode<T>,
+  keysMapping: KeyMap<T>
+): PivotTableCellProps[] {
+  if (rowKeys?.length && complementaryTree?.nodeValue !== undefined && columnKeys?.length) {
+    return buildMixedTable<T>(defaultTree, keysMapping, rowKeys, columnKeys, complementaryTree)
+  } else if (rowKeys?.length) {
+    return buildVerticalTable<T>(defaultTree, keysMapping, rowKeys)
+  } else if (columnKeys?.length) {
+    return buildHorizontalTable<T>(defaultTree, keysMapping, columnKeys)
+  }
+  return []
+}
+
+function buildHorizontalTable<T extends object>(
   defaultTree: PivotTableTreeNode<T>,
   keysMapping: KeyMap<T>,
   columnKeys: (keyof T)[]
@@ -38,7 +110,7 @@ export function buildHorizontalTable<T extends object>(
   return divs
 }
 
-export function buildVerticalTable<T extends object>(
+function buildVerticalTable<T extends object>(
   defaultTree: PivotTableTreeNode<T>,
   keysMapping: KeyMap<T>,
   rowKeys: (keyof T)[]
@@ -55,7 +127,7 @@ export function buildVerticalTable<T extends object>(
   return divs
 }
 
-export function buildMixedTable<T extends object>(
+function buildMixedTable<T extends object>(
   defaultTree: PivotTableTreeNode<T>,
   keysMapping: KeyMap<T>,
   rowKeys: (keyof T)[],
@@ -63,7 +135,7 @@ export function buildMixedTable<T extends object>(
   complementaryTree: PivotTableTreeNode<T>
 ): PivotTableCellProps[] {
   const rowResult = getListOfCellDataFromTree(defaultTree, 'column', keysMapping, rowKeys)
-  const { divs: horizontalDivs, rowTotalValues, totalRowNumber, cellPosition } = getVertical({
+  const { divs: horizontalDivs, rowTotalValues, totalRowNumber, cellPositions: cellPosition } = getVertical({
     cellData: rowResult,
     keys: rowKeys,
     tree: defaultTree,
@@ -86,27 +158,61 @@ export function buildMixedTable<T extends object>(
       rowTotalValues: rowTotalValues,
       totalKey: rowKeys[0],
       totalRowNumber: totalRowNumber,
-      cellPosition: cellPosition,
+      cellPositions: cellPosition,
     },
   })
 
   return horizontalDivs.concat(verticalDivs)
 }
 
-function getVertical<T extends object>(params: VerticalTableProps<T>): HorizontalTableResults {
+function getVertical<T extends object>(params: VerticalTableProps<T>): VerticalTableResults {
   const { cellData, keys, tree, keysMapping, rowHeaderSpace = 1, mixedTable } = params
-  let maxRowEnd = 0
-  let maxColumnEnd = 0
-  const divs: PivotTableCellProps[] = []
+
+  let divs: PivotTableCellProps[] = []
   const rowTotalValues = new Map<string, number>()
-  const cellPosition = new Set<string>()
+  let cellPositions: string[] = []
   const isMixedTable = !isNil(mixedTable)
 
-  buildVerticalTableHeader<T>(keys, rowHeaderSpace, divs, keysMapping)
+  const tableHeaderDivs = buildVerticalTableHeader<T>(keys, rowHeaderSpace, keysMapping)
+  divs = divs.concat(tableHeaderDivs)
 
-  /**
-   * Build values and keys
-   */
+  const valuesAndKeys = buildVerticalValuesAndKeys<T>(
+    cellData,
+    isMixedTable,
+    mixedTable,
+    rowTotalValues,
+    keys,
+    rowHeaderSpace
+  )
+  divs = divs.concat(valuesAndKeys.divs)
+  cellPositions = cellPositions.concat(valuesAndKeys.cellPositions)
+
+  const tableTotals = buildVerticalTableTotals<T>(
+    isMixedTable,
+    valuesAndKeys.maxRowEnd,
+    keys,
+    rowHeaderSpace,
+    valuesAndKeys.maxColumnEnd,
+    tree.nodeValue
+  )
+  divs = divs.concat(tableTotals.divs)
+  cellPositions = cellPositions.concat(tableTotals.cellPositions)
+
+  return { divs, rowTotalValues, totalRowNumber: valuesAndKeys.maxRowEnd, cellPositions }
+}
+
+function buildVerticalValuesAndKeys<T extends object>(
+  cellData: PivotTableCellModel<T>[],
+  isMixedTable: boolean,
+  mixedTable: { totalKey?: keyof T },
+  rowTotalValues: Map<string, number>,
+  keys: (keyof T)[],
+  rowHeaderSpace: number
+): { maxRowEnd: number; maxColumnEnd: number; divs: PivotTableCellProps[]; cellPositions: string[] } {
+  const divs: PivotTableCellProps[] = []
+  const cellPositions: string[] = []
+  let maxRowEnd = 0
+  let maxColumnEnd = 0
   for (let cell of cellData) {
     if (isMixedTable) {
       if (cell.key === mixedTable.totalKey) {
@@ -138,72 +244,66 @@ function getVertical<T extends object>(params: VerticalTableProps<T>): Horizonta
       isEndColumn: cell.key === RESULT_PATH_KEY && !mixedTable,
     })
 
-    cellPosition.add(valuesGridArea.toString())
+    cellPositions.push(valuesGridArea.toString())
   }
-
-  buildVerticalTableTotals<T>(
-    isMixedTable,
-    maxRowEnd,
-    keys,
-    rowHeaderSpace,
-    maxColumnEnd,
-    divs,
-    tree.nodeValue,
-    cellPosition
-  )
-
-  return { divs, rowTotalValues, totalRowNumber: maxRowEnd, cellPosition }
+  return { maxRowEnd, maxColumnEnd, divs, cellPositions }
 }
 
 function getHorizontal<T extends object>(params: HorizontalTableProps<T>): PivotTableCellProps[] {
   const { cellData, keys, tree, keysMapping, columnHeaderSpace = 1, mixedTable } = params
-  const divs: PivotTableCellProps[] = []
+  let divs: PivotTableCellProps[] = []
+  let cellPositions = mixedTable?.cellPositions || []
   const mixedTableStartRowCache = new Map<string, number>()
   const mixedTableColumnTotals = new Map<number, number>()
-  const cellPositions = mixedTable?.cellPosition || new Set<string>()
 
-  buildHorizontalTableHeader<T>(keys, columnHeaderSpace, divs, keysMapping)
+  const tableHeaderDivs = buildHorizontalTableHeader<T>(keys, columnHeaderSpace, keysMapping)
+  divs = divs.concat(tableHeaderDivs)
 
-  const { maxRowEnd, maxColumnEnd } = buildValuesAndKeys<T>(
+  const valuesAndKeys = buildHorizontalValuesAndKeys<T>(
     cellData,
     columnHeaderSpace,
     mixedTable,
     mixedTableColumnTotals,
     keys,
-    mixedTableStartRowCache,
-    divs,
-    cellPositions
+    mixedTableStartRowCache
   )
+  divs = divs.concat(valuesAndKeys.divs)
+  cellPositions = cellPositions.concat(valuesAndKeys.cellPositions)
 
   if (mixedTable) {
-    buildMixedTableTotals<T>(
-      maxColumnEnd,
+    const tableTotals = buildMixedTableTotals<T>(
+      valuesAndKeys.maxColumnEnd,
       keys,
       mixedTable.rowTotalValues,
       mixedTableColumnTotals,
       mixedTable.totalRowNumber,
-      divs,
-      cellPositions,
       mixedTableStartRowCache,
       columnHeaderSpace,
+      tree.nodeValue,
+      cellPositions
+    )
+    divs = divs.concat(tableTotals.divs)
+  } else {
+    const tableTotalsDivs = buildHorizontalTableTotals(
+      valuesAndKeys.maxRowEnd,
+      valuesAndKeys.maxColumnEnd,
       tree.nodeValue
     )
-  } else {
-    buildHorizontalTableTotals(maxRowEnd, maxColumnEnd, divs, tree.nodeValue)
+    divs = divs.concat(tableTotalsDivs)
   }
   return divs
 }
 
-function buildValuesAndKeys<T extends object>(
-  cellData: CellData<T>[],
+function buildHorizontalValuesAndKeys<T extends object>(
+  cellData: PivotTableCellModel<T>[],
   columnHeaderSpace: number,
   mixedTable: MixedTableProps<T>,
   mixedTableColumnTotals: Map<number, number>,
   keys: (keyof T)[],
-  mixedTableStartRowCache: Map<string, number>,
-  divs: PivotTableCellProps[],
-  cellPositions: Set<string>
-) {
+  mixedTableStartRowCache: Map<string, number>
+): { maxRowEnd: number; maxColumnEnd: number; divs: PivotTableCellProps[]; cellPositions: string[] } {
+  const divs: PivotTableCellProps[] = []
+  const cellPositions: string[] = []
   let maxRowEnd = 0
   let maxColumnEnd = 0
   for (let cell of cellData) {
@@ -247,17 +347,17 @@ function buildValuesAndKeys<T extends object>(
         children: value,
       })
     }
-    cellPositions.add(gridArea.toString())
+    cellPositions.push(gridArea.toString())
   }
-  return { maxRowEnd, maxColumnEnd }
+  return { maxRowEnd, maxColumnEnd, divs, cellPositions }
 }
 
 function buildVerticalTableHeader<T extends object>(
   keys: (keyof T)[],
   rowHeaderSpace: number,
-  divs: PivotTableCellProps[],
   keysMapping: KeyMap<T>
-) {
+): PivotTableCellProps[] {
+  const divs: PivotTableCellProps[] = []
   keys.forEach((k, i) => {
     const headerGridArea = new GridArea(rowHeaderSpace, i + 1, rowHeaderSpace + 1, i + 2)
     divs.push({
@@ -266,14 +366,15 @@ function buildVerticalTableHeader<T extends object>(
       children: keysMapping.get(k).keyName,
     })
   })
+  return divs
 }
 
 function buildHorizontalTableHeader<T extends object>(
   keys: (keyof T)[],
   columnHeaderSpace: number,
-  divs: PivotTableCellProps[],
   keysMapping: KeyMap<T>
-) {
+): PivotTableCellProps[] {
+  const divs: PivotTableCellProps[] = []
   keys.forEach((k, i) => {
     const headerGridArea = new GridArea(i + 1, columnHeaderSpace, i + 2, columnHeaderSpace + 1)
     divs.push({
@@ -282,6 +383,7 @@ function buildHorizontalTableHeader<T extends object>(
       children: keysMapping.get(k).keyName,
     })
   })
+  return divs
 }
 
 function buildMixedTableTotals<T extends object>(
@@ -290,17 +392,20 @@ function buildMixedTableTotals<T extends object>(
   mixedTableRowTotals: Map<string, number>,
   mixedTableColumnTotals: Map<number, number>,
   totalRowNumber: number,
-  divs: PivotTableCellProps[],
-  cellPositions: Set<string>,
   mixedTableStartRowCache: Map<string, number>,
   columnHeaderSpace: number,
-  grandtotal: number
-) {
+  grandtotal: number,
+  cellPositions: string[]
+): { divs: PivotTableCellProps[] } {
+  let divs: PivotTableCellProps[] = []
   const totalsGridArea = new GridArea(1, maxColumnEnd + 1, keys.length + 2, maxColumnEnd + 2)
   const dataValueGridArea = new GridArea(totalRowNumber, maxColumnEnd + 1, totalRowNumber + 1, maxColumnEnd + 2)
 
-  mixedTableColumnTotals.forEach(buildMixedTableColumnTotals(totalRowNumber, divs, cellPositions))
-  mixedTableRowTotals.forEach(buildMixedTableRowTotals(mixedTableStartRowCache, maxColumnEnd, divs, cellPositions))
+  const columnTotals = buildMixedTableColumnTotals(totalRowNumber, mixedTableColumnTotals)
+  const rowTotals = buildMixedTableRowTotals(mixedTableStartRowCache, maxColumnEnd, mixedTableRowTotals)
+  divs = divs.concat(columnTotals.divs, rowTotals.divs)
+  cellPositions = cellPositions.concat(columnTotals.cellPositions)
+  cellPositions = cellPositions.concat(rowTotals.cellPositions)
 
   const gridArea = new GridArea(keys.length + 1, columnHeaderSpace, keys.length + 2, columnHeaderSpace + 1)
   divs.push({
@@ -320,12 +425,12 @@ function buildMixedTableTotals<T extends object>(
     gridArea: dataValueGridArea,
     children: grandtotal,
   })
-  cellPositions.add(dataValueGridArea.toString())
+  cellPositions.push(dataValueGridArea.toString())
 
   for (let column = columnHeaderSpace + 1; column < maxColumnEnd + 2; column++) {
     for (let row = keys.length + 2; row < totalRowNumber + 1; row++) {
       const gridArea = new GridArea(row, column, row + 1, column + 1)
-      if (!cellPositions.has(gridArea.toString())) {
+      if (!cellPositions.includes(gridArea.toString())) {
         divs.push({
           types: new Set([PivotTableCellType.EMPTY]),
           isEndColumn: column === maxColumnEnd + 1,
@@ -336,14 +441,15 @@ function buildMixedTableTotals<T extends object>(
       }
     }
   }
+  return { divs }
 }
 
 function buildHorizontalTableTotals(
   maxRowEnd: number,
   maxColumnEnd: number,
-  divs: PivotTableCellProps[],
   grandTotal: number
-) {
+): PivotTableCellProps[] {
+  const divs: PivotTableCellProps[] = []
   const totalsGridArea = new GridArea(maxRowEnd - 1, 1, maxRowEnd, 2)
   const dataValueGridArea = new GridArea(maxRowEnd - 1, maxColumnEnd + 1, maxRowEnd, maxColumnEnd + 2)
   const totalGridArea = new GridArea(1, maxColumnEnd + 1, maxRowEnd - 1, maxColumnEnd + 2)
@@ -366,14 +472,16 @@ function buildHorizontalTableTotals(
     gridArea: dataValueGridArea,
     children: grandTotal,
   })
+  return divs
 }
 
 function buildMixedTableColumnTotals(
   totalRowNumber: number,
-  divs: PivotTableCellProps[],
-  cellPositions: Set<string>
-): (value: number, key: number, map: Map<number, number>) => void {
-  return (value, key) => {
+  mixedTableColumnTotals: Map<number, number>
+): { divs: PivotTableCellProps[]; cellPositions: string[] } {
+  const divs: PivotTableCellProps[] = []
+  const cellPositions: string[] = []
+  mixedTableColumnTotals.forEach((value, key) => {
     const gridArea = new GridArea(totalRowNumber, key, totalRowNumber + 1, key + 1)
     divs.push({
       types: new Set([PivotTableCellType.TOTAL, PivotTableCellType.VALUE]),
@@ -381,17 +489,19 @@ function buildMixedTableColumnTotals(
       gridArea: gridArea,
       children: value,
     })
-    cellPositions.add(gridArea.toString())
-  }
+    cellPositions.push(gridArea.toString())
+  })
+  return { divs, cellPositions }
 }
 
 function buildMixedTableRowTotals(
   mixedTableStartRowCache: Map<string, number>,
   maxColumnEnd: number,
-  divs: PivotTableCellProps[],
-  cellPositions: Set<string>
-): (value: number, key: string, map: Map<string, number>) => void {
-  return (value, key) => {
+  mixedTableRowTotals: Map<string, number>
+): { divs: PivotTableCellProps[]; cellPositions: string[] } {
+  const divs: PivotTableCellProps[] = []
+  const cellPositions: string[] = []
+  mixedTableRowTotals.forEach((value, key) => {
     const rowNumber = mixedTableStartRowCache.get(key)
     if (rowNumber) {
       const gridArea = new GridArea(rowNumber, maxColumnEnd + 1, rowNumber + 1, maxColumnEnd + 2)
@@ -401,9 +511,10 @@ function buildMixedTableRowTotals(
         gridArea: gridArea,
         children: value,
       })
-      cellPositions.add(gridArea.toString())
+      cellPositions.push(gridArea.toString())
     }
-  }
+  })
+  return { divs, cellPositions }
 }
 
 function buildVerticalTableTotals<T extends object>(
@@ -412,10 +523,10 @@ function buildVerticalTableTotals<T extends object>(
   keys: (keyof T)[],
   rowHeaderSpace: number,
   maxColumnEnd: number,
-  divs: PivotTableCellProps[],
-  grandtotal: number,
-  cellPosition: Set<string>
-) {
+  grandtotal: number
+): { divs: PivotTableCellProps[]; cellPositions: string[] } {
+  const divs: PivotTableCellProps[] = []
+  const cellPositions: string[] = []
   let totalsGridArea: GridArea
   if (isMixedTable) {
     totalsGridArea = new GridArea(maxRowEnd, 1, maxRowEnd + 1, keys.length + 2)
@@ -444,7 +555,9 @@ function buildVerticalTableTotals<T extends object>(
     gridArea: totalsGridArea,
     children: TOTAL,
   })
-  cellPosition.add(totalsGridArea.toString())
+  cellPositions.push(totalsGridArea.toString())
+
+  return { divs, cellPositions }
 }
 
 function getCurrentPath(filterKey: string, value: string): string {
@@ -467,18 +580,17 @@ function getCellInitialPosition(initialPositionTree: CellInitialPosition | undef
   // Loop through the stack to calculate the sum of cellSpans
   while (stack.length) {
     const cell = stack.pop()
-    if (cell) {
-      if (cell.cellSpan) {
-        sum += cell.cellSpan.value
-      }
-      // Add children to the stack
-      if (cell.auxInitialPosition) {
-        stack.push(cell.auxInitialPosition)
-      } else if (cell.parentInitialPosition) {
-        stack.push(cell.parentInitialPosition)
-      }
+    if (cell.cellSpan) {
+      sum += cell.cellSpan.value
+    }
+    // Add children to the stack
+    if (cell.auxInitialPosition) {
+      stack.push(cell.auxInitialPosition)
+    } else if (cell.parentInitialPosition) {
+      stack.push(cell.parentInitialPosition)
     }
   }
+
   return sum
 }
 
@@ -487,9 +599,9 @@ function getListOfCellDataFromTree<T extends object>(
   increment: 'column' | 'row',
   keyMapping: KeyMap<T>,
   onlyIncreaseSpanOnKeys?: Array<keyof T>
-): CellData<T>[] {
+): PivotTableCellModel<T>[] {
   const stack: StackObj[] = []
-  const cellList: CellData<T>[] = []
+  const cellList: PivotTableCellModel<T>[] = []
 
   // Initialize the stack with the first node of the tree
   stack.push({ treeNode: tree, [increment]: 1 })
