@@ -31,7 +31,7 @@ export const AllTypes = () => {
   ]
 
   return (
-    <PivotTableProvider value={{ maxValue, suffix: '' }}>
+    <PivotTableProvider maxValue={maxValue} suffix={''}>
       <HFlow hSpacing={0}>
         {cellsTypeAndContent.map(({ type, content }, idx) => {
           const types = new Set([type])
@@ -63,7 +63,7 @@ export const EditableType = () => {
   const typeEnumValue = select('type', Object.keys(PivotTableCellType), PivotTableCellType.VALUE)
 
   return (
-    <PivotTableProvider value={{ maxValue, suffix: text('suffix', suffix) }}>
+    <PivotTableProvider maxValue={maxValue} suffix={text('suffix', suffix)}>
       <HFlow hSpacing={0}>
         <PivotTableCell
           types={new Set([PivotTableCellType[typeEnumValue]])}

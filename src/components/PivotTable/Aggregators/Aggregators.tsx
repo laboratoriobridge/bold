@@ -5,7 +5,7 @@ import { Radio } from '../../Radio'
 import { Select } from '../../Select'
 import { VFlow } from '../../VFlow'
 import { useLocale } from '../../../i18n'
-import { KeyMap } from '../model/model-keyMap'
+import { KeyMap } from '../model'
 import { Aggregator } from './model'
 import { getAggregators, getKeyNotDependentAggregators } from './utils'
 
