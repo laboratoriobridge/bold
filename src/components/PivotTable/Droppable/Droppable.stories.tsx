@@ -3,7 +3,7 @@ import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
 import { HFlow } from '../../HFlow'
 import { Box } from '../Box/Box'
-import { KeyMap } from '../model/model-keyMap'
+import { KeyMap } from '../model'
 import { Droppable } from './Droppable'
 import { DroppableFilter } from './types/Filter'
 

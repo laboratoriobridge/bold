@@ -6,7 +6,7 @@ import { useLocale, useStyles } from '../../..'
 import { InternalDraggable } from '../Draggable/InternalDraggable'
 
 import { InternalFilterDraggable } from '../Draggable/InternalFilterDraggable'
-import { KeyMap } from '../model/model-keyMap'
+import { KeyMap } from '../model'
 import { droppableCreateStyles } from './style'
 import { DroppableFilter } from './types/Filter'
 
@@ -150,7 +150,8 @@ export function Droppable<T extends object>(props: DroppableProps<T>) {
           )
         }
       }),
-    [keyState, accept, filter, keyMapping, name, onKeyNav, deleteByKey]
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [keyState, accept, keyMapping, name, filter, onKeyNav, deleteByKey]
   )
 
   const hasKeys = keyState.length > 0
