@@ -6,7 +6,7 @@ import { useMemo } from 'react'
 import { isNil } from 'lodash'
 import { useLocale } from '../../i18n'
 import { Theme, useStyles } from '../../styles'
-import { composeHandlers, composeRefs } from '../../util/react'
+import { composeHandlers } from '../../util/react'
 import { FormControl } from '../FormControl'
 import { useFormControl, UseFormControlProps } from '../../hooks/useFormControl'
 import { TextInput, TextInputProps } from '../TextField'
@@ -103,7 +103,7 @@ export function ComboboxSingleselect<T = DefaultComboboxItemType>(props: Combobo
     getLabelProps,
     getMenuProps,
     getInputProps,
-    getComboboxProps,
+    getToggleButtonProps,
     getItemProps,
     openMenu,
     toggleMenu,
@@ -133,13 +133,13 @@ export function ComboboxSingleselect<T = DefaultComboboxItemType>(props: Combobo
     ...(isNil(open) ? {} : { isOpen: open }),
   })
 
-  const downshiftComboboxProps = getComboboxProps()
   const { getFormControlProps, getInputProps: getFormControlInputProps } = useFormControl(props)
-  const { ref: downshiftInputRef, ...downshiftInputProps } = getInputProps({
+  const downshiftInputProps = getInputProps({
     onFocus: composeHandlers(onFocus, () => openOnFocus && openMenu()),
   })
   const { id: internalLabelId, ...downshiftLabelProps } = getLabelProps()
   const downshiftMenuProps = getMenuProps()
+  const downshiftToggleButtonProps = getToggleButtonProps()
 
   const {
     styles: { popper: popperStyles },
@@ -161,16 +161,17 @@ export function ComboboxSingleselect<T = DefaultComboboxItemType>(props: Combobo
   }, [toggleMenu])
 
   return (
-    <div {...downshiftComboboxProps}>
+    <div>
       <FormControl {...formControlProps} labelId={internalLabelId} {...downshiftLabelProps}>
         <TextInput
           icon={isOpen ? 'angleUp' : 'angleDown'}
           iconAriaLabel={isOpen ? locale.combobox.hideOptions : locale.combobox.showOptions}
           iconPosition='right'
           onIconClick={handleIconClick}
-          inputRef={composeRefs(inputRef, downshiftInputRef)}
+          inputRef={inputRef}
           onClear={composeHandlers(reset, onClear)}
           invalid={invalid}
+          iconProps={downshiftToggleButtonProps}
           {...formControlInputProps}
           {...downshiftInputProps}
           {...rest}

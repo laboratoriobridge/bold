@@ -1,6 +1,7 @@
 import React, { CSSProperties, forwardRef, HTMLAttributes, MouseEvent, Ref } from 'react'
+import { UseSelectPropGetters } from 'downshift'
 import { Theme, useStyles } from '../../styles'
-import { ComboboxComponents, ComboboxItemProps } from './ComboboxMenuComponents'
+import { ComboboxComponents } from './ComboboxMenuComponents'
 
 interface ListBoxProps<T> extends HTMLAttributes<HTMLDivElement> {
   components: ComboboxComponents<T>
@@ -9,7 +10,7 @@ interface ListBoxProps<T> extends HTMLAttributes<HTMLDivElement> {
   highlightedIndex: number
   itemToString(item: T): string
   createNewItem?(inputValue: string): T
-  getItemProps(options: { index: number; item: T }): ComboboxItemProps<T>
+  getItemProps(options: { index: number; item: T }): ReturnType<UseSelectPropGetters<T>['getItemProps']>
   isItemSelected?(item: T): boolean
   onItemClick?(item: T, ev: MouseEvent<HTMLLIElement>): void
 }

@@ -10,6 +10,7 @@ export interface InputWrapperProps extends React.HTMLAttributes<HTMLDivElement> 
   iconPosition?: 'left' | 'right'
   iconAriaLabel?: string
   iconDisabled?: boolean
+  iconProps?: ButtonProps
   clearVisible?: boolean
   onIconClick?: ButtonProps['onClick']
   onClear?(e: React.MouseEvent<HTMLButtonElement>): any
@@ -26,6 +27,7 @@ export const InputWrapper = React.forwardRef((props: InputWrapperProps, ref: Ref
     onClear,
     className,
     iconPosition,
+    iconProps,
     ...rest
   } = props
   const internalIconPosition = iconPosition || (onIconClick ? 'right' : 'left')
@@ -71,6 +73,7 @@ export const InputWrapper = React.forwardRef((props: InputWrapperProps, ref: Ref
               style={classes.icon}
               disabled={iconDisabled}
               aria-label={iconAriaLabel}
+              {...iconProps}
             >
               <Icon icon={icon} />
             </Button>

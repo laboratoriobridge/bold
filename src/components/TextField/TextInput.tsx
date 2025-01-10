@@ -7,7 +7,7 @@ import { TextInputBase, TextInputBaseProps } from './TextInputBase'
 
 export type PublicInputWrapperProps = Pick<
   InputWrapperProps,
-  'icon' | 'iconPosition' | 'iconDisabled' | 'onIconClick' | 'iconAriaLabel'
+  'icon' | 'iconPosition' | 'iconDisabled' | 'onIconClick' | 'iconAriaLabel' | 'iconProps'
 >
 
 export interface TextInputProps extends TextInputBaseProps, PublicInputWrapperProps {
@@ -19,7 +19,18 @@ export interface TextInputProps extends TextInputBaseProps, PublicInputWrapperPr
 }
 
 export function TextInput(props: TextInputProps) {
-  const { icon, iconPosition, iconDisabled, iconAriaLabel, onIconClick, clearable, onClear, inputRef, ...rest } = props
+  const {
+    icon,
+    iconPosition,
+    iconProps,
+    iconDisabled,
+    iconAriaLabel,
+    onIconClick,
+    clearable,
+    onClear,
+    inputRef,
+    ...rest
+  } = props
 
   const internalRef = useRef<HTMLInputElement>(null)
 
@@ -38,6 +49,7 @@ export function TextInput(props: TextInputProps) {
       iconPosition={iconPosition}
       iconDisabled={isIconDisabled}
       iconAriaLabel={iconAriaLabel}
+      iconProps={iconProps}
       onIconClick={onIconClick}
       clearVisible={isClearVisible}
       onClear={onClear ? onClear : handleClear}
