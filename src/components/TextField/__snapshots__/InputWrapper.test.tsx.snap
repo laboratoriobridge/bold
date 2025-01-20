@@ -72,6 +72,28 @@ exports[`should render correctly 1`] = `
 `;
 
 exports[`should render correctly with button 1`] = `
+.emotion-4 {
+  position: absolute;
+  background-color: #F0F0F5;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0.25rem;
+  width: 2.5rem;
+  top: 1px;
+  bottom: 1px;
+  right: 1px;
+}
+
 .emotion-0 {
   fill: currentColor;
   font-size: 1.5rem;
@@ -111,28 +133,6 @@ exports[`should render correctly with button 1`] = `
 
 .emotion-1:hover {
   color: #D01E29;
-}
-
-.emotion-4 {
-  position: absolute;
-  background-color: #F0F0F5;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding: 0.25rem;
-  width: 2.5rem;
-  top: 1px;
-  bottom: 1px;
-  right: 1px;
 }
 
 .emotion-3 {
@@ -284,18 +284,79 @@ exports[`should render correctly with left position 1`] = `
   font-size: 1.5rem;
 }
 
-.emotion-4 {
+.emotion-3 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5rem;
+  color: #24252E;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #24252E;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 0.875rem;
+  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
+  border-radius: inherit;
+}
+
+.emotion-3 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-3:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-3:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0069D0;
+}
+
+.emotion-3:not(:disabled):hover {
+  background-color: rgba(58,58,71,0.1);
+}
+
+.emotion-3:focus {
+  box-shadow: none;
+}
+
+.emotion-5 {
   position: relative;
 }
 
-.emotion-4 input {
-  padding-left: 2.5rem;
+.emotion-5 input {
+  padding-left: 3rem;
   padding-right: 2rem;
 }
 
-.emotion-3 {
+.emotion-4 {
   position: absolute;
-  background-color: transparent;
+  background-color: #F0F0F5;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -315,19 +376,9 @@ exports[`should render correctly with left position 1`] = `
   left: 1px;
 }
 
-.emotion-2 {
-  fill: currentColor;
-  font-size: 1.5rem;
-  border-radius: inherit;
-}
-
-.emotion-2:focus {
-  box-shadow: none;
-}
-
 <div>
   <div
-    class="emotion-4"
+    class="emotion-5"
   >
     <input />
     <span
@@ -351,30 +402,38 @@ exports[`should render correctly with left position 1`] = `
       </svg>
     </span>
     <span
-      class="emotion-3"
+      class="emotion-4"
     >
-      <svg
-        aria-hidden="true"
-        class="emotion-2"
-        height="1em"
-        role="img"
-        viewBox="0 0 24 24"
-        width="1em"
+      <button
+        class="emotion-3"
+        tabindex="-1"
+        type="button"
       >
-        <path
-          clip-rule="evenodd"
-          d="M14.605 13.194l7 6.998a1 1 0 01-1.414 1.414h-.001l-6.997-7a7 7 0 111.412-1.412zM9 14A5 5 0 109 4a5 5 0 000 10z"
-        />
-      </svg>
+        <span>
+          <svg
+            aria-hidden="true"
+            class="emotion-0"
+            height="1em"
+            role="img"
+            viewBox="0 0 24 24"
+            width="1em"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M14.605 13.194l7 6.998a1 1 0 01-1.414 1.414h-.001l-6.997-7a7 7 0 111.412-1.412zM9 14A5 5 0 109 4a5 5 0 000 10z"
+            />
+          </svg>
+        </span>
+      </button>
     </span>
   </div>
 </div>
 `;
 
 exports[`should render correctly without clear icon 1`] = `
-.emotion-1 {
+.emotion-2 {
   position: absolute;
-  background-color: transparent;
+  background-color: #F0F0F5;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -391,57 +450,187 @@ exports[`should render correctly without clear icon 1`] = `
   width: 2.5rem;
   top: 1px;
   bottom: 1px;
-  left: 1px;
+  right: 1px;
 }
 
 .emotion-0 {
   fill: currentColor;
   font-size: 1.5rem;
+}
+
+.emotion-1 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5rem;
+  color: #24252E;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #24252E;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 0.875rem;
+  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
   border-radius: inherit;
 }
 
-.emotion-0:focus {
+.emotion-1 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-1:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-1:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0069D0;
+}
+
+.emotion-1:not(:disabled):hover {
+  background-color: rgba(58,58,71,0.1);
+}
+
+.emotion-1:focus {
   box-shadow: none;
 }
 
-.emotion-2 {
+.emotion-3 {
   position: relative;
 }
 
-.emotion-2 input {
-  padding-left: 2.5rem;
+.emotion-3 input {
+  padding-right: 3rem;
 }
 
 <div>
   <div
-    class="emotion-2"
+    class="emotion-3"
   >
     <input />
     <span
-      class="emotion-1"
+      class="emotion-2"
     >
-      <svg
-        aria-hidden="true"
-        class="emotion-0"
-        height="1em"
-        role="img"
-        viewBox="0 0 24 24"
-        width="1em"
+      <button
+        class="emotion-1"
+        tabindex="-1"
+        type="button"
       >
-        <path
-          clip-rule="evenodd"
-          d="M14.605 13.194l7 6.998a1 1 0 01-1.414 1.414h-.001l-6.997-7a7 7 0 111.412-1.412zM9 14A5 5 0 109 4a5 5 0 000 10z"
-        />
-      </svg>
+        <span>
+          <svg
+            aria-hidden="true"
+            class="emotion-0"
+            height="1em"
+            role="img"
+            viewBox="0 0 24 24"
+            width="1em"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M14.605 13.194l7 6.998a1 1 0 01-1.414 1.414h-.001l-6.997-7a7 7 0 111.412-1.412zM9 14A5 5 0 109 4a5 5 0 000 10z"
+            />
+          </svg>
+        </span>
+      </button>
     </span>
   </div>
 </div>
 `;
 
 exports[`should render correctly without clear icon AND left position 1`] = `
+.emotion-0 {
+  fill: currentColor;
+  font-size: 1.5rem;
+}
+
 .emotion-1 {
-  position: absolute;
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5rem;
+  color: #24252E;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  cursor: pointer;
   background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #24252E;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 0.875rem;
+  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
+  border-radius: inherit;
+}
+
+.emotion-1 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-1:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-1:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0069D0;
+}
+
+.emotion-1:not(:disabled):hover {
+  background-color: rgba(58,58,71,0.1);
+}
+
+.emotion-1:focus {
+  box-shadow: none;
+}
+
+.emotion-2 {
+  position: absolute;
+  background-color: #F0F0F5;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -461,45 +650,43 @@ exports[`should render correctly without clear icon AND left position 1`] = `
   left: 1px;
 }
 
-.emotion-0 {
-  fill: currentColor;
-  font-size: 1.5rem;
-  border-radius: inherit;
-}
-
-.emotion-0:focus {
-  box-shadow: none;
-}
-
-.emotion-2 {
+.emotion-3 {
   position: relative;
 }
 
-.emotion-2 input {
-  padding-left: 2.5rem;
+.emotion-3 input {
+  padding-left: 3rem;
 }
 
 <div>
   <div
-    class="emotion-2"
+    class="emotion-3"
   >
     <input />
     <span
-      class="emotion-1"
+      class="emotion-2"
     >
-      <svg
-        aria-hidden="true"
-        class="emotion-0"
-        height="1em"
-        role="img"
-        viewBox="0 0 24 24"
-        width="1em"
+      <button
+        class="emotion-1"
+        tabindex="-1"
+        type="button"
       >
-        <path
-          clip-rule="evenodd"
-          d="M14.605 13.194l7 6.998a1 1 0 01-1.414 1.414h-.001l-6.997-7a7 7 0 111.412-1.412zM9 14A5 5 0 109 4a5 5 0 000 10z"
-        />
-      </svg>
+        <span>
+          <svg
+            aria-hidden="true"
+            class="emotion-0"
+            height="1em"
+            role="img"
+            viewBox="0 0 24 24"
+            width="1em"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M14.605 13.194l7 6.998a1 1 0 01-1.414 1.414h-.001l-6.997-7a7 7 0 111.412-1.412zM9 14A5 5 0 109 4a5 5 0 000 10z"
+            />
+          </svg>
+        </span>
+      </button>
     </span>
   </div>
 </div>

@@ -140,15 +140,14 @@ test.each`
   // From https://www.w3.org/TR/wai-aria-practices/examples/combobox/aria1.1pattern/listbox-combo.html
   const { baseElement } = render(<ComboboxTest label='Fruits' async={async} />)
 
-  const combobox = baseElement.querySelector('[role="combobox"]')
+  const combobox = baseElement.querySelector('[role="combobox"]')!
   const label = baseElement.querySelector('label')!
   const input = baseElement.querySelector('input')!
   const listbox = baseElement.querySelector('[role="listbox"]')!
   const dropdownButton = baseElement.querySelector('button')!
 
-  expect(combobox).toHaveAttribute('aria-owns', listbox.getAttribute('id'))
+  expect(combobox).toHaveAttribute('aria-controls', listbox.getAttribute('id'))
   expect(combobox).toHaveAttribute('aria-expanded', 'false')
-  expect(combobox).toHaveAttribute('aria-haspopup', 'listbox')
 
   expect(label).toHaveAttribute('id')
   expect(label).toHaveAttribute('for', input.getAttribute('id'))
@@ -169,6 +168,11 @@ test.each`
 
   expect(combobox).toHaveAttribute('aria-expanded', 'true')
   await waitFor(() => expect(listbox.querySelector('[aria-selected]')).toBeTruthy())
+
+  fireEvent.keyDown(combobox, { key: 'Down' })
+
+  await waitFor(() => expect(listbox.querySelector('[aria-selected="true"]')?.id).toBeTruthy())
+  expect(combobox).toHaveAttribute('aria-activedescendant', listbox.querySelector('[aria-selected="true"]')?.id)
 })
 
 test.each`

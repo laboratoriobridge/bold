@@ -124,7 +124,6 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
     getItemProps,
     openMenu,
     setInputValue,
-    toggleMenu,
   } = useCombobox<T>({
     defaultHighlightedIndex: 0,
     selectedItem: null,
@@ -199,9 +198,8 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
   )
 
   const handleIconClick = useCallback(() => {
-    toggleMenu()
     inputRef.current?.focus()
-  }, [toggleMenu])
+  }, [])
 
   return (
     <div>

@@ -139,7 +139,6 @@ test.each`
 
   expect(button).toHaveAttribute('aria-controls', listbox?.getAttribute('id'))
   expect(button).toHaveAttribute('aria-expanded', 'false')
-  expect(button).toHaveAttribute('aria-haspopup', 'listbox')
   expect(button).toHaveAttribute('aria-labelledby', label?.getAttribute('id'))
 
   expect(label).toHaveAttribute('id')

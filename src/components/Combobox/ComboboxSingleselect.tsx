@@ -106,7 +106,6 @@ export function ComboboxSingleselect<T = DefaultComboboxItemType>(props: Combobo
     getToggleButtonProps,
     getItemProps,
     openMenu,
-    toggleMenu,
     closeMenu,
     reset,
   } = useCombobox<T>({
@@ -156,9 +155,8 @@ export function ComboboxSingleselect<T = DefaultComboboxItemType>(props: Combobo
   const componentsInner = useMemo(() => ({ ...defaultComboboxComponents, ...(components ?? {}) }), [components])
 
   const handleIconClick = useCallback(() => {
-    toggleMenu()
     inputRef.current?.focus()
-  }, [toggleMenu])
+  }, [])
 
   return (
     <div>
