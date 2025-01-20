@@ -136,7 +136,7 @@ export function ComboboxInline<T>(props: ComboboxInlineProps<T>) {
   const formControlProps = getFormControlProps()
   const invalid = !!formControlProps.error
   const { id: labelId, htmlFor, ...downshiftLabelProps } = getLabelProps()
-  const { onBlur: menuOnBlur, ...downshiftMenuProps } = getMenuProps({
+  const downshiftMenuProps = getMenuProps({
     tabIndex: -1,
     'aria-invalid': invalid,
     'aria-errormessage': formControlProps.errorId,
