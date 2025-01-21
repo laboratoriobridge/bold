@@ -1,12 +1,12 @@
 import { useCombobox, UseComboboxState, UseComboboxStateChangeOptions } from 'downshift'
 import matchSorter from 'match-sorter'
-import React, { CSSProperties, useCallback, useEffect, useRef, useState } from 'react'
+import React, { CSSProperties, MutableRefObject, useCallback, useEffect, useRef, useState } from 'react'
 import { PopperProps, usePopper } from 'react-popper'
 import { useMemo } from 'react'
 import { isNil } from 'lodash'
 import { useLocale } from '../../i18n'
 import { Theme, useStyles } from '../../styles'
-import { composeHandlers } from '../../util/react'
+import { composeHandlers, composeRefs } from '../../util/react'
 import { FormControl } from '../FormControl'
 import { useFormControl, UseFormControlProps } from '../../hooks/useFormControl'
 import { TextInput, TextInputProps } from '../TextField'
@@ -58,6 +58,9 @@ export function ComboboxSingleselect<T = DefaultComboboxItemType>(props: Combobo
     onClear,
     onChange,
     onFocus,
+    onBlur,
+    onClick,
+    onKeyDown,
     onFilterChange,
     filter = defaultFilter,
     inputId,
@@ -133,12 +136,19 @@ export function ComboboxSingleselect<T = DefaultComboboxItemType>(props: Combobo
   })
 
   const { getFormControlProps, getInputProps: getFormControlInputProps } = useFormControl(props)
-  const downshiftInputProps = getInputProps({
-    onFocus: composeHandlers(onFocus, () => openOnFocus && openMenu()),
+  const { ref: downshiftInputRef, ...downshiftInputProps } = getInputProps<{
+    ref?: MutableRefObject<HTMLInputElement>
+  }>({
+    onFocus: composeHandlers(onFocus, () => {
+      openOnFocus && openMenu()
+    }),
+    onClick,
+    onBlur,
+    onKeyDown,
   })
   const { id: internalLabelId, ...downshiftLabelProps } = getLabelProps()
   const downshiftMenuProps = getMenuProps()
-  const downshiftToggleButtonProps = getToggleButtonProps()
+  const { ref: toggleButtonRef, ...downshiftToggleButtonProps } = getToggleButtonProps()
 
   const {
     styles: { popper: popperStyles },
@@ -154,22 +164,18 @@ export function ComboboxSingleselect<T = DefaultComboboxItemType>(props: Combobo
 
   const componentsInner = useMemo(() => ({ ...defaultComboboxComponents, ...(components ?? {}) }), [components])
 
-  const handleIconClick = useCallback(() => {
-    inputRef.current?.focus()
-  }, [])
-
   return (
-    <div>
+    <>
       <FormControl {...formControlProps} labelId={internalLabelId} {...downshiftLabelProps}>
         <TextInput
           icon={isOpen ? 'angleUp' : 'angleDown'}
           iconAriaLabel={isOpen ? locale.combobox.hideOptions : locale.combobox.showOptions}
           iconPosition='right'
-          onIconClick={handleIconClick}
-          inputRef={inputRef}
+          inputRef={composeRefs(inputRef, downshiftInputRef)}
           onClear={composeHandlers(reset, onClear)}
           invalid={invalid}
           iconProps={downshiftToggleButtonProps}
+          iconRef={toggleButtonRef}
           {...formControlInputProps}
           {...downshiftInputProps}
           {...rest}
@@ -196,10 +202,11 @@ export function ComboboxSingleselect<T = DefaultComboboxItemType>(props: Combobo
             itemToString={itemToString}
             items={loadedItems}
             loading={isLoading}
+            tabIndex={-1}
           />
         )}
       </div>
-    </div>
+    </>
   )
 }
 
@@ -223,6 +230,11 @@ const comboboxStateReducer = <T,>(createNewItem: (inputValue: string) => T) => (
             : {
                 inputValue: '',
               })),
+      }
+    case useCombobox.stateChangeTypes.InputClick:
+      return {
+        ...changes,
+        isOpen: state.isOpen,
       }
     default:
       return changes
