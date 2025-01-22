@@ -11,6 +11,9 @@ const locale = {
   dateInput: {
     placeholder: 'mm/dd/yyyy',
   },
+  monthInput: {
+    placeholder: 'mm/yyyy',
+  },
   formControl: {
     required: 'Required field',
   },
@@ -53,6 +56,13 @@ const locale = {
       one: 'result',
       other: 'results',
     },
+  },
+  aggregators: {
+    count: 'Count',
+    average: 'Average',
+    maximum: 'Maximum',
+    minimum: 'Minimum',
+    percentage: 'Percentage',
   },
   draggable: {
     search: 'Search',

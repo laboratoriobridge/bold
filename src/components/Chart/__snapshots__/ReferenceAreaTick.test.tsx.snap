@@ -1,0 +1,233 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ReferenceAreaTick should renders correctly when label alignment is central 1`] = `
+<div>
+  <text
+    dominant-baseline="central"
+    dx="15"
+    dy="0"
+    fill="#002451"
+    style="font-weight: bold;"
+    text-anchor="start"
+    x="10"
+    y="20"
+  >
+    <tspan
+      dx="15"
+      dy="0"
+      x="10"
+      y="20"
+    >
+      name
+    </tspan>
+  </text>
+  <text
+    dominant-baseline="central"
+    dx="15"
+    dy="0"
+    fill="#24252E"
+    text-anchor="start"
+    x="25"
+    y="40"
+  >
+    <tspan
+      dx="15"
+      dy="0"
+      x="10"
+      y="40"
+    >
+      description
+    </tspan>
+  </text>
+  <path
+    class="recharts-rectangle"
+    d="M 10,20 h 4 v 7.5 h -4 Z"
+    dx="15"
+    dy="2.5"
+    fill="#002451"
+    height="7.5"
+    radius="0"
+    width="4"
+    x="10"
+    y="20"
+  />
+</div>
+`;
+
+exports[`ReferenceAreaTick should renders correctly when label alignment is central and name or description has more than one line 1`] = `
+<div>
+  <text
+    dominant-baseline="central"
+    dx="15"
+    dy="0"
+    fill="#002451"
+    style="font-weight: bold;"
+    text-anchor="start"
+    x="10"
+    y="12.5"
+  >
+    <tspan
+      dx="15"
+      dy="0"
+      x="10"
+      y="12.5"
+    >
+      firstLine
+    </tspan>
+    <tspan
+      dx="15"
+      dy="15"
+      x="10"
+      y="12.5"
+    >
+      secondLine
+    </tspan>
+  </text>
+  <text
+    dominant-baseline="central"
+    dx="15"
+    dy="0"
+    fill="#24252E"
+    text-anchor="start"
+    x="25"
+    y="47.5"
+  >
+    <tspan
+      dx="15"
+      dy="0"
+      x="10"
+      y="47.5"
+    >
+      fisrtLine
+    </tspan>
+    <tspan
+      dx="15"
+      dy="15"
+      x="10"
+      y="47.5"
+    >
+      secondLine
+    </tspan>
+  </text>
+  <path
+    class="recharts-rectangle"
+    d="M 10,20 h 4 v 7.5 h -4 Z"
+    dx="15"
+    dy="2.5"
+    fill="#002451"
+    height="7.5"
+    radius="0"
+    width="4"
+    x="10"
+    y="20"
+  />
+</div>
+`;
+
+exports[`ReferenceAreaTick should renders correctly when set label color 1`] = `
+<div>
+  <text
+    dominant-baseline="text-before-edge"
+    dx="15"
+    dy="0"
+    fill="#510609"
+    style="font-weight: bold;"
+    text-anchor="start"
+    x="10"
+    y="20"
+  >
+    <tspan
+      dx="15"
+      dy="0"
+      x="10"
+      y="20"
+    >
+      name
+    </tspan>
+  </text>
+  <path
+    class="recharts-rectangle"
+    d="M 10,20 h 4 v 7.5 h -4 Z"
+    dx="15"
+    dy="2.5"
+    fill="#002451"
+    height="7.5"
+    radius="0"
+    width="4"
+    x="10"
+    y="20"
+  />
+</div>
+`;
+
+exports[`ReferenceAreaTick should renders correctly when tick kind is horizontal 1`] = `
+<div>
+  <text
+    dominant-baseline="text-before-edge"
+    dx="15"
+    dy="0"
+    fill="#002451"
+    style="font-weight: bold;"
+    text-anchor="start"
+    x="10"
+    y="20"
+  >
+    <tspan
+      dx="15"
+      dy="0"
+      x="10"
+      y="20"
+    >
+      title
+    </tspan>
+  </text>
+  <path
+    class="recharts-rectangle"
+    d="M 10,20 h 8 v 2 h -8 Z"
+    dx="15"
+    dy="2.5"
+    fill="#002451"
+    height="2"
+    radius="0"
+    width="8"
+    x="10"
+    y="20"
+  />
+</div>
+`;
+
+exports[`ReferenceAreaTick should renders correctly with the default props 1`] = `
+<div>
+  <text
+    dominant-baseline="text-before-edge"
+    dx="15"
+    dy="0"
+    fill="#002451"
+    style="font-weight: bold;"
+    text-anchor="start"
+    x="10"
+    y="20"
+  >
+    <tspan
+      dx="15"
+      dy="0"
+      x="10"
+      y="20"
+    >
+      title
+    </tspan>
+  </text>
+  <path
+    class="recharts-rectangle"
+    d="M 10,20 h 4 v 7.5 h -4 Z"
+    dx="15"
+    dy="2.5"
+    fill="#002451"
+    height="7.5"
+    radius="0"
+    width="4"
+    x="10"
+    y="20"
+  />
+</div>
+`;

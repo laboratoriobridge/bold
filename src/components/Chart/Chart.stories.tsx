@@ -1,8 +1,8 @@
-import { array, boolean, date, number, object, radios, text } from '@storybook/addon-knobs'
+import { array, boolean, date, number, object, radios, text, select } from '@storybook/addon-knobs'
 import React, { useState } from 'react'
 import { Text } from '../Text'
 
-import { gray, green } from '../../styles/colors'
+import { gray, green, purple } from '../../styles/colors'
 import { BarChart } from './BarChart'
 import { Chart } from './Chart'
 import { ChartBody } from './ChartBody'
@@ -16,7 +16,9 @@ import {
   PieChartDataPoint,
   RangeArea,
   ReferenceArea,
+  ReferenceAreaRange,
   SeriesType,
+  OutliersType,
 } from './model'
 import { PieChart } from './PieChart'
 
@@ -76,21 +78,24 @@ const ranges = {
   '1 Year': { init: new Date(2020, 0) },
 }
 
+const singleLineSeries: ChartSeries<number> = {
+  name: 'uv',
+  data: [
+    { x: 20, y: 3000 },
+    { x: 100, y: 2800 },
+    { x: 200, y: 4300 },
+    { x: 300, y: 5550 },
+    { x: 500, y: 4000 },
+    { x: 650, y: 6400 },
+  ],
+  color: gray.c20,
+}
+
 const lineSeriesDP: ChartSeries<number>[] = [
-  {
-    name: 'uv',
-    data: [
-      { x: 20, y: 4000 },
-      { x: 120, y: 3000 },
-      { x: 200, y: 2000 },
-      { x: 300, y: 2780 },
-      { x: 500, y: 1890 },
-      { x: 550, y: 2390 },
-    ],
-  },
+  singleLineSeries,
   {
     name: 'pv',
-    data: [2400, 1398, 9800, 3908, 4800, 3800],
+    data: [2400, 1398, 9800, 3908, 1800, 2800],
     dashed: true,
   },
 ]
@@ -103,8 +108,7 @@ const pieData: PieChartDataPoint[] = [
 
 const referenceAreas: ReferenceArea<number>[] = [
   {
-    name: 'Area 1',
-    description: 'Area 1 desc',
+    label: { name: 'Area 1', description: 'Area 1 desc' },
     area: [
       { x: 0, upperLimit: 2000 },
       { x: 20, upperLimit: 2000 },
@@ -118,10 +122,12 @@ const referenceAreas: ReferenceArea<number>[] = [
       { x: 700, upperLimit: 2000 },
     ],
     color: '#feeced',
-    tickColor: '#f75b60',
+    tick: { color: '#f75b60' },
+    stroke: { kind: 'dashed' },
   },
   {
-    name: 'Area 2',
+    label: { name: 'Area 2', description: 'Area 2 desc' },
+
     area: [
       { x: 0, upperLimit: 5000 },
       { x: 20, upperLimit: 5000 },
@@ -134,10 +140,11 @@ const referenceAreas: ReferenceArea<number>[] = [
       { x: 700, upperLimit: 5000 },
     ],
     color: '#ffeed6',
-    tickColor: '#b58b00',
+    tick: { color: '#b58b00' },
+    stroke: { kind: 'line' },
   },
   {
-    name: 'Area 3',
+    label: { name: 'Area 3' },
     area: [
       { x: 0, upperLimit: 10000 },
       { x: 20, upperLimit: 10000 },
@@ -151,8 +158,55 @@ const referenceAreas: ReferenceArea<number>[] = [
       { x: 700, upperLimit: 10000 },
     ],
     color: '#e1f6df',
-    tickColor: '#40a42b',
-    stroke: false,
+    tick: { color: '#40a42b' },
+    stroke: { show: false },
+  },
+]
+
+const generateArea = ({
+  length,
+  start,
+  step,
+}: {
+  length: number
+  start: number
+  step: number
+}): ReferenceAreaRange<number>[] =>
+  Array.from({ length }, (_, index) => ({ x: index * 100, upperLimit: index * step + start }))
+
+const boundedReferenceAreas: ReferenceArea<number>[] = [
+  {
+    label: { name: 'Empty' },
+    area: generateArea({ length: 8, start: 2000, step: 350 }),
+    color: 'none',
+  },
+  {
+    label: { name: 'Lower', alignment: 'central' },
+    area: generateArea({ length: 8, start: 2000, step: 350 }),
+    color: purple.c90,
+    stroke: { color: purple.c30, kind: 'dashed' },
+    tick: { color: purple.c30, kind: 'horizontal' },
+  },
+  {
+    label: { name: 'Lower ref', alignment: 'central', color: purple.c30 },
+    area: generateArea({ length: 8, start: 2500, step: 450 }),
+    color: purple.c90,
+    stroke: { color: purple.c30, kind: 'line' },
+    tick: { color: purple.c30, kind: 'horizontal' },
+  },
+  {
+    label: { name: 'Upper ref', alignment: 'central' },
+    area: generateArea({ length: 8, start: 3000, step: 650 }),
+    color: purple.c70,
+    stroke: { color: purple.c30, kind: 'line' },
+    tick: { color: purple.c30, kind: 'horizontal' },
+  },
+  {
+    label: { name: 'Upper', alignment: 'central' },
+    area: generateArea({ length: 8, start: 3500, step: 750 }),
+    color: purple.c90,
+    stroke: { color: purple.c30, kind: 'dashed' },
+    tick: { color: purple.c30, kind: 'horizontal' },
   },
 ]
 
@@ -169,6 +223,8 @@ const lineSeriesDate: ChartSeries<Date>[] = [
     ],
   },
 ]
+
+const outliersOption: OutliersType[] = ['auto', 'expand-domain']
 
 export const lineChart = () => {
   const title = text('Title', 'Chart Title', 'Description')
@@ -195,6 +251,7 @@ export const lineChart = () => {
     'Axes'
   )
   const series = object('Series', lineSeries, 'Data')
+  const outliers = select('Outliers', outliersOption, 'auto', 'Description')
 
   return (
     <ChartContainer>
@@ -207,6 +264,7 @@ export const lineChart = () => {
           tooltip={{ type: showTooltip ? 'point' : 'none' }}
           colorScheme={colorScheme}
           showLegend={showLegend}
+          outliers={outliers}
         />
       </ChartBody>
       <ChartFooter>{footer}</ChartFooter>
@@ -341,6 +399,36 @@ export const referenceArea = () => {
 
   const series = object('Series', lineSeriesDP, 'Data')
   const reference = object('Reference', referenceAreas, 'Data')
+
+  return (
+    <ChartContainer>
+      <ChartHeader title={title} />
+      <ChartBody height={height} caption={caption}>
+        <Chart
+          series={series}
+          referenceAreas={reference}
+          xAxis={{ title: xAxisTitle, domain: { init: 0, end: 700, step: 100 } }}
+          yAxis={{ title: yAxisTitle, domain: { init: 0, end: 10000, step: 1000 } }}
+        />
+      </ChartBody>
+    </ChartContainer>
+  )
+}
+
+export const boundedReferenceArea = () => {
+  const title = text('Title', 'Chart Title', 'Description')
+  const caption = text(
+    'Caption',
+    'Chart description. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.',
+    'Description'
+  )
+  const yAxisTitle = text('Y Axis Title', 'Y Axis', 'Axes')
+  const xAxisTitle = text('X Axis Title', 'X Axis', 'Axes')
+
+  const height = number('Height', 500)
+
+  const series = object('Series', [singleLineSeries], 'Data')
+  const reference = object('Reference', boundedReferenceAreas, 'Data')
 
   return (
     <ChartContainer>

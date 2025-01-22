@@ -11,15 +11,14 @@ export interface PivotTableContextType {
   suffix?: string
 }
 
-interface PivotTableProvider {
-  value: PivotTableContextType
+interface PivotTableProvider extends PivotTableContextType {
   children: React.ReactNode
 }
 
 export const PivotTableContext = React.createContext<PivotTableContextType>(undefined)
 
 export const PivotTableProvider = (props: PivotTableProvider) => {
-  const { children, value } = props
+  const { children, maxValue, suffix } = props
 
-  return <PivotTableContext.Provider value={value}>{children}</PivotTableContext.Provider>
+  return <PivotTableContext.Provider value={{ maxValue, suffix }}>{children}</PivotTableContext.Provider>
 }

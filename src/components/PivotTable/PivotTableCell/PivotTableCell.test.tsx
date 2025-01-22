@@ -10,7 +10,7 @@ import { PivotTableCellType } from './model'
 
 const createComponent = ({ maxValue, suffix }: PivotTableContextType, props: PivotTableCellProps) => {
   return (
-    <PivotTableProvider value={{ maxValue, suffix }}>
+    <PivotTableProvider maxValue={maxValue} suffix={suffix}>
       <PivotTableCell {...props} />
     </PivotTableProvider>
   )

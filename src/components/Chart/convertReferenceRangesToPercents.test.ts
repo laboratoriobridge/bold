@@ -5,7 +5,7 @@ describe('convert reference areas ranges to percents', () => {
   it('should convert reference areas ranges to percents correctly', () => {
     const referenceAreas: ReferenceArea<string>[] = [
       {
-        name: 'Test',
+        label: { name: 'Test', description: 'description' },
         area: [
           { x: 'cat 1', upperLimit: 100 },
           { x: 'cat 2', upperLimit: 'yInit' },
@@ -13,17 +13,16 @@ describe('convert reference areas ranges to percents', () => {
           { x: 'cat 5', upperLimit: 100 },
         ],
         color: 'color',
-        description: 'description',
-        stroke: true,
-        strokeColor: 'strokeColor',
-        tickColor: 'tickColor',
+
+        stroke: { color: 'strokeColor', show: true },
+        tick: { color: 'tickColor' },
       },
       {
-        name: 'Test2',
+        label: { name: 'Test2' },
         area: [{ x: 'cat 1', upperLimit: 300 }, { x: 'cat 2', upperLimit: 300 }, { x: 'cat 4' }],
       },
       {
-        name: 'Test3',
+        label: { name: 'Test3' },
         area: [{ x: 'cat 1', upperLimit: 400 }, { x: 'cat 2' }, { x: 'cat 5', upperLimit: 200 }],
       },
     ]
@@ -33,7 +32,7 @@ describe('convert reference areas ranges to percents', () => {
     const refAreasConverted = convertReferenceRangesToPercents(referenceAreas, range)
     expect(refAreasConverted).toMatchObject([
       {
-        name: 'Test',
+        label: { name: 'Test', description: 'description' },
         area: [
           { x: 'cat 1', upperLimit: 100 },
           { x: 'cat 2', upperLimit: 'yInit' },
@@ -47,13 +46,12 @@ describe('convert reference areas ranges to percents', () => {
           { x: 'cat 5', percent: 10 },
         ],
         color: 'color',
-        description: 'description',
-        stroke: true,
-        strokeColor: 'strokeColor',
-        tickColor: 'tickColor',
+
+        stroke: { color: 'strokeColor', show: true },
+        tick: { color: 'tickColor' },
       },
       {
-        name: 'Test2',
+        label: { name: 'Test2' },
         area: [{ x: 'cat 1', upperLimit: 300 }, { x: 'cat 2', upperLimit: 300 }, { x: 'cat 4' }],
         areaPercents: [
           { x: 'cat 1', percent: 20 },
@@ -62,7 +60,7 @@ describe('convert reference areas ranges to percents', () => {
         ],
       },
       {
-        name: 'Test3',
+        label: { name: 'Test3' },
         area: [{ x: 'cat 1', upperLimit: 400 }, { x: 'cat 2' }, { x: 'cat 5', upperLimit: 200 }],
         areaPercents: [
           { x: 'cat 1', percent: 10 },

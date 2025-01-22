@@ -1,8 +1,8 @@
 import { fireEvent, render } from '@testing-library/react'
 import React from 'react'
 import { LocaleContext } from '../../i18n/LocaleContext'
-import ptBr from '../../i18n/locales/pt-BR'
 import enUs from '../../i18n/locales/en-US'
+import ptBr from '../../i18n/locales/pt-BR'
 import { BaseMonthRangeInput, BaseMonthRangeInputProps } from './BaseMonthRangeInput'
 import { ReferenceMonthRange } from './MonthRangePicker'
 
@@ -229,7 +229,7 @@ describe('BaseMonthRangeInput', () => {
           <BaseMonthRangeInput />
         </LocaleContext.Provider>
       )
-      expect(container.querySelector('input').getAttribute('placeholder')).toEqual(ptBr.dateInput.placeholder)
+      expect(container.querySelector('input').getAttribute('placeholder')).toEqual(ptBr.monthInput.placeholder)
       expect(container).toMatchSnapshot()
     })
 
@@ -239,7 +239,7 @@ describe('BaseMonthRangeInput', () => {
           <BaseMonthRangeInput />
         </LocaleContext.Provider>
       )
-      expect(container.querySelector('input').getAttribute('placeholder')).toEqual(enUs.dateInput.placeholder)
+      expect(container.querySelector('input').getAttribute('placeholder')).toEqual(enUs.monthInput.placeholder)
       expect(container).toMatchSnapshot()
     })
 

@@ -3,6 +3,7 @@ import { HTML5Backend } from 'react-dnd-html5-backend'
 import { DndProvider } from 'react-dnd'
 import React from 'react'
 
+import { KeyMap } from '../model'
 import { Droppable, DroppableProps } from './Droppable'
 import { DroppableFilter } from './types/Filter'
 type Fruit = {
@@ -15,7 +16,7 @@ type KeyMapping = {
   ordenator?: (a: string, b: string) => number
 }
 
-const keyMapping = new Map<keyof Fruit, KeyMapping>([
+const keyMapping: KeyMap<Fruit> = new Map([
   ['name', { keyName: 'Name' }],
   ['size', { keyName: 'Size' }],
 ])

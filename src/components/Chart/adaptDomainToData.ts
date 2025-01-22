@@ -2,37 +2,47 @@ import { dateRangeStepToMillis } from './dateRangeStepToMillis'
 import { AxisDomain, ChartSeries, DateRange, isValueRange, ValueRange } from './model'
 import { getDataPointValue } from './util'
 
-export function adaptDomainToSeriesRange<XDomain>(domain: AxisDomain, series: ChartSeries<XDomain>[]): AxisDomain {
+const EXCEPTION_DOMAIN_MESSAGE = 'Domain init must be less than domain end'
+
+export function adaptDomainToSeriesRange<XDomain>(
+  domain: AxisDomain,
+  series: ChartSeries<XDomain>[],
+  hasOutlier?: boolean
+): AxisDomain {
   const dataValues = series.flatMap((s) => (s.data as []).map((d) => getDataPointValue(d)))
-  return adaptDomainToDataRange(domain, dataValues)
+  return adaptDomainToDataRange(domain, dataValues, hasOutlier)
 }
 
-export function adaptDomainToDataRange(domain: AxisDomain, dataValues: number[] | Date[] | string[]): AxisDomain {
+export function adaptDomainToDataRange(
+  domain: AxisDomain,
+  dataValues: number[] | Date[] | string[],
+  hasOutlier?: boolean
+): AxisDomain {
   if (!domain || !dataValues) return domain
   if (Array.isArray(domain)) return dataValues as string[]
 
   const numericDataValues = (dataValues as []).map((d) => +d).filter((d) => !isNaN(d))
   if (!numericDataValues.length) return domain
 
-  if (isValueRange(domain)) return adaptValueRangeDomainToData(domain, numericDataValues)
-  else return adaptDateRangeDomainToData(domain, numericDataValues)
+  if (isValueRange(domain)) return adaptValueRangeDomainToData(domain, numericDataValues, hasOutlier)
+  else return adaptDateRangeDomainToData(domain, numericDataValues, hasOutlier)
 }
 
-function adaptValueRangeDomainToData(domain: ValueRange, dataValues: number[]): ValueRange {
-  if (domain.init >= domain.end) throw Error('Domain init must be less than domain end')
+function adaptValueRangeDomainToData(domain: ValueRange, dataValues: number[], hasOutlier: boolean): ValueRange {
+  if (domain.init >= domain.end) throw Error(EXCEPTION_DOMAIN_MESSAGE)
 
   const dataMin = Math.min(...dataValues)
   const dataMax = Math.max(...dataValues)
 
   return {
     init: dataMin < domain.init ? dataMin - (dataMin % domain.step) : domain.init,
-    end: dataMax > domain.end ? dataMax + (domain.step - (dataMax % domain.step)) : domain.end,
+    end: dataMax > domain.end && !hasOutlier ? dataMax + (domain.step - (dataMax % domain.step)) : domain.end,
     step: domain.step,
   }
 }
 
-function adaptDateRangeDomainToData(domain: DateRange, dataValues: number[]): DateRange {
-  if (+domain.init >= +domain.end) throw Error('Domain init must be less than domain end')
+function adaptDateRangeDomainToData(domain: DateRange, dataValues: number[], hasOutlier: boolean): DateRange {
+  if (+domain.init >= +domain.end) throw Error(EXCEPTION_DOMAIN_MESSAGE)
 
   const valueDomain = adaptValueRangeDomainToData(
     {
@@ -40,7 +50,8 @@ function adaptDateRangeDomainToData(domain: DateRange, dataValues: number[]): Da
       end: +domain.end,
       step: dateRangeStepToMillis(domain.step),
     },
-    dataValues
+    dataValues,
+    hasOutlier
   )
 
   return {

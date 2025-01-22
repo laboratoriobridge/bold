@@ -13,6 +13,9 @@ const locale: LocaleConfiguration = {
   dateInput: {
     placeholder: 'dd/mm/aaaa',
   },
+  monthInput: {
+    placeholder: 'mm/aaaa',
+  },
   formControl: {
     required: 'Campo obrigatório',
   },
@@ -55,6 +58,13 @@ const locale: LocaleConfiguration = {
       one: 'resultado',
       other: 'resultados',
     },
+  },
+  aggregators: {
+    count: 'Contagem',
+    average: 'Média',
+    maximum: 'Máximo',
+    minimum: 'Mínimo',
+    percentage: 'Porcentagem',
   },
   draggable: {
     search: 'Pesquisa',
