@@ -2,7 +2,7 @@
 
 const path = require('path')
 const { CheckerPlugin } = require('awesome-typescript-loader')
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const TerserPlugin = require('terser-webpack-plugin')
 
 /**
  * @type {import('webpack').Configuration}
@@ -35,11 +35,11 @@ const config = {
   plugins: [new CheckerPlugin()],
   externals: ['react', 'react-dom'],
   optimization: {
+    minimize: true,
     minimizer: [
-      new UglifyJsPlugin({
-        sourceMap: true,
-        uglifyOptions: {
-          warnings: false,
+      new TerserPlugin({
+        terserOptions: {
+          sourceMap: true,
           compress: {
             keep_fnames: true,
           },
