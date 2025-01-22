@@ -247,7 +247,7 @@ exports[`rendering renders correcly closed 1`] = `
                 aria-expanded="false"
                 aria-label="Show options"
                 class="emotion-3"
-                id="downshift-265-toggle-button"
+                id="downshift-269-toggle-button"
                 tabindex="-1"
                 type="button"
               >
@@ -585,7 +585,7 @@ exports[`rendering renders correcly opened 1`] = `
                 aria-expanded="true"
                 aria-label="Hide options"
                 class="emotion-3"
-                id="downshift-266-toggle-button"
+                id="downshift-270-toggle-button"
                 tabindex="-1"
                 type="button"
               >
@@ -1111,7 +1111,7 @@ exports[`rendering renders correcly opened and loading 1`] = `
                 aria-expanded="true"
                 aria-label="Hide options"
                 class="emotion-3"
-                id="downshift-273-toggle-button"
+                id="downshift-277-toggle-button"
                 tabindex="-1"
                 type="button"
               >
@@ -1581,7 +1581,7 @@ exports[`rendering renders correcly opened with add-item 1`] = `
                 aria-expanded="true"
                 aria-label="Hide options"
                 class="emotion-3"
-                id="downshift-280-toggle-button"
+                id="downshift-284-toggle-button"
                 tabindex="-1"
                 type="button"
               >
@@ -1924,7 +1924,7 @@ exports[`rendering renders correcly when items is empty (items: []) 1`] = `
               aria-expanded="true"
               aria-label="Hide options"
               class="emotion-2"
-              id="downshift-301-toggle-button"
+              id="downshift-305-toggle-button"
               tabindex="-1"
               type="button"
             >
@@ -2263,7 +2263,7 @@ exports[`rendering renders correcly when items is empty (items: null) 1`] = `
               aria-expanded="true"
               aria-label="Hide options"
               class="emotion-2"
-              id="downshift-287-toggle-button"
+              id="downshift-291-toggle-button"
               tabindex="-1"
               type="button"
             >
@@ -2602,7 +2602,7 @@ exports[`rendering renders correcly when items is empty (items: undefined) 1`] =
               aria-expanded="true"
               aria-label="Hide options"
               class="emotion-2"
-              id="downshift-294-toggle-button"
+              id="downshift-298-toggle-button"
               tabindex="-1"
               type="button"
             >
@@ -3051,7 +3051,7 @@ exports[`rendering renders correcly with custom components 1`] = `
                 aria-expanded="true"
                 aria-label="Hide options"
                 class="emotion-3"
-                id="downshift-308-toggle-button"
+                id="downshift-312-toggle-button"
                 tabindex="-1"
                 type="button"
               >
