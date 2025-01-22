@@ -1,21 +1,23 @@
 import { dateRangeStepToMillis } from './dateRangeStepToMillis'
 import { AxisDomain, DateRange, DateRangeStep, isValueRange, ValueRange } from './model'
+import { getOutlierStep } from './util'
 
-export function getDomainPoints<XDomain>(domain: AxisDomain): XDomain[] {
+export function getDomainPoints<XDomain>(domain: AxisDomain, hasOutliers: boolean = false): XDomain[] {
   if (!domain || Array.isArray(domain)) return domain as any[]
-  if (isValueRange(domain)) return getValueRangeDomainPoints(domain)
-  else return getDateRangeDomainPoints(domain)
+  if (isValueRange(domain)) return getValueRangeDomainPoints(domain, hasOutliers)
+  else return getDateRangeDomainPoints(domain, hasOutliers)
 }
 
-function getValueRangeDomainPoints(domain: ValueRange): any[] {
+function getValueRangeDomainPoints(domain: ValueRange, hasOutliers: boolean): any[] {
   const points = []
   const step = domain.step ?? 1
   for (let i = domain.init; i <= domain.end; i += step) points.push(i)
   if (!points.includes(domain.end)) points.push(domain.end)
+  if (hasOutliers) points.push(domain.end + getOutlierStep(step))
   return points
 }
 
-function getDateRangeDomainPoints(domain: DateRange): any[] {
+function getDateRangeDomainPoints(domain: DateRange, hasOutliers: boolean = false): any[] {
   const points = []
   const step = domain.step ?? { amount: 1, unit: 'day' }
   const endMillis = +domain.end
@@ -25,6 +27,12 @@ function getDateRangeDomainPoints(domain: DateRange): any[] {
     currValue = addStepToDate(currValue, step)
   } while (currValue < endMillis)
   if (!points.includes(endMillis)) points.push(domain.end.valueOf())
+  if (hasOutliers) {
+    const outlierStepAmount = getOutlierStep(step.amount)
+    const outlierDate = addStepToDate(+domain.end, { amount: outlierStepAmount, unit: step.unit })
+    points.push(outlierDate)
+  }
+
   return points
 }
 

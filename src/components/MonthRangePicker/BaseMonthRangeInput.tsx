@@ -1,15 +1,14 @@
-import React from 'react'
-import { CSSProperties, useRef } from 'react'
+import React, { CSSProperties, useRef } from 'react'
 
+import { Button, ReferenceMonth } from '..'
 import { useLocale } from '../../i18n'
 import { focusBoxShadow, Theme, useStyles } from '../../styles'
 import { composeRefs } from '../../util/react'
-import { Icon } from '../Icon'
-import { Button, ReferenceMonth } from '..'
-import { MonthInput } from '../MonthField/MonthInput'
 import { BaseDateRangeInputProps } from '../DateRangePicker/BaseDateRangeInput'
-import { isGreaterOrEqualThan, isGreaterThan, isLessOrEqualThan, isLessThan } from './util'
+import { Icon } from '../Icon'
+import { MonthInput } from '../MonthField/MonthInput'
 import { ReferenceMonthRange } from './MonthRangePicker'
+import { isGreaterOrEqualThan, isGreaterThan, isLessOrEqualThan, isLessThan } from './util'
 
 export interface BaseMonthRangeInputProps
   extends Omit<BaseDateRangeInputProps, 'value' | 'onChange' | 'maxDate' | 'minDate'> {
@@ -134,7 +133,7 @@ export function BaseMonthRangeInput(props: BaseMonthRangeInputProps) {
             inputRef={composeRefs(firstFieldRef, initialInputRef) as any}
             onChange={onChangeStart}
             onClear={onClearStart}
-            placeholder={locale.dateInput.placeholder}
+            placeholder={locale.monthInput.placeholder}
             style={classes.monthField}
             value={value?.start}
             onFocus={onInputOnFocusInicial}
@@ -152,7 +151,7 @@ export function BaseMonthRangeInput(props: BaseMonthRangeInputProps) {
             inputRef={composeRefs(secondFieldRef, finalInputRef) as any}
             onChange={onChangeFinal}
             onClear={onClearFinal}
-            placeholder={locale.dateInput.placeholder}
+            placeholder={locale.monthInput.placeholder}
             style={classes.monthField}
             value={value?.end}
             onFocus={onInputOnFocusFinal}
