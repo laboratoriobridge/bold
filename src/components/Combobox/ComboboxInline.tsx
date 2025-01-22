@@ -143,7 +143,7 @@ export function ComboboxInline<T>(props: ComboboxInlineProps<T>) {
     'aria-invalid': invalid,
     'aria-errormessage': formControlProps.errorId,
   })
-  const { ref: downshiftToggleButtonRef, ...downshiftToggleButtonProps } = getToggleButtonProps({
+  const { id, ref: downshiftToggleButtonRef, ...downshiftToggleButtonProps } = getToggleButtonProps({
     role: null,
     onClick,
     onFocus,

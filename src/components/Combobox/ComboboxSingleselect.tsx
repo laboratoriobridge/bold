@@ -148,7 +148,7 @@ export function ComboboxSingleselect<T = DefaultComboboxItemType>(props: Combobo
   })
   const { id: internalLabelId, ...downshiftLabelProps } = getLabelProps()
   const downshiftMenuProps = getMenuProps()
-  const { ref: toggleButtonRef, ...downshiftToggleButtonProps } = getToggleButtonProps()
+  const { id, ref: toggleButtonRef, ...downshiftToggleButtonProps } = getToggleButtonProps()
 
   const {
     styles: { popper: popperStyles },

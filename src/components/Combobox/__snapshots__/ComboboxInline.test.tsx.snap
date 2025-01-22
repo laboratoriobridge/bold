@@ -118,7 +118,6 @@ exports[`rendering renders correcly closed 1`] = `
             aria-haspopup="listbox"
             aria-labelledby="downshift-243-label"
             class="emotion-2"
-            id="downshift-243-toggle-button"
             tabindex="0"
           >
             <span>
@@ -450,7 +449,6 @@ exports[`rendering renders correcly opened 1`] = `
             aria-haspopup="listbox"
             aria-labelledby="downshift-244-label"
             class="emotion-2"
-            id="downshift-244-toggle-button"
             tabindex="0"
           >
             <span>
@@ -998,7 +996,6 @@ exports[`rendering renders correcly opened and loading 1`] = `
             aria-haspopup="listbox"
             aria-labelledby="downshift-257-label"
             class="emotion-2"
-            id="downshift-257-toggle-button"
             tabindex="0"
           >
             <span>
@@ -1583,7 +1580,6 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
             aria-haspopup="listbox"
             aria-labelledby="downshift-270-label"
             class="emotion-2"
-            id="downshift-270-toggle-button"
             name="fruit"
             tabindex="0"
           >
