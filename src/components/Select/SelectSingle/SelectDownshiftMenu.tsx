@@ -81,7 +81,7 @@ export function SelectDownshiftMenu<T>(props: SelectDownshiftMenuProps<T>) {
   const { classes, css } = useStyles(createStyles)
 
   return (
-    <>
+    <div className={css(classes.wrapper)}>
       {isOpen && (
         <div
           {...menuProps}
@@ -109,7 +109,7 @@ export function SelectDownshiftMenu<T>(props: SelectDownshiftMenuProps<T>) {
           {AppendItem && <AppendItem {...props} />}
         </div>
       )}
-    </>
+    </div>
   )
 }
 
@@ -150,6 +150,10 @@ export function SelectDownshiftComponentCustom(props: React.HTMLAttributes<HTMLD
 }
 
 export const createStyles = (theme: Theme) => ({
+  wrapper: {
+    position: 'relative',
+  } as CSSProperties,
+
   menu: {
     display: 'flex',
     flexDirection: 'column',
