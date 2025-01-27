@@ -57,6 +57,7 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
     inputId,
     labelId,
     menuId,
+    toggleButtonId,
     getItemId,
     open,
     popperProps,
@@ -147,6 +148,7 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
     inputId,
     labelId,
     menuId,
+    toggleButtonId,
     getItemId,
 
     ...(isNil(open) ? {} : { isOpen: open }),

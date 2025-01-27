@@ -280,7 +280,7 @@ exports[`rendering renders correcly closed 1`] = `
                 aria-expanded="false"
                 aria-label="Show options"
                 class="emotion-3"
-                id="downshift-198-toggle-button"
+                id="test-button-id"
                 tabindex="-1"
                 type="button"
               >
@@ -752,7 +752,7 @@ exports[`rendering renders correcly opened 1`] = `
                 aria-expanded="true"
                 aria-label="Hide options"
                 class="emotion-3"
-                id="downshift-199-toggle-button"
+                id="test-button-id"
                 tabindex="-1"
                 type="button"
               >
@@ -1616,7 +1616,7 @@ exports[`rendering renders correcly opened and loading 1`] = `
                 aria-expanded="true"
                 aria-label="Hide options"
                 class="emotion-3"
-                id="downshift-206-toggle-button"
+                id="test-button-id"
                 tabindex="-1"
                 type="button"
               >
@@ -2417,7 +2417,7 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
                 aria-expanded="true"
                 aria-label="Hide options"
                 class="emotion-3"
-                id="downshift-213-toggle-button"
+                id="test-button-id"
                 tabindex="-1"
                 type="button"
               >

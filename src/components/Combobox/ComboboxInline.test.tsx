@@ -54,6 +54,7 @@ const ComboboxInlineTest = (props: Partial<ComboboxInlineProps<Fruit>> & { async
     loading={false}
     defaultButtonText={'Button text'}
     menuId={'test-menu-id'}
+    toggleButtonId={'test-button-id'}
     getItemId={(index) => `test-item-id-${index}`}
     {...props}
   />
@@ -84,6 +85,8 @@ const ComboboxInlineWithCustomComponentsTest = (
     itemToString={itemToString}
     loading={false}
     debounceMilliseconds={0}
+    menuId={'test-menu-id'}
+    toggleButtonId={'test-button-id'}
     getItemId={(index) => `test-item-id-${index}`}
     components={{
       Item: (props) => (

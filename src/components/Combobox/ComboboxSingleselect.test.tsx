@@ -69,6 +69,7 @@ const ComboboxTest = (props: Partial<ComboboxSingleselectProps<Fruit>> & { async
     inputId={'test-input-id'}
     labelId={'test-label-id'}
     menuId={'test-menu-id'}
+    toggleButtonId={'test-button-id'}
     getItemId={(index) => `test-item-id-${index}`}
     {...props}
   />
@@ -103,6 +104,7 @@ const ComboboxWithCustomComponentsTest = (
     inputId={'test-input-id'}
     labelId={'test-label-id'}
     menuId={'test-menu-id'}
+    toggleButtonId={'test-button-id'}
     getItemId={(index) => `test-item-id-${index}`}
     components={{
       Item: (props) => (

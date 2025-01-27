@@ -44,6 +44,7 @@ export interface ComboboxInlineProps<T>
   popperProps?: Omit<Partial<PopperProps<any>>, 'children'>
 
   menuId?: string
+  toggleButtonId?: string
   getItemId?(index: number): string
 
   defaultButtonText: string
@@ -73,6 +74,7 @@ export function ComboboxInline<T>(props: ComboboxInlineProps<T>) {
     onFilterChange,
     filter = defaultFilter,
     menuId,
+    toggleButtonId,
     getItemId,
     error,
     searchBoxPlaceholder,
@@ -135,6 +137,7 @@ export function ComboboxInline<T>(props: ComboboxInlineProps<T>) {
     },
 
     menuId,
+    toggleButtonId,
     getItemId,
 
     ...(isNil(open) ? {} : { isOpen: open }),

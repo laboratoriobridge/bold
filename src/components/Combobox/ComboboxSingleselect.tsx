@@ -37,6 +37,7 @@ export interface ComboboxSingleselectProps<T>
   inputId?: string
   labelId?: string
   menuId?: string
+  toggleButtonId?: string
   getItemId?(index: number): string
 }
 
@@ -66,6 +67,7 @@ export function ComboboxSingleselect<T = DefaultComboboxItemType>(props: Combobo
     inputId,
     labelId,
     menuId,
+    toggleButtonId,
     getItemId,
     open,
     popperProps,
@@ -130,6 +132,7 @@ export function ComboboxSingleselect<T = DefaultComboboxItemType>(props: Combobo
     inputId,
     labelId,
     menuId,
+    toggleButtonId,
     getItemId,
 
     ...(isNil(open) ? {} : { isOpen: open }),
@@ -148,7 +151,7 @@ export function ComboboxSingleselect<T = DefaultComboboxItemType>(props: Combobo
   })
   const { id: internalLabelId, ...downshiftLabelProps } = getLabelProps()
   const downshiftMenuProps = getMenuProps()
-  const { id, ref: toggleButtonRef, ...downshiftToggleButtonProps } = getToggleButtonProps()
+  const { ref: toggleButtonRef, ...downshiftToggleButtonProps } = getToggleButtonProps()
 
   const {
     styles: { popper: popperStyles },
