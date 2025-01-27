@@ -118,6 +118,7 @@ exports[`rendering renders correcly closed 1`] = `
             aria-haspopup="listbox"
             aria-labelledby="downshift-243-label"
             class="emotion-2"
+            id="downshift-243-toggle-button"
             tabindex="0"
           >
             <span>
@@ -165,6 +166,10 @@ exports[`rendering renders correcly opened 1`] = `
 }
 
 .emotion-24 {
+  overflow: auto;
+}
+
+.emotion-25 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -279,20 +284,6 @@ exports[`rendering renders correcly opened 1`] = `
   margin-left: 0.5rem;
 }
 
-.emotion-23 {
-  border: 0;
-  border-radius: 0;
-  box-shadow: none;
-  max-height: auto;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  background-color: #FFFFFF;
-  overflow-y: auto;
-  overflow-x: hidden;
-  width: 100%;
-}
-
 .emotion-9 {
   position: relative;
 }
@@ -403,6 +394,20 @@ exports[`rendering renders correcly opened 1`] = `
 
 .emotion-7:focus {
   box-shadow: none;
+}
+
+.emotion-23 {
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  max-height: auto;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: #FFFFFF;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 .emotion-11 {
@@ -449,6 +454,7 @@ exports[`rendering renders correcly opened 1`] = `
             aria-haspopup="listbox"
             aria-labelledby="downshift-244-label"
             class="emotion-2"
+            id="downshift-244-toggle-button"
             tabindex="0"
           >
             <span>
@@ -486,155 +492,161 @@ exports[`rendering renders correcly opened 1`] = `
       tabindex="-1"
     >
       <div
-        class="emotion-24"
+        class="emotion-25"
         data-popper-escaped="true"
         data-popper-placement="bottom-start"
         data-popper-reference-hidden="true"
         data-testid="menu"
         style="position: absolute; left: 0px; top: 0px; width: 0px; min-width: 12rem; transform: translate(0px, 0px);"
       >
-        <ul
-          class="emotion-23"
+        <div
+          class="emotion-10"
         >
           <div
-            class="emotion-10"
+            class="emotion-9"
           >
-            <div
-              class="emotion-9"
+            <input
+              class="emotion-6"
+              role="searchbox"
+              type="search"
+            />
+            <span
+              class="emotion-8"
             >
-              <input
-                class="emotion-6"
-                role="searchbox"
-                type="search"
-              />
-              <span
-                class="emotion-8"
+              <svg
+                aria-hidden="true"
+                class="emotion-7"
+                height="1em"
+                role="img"
+                viewBox="0 0 24 24"
+                width="1em"
               >
-                <svg
-                  aria-hidden="true"
-                  class="emotion-7"
-                  height="1em"
-                  role="img"
-                  viewBox="0 0 24 24"
-                  width="1em"
-                >
-                  <path
-                    clip-rule="evenodd"
-                    d="M14.605 13.194l7 6.998a1 1 0 01-1.414 1.414h-.001l-6.997-7a7 7 0 111.412-1.412zM9 14A5 5 0 109 4a5 5 0 000 10z"
-                  />
-                </svg>
-              </span>
-            </div>
+                <path
+                  clip-rule="evenodd"
+                  d="M14.605 13.194l7 6.998a1 1 0 01-1.414 1.414h-.001l-6.997-7a7 7 0 111.412-1.412zM9 14A5 5 0 109 4a5 5 0 000 10z"
+                />
+              </svg>
+            </span>
           </div>
-          <li
-            aria-disabled="false"
-            aria-selected="false"
-            class="emotion-11"
-            id="test-item-id-0"
-            role="option"
+        </div>
+        <div
+          class="emotion-24"
+          tabindex="-1"
+        >
+          <ul
+            class="emotion-23"
+            tabindex="-1"
           >
-            Apple
-          </li>
-          <li
-            aria-disabled="false"
-            aria-selected="false"
-            class="emotion-11"
-            id="test-item-id-1"
-            role="option"
-          >
-            Avocado
-          </li>
-          <li
-            aria-disabled="false"
-            aria-selected="false"
-            class="emotion-11"
-            id="test-item-id-2"
-            role="option"
-          >
-            Banana
-          </li>
-          <li
-            aria-disabled="false"
-            aria-selected="false"
-            class="emotion-11"
-            id="test-item-id-3"
-            role="option"
-          >
-            Blueberry
-          </li>
-          <li
-            aria-disabled="false"
-            aria-selected="false"
-            class="emotion-11"
-            id="test-item-id-4"
-            role="option"
-          >
-            Coconut
-          </li>
-          <li
-            aria-disabled="false"
-            aria-selected="false"
-            class="emotion-11"
-            id="test-item-id-5"
-            role="option"
-          >
-            Grape
-          </li>
-          <li
-            aria-disabled="false"
-            aria-selected="false"
-            class="emotion-11"
-            id="test-item-id-6"
-            role="option"
-          >
-            Lemon
-          </li>
-          <li
-            aria-disabled="false"
-            aria-selected="false"
-            class="emotion-11"
-            id="test-item-id-7"
-            role="option"
-          >
-            Mango
-          </li>
-          <li
-            aria-disabled="false"
-            aria-selected="false"
-            class="emotion-11"
-            id="test-item-id-8"
-            role="option"
-          >
-            Melon
-          </li>
-          <li
-            aria-disabled="false"
-            aria-selected="false"
-            class="emotion-11"
-            id="test-item-id-9"
-            role="option"
-          >
-            Orange
-          </li>
-          <li
-            aria-disabled="false"
-            aria-selected="false"
-            class="emotion-11"
-            id="test-item-id-10"
-            role="option"
-          >
-            Peach
-          </li>
-          <li
-            aria-disabled="false"
-            aria-selected="false"
-            class="emotion-11"
-            id="test-item-id-11"
-            role="option"
-          >
-            Pear
-          </li>
-        </ul>
+            <li
+              aria-disabled="false"
+              aria-selected="false"
+              class="emotion-11"
+              id="test-item-id-0"
+              role="option"
+            >
+              Apple
+            </li>
+            <li
+              aria-disabled="false"
+              aria-selected="false"
+              class="emotion-11"
+              id="test-item-id-1"
+              role="option"
+            >
+              Avocado
+            </li>
+            <li
+              aria-disabled="false"
+              aria-selected="false"
+              class="emotion-11"
+              id="test-item-id-2"
+              role="option"
+            >
+              Banana
+            </li>
+            <li
+              aria-disabled="false"
+              aria-selected="false"
+              class="emotion-11"
+              id="test-item-id-3"
+              role="option"
+            >
+              Blueberry
+            </li>
+            <li
+              aria-disabled="false"
+              aria-selected="false"
+              class="emotion-11"
+              id="test-item-id-4"
+              role="option"
+            >
+              Coconut
+            </li>
+            <li
+              aria-disabled="false"
+              aria-selected="false"
+              class="emotion-11"
+              id="test-item-id-5"
+              role="option"
+            >
+              Grape
+            </li>
+            <li
+              aria-disabled="false"
+              aria-selected="false"
+              class="emotion-11"
+              id="test-item-id-6"
+              role="option"
+            >
+              Lemon
+            </li>
+            <li
+              aria-disabled="false"
+              aria-selected="false"
+              class="emotion-11"
+              id="test-item-id-7"
+              role="option"
+            >
+              Mango
+            </li>
+            <li
+              aria-disabled="false"
+              aria-selected="false"
+              class="emotion-11"
+              id="test-item-id-8"
+              role="option"
+            >
+              Melon
+            </li>
+            <li
+              aria-disabled="false"
+              aria-selected="false"
+              class="emotion-11"
+              id="test-item-id-9"
+              role="option"
+            >
+              Orange
+            </li>
+            <li
+              aria-disabled="false"
+              aria-selected="false"
+              class="emotion-11"
+              id="test-item-id-10"
+              role="option"
+            >
+              Peach
+            </li>
+            <li
+              aria-disabled="false"
+              aria-selected="false"
+              class="emotion-11"
+              id="test-item-id-11"
+              role="option"
+            >
+              Pear
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
@@ -662,6 +674,10 @@ exports[`rendering renders correcly opened and loading 1`] = `
 }
 
 .emotion-26 {
+  overflow: auto;
+}
+
+.emotion-27 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -776,20 +792,6 @@ exports[`rendering renders correcly opened and loading 1`] = `
   margin-left: 0.5rem;
 }
 
-.emotion-25 {
-  border: 0;
-  border-radius: 0;
-  box-shadow: none;
-  max-height: auto;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  background-color: #FFFFFF;
-  overflow-y: auto;
-  overflow-x: hidden;
-  width: 100%;
-}
-
 .emotion-9 {
   position: relative;
 }
@@ -900,6 +902,20 @@ exports[`rendering renders correcly opened and loading 1`] = `
 
 .emotion-7:focus {
   box-shadow: none;
+}
+
+.emotion-25 {
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  max-height: auto;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: #FFFFFF;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 .emotion-13 {
@@ -996,6 +1012,7 @@ exports[`rendering renders correcly opened and loading 1`] = `
             aria-haspopup="listbox"
             aria-labelledby="downshift-257-label"
             class="emotion-2"
+            id="downshift-257-toggle-button"
             tabindex="0"
           >
             <span>
@@ -1033,163 +1050,169 @@ exports[`rendering renders correcly opened and loading 1`] = `
       tabindex="-1"
     >
       <div
-        class="emotion-26"
+        class="emotion-27"
         data-popper-escaped="true"
         data-popper-placement="bottom-start"
         data-popper-reference-hidden="true"
         data-testid="menu"
         style="position: absolute; left: 0px; top: 0px; width: 0px; min-width: 12rem; transform: translate(0px, 0px);"
       >
-        <ul
-          class="emotion-25"
+        <div
+          class="emotion-10"
         >
           <div
-            class="emotion-10"
+            class="emotion-9"
           >
-            <div
-              class="emotion-9"
-            >
-              <input
-                class="emotion-6"
-                role="searchbox"
-                type="search"
-              />
-              <span
-                class="emotion-8"
-              >
-                <svg
-                  aria-hidden="true"
-                  class="emotion-7"
-                  height="1em"
-                  role="img"
-                  viewBox="0 0 24 24"
-                  width="1em"
-                >
-                  <path
-                    clip-rule="evenodd"
-                    d="M14.605 13.194l7 6.998a1 1 0 01-1.414 1.414h-.001l-6.997-7a7 7 0 111.412-1.412zM9 14A5 5 0 109 4a5 5 0 000 10z"
-                  />
-                </svg>
-              </span>
-            </div>
-          </div>
-          <li
-            class="emotion-12"
-          >
-            Loading...
-            <span
-              class="emotion-11"
+            <input
+              class="emotion-6"
+              role="searchbox"
+              type="search"
             />
-          </li>
-          <li
-            aria-disabled="false"
-            aria-selected="false"
-            class="emotion-13"
-            id="test-item-id-0"
-            role="option"
+            <span
+              class="emotion-8"
+            >
+              <svg
+                aria-hidden="true"
+                class="emotion-7"
+                height="1em"
+                role="img"
+                viewBox="0 0 24 24"
+                width="1em"
+              >
+                <path
+                  clip-rule="evenodd"
+                  d="M14.605 13.194l7 6.998a1 1 0 01-1.414 1.414h-.001l-6.997-7a7 7 0 111.412-1.412zM9 14A5 5 0 109 4a5 5 0 000 10z"
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+        <div
+          class="emotion-26"
+          tabindex="-1"
+        >
+          <ul
+            class="emotion-25"
+            tabindex="-1"
           >
-            Apple
-          </li>
-          <li
-            aria-disabled="false"
-            aria-selected="false"
-            class="emotion-13"
-            id="test-item-id-1"
-            role="option"
-          >
-            Avocado
-          </li>
-          <li
-            aria-disabled="false"
-            aria-selected="false"
-            class="emotion-13"
-            id="test-item-id-2"
-            role="option"
-          >
-            Banana
-          </li>
-          <li
-            aria-disabled="false"
-            aria-selected="false"
-            class="emotion-13"
-            id="test-item-id-3"
-            role="option"
-          >
-            Blueberry
-          </li>
-          <li
-            aria-disabled="false"
-            aria-selected="false"
-            class="emotion-13"
-            id="test-item-id-4"
-            role="option"
-          >
-            Coconut
-          </li>
-          <li
-            aria-disabled="false"
-            aria-selected="false"
-            class="emotion-13"
-            id="test-item-id-5"
-            role="option"
-          >
-            Grape
-          </li>
-          <li
-            aria-disabled="false"
-            aria-selected="false"
-            class="emotion-13"
-            id="test-item-id-6"
-            role="option"
-          >
-            Lemon
-          </li>
-          <li
-            aria-disabled="false"
-            aria-selected="false"
-            class="emotion-13"
-            id="test-item-id-7"
-            role="option"
-          >
-            Mango
-          </li>
-          <li
-            aria-disabled="false"
-            aria-selected="false"
-            class="emotion-13"
-            id="test-item-id-8"
-            role="option"
-          >
-            Melon
-          </li>
-          <li
-            aria-disabled="false"
-            aria-selected="false"
-            class="emotion-13"
-            id="test-item-id-9"
-            role="option"
-          >
-            Orange
-          </li>
-          <li
-            aria-disabled="false"
-            aria-selected="false"
-            class="emotion-13"
-            id="test-item-id-10"
-            role="option"
-          >
-            Peach
-          </li>
-          <li
-            aria-disabled="false"
-            aria-selected="false"
-            class="emotion-13"
-            id="test-item-id-11"
-            role="option"
-          >
-            Pear
-          </li>
-        </ul>
+            <li
+              class="emotion-12"
+            >
+              Loading...
+              <span
+                class="emotion-11"
+              />
+            </li>
+            <li
+              aria-disabled="false"
+              aria-selected="false"
+              class="emotion-13"
+              id="test-item-id-0"
+              role="option"
+            >
+              Apple
+            </li>
+            <li
+              aria-disabled="false"
+              aria-selected="false"
+              class="emotion-13"
+              id="test-item-id-1"
+              role="option"
+            >
+              Avocado
+            </li>
+            <li
+              aria-disabled="false"
+              aria-selected="false"
+              class="emotion-13"
+              id="test-item-id-2"
+              role="option"
+            >
+              Banana
+            </li>
+            <li
+              aria-disabled="false"
+              aria-selected="false"
+              class="emotion-13"
+              id="test-item-id-3"
+              role="option"
+            >
+              Blueberry
+            </li>
+            <li
+              aria-disabled="false"
+              aria-selected="false"
+              class="emotion-13"
+              id="test-item-id-4"
+              role="option"
+            >
+              Coconut
+            </li>
+            <li
+              aria-disabled="false"
+              aria-selected="false"
+              class="emotion-13"
+              id="test-item-id-5"
+              role="option"
+            >
+              Grape
+            </li>
+            <li
+              aria-disabled="false"
+              aria-selected="false"
+              class="emotion-13"
+              id="test-item-id-6"
+              role="option"
+            >
+              Lemon
+            </li>
+            <li
+              aria-disabled="false"
+              aria-selected="false"
+              class="emotion-13"
+              id="test-item-id-7"
+              role="option"
+            >
+              Mango
+            </li>
+            <li
+              aria-disabled="false"
+              aria-selected="false"
+              class="emotion-13"
+              id="test-item-id-8"
+              role="option"
+            >
+              Melon
+            </li>
+            <li
+              aria-disabled="false"
+              aria-selected="false"
+              class="emotion-13"
+              id="test-item-id-9"
+              role="option"
+            >
+              Orange
+            </li>
+            <li
+              aria-disabled="false"
+              aria-selected="false"
+              class="emotion-13"
+              id="test-item-id-10"
+              role="option"
+            >
+              Peach
+            </li>
+            <li
+              aria-disabled="false"
+              aria-selected="false"
+              class="emotion-13"
+              id="test-item-id-11"
+              role="option"
+            >
+              Pear
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
@@ -1203,6 +1226,10 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
 }
 
 .emotion-39 {
+  overflow: auto;
+}
+
+.emotion-40 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1324,20 +1351,6 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
   margin-left: 0.5rem;
 }
 
-.emotion-38 {
-  border: 0;
-  border-radius: 0;
-  box-shadow: none;
-  max-height: auto;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  background-color: #FFFFFF;
-  overflow-y: auto;
-  overflow-x: hidden;
-  width: 100%;
-}
-
 .emotion-9 {
   position: relative;
 }
@@ -1448,6 +1461,20 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
 
 .emotion-7:focus {
   box-shadow: none;
+}
+
+.emotion-38 {
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  max-height: auto;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: #FFFFFF;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 .emotion-12 {
@@ -1580,6 +1607,7 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
             aria-haspopup="listbox"
             aria-labelledby="downshift-270-label"
             class="emotion-2"
+            id="downshift-270-toggle-button"
             name="fruit"
             tabindex="0"
           >
@@ -1618,242 +1646,248 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
       tabindex="-1"
     >
       <div
-        class="emotion-39"
+        class="emotion-40"
         data-popper-escaped="true"
         data-popper-placement="bottom-start"
         data-popper-reference-hidden="true"
         data-testid="menu"
         style="position: absolute; left: 0px; top: 0px; width: 0px; min-width: 12rem; transform: translate(0px, 0px);"
       >
-        <ul
-          class="emotion-38"
+        <div
+          class="emotion-10"
         >
           <div
-            class="emotion-10"
+            class="emotion-9"
+          >
+            <input
+              class="emotion-6"
+              role="searchbox"
+              type="search"
+            />
+            <span
+              class="emotion-8"
+            >
+              <svg
+                aria-hidden="true"
+                class="emotion-7"
+                height="1em"
+                role="img"
+                viewBox="0 0 24 24"
+                width="1em"
+              >
+                <path
+                  clip-rule="evenodd"
+                  d="M14.605 13.194l7 6.998a1 1 0 01-1.414 1.414h-.001l-6.997-7a7 7 0 111.412-1.412zM9 14A5 5 0 109 4a5 5 0 000 10z"
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+        <div
+          class="emotion-39"
+          tabindex="-1"
+        >
+          <ul
+            class="emotion-38"
+            tabindex="-1"
           >
             <div
-              class="emotion-9"
+              style="background: rgb(240, 240, 245); padding: 0.25rem 0.5rem; cursor: initial;"
             >
-              <input
-                class="emotion-6"
-                role="searchbox"
-                type="search"
-              />
+              Prepend item
+            </div>
+            <li
+              aria-disabled="false"
+              aria-selected="false"
+              class="emotion-12"
+              id="test-item-id-0"
+              role="option"
+            >
               <span
-                class="emotion-8"
+                class="emotion-11"
               >
-                <svg
-                  aria-hidden="true"
-                  class="emotion-7"
-                  height="1em"
-                  role="img"
-                  viewBox="0 0 24 24"
-                  width="1em"
+                Custom 
+                Apple
+              </span>
+            </li>
+            <li
+              aria-disabled="false"
+              aria-selected="false"
+              class="emotion-12"
+              id="test-item-id-1"
+              role="option"
+            >
+              <span
+                class="emotion-11"
+              >
+                Custom 
+                Avocado
+              </span>
+            </li>
+            <li
+              aria-disabled="false"
+              aria-selected="false"
+              class="emotion-12"
+              id="test-item-id-2"
+              role="option"
+            >
+              <span
+                class="emotion-11"
+              >
+                Custom 
+                Banana
+              </span>
+            </li>
+            <li
+              aria-disabled="false"
+              aria-selected="false"
+              class="emotion-12"
+              id="test-item-id-3"
+              role="option"
+            >
+              <span
+                class="emotion-11"
+              >
+                Custom 
+                Blueberry
+              </span>
+            </li>
+            <li
+              aria-disabled="false"
+              aria-selected="false"
+              class="emotion-12"
+              id="test-item-id-4"
+              role="option"
+            >
+              <span
+                class="emotion-11"
+              >
+                Custom 
+                Coconut
+              </span>
+            </li>
+            <li
+              aria-disabled="false"
+              aria-selected="false"
+              class="emotion-12"
+              id="test-item-id-5"
+              role="option"
+            >
+              <span
+                class="emotion-11"
+              >
+                Custom 
+                Grape
+              </span>
+            </li>
+            <li
+              aria-disabled="false"
+              aria-selected="false"
+              class="emotion-12"
+              id="test-item-id-6"
+              role="option"
+            >
+              <span
+                class="emotion-11"
+              >
+                Custom 
+                Lemon
+              </span>
+            </li>
+            <li
+              aria-disabled="false"
+              aria-selected="false"
+              class="emotion-12"
+              id="test-item-id-7"
+              role="option"
+            >
+              <span
+                class="emotion-11"
+              >
+                Custom 
+                Mango
+              </span>
+            </li>
+            <li
+              aria-disabled="false"
+              aria-selected="false"
+              class="emotion-12"
+              id="test-item-id-8"
+              role="option"
+            >
+              <span
+                class="emotion-11"
+              >
+                Custom 
+                Melon
+              </span>
+            </li>
+            <li
+              aria-disabled="false"
+              aria-selected="false"
+              class="emotion-12"
+              id="test-item-id-9"
+              role="option"
+            >
+              <span
+                class="emotion-11"
+              >
+                Custom 
+                Orange
+              </span>
+            </li>
+            <li
+              aria-disabled="false"
+              aria-selected="false"
+              class="emotion-12"
+              id="test-item-id-10"
+              role="option"
+            >
+              <span
+                class="emotion-11"
+              >
+                Custom 
+                Peach
+              </span>
+            </li>
+            <li
+              aria-disabled="false"
+              aria-selected="false"
+              class="emotion-12"
+              id="test-item-id-11"
+              role="option"
+            >
+              <span
+                class="emotion-11"
+              >
+                Custom 
+                Pear
+              </span>
+            </li>
+            <div
+              style="background: rgb(240, 240, 245); padding: 0.25rem 0.5rem; cursor: initial;"
+            >
+              <div
+                class="emotion-37"
+              >
+                <span
+                  class="emotion-35"
                 >
-                  <path
-                    clip-rule="evenodd"
-                    d="M14.605 13.194l7 6.998a1 1 0 01-1.414 1.414h-.001l-6.997-7a7 7 0 111.412-1.412zM9 14A5 5 0 109 4a5 5 0 000 10z"
-                  />
-                </svg>
-              </span>
-            </div>
-          </div>
-          <div
-            style="background: rgb(240, 240, 245); padding: 0.25rem 0.5rem; cursor: initial;"
-          >
-            Prepend item
-          </div>
-          <li
-            aria-disabled="false"
-            aria-selected="false"
-            class="emotion-12"
-            id="test-item-id-0"
-            role="option"
-          >
-            <span
-              class="emotion-11"
-            >
-              Custom 
-              Apple
-            </span>
-          </li>
-          <li
-            aria-disabled="false"
-            aria-selected="false"
-            class="emotion-12"
-            id="test-item-id-1"
-            role="option"
-          >
-            <span
-              class="emotion-11"
-            >
-              Custom 
-              Avocado
-            </span>
-          </li>
-          <li
-            aria-disabled="false"
-            aria-selected="false"
-            class="emotion-12"
-            id="test-item-id-2"
-            role="option"
-          >
-            <span
-              class="emotion-11"
-            >
-              Custom 
-              Banana
-            </span>
-          </li>
-          <li
-            aria-disabled="false"
-            aria-selected="false"
-            class="emotion-12"
-            id="test-item-id-3"
-            role="option"
-          >
-            <span
-              class="emotion-11"
-            >
-              Custom 
-              Blueberry
-            </span>
-          </li>
-          <li
-            aria-disabled="false"
-            aria-selected="false"
-            class="emotion-12"
-            id="test-item-id-4"
-            role="option"
-          >
-            <span
-              class="emotion-11"
-            >
-              Custom 
-              Coconut
-            </span>
-          </li>
-          <li
-            aria-disabled="false"
-            aria-selected="false"
-            class="emotion-12"
-            id="test-item-id-5"
-            role="option"
-          >
-            <span
-              class="emotion-11"
-            >
-              Custom 
-              Grape
-            </span>
-          </li>
-          <li
-            aria-disabled="false"
-            aria-selected="false"
-            class="emotion-12"
-            id="test-item-id-6"
-            role="option"
-          >
-            <span
-              class="emotion-11"
-            >
-              Custom 
-              Lemon
-            </span>
-          </li>
-          <li
-            aria-disabled="false"
-            aria-selected="false"
-            class="emotion-12"
-            id="test-item-id-7"
-            role="option"
-          >
-            <span
-              class="emotion-11"
-            >
-              Custom 
-              Mango
-            </span>
-          </li>
-          <li
-            aria-disabled="false"
-            aria-selected="false"
-            class="emotion-12"
-            id="test-item-id-8"
-            role="option"
-          >
-            <span
-              class="emotion-11"
-            >
-              Custom 
-              Melon
-            </span>
-          </li>
-          <li
-            aria-disabled="false"
-            aria-selected="false"
-            class="emotion-12"
-            id="test-item-id-9"
-            role="option"
-          >
-            <span
-              class="emotion-11"
-            >
-              Custom 
-              Orange
-            </span>
-          </li>
-          <li
-            aria-disabled="false"
-            aria-selected="false"
-            class="emotion-12"
-            id="test-item-id-10"
-            role="option"
-          >
-            <span
-              class="emotion-11"
-            >
-              Custom 
-              Peach
-            </span>
-          </li>
-          <li
-            aria-disabled="false"
-            aria-selected="false"
-            class="emotion-12"
-            id="test-item-id-11"
-            role="option"
-          >
-            <span
-              class="emotion-11"
-            >
-              Custom 
-              Pear
-            </span>
-          </li>
-          <div
-            style="background: rgb(240, 240, 245); padding: 0.25rem 0.5rem; cursor: initial;"
-          >
-            <div
-              class="emotion-37"
-            >
-              <span
-                class="emotion-35"
-              >
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime quod modi, inventore quasi aut sed beatae corrupti repellendus minima voluptatem debitis, quibusdam repudiandae totam voluptatum odit.
-              </span>
-              <button
-                class="emotion-36"
-                data-testid="action-btn"
-                type="button"
-              >
-                <span>
-                  New item
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime quod modi, inventore quasi aut sed beatae corrupti repellendus minima voluptatem debitis, quibusdam repudiandae totam voluptatum odit.
                 </span>
-              </button>
+                <button
+                  class="emotion-36"
+                  data-testid="action-btn"
+                  type="button"
+                >
+                  <span>
+                    New item
+                  </span>
+                </button>
+              </div>
             </div>
-          </div>
-        </ul>
+          </ul>
+        </div>
       </div>
     </div>
   </div>

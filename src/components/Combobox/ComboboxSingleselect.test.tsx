@@ -169,9 +169,9 @@ test.each`
   expect(combobox).toHaveAttribute('aria-expanded', 'true')
   await waitFor(() => expect(listbox.querySelector('[aria-selected]')).toBeTruthy())
 
-  fireEvent.keyDown(combobox, { key: 'Down' })
+  fireEvent.keyDown(combobox, { key: 'ArrowDown' })
 
-  await waitFor(() => expect(listbox.querySelector('[aria-selected="true"]')?.id).toBeTruthy())
+  await waitFor(() => expect(listbox.querySelector('[aria-selected="true"]')?.textContent).toBe(fruits[0].label))
   expect(combobox).toHaveAttribute('aria-activedescendant', listbox.querySelector('[aria-selected="true"]')?.id)
 })
 

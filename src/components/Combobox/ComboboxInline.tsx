@@ -1,6 +1,15 @@
 import { useSelect } from 'downshift'
 import matchSorter from 'match-sorter'
-import React, { ChangeEvent, CSSProperties, useCallback, useEffect, useRef, useState } from 'react'
+import React, {
+  ChangeEvent,
+  CSSProperties,
+  FocusEventHandler,
+  KeyboardEventHandler,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from 'react'
 import { PopperProps, usePopper } from 'react-popper'
 import { useMemo } from 'react'
 import { isNil } from 'lodash'
@@ -11,13 +20,13 @@ import { useFormControl, UseFormControlProps } from '../../hooks/useFormControl'
 import { Button, ButtonProps } from '../Button'
 import { Icon } from '../Icon'
 import { Text } from '../Text'
-import { ComboboxComponents, ComboboxMenuItemProps, defaultComboboxComponents } from './ComboboxMenuComponents'
+import { ComboboxComponents, defaultComboboxComponents } from './ComboboxMenuComponents'
 import { useComboboxItemsLoader } from './useComboboxItemsLoader'
 import { SearchBox } from './SearchBox'
 import { ListBox } from './ListBox'
 
 export interface ComboboxInlineProps<T>
-  extends Omit<ButtonProps, 'value' | 'onChange' | 'placeholder'>,
+  extends Omit<ButtonProps, 'value' | 'onChange' | 'placeholder' | 'onKeyDown' | 'onBlur'>,
     Omit<UseFormControlProps, 'label'> {
   value?: T
   items: T[] | ((query: string) => Promise<T[]>)
@@ -28,6 +37,8 @@ export interface ComboboxInlineProps<T>
   menuMinWidth?: number
   filter?(items: T[], filter: string): T[]
   onChange?: (newValue: T) => void
+  onKeyDown?: KeyboardEventHandler
+  onBlur?: FocusEventHandler
   onFilterChange?: (newValue: string) => void
   components?: Omit<Partial<ComboboxComponents<T>>, 'CreateItem'>
   popperProps?: Omit<Partial<PopperProps<any>>, 'children'>
@@ -143,7 +154,7 @@ export function ComboboxInline<T>(props: ComboboxInlineProps<T>) {
     'aria-invalid': invalid,
     'aria-errormessage': formControlProps.errorId,
   })
-  const { id, ref: downshiftToggleButtonRef, ...downshiftToggleButtonProps } = getToggleButtonProps({
+  const { ref: downshiftToggleButtonRef, ...downshiftToggleButtonProps } = getToggleButtonProps({
     role: null,
     onClick,
     onFocus,
@@ -163,27 +174,12 @@ export function ComboboxInline<T>(props: ComboboxInlineProps<T>) {
     () => ({
       ...defaultComboboxComponents,
       ...(components ?? {}),
-      PrependItem: (props: ComboboxMenuItemProps) => (
-        <>
-          {showSearchBox && (
-            <div className={classes.searchBoxContainer}>
-              <SearchBox
-                ref={setSearchBoxRef}
-                placeholder={searchBoxPlaceholder}
-                onChange={onSearchBoxValueChange}
-                onKeyDown={(ev) => downshiftToggleButtonProps.onKeyDown(ev as any)}
-              />
-            </div>
-          )}
-          {components?.PrependItem && <components.PrependItem {...props} />}
-        </>
-      ),
     }),
-    [components, showSearchBox, searchBoxPlaceholder, onSearchBoxValueChange, classes.searchBoxContainer]
+    [components]
   )
 
   useEffect(() => {
-    if (searchBoxRef && isOpen) {
+    if (isOpen && searchBoxRef) {
       searchBoxRef.focus()
       openMenu()
     }
@@ -218,9 +214,9 @@ export function ComboboxInline<T>(props: ComboboxInlineProps<T>) {
       {/*By the ARIA definition, the menu element should always be in the DOM*/}
       <div aria-busy={isLoading} {...downshiftMenuProps}>
         {isOpen && (
-          <ListBox<T>
-            ref={menuRef}
+          <div
             data-testid='menu'
+            ref={menuRef}
             className={classes.menu}
             style={{
               ...popperStyles,
@@ -228,13 +224,30 @@ export function ComboboxInline<T>(props: ComboboxInlineProps<T>) {
               minWidth: menuMinWidth,
             }}
             {...popperAttributes}
-            components={componentsInner}
-            getItemProps={getItemProps}
-            highlightedIndex={highlightedIndex}
-            itemToString={itemToString}
-            items={loadedItems}
-            loading={isLoading}
-          />
+          >
+            {showSearchBox && (
+              <div className={classes.searchBoxContainer}>
+                <SearchBox
+                  ref={setSearchBoxRef}
+                  placeholder={searchBoxPlaceholder}
+                  onChange={onSearchBoxValueChange}
+                  onKeyDown={downshiftToggleButtonProps.onKeyDown}
+                  onBlur={downshiftToggleButtonProps.onBlur}
+                />
+              </div>
+            )}
+
+            <ListBox<T>
+              components={componentsInner}
+              getItemProps={getItemProps}
+              highlightedIndex={highlightedIndex}
+              itemToString={itemToString}
+              items={loadedItems}
+              loading={isLoading}
+              className={classes.listBox}
+              tabIndex={-1}
+            />
+          </div>
         )}
       </div>
     </>
@@ -245,6 +258,10 @@ export const createStyles = (theme: Theme) => ({
   searchBoxContainer: {
     padding: '0.5rem',
     borderBottom: `1px solid ${theme.pallete.divider}`,
+  },
+
+  listBox: {
+    overflow: 'auto',
   },
 
   menu: {

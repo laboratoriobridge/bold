@@ -135,7 +135,7 @@ test.each`
 
   const button = baseElement.querySelector('[aria-haspopup="listbox"]')!
   const label = baseElement.querySelector('label')
-  const listbox = baseElement.querySelector('[role="listbox"]')
+  const listbox = baseElement.querySelector('[role="listbox"]')!
 
   expect(button).toHaveAttribute('aria-controls', listbox?.getAttribute('id'))
   expect(button).toHaveAttribute('aria-expanded', 'false')
@@ -156,6 +156,7 @@ test.each`
   await waitFor(() => {
     const activeItem = listbox?.querySelector('[aria-selected]')
     expect(activeItem).not.toBeNull()
+    expect(activeItem?.textContent).toBe(fruits[0].label)
   })
 })
 
