@@ -118,13 +118,13 @@ exports[`rendering renders correcly closed 1`] = `
             aria-haspopup="listbox"
             aria-labelledby="downshift-243-label"
             class="emotion-2"
-            id="test-button-id"
+            id="test-toggle-button-id"
             tabindex="0"
           >
             <span>
               <label
                 class="emotion-0"
-                for="test-button-id"
+                for="test-toggle-button-id"
                 id="downshift-243-label"
               >
                 Fruits
@@ -454,13 +454,13 @@ exports[`rendering renders correcly opened 1`] = `
             aria-haspopup="listbox"
             aria-labelledby="downshift-244-label"
             class="emotion-2"
-            id="test-button-id"
+            id="test-toggle-button-id"
             tabindex="0"
           >
             <span>
               <label
                 class="emotion-0"
-                for="test-button-id"
+                for="test-toggle-button-id"
                 id="downshift-244-label"
               >
                 Fruits
@@ -1012,13 +1012,13 @@ exports[`rendering renders correcly opened and loading 1`] = `
             aria-haspopup="listbox"
             aria-labelledby="downshift-257-label"
             class="emotion-2"
-            id="test-button-id"
+            id="test-toggle-button-id"
             tabindex="0"
           >
             <span>
               <label
                 class="emotion-0"
-                for="test-button-id"
+                for="test-toggle-button-id"
                 id="downshift-257-label"
               >
                 Button text
@@ -1607,14 +1607,14 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
             aria-haspopup="listbox"
             aria-labelledby="downshift-270-label"
             class="emotion-2"
-            id="test-button-id"
+            id="test-toggle-button-id"
             name="fruit"
             tabindex="0"
           >
             <span>
               <label
                 class="emotion-0"
-                for="test-button-id"
+                for="test-toggle-button-id"
                 id="downshift-270-label"
               >
                 Fruit

@@ -210,7 +210,7 @@ export function ComboboxInline<T>(props: ComboboxInlineProps<T>) {
             {defaultButtonText}
           </Text>
           {selectedItem != null && <Text color={invalid ? 'danger' : 'normal'}>{itemToString(selectedItem)}</Text>}
-          <Icon style={{ marginLeft: '0.5rem' }} icon={isOpen ? 'angleUp' : 'angleDown'} />
+          <Icon style={classes.toggleIcon} icon={isOpen ? 'angleUp' : 'angleDown'} />
         </Button>
       </FormControl>
 
@@ -265,6 +265,10 @@ export const createStyles = (theme: Theme) => ({
 
   listBox: {
     overflow: 'auto',
+  },
+
+  toggleIcon: {
+    marginLeft: '0.5rem',
   },
 
   menu: {

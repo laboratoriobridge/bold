@@ -12,6 +12,9 @@ import { ComboboxMenuItem } from './ComboboxMenuComponents'
 import { Combobox } from './Combobox'
 import { ComboboxSingleselect, ComboboxSingleselectProps } from './ComboboxSingleselect'
 
+const TOGGLE_BUTTON_ID = 'test-toggle-button-id'
+const MENU_ID = 'test-menu-id'
+
 interface Fruit {
   value: number
   label: string
@@ -68,8 +71,8 @@ const ComboboxTest = (props: Partial<ComboboxSingleselectProps<Fruit>> & { async
     loading={false}
     inputId={'test-input-id'}
     labelId={'test-label-id'}
-    menuId={'test-menu-id'}
-    toggleButtonId={'test-button-id'}
+    menuId={MENU_ID}
+    toggleButtonId={TOGGLE_BUTTON_ID}
     getItemId={(index) => `test-item-id-${index}`}
     {...props}
   />
@@ -103,8 +106,8 @@ const ComboboxWithCustomComponentsTest = (
     debounceMilliseconds={0}
     inputId={'test-input-id'}
     labelId={'test-label-id'}
-    menuId={'test-menu-id'}
-    toggleButtonId={'test-button-id'}
+    menuId={MENU_ID}
+    toggleButtonId={TOGGLE_BUTTON_ID}
     getItemId={(index) => `test-item-id-${index}`}
     components={{
       Item: (props) => (
