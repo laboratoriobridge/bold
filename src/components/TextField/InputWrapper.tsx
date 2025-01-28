@@ -4,12 +4,15 @@ import { useLocale } from '../../i18n'
 import { Theme, useStyles } from '../../styles'
 import { Button, ButtonProps } from '../Button'
 import { Icon, IconImage } from '../Icon/Icon'
+import { composeHandlers } from '../../util/react'
 
 export interface InputWrapperProps extends React.HTMLAttributes<HTMLDivElement> {
   icon?: IconImage
   iconPosition?: 'left' | 'right'
   iconAriaLabel?: string
   iconDisabled?: boolean
+  iconProps?: ButtonProps
+  iconRef?: Ref<HTMLButtonElement>
   clearVisible?: boolean
   onIconClick?: ButtonProps['onClick']
   onClear?(e: React.MouseEvent<HTMLButtonElement>): any
@@ -21,14 +24,21 @@ export const InputWrapper = React.forwardRef((props: InputWrapperProps, ref: Ref
     icon,
     iconDisabled,
     iconAriaLabel,
-    onIconClick,
+    onIconClick: externalOnIconClick,
     clearVisible,
     onClear,
     className,
     iconPosition,
+    iconProps: externalIconProps,
+    iconRef,
     ...rest
   } = props
+
+  const { onClick: iconPropsOnClick, ...iconProps } = externalIconProps ?? {}
+  const onIconClick =
+    iconPropsOnClick || externalOnIconClick ? composeHandlers(iconPropsOnClick, externalOnIconClick) : null
   const internalIconPosition = iconPosition || (onIconClick ? 'right' : 'left')
+
   const { classes, css } = useStyles(createStyles, {
     icon,
     iconPosition: internalIconPosition,
@@ -69,6 +79,8 @@ export const InputWrapper = React.forwardRef((props: InputWrapperProps, ref: Ref
               tabIndex={-1}
               onClick={onIconClick}
               style={classes.icon}
+              innerRef={iconRef}
+              {...iconProps}
               disabled={iconDisabled}
               aria-label={iconAriaLabel}
             >

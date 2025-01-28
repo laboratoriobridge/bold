@@ -101,67 +101,60 @@ exports[`rendering renders correcly closed 1`] = `
 }
 
 <body>
-  <div
-    aria-live="polite"
-    aria-relevant="additions text"
-    id="a11y-status-message"
-    role="status"
-    style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px;"
-  />
   <div>
-    <div>
+    <div
+      class="emotion-5"
+    >
       <div
-        class="emotion-5"
+        class="emotion-4"
       >
         <div
-          class="emotion-4"
+          class="emotion-3"
         >
           <div
-            class="emotion-3"
+            aria-activedescendant=""
+            aria-controls="test-menu-id"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-labelledby="downshift-243-label"
+            class="emotion-2"
+            id="test-toggle-button-id"
+            tabindex="0"
           >
-            <button
-              aria-controls="test-menu-id"
-              aria-expanded="false"
-              aria-haspopup="listbox"
-              aria-labelledby="downshift-225-label"
-              class="emotion-2"
-              id="downshift-225-toggle-button"
-              type="button"
-            >
-              <span>
-                <label
-                  class="emotion-0"
-                  id="downshift-225-label"
-                >
-                  Fruits
-                </label>
-                <svg
-                  aria-hidden="true"
-                  class="emotion-1"
-                  height="1em"
-                  role="img"
-                  viewBox="0 0 24 24"
-                  width="1em"
-                >
-                  <path
-                    clip-rule="evenodd"
-                    d="M16.294 8.294a1 1 0 111.414 1.414l-5 5a1 1 0 01-1.414 0l-5.001-5a1 1 0 011.414-1.415l4.294 4.294 4.293-4.293z"
-                  />
-                </svg>
-              </span>
-            </button>
+            <span>
+              <label
+                class="emotion-0"
+                for="test-toggle-button-id"
+                id="downshift-243-label"
+              >
+                Fruits
+              </label>
+              <svg
+                aria-hidden="true"
+                class="emotion-1"
+                height="1em"
+                role="img"
+                viewBox="0 0 24 24"
+                width="1em"
+              >
+                <path
+                  clip-rule="evenodd"
+                  d="M16.294 8.294a1 1 0 111.414 1.414l-5 5a1 1 0 01-1.414 0l-5.001-5a1 1 0 011.414-1.415l4.294 4.294 4.293-4.293z"
+                />
+              </svg>
+            </span>
           </div>
         </div>
       </div>
-      <div
-        aria-busy="false"
-        aria-invalid="false"
-        aria-labelledby="downshift-225-label"
-        id="test-menu-id"
-        role="listbox"
-        tabindex="-1"
-      />
     </div>
+    <div
+      aria-busy="false"
+      aria-invalid="false"
+      aria-labelledby="downshift-243-label"
+      id="test-menu-id"
+      role="listbox"
+      tabindex="-1"
+    />
   </div>
 </body>
 `;
@@ -173,6 +166,10 @@ exports[`rendering renders correcly opened 1`] = `
 }
 
 .emotion-24 {
+  overflow: auto;
+}
+
+.emotion-25 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -287,20 +284,6 @@ exports[`rendering renders correcly opened 1`] = `
   margin-left: 0.5rem;
 }
 
-.emotion-23 {
-  border: 0;
-  border-radius: 0;
-  box-shadow: none;
-  max-height: auto;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  background-color: #FFFFFF;
-  overflow-y: auto;
-  overflow-x: hidden;
-  width: 100%;
-}
-
 .emotion-9 {
   position: relative;
 }
@@ -413,6 +396,20 @@ exports[`rendering renders correcly opened 1`] = `
   box-shadow: none;
 }
 
+.emotion-23 {
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  max-height: auto;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: #FFFFFF;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 100%;
+}
+
 .emotion-11 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
@@ -440,108 +437,108 @@ exports[`rendering renders correcly opened 1`] = `
 }
 
 <body>
-  <div
-    aria-live="polite"
-    aria-relevant="additions text"
-    id="a11y-status-message"
-    role="status"
-    style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px;"
-  />
   <div>
-    <div>
+    <div
+      class="emotion-5"
+    >
       <div
-        class="emotion-5"
+        class="emotion-4"
       >
         <div
-          class="emotion-4"
+          class="emotion-3"
         >
           <div
-            class="emotion-3"
+            aria-activedescendant=""
+            aria-controls="test-menu-id"
+            aria-expanded="true"
+            aria-haspopup="listbox"
+            aria-labelledby="downshift-244-label"
+            class="emotion-2"
+            id="test-toggle-button-id"
+            tabindex="0"
           >
-            <button
-              aria-controls="test-menu-id"
-              aria-expanded="true"
-              aria-haspopup="listbox"
-              aria-labelledby="downshift-226-label"
-              class="emotion-2"
-              id="downshift-226-toggle-button"
-              type="button"
-            >
-              <span>
-                <label
-                  class="emotion-0"
-                  id="downshift-226-label"
-                >
-                  Fruits
-                </label>
-                <svg
-                  aria-hidden="true"
-                  class="emotion-1"
-                  height="1em"
-                  role="img"
-                  viewBox="0 0 24 24"
-                  width="1em"
-                >
-                  <path
-                    clip-rule="evenodd"
-                    d="M7.707 14.707a1 1 0 11-1.414-1.414l5-5a1 1 0 011.414 0l5.001 5.001a1 1 0 01-1.414 1.414L12 10.414l-4.293 4.293z"
-                  />
-                </svg>
-              </span>
-            </button>
+            <span>
+              <label
+                class="emotion-0"
+                for="test-toggle-button-id"
+                id="downshift-244-label"
+              >
+                Fruits
+              </label>
+              <svg
+                aria-hidden="true"
+                class="emotion-1"
+                height="1em"
+                role="img"
+                viewBox="0 0 24 24"
+                width="1em"
+              >
+                <path
+                  clip-rule="evenodd"
+                  d="M7.707 14.707a1 1 0 11-1.414-1.414l5-5a1 1 0 011.414 0l5.001 5.001a1 1 0 01-1.414 1.414L12 10.414l-4.293 4.293z"
+                />
+              </svg>
+            </span>
           </div>
         </div>
       </div>
+    </div>
+    <div
+      aria-busy="false"
+      aria-invalid="false"
+      aria-labelledby="downshift-244-label"
+      id="test-menu-id"
+      role="listbox"
+      tabindex="-1"
+    >
       <div
-        aria-busy="false"
-        aria-invalid="false"
-        aria-labelledby="downshift-226-label"
-        id="test-menu-id"
-        role="listbox"
-        tabindex="-1"
+        class="emotion-25"
+        data-popper-escaped="true"
+        data-popper-placement="bottom-start"
+        data-popper-reference-hidden="true"
+        data-testid="menu"
+        style="position: absolute; left: 0px; top: 0px; width: 0px; min-width: 12rem; transform: translate(0px, 0px);"
       >
         <div
+          class="emotion-10"
+        >
+          <div
+            class="emotion-9"
+          >
+            <input
+              class="emotion-6"
+              role="searchbox"
+              type="search"
+            />
+            <span
+              class="emotion-8"
+            >
+              <svg
+                aria-hidden="true"
+                class="emotion-7"
+                height="1em"
+                role="img"
+                viewBox="0 0 24 24"
+                width="1em"
+              >
+                <path
+                  clip-rule="evenodd"
+                  d="M14.605 13.194l7 6.998a1 1 0 01-1.414 1.414h-.001l-6.997-7a7 7 0 111.412-1.412zM9 14A5 5 0 109 4a5 5 0 000 10z"
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+        <div
           class="emotion-24"
-          data-popper-escaped="true"
-          data-popper-placement="bottom-start"
-          data-popper-reference-hidden="true"
-          data-testid="menu"
-          style="position: absolute; left: 0px; top: 0px; width: 0px; min-width: 12rem; transform: translate(0px, 0px);"
+          tabindex="-1"
         >
           <ul
             class="emotion-23"
+            tabindex="-1"
           >
-            <div
-              class="emotion-10"
-            >
-              <div
-                class="emotion-9"
-              >
-                <input
-                  class="emotion-6"
-                  role="searchbox"
-                  type="search"
-                />
-                <span
-                  class="emotion-8"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="emotion-7"
-                    height="1em"
-                    role="img"
-                    viewBox="0 0 24 24"
-                    width="1em"
-                  >
-                    <path
-                      clip-rule="evenodd"
-                      d="M14.605 13.194l7 6.998a1 1 0 01-1.414 1.414h-.001l-6.997-7a7 7 0 111.412-1.412zM9 14A5 5 0 109 4a5 5 0 000 10z"
-                    />
-                  </svg>
-                </span>
-              </div>
-            </div>
             <li
+              aria-disabled="false"
               aria-selected="false"
               class="emotion-11"
               id="test-item-id-0"
@@ -550,6 +547,7 @@ exports[`rendering renders correcly opened 1`] = `
               Apple
             </li>
             <li
+              aria-disabled="false"
               aria-selected="false"
               class="emotion-11"
               id="test-item-id-1"
@@ -558,6 +556,7 @@ exports[`rendering renders correcly opened 1`] = `
               Avocado
             </li>
             <li
+              aria-disabled="false"
               aria-selected="false"
               class="emotion-11"
               id="test-item-id-2"
@@ -566,6 +565,7 @@ exports[`rendering renders correcly opened 1`] = `
               Banana
             </li>
             <li
+              aria-disabled="false"
               aria-selected="false"
               class="emotion-11"
               id="test-item-id-3"
@@ -574,6 +574,7 @@ exports[`rendering renders correcly opened 1`] = `
               Blueberry
             </li>
             <li
+              aria-disabled="false"
               aria-selected="false"
               class="emotion-11"
               id="test-item-id-4"
@@ -582,6 +583,7 @@ exports[`rendering renders correcly opened 1`] = `
               Coconut
             </li>
             <li
+              aria-disabled="false"
               aria-selected="false"
               class="emotion-11"
               id="test-item-id-5"
@@ -590,6 +592,7 @@ exports[`rendering renders correcly opened 1`] = `
               Grape
             </li>
             <li
+              aria-disabled="false"
               aria-selected="false"
               class="emotion-11"
               id="test-item-id-6"
@@ -598,6 +601,7 @@ exports[`rendering renders correcly opened 1`] = `
               Lemon
             </li>
             <li
+              aria-disabled="false"
               aria-selected="false"
               class="emotion-11"
               id="test-item-id-7"
@@ -606,6 +610,7 @@ exports[`rendering renders correcly opened 1`] = `
               Mango
             </li>
             <li
+              aria-disabled="false"
               aria-selected="false"
               class="emotion-11"
               id="test-item-id-8"
@@ -614,6 +619,7 @@ exports[`rendering renders correcly opened 1`] = `
               Melon
             </li>
             <li
+              aria-disabled="false"
               aria-selected="false"
               class="emotion-11"
               id="test-item-id-9"
@@ -622,6 +628,7 @@ exports[`rendering renders correcly opened 1`] = `
               Orange
             </li>
             <li
+              aria-disabled="false"
               aria-selected="false"
               class="emotion-11"
               id="test-item-id-10"
@@ -630,6 +637,7 @@ exports[`rendering renders correcly opened 1`] = `
               Peach
             </li>
             <li
+              aria-disabled="false"
               aria-selected="false"
               class="emotion-11"
               id="test-item-id-11"
@@ -666,6 +674,10 @@ exports[`rendering renders correcly opened and loading 1`] = `
 }
 
 .emotion-26 {
+  overflow: auto;
+}
+
+.emotion-27 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -780,20 +792,6 @@ exports[`rendering renders correcly opened and loading 1`] = `
   margin-left: 0.5rem;
 }
 
-.emotion-25 {
-  border: 0;
-  border-radius: 0;
-  box-shadow: none;
-  max-height: auto;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  background-color: #FFFFFF;
-  overflow-y: auto;
-  overflow-x: hidden;
-  width: 100%;
-}
-
 .emotion-9 {
   position: relative;
 }
@@ -904,6 +902,20 @@ exports[`rendering renders correcly opened and loading 1`] = `
 
 .emotion-7:focus {
   box-shadow: none;
+}
+
+.emotion-25 {
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  max-height: auto;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: #FFFFFF;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 .emotion-13 {
@@ -983,107 +995,106 @@ exports[`rendering renders correcly opened and loading 1`] = `
 }
 
 <body>
-  <div
-    aria-live="polite"
-    aria-relevant="additions text"
-    id="a11y-status-message"
-    role="status"
-    style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px;"
-  />
   <div>
-    <div>
+    <div
+      class="emotion-5"
+    >
       <div
-        class="emotion-5"
+        class="emotion-4"
       >
         <div
-          class="emotion-4"
+          class="emotion-3"
         >
           <div
-            class="emotion-3"
+            aria-activedescendant=""
+            aria-controls="test-menu-id"
+            aria-expanded="true"
+            aria-haspopup="listbox"
+            aria-labelledby="downshift-257-label"
+            class="emotion-2"
+            id="test-toggle-button-id"
+            tabindex="0"
           >
-            <button
-              aria-controls="test-menu-id"
-              aria-expanded="true"
-              aria-haspopup="listbox"
-              aria-labelledby="downshift-238-label"
-              class="emotion-2"
-              id="downshift-238-toggle-button"
-              type="button"
-            >
-              <span>
-                <label
-                  class="emotion-0"
-                  id="downshift-238-label"
-                >
-                  Button text
-                </label>
-                <svg
-                  aria-hidden="true"
-                  class="emotion-1"
-                  height="1em"
-                  role="img"
-                  viewBox="0 0 24 24"
-                  width="1em"
-                >
-                  <path
-                    clip-rule="evenodd"
-                    d="M7.707 14.707a1 1 0 11-1.414-1.414l5-5a1 1 0 011.414 0l5.001 5.001a1 1 0 01-1.414 1.414L12 10.414l-4.293 4.293z"
-                  />
-                </svg>
-              </span>
-            </button>
+            <span>
+              <label
+                class="emotion-0"
+                for="test-toggle-button-id"
+                id="downshift-257-label"
+              >
+                Button text
+              </label>
+              <svg
+                aria-hidden="true"
+                class="emotion-1"
+                height="1em"
+                role="img"
+                viewBox="0 0 24 24"
+                width="1em"
+              >
+                <path
+                  clip-rule="evenodd"
+                  d="M7.707 14.707a1 1 0 11-1.414-1.414l5-5a1 1 0 011.414 0l5.001 5.001a1 1 0 01-1.414 1.414L12 10.414l-4.293 4.293z"
+                />
+              </svg>
+            </span>
           </div>
         </div>
       </div>
+    </div>
+    <div
+      aria-busy="true"
+      aria-invalid="false"
+      aria-labelledby="downshift-257-label"
+      id="test-menu-id"
+      role="listbox"
+      tabindex="-1"
+    >
       <div
-        aria-busy="true"
-        aria-invalid="false"
-        aria-labelledby="downshift-238-label"
-        id="test-menu-id"
-        role="listbox"
-        tabindex="-1"
+        class="emotion-27"
+        data-popper-escaped="true"
+        data-popper-placement="bottom-start"
+        data-popper-reference-hidden="true"
+        data-testid="menu"
+        style="position: absolute; left: 0px; top: 0px; width: 0px; min-width: 12rem; transform: translate(0px, 0px);"
       >
         <div
+          class="emotion-10"
+        >
+          <div
+            class="emotion-9"
+          >
+            <input
+              class="emotion-6"
+              role="searchbox"
+              type="search"
+            />
+            <span
+              class="emotion-8"
+            >
+              <svg
+                aria-hidden="true"
+                class="emotion-7"
+                height="1em"
+                role="img"
+                viewBox="0 0 24 24"
+                width="1em"
+              >
+                <path
+                  clip-rule="evenodd"
+                  d="M14.605 13.194l7 6.998a1 1 0 01-1.414 1.414h-.001l-6.997-7a7 7 0 111.412-1.412zM9 14A5 5 0 109 4a5 5 0 000 10z"
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+        <div
           class="emotion-26"
-          data-popper-escaped="true"
-          data-popper-placement="bottom-start"
-          data-popper-reference-hidden="true"
-          data-testid="menu"
-          style="position: absolute; left: 0px; top: 0px; width: 0px; min-width: 12rem; transform: translate(0px, 0px);"
+          tabindex="-1"
         >
           <ul
             class="emotion-25"
+            tabindex="-1"
           >
-            <div
-              class="emotion-10"
-            >
-              <div
-                class="emotion-9"
-              >
-                <input
-                  class="emotion-6"
-                  role="searchbox"
-                  type="search"
-                />
-                <span
-                  class="emotion-8"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="emotion-7"
-                    height="1em"
-                    role="img"
-                    viewBox="0 0 24 24"
-                    width="1em"
-                  >
-                    <path
-                      clip-rule="evenodd"
-                      d="M14.605 13.194l7 6.998a1 1 0 01-1.414 1.414h-.001l-6.997-7a7 7 0 111.412-1.412zM9 14A5 5 0 109 4a5 5 0 000 10z"
-                    />
-                  </svg>
-                </span>
-              </div>
-            </div>
             <li
               class="emotion-12"
             >
@@ -1093,6 +1104,7 @@ exports[`rendering renders correcly opened and loading 1`] = `
               />
             </li>
             <li
+              aria-disabled="false"
               aria-selected="false"
               class="emotion-13"
               id="test-item-id-0"
@@ -1101,6 +1113,7 @@ exports[`rendering renders correcly opened and loading 1`] = `
               Apple
             </li>
             <li
+              aria-disabled="false"
               aria-selected="false"
               class="emotion-13"
               id="test-item-id-1"
@@ -1109,6 +1122,7 @@ exports[`rendering renders correcly opened and loading 1`] = `
               Avocado
             </li>
             <li
+              aria-disabled="false"
               aria-selected="false"
               class="emotion-13"
               id="test-item-id-2"
@@ -1117,6 +1131,7 @@ exports[`rendering renders correcly opened and loading 1`] = `
               Banana
             </li>
             <li
+              aria-disabled="false"
               aria-selected="false"
               class="emotion-13"
               id="test-item-id-3"
@@ -1125,6 +1140,7 @@ exports[`rendering renders correcly opened and loading 1`] = `
               Blueberry
             </li>
             <li
+              aria-disabled="false"
               aria-selected="false"
               class="emotion-13"
               id="test-item-id-4"
@@ -1133,6 +1149,7 @@ exports[`rendering renders correcly opened and loading 1`] = `
               Coconut
             </li>
             <li
+              aria-disabled="false"
               aria-selected="false"
               class="emotion-13"
               id="test-item-id-5"
@@ -1141,6 +1158,7 @@ exports[`rendering renders correcly opened and loading 1`] = `
               Grape
             </li>
             <li
+              aria-disabled="false"
               aria-selected="false"
               class="emotion-13"
               id="test-item-id-6"
@@ -1149,6 +1167,7 @@ exports[`rendering renders correcly opened and loading 1`] = `
               Lemon
             </li>
             <li
+              aria-disabled="false"
               aria-selected="false"
               class="emotion-13"
               id="test-item-id-7"
@@ -1157,6 +1176,7 @@ exports[`rendering renders correcly opened and loading 1`] = `
               Mango
             </li>
             <li
+              aria-disabled="false"
               aria-selected="false"
               class="emotion-13"
               id="test-item-id-8"
@@ -1165,6 +1185,7 @@ exports[`rendering renders correcly opened and loading 1`] = `
               Melon
             </li>
             <li
+              aria-disabled="false"
               aria-selected="false"
               class="emotion-13"
               id="test-item-id-9"
@@ -1173,6 +1194,7 @@ exports[`rendering renders correcly opened and loading 1`] = `
               Orange
             </li>
             <li
+              aria-disabled="false"
               aria-selected="false"
               class="emotion-13"
               id="test-item-id-10"
@@ -1181,6 +1203,7 @@ exports[`rendering renders correcly opened and loading 1`] = `
               Peach
             </li>
             <li
+              aria-disabled="false"
               aria-selected="false"
               class="emotion-13"
               id="test-item-id-11"
@@ -1203,6 +1226,10 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
 }
 
 .emotion-39 {
+  overflow: auto;
+}
+
+.emotion-40 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1324,20 +1351,6 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
   margin-left: 0.5rem;
 }
 
-.emotion-38 {
-  border: 0;
-  border-radius: 0;
-  box-shadow: none;
-  max-height: auto;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  background-color: #FFFFFF;
-  overflow-y: auto;
-  overflow-x: hidden;
-  width: 100%;
-}
-
 .emotion-9 {
   position: relative;
 }
@@ -1448,6 +1461,20 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
 
 .emotion-7:focus {
   box-shadow: none;
+}
+
+.emotion-38 {
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  max-height: auto;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: #FFFFFF;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 .emotion-12 {
@@ -1563,114 +1590,114 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
 }
 
 <body>
-  <div
-    aria-live="polite"
-    aria-relevant="additions text"
-    id="a11y-status-message"
-    role="status"
-    style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px;"
-  />
   <div>
-    <div>
+    <div
+      class="emotion-5"
+    >
       <div
-        class="emotion-5"
+        class="emotion-4"
       >
         <div
-          class="emotion-4"
+          class="emotion-3"
         >
           <div
-            class="emotion-3"
+            aria-activedescendant=""
+            aria-controls="test-menu-id"
+            aria-expanded="true"
+            aria-haspopup="listbox"
+            aria-labelledby="downshift-270-label"
+            class="emotion-2"
+            id="test-toggle-button-id"
+            name="fruit"
+            tabindex="0"
           >
-            <button
-              aria-controls="downshift-250-menu"
-              aria-expanded="true"
-              aria-haspopup="listbox"
-              aria-labelledby="downshift-250-label"
-              class="emotion-2"
-              id="downshift-250-toggle-button"
-              name="fruit"
-              type="button"
-            >
-              <span>
-                <label
-                  class="emotion-0"
-                  id="downshift-250-label"
-                >
-                  Fruit
-                </label>
-                <svg
-                  aria-hidden="true"
-                  class="emotion-1"
-                  height="1em"
-                  role="img"
-                  viewBox="0 0 24 24"
-                  width="1em"
-                >
-                  <path
-                    clip-rule="evenodd"
-                    d="M7.707 14.707a1 1 0 11-1.414-1.414l5-5a1 1 0 011.414 0l5.001 5.001a1 1 0 01-1.414 1.414L12 10.414l-4.293 4.293z"
-                  />
-                </svg>
-              </span>
-            </button>
+            <span>
+              <label
+                class="emotion-0"
+                for="test-toggle-button-id"
+                id="downshift-270-label"
+              >
+                Fruit
+              </label>
+              <svg
+                aria-hidden="true"
+                class="emotion-1"
+                height="1em"
+                role="img"
+                viewBox="0 0 24 24"
+                width="1em"
+              >
+                <path
+                  clip-rule="evenodd"
+                  d="M7.707 14.707a1 1 0 11-1.414-1.414l5-5a1 1 0 011.414 0l5.001 5.001a1 1 0 01-1.414 1.414L12 10.414l-4.293 4.293z"
+                />
+              </svg>
+            </span>
           </div>
         </div>
       </div>
+    </div>
+    <div
+      aria-busy="false"
+      aria-invalid="false"
+      aria-labelledby="downshift-270-label"
+      id="test-menu-id"
+      role="listbox"
+      tabindex="-1"
+    >
       <div
-        aria-busy="false"
-        aria-invalid="false"
-        aria-labelledby="downshift-250-label"
-        id="downshift-250-menu"
-        role="listbox"
-        tabindex="-1"
+        class="emotion-40"
+        data-popper-escaped="true"
+        data-popper-placement="bottom-start"
+        data-popper-reference-hidden="true"
+        data-testid="menu"
+        style="position: absolute; left: 0px; top: 0px; width: 0px; min-width: 12rem; transform: translate(0px, 0px);"
       >
         <div
+          class="emotion-10"
+        >
+          <div
+            class="emotion-9"
+          >
+            <input
+              class="emotion-6"
+              role="searchbox"
+              type="search"
+            />
+            <span
+              class="emotion-8"
+            >
+              <svg
+                aria-hidden="true"
+                class="emotion-7"
+                height="1em"
+                role="img"
+                viewBox="0 0 24 24"
+                width="1em"
+              >
+                <path
+                  clip-rule="evenodd"
+                  d="M14.605 13.194l7 6.998a1 1 0 01-1.414 1.414h-.001l-6.997-7a7 7 0 111.412-1.412zM9 14A5 5 0 109 4a5 5 0 000 10z"
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+        <div
           class="emotion-39"
-          data-popper-escaped="true"
-          data-popper-placement="bottom-start"
-          data-popper-reference-hidden="true"
-          data-testid="menu"
-          style="position: absolute; left: 0px; top: 0px; width: 0px; min-width: 12rem; transform: translate(0px, 0px);"
+          tabindex="-1"
         >
           <ul
             class="emotion-38"
+            tabindex="-1"
           >
-            <div
-              class="emotion-10"
-            >
-              <div
-                class="emotion-9"
-              >
-                <input
-                  class="emotion-6"
-                  role="searchbox"
-                  type="search"
-                />
-                <span
-                  class="emotion-8"
-                >
-                  <svg
-                    aria-hidden="true"
-                    class="emotion-7"
-                    height="1em"
-                    role="img"
-                    viewBox="0 0 24 24"
-                    width="1em"
-                  >
-                    <path
-                      clip-rule="evenodd"
-                      d="M14.605 13.194l7 6.998a1 1 0 01-1.414 1.414h-.001l-6.997-7a7 7 0 111.412-1.412zM9 14A5 5 0 109 4a5 5 0 000 10z"
-                    />
-                  </svg>
-                </span>
-              </div>
-            </div>
             <div
               style="background: rgb(240, 240, 245); padding: 0.25rem 0.5rem; cursor: initial;"
             >
               Prepend item
             </div>
             <li
+              aria-disabled="false"
               aria-selected="false"
               class="emotion-12"
               id="test-item-id-0"
@@ -1684,6 +1711,7 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
               </span>
             </li>
             <li
+              aria-disabled="false"
               aria-selected="false"
               class="emotion-12"
               id="test-item-id-1"
@@ -1697,6 +1725,7 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
               </span>
             </li>
             <li
+              aria-disabled="false"
               aria-selected="false"
               class="emotion-12"
               id="test-item-id-2"
@@ -1710,6 +1739,7 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
               </span>
             </li>
             <li
+              aria-disabled="false"
               aria-selected="false"
               class="emotion-12"
               id="test-item-id-3"
@@ -1723,6 +1753,7 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
               </span>
             </li>
             <li
+              aria-disabled="false"
               aria-selected="false"
               class="emotion-12"
               id="test-item-id-4"
@@ -1736,6 +1767,7 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
               </span>
             </li>
             <li
+              aria-disabled="false"
               aria-selected="false"
               class="emotion-12"
               id="test-item-id-5"
@@ -1749,6 +1781,7 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
               </span>
             </li>
             <li
+              aria-disabled="false"
               aria-selected="false"
               class="emotion-12"
               id="test-item-id-6"
@@ -1762,6 +1795,7 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
               </span>
             </li>
             <li
+              aria-disabled="false"
               aria-selected="false"
               class="emotion-12"
               id="test-item-id-7"
@@ -1775,6 +1809,7 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
               </span>
             </li>
             <li
+              aria-disabled="false"
               aria-selected="false"
               class="emotion-12"
               id="test-item-id-8"
@@ -1788,6 +1823,7 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
               </span>
             </li>
             <li
+              aria-disabled="false"
               aria-selected="false"
               class="emotion-12"
               id="test-item-id-9"
@@ -1801,6 +1837,7 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
               </span>
             </li>
             <li
+              aria-disabled="false"
               aria-selected="false"
               class="emotion-12"
               id="test-item-id-10"
@@ -1814,6 +1851,7 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
               </span>
             </li>
             <li
+              aria-disabled="false"
               aria-selected="false"
               class="emotion-12"
               id="test-item-id-11"

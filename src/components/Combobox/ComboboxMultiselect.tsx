@@ -47,6 +47,9 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
     onClear,
     onChange,
     onFocus,
+    onClick,
+    onBlur,
+    onKeyDown,
     onFilterChange,
     itemIsEqual,
     filter = defaultFilter,
@@ -54,6 +57,7 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
     inputId,
     labelId,
     menuId,
+    toggleButtonId,
     getItemId,
     open,
     popperProps,
@@ -120,11 +124,10 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
     getLabelProps,
     getMenuProps,
     getInputProps,
-    getComboboxProps,
+    getToggleButtonProps,
     getItemProps,
     openMenu,
     setInputValue,
-    toggleMenu,
   } = useCombobox<T>({
     defaultHighlightedIndex: 0,
     selectedItem: null,
@@ -145,21 +148,25 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
     inputId,
     labelId,
     menuId,
+    toggleButtonId,
     getItemId,
 
     ...(isNil(open) ? {} : { isOpen: open }),
   })
 
-  const downshiftComboboxProps = getComboboxProps()
   const { getFormControlProps, getInputProps: getFormControlInputProps } = useFormControl(props)
   const { ref: downshiftInputRef, ...downshiftInputProps } = getInputProps(
     getDropdownProps({
       onFocus: composeHandlers(onFocus, () => openOnFocus && openMenu()),
       preventKeyAction: isOpen,
+      onClick,
+      onBlur,
+      onKeyDown,
     })
   )
   const { id: internalLabelId, ...downshiftLabelProps } = getLabelProps()
   const downshiftMenuProps = getMenuProps()
+  const { ref: toggleButtonRef, ...downshiftToggleButtonProps } = getToggleButtonProps()
 
   const {
     styles: { popper: popperStyles },
@@ -198,13 +205,8 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
     [components]
   )
 
-  const handleIconClick = useCallback(() => {
-    toggleMenu()
-    inputRef.current?.focus()
-  }, [toggleMenu])
-
   return (
-    <div {...downshiftComboboxProps}>
+    <>
       <FormControl {...formControlProps} labelId={internalLabelId} {...downshiftLabelProps}>
         <InputWrapper
           ref={wrapperRef}
@@ -215,7 +217,8 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
           icon={isOpen ? 'angleUp' : 'angleDown'}
           iconAriaLabel={isOpen ? locale.combobox.hideOptions : locale.combobox.showOptions}
           iconPosition='right'
-          onIconClick={handleIconClick}
+          iconProps={downshiftToggleButtonProps}
+          iconRef={toggleButtonRef}
         >
           {selectedItems.map((selectedItem, index) => (
             <SelectedItem
@@ -258,15 +261,16 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
             itemToString={itemToString}
             items={loadedItems}
             loading={isLoading}
+            tabIndex={-1}
           />
         )}
       </div>
-    </div>
+    </>
   )
 }
 
 function comboboxMultiselectStateReducer<T>(
-  _state: UseComboboxState<T>,
+  state: UseComboboxState<T>,
   actionAndChanges: UseComboboxStateChangeOptions<T>
 ): Partial<UseComboboxState<T>> {
   const { type, changes } = actionAndChanges
@@ -281,6 +285,11 @@ function comboboxMultiselectStateReducer<T>(
       return {
         ...changes,
         inputValue: '',
+      }
+    case useCombobox.stateChangeTypes.InputClick:
+      return {
+        ...changes,
+        isOpen: state.isOpen,
       }
     default:
       return changes

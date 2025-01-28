@@ -12,6 +12,9 @@ import { ComboboxMenuItem } from './ComboboxMenuComponents'
 import { Combobox } from './Combobox'
 import { ComboboxSingleselect, ComboboxSingleselectProps } from './ComboboxSingleselect'
 
+const TOGGLE_BUTTON_ID = 'test-toggle-button-id'
+const MENU_ID = 'test-menu-id'
+
 interface Fruit {
   value: number
   label: string
@@ -68,7 +71,8 @@ const ComboboxTest = (props: Partial<ComboboxSingleselectProps<Fruit>> & { async
     loading={false}
     inputId={'test-input-id'}
     labelId={'test-label-id'}
-    menuId={'test-menu-id'}
+    menuId={MENU_ID}
+    toggleButtonId={TOGGLE_BUTTON_ID}
     getItemId={(index) => `test-item-id-${index}`}
     {...props}
   />
@@ -102,7 +106,8 @@ const ComboboxWithCustomComponentsTest = (
     debounceMilliseconds={0}
     inputId={'test-input-id'}
     labelId={'test-label-id'}
-    menuId={'test-menu-id'}
+    menuId={MENU_ID}
+    toggleButtonId={TOGGLE_BUTTON_ID}
     getItemId={(index) => `test-item-id-${index}`}
     components={{
       Item: (props) => (
@@ -140,15 +145,14 @@ test.each`
   // From https://www.w3.org/TR/wai-aria-practices/examples/combobox/aria1.1pattern/listbox-combo.html
   const { baseElement } = render(<ComboboxTest label='Fruits' async={async} />)
 
-  const combobox = baseElement.querySelector('[role="combobox"]')
+  const combobox = baseElement.querySelector('[role="combobox"]')!
   const label = baseElement.querySelector('label')!
   const input = baseElement.querySelector('input')!
   const listbox = baseElement.querySelector('[role="listbox"]')!
   const dropdownButton = baseElement.querySelector('button')!
 
-  expect(combobox).toHaveAttribute('aria-owns', listbox.getAttribute('id'))
+  expect(combobox).toHaveAttribute('aria-controls', listbox.getAttribute('id'))
   expect(combobox).toHaveAttribute('aria-expanded', 'false')
-  expect(combobox).toHaveAttribute('aria-haspopup', 'listbox')
 
   expect(label).toHaveAttribute('id')
   expect(label).toHaveAttribute('for', input.getAttribute('id'))
@@ -169,6 +173,11 @@ test.each`
 
   expect(combobox).toHaveAttribute('aria-expanded', 'true')
   await waitFor(() => expect(listbox.querySelector('[aria-selected]')).toBeTruthy())
+
+  fireEvent.keyDown(combobox, { key: 'ArrowDown' })
+
+  await waitFor(() => expect(listbox.querySelector('[aria-selected="true"]')?.textContent).toBe(fruits[0].label))
+  expect(combobox).toHaveAttribute('aria-activedescendant', listbox.querySelector('[aria-selected="true"]')?.id)
 })
 
 test.each`
@@ -503,8 +512,7 @@ test.each`
   expect(baseElement.querySelector('ul')).toBeFalsy()
 })
 
-//TODO: Re-enable after upgrading Downshift (Issue #822)
-describe.skip('rendering', () => {
+describe('rendering', () => {
   it('renders correcly closed', async () => {
     const { baseElement } = render(<ComboboxTest label='Fruits' />)
     expect(baseElement).toMatchSnapshot()

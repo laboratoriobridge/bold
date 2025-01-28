@@ -11,6 +11,9 @@ import locale from '../../i18n/locales/en-US'
 import { ComboboxMenuItem } from './ComboboxMenuComponents'
 import { Combobox } from './Combobox'
 
+const TOGGLE_BUTTON_ID = 'test-toggle-button-id'
+const MENU_ID = 'test-menu-id'
+
 interface Fruit {
   value: number
   label: string
@@ -53,7 +56,8 @@ const ComboboxInlineTest = (props: Partial<ComboboxInlineProps<Fruit>> & { async
     debounceMilliseconds={0}
     loading={false}
     defaultButtonText={'Button text'}
-    menuId={'test-menu-id'}
+    menuId={MENU_ID}
+    toggleButtonId={TOGGLE_BUTTON_ID}
     getItemId={(index) => `test-item-id-${index}`}
     {...props}
   />
@@ -84,6 +88,8 @@ const ComboboxInlineWithCustomComponentsTest = (
     itemToString={itemToString}
     loading={false}
     debounceMilliseconds={0}
+    menuId={MENU_ID}
+    toggleButtonId={TOGGLE_BUTTON_ID}
     getItemId={(index) => `test-item-id-${index}`}
     components={{
       Item: (props) => (
@@ -133,14 +139,13 @@ test.each`
 
   const { baseElement } = render(<ComboboxInlineTest async={async} defaultButtonText='Fruits' />)
 
-  const button = baseElement.querySelector('button')!
+  const toggleButton = baseElement.querySelector('[aria-haspopup="listbox"]')!
   const label = baseElement.querySelector('label')
-  const listbox = baseElement.querySelector('[role="listbox"]')
+  const listbox = baseElement.querySelector('[role="listbox"]')!
 
-  expect(button).toHaveAttribute('aria-controls', listbox?.getAttribute('id'))
-  expect(button).toHaveAttribute('aria-expanded', 'false')
-  expect(button).toHaveAttribute('aria-haspopup', 'listbox')
-  expect(button).toHaveAttribute('aria-labelledby', label?.getAttribute('id'))
+  expect(toggleButton).toHaveAttribute('aria-controls', listbox?.getAttribute('id'))
+  expect(toggleButton).toHaveAttribute('aria-expanded', 'false')
+  expect(toggleButton).toHaveAttribute('aria-labelledby', label?.getAttribute('id'))
 
   expect(label).toHaveAttribute('id')
   expect(label).toHaveTextContent('Fruits')
@@ -149,22 +154,23 @@ test.each`
   expect(listbox).toHaveAttribute('aria-labelledby', label?.getAttribute('id'))
   expect(listbox).toHaveAttribute('tabindex', '-1')
 
-  fireEvent.click(button)
+  fireEvent.click(toggleButton)
 
-  expect(button).toHaveAttribute('aria-expanded', 'true')
-  fireEvent.keyDown(button, { key: 'ArrowDown' })
+  expect(toggleButton).toHaveAttribute('aria-expanded', 'true')
+  fireEvent.keyDown(toggleButton, { key: 'ArrowDown' })
 
   await waitFor(() => {
     const activeItem = listbox?.querySelector('[aria-selected]')
     expect(activeItem).not.toBeNull()
+    expect(activeItem?.textContent).toBe(fruits[0].label)
   })
 })
 
 it('should focus the searchbox field when opened', async () => {
   const { baseElement } = render(<ComboboxInlineTest />)
 
-  const button = baseElement.querySelector('button')!
-  fireEvent.click(button)
+  const toggleButton = baseElement.querySelector('[aria-haspopup="listbox"]')!
+  fireEvent.click(toggleButton)
 
   expect(document.activeElement).toEqual(baseElement.querySelector('[role="searchbox"]'))
 })
@@ -176,8 +182,8 @@ test.each`
 `('should show the searchbox field only when showSearchBox is true', async ({ showSearchBox }) => {
   const { baseElement } = render(<ComboboxInlineTest showSearchBox={showSearchBox} />)
 
-  const button = baseElement.querySelector('button')!
-  fireEvent.click(button)
+  const toggleButton = baseElement.querySelector('[aria-haspopup="listbox"]')!
+  fireEvent.click(toggleButton)
 
   const searchBox = baseElement.querySelector('[role="searchbox"]')
   if (showSearchBox) expect(searchBox).toBeNull()
@@ -201,9 +207,9 @@ it('enters error state', async () => {
 it('respects menu min-width', async () => {
   const { baseElement } = render(<ComboboxInlineTest menuMinWidth={1000} />)
 
-  const button = baseElement.querySelector('button')!
+  const toggleButton = baseElement.querySelector('[aria-haspopup="listbox"]')!
   //Opens menu
-  fireEvent.click(button)
+  fireEvent.click(toggleButton)
 
   const menu = getByTestId(baseElement, 'menu')
 
@@ -222,8 +228,8 @@ it.each`
   expect(selection).toBeNull()
 
   //Opens menu
-  const button = baseElement.querySelector('button')!
-  fireEvent.click(button)
+  const toggleButton = baseElement.querySelector('[aria-haspopup="listbox"]')!
+  fireEvent.click(toggleButton)
 
   //Selects first item
   const option = await waitForOption(baseElement)
@@ -242,8 +248,8 @@ it.each`
   const { baseElement } = render(<ComboboxInlineTest onFilterChange={(nValue) => (filter = nValue)} async={async} />)
 
   //Opens menu
-  const button = baseElement.querySelector('button')!
-  fireEvent.click(button)
+  const toggleButton = baseElement.querySelector('[aria-haspopup="listbox"]')!
+  fireEvent.click(toggleButton)
 
   expect(filter).toBe('')
 
@@ -258,8 +264,8 @@ it('should trigger onFocus', async () => {
 
   const { baseElement } = render(<ComboboxInlineTest onFocus={onFocus} />)
 
-  const button = baseElement.querySelector('button')!
-  fireEvent.focus(button)
+  const toggleButton = baseElement.querySelector('[aria-haspopup="listbox"]')!
+  fireEvent.focus(toggleButton)
 
   expect(onFocus).toBeCalled()
 })
@@ -269,8 +275,8 @@ it('should trigger onClick', async () => {
 
   const { baseElement } = render(<ComboboxInlineTest onClick={onClick} />)
 
-  const button = baseElement.querySelector('button')!
-  fireEvent.click(button)
+  const toggleButton = baseElement.querySelector('[aria-haspopup="listbox"]')!
+  fireEvent.click(toggleButton)
 
   expect(onClick).toBeCalled()
 })
@@ -280,9 +286,9 @@ it('should trigger onBlur', async () => {
 
   const { baseElement } = render(<ComboboxInlineTest onBlur={onBlur} />)
 
-  const button = baseElement.querySelector('button')!
-  fireEvent.focus(button)
-  fireEvent.blur(button)
+  const toggleButton = baseElement.querySelector('[aria-haspopup="listbox"]')!
+  fireEvent.focus(toggleButton)
+  fireEvent.blur(toggleButton)
 
   expect(onBlur).toBeCalled()
 })
@@ -294,9 +300,9 @@ it.each`
 `('should accept a value as parameter (async: $async)', async ({ async }) => {
   const { baseElement } = render(<ComboboxInlineTest value={fruits[1]} async={async} />)
 
-  const button = baseElement.querySelector('button')
+  const toggleButton = baseElement.querySelector('[aria-haspopup="listbox"]')
 
-  expect(button).toHaveTextContent(itemToString(fruits[1]))
+  expect(toggleButton).toHaveTextContent(itemToString(fruits[1]))
 })
 
 it('should accept actions inside children prop', async () => {
@@ -304,9 +310,9 @@ it('should accept actions inside children prop', async () => {
 
   const { baseElement, findByTestId } = render(<ComboboxInlineWithCustomComponentsTest action={click} />)
 
-  const button = baseElement.querySelector('button')!
+  const toggleButton = baseElement.querySelector('[aria-haspopup="listbox"]')!
 
-  fireEvent.click(button)
+  fireEvent.click(toggleButton)
   fireEvent.click(await findByTestId('action-btn'))
 
   expect(click).toHaveBeenCalledTimes(1)
@@ -319,10 +325,10 @@ test.each`
 `('should make the popper content visible on click', async ({ async }) => {
   const { baseElement } = render(<ComboboxInlineTest async={async} />)
 
-  const button = baseElement.querySelector('button')!
+  const toggleButton = baseElement.querySelector('[aria-haspopup="listbox"]')!
   expect(baseElement.querySelector('ul')).toBeFalsy()
 
-  fireEvent.click(button)
+  fireEvent.click(toggleButton)
 
   expect(baseElement.querySelector('ul')).toBeTruthy()
 })
@@ -334,8 +340,8 @@ test.each`
 `('should focus the input field when opened', async ({ async }) => {
   const { baseElement } = render(<ComboboxInlineTest async={async} open />)
 
-  const button = baseElement.querySelector('button')!
-  fireEvent.click(button)
+  const toggleButton = baseElement.querySelector('[aria-haspopup="listbox"]')!
+  fireEvent.click(toggleButton)
 
   expect(document.activeElement).toEqual(baseElement.querySelector('input'))
 })
@@ -350,8 +356,8 @@ test.each`
   // initial state has open menu
   expect(baseElement.querySelector('ul')).toBeTruthy()
 
-  const button = baseElement.querySelector('button')!
-  fireEvent.click(button)
+  const toggleButton = baseElement.querySelector('[aria-haspopup="listbox"]')!
+  fireEvent.click(toggleButton)
 
   expect(baseElement.querySelector('ul')).toBeTruthy()
 
@@ -363,13 +369,12 @@ test.each`
   await act(async () => rerender(<ComboboxInlineTest async={async} open={false} />))
   expect(baseElement.querySelector('ul')).toBeFalsy()
 
-  fireEvent.click(button)
+  fireEvent.click(toggleButton)
 
   expect(baseElement.querySelector('ul')).toBeFalsy()
 })
 
-//TODO: Re-enable after upgrading Downshift (Issue #822)
-describe.skip('rendering', () => {
+describe('rendering', () => {
   it('renders correcly closed', async () => {
     const { baseElement } = render(<ComboboxInlineTest defaultButtonText='Fruits' />)
 
@@ -379,9 +384,9 @@ describe.skip('rendering', () => {
   it('renders correcly opened', async () => {
     const { baseElement } = render(<ComboboxInlineTest defaultButtonText='Fruits' />)
 
-    const button = baseElement.querySelector('button')!
+    const toggleButton = baseElement.querySelector('[aria-haspopup="listbox"]')!
 
-    fireEvent.click(button)
+    fireEvent.click(toggleButton)
 
     await act(() => waait(asyncDelay))
     expect(baseElement).toMatchSnapshot()
@@ -390,8 +395,8 @@ describe.skip('rendering', () => {
   it('renders correcly opened and loading', async () => {
     const { baseElement } = render(<ComboboxInlineTest loading={true} />)
 
-    const button = baseElement.querySelector('button')!
-    fireEvent.click(button)
+    const toggleButton = baseElement.querySelector('[aria-haspopup="listbox"]')!
+    fireEvent.click(toggleButton)
 
     await act(() => waait(asyncDelay))
     expect(baseElement).toMatchSnapshot()
@@ -400,9 +405,9 @@ describe.skip('rendering', () => {
   it('renders correcly with custom components correctly', async () => {
     const { baseElement } = render(<ComboboxInlineWithCustomComponentsTest />)
 
-    const button = baseElement.querySelector('button')!
+    const toggleButton = baseElement.querySelector('[aria-haspopup="listbox"]')!
 
-    fireEvent.click(button)
+    fireEvent.click(toggleButton)
 
     await act(() => waait(asyncDelay))
     expect(baseElement).toMatchSnapshot()
@@ -425,8 +430,8 @@ describe('async loading', () => {
       <Combobox inline defaultButtonText='Fruits' items={loadItems} itemToString={(item) => item} />
     )
 
-    const button = baseElement.querySelector('button')!
-    fireEvent.click(button)
+    const toggleButton = baseElement.querySelector('[aria-haspopup="listbox"]')!
+    fireEvent.click(toggleButton)
 
     await act(() => waait(600))
     expect(loadItems).toHaveBeenCalledWith(null)
@@ -439,8 +444,8 @@ describe('async loading', () => {
       <Combobox inline defaultButtonText='Fruits' items={loadItems} itemToString={(item) => item} />
     )
 
-    const button = baseElement.querySelector('button')!
-    fireEvent.click(button)
+    const toggleButton = baseElement.querySelector('[aria-haspopup="listbox"]')!
+    fireEvent.click(toggleButton)
 
     const searchbox = baseElement.querySelector('[role="searchbox"]')!
     fireEvent.change(searchbox, { target: { value: 'filter' } })
