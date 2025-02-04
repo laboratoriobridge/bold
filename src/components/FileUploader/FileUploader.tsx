@@ -90,7 +90,7 @@ export function FileInfo(props: FileInfoProps) {
       {!file.error && !file.uploading && (
         <Icon icon='checkDefault' fill='primary' size={1} style={{ marginRight: 5 }} />
       )}
-      <Text fontWeight='bold' style={{ marginRight: 10 }}>
+      <Text fontWeight='bold' className={classes.fileName} title={file.selectedFile.name}>
         {file.selectedFile.name}
       </Text>
       <Text>{format(file.selectedFile.size, 0)}</Text>
@@ -167,5 +167,11 @@ export const createStyles = (theme: Theme) => ({
   fileDetails: {
     flexGrow: 1,
     marginLeft: '1rem',
+    overflow: 'hidden',
+  },
+  fileName: {
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    marginRight: 10,
   },
 })
