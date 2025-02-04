@@ -52,6 +52,7 @@ exports[`should render correct without extension 1`] = `
   overflow: hidden;
   text-overflow: ellipsis;
   margin-right: 10px;
+  font-weight: bold;
 }
 
 .emotion-2 {
@@ -362,6 +363,7 @@ exports[`should render correctly at uploading state 1`] = `
   overflow: hidden;
   text-overflow: ellipsis;
   margin-right: 10px;
+  font-weight: bold;
 }
 
 .emotion-2 {
@@ -587,6 +589,7 @@ exports[`should render correctly complete state 1`] = `
   overflow: hidden;
   text-overflow: ellipsis;
   margin-right: 10px;
+  font-weight: bold;
 }
 
 .emotion-2 {
