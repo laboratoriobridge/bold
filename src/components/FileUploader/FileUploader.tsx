@@ -7,6 +7,7 @@ import { HFlow } from '../HFlow'
 import { Icon } from '../Icon/Icon'
 import { Progress } from '../Progress/Progress'
 import { Text } from '../Text'
+import { Tooltip } from '../Tooltip'
 
 export interface FileUploaderProps extends DropzoneOptions {
   file?: FileProps
@@ -90,9 +91,9 @@ export function FileInfo(props: FileInfoProps) {
       {!file.error && !file.uploading && (
         <Icon icon='checkDefault' fill='primary' size={1} style={{ marginRight: 5 }} />
       )}
-      <Text className={classes.fileName} title={file.selectedFile.name}>
-        {file.selectedFile.name}
-      </Text>
+      <Tooltip text={file.selectedFile.name}>
+        <Text className={classes.fileName}>{file.selectedFile.name}</Text>
+      </Tooltip>
       <Text>{format(file.selectedFile.size, 0)}</Text>
     </div>
   )
