@@ -92,7 +92,9 @@ export function FileInfo(props: FileInfoProps) {
         <Icon icon='checkDefault' fill='primary' size={1} style={{ marginRight: 5 }} />
       )}
       <Tooltip text={file.selectedFile.name}>
-        <Text className={classes.fileName}>{file.selectedFile.name}</Text>
+        <Text fontWeight='bold' style={classes.fileName}>
+          {file.selectedFile.name}
+        </Text>
       </Tooltip>
       <Text>{format(file.selectedFile.size, 0)}</Text>
     </div>
@@ -174,6 +176,5 @@ export const createStyles = (theme: Theme) => ({
     overflow: 'hidden',
     textOverflow: 'ellipsis',
     marginRight: 10,
-    fontWeight: 'bold',
-  } as CSSProperties,
+  },
 })

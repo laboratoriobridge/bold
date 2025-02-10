@@ -48,13 +48,6 @@ exports[`should render correct without extension 1`] = `
   overflow: hidden;
 }
 
-.emotion-8 {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  margin-right: 10px;
-  font-weight: bold;
-}
-
 .emotion-2 {
   display: grid;
   grid-auto-flow: column;
@@ -119,6 +112,17 @@ exports[`should render correct without extension 1`] = `
   background-color: #F0F0F5;
   border: 1px solid #D3D4DD;
   padding: 1rem;
+}
+
+.emotion-8 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #24252E;
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-right: 10px;
 }
 
 .emotion-7 {
@@ -359,13 +363,6 @@ exports[`should render correctly at uploading state 1`] = `
   overflow: hidden;
 }
 
-.emotion-7 {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  margin-right: 10px;
-  font-weight: bold;
-}
-
 .emotion-2 {
   display: grid;
   grid-auto-flow: column;
@@ -430,6 +427,17 @@ exports[`should render correctly at uploading state 1`] = `
   background-color: #F0F0F5;
   border: 1px solid #D3D4DD;
   padding: 1rem;
+}
+
+.emotion-7 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #24252E;
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-right: 10px;
 }
 
 .emotion-10 {
@@ -585,13 +593,6 @@ exports[`should render correctly complete state 1`] = `
   overflow: hidden;
 }
 
-.emotion-8 {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  margin-right: 10px;
-  font-weight: bold;
-}
-
 .emotion-2 {
   display: grid;
   grid-auto-flow: column;
@@ -656,6 +657,17 @@ exports[`should render correctly complete state 1`] = `
   background-color: #F0F0F5;
   border: 1px solid #D3D4DD;
   padding: 1rem;
+}
+
+.emotion-8 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #24252E;
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-right: 10px;
 }
 
 .emotion-7 {
