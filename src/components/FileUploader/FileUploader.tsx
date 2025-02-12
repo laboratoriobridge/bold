@@ -7,7 +7,6 @@ import { HFlow } from '../HFlow'
 import { Icon } from '../Icon/Icon'
 import { Progress } from '../Progress/Progress'
 import { Text } from '../Text'
-import { Tooltip } from '../Tooltip'
 
 export interface FileUploaderProps extends DropzoneOptions {
   file?: FileProps
@@ -91,11 +90,9 @@ export function FileInfo(props: FileInfoProps) {
       {!file.error && !file.uploading && (
         <Icon icon='checkDefault' fill='primary' size={1} style={{ marginRight: 5 }} />
       )}
-      <Tooltip text={file.selectedFile.name}>
-        <Text fontWeight='bold' style={classes.fileName}>
-          {file.selectedFile.name}
-        </Text>
-      </Tooltip>
+      <Text fontWeight='bold' style={classes.fileName}>
+        {file.selectedFile.name}
+      </Text>
       <Text>{format(file.selectedFile.size, 0)}</Text>
     </div>
   )
@@ -170,11 +167,9 @@ export const createStyles = (theme: Theme) => ({
   fileDetails: {
     flexGrow: 1,
     marginLeft: '1rem',
-    overflow: 'hidden',
   },
   fileName: {
-    overflow: 'hidden',
-    textOverflow: 'ellipsis',
+    wordBreak: 'break-all',
     marginRight: 10,
-  },
+  } as CSSProperties,
 })

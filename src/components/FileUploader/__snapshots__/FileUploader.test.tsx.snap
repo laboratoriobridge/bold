@@ -45,7 +45,6 @@ exports[`should render correct without extension 1`] = `
   -ms-flex-positive: 1;
   flex-grow: 1;
   margin-left: 1rem;
-  overflow: hidden;
 }
 
 .emotion-2 {
@@ -120,8 +119,7 @@ exports[`should render correct without extension 1`] = `
   line-height: 1.5;
   color: #24252E;
   font-weight: bold;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  word-break: break-all;
   margin-right: 10px;
 }
 
@@ -199,7 +197,6 @@ exports[`should render correct without extension 1`] = `
         </svg>
         <span
           class="emotion-8"
-          title="teste.pdf"
         >
           teste.pdf
         </span>
@@ -360,7 +357,6 @@ exports[`should render correctly at uploading state 1`] = `
   -ms-flex-positive: 1;
   flex-grow: 1;
   margin-left: 1rem;
-  overflow: hidden;
 }
 
 .emotion-2 {
@@ -435,8 +431,7 @@ exports[`should render correctly at uploading state 1`] = `
   line-height: 1.5;
   color: #24252E;
   font-weight: bold;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  word-break: break-all;
   margin-right: 10px;
 }
 
@@ -525,7 +520,6 @@ exports[`should render correctly at uploading state 1`] = `
       >
         <span
           class="emotion-7"
-          title="teste.pdf"
         >
           teste.pdf
         </span>
@@ -590,7 +584,6 @@ exports[`should render correctly complete state 1`] = `
   -ms-flex-positive: 1;
   flex-grow: 1;
   margin-left: 1rem;
-  overflow: hidden;
 }
 
 .emotion-2 {
@@ -665,8 +658,7 @@ exports[`should render correctly complete state 1`] = `
   line-height: 1.5;
   color: #24252E;
   font-weight: bold;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  word-break: break-all;
   margin-right: 10px;
 }
 
@@ -746,7 +738,6 @@ exports[`should render correctly complete state 1`] = `
         </svg>
         <span
           class="emotion-8"
-          title="teste.pdf"
         >
           teste.pdf
         </span>
