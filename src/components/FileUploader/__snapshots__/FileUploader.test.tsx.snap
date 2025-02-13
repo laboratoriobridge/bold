@@ -119,6 +119,7 @@ exports[`should render correct without extension 1`] = `
   line-height: 1.5;
   color: #24252E;
   font-weight: bold;
+  word-break: break-all;
   margin-right: 10px;
 }
 
@@ -430,6 +431,7 @@ exports[`should render correctly at uploading state 1`] = `
   line-height: 1.5;
   color: #24252E;
   font-weight: bold;
+  word-break: break-all;
   margin-right: 10px;
 }
 
@@ -656,6 +658,7 @@ exports[`should render correctly complete state 1`] = `
   line-height: 1.5;
   color: #24252E;
   font-weight: bold;
+  word-break: break-all;
   margin-right: 10px;
 }
 
