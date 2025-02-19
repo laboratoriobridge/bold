@@ -1,9 +1,9 @@
 {
-    "plugins": [
-        {
-            "removeAttrs": {
-                "attrs": "(stroke|fill|fill-rule)"
-            }
-        }
-    ]
+  "plugins": [
+    {
+      "removeAttrs": {
+        "attrs": "(stroke|fill)"
+      }
+    }
+  ]
 }
