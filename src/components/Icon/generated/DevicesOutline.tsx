@@ -3,6 +3,7 @@ import React from 'react'
 const SvgDevicesOutline = (props: React.SVGProps<SVGSVGElement>) => (
   <svg width='1em' height='1em' viewBox='0 0 24 24' {...props}>
     <path
+      fillRule='evenodd'
       clipRule='evenodd'
       d='M16 11a1 1 0 00-1 1v8a1 1 0 001 1h4a1 1 0 001-1v-8a1 1 0 00-1-1h-4zm1.5 8a.5.5 0 000 1h1a.5.5 0 000-1h-1z'
     />

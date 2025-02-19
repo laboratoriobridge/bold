@@ -19,7 +19,6 @@ export type Icons =
   | 'angleLeft'
   | 'angleRight'
   | 'angleUp'
-  | 'apartamento'
   | 'appleFilled'
   | 'appleOutline'
   | 'archiveFilled'
@@ -33,6 +32,7 @@ export type Icons =
   | 'backlogSplit'
   | 'backpackFilled'
   | 'backpackOutline'
+  | 'bag'
   | 'balanceFilled'
   | 'balanceOutline'
   | 'balancePlus'
@@ -44,6 +44,7 @@ export type Icons =
   | 'batteryLow'
   | 'batteryMedium'
   | 'beach'
+  | 'beerGlasFilled'
   | 'beerGlassFilled'
   | 'beerGlassOutline'
   | 'bellFilled'
@@ -67,6 +68,7 @@ export type Icons =
   | 'brush'
   | 'bugFilled'
   | 'bugOutline'
+  | 'building'
   | 'busFilled'
   | 'busOutline'
   | 'calendarAddFilled'
@@ -79,6 +81,7 @@ export type Icons =
   | 'calfMeasuaresOutline'
   | 'cameraFilled'
   | 'cameraOutline'
+  | 'candle'
   | 'chatFilled'
   | 'chatOutline'
   | 'chatViewFilled'
@@ -101,7 +104,6 @@ export type Icons =
   | 'clownFaceFilled'
   | 'clownFaceOutline'
   | 'code'
-  | 'comRcio'
   | 'continuousMedicine'
   | 'contrast'
   | 'contrastActive'
@@ -121,7 +123,6 @@ export type Icons =
   | 'dataOutline'
   | 'deaf'
   | 'decreaseFont'
-  | 'delegacia'
   | 'desktopFilled'
   | 'desktopOutline'
   | 'devicesFilled'
@@ -137,7 +138,6 @@ export type Icons =
   | 'edema'
   | 'emailFilled'
   | 'emailOutline'
-  | 'estabReligioso'
   | 'exchange'
   | 'exclamationDefault'
   | 'exclamationTriangleFilled'
@@ -152,6 +152,7 @@ export type Icons =
   | 'faqOutline'
   | 'faucetFilled'
   | 'faucetOutline'
+  | 'fence'
   | 'fileEmptyFilled'
   | 'fileEmptyOutline'
   | 'fileVisualizationFilled'
@@ -232,6 +233,8 @@ export type Icons =
   | 'mapOutline'
   | 'medalFilled'
   | 'medalOutline'
+  | 'medicalCrossFilled'
+  | 'medicalCrossOutline'
   | 'medicineBottleFilled'
   | 'medicineBottleOutline'
   | 'medicineExclamation'
@@ -243,7 +246,6 @@ export type Icons =
   | 'minus'
   | 'minusCircleFilled'
   | 'minusCircleOutline'
-  | 'mission'
   | 'module'
   | 'monitorFilled'
   | 'monitorOutline'
@@ -299,6 +301,7 @@ export type Icons =
   | 'plus'
   | 'plusCircleFilled'
   | 'plusCircleOutline'
+  | 'policeBadge'
   | 'pollFilled'
   | 'pollOutline'
   | 'pregnant'
@@ -367,12 +370,12 @@ export type Icons =
   | 'surfFilled'
   | 'surfOutline'
   | 'sync'
+  | 'target'
   | 'teddyBear'
   | 'telescopeFilled'
   | 'telescopeOutline'
   | 'tennisFilled'
   | 'tennisOutline'
-  | 'terrenoBaldio'
   | 'thermometerFilled'
   | 'thermometerOutline'
   | 'thoughtFilled'
@@ -383,6 +386,7 @@ export type Icons =
   | 'timesFilled'
   | 'timesOutline'
   | 'toothFilled'
+  | 'toothOutline'
   | 'translate'
   | 'trashFilled'
   | 'trashOutline'
@@ -450,7 +454,6 @@ export const IconMap: {
   angleLeft: Components.AngleLeft,
   angleRight: Components.AngleRight,
   angleUp: Components.AngleUp,
-  apartamento: Components.Apartamento,
   appleFilled: Components.AppleFilled,
   appleOutline: Components.AppleOutline,
   archiveFilled: Components.ArchiveFilled,
@@ -464,6 +467,7 @@ export const IconMap: {
   backlogSplit: Components.BacklogSplit,
   backpackFilled: Components.BackpackFilled,
   backpackOutline: Components.BackpackOutline,
+  bag: Components.Bag,
   balanceFilled: Components.BalanceFilled,
   balanceOutline: Components.BalanceOutline,
   balancePlus: Components.BalancePlus,
@@ -475,6 +479,7 @@ export const IconMap: {
   batteryLow: Components.BatteryLow,
   batteryMedium: Components.BatteryMedium,
   beach: Components.Beach,
+  beerGlasFilled: Components.BeerGlasFilled,
   beerGlassFilled: Components.BeerGlassFilled,
   beerGlassOutline: Components.BeerGlassOutline,
   bellFilled: Components.BellFilled,
@@ -498,6 +503,7 @@ export const IconMap: {
   brush: Components.Brush,
   bugFilled: Components.BugFilled,
   bugOutline: Components.BugOutline,
+  building: Components.Building,
   busFilled: Components.BusFilled,
   busOutline: Components.BusOutline,
   calendarAddFilled: Components.CalendarAddFilled,
@@ -510,6 +516,7 @@ export const IconMap: {
   calfMeasuaresOutline: Components.CalfMeasuaresOutline,
   cameraFilled: Components.CameraFilled,
   cameraOutline: Components.CameraOutline,
+  candle: Components.Candle,
   chatFilled: Components.ChatFilled,
   chatOutline: Components.ChatOutline,
   chatViewFilled: Components.ChatViewFilled,
@@ -532,7 +539,6 @@ export const IconMap: {
   clownFaceFilled: Components.ClownFaceFilled,
   clownFaceOutline: Components.ClownFaceOutline,
   code: Components.Code,
-  comRcio: Components.ComRcio,
   continuousMedicine: Components.ContinuousMedicine,
   contrast: Components.Contrast,
   contrastActive: Components.ContrastActive,
@@ -552,7 +558,6 @@ export const IconMap: {
   dataOutline: Components.DataOutline,
   deaf: Components.Deaf,
   decreaseFont: Components.DecreaseFont,
-  delegacia: Components.Delegacia,
   desktopFilled: Components.DesktopFilled,
   desktopOutline: Components.DesktopOutline,
   devicesFilled: Components.DevicesFilled,
@@ -568,7 +573,6 @@ export const IconMap: {
   edema: Components.Edema,
   emailFilled: Components.EmailFilled,
   emailOutline: Components.EmailOutline,
-  estabReligioso: Components.EstabReligioso,
   exchange: Components.Exchange,
   exclamationDefault: Components.ExclamationDefault,
   exclamationTriangleFilled: Components.ExclamationTriangleFilled,
@@ -583,6 +587,7 @@ export const IconMap: {
   faqOutline: Components.FaqOutline,
   faucetFilled: Components.FaucetFilled,
   faucetOutline: Components.FaucetOutline,
+  fence: Components.Fence,
   fileEmptyFilled: Components.FileEmptyFilled,
   fileEmptyOutline: Components.FileEmptyOutline,
   fileVisualizationFilled: Components.FileVisualizationFilled,
@@ -663,6 +668,8 @@ export const IconMap: {
   mapOutline: Components.MapOutline,
   medalFilled: Components.MedalFilled,
   medalOutline: Components.MedalOutline,
+  medicalCrossFilled: Components.MedicalCrossFilled,
+  medicalCrossOutline: Components.MedicalCrossOutline,
   medicineBottleFilled: Components.MedicineBottleFilled,
   medicineBottleOutline: Components.MedicineBottleOutline,
   medicineExclamation: Components.MedicineExclamation,
@@ -674,7 +681,6 @@ export const IconMap: {
   minus: Components.Minus,
   minusCircleFilled: Components.MinusCircleFilled,
   minusCircleOutline: Components.MinusCircleOutline,
-  mission: Components.Mission,
   module: Components.Module,
   monitorFilled: Components.MonitorFilled,
   monitorOutline: Components.MonitorOutline,
@@ -730,6 +736,7 @@ export const IconMap: {
   plus: Components.Plus,
   plusCircleFilled: Components.PlusCircleFilled,
   plusCircleOutline: Components.PlusCircleOutline,
+  policeBadge: Components.PoliceBadge,
   pollFilled: Components.PollFilled,
   pollOutline: Components.PollOutline,
   pregnant: Components.Pregnant,
@@ -798,12 +805,12 @@ export const IconMap: {
   surfFilled: Components.SurfFilled,
   surfOutline: Components.SurfOutline,
   sync: Components.Sync,
+  target: Components.Target,
   teddyBear: Components.TeddyBear,
   telescopeFilled: Components.TelescopeFilled,
   telescopeOutline: Components.TelescopeOutline,
   tennisFilled: Components.TennisFilled,
   tennisOutline: Components.TennisOutline,
-  terrenoBaldio: Components.TerrenoBaldio,
   thermometerFilled: Components.ThermometerFilled,
   thermometerOutline: Components.ThermometerOutline,
   thoughtFilled: Components.ThoughtFilled,
@@ -814,6 +821,7 @@ export const IconMap: {
   timesFilled: Components.TimesFilled,
   timesOutline: Components.TimesOutline,
   toothFilled: Components.ToothFilled,
+  toothOutline: Components.ToothOutline,
   translate: Components.Translate,
   trashFilled: Components.TrashFilled,
   trashOutline: Components.TrashOutline,

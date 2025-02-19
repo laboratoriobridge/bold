@@ -4,6 +4,7 @@ const SvgBike = (props: React.SVGProps<SVGSVGElement>) => (
   <svg width='1em' height='1em' viewBox='0 0 24 24' {...props}>
     <path d='M18 5.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z' />
     <path
+      fillRule='evenodd'
       clipRule='evenodd'
       d='M10 16a4 4 0 11-8 0 4 4 0 018 0zm-2 0a2 2 0 11-4 0 2 2 0 014 0zM22 16a4 4 0 11-8 0 4 4 0 018 0zm-2 0a2 2 0 11-4 0 2 2 0 014 0z'
     />

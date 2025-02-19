@@ -1,8 +1,9 @@
 import React from 'react'
 
-const SvgMission = (props: React.SVGProps<SVGSVGElement>) => (
+const SvgTarget = (props: React.SVGProps<SVGSVGElement>) => (
   <svg width='1em' height='1em' viewBox='0 0 24 24' {...props}>
     <path
+      fillRule='evenodd'
       clipRule='evenodd'
       d='M6.09 3.192l-.88 1.984-2.183 1.212a2 2 0 00-.443 3.163l1.713 1.712a2 2 0 002.12.457l2.84-1.072 1.727 1.782s-.03 1.128 1.002 1.499c1.077.387 2.254-.58 1.985-1.737-.292-1.254-1.547-1.19-1.547-1.19L10.66 9.236l1.057-2.776a2 2 0 00-.53-2.203l-1.93-1.738a2 2 0 00-3.166.674zm1.054 2.543l.778-1.732 1.925 1.732-.736 1.951-1.967-1.95zm-1.39 1.44l1.945 1.934-1.983.741-1.732-1.727 1.77-.948z'
     />
@@ -11,4 +12,4 @@ const SvgMission = (props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 )
 
-export default SvgMission
+export default SvgTarget

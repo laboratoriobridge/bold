@@ -3,6 +3,7 @@ import React from 'react'
 const SvgCalfMeasuaresOutline = (props: React.SVGProps<SVGSVGElement>) => (
   <svg width='1em' height='1em' viewBox='0 0 24 24' {...props}>
     <path
+      fillRule='evenodd'
       clipRule='evenodd'
       d='M5.747 2h8.745l-.15 1.132-.18 1.346c-.731.206-1.412.361-2.079.47L12.208 4H6.96a6.844 6.844 0 00-.055.987 40.809 40.809 0 01-1.633-.222 2.011 2.011 0 00-.366-.023c.008-.445.043-.876.108-1.246.033-.188.077-.378.136-.552.054-.161.143-.377.297-.57l.3-.374zm1.312 1.547l-.002.004a.055.055 0 01.002-.004z'
     />
