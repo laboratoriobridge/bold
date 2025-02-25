@@ -3,6 +3,7 @@ import React from 'react'
 const SvgAddProfessionalOutline = (props: React.SVGProps<SVGSVGElement>) => (
   <svg width='1em' height='1em' viewBox='0 0 24 24' {...props}>
     <path
+      fillRule='evenodd'
       clipRule='evenodd'
       d='M16.877 8.103A5 5 0 1013 11.9v-1.01c.018-.48.075-.732.24-1.158a3 3 0 111.483-1.474A3.121 3.121 0 0115.89 8h.22c.265 0 .523.036.767.103z'
     />

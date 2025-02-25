@@ -313,6 +313,7 @@ exports[`emptyItem should render when items is empty 1`] = `
                       <path
                         clip-rule="evenodd"
                         d="M7.707 14.707a1 1 0 11-1.414-1.414l5-5a1 1 0 011.414 0l5.001 5.001a1 1 0 01-1.414 1.414L12 10.414l-4.293 4.293z"
+                        fill-rule="evenodd"
                       />
                     </svg>
                   </span>
@@ -658,6 +659,7 @@ exports[`emptyItem should render when items is null 1`] = `
                       <path
                         clip-rule="evenodd"
                         d="M7.707 14.707a1 1 0 11-1.414-1.414l5-5a1 1 0 011.414 0l5.001 5.001a1 1 0 01-1.414 1.414L12 10.414l-4.293 4.293z"
+                        fill-rule="evenodd"
                       />
                     </svg>
                   </span>
@@ -1103,6 +1105,7 @@ exports[`select custom components should accept actions inside AppendItem 1`] = 
                   <path
                     clip-rule="evenodd"
                     d="M8.071 6.657l4.243 4.242 4.242-4.242c.464-.48.935-.48 1.415 0s.48.95 0 1.414l-4.243 4.243 4.243 4.242c.471.472.471.943 0 1.415-.472.471-.943.471-1.415 0l-4.242-4.243L8.07 17.97c-.46.482-.932.482-1.414 0-.482-.483-.482-.954 0-1.415l4.242-4.242L6.657 8.07c-.472-.47-.472-.942 0-1.414s.943-.472 1.414 0v.001z"
+                    fill-rule="evenodd"
                   />
                 </svg>
               </span>
@@ -1126,6 +1129,7 @@ exports[`select custom components should accept actions inside AppendItem 1`] = 
                       <path
                         clip-rule="evenodd"
                         d="M7.707 14.707a1 1 0 11-1.414-1.414l5-5a1 1 0 011.414 0l5.001 5.001a1 1 0 01-1.414 1.414L12 10.414l-4.293 4.293z"
+                        fill-rule="evenodd"
                       />
                     </svg>
                   </span>
@@ -1602,6 +1606,7 @@ exports[`select custom components should accept actions inside PrependItem 1`] =
                   <path
                     clip-rule="evenodd"
                     d="M8.071 6.657l4.243 4.242 4.242-4.242c.464-.48.935-.48 1.415 0s.48.95 0 1.414l-4.243 4.243 4.243 4.242c.471.472.471.943 0 1.415-.472.471-.943.471-1.415 0l-4.242-4.243L8.07 17.97c-.46.482-.932.482-1.414 0-.482-.483-.482-.954 0-1.415l4.242-4.242L6.657 8.07c-.472-.47-.472-.942 0-1.414s.943-.472 1.414 0v.001z"
+                    fill-rule="evenodd"
                   />
                 </svg>
               </span>
@@ -1625,6 +1630,7 @@ exports[`select custom components should accept actions inside PrependItem 1`] =
                       <path
                         clip-rule="evenodd"
                         d="M7.707 14.707a1 1 0 11-1.414-1.414l5-5a1 1 0 011.414 0l5.001 5.001a1 1 0 01-1.414 1.414L12 10.414l-4.293 4.293z"
+                        fill-rule="evenodd"
                       />
                     </svg>
                   </span>
