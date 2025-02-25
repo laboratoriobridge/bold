@@ -183,6 +183,7 @@ exports[`ControlledMonthRangeCalendar render should render correctly 1`] = `
               <path
                 clip-rule="evenodd"
                 d="M14.707 16.294a1 1 0 11-1.414 1.414l-5-5a1 1 0 010-1.414l5.001-5.001a1 1 0 011.414 1.414l-4.294 4.294 4.293 4.293z"
+                fill-rule="evenodd"
               />
             </svg>
           </span>
@@ -217,6 +218,7 @@ exports[`ControlledMonthRangeCalendar render should render correctly 1`] = `
               <path
                 clip-rule="evenodd"
                 d="M8.294 7.707a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5.001a1 1 0 01-1.415-1.414L12.587 12 8.294 7.707z"
+                fill-rule="evenodd"
               />
             </svg>
           </span>
@@ -566,6 +568,7 @@ exports[`ControlledMonthRangeCalendar render should render correctly without rec
               <path
                 clip-rule="evenodd"
                 d="M14.707 16.294a1 1 0 11-1.414 1.414l-5-5a1 1 0 010-1.414l5.001-5.001a1 1 0 011.414 1.414l-4.294 4.294 4.293 4.293z"
+                fill-rule="evenodd"
               />
             </svg>
           </span>
@@ -600,6 +603,7 @@ exports[`ControlledMonthRangeCalendar render should render correctly without rec
               <path
                 clip-rule="evenodd"
                 d="M8.294 7.707a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5.001a1 1 0 01-1.415-1.414L12.587 12 8.294 7.707z"
+                fill-rule="evenodd"
               />
             </svg>
           </span>

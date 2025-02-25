@@ -2,8 +2,12 @@ import React from 'react'
 
 const SvgRulerOutline = (props: React.SVGProps<SVGSVGElement>) => (
   <svg width='1em' height='1em' viewBox='0 0 24 24' {...props}>
-    <path clipRule='evenodd' d='M10 20H7V4h3v16zm-3 2a2 2 0 01-2-2V4a2 2 0 012-2h3a2 2 0 012 2v16a2 2 0 01-2 2H7z' />
-    <path d='M8 14h2v-1H8v1zM9 12h1v-1H9v1zM9 20h1v-1H9v1zM8 10h2V9H8v1zM8 18h2v-1H8v1zM8 6h2V5H8v1zM9 8h1V7H9v1zM9 16h1v-1H9v1zM14 2h6v2h-2v16h2v2h-6v-2h2V4h-2V2z' />
+    <path
+      fillRule='evenodd'
+      clipRule='evenodd'
+      d='M5 20a2 2 0 002 2h3a2 2 0 002-2V4a2 2 0 00-2-2H7a2 2 0 00-2 2v16zm4-1v1H7V4h3v1H8v1h2v1H9v1h1v1H8v1h2v1H9v1h1v1H8v1h2v1H9v1h1v1H8v1h2v1H9z'
+    />
+    <path d='M20 2h-6v2h2v16h-2v2h6v-2h-2V4h2V2z' />
   </svg>
 )
 

@@ -259,6 +259,7 @@ exports[`input label label should have a htmlFor prop equals to the used id 1`] 
                       <path
                         clip-rule="evenodd"
                         d="M16.294 8.294a1 1 0 111.414 1.414l-5 5a1 1 0 01-1.414 0l-5.001-5a1 1 0 011.414-1.415l4.294 4.294 4.293-4.293z"
+                        fill-rule="evenodd"
                       />
                     </svg>
                   </span>
@@ -533,6 +534,7 @@ exports[`input label should use aria-labelledby equals to an auto-assigned label
                       <path
                         clip-rule="evenodd"
                         d="M16.294 8.294a1 1 0 111.414 1.414l-5 5a1 1 0 01-1.414 0l-5.001-5a1 1 0 011.414-1.415l4.294 4.294 4.293-4.293z"
+                        fill-rule="evenodd"
                       />
                     </svg>
                   </span>
@@ -793,6 +795,7 @@ exports[`should render correctly when closed 1`] = `
                       <path
                         clip-rule="evenodd"
                         d="M16.294 8.294a1 1 0 111.414 1.414l-5 5a1 1 0 01-1.414 0l-5.001-5a1 1 0 011.414-1.415l4.294 4.294 4.293-4.293z"
+                        fill-rule="evenodd"
                       />
                     </svg>
                   </span>
@@ -1117,6 +1120,7 @@ exports[`should render correctly when opened 1`] = `
                       <path
                         clip-rule="evenodd"
                         d="M7.707 14.707a1 1 0 11-1.414-1.414l5-5a1 1 0 011.414 0l5.001 5.001a1 1 0 01-1.414 1.414L12 10.414l-4.293 4.293z"
+                        fill-rule="evenodd"
                       />
                     </svg>
                   </span>
@@ -1493,6 +1497,7 @@ exports[`should respect the specified menu min-width 1`] = `
                       <path
                         clip-rule="evenodd"
                         d="M7.707 14.707a1 1 0 11-1.414-1.414l5-5a1 1 0 011.414 0l5.001 5.001a1 1 0 01-1.414 1.414L12 10.414l-4.293 4.293z"
+                        fill-rule="evenodd"
                       />
                     </svg>
                   </span>
