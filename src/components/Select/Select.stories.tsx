@@ -80,7 +80,7 @@ export const Suggestion = () => (
   />
 )
 
-export const Aynsc = () => (
+export const Async = () => (
   <SelectAsync<DefaultItemType>
     label='Repository'
     name='repository'

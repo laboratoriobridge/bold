@@ -1,4 +1,5 @@
 import { cleanup } from '@testing-library/react'
+import '@testing-library/jest-dom'
 import { createSerializer, matchers } from 'jest-emotion'
 
 import { createTheme } from '../styles/theme/createTheme'

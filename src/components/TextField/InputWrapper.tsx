@@ -1,38 +1,71 @@
-import React, { CSSProperties } from 'react'
+import React, { CSSProperties, Ref } from 'react'
 
 import { useLocale } from '../../i18n'
 import { Theme, useStyles } from '../../styles'
 import { Button, ButtonProps } from '../Button'
 import { Icon, IconImage } from '../Icon/Icon'
+import { composeHandlers } from '../../util/react'
 
-export interface InputWrapperProps {
+export interface InputWrapperProps extends React.HTMLAttributes<HTMLDivElement> {
   icon?: IconImage
   iconPosition?: 'left' | 'right'
+  iconAriaLabel?: string
   iconDisabled?: boolean
+  iconProps?: ButtonProps
+  iconRef?: Ref<HTMLButtonElement>
   clearVisible?: boolean
   onIconClick?: ButtonProps['onClick']
-  children?: React.ReactNode
   onClear?(e: React.MouseEvent<HTMLButtonElement>): any
 }
 
-export function InputWrapper(props: InputWrapperProps) {
-  const { children, icon, iconDisabled, onIconClick, clearVisible, onClear } = props
-  const iconPosition = props.iconPosition || (props.onIconClick ? 'right' : 'left')
-  const { classes, css } = useStyles(createStyles, { icon, iconPosition, clearVisible, onIconClick })
+export const InputWrapper = React.forwardRef((props: InputWrapperProps, ref: Ref<HTMLDivElement>) => {
+  const {
+    children,
+    icon,
+    iconDisabled,
+    iconAriaLabel,
+    onIconClick: externalOnIconClick,
+    clearVisible,
+    onClear,
+    className,
+    iconPosition,
+    iconProps: externalIconProps,
+    iconRef,
+    ...rest
+  } = props
+
+  const { onClick: iconPropsOnClick, ...iconProps } = externalIconProps ?? {}
+  const onIconClick =
+    iconPropsOnClick || externalOnIconClick ? composeHandlers(iconPropsOnClick, externalOnIconClick) : null
+  const internalIconPosition = iconPosition || (onIconClick ? 'right' : 'left')
+
+  const { classes, css } = useStyles(createStyles, {
+    icon,
+    iconPosition: internalIconPosition,
+    clearVisible,
+    onIconClick,
+  })
   const locale = useLocale()
 
   const iconBoxClasses = css(
     classes.iconWrapper,
-    iconPosition === 'left' && classes.iconLeft,
-    iconPosition === 'right' && classes.iconRight
+    internalIconPosition === 'left' && classes.iconLeft,
+    internalIconPosition === 'right' && classes.iconRight
   )
 
   return (
-    <div className={classes.wrapper}>
+    <div ref={ref} className={css(classes.wrapper, className)} {...rest}>
       {children}
 
       {clearVisible && (
-        <span role='button' title={locale.input.clear} tabIndex={-1} onClick={onClear} className={classes.clearButton}>
+        <span
+          role='button'
+          title={locale.input.clear}
+          tabIndex={-1}
+          onClick={onClear}
+          className={classes.clearButton}
+          aria-label={iconAriaLabel}
+        >
           <Icon size={1.5} icon='timesDefault' />
         </span>
       )}
@@ -46,18 +79,21 @@ export function InputWrapper(props: InputWrapperProps) {
               tabIndex={-1}
               onClick={onIconClick}
               style={classes.icon}
+              innerRef={iconRef}
+              {...iconProps}
               disabled={iconDisabled}
+              aria-label={iconAriaLabel}
             >
               <Icon icon={icon} />
             </Button>
           ) : (
-            <Icon icon={icon} style={classes.icon} />
+            <Icon icon={icon} style={classes.icon} aria-label={iconAriaLabel} />
           )}
         </span>
       )}
     </div>
   )
-}
+})
 
 InputWrapper.defaultProps = {
   iconDisabled: false,
@@ -66,15 +102,17 @@ InputWrapper.defaultProps = {
 } as Partial<InputWrapperProps>
 
 const createStyles = (theme: Theme, { icon, iconPosition, clearVisible, onIconClick }: InputWrapperProps) => {
+  const clickable = typeof icon !== 'string' || onIconClick
+
   const paddingLeft =
-    (icon && iconPosition === 'left' && onIconClick && '3rem') ||
+    (icon && iconPosition === 'left' && clickable && '3rem') ||
     (icon && iconPosition === 'left' && '2.5rem') ||
     undefined
 
   const paddingRight =
-    (icon && iconPosition === 'right' && clearVisible && onIconClick && '4.5rem') ||
+    (icon && iconPosition === 'right' && clearVisible && clickable && '4.5rem') ||
     (icon && iconPosition === 'right' && clearVisible && '4rem') ||
-    (icon && iconPosition === 'right' && onIconClick && '3rem') ||
+    (icon && iconPosition === 'right' && clickable && '3rem') ||
     (icon && iconPosition === 'right' && '2.5rem') ||
     (clearVisible && '2rem') ||
     undefined
@@ -89,7 +127,7 @@ const createStyles = (theme: Theme, { icon, iconPosition, clearVisible, onIconCl
     } as CSSProperties,
     clearButton: {
       position: 'absolute',
-      right: icon && iconPosition === 'right' ? (onIconClick && '2.5rem') || '2rem' : 1,
+      right: icon && iconPosition === 'right' ? (clickable && '2.5rem') || '2rem' : 1,
       background: 'transparent',
       border: 'none',
       cursor: 'pointer',
@@ -106,7 +144,7 @@ const createStyles = (theme: Theme, { icon, iconPosition, clearVisible, onIconCl
     } as CSSProperties,
     iconWrapper: {
       position: 'absolute',
-      backgroundColor: onIconClick ? theme.pallete.gray.c90 : 'transparent',
+      backgroundColor: clickable ? theme.pallete.gray.c90 : 'transparent',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',

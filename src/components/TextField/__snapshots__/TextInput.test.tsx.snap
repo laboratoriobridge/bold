@@ -1,6 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`icon should render correctly with icon 1`] = `
+.emotion-3 {
+  position: absolute;
+  background-color: #F0F0F5;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0.25rem;
+  width: 2.5rem;
+  top: 1px;
+  bottom: 1px;
+  left: 1px;
+}
+
 .emotion-0 {
   background-color: #FFFFFF;
   border: solid 1px #8F8FA2;
@@ -79,28 +101,6 @@ exports[`icon should render correctly with icon 1`] = `
 
 .emotion-4 input {
   padding-left: 3rem;
-}
-
-.emotion-3 {
-  position: absolute;
-  background-color: #F0F0F5;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding: 0.25rem;
-  width: 2.5rem;
-  top: 1px;
-  bottom: 1px;
-  left: 1px;
 }
 
 .emotion-2 {

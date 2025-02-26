@@ -13,6 +13,21 @@ export interface SelectProps<T = DefaultItemType> extends Omit<SelectSingleProps
   onChange?(item: T | T[]): void
 }
 
+/**
+ * @deprecated
+ *
+ * This component has been deprecated, please use Combobox instead
+ *
+ * Before:
+ *
+ * `<Select />`
+ *
+ * After:
+ *
+ * `<Combobox />`
+ *
+ * @deprecatedSince 1.0.0-beta.65
+ */
 export function Select<T = DefaultItemType>(props: SelectProps<T>) {
   const { multiple, onChange, value, itemIsEqual, style, ...rest } = props
   let checkedValue = value
