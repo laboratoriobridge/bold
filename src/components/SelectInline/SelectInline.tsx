@@ -16,6 +16,21 @@ export interface SelectInlineProps<T> extends SelectSingleProps<T> {
   onChange?(item: T): void
 }
 
+/**
+ * @deprecated
+ *
+ * This component has been deprecated, please use Combobox instead
+ *
+ * Before:
+ *
+ * `<SelectInline />`
+ *
+ * After:
+ *
+ * `<Combobox inline />`
+ *
+ * @deprecatedSince 1.0.0-beta.65
+ */
 export function SelectInline<T>(props: SelectInlineProps<T>) {
   const { value, inputRef, onChange, buttonProps, popperProps, itemToString, defaultButtonText, ...rest } = props
   const { innerRef, ...buttonRest } = buttonProps || ({} as any)

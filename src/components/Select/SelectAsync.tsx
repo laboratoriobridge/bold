@@ -19,6 +19,21 @@ export interface SelectAsyncProps<T>
   delay?: number
 }
 
+/**
+ * @deprecated
+ *
+ * This component has been deprecated, please use Combobox instead
+ *
+ * Before:
+ *
+ * `<SelectAsync />`
+ *
+ * After:
+ *
+ * `<Combobox items={loadAsync} />`
+ *
+ * @deprecatedSince 1.0.0-beta.65
+ */
 export function SelectAsync<T>(props: SelectAsyncProps<T>) {
   const { loadItems, delay, ...rest } = props
   const { getSelectProps } = useAsyncSelect<T>(loadItems, delay)
