@@ -263,6 +263,7 @@ exports[`rendering renders correcly closed 1`] = `
                     <path
                       clip-rule="evenodd"
                       d="M16.294 8.294a1 1 0 111.414 1.414l-5 5a1 1 0 01-1.414 0l-5.001-5a1 1 0 011.414-1.415l4.294 4.294 4.293-4.293z"
+                      fill-rule="evenodd"
                     />
                   </svg>
                 </span>
@@ -601,6 +602,7 @@ exports[`rendering renders correcly opened 1`] = `
                     <path
                       clip-rule="evenodd"
                       d="M7.707 14.707a1 1 0 11-1.414-1.414l5-5a1 1 0 011.414 0l5.001 5.001a1 1 0 01-1.414 1.414L12 10.414l-4.293 4.293z"
+                      fill-rule="evenodd"
                     />
                   </svg>
                 </span>
@@ -1127,6 +1129,7 @@ exports[`rendering renders correcly opened and loading 1`] = `
                     <path
                       clip-rule="evenodd"
                       d="M7.707 14.707a1 1 0 11-1.414-1.414l5-5a1 1 0 011.414 0l5.001 5.001a1 1 0 01-1.414 1.414L12 10.414l-4.293 4.293z"
+                      fill-rule="evenodd"
                     />
                   </svg>
                 </span>
@@ -1597,6 +1600,7 @@ exports[`rendering renders correcly opened with add-item 1`] = `
                     <path
                       clip-rule="evenodd"
                       d="M7.707 14.707a1 1 0 11-1.414-1.414l5-5a1 1 0 011.414 0l5.001 5.001a1 1 0 01-1.414 1.414L12 10.414l-4.293 4.293z"
+                      fill-rule="evenodd"
                     />
                   </svg>
                 </span>
@@ -1940,6 +1944,7 @@ exports[`rendering renders correcly when items is empty (items: []) 1`] = `
                   <path
                     clip-rule="evenodd"
                     d="M7.707 14.707a1 1 0 11-1.414-1.414l5-5a1 1 0 011.414 0l5.001 5.001a1 1 0 01-1.414 1.414L12 10.414l-4.293 4.293z"
+                    fill-rule="evenodd"
                   />
                 </svg>
               </span>
@@ -2279,6 +2284,7 @@ exports[`rendering renders correcly when items is empty (items: null) 1`] = `
                   <path
                     clip-rule="evenodd"
                     d="M7.707 14.707a1 1 0 11-1.414-1.414l5-5a1 1 0 011.414 0l5.001 5.001a1 1 0 01-1.414 1.414L12 10.414l-4.293 4.293z"
+                    fill-rule="evenodd"
                   />
                 </svg>
               </span>
@@ -2618,6 +2624,7 @@ exports[`rendering renders correcly when items is empty (items: undefined) 1`] =
                   <path
                     clip-rule="evenodd"
                     d="M7.707 14.707a1 1 0 11-1.414-1.414l5-5a1 1 0 011.414 0l5.001 5.001a1 1 0 01-1.414 1.414L12 10.414l-4.293 4.293z"
+                    fill-rule="evenodd"
                   />
                 </svg>
               </span>
@@ -3067,6 +3074,7 @@ exports[`rendering renders correcly with custom components 1`] = `
                     <path
                       clip-rule="evenodd"
                       d="M7.707 14.707a1 1 0 11-1.414-1.414l5-5a1 1 0 011.414 0l5.001 5.001a1 1 0 01-1.414 1.414L12 10.414l-4.293 4.293z"
+                      fill-rule="evenodd"
                     />
                   </svg>
                 </span>
