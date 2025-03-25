@@ -566,6 +566,8 @@ export const rangeArea = () => {
   )
   const series = object('Series', lineSeries, 'Data')
 
+  const outliers = select('Outliers', outliersOption, 'auto', 'Description')
+
   return (
     <ChartContainer>
       <ChartHeader title='Chart Title' />
@@ -576,6 +578,7 @@ export const rangeArea = () => {
           rangeAreas={ranges}
           xAxis={{ title: 'X Axis', domain: ['Page A', 'Page B', 'Page C', 'Page D', 'Page E', 'Page F', 'Page G'] }}
           yAxis={{ title: 'Y Axis', domain: { init: 3000, end: 10000, step: 5500 }, unit: 'unit' }}
+          outliers={outliers}
         />
       </ChartBody>
     </ChartContainer>
