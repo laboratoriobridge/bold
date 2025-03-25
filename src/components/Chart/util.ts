@@ -13,8 +13,14 @@ export function isInsideDomain(value: any, domain: AxisDomain) {
 export const getAxisDomainInit = (x: AxisDomain): number | string =>
   isValueRange(x) || isDateRange(x) ? +x.init : x.length && x[0]
 
-export const getAxisDomainEnd = (x: AxisDomain): number | string =>
-  isValueRange(x) || isDateRange(x) ? +x.end : x.length && x[x.length - 1]
+export const getAxisDomainEnd = (x: AxisDomain, hasOutliers?: boolean): number | string => {
+  if (isValueRange(x) || isDateRange(x)) {
+    const end = Number(x.end)
+    return hasOutliers ? end + getOutlierStepFromDomain(x) : end
+  }
+
+  return x.length && x[x.length - 1]
+}
 
 export const defaultChartDateFormatter = (date: Date) => date.toLocaleDateString()
 
