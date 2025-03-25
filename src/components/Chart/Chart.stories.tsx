@@ -566,7 +566,7 @@ export const rangeArea = () => {
   )
   const series = object('Series', lineSeries, 'Data')
 
-  const outliers = select('Outliers', outliersOption, 'auto', 'Description')
+  const outliers = select('Outliers', outliersOption, 'expand-domain', 'Description')
 
   return (
     <ChartContainer>
