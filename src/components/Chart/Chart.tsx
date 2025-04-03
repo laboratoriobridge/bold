@@ -107,7 +107,7 @@ export function Chart<XDomain>(props: ChartProps<XDomain>) {
           x1={getRangeAreaInit(ra, xAxis.domain)}
           x2={getRangeAreaEnd(ra, xAxis.domain)}
           y1={getAxisDomainInit(adaptedYDomain)}
-          y2={getAxisDomainEnd(adaptedYDomain)}
+          y2={getAxisDomainEnd(adaptedYDomain, hasOutliers)}
           stroke='none'
           fill={(ra.fillColor ?? blue.c60) || 'none'}
           fillOpacity={ra.fillOpacity ?? 0.2}
