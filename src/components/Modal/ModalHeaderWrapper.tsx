@@ -38,8 +38,9 @@ const createStyles = (theme: Theme, background?: Color) => ({
     align-items: flex-start;
     width: 100%;
     height: fit-content;
-    padding: 0.5rem;
-    gap: 0.5rem;
+    padding: 1.5rem 1rem 1.5rem 2rem;
+    gap: 1rem;
+    align-items: center;
     background-color: ${background || theme.pallete.surface.main};
     box-shadow: 0 1px 5px 0 ${theme.pallete.divider}, 0 2px 1px -1px ${theme.pallete.divider};
     z-index: 1;
