@@ -1,11 +1,9 @@
-import React, { forwardRef } from 'react'
+import React, { Children, forwardRef, isValidElement, ReactElement } from 'react'
 
-import { useLocale } from '../../i18n'
 import { ExternalStyles, Theme, useStyles } from '../../styles'
 import { Omit } from '../../util'
-import { Button } from '../Button'
-import { Icon } from '../Icon'
-import { Tooltip } from '../Tooltip'
+import { ModalHeader, ModalHeaderProps } from './ModalHeader'
+import { ModalHeaderWrapper } from './ModalHeaderWrapper'
 
 export interface ModalContainerProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'style'> {
   style?: ExternalStyles
@@ -16,25 +14,25 @@ export interface ModalContainerProps extends Omit<React.HTMLAttributes<HTMLDivEl
 export const ModalContainer = forwardRef<HTMLDivElement, ModalContainerProps>((props, ref) => {
   const { style, onClose, hasCloseIcon, children, ...rest } = props
   const { classes, css } = useStyles(styles)
-  const locale = useLocale()
+
+  const childrenArray = Children.toArray(children)
+  const headerElement = childrenArray.find(
+    (child): child is ReactElement<ModalHeaderProps> => isValidElement(child) && child.type === ModalHeader
+  )
+  const contentChildren = childrenArray.filter((child) => !isValidElement(child) || child.type !== ModalHeader)
 
   return (
     <div role='dialog' aria-modal='true' ref={ref} className={css(classes.wrapper, style)} {...rest}>
-      {hasCloseIcon && (
-        <Tooltip text={locale.modal.close}>
-          <Button
-            aria-label={locale.modal.close}
-            size='small'
-            skin='ghost'
-            style={classes.closeButton}
-            onClick={onClose}
-          >
-            <Icon icon='timesDefault' />
-          </Button>
-        </Tooltip>
-      )}
-
-      {children}
+      <ModalHeaderWrapper
+        background={headerElement?.props.background}
+        style={headerElement?.props.styles?.wrapper}
+        hasCloseIcon={hasCloseIcon}
+        onClose={onClose}
+        hasHeader={!!headerElement}
+      >
+        {headerElement}
+      </ModalHeaderWrapper>
+      {contentChildren}
     </div>
   )
 })
@@ -52,10 +50,5 @@ export const styles = (theme: Theme) => ({
     backgroundColor: theme.pallete.surface.main,
     minWidth: 520,
     pointerEvents: 'auto',
-  } as React.CSSProperties,
-  closeButton: {
-    float: 'right',
-    marginTop: '0.5rem',
-    marginRight: '0.5rem',
   } as React.CSSProperties,
 })
