@@ -2,7 +2,7 @@
 import { css, jsx } from '@emotion/core'
 
 import { Color } from 'csstype'
-import { ReactNode } from 'react'
+import { Fragment, ReactNode } from 'react'
 import { ExternalStyles, Theme, useTheme } from '../../styles'
 import { ModalCloseButton } from './ModalCloseButton'
 
@@ -21,13 +21,19 @@ export const ModalHeaderWrapper = (props: ModalHeaderWrapperProps) => {
   const theme = useTheme()
   const styles = createStyles(theme, background)
 
-  return hasHeader ? (
-    <div css={[styles.headerWrapper, externalStyles]}>
-      {children}
-      {hasCloseIcon && <ModalCloseButton onClose={onClose} />}
-    </div>
-  ) : (
-    hasCloseIcon && <ModalCloseButton onClose={onClose} style={styles.buttonClose} />
+  return (
+    <Fragment>
+      (
+      {hasHeader ? (
+        <div css={[styles.headerWrapper, externalStyles]}>
+          {children}
+          {hasCloseIcon && <ModalCloseButton onClose={onClose} />}
+        </div>
+      ) : (
+        hasCloseIcon && <ModalCloseButton onClose={onClose} style={styles.buttonClose} />
+      )}
+      )
+    </Fragment>
   )
 }
 
