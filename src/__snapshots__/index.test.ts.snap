@@ -46,6 +46,7 @@ Array [
   "ModalBody",
   "ModalContainer",
   "ModalFooter",
+  "ModalHeader",
   "MonthField",
   "MonthPaginator",
   "MonthRangePicker",
