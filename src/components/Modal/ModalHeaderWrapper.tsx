@@ -23,7 +23,6 @@ export const ModalHeaderWrapper = (props: ModalHeaderWrapperProps) => {
 
   return (
     <Fragment>
-      (
       {hasHeader ? (
         <div css={[styles.headerWrapper, externalStyles]}>
           {children}
@@ -32,7 +31,6 @@ export const ModalHeaderWrapper = (props: ModalHeaderWrapperProps) => {
       ) : (
         hasCloseIcon && <ModalCloseButton onClose={onClose} style={styles.buttonClose} />
       )}
-      )
     </Fragment>
   )
 }
