@@ -28,5 +28,5 @@ it('should apply background prop if provided', () => {
 
 it('should render nothing when hasHeader and hasCloseIcon are both false', () => {
   const { container } = render(<ModalHeaderWrapper hasCloseIcon={false} />)
-  expect(container).toBeEmptyDOMElement()
+  expect(container.firstChild).toBeNull()
 })
