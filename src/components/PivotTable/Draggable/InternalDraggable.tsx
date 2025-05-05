@@ -32,8 +32,6 @@ export function InternalDraggable<T extends object>(props: DraggableProps<T>) {
     }
   }
 
-  console.log(value)
-
   return (
     <DraggableWrapper drag={drag} isDragging={isDragging}>
       <Button
