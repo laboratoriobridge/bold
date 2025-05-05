@@ -73,6 +73,19 @@ const locale = {
     isOver: 'Drop the item here to insert into the table',
     isNotOver: 'Drag items to insert into table',
   },
+  pivotTableBoard: {
+    availableFields: 'Available fields',
+    rows: 'Rows',
+    columns: 'Columns',
+    formOfPresentation: 'Form of presentation',
+    appliedFilters: 'Applied filters',
+    clearFilters: 'Clear filters',
+    clearTable: 'Clear table',
+    clearTableTitle: 'Do you want to clear the table?',
+    clearTableCancel: 'Cancel',
+    clearTableConfirm: 'Clear',
+    generateTable: 'Generate table',
+  },
 }
 
 export default locale

@@ -207,8 +207,8 @@ describe('Droppable', () => {
 
       const { getByRole } = render(createDefaultComponent({ onKeyNav: onKeyNav, handleKeyUpdate }))
 
-      fireEvent.keyDown(getByRole('button'), { key: 'ArrowUp', code: 'ArrowUp' })
-      expect(onKeyNav).toBeCalledWith('up', 'droppable-1')
+      fireEvent.keyDown(getByRole('button'), { key: 'ArrowRight', code: 'ArrowRight' })
+      expect(onKeyNav).toBeCalledWith('right', 'droppable-1')
       expect(handleKeyUpdate).toBeCalledWith([])
     })
   })

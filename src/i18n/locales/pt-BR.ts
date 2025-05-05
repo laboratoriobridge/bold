@@ -75,6 +75,19 @@ const locale: LocaleConfiguration = {
     isOver: 'Solte o item aqui para inserir na tabela',
     isNotOver: 'Arraste os itens para inserir na tabela',
   },
+  pivotTableBoard: {
+    availableFields: 'Campos disponíveis',
+    rows: 'Linhas',
+    columns: 'Colunas',
+    formOfPresentation: 'Forma de apresentação',
+    appliedFilters: 'Filtros aplicados',
+    clearFilters: 'Limpar filtros',
+    clearTable: 'Limpar tabela',
+    clearTableTitle: 'Deseja limpar a tabela?',
+    clearTableCancel: 'Cancelar',
+    clearTableConfirm: 'Limpar',
+    generateTable: 'Gerar tabela',
+  },
 }
 
 export default locale

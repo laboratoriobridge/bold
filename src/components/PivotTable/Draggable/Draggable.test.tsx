@@ -39,22 +39,6 @@ describe('Draggable', () => {
   })
 
   describe('handleKeyDown', () => {
-    it('should call the onKeyNav with direction as up when the user press the ArrowUp key', () => {
-      const keyNav = jest.fn()
-      const { getByRole } = render(createDefaultComponent({ onKeyNav: keyNav }))
-
-      fireEvent.keyDown(getByRole('button'), { key: 'ArrowUp', code: 'ArrowUp' })
-      expect(keyNav).toBeCalledWith('up', origin)
-    })
-
-    it('should call the onKeyNav with direction as down when the user press the ArrowDown key', () => {
-      const keyNav = jest.fn()
-      const { getByRole } = render(createDefaultComponent({ onKeyNav: keyNav }))
-
-      fireEvent.keyDown(getByRole('button'), { key: 'ArrowDown', code: 'ArrowDown' })
-      expect(keyNav).toBeCalledWith('down', origin)
-    })
-
     it('should call the onKeyNav with direction as left when the user press the ArrowLeft key', () => {
       const keyNav = jest.fn()
       const { getByRole } = render(createDefaultComponent({ onKeyNav: keyNav }))
@@ -71,12 +55,12 @@ describe('Draggable', () => {
       expect(keyNav).toBeCalledWith('right', origin)
     })
 
-    it('should call the onKeyNav with null when the user press a non-arrow key', () => {
+    it('should not call the onKeyNav when the user presses any key other than left and right', () => {
       const keyNav = jest.fn()
       const { getByRole } = render(createDefaultComponent({ onKeyNav: keyNav }))
 
       fireEvent.keyDown(getByRole('button'), { key: 'Enter', code: 'Enter' })
-      expect(keyNav).toBeCalledWith(null, origin)
+      expect(keyNav).not.toHaveBeenCalled()
     })
   })
 

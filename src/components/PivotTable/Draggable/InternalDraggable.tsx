@@ -5,7 +5,6 @@ import { useStyles } from '../../../styles'
 import { DraggableProps } from './Draggable'
 import { DraggableWrapper } from './DraggableWrapper'
 import { draggableCreateStyles } from './style'
-import { getKeyDirection } from './util'
 
 export function InternalDraggable<T extends object>(props: DraggableProps<T>) {
   const { name, origin, value, onDragEnd, onKeyNav, type } = props
@@ -23,11 +22,17 @@ export function InternalDraggable<T extends object>(props: DraggableProps<T>) {
   })
 
   const handleKeyDown = (event: any) => {
-    if (onKeyNav) {
-      onKeyNav(getKeyDirection(event.nativeEvent.key), origin)
+    const key = event.nativeEvent.key
+    if (key === 'ArrowRight') {
+      onKeyNav('right', origin)
+      onDragEnd()
+    } else if (key === 'ArrowLeft') {
+      onKeyNav('left', origin)
       onDragEnd()
     }
   }
+
+  console.log(value)
 
   return (
     <DraggableWrapper drag={drag} isDragging={isDragging}>

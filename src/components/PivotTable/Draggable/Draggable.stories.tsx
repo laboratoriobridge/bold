@@ -8,7 +8,7 @@ export default {
   title: 'Components/PivotTable/Draggable',
 }
 
-const origin = 'keys_avaible'
+const origin = 'keys_available'
 
 type Fruit = {
   name: string

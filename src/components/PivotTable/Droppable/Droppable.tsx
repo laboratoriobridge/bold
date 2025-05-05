@@ -9,6 +9,7 @@ import { InternalFilterDraggable } from '../Draggable/InternalFilterDraggable'
 import { KeyMap } from '../model'
 import { droppableCreateStyles } from './style'
 import { DroppableFilter } from './types/Filter'
+import { KeyNavigationDirection } from './types/model'
 
 export interface DroppableProps<T extends object> {
   /**
@@ -49,7 +50,8 @@ export interface DroppableProps<T extends object> {
   /**
    * Function used to navigate a draggable between droppables using the directional arrows
    */
-  onKeyNav?: (dir: 'left' | 'right' | 'up' | 'down' | null, origin: string, key?: keyof T) => void
+  onKeyNav?: (dir: KeyNavigationDirection, origin: string, key?: keyof T) => void
+  ['data-testid']?: string
 }
 
 export interface DragItem<T> {
@@ -158,7 +160,7 @@ export function Droppable<T extends object>(props: DroppableProps<T>) {
 
   const { classes } = useStyles(droppableCreateStyles, hasKeys)
   return (
-    <div ref={drag} className={classes.box}>
+    <div ref={drag} className={classes.box} data-testid={props['data-testid']}>
       {hasKeys ? (
         <div>{draggableButtons}</div>
       ) : (

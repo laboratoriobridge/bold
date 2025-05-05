@@ -122,23 +122,7 @@ describe('FilterDraggable', () => {
   })
 
   describe('handleKeyDown', () => {
-    it('should call the onKeyNav with direction as up when the user press the ArrowUp key', () => {
-      const keyNav = jest.fn()
-      const { getByRole } = render(createFilterComponent({ onKeyNav: keyNav }))
-
-      fireEvent.keyDown(getByRole('button'), { key: 'ArrowUp', code: 'ArrowUp' })
-      expect(keyNav).toBeCalledWith('up', origin, 'name')
-    })
-
-    it('should call the onKeyNav with direction as down when the user press the ArrowDown key', () => {
-      const keyNav = jest.fn()
-      const { getByRole } = render(createFilterComponent({ onKeyNav: keyNav }))
-
-      fireEvent.keyDown(getByRole('button'), { key: 'ArrowDown', code: 'ArrowDown' })
-      expect(keyNav).toBeCalledWith('down', origin, 'name')
-    })
-
-    it('should call the onKeyNav with direction as left when the user press the ArrowLeft key', () => {
+    it('should call the onKeyNav with direction as left when the user presses the ArrowLeft key', () => {
       const keyNav = jest.fn()
       const { getByRole } = render(createFilterComponent({ onKeyNav: keyNav }))
 
@@ -146,7 +130,7 @@ describe('FilterDraggable', () => {
       expect(keyNav).toBeCalledWith('left', origin, 'name')
     })
 
-    it('should call the onKeyNav with direction as right when the user press the ArrowRight key', () => {
+    it('should call the onKeyNav with direction as right when the user presses the ArrowRight key', () => {
       const keyNav = jest.fn()
       const { getByRole } = render(createFilterComponent({ onKeyNav: keyNav }))
 
@@ -154,12 +138,12 @@ describe('FilterDraggable', () => {
       expect(keyNav).toBeCalledWith('right', origin, 'name')
     })
 
-    it('should call the onKeyNav with null when the user press a non-arrow key', () => {
+    it('should not call the onKeyNav when the user presses any key other than left and right', () => {
       const keyNav = jest.fn()
       const { getByRole } = render(createFilterComponent({ onKeyNav: keyNav }))
 
       fireEvent.keyDown(getByRole('button'), { key: 'Enter', code: 'Enter' })
-      expect(keyNav).toBeCalledWith(null, origin, 'name')
+      expect(keyNav).not.toHaveBeenCalled()
     })
   })
 
