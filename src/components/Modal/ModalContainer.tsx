@@ -1,38 +1,37 @@
-import React, { Children, forwardRef, isValidElement, ReactElement } from 'react'
+import React, { forwardRef } from 'react'
 
+import { Color } from 'csstype'
 import { ExternalStyles, Theme, useStyles } from '../../styles'
 import { Omit } from '../../util'
-import { ModalHeader, ModalHeaderProps } from './ModalHeader'
-import { ModalHeaderWrapper } from './ModalHeaderWrapper'
+import { ModalCloseButton } from './ModalCloseButton'
+import { ModalHeader, ModalTitleType } from './ModalHeader'
 
-export interface ModalContainerProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'style'> {
+export interface ModalContainerProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'style' | 'title'> {
   style?: ExternalStyles
   hasCloseIcon?: boolean
-  onClose?(): any
+  onClose: () => void
+  title?: ModalTitleType
+  titleBackgroundColor?: Color
 }
 
 export const ModalContainer = forwardRef<HTMLDivElement, ModalContainerProps>((props, ref) => {
-  const { style, onClose, hasCloseIcon, children, ...rest } = props
+  const { style, onClose, hasCloseIcon, children, title, titleBackgroundColor, ...rest } = props
   const { classes, css } = useStyles(styles)
-
-  const childrenArray = Children.toArray(children)
-  const headerElement = childrenArray.find(
-    (child): child is ReactElement<ModalHeaderProps> => isValidElement(child) && child.type === ModalHeader
-  )
-  const contentChildren = childrenArray.filter((child) => !isValidElement(child) || child.type !== ModalHeader)
 
   return (
     <div role='dialog' aria-modal='true' ref={ref} className={css(classes.wrapper, style)} {...rest}>
-      <ModalHeaderWrapper
-        background={headerElement?.props.background}
-        style={headerElement?.props.styles?.wrapper}
-        hasCloseIcon={hasCloseIcon}
-        onClose={onClose}
-        hasHeader={!!headerElement}
-      >
-        {headerElement}
-      </ModalHeaderWrapper>
-      {contentChildren}
+      {title ? (
+        <ModalHeader
+          title={title}
+          backgroundColor={titleBackgroundColor}
+          hasCloseIcon={hasCloseIcon}
+          onClose={onClose}
+        />
+      ) : (
+        hasCloseIcon && <ModalCloseButton onClose={onClose} style={classes.closeButton} />
+      )}
+
+      {children}
     </div>
   )
 })
@@ -50,5 +49,10 @@ export const styles = (theme: Theme) => ({
     backgroundColor: theme.pallete.surface.main,
     minWidth: 520,
     pointerEvents: 'auto',
+  } as React.CSSProperties,
+  closeButton: {
+    float: 'right',
+    marginTop: '0.5rem',
+    marginRight: '0.5rem',
   } as React.CSSProperties,
 })
