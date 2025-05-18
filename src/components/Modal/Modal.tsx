@@ -1,5 +1,5 @@
 import FocusTrap from 'focus-trap-react'
-import React, { useEffect, Ref } from 'react'
+import React, { Ref, useEffect } from 'react'
 import { Theme, useStyles } from '../../styles'
 import { zIndexLevel } from '../../styles/theme/zIndex'
 import { Portal } from '../Portal'
@@ -43,6 +43,8 @@ export function Modal(props: ModalProps) {
     containerRef,
     style,
     onClose,
+    title,
+    titleBackgroundColor,
     depthLevel,
     manageOverflow,
     ...rest
@@ -88,6 +90,8 @@ export function Modal(props: ModalProps) {
                   <div className={classes.modal}>
                     <ModalContainer
                       ref={containerRef}
+                      title={title}
+                      titleBackgroundColor={titleBackgroundColor}
                       style={css(classes.container, classes[size], style)}
                       onClose={onClose}
                       {...rest}
