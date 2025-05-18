@@ -1,6 +1,4 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/core'
-
+import React from 'react'
 import { useLocale } from '../../i18n'
 import { ExternalStyles } from '../../styles'
 import { Button } from '../Button'
@@ -8,7 +6,7 @@ import { Icon } from '../Icon'
 import { Tooltip } from '../Tooltip'
 
 interface ModalCloseButton {
-  onClose(): any
+  onClose: () => void
   style?: ExternalStyles
 }
 
