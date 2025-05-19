@@ -12,19 +12,19 @@ export interface ModalHeaderProps {
   title: ModalTitleType
   backgroundColor?: Color
   hasCloseIcon?: boolean
-  onClose: () => void
+  onCloseButtonClick: () => void
 }
 
 export const ModalHeader = (props: ModalHeaderProps) => {
-  const { title, backgroundColor, hasCloseIcon, onClose } = props
+  const { title, backgroundColor, hasCloseIcon, onCloseButtonClick } = props
 
   const theme = useTheme()
   const styles = createStyles(theme, backgroundColor)
 
   return (
-    <div css={styles.header}>
+    <div css={styles.header} data-testid='modal-header'>
       {typeof title === 'string' ? <Heading level={1}>{title}</Heading> : title}
-      {hasCloseIcon && <ModalCloseButton onClose={onClose} />}
+      {hasCloseIcon && <ModalCloseButton onClick={onCloseButtonClick} />}
     </div>
   )
 }
