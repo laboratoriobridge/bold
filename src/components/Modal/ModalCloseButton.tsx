@@ -6,18 +6,18 @@ import { Icon } from '../Icon'
 import { Tooltip } from '../Tooltip'
 
 interface ModalCloseButton {
-  onClose: () => void
+  onClick: () => void
   style?: ExternalStyles
 }
 
 export const ModalCloseButton = (props: ModalCloseButton) => {
-  const { onClose, style: externalStyles } = props
+  const { onClick, style: externalStyles } = props
 
   const locale = useLocale()
 
   return (
     <Tooltip text={locale.modal.close}>
-      <Button aria-label={locale.modal.close} size='small' skin='ghost' onClick={onClose} style={externalStyles}>
+      <Button aria-label={locale.modal.close} size='small' skin='ghost' style={externalStyles} onClick={onClick}>
         <Icon icon='timesDefault' />
       </Button>
     </Tooltip>
