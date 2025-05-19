@@ -11,9 +11,13 @@ it('should render correctly', () => {
 })
 
 it('should apply external styles prop', () => {
-  const { container } = render(<ModalCloseButton onClick={jest.fn()} style={{ margin: '0.5rem' }} />)
+  const { getByRole } = render(
+    <LocaleContext.Provider value={ptBr}>
+      <ModalCloseButton onClick={jest.fn()} style={{ backgroundColor: 'red' }} />
+    </LocaleContext.Provider>
+  )
 
-  expect(container).toMatchSnapshot()
+  expect(getByRole('button', { name: ptBr.modal.close })).toHaveStyle('background-color: red')
 })
 
 it('should call onClick when the button is clicked', () => {
