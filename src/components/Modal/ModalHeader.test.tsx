@@ -11,6 +11,12 @@ const defaultProps: ModalHeaderProps = {
   onCloseButtonClick: jest.fn(),
 }
 
+it('should render correctly', () => {
+  const { container } = render(<ModalHeader {...defaultProps} />)
+
+  expect(container).toMatchSnapshot()
+})
+
 it('should render with string title', () => {
   const { getByText } = render(<ModalHeader {...defaultProps} />)
 
@@ -18,10 +24,10 @@ it('should render with string title', () => {
 })
 
 it('should render with JSX element as title', () => {
-  const jsxTitle = <span data-testid='jsx-title'>Custom JSX</span>
+  const jsxTitle = <div data-testid='custom-jsx-element'>Custom JSX Element</div>
   const { getByTestId } = render(<ModalHeader {...defaultProps} title={jsxTitle} />)
 
-  expect(getByTestId('jsx-title')).toBeInTheDocument()
+  expect(getByTestId('custom-jsx-element')).toBeInTheDocument()
 })
 
 it('should apply backgroundColor prop correctly', () => {
