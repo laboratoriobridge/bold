@@ -18,6 +18,18 @@ it('should accept the "style" prop', () => {
   expect(container).toMatchSnapshot()
 })
 
+it('should accept the "title" prop', () => {
+  const { container } = render(<ModalContainer title='Title'>Container</ModalContainer>)
+
+  expect(container).toMatchSnapshot()
+})
+
+it('should accept the "titleBackgroundColor" prop', () => {
+  const { container } = render(<ModalContainer titleBackgroundColor='red'>Container</ModalContainer>)
+
+  expect(container).toMatchSnapshot()
+})
+
 it('should call "onClose" when close button is pressed', () => {
   const handleClose = jest.fn()
   const { container } = render(<ModalContainer onClose={handleClose}>Container</ModalContainer>)
@@ -48,4 +60,22 @@ it('should provide a ref to the div html element', () => {
   const ref = React.createRef<HTMLDivElement>()
   render(<ModalContainer ref={ref}>Container</ModalContainer>)
   expect(ref.current.tagName).toEqual('DIV')
+})
+
+it('renders ModalHeader when title is provided', () => {
+  const onCloseMock = jest.fn()
+  const { getByTestId, getByText } = render(
+    <ModalContainer title='Title' onClose={onCloseMock}>
+      Container
+    </ModalContainer>
+  )
+
+  expect(getByTestId('modal-header')).toBeInTheDocument()
+  expect(getByText('Title')).toBeInTheDocument()
+})
+
+it('does not render ModalHeader when title is not provided', () => {
+  const { queryByTestId } = render(<ModalContainer>Container</ModalContainer>)
+
+  expect(queryByTestId('modal-header')).not.toBeInTheDocument()
 })

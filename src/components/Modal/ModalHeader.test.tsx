@@ -1,14 +1,64 @@
-import { render } from '@testing-library/react'
-import * as React from 'react'
+import React from 'react'
+import { fireEvent, render } from '@testing-library/react'
+import { LocaleContext } from '../../i18n'
+import ptBr from '../../i18n/locales/pt-BR'
+import { ModalHeader, ModalHeaderProps } from './ModalHeader'
 
-import { ModalHeader } from './ModalHeader'
+const defaultProps: ModalHeaderProps = {
+  title: 'Title',
+  backgroundColor: 'red',
+  hasCloseIcon: true,
+  onCloseButtonClick: jest.fn(),
+}
 
-it('should render correctly', () => {
-  const { container } = render(<ModalHeader>Header</ModalHeader>)
-  expect(container).toMatchSnapshot()
+it('should render with string title', () => {
+  const { getByText } = render(<ModalHeader {...defaultProps} />)
+
+  expect(getByText('Title')).toBeInTheDocument()
 })
 
-it('should apply external "styles.container" prop', () => {
-  const { container } = render(<ModalHeader styles={{ container: { color: 'red' } }}>Header</ModalHeader>)
-  expect(container).toMatchSnapshot()
+it('should render with JSX element as title', () => {
+  const jsxTitle = <span data-testid='jsx-title'>Custom JSX</span>
+  const { getByTestId } = render(<ModalHeader {...defaultProps} title={jsxTitle} />)
+
+  expect(getByTestId('jsx-title')).toBeInTheDocument()
+})
+
+it('should apply backgroundColor prop correctly', () => {
+  const { container } = render(<ModalHeader {...defaultProps} />)
+
+  expect(container.firstChild).toHaveStyle('background-color: red')
+})
+
+it('should render the close button when hasCloseIcon is true', () => {
+  const { getByRole } = render(
+    <LocaleContext.Provider value={ptBr}>
+      <ModalHeader {...defaultProps} />
+    </LocaleContext.Provider>
+  )
+
+  expect(getByRole('button', { name: ptBr.modal.close })).toBeInTheDocument()
+})
+
+it('should not render the close button when hasCloseIcon is false', () => {
+  const { queryByRole } = render(
+    <LocaleContext.Provider value={ptBr}>
+      <ModalHeader {...defaultProps} hasCloseIcon={false} />
+    </LocaleContext.Provider>
+  )
+
+  expect(queryByRole('button', { name: ptBr.modal.close })).toBeNull()
+})
+
+it('should call onCloseButtonClick when close button is clicked', () => {
+  const onCloseMock = jest.fn()
+  const { getByRole } = render(
+    <LocaleContext.Provider value={ptBr}>
+      <ModalHeader {...defaultProps} onCloseButtonClick={onCloseMock} />
+    </LocaleContext.Provider>
+  )
+
+  expect(onCloseMock).not.toHaveBeenCalled()
+  fireEvent.click(getByRole('button', { name: ptBr.modal.close }))
+  expect(onCloseMock).toHaveBeenCalledTimes(1)
 })
