@@ -9,7 +9,7 @@ import { ModalHeader, ModalTitleType } from './ModalHeader'
 export interface ModalContainerProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'style' | 'title'> {
   style?: ExternalStyles
   hasCloseIcon?: boolean
-  onClose: () => void
+  onClose?(): any
   title?: ModalTitleType
   titleBackgroundColor?: Color
 }
@@ -25,10 +25,10 @@ export const ModalContainer = forwardRef<HTMLDivElement, ModalContainerProps>((p
           title={title}
           backgroundColor={titleBackgroundColor}
           hasCloseIcon={hasCloseIcon}
-          onClose={onClose}
+          onCloseButtonClick={onClose}
         />
       ) : (
-        hasCloseIcon && <ModalCloseButton onClose={onClose} style={classes.closeButton} />
+        hasCloseIcon && <ModalCloseButton onClick={onClose} style={classes.closeButton} />
       )}
 
       {children}
