@@ -1,5 +1,5 @@
 import FocusTrap from 'focus-trap-react'
-import React, { Ref, useEffect } from 'react'
+import React, { useEffect, Ref } from 'react'
 import { Theme, useStyles } from '../../styles'
 import { zIndexLevel } from '../../styles/theme/zIndex'
 import { Portal } from '../Portal'
