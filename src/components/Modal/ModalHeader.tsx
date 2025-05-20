@@ -40,10 +40,15 @@ export const ModalHeader = (props: ModalHeaderProps) => {
       hSpacing={1}
       justifyContent='space-between'
       alignItems='flex-start'
-      data-testid='modal-header'
       style={classes.header}
+      data-testid='modal-header'
     >
-      <HFlow hSpacing={1.25} justifyContent='flex-start' alignItems={subtitle ? 'flex-start' : 'center'}>
+      <HFlow
+        hSpacing={1.25}
+        justifyContent='flex-start'
+        alignItems={subtitle ? 'flex-start' : 'center'}
+        data-testid='modal-header-title-area'
+      >
         {icon && renderIcon()}
         <VFlow vSpacing={0}>
           <Heading level={1} color='normal' fontWeight='bold'>
