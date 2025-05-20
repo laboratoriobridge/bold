@@ -30,7 +30,7 @@ describe('modal header component', () => {
 
   describe('icon', () => {
     it('should render the icon when "icon" prop is provided', () => {
-      render(<ModalHeader title='title' icon='infoCircleOutline' />)
+      render(<ModalHeader title='title' hasCloseIcon={false} icon='infoCircleOutline' />)
       expect(screen.getByTestId('modal-header').querySelector('svg')).toBeInTheDocument()
     })
 
@@ -44,7 +44,7 @@ describe('modal header component', () => {
 
       render(
         <ThemeContext.Provider value={theme}>
-          <ModalHeader title='title' icon='infoCircleOutline' iconFill='primary' />
+          <ModalHeader title='title' hasCloseIcon={false} icon='infoCircleOutline' iconFill='primary' />
         </ThemeContext.Provider>
       )
 
@@ -59,7 +59,7 @@ describe('modal header component', () => {
 
       render(
         <ThemeContext.Provider value={theme}>
-          <ModalHeader title='title' icon='infoCircleOutline' iconStroke='primary' />
+          <ModalHeader title='title' hasCloseIcon={false} icon='infoCircleOutline' iconStroke='primary' />
         </ThemeContext.Provider>
       )
 
@@ -70,7 +70,7 @@ describe('modal header component', () => {
     })
 
     it('should ignore iconFill and iconStroke when "icon" prop is not provided', () => {
-      render(<ModalHeader title='title' iconFill='primary' iconStroke='secondary' hasCloseIcon={false} />)
+      render(<ModalHeader title='title' hasCloseIcon={false} iconFill='primary' iconStroke='secondary' />)
       expect(screen.getByTestId('modal-header').querySelector('svg')).toBeNull()
     })
   })
