@@ -5,12 +5,12 @@ import { Button } from '../Button'
 import { Icon } from '../Icon'
 import { Tooltip } from '../Tooltip'
 
-interface ModalCloseButton {
+interface ModalCloseButtonProps {
   onClick: () => void
   style?: ExternalStyles
 }
 
-export const ModalCloseButton = (props: ModalCloseButton) => {
+export const ModalCloseButton = (props: ModalCloseButtonProps) => {
   const { onClick, style: externalStyles } = props
 
   const locale = useLocale()
