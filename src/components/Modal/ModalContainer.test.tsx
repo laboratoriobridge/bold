@@ -60,7 +60,7 @@ describe('conditional rendering and prop passing to ModalHeader', () => {
     jest.clearAllMocks()
   })
 
-  it('does not render ModalHeader when headerTitle is not provided', () => {
+  it('does not render ModalHeader when title is not provided', () => {
     render(<ModalContainer>Container content</ModalContainer>)
 
     expect(ModalHeader).not.toHaveBeenCalled()
