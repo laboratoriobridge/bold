@@ -71,12 +71,10 @@ describe('conditional rendering and prop passing to ModalHeader', () => {
 
     render(
       <ModalContainer
-        headerTitle='title'
-        headerSubtitle='subtitle'
+        title='title'
+        subtitle='subtitle'
         headerIcon='infoCircleOutline'
-        headerIconFill='primary'
-        headerIconStroke='secondary'
-        headerBackgroundColor='background'
+        headerBackgroundColor='red'
         hasHeaderDivider={true}
         hasCloseIcon={true}
         onClose={onClose}
@@ -90,9 +88,7 @@ describe('conditional rendering and prop passing to ModalHeader', () => {
         title: 'title',
         subtitle: 'subtitle',
         icon: 'infoCircleOutline',
-        iconFill: 'primary',
-        iconStroke: 'secondary',
-        backgroundColor: 'background',
+        backgroundColor: 'red',
         hasDivider: true,
         hasCloseIcon: true,
         onCloseButtonClick: onClose,
