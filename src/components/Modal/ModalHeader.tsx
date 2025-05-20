@@ -2,12 +2,16 @@ import React from 'react'
 import { Theme, useStyles } from '../../styles'
 import { Heading } from '../Heading'
 import { IconImage } from '../Icon'
-import { Icon, IconProps } from '../Icon/Icon'
+import { Icon, IconColor } from '../Icon/Icon'
 import { HFlow } from '../HFlow'
 import { VFlow } from '../VFlow'
 import { ModalCloseButton } from './ModalCloseButton'
 
-export type HeaderIconObject = Omit<IconProps, 'style' | 'size'>
+export type HeaderIconObject = {
+  icon: IconImage
+  fill?: IconColor
+  stroke?: IconColor
+}
 
 export type HeaderIconType = IconImage | HeaderIconObject
 
@@ -15,16 +19,16 @@ export interface ModalHeaderProps {
   title: string
   subtitle?: string
   icon?: HeaderIconType
-  backgroundColor?: string
+  background?: string
   hasCloseIcon?: boolean
-  hasDivider?: boolean
+  hasBorder?: boolean
   onCloseButtonClick?: () => void
 }
 
 export const ModalHeader = (props: ModalHeaderProps) => {
-  const { title, subtitle, icon, backgroundColor, hasDivider = true, hasCloseIcon = true, onCloseButtonClick } = props
+  const { title, subtitle, icon, background, hasBorder = true, hasCloseIcon = true, onCloseButtonClick } = props
 
-  const { classes } = useStyles(createStyles, backgroundColor, hasDivider)
+  const { classes } = useStyles(createStyles, background, hasBorder)
 
   const renderIcon = () => {
     if (typeof icon === 'string') {
@@ -66,14 +70,14 @@ export const ModalHeader = (props: ModalHeaderProps) => {
   )
 }
 
-export const createStyles = (theme: Theme, backgroundColor: string, hasDivider: boolean) => ({
+export const createStyles = (theme: Theme, background: string, hasDivider: boolean) => ({
   header: {
     position: 'relative',
     zIndex: 1,
     width: '100%',
     height: 'fit-content',
     padding: '1.5rem 1rem 1rem 2rem',
-    backgroundColor: backgroundColor ? backgroundColor : theme.pallete.surface.main,
+    backgroundColor: background ? background : theme.pallete.surface.main,
     ...(hasDivider && {
       boxShadow: `0 1px 5px 0 ${theme.pallete.divider}, 0 2px 1px -1px ${theme.pallete.divider}`,
     }),

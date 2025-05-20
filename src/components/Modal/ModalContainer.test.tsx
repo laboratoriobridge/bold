@@ -74,8 +74,8 @@ describe('conditional rendering and prop passing to ModalHeader', () => {
         title='title'
         subtitle='subtitle'
         headerIcon='infoCircleOutline'
-        headerBackgroundColor='red'
-        hasHeaderDivider={true}
+        headerBackground='red'
+        hasHeaderBorder={true}
         hasCloseIcon={true}
         onClose={onClose}
       >
@@ -88,8 +88,8 @@ describe('conditional rendering and prop passing to ModalHeader', () => {
         title: 'title',
         subtitle: 'subtitle',
         icon: 'infoCircleOutline',
-        backgroundColor: 'red',
-        hasDivider: true,
+        headerBackground: 'red',
+        hasHeaderBorder: true,
         hasCloseIcon: true,
         onCloseButtonClick: onClose,
       }),

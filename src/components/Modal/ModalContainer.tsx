@@ -12,8 +12,8 @@ export interface ModalContainerProps extends Omit<React.HTMLAttributes<HTMLDivEl
   title?: string
   subtitle?: string
   headerIcon?: HeaderIconType
-  headerBackgroundColor?: string
-  hasHeaderDivider?: boolean
+  headerBackground?: string
+  hasHeaderBorder?: boolean
 }
 
 export const ModalContainer = forwardRef<HTMLDivElement, ModalContainerProps>((props, ref) => {
@@ -25,8 +25,8 @@ export const ModalContainer = forwardRef<HTMLDivElement, ModalContainerProps>((p
     title,
     subtitle,
     headerIcon,
-    headerBackgroundColor,
-    hasHeaderDivider,
+    headerBackground,
+    hasHeaderBorder,
     ...rest
   } = props
   const { classes, css } = useStyles(styles)
@@ -38,8 +38,8 @@ export const ModalContainer = forwardRef<HTMLDivElement, ModalContainerProps>((p
           title={title}
           subtitle={subtitle}
           icon={headerIcon}
-          backgroundColor={headerBackgroundColor}
-          hasDivider={hasHeaderDivider}
+          background={headerBackground}
+          hasBorder={hasHeaderBorder}
           hasCloseIcon={hasCloseIcon}
           onCloseButtonClick={onClose}
         />

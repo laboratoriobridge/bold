@@ -77,16 +77,16 @@ describe('modal header component', () => {
   describe('styles', () => {
     const theme = createTheme()
 
-    it('should apply background-color when "backgroundColor" prop is provided', () => {
+    it('should apply background-color when "background" prop is provided', () => {
       render(
         <ThemeContext.Provider value={theme}>
-          <ModalHeader title='title' backgroundColor='red' />
+          <ModalHeader title='title' background='red' />
         </ThemeContext.Provider>
       )
       expect(screen.getByTestId('modal-header')).toHaveStyle(`background-color: red`)
     })
 
-    it('should apply background-color default when "backgroundColor" prop is not provided', () => {
+    it('should apply background-color default when "background" prop is not provided', () => {
       render(
         <ThemeContext.Provider value={theme}>
           <ModalHeader title='title' />
@@ -95,10 +95,10 @@ describe('modal header component', () => {
       expect(screen.getByTestId('modal-header')).toHaveStyle(`background-color: ${theme.pallete.surface.main}`)
     })
 
-    it('should apply box-shadow when "hasDivider" is true', () => {
+    it('should apply box-shadow when "hasBorder" is true', () => {
       render(
         <ThemeContext.Provider value={theme}>
-          <ModalHeader title='title' hasDivider={true} />
+          <ModalHeader title='title' hasBorder={true} />
         </ThemeContext.Provider>
       )
       expect(screen.getByTestId('modal-header')).toHaveStyle(
@@ -106,7 +106,7 @@ describe('modal header component', () => {
       )
     })
 
-    it('should apply box-shadow when "hasDivider" is not provided (default true)', () => {
+    it('should apply box-shadow when "hasBorder" is not provided (default true)', () => {
       render(
         <ThemeContext.Provider value={theme}>
           <ModalHeader title='title' />
@@ -117,8 +117,8 @@ describe('modal header component', () => {
       )
     })
 
-    it('should not apply box-shadow when "hasDivider" is false', () => {
-      render(<ModalHeader title='title' hasDivider={false} />)
+    it('should not apply box-shadow when "hasBorder" is false', () => {
+      render(<ModalHeader title='title' hasBorder={false} />)
       expect(getComputedStyle(screen.getByTestId('modal-header')).boxShadow).toBe('')
     })
   })

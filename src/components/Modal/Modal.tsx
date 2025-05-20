@@ -46,8 +46,8 @@ export function Modal(props: ModalProps) {
     title,
     subtitle,
     headerIcon,
-    headerBackgroundColor,
-    hasHeaderDivider,
+    headerBackground,
+    hasHeaderBorder,
     depthLevel,
     manageOverflow,
     ...rest
@@ -96,8 +96,8 @@ export function Modal(props: ModalProps) {
                       title={title}
                       subtitle={subtitle}
                       headerIcon={headerIcon}
-                      headerBackgroundColor={headerBackgroundColor}
-                      hasHeaderDivider={hasHeaderDivider}
+                      headerBackground={headerBackground}
+                      hasHeaderBorder={hasHeaderBorder}
                       style={css(classes.container, classes[size], style)}
                       onClose={onClose}
                       {...rest}
