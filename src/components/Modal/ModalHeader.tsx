@@ -1,4 +1,4 @@
-import React, { ReactElement, isValidElement } from 'react'
+import React from 'react'
 import { Theme, useStyles } from '../../styles'
 import { Heading } from '../Heading'
 import { IconImage } from '../Icon'
@@ -9,7 +9,7 @@ import { ModalCloseButton } from './ModalCloseButton'
 
 export type HeaderIconObject = Omit<IconProps, 'style' | 'size'>
 
-export type HeaderIconType = ReactElement<IconProps, typeof Icon> | IconImage | HeaderIconObject
+export type HeaderIconType = IconImage | HeaderIconObject
 
 export interface ModalHeaderProps {
   title: string
@@ -27,10 +27,8 @@ export const ModalHeader = (props: ModalHeaderProps) => {
   const { classes } = useStyles(createStyles, backgroundColor, hasDivider)
 
   const renderIcon = () => {
-    if (isValidElement(icon)) {
-      return icon
-    } else if (typeof icon === 'string') {
-      return <Icon icon={icon} size={3} fill='none' stroke='none' />
+    if (typeof icon === 'string') {
+      return <Icon icon={icon} size={3} />
     } else {
       const { icon: iconName, fill, stroke } = icon as HeaderIconObject
       return <Icon icon={iconName} size={3} fill={fill} stroke={stroke} />
