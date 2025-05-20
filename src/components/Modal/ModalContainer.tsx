@@ -3,7 +3,7 @@ import React, { forwardRef } from 'react'
 import { ExternalStyles, Theme, useStyles } from '../../styles'
 import { Omit } from '../../util'
 import { ModalCloseButton } from './ModalCloseButton'
-import { HeaderIconObject, ModalHeader } from './ModalHeader'
+import { HeaderIconType, ModalHeader } from './ModalHeader'
 
 export interface ModalContainerProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'style' | 'title'> {
   style?: ExternalStyles
@@ -11,7 +11,7 @@ export interface ModalContainerProps extends Omit<React.HTMLAttributes<HTMLDivEl
   onClose?(): any
   title?: string
   subtitle?: string
-  headerIcon?: HeaderIconObject
+  headerIcon?: HeaderIconType
   headerBackgroundColor?: string
   hasHeaderDivider?: boolean
 }
