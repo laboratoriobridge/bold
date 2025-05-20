@@ -75,7 +75,7 @@ describe('conditional rendering and prop passing to ModalHeader', () => {
         subtitle='subtitle'
         headerIcon='infoCircleOutline'
         headerBackground='red'
-        hasHeaderBorder={true}
+        showHeaderBorder={true}
         hasCloseIcon={true}
         onClose={onClose}
       >
@@ -89,11 +89,11 @@ describe('conditional rendering and prop passing to ModalHeader', () => {
         subtitle: 'subtitle',
         icon: 'infoCircleOutline',
         background: 'red',
-        hasBorder: true,
-        hasCloseIcon: true,
+        showBorder: true,
+        showCloseIcon: true,
         onCloseButtonClick: onClose,
       }),
-      expect.anything()
+      {}
     )
   })
 })
