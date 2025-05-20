@@ -1,5 +1,6 @@
 import { fireEvent, render } from '@testing-library/react'
 import React from 'react'
+
 import { LocaleContext } from '../../i18n'
 import ptBr from '../../i18n/locales/pt-BR'
 
@@ -54,7 +55,7 @@ it('should provide a ref to the div html element', () => {
   expect(ref.current.tagName).toEqual('DIV')
 })
 
-describe('ModalContainer: conditional rendering and prop passing to ModalHeader', () => {
+describe('conditional rendering and prop passing to ModalHeader', () => {
   beforeEach(() => {
     jest.clearAllMocks()
   })
