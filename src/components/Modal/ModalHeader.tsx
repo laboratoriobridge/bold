@@ -21,7 +21,7 @@ export interface ModalHeaderProps {
   hasCloseIcon?: boolean
   backgroundColor?: SurfaceColor
   hasDivider?: boolean
-  onCloseButtonClick: () => void
+  onCloseButtonClick?: () => void
 }
 
 export const ModalHeader = (props: ModalHeaderProps) => {
@@ -33,7 +33,7 @@ export const ModalHeader = (props: ModalHeaderProps) => {
     iconStroke,
     backgroundColor = 'main',
     hasDivider = true,
-    hasCloseIcon,
+    hasCloseIcon = true,
     onCloseButtonClick,
   } = props
 
