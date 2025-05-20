@@ -47,7 +47,7 @@ export function Modal(props: ModalProps) {
     subtitle,
     headerIcon,
     headerBackground,
-    hasHeaderBorder,
+    showHeaderBorder,
     depthLevel,
     manageOverflow,
     ...rest
@@ -97,7 +97,7 @@ export function Modal(props: ModalProps) {
                       subtitle={subtitle}
                       headerIcon={headerIcon}
                       headerBackground={headerBackground}
-                      hasHeaderBorder={hasHeaderBorder}
+                      showHeaderBorder={showHeaderBorder}
                       style={css(classes.container, classes[size], style)}
                       onClose={onClose}
                       {...rest}

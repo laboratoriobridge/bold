@@ -2,10 +2,11 @@ import React from 'react'
 import { Theme, useStyles } from '../../styles'
 import { Heading } from '../Heading'
 import { IconImage } from '../Icon'
-import { Icon, IconColor } from '../Icon/Icon'
+import { IconColor } from '../Icon/Icon'
 import { HFlow } from '../HFlow'
 import { VFlow } from '../VFlow'
 import { ModalCloseButton } from './ModalCloseButton'
+import { ModalHeaderIcon } from './ModalHeaderIcon'
 
 export type HeaderIconObject = {
   icon: IconImage
@@ -15,29 +16,20 @@ export type HeaderIconObject = {
 
 export type HeaderIconType = IconImage | HeaderIconObject
 
-export interface ModalHeaderProps {
+interface ModalHeaderProps {
   title: string
   subtitle?: string
   icon?: HeaderIconType
   background?: string
-  hasCloseIcon?: boolean
-  hasBorder?: boolean
+  showBorder?: boolean
+  showCloseIcon?: boolean
   onCloseButtonClick?: () => void
 }
 
 export const ModalHeader = (props: ModalHeaderProps) => {
-  const { title, subtitle, icon, background, hasBorder = true, hasCloseIcon = true, onCloseButtonClick } = props
+  const { title, subtitle, icon, background, showBorder = true, showCloseIcon = true, onCloseButtonClick } = props
 
-  const { classes } = useStyles(createStyles, background, hasBorder)
-
-  const renderIcon = () => {
-    if (typeof icon === 'string') {
-      return <Icon icon={icon} size={3} />
-    } else {
-      const { icon: iconName, fill, stroke } = icon as HeaderIconObject
-      return <Icon icon={iconName} size={3} fill={fill} stroke={stroke} />
-    }
-  }
+  const { classes } = useStyles(createStyles, background, showBorder)
 
   return (
     <HFlow
@@ -53,7 +45,7 @@ export const ModalHeader = (props: ModalHeaderProps) => {
         alignItems={subtitle ? 'flex-start' : 'center'}
         data-testid='modal-header-title-area'
       >
-        {icon && renderIcon()}
+        {icon && <ModalHeaderIcon icon={icon} />}
         <VFlow vSpacing={0}>
           <Heading level={1} color='normal' fontWeight='bold'>
             {title}
@@ -65,12 +57,12 @@ export const ModalHeader = (props: ModalHeaderProps) => {
           )}
         </VFlow>
       </HFlow>
-      {hasCloseIcon && <ModalCloseButton onClick={onCloseButtonClick} />}
+      {showCloseIcon && <ModalCloseButton onClick={onCloseButtonClick} />}
     </HFlow>
   )
 }
 
-export const createStyles = (theme: Theme, background: string, hasDivider: boolean) => ({
+export const createStyles = (theme: Theme, background: string, showBorder: boolean) => ({
   header: {
     position: 'relative',
     zIndex: 1,
@@ -78,7 +70,7 @@ export const createStyles = (theme: Theme, background: string, hasDivider: boole
     height: 'fit-content',
     padding: '1.5rem 1rem 1rem 2rem',
     backgroundColor: background ? background : theme.pallete.surface.main,
-    ...(hasDivider && {
+    ...(showBorder && {
       boxShadow: `0 1px 5px 0 ${theme.pallete.divider}, 0 2px 1px -1px ${theme.pallete.divider}`,
     }),
   } as React.CSSProperties,
