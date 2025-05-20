@@ -1,7 +1,7 @@
 import React from 'react'
 import { fireEvent, render, screen } from '@testing-library/react'
 import { createTheme, ThemeContext } from '../../styles'
-import { ModalHeader } from './ModalHeader'
+import { HeaderIconObject, ModalHeader } from './ModalHeader'
 
 describe('modal header component', () => {
   describe('basic rendering', () => {
@@ -29,48 +29,33 @@ describe('modal header component', () => {
   })
 
   describe('icon', () => {
-    it('should render the icon when "icon" prop is provided', () => {
+    it('should render the icon when "icon" prop is provided as IconImage', () => {
       render(<ModalHeader title='title' hasCloseIcon={false} icon='infoCircleOutline' />)
       expect(screen.getByTestId('modal-header').querySelector('svg')).toBeInTheDocument()
     })
 
-    it('should not render icon when "icon" prop is not provided', () => {
-      render(<ModalHeader title='title' hasCloseIcon={false} />)
-      expect(screen.getByTestId('modal-header').querySelector('svg')).toBeNull()
-    })
-
-    it('should apply fill style to the svg when "iconFill" prop is provided', () => {
+    it('should render the icon when "icon" prop is provided as HeaderIconObject', () => {
       const theme = createTheme()
+      const iconObj: HeaderIconObject = {
+        icon: 'infoCircleOutline',
+        fill: 'primary',
+        stroke: 'danger',
+      }
 
       render(
         <ThemeContext.Provider value={theme}>
-          <ModalHeader title='title' hasCloseIcon={false} icon='infoCircleOutline' iconFill='primary' />
+          <ModalHeader title='title' hasCloseIcon={false} icon={iconObj} />
         </ThemeContext.Provider>
       )
 
       const svg = screen.getByTestId('modal-header').querySelector('svg')
       expect(svg).toBeInTheDocument()
-
       expect(svg).toHaveStyle(`fill: ${theme.pallete.primary.main};`)
+      expect(svg).toHaveStyle(`stroke: ${theme.pallete.status.danger.main};`)
     })
 
-    it('should apply stroke style to the svg when "iconStroke" prop is provided', () => {
-      const theme = createTheme()
-
-      render(
-        <ThemeContext.Provider value={theme}>
-          <ModalHeader title='title' hasCloseIcon={false} icon='infoCircleOutline' iconStroke='primary' />
-        </ThemeContext.Provider>
-      )
-
-      const svg = screen.getByTestId('modal-header').querySelector('svg')
-      expect(svg).toBeInTheDocument()
-
-      expect(svg).toHaveStyle(`stroke: ${theme.pallete.primary.main};`)
-    })
-
-    it('should ignore iconFill and iconStroke when "icon" prop is not provided', () => {
-      render(<ModalHeader title='title' hasCloseIcon={false} iconFill='primary' iconStroke='secondary' />)
+    it('should not render svg icon when icon prop is not provided', () => {
+      render(<ModalHeader title='title' hasCloseIcon={false} />)
       expect(screen.getByTestId('modal-header').querySelector('svg')).toBeNull()
     })
   })
@@ -81,10 +66,19 @@ describe('modal header component', () => {
     it('should apply background-color when "backgroundColor" prop is provided', () => {
       render(
         <ThemeContext.Provider value={theme}>
-          <ModalHeader title='title' backgroundColor='background' />
+          <ModalHeader title='title' backgroundColor='red' />
         </ThemeContext.Provider>
       )
-      expect(screen.getByTestId('modal-header')).toHaveStyle(`background-color: ${theme.pallete.surface.background}`)
+      expect(screen.getByTestId('modal-header')).toHaveStyle(`background-color: red`)
+    })
+
+    it('should apply background-color default when "backgroundColor" prop is not provided', () => {
+      render(
+        <ThemeContext.Provider value={theme}>
+          <ModalHeader title='title' />
+        </ThemeContext.Provider>
+      )
+      expect(screen.getByTestId('modal-header')).toHaveStyle(`background-color: ${theme.pallete.surface.main}`)
     })
 
     it('should apply box-shadow when "hasDivider" is true', () => {
