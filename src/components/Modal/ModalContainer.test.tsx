@@ -1,12 +1,16 @@
 import { fireEvent, render } from '@testing-library/react'
-import * as React from 'react'
-
+import React from 'react'
 import { LocaleContext } from '../../i18n'
 import ptBr from '../../i18n/locales/pt-BR'
 
 import { ModalContainer } from './ModalContainer'
+import { ModalHeader } from './ModalHeader'
 
 jest.mock('../../util/string')
+
+jest.mock('./ModalHeader', () => ({
+  ModalHeader: jest.fn((props) => <div {...props} />),
+}))
 
 it('should render correctly', () => {
   const { container } = render(<ModalContainer>Container</ModalContainer>)
@@ -15,18 +19,6 @@ it('should render correctly', () => {
 
 it('should accept the "style" prop', () => {
   const { container } = render(<ModalContainer style={{ color: 'red' }}>Container</ModalContainer>)
-  expect(container).toMatchSnapshot()
-})
-
-it('should accept the "title" prop', () => {
-  const { container } = render(<ModalContainer title='Title'>Container</ModalContainer>)
-
-  expect(container).toMatchSnapshot()
-})
-
-it('should accept the "titleBackgroundColor" prop', () => {
-  const { container } = render(<ModalContainer titleBackgroundColor='red'>Container</ModalContainer>)
-
   expect(container).toMatchSnapshot()
 })
 
@@ -62,20 +54,49 @@ it('should provide a ref to the div html element', () => {
   expect(ref.current.tagName).toEqual('DIV')
 })
 
-it('renders ModalHeader when title is provided', () => {
-  const onCloseMock = jest.fn()
-  const { getByTestId, getByText } = render(
-    <ModalContainer title='Title' onClose={onCloseMock}>
-      Container
-    </ModalContainer>
-  )
+describe('ModalContainer: conditional rendering and prop passing to ModalHeader', () => {
+  beforeEach(() => {
+    jest.clearAllMocks()
+  })
 
-  expect(getByTestId('modal-header')).toBeInTheDocument()
-  expect(getByText('Title')).toBeInTheDocument()
-})
+  it('does not render ModalHeader when headerTitle is not provided', () => {
+    render(<ModalContainer>Container content</ModalContainer>)
 
-it('does not render ModalHeader when title is not provided', () => {
-  const { queryByTestId } = render(<ModalContainer>Container</ModalContainer>)
+    expect(ModalHeader).not.toHaveBeenCalled()
+  })
 
-  expect(queryByTestId('modal-header')).not.toBeInTheDocument()
+  it('passes all expected props correctly to ModalHeader', () => {
+    const onClose = jest.fn()
+
+    render(
+      <ModalContainer
+        headerTitle='title'
+        headerSubtitle='subtitle'
+        headerIcon='infoCircleOutline'
+        headerIconFill='primary'
+        headerIconStroke='secondary'
+        headerBackgroundColor='background'
+        hasHeaderDivider={true}
+        hasCloseIcon={true}
+        onClose={onClose}
+      >
+        Container
+      </ModalContainer>
+    )
+
+    expect(ModalHeader).toHaveBeenCalledWith(
+      expect.objectContaining({
+        title: 'title',
+        subtitle: 'subtitle',
+        icon: 'infoCircleOutline',
+        iconFill: 'primary',
+        iconStroke: 'secondary',
+        backgroundColor: 'background',
+        hasDivider: true,
+        hasCloseIcon: true,
+        onCloseButtonClick: onClose,
+      }),
+      expect.anything()
+    )
+  })
 })

@@ -1,70 +1,155 @@
 import React from 'react'
-import { fireEvent, render } from '@testing-library/react'
-import { LocaleContext } from '../../i18n'
-import ptBr from '../../i18n/locales/pt-BR'
-import { ModalHeader, ModalHeaderProps } from './ModalHeader'
+import { fireEvent, render, screen } from '@testing-library/react'
+import { createTheme, ThemeContext } from '../../styles'
+import { ModalHeader } from './ModalHeader'
 
-const defaultProps: ModalHeaderProps = {
-  title: 'Title',
-  backgroundColor: 'red',
-  hasCloseIcon: true,
-  onCloseButtonClick: jest.fn(),
-}
+describe('modal header component', () => {
+  describe('basic rendering', () => {
+    it('should render correctly', () => {
+      const { container } = render(<ModalHeader title='title' />)
+      expect(container).toMatchSnapshot()
+    })
 
-it('should render correctly', () => {
-  const { container } = render(<ModalHeader {...defaultProps} />)
+    it('should render the title when "title" prop is provided', () => {
+      render(<ModalHeader title='title' />)
+      expect(screen.getByText('title')).toBeInTheDocument()
+    })
 
-  expect(container).toMatchSnapshot()
-})
+    it('should render the subtitle when "subtitle" prop is provided', () => {
+      render(<ModalHeader title='title' subtitle='subtitle' />)
+      expect(screen.getByText('subtitle')).toBeInTheDocument()
+    })
 
-it('should render with string title', () => {
-  const { getByText } = render(<ModalHeader {...defaultProps} />)
+    it('should render only the title when only "title" prop is provided', () => {
+      render(<ModalHeader title='title' />)
+      const texts = screen.getAllByText('title')
+      expect(texts).toHaveLength(1)
+      expect(screen.getByTestId('modal-header').textContent).toBe('title')
+    })
+  })
 
-  expect(getByText('Title')).toBeInTheDocument()
-})
+  describe('icon', () => {
+    it('should render the icon when "icon" prop is provided', () => {
+      render(<ModalHeader title='title' icon='infoCircleOutline' />)
+      expect(screen.getByTestId('modal-header').querySelector('svg')).toBeInTheDocument()
+    })
 
-it('should render with JSX element as title', () => {
-  const jsxTitle = <div data-testid='custom-jsx-element'>Custom JSX Element</div>
-  const { getByTestId } = render(<ModalHeader {...defaultProps} title={jsxTitle} />)
+    it('should not render icon when "icon" prop is not provided', () => {
+      render(<ModalHeader title='title' hasCloseIcon={false} />)
+      expect(screen.getByTestId('modal-header').querySelector('svg')).toBeNull()
+    })
 
-  expect(getByTestId('custom-jsx-element')).toBeInTheDocument()
-})
+    it('should apply fill style to the svg when "iconFill" prop is provided', () => {
+      const theme = createTheme()
 
-it('should apply backgroundColor prop correctly', () => {
-  const { container } = render(<ModalHeader {...defaultProps} />)
+      render(
+        <ThemeContext.Provider value={theme}>
+          <ModalHeader title='title' icon='infoCircleOutline' iconFill='primary' />
+        </ThemeContext.Provider>
+      )
 
-  expect(container.firstChild).toHaveStyle('background-color: red')
-})
+      const svg = screen.getByTestId('modal-header').querySelector('svg')
+      expect(svg).toBeInTheDocument()
 
-it('should render the close button when hasCloseIcon is true', () => {
-  const { getByRole } = render(
-    <LocaleContext.Provider value={ptBr}>
-      <ModalHeader {...defaultProps} />
-    </LocaleContext.Provider>
-  )
+      expect(svg).toHaveStyle(`fill: ${theme.pallete.primary.main};`)
+    })
 
-  expect(getByRole('button', { name: ptBr.modal.close })).toBeInTheDocument()
-})
+    it('should apply stroke style to the svg when "iconStroke" prop is provided', () => {
+      const theme = createTheme()
 
-it('should not render the close button when hasCloseIcon is false', () => {
-  const { queryByRole } = render(
-    <LocaleContext.Provider value={ptBr}>
-      <ModalHeader {...defaultProps} hasCloseIcon={false} />
-    </LocaleContext.Provider>
-  )
+      render(
+        <ThemeContext.Provider value={theme}>
+          <ModalHeader title='title' icon='infoCircleOutline' iconStroke='primary' />
+        </ThemeContext.Provider>
+      )
 
-  expect(queryByRole('button', { name: ptBr.modal.close })).toBeNull()
-})
+      const svg = screen.getByTestId('modal-header').querySelector('svg')
+      expect(svg).toBeInTheDocument()
 
-it('should call onCloseButtonClick when close button is clicked', () => {
-  const onCloseMock = jest.fn()
-  const { getByRole } = render(
-    <LocaleContext.Provider value={ptBr}>
-      <ModalHeader {...defaultProps} onCloseButtonClick={onCloseMock} />
-    </LocaleContext.Provider>
-  )
+      expect(svg).toHaveStyle(`stroke: ${theme.pallete.primary.main};`)
+    })
 
-  expect(onCloseMock).not.toHaveBeenCalled()
-  fireEvent.click(getByRole('button', { name: ptBr.modal.close }))
-  expect(onCloseMock).toHaveBeenCalledTimes(1)
+    it('should ignore iconFill and iconStroke when "icon" prop is not provided', () => {
+      render(<ModalHeader title='title' iconFill='primary' iconStroke='secondary' hasCloseIcon={false} />)
+      expect(screen.getByTestId('modal-header').querySelector('svg')).toBeNull()
+    })
+  })
+
+  describe('styles', () => {
+    const theme = createTheme()
+
+    it('should apply background-color when "backgroundColor" prop is provided', () => {
+      render(
+        <ThemeContext.Provider value={theme}>
+          <ModalHeader title='title' backgroundColor='background' />
+        </ThemeContext.Provider>
+      )
+      expect(screen.getByTestId('modal-header')).toHaveStyle(`background-color: ${theme.pallete.surface.background}`)
+    })
+
+    it('should apply box-shadow when "hasDivider" is true', () => {
+      render(
+        <ThemeContext.Provider value={theme}>
+          <ModalHeader title='title' hasDivider={true} />
+        </ThemeContext.Provider>
+      )
+      expect(screen.getByTestId('modal-header')).toHaveStyle(
+        `box-shadow: 0 1px 5px 0 ${theme.pallete.divider},0 2px 1px -1px ${theme.pallete.divider}`
+      )
+    })
+
+    it('should apply box-shadow when "hasDivider" is not provided (default true)', () => {
+      render(
+        <ThemeContext.Provider value={theme}>
+          <ModalHeader title='title' />
+        </ThemeContext.Provider>
+      )
+      expect(screen.getByTestId('modal-header')).toHaveStyle(
+        `box-shadow: 0 1px 5px 0 ${theme.pallete.divider},0 2px 1px -1px ${theme.pallete.divider}`
+      )
+    })
+
+    it('should not apply box-shadow when "hasDivider" is false', () => {
+      render(<ModalHeader title='title' hasDivider={false} />)
+      expect(getComputedStyle(screen.getByTestId('modal-header')).boxShadow).toBe('')
+    })
+  })
+
+  describe('close button', () => {
+    it('should render close button when "hasCloseIcon" is true', () => {
+      render(<ModalHeader title='title' hasCloseIcon={true} />)
+      expect(screen.getByRole('button')).toBeInTheDocument()
+    })
+
+    it('should render close button when "hasCloseIcon" is not provided (default true)', () => {
+      render(<ModalHeader title='title' />)
+      expect(screen.getByRole('button')).toBeInTheDocument()
+    })
+
+    it('should not render close button when "hasCloseIcon" is false', () => {
+      render(<ModalHeader title='title' hasCloseIcon={false} />)
+      expect(screen.queryByRole('button')).toBeNull()
+    })
+
+    it('should call onCloseButtonClick when close button is clicked and "hasCloseIcon" is true', () => {
+      const onCloseMock = jest.fn()
+      render(<ModalHeader title='title' hasCloseIcon={true} onCloseButtonClick={onCloseMock} />)
+      fireEvent.click(screen.getByRole('button'))
+      expect(onCloseMock).toHaveBeenCalledTimes(1)
+    })
+
+    it('should call onCloseButtonClick when close button is clicked and "hasCloseIcon" is not provided (default true)', () => {
+      const onCloseMock = jest.fn()
+      render(<ModalHeader title='title' onCloseButtonClick={onCloseMock} />)
+      fireEvent.click(screen.getByRole('button'))
+      expect(onCloseMock).toHaveBeenCalledTimes(1)
+    })
+
+    it('should not call onCloseButtonClick when "hasCloseIcon" is false', () => {
+      const onCloseMock = jest.fn()
+      render(<ModalHeader title='title' hasCloseIcon={false} onCloseButtonClick={onCloseMock} />)
+      expect(screen.queryByRole('button')).toBeNull()
+      expect(onCloseMock).not.toHaveBeenCalled()
+    })
+  })
 })
