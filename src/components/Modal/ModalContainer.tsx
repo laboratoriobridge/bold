@@ -2,21 +2,17 @@ import React, { forwardRef } from 'react'
 
 import { ExternalStyles, Theme, useStyles } from '../../styles'
 import { Omit } from '../../util'
-import { IconImage } from '../Icon'
-import { IconColor } from '../Icon/Icon'
 import { ModalCloseButton } from './ModalCloseButton'
-import { ModalHeader, SurfaceColor } from './ModalHeader'
+import { HeaderIconObject, ModalHeader } from './ModalHeader'
 
 export interface ModalContainerProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'style' | 'title'> {
   style?: ExternalStyles
   hasCloseIcon?: boolean
   onClose?(): any
-  headerTitle?: string
-  headerSubtitle?: string
-  headerIcon?: IconImage
-  headerIconFill?: IconColor
-  headerIconStroke?: IconColor
-  headerBackgroundColor?: SurfaceColor
+  title?: string
+  subtitle?: string
+  headerIcon?: HeaderIconObject
+  headerBackgroundColor?: string
   hasHeaderDivider?: boolean
 }
 
@@ -26,11 +22,9 @@ export const ModalContainer = forwardRef<HTMLDivElement, ModalContainerProps>((p
     onClose,
     hasCloseIcon,
     children,
-    headerTitle,
-    headerSubtitle,
+    title,
+    subtitle,
     headerIcon,
-    headerIconFill,
-    headerIconStroke,
     headerBackgroundColor,
     hasHeaderDivider,
     ...rest
@@ -39,13 +33,11 @@ export const ModalContainer = forwardRef<HTMLDivElement, ModalContainerProps>((p
 
   return (
     <div role='dialog' aria-modal='true' ref={ref} className={css(classes.wrapper, style)} {...rest}>
-      {headerTitle ? (
+      {title ? (
         <ModalHeader
-          title={headerTitle}
-          subtitle={headerSubtitle}
+          title={title}
+          subtitle={subtitle}
           icon={headerIcon}
-          iconFill={headerIconFill}
-          iconStroke={headerIconStroke}
           backgroundColor={headerBackgroundColor}
           hasDivider={hasHeaderDivider}
           hasCloseIcon={hasCloseIcon}

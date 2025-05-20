@@ -1,42 +1,41 @@
-import React from 'react'
-
-import { Color } from 'csstype'
+import React, { ReactElement, isValidElement } from 'react'
 import { Theme, useStyles } from '../../styles'
 import { Heading } from '../Heading'
 import { IconImage } from '../Icon'
-import { Icon, IconColor } from '../Icon/Icon'
+import { Icon, IconProps } from '../Icon/Icon'
 import { HFlow } from '../HFlow'
 import { VFlow } from '../VFlow'
 import { ModalCloseButton } from './ModalCloseButton'
 
-export type SurfaceColor = 'main' | 'background'
+export type HeaderIconObject = Omit<IconProps, 'style' | 'size'>
+
+export type HeaderIconType = ReactElement<IconProps, typeof Icon> | IconImage | HeaderIconObject
 
 export interface ModalHeaderProps {
   title: string
   subtitle?: string
-  icon?: IconImage
-  iconFill?: IconColor
-  iconStroke?: IconColor
+  icon?: HeaderIconType
+  backgroundColor?: string
   hasCloseIcon?: boolean
-  backgroundColor?: SurfaceColor
   hasDivider?: boolean
   onCloseButtonClick?: () => void
 }
 
 export const ModalHeader = (props: ModalHeaderProps) => {
-  const {
-    title,
-    subtitle,
-    icon,
-    iconFill,
-    iconStroke,
-    backgroundColor = 'main',
-    hasDivider = true,
-    hasCloseIcon = true,
-    onCloseButtonClick,
-  } = props
+  const { title, subtitle, icon, backgroundColor, hasDivider = true, hasCloseIcon = true, onCloseButtonClick } = props
 
   const { classes } = useStyles(createStyles, backgroundColor, hasDivider)
+
+  const renderIcon = () => {
+    if (isValidElement(icon)) {
+      return icon
+    } else if (typeof icon === 'string') {
+      return <Icon icon={icon} size={3} fill='none' stroke='none' />
+    } else {
+      const { icon: iconName, fill, stroke } = icon as HeaderIconObject
+      return <Icon icon={iconName} size={3} fill={fill} stroke={stroke} />
+    }
+  }
 
   return (
     <HFlow
@@ -46,8 +45,8 @@ export const ModalHeader = (props: ModalHeaderProps) => {
       data-testid='modal-header'
       style={classes.header}
     >
-      <HFlow hSpacing={1.25} justifyContent='flex-start' alignItems='flex-start'>
-        {icon && <Icon icon={icon} size={3} fill={iconFill} stroke={iconStroke} />}
+      <HFlow hSpacing={1.25} justifyContent='flex-start' alignItems={subtitle ? 'flex-start' : 'center'}>
+        {icon && renderIcon()}
         <VFlow vSpacing={0}>
           <Heading level={1} color='normal' fontWeight='bold'>
             {title}
@@ -64,14 +63,14 @@ export const ModalHeader = (props: ModalHeaderProps) => {
   )
 }
 
-export const createStyles = (theme: Theme, backgroundColor: Color, hasDivider: boolean) => ({
+export const createStyles = (theme: Theme, backgroundColor: string, hasDivider: boolean) => ({
   header: {
     position: 'relative',
     zIndex: 1,
     width: '100%',
     height: 'fit-content',
     padding: '1.5rem 1rem 1rem 2rem',
-    backgroundColor: theme.pallete.surface[backgroundColor],
+    backgroundColor: backgroundColor ? backgroundColor : theme.pallete.surface.main,
     ...(hasDivider && {
       boxShadow: `0 1px 5px 0 ${theme.pallete.divider}, 0 2px 1px -1px ${theme.pallete.divider}`,
     }),
