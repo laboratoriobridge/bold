@@ -30,10 +30,10 @@ exports[`modal header component basic rendering should render correctly 1`] = `
   grid-auto-flow: column;
   grid-auto-columns: minmax(min-content,max-content);
   grid-gap: 1.25rem;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: start;
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
@@ -146,6 +146,7 @@ exports[`modal header component basic rendering should render correctly 1`] = `
   >
     <div
       class="emotion-3"
+      data-testid="modal-header-title-area"
     >
       <div
         class="emotion-2"

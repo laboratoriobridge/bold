@@ -60,6 +60,20 @@ describe('modal header component', () => {
     })
   })
 
+  describe('title area alignment', () => {
+    it('should set align-items to flex-start when subtitle is provided', () => {
+      render(<ModalHeader title='title' subtitle='subtitle' />)
+      const container = screen.getByTestId('modal-header-title-area')
+      expect(container).toHaveStyle('align-items: flex-start')
+    })
+
+    it('should set align-items to center when subtitle is not provided', () => {
+      render(<ModalHeader title='title' />)
+      const container = screen.getByTestId('modal-header-title-area')
+      expect(container).toHaveStyle('align-items: center')
+    })
+  })
+
   describe('styles', () => {
     const theme = createTheme()
 
