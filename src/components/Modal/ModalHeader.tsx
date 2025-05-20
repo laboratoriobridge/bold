@@ -1,8 +1,7 @@
-/** @jsx jsx */
-import { css, jsx } from '@emotion/core'
+import React from 'react'
 
 import { Color } from 'csstype'
-import { Theme, useTheme } from '../../styles'
+import { Theme, useStyles } from '../../styles'
 import { Heading } from '../Heading'
 import { IconImage } from '../Icon'
 import { Icon, IconColor } from '../Icon/Icon'
@@ -37,8 +36,7 @@ export const ModalHeader = (props: ModalHeaderProps) => {
     onCloseButtonClick,
   } = props
 
-  const theme = useTheme()
-  const styles = createStyles(theme, backgroundColor, hasDivider)
+  const { classes } = useStyles(createStyles, backgroundColor, hasDivider)
 
   return (
     <HFlow
@@ -46,7 +44,7 @@ export const ModalHeader = (props: ModalHeaderProps) => {
       justifyContent='space-between'
       alignItems='flex-start'
       data-testid='modal-header'
-      style={styles.header}
+      style={classes.header}
     >
       <HFlow hSpacing={1.25} justifyContent='flex-start' alignItems='flex-start'>
         {icon && <Icon icon={icon} size={3} fill={iconFill} stroke={iconStroke} />}
@@ -66,14 +64,16 @@ export const ModalHeader = (props: ModalHeaderProps) => {
   )
 }
 
-const createStyles = (theme: Theme, backgroundColor: Color, hasDivider: Boolean) => ({
-  header: css`
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    height: fit-content;
-    padding: 1.5rem 1rem 1rem 2rem;
-    background-color: ${theme.pallete.surface[backgroundColor]};
-    ${hasDivider && `box-shadow: 0 1px 5px 0 ${theme.pallete.divider}, 0 2px 1px -1px ${theme.pallete.divider};`}
-  `,
+export const createStyles = (theme: Theme, backgroundColor: Color, hasDivider: boolean) => ({
+  header: {
+    position: 'relative',
+    zIndex: 1,
+    width: '100%',
+    height: 'fit-content',
+    padding: '1.5rem 1rem 1rem 2rem',
+    backgroundColor: theme.pallete.surface[backgroundColor],
+    ...(hasDivider && {
+      boxShadow: `0 1px 5px 0 ${theme.pallete.divider}, 0 2px 1px -1px ${theme.pallete.divider}`,
+    }),
+  } as React.CSSProperties,
 })
