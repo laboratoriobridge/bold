@@ -73,10 +73,8 @@ describe('conditional rendering and prop passing to ModalHeader', () => {
       <ModalContainer
         title='title'
         subtitle='subtitle'
-        headerIcon='infoCircleOutline'
-        headerBackground='red'
+        header={{ icon: 'infoCircleOutline', background: 'red', showBottomBorder: true }}
         onClose={onClose}
-        showHeaderBorder
         hasCloseIcon
       >
         Container
@@ -87,9 +85,7 @@ describe('conditional rendering and prop passing to ModalHeader', () => {
       expect.objectContaining({
         title: 'title',
         subtitle: 'subtitle',
-        icon: 'infoCircleOutline',
-        background: 'red',
-        showBorder: true,
+        header: { icon: 'infoCircleOutline', background: 'red', showBottomBorder: true },
         showCloseIcon: true,
         onCloseButtonClick: onClose,
       }),

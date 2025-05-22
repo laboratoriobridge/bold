@@ -3,7 +3,7 @@ import React, { forwardRef } from 'react'
 import { ExternalStyles, Theme, useStyles } from '../../styles'
 import { Omit } from '../../util'
 import { ModalCloseButton } from './ModalCloseButton'
-import { HeaderIconType, ModalHeader } from './ModalHeader'
+import { HeaderType, ModalHeader } from './ModalHeader'
 
 export interface ModalContainerProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'style' | 'title'> {
   style?: ExternalStyles
@@ -11,24 +11,11 @@ export interface ModalContainerProps extends Omit<React.HTMLAttributes<HTMLDivEl
   onClose?(): any
   title?: string
   subtitle?: string
-  headerIcon?: HeaderIconType
-  headerBackground?: string
-  showHeaderBorder?: boolean
+  header?: HeaderType
 }
 
 export const ModalContainer = forwardRef<HTMLDivElement, ModalContainerProps>((props, ref) => {
-  const {
-    style,
-    onClose,
-    hasCloseIcon,
-    children,
-    title,
-    subtitle,
-    headerIcon,
-    headerBackground,
-    showHeaderBorder,
-    ...rest
-  } = props
+  const { style, onClose, hasCloseIcon, children, title, subtitle, header, ...rest } = props
   const { classes, css } = useStyles(styles)
 
   return (
@@ -37,9 +24,7 @@ export const ModalContainer = forwardRef<HTMLDivElement, ModalContainerProps>((p
         <ModalHeader
           title={title}
           subtitle={subtitle}
-          icon={headerIcon}
-          background={headerBackground}
-          showBorder={showHeaderBorder}
+          header={header}
           showCloseIcon={hasCloseIcon}
           onCloseButtonClick={onClose}
         />

@@ -16,20 +16,25 @@ export type HeaderIconObject = {
 
 export type HeaderIconType = IconImage | HeaderIconObject
 
+export type HeaderType = {
+  icon?: HeaderIconType
+  background?: string
+  showBottomBorder?: boolean
+}
+
 interface ModalHeaderProps {
   title: string
   subtitle?: string
-  icon?: HeaderIconType
-  background?: string
-  showBorder?: boolean
+  header?: HeaderType
   showCloseIcon?: boolean
   onCloseButtonClick?: () => void
 }
 
 export const ModalHeader = (props: ModalHeaderProps) => {
-  const { title, subtitle, icon, background, showBorder = true, showCloseIcon = true, onCloseButtonClick } = props
+  const { title, subtitle, header, showCloseIcon = true, onCloseButtonClick } = props
+  const { icon, background, showBottomBorder = true } = header ?? {}
 
-  const { classes } = useStyles(createStyles, background, showBorder)
+  const { classes } = useStyles(createStyles, background, showBottomBorder)
 
   return (
     <HFlow
@@ -62,7 +67,7 @@ export const ModalHeader = (props: ModalHeaderProps) => {
   )
 }
 
-export const createStyles = (theme: Theme, background: string, showBorder: boolean) => ({
+export const createStyles = (theme: Theme, background: string, showBottomBorder: boolean) => ({
   header: {
     position: 'relative',
     zIndex: 1,
@@ -70,7 +75,7 @@ export const createStyles = (theme: Theme, background: string, showBorder: boole
     height: 'fit-content',
     padding: '1.5rem 1rem 1rem 2rem',
     backgroundColor: background ? background : theme.pallete.surface.main,
-    ...(showBorder && {
+    ...(showBottomBorder && {
       boxShadow: `0 1px 5px 0 ${theme.pallete.divider}, 0 2px 1px -1px ${theme.pallete.divider}`,
     }),
   } as React.CSSProperties,

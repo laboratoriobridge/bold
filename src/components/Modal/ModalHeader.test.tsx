@@ -8,7 +8,7 @@ jest.mock('./ModalHeaderIcon', () => ({
   ModalHeaderIcon: jest.fn((props) => <div {...props} />),
 }))
 
-describe('modal header component', () => {
+describe('ModalHeader', () => {
   describe('basic rendering', () => {
     it('should render correctly', () => {
       const { container } = render(<ModalHeader title='title' />)
@@ -50,16 +50,16 @@ describe('modal header component', () => {
   describe('styles', () => {
     const theme = createTheme()
 
-    it('should apply background-color when "background" prop is provided', () => {
+    it('should apply background-color when "background" prop is set in "header"', () => {
       render(
         <ThemeContext.Provider value={theme}>
-          <ModalHeader title='title' background='red' />
+          <ModalHeader title='title' header={{ background: 'red' }} />
         </ThemeContext.Provider>
       )
       expect(screen.getByTestId('modal-header')).toHaveStyle(`background-color: red`)
     })
 
-    it('should apply background-color default when "background" prop is not provided', () => {
+    it('should apply background-color default when "background" prop is not set in "header"', () => {
       render(
         <ThemeContext.Provider value={theme}>
           <ModalHeader title='title' />
@@ -68,10 +68,10 @@ describe('modal header component', () => {
       expect(screen.getByTestId('modal-header')).toHaveStyle(`background-color: ${theme.pallete.surface.main}`)
     })
 
-    it('should apply box-shadow when "showBorder" is true', () => {
+    it('should apply box-shadow when "showBottomBorder" is set to true in "header"', () => {
       render(
         <ThemeContext.Provider value={theme}>
-          <ModalHeader title='title' showBorder />
+          <ModalHeader title='title' header={{ showBottomBorder: true }} />
         </ThemeContext.Provider>
       )
       expect(screen.getByTestId('modal-header')).toHaveStyle(
@@ -79,7 +79,7 @@ describe('modal header component', () => {
       )
     })
 
-    it('should apply box-shadow when "showBorder" is not provided (default true)', () => {
+    it('should apply box-shadow when "showBottomBorder" is not set in "header" (default true)', () => {
       render(
         <ThemeContext.Provider value={theme}>
           <ModalHeader title='title' />
@@ -90,8 +90,8 @@ describe('modal header component', () => {
       )
     })
 
-    it('should not apply box-shadow when "showBorder" is false', () => {
-      render(<ModalHeader title='title' showBorder={false} />)
+    it('should not apply box-shadow when "showBottomBorder" is set to false in "header"', () => {
+      render(<ModalHeader title='title' header={{ showBottomBorder: false }} />)
       expect(getComputedStyle(screen.getByTestId('modal-header')).boxShadow).toBe('')
     })
   })
@@ -134,7 +134,7 @@ describe('modal header component', () => {
     })
   })
 
-  describe('icon', () => {
+  describe('Header icon', () => {
     beforeEach(() => {
       jest.clearAllMocks()
     })
@@ -147,7 +147,7 @@ describe('modal header component', () => {
     })
 
     it('passes all expected props correctly to ModalHeaderIcon', () => {
-      render(<ModalHeader title='title' icon='infoCircleOutline' />)
+      render(<ModalHeader title='title' header={{ icon: 'infoCircleOutline' }} />)
 
       expect(ModalHeaderIcon).toHaveBeenCalledWith(
         expect.objectContaining({

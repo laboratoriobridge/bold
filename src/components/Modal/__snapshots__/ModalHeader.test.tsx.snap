@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`modal header component basic rendering should render correctly 1`] = `
+exports[`ModalHeader basic rendering should render correctly 1`] = `
 .emotion-6 {
   display: grid;
   grid-auto-flow: column;
