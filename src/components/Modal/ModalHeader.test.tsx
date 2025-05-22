@@ -8,6 +8,10 @@ jest.mock('./ModalHeaderIcon', () => ({
   ModalHeaderIcon: jest.fn((props) => <div {...props} />),
 }))
 
+beforeEach(() => {
+  jest.clearAllMocks()
+})
+
 describe('ModalHeader', () => {
   describe('basic rendering', () => {
     it('should render correctly', () => {
@@ -135,10 +139,6 @@ describe('ModalHeader', () => {
   })
 
   describe('Header icon', () => {
-    beforeEach(() => {
-      jest.clearAllMocks()
-    })
-
     it('does not render ModalHeaderIcon when icon is not provided', () => {
       render(<ModalHeader title='title' showCloseIcon={false} />)
 

@@ -13,6 +13,10 @@ jest.mock('./ModalHeader', () => ({
   ModalHeader: jest.fn((props) => <div {...props} />),
 }))
 
+beforeEach(() => {
+  jest.clearAllMocks()
+})
+
 it('should render correctly', () => {
   const { container } = render(<ModalContainer>Container</ModalContainer>)
   expect(container).toMatchSnapshot()
@@ -56,10 +60,6 @@ it('should provide a ref to the div html element', () => {
 })
 
 describe('conditional rendering and prop passing to ModalHeader', () => {
-  beforeEach(() => {
-    jest.clearAllMocks()
-  })
-
   it('does not render ModalHeader when title is not provided', () => {
     render(<ModalContainer>Container content</ModalContainer>)
 
