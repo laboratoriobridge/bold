@@ -71,7 +71,7 @@ describe('modal header component', () => {
     it('should apply box-shadow when "showBorder" is true', () => {
       render(
         <ThemeContext.Provider value={theme}>
-          <ModalHeader title='title' showBorder={true} />
+          <ModalHeader title='title' showBorder />
         </ThemeContext.Provider>
       )
       expect(screen.getByTestId('modal-header')).toHaveStyle(
@@ -98,7 +98,7 @@ describe('modal header component', () => {
 
   describe('close button', () => {
     it('should render close button when "showCloseIcon" is true', () => {
-      render(<ModalHeader title='title' showCloseIcon={true} />)
+      render(<ModalHeader title='title' showCloseIcon />)
       expect(screen.getByRole('button')).toBeInTheDocument()
     })
 
@@ -114,7 +114,7 @@ describe('modal header component', () => {
 
     it('should call onCloseButtonClick when close button is clicked and "showCloseIcon" is true', () => {
       const onCloseMock = jest.fn()
-      render(<ModalHeader title='title' showCloseIcon={true} onCloseButtonClick={onCloseMock} />)
+      render(<ModalHeader title='title' onCloseButtonClick={onCloseMock} showCloseIcon />)
       fireEvent.click(screen.getByRole('button'))
       expect(onCloseMock).toHaveBeenCalledTimes(1)
     })

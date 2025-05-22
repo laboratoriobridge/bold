@@ -75,9 +75,9 @@ describe('conditional rendering and prop passing to ModalHeader', () => {
         subtitle='subtitle'
         headerIcon='infoCircleOutline'
         headerBackground='red'
-        showHeaderBorder={true}
-        hasCloseIcon={true}
         onClose={onClose}
+        showHeaderBorder
+        hasCloseIcon
       >
         Container
       </ModalContainer>
