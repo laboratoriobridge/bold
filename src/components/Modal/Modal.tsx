@@ -1,5 +1,5 @@
 import FocusTrap from 'focus-trap-react'
-import React, { useEffect, Ref } from 'react'
+import React, { Ref, useEffect } from 'react'
 import { Theme, useStyles } from '../../styles'
 import { zIndexLevel } from '../../styles/theme/zIndex'
 import { Portal } from '../Portal'
@@ -16,13 +16,13 @@ export interface ModalProps extends ModalContainerProps {
   containerRef?: Ref<HTMLDivElement>
 
   /**
-   * @description allows you to customize the depth of the container and the backdrop of the modal
+   * Allows you to customize the depth of the container and the backdrop of the modal
    * @default 1 - the lowest possible value
    */
   depthLevel?: ModalDepthLevel
 
   /**
-   * @description allows you to remove the document's overflow property when a modal is closed
+   * Allows you to remove the document's overflow property when a modal is closed
    * @default true
    */
   manageOverflow?: boolean
