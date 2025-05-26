@@ -1,15 +1,15 @@
 import React from 'react'
 import { Theme, useStyles } from '../../styles'
 import { Heading } from '../Heading'
+import { HFlow } from '../HFlow'
 import { IconImage } from '../Icon'
 import { IconColor } from '../Icon/Icon'
-import { HFlow } from '../HFlow'
 import { VFlow } from '../VFlow'
 import { ModalCloseButton } from './ModalCloseButton'
 import { ModalHeaderIcon } from './ModalHeaderIcon'
 
 export type HeaderIconObject = {
-  icon: IconImage
+  name: IconImage
   fill?: IconColor
   stroke?: IconColor
 }
