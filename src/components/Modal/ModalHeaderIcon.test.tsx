@@ -39,7 +39,7 @@ describe('ModalHeaderIcon', () => {
   it('should render the icon when "icon" is an object (HeaderIconObject)', () => {
     const theme = createTheme()
     const iconObj: HeaderIconObject = {
-      icon: 'infoCircleOutline',
+      name: 'infoCircleOutline',
       fill: 'primary',
       stroke: 'danger',
     }
