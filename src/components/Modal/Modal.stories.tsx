@@ -39,8 +39,8 @@ export const Default = () => {
           fill: select('header.icon.fill', iconColors, 'primary'),
           stroke: select('header.icon.stroke', iconColors, 'inherit'),
         },
-        background: text('header.icon.background', 'white'),
-        showBottomBorder: boolean('header.icon.showBottomBorder', true),
+        background: text('header.background', 'white'),
+        showBottomBorder: boolean('header.showBottomBorder', true),
       }
     : undefined
   const onClose = action('close')
