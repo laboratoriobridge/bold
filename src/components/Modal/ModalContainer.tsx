@@ -1,37 +1,39 @@
 import React, { forwardRef } from 'react'
 
-import { useLocale } from '../../i18n'
 import { ExternalStyles, Theme, useStyles } from '../../styles'
 import { Omit } from '../../util'
-import { Button } from '../Button'
-import { Icon } from '../Icon'
-import { Tooltip } from '../Tooltip'
+import { ModalCloseButton } from './ModalCloseButton'
+import { HeaderType, ModalHeader } from './ModalHeader'
 
-export interface ModalContainerProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'style'> {
+export interface ModalContainerProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'style' | 'title'> {
   style?: ExternalStyles
   hasCloseIcon?: boolean
   onClose?(): any
+  title?: string
+  subtitle?: string
+
+  /**
+   * Configuration settings for the modal header, including icon, background, and border; applied only when a `title` is specified.
+   */
+  header?: HeaderType
 }
 
 export const ModalContainer = forwardRef<HTMLDivElement, ModalContainerProps>((props, ref) => {
-  const { style, onClose, hasCloseIcon, children, ...rest } = props
+  const { style, onClose, hasCloseIcon, children, title, subtitle, header, ...rest } = props
   const { classes, css } = useStyles(styles)
-  const locale = useLocale()
 
   return (
     <div role='dialog' aria-modal='true' ref={ref} className={css(classes.wrapper, style)} {...rest}>
-      {hasCloseIcon && (
-        <Tooltip text={locale.modal.close}>
-          <Button
-            aria-label={locale.modal.close}
-            size='small'
-            skin='ghost'
-            style={classes.closeButton}
-            onClick={onClose}
-          >
-            <Icon icon='timesDefault' />
-          </Button>
-        </Tooltip>
+      {title ? (
+        <ModalHeader
+          title={title}
+          subtitle={subtitle}
+          header={header}
+          showCloseIcon={hasCloseIcon}
+          onCloseButtonClick={onClose}
+        />
+      ) : (
+        hasCloseIcon && <ModalCloseButton onClick={onClose} style={classes.closeButton} />
       )}
 
       {children}

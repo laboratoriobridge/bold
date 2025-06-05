@@ -1,12 +1,21 @@
 import { fireEvent, render } from '@testing-library/react'
-import * as React from 'react'
+import React from 'react'
 
 import { LocaleContext } from '../../i18n'
 import ptBr from '../../i18n/locales/pt-BR'
 
 import { ModalContainer } from './ModalContainer'
+import { ModalHeader } from './ModalHeader'
 
 jest.mock('../../util/string')
+
+jest.mock('./ModalHeader', () => ({
+  ModalHeader: jest.fn((props) => <div {...props} />),
+}))
+
+beforeEach(() => {
+  jest.clearAllMocks()
+})
 
 it('should render correctly', () => {
   const { container } = render(<ModalContainer>Container</ModalContainer>)
@@ -48,4 +57,39 @@ it('should provide a ref to the div html element', () => {
   const ref = React.createRef<HTMLDivElement>()
   render(<ModalContainer ref={ref}>Container</ModalContainer>)
   expect(ref.current.tagName).toEqual('DIV')
+})
+
+describe('conditional rendering and prop passing to ModalHeader', () => {
+  it('does not render ModalHeader when title is not provided', () => {
+    render(<ModalContainer>Container content</ModalContainer>)
+
+    expect(ModalHeader).not.toHaveBeenCalled()
+  })
+
+  it('passes all expected props correctly to ModalHeader', () => {
+    const onClose = jest.fn()
+
+    render(
+      <ModalContainer
+        title='title'
+        subtitle='subtitle'
+        header={{ icon: 'infoCircleOutline', background: 'red', showBottomBorder: true }}
+        onClose={onClose}
+        hasCloseIcon
+      >
+        Container
+      </ModalContainer>
+    )
+
+    expect(ModalHeader).toHaveBeenCalledWith(
+      expect.objectContaining({
+        title: 'title',
+        subtitle: 'subtitle',
+        header: { icon: 'infoCircleOutline', background: 'red', showBottomBorder: true },
+        showCloseIcon: true,
+        onCloseButtonClick: onClose,
+      }),
+      {}
+    )
+  })
 })
