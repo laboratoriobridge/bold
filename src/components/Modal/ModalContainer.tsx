@@ -11,6 +11,10 @@ export interface ModalContainerProps extends Omit<React.HTMLAttributes<HTMLDivEl
   onClose?(): any
   title?: string
   subtitle?: string
+
+  /**
+   * Configuration settings for the modal header, including icon, background, and border; applied only when a `title` is specified.
+   */
   header?: HeaderType
 }
 
