@@ -374,6 +374,7 @@ test.each`
   expect(baseElement.querySelector('ul')).toBeFalsy()
 })
 
+// TODO: This will be effectively resolved in issue #904 (RNG & CodeBenders).
 describe('rendering', () => {
   it.skip('renders correcly closed', async () => {
     const { baseElement } = render(<ComboboxInlineTest defaultButtonText='Fruits' />)
