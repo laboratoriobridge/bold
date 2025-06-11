@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
-import { optionsKnob } from '@storybook/addon-knobs'
+import { boolean, optionsKnob } from '@storybook/addon-knobs'
+import { action } from '@storybook/addon-actions'
 import { KeyMap } from '../model'
 import { getCountAggregator } from '../Aggregators/utils'
 import { useLocale } from '../../../i18n'
 import { Aggregator } from '../Aggregators/model'
 import { PivotTableBoard } from './PivotTableBoard'
-import { BoardField } from './model'
+import { BoardField, FieldFiltersByKey, RowColumnKeys } from './model'
 
 export default {
   title: 'Components/PivotTable/PivotTableBoard',
@@ -28,9 +29,13 @@ export const Default = () => {
   const [aggregator, setAggregator] = useState<Aggregator>(getCountAggregator(locale.aggregators))
   const [aggregatorKey, setAggregatorKey] = useState<keyof Fruit>()
 
-  const handleAggregatorKey = (key: keyof Fruit) => setAggregatorKey(key)
-  const handleAggregator = (aggregator: Aggregator) => {
+  const handleAggregatorKey = (key: keyof Fruit) => {
+    setAggregatorKey(key)
+    action('PivotTableBoard: handleAggregatorKeyChange')(key)
+  }
+  const handleAggregatorChange = (aggregator: Aggregator) => {
     setAggregator(() => aggregator)
+    action('PivotTableBoard: handleAggregatorChange')(aggregator)
   }
 
   const keys = new Map<keyof Fruit, string[]>([
@@ -46,22 +51,32 @@ export const Default = () => {
   const numberKeys = optionsKnob('Number Keys', numberKeyOptions, [], { display: 'select' }) as Array<keyof Fruit>
 
   const initialFields: BoardField<Fruit>[] = [
-    { key: 'name' as keyof Fruit, origin: 'row' as 'row' | 'column', filters: ['Apple'] },
-    { key: 'size' as keyof Fruit, origin: 'column' as 'row' | 'column', filters: ['Medium'] },
+    { key: 'name' as keyof Fruit, origin: 'row', filters: ['Apple'] },
+    { key: 'size' as keyof Fruit, origin: 'column', filters: ['Medium'] },
   ]
+
+  const handleSubmit = (values: RowColumnKeys<Fruit>, filterValues: FieldFiltersByKey<Fruit>) => {
+    action('PivotTableBoard: handleSubmit')(values, filterValues)
+  }
+
+  const handleReset = () => {
+    action('PivotTableBoard: handleReset')()
+  }
 
   return (
     <PivotTableBoard
       keys={keys}
       keyMapping={keyMapping}
       numberKeys={numberKeys}
-      isBuilding={false}
-      handleSubmit={() => {}}
-      handleReset={() => {}}
-      handleAggregatorChange={handleAggregator}
-      handleAggregatorKeyChange={handleAggregatorKey}
-      aggregator={aggregator}
-      aggregatorKey={aggregatorKey}
+      isBuilding={boolean('isBuilding', false)}
+      handleSubmit={handleSubmit}
+      handleReset={handleReset}
+      aggregator={{
+        handleChange: handleAggregatorChange,
+        handleKeyChange: handleAggregatorKey,
+        value: aggregator,
+        key: aggregatorKey,
+      }}
       initialFields={initialFields}
     />
   )

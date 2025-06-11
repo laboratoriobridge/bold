@@ -77,7 +77,7 @@ const locale = {
     availableFields: 'Available fields',
     rows: 'Rows',
     columns: 'Columns',
-    formOfPresentation: 'Form of presentation',
+    kindOfPresentation: 'Kind of presentation',
     appliedFilters: 'Applied filters',
     clearFilters: 'Clear filters',
     clearTable: 'Clear table',

@@ -10,6 +10,7 @@ import { getQuantityValue } from './util'
 import { DraggableRow } from './DraggableRow'
 import { draggableCreateStyles } from './style'
 import { DraggableWrapper } from './DraggableWrapper'
+import { useDraggableKeyNavigation } from './useDraggableNavigation'
 
 export function InternalFilterDraggable<T extends object>(props: FilterDraggableProps<T>) {
   const {
@@ -70,16 +71,7 @@ export function InternalFilterDraggable<T extends object>(props: FilterDraggable
     setAll(getQuantityValue(selectedItems, filterItems))
   }
 
-  const handleKeyDown = (filterKey: keyof T) => (event: any) => {
-    const key = event.nativeEvent.key
-    if (key === 'ArrowRight') {
-      onKeyNav('right', origin, filterKey)
-      onDragEnd()
-    } else if (key === 'ArrowLeft') {
-      onKeyNav('left', origin, filterKey)
-      onDragEnd()
-    }
-  }
+  const { handleKeyDown } = useDraggableKeyNavigation(onDragEnd, origin, onKeyNav)
 
   const handleSearch = () => (event: any) =>
     setSearchedFilterSet(

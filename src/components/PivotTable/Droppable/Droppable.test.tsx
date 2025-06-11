@@ -135,13 +135,13 @@ describe('Droppable', () => {
       const { container } = render(createDefaultComponent({ handleKeyUpdate: handleKeyUpdate }))
 
       const droppable = container.firstChild
-      const dragabble = droppable.firstChild.firstChild
+      const draggable = droppable.firstChild.firstChild
 
-      fireEvent.dragStart(dragabble)
+      fireEvent.dragStart(draggable)
       fireEvent.dragEnter(droppable)
       fireEvent.dragOver(droppable)
       fireEvent.drop(droppable)
-      fireEvent.dragEnd(dragabble)
+      fireEvent.dragEnd(draggable)
 
       expect(handleKeyUpdate).toHaveBeenCalled()
     })
@@ -152,13 +152,13 @@ describe('Droppable', () => {
       const { container } = render(createFilterComponent({ handleKeyUpdate: handleKeyUpdate }))
 
       const droppable = container.firstChild
-      const dragabble = droppable.firstChild.firstChild
+      const draggable = droppable.firstChild.firstChild
 
-      fireEvent.dragStart(dragabble)
+      fireEvent.dragStart(draggable)
       fireEvent.dragEnter(droppable)
       fireEvent.dragOver(droppable)
       fireEvent.drop(droppable)
-      fireEvent.dragEnd(dragabble)
+      fireEvent.dragEnd(draggable)
 
       expect(handleKeyUpdate).toHaveBeenCalled()
     })
@@ -170,13 +170,13 @@ describe('Droppable', () => {
 
       const droppable1 = container.firstChild
       const droppable2 = container.lastChild
-      const dragabble = droppable1.firstChild.firstChild
+      const draggable = droppable1.firstChild.firstChild
 
-      fireEvent.dragStart(dragabble)
+      fireEvent.dragStart(draggable)
       fireEvent.dragEnter(droppable2)
       fireEvent.dragOver(droppable2)
       fireEvent.drop(droppable2)
-      fireEvent.dragEnd(dragabble)
+      fireEvent.dragEnd(draggable)
 
       expect(handleKeyUpdate).toHaveBeenCalledWith(['name'])
     })
@@ -188,28 +188,15 @@ describe('Droppable', () => {
 
       const droppable1 = container.firstChild
       const droppable2 = container.lastChild
-      const dragabble = droppable1.firstChild.firstChild
+      const draggable = droppable1.firstChild.firstChild
 
-      fireEvent.dragStart(dragabble)
+      fireEvent.dragStart(draggable)
       fireEvent.dragEnter(droppable2)
       fireEvent.dragOver(droppable2)
       fireEvent.drop(droppable2)
-      fireEvent.dragEnd(dragabble)
+      fireEvent.dragEnd(draggable)
 
       expect(handleKeyUpdate).toBeCalledWith(['name'])
-    })
-  })
-
-  describe('Key navigation', () => {
-    it('should call onDragEnd when the drag event ends', () => {
-      const onKeyNav = jest.fn()
-      const handleKeyUpdate = jest.fn()
-
-      const { getByRole } = render(createDefaultComponent({ onKeyNav: onKeyNav, handleKeyUpdate }))
-
-      fireEvent.keyDown(getByRole('button'), { key: 'ArrowRight', code: 'ArrowRight' })
-      expect(onKeyNav).toBeCalledWith('right', 'droppable-1')
-      expect(handleKeyUpdate).toBeCalledWith([])
     })
   })
 })

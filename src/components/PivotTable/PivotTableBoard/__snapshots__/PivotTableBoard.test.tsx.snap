@@ -1,7 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PivotTable - PivotTableBoard should render correctly 1`] = `
-.emotion-61 {
+.emotion-47 {
+  padding: 0.75rem;
+  margin: 0.25rem;
+  min-height: 7.18rem;
+}
+
+.emotion-58 {
+  border: 1px solid #D3D4DD;
+  padding: 0.75rem 1.25rem;
+}
+
+.emotion-64 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -224,7 +235,7 @@ exports[`PivotTable - PivotTableBoard should render correctly 1`] = `
   cursor: not-allowed;
 }
 
-.emotion-56 {
+.emotion-59 {
   padding-left: 1rem;
   padding-right: 1rem;
   padding-top: 0.5rem;
@@ -232,12 +243,12 @@ exports[`PivotTable - PivotTableBoard should render correctly 1`] = `
 }
 
 @media (min-width:600px) {
-  .emotion-56 {
+  .emotion-59 {
     width: calc(100% / 12 * 12);
   }
 }
 
-.emotion-55 {
+.emotion-57 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -255,7 +266,7 @@ exports[`PivotTable - PivotTableBoard should render correctly 1`] = `
   flex-wrap: wrap;
 }
 
-.emotion-52 {
+.emotion-54 {
   padding-left: 1rem;
   padding-right: 1rem;
   padding-top: 0.5rem;
@@ -263,7 +274,7 @@ exports[`PivotTable - PivotTableBoard should render correctly 1`] = `
   width: calc(100% / 12 * 10);
 }
 
-.emotion-51 {
+.emotion-53 {
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: minmax(min-content,max-content);
@@ -274,7 +285,15 @@ exports[`PivotTable - PivotTableBoard should render correctly 1`] = `
   align-items: center;
 }
 
-.emotion-54 {
+.emotion-51 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #24252E;
+  font-weight: bold;
+}
+
+.emotion-56 {
   padding-left: 1rem;
   padding-right: 1rem;
   padding-top: 0.5rem;
@@ -282,7 +301,7 @@ exports[`PivotTable - PivotTableBoard should render correctly 1`] = `
   width: calc(100% / 12 * 2);
 }
 
-.emotion-53 {
+.emotion-55 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5rem;
@@ -315,7 +334,7 @@ exports[`PivotTable - PivotTableBoard should render correctly 1`] = `
   float: right;
 }
 
-.emotion-53 > span {
+.emotion-55 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -326,20 +345,20 @@ exports[`PivotTable - PivotTableBoard should render correctly 1`] = `
   display: inline-flex;
 }
 
-.emotion-53:not(:disabled):active {
+.emotion-55:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-53:focus {
+.emotion-55:focus {
   outline: none;
   box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
 }
 
-.emotion-53:not(:disabled):hover {
+.emotion-55:not(:disabled):hover {
   background-color: rgba(122,123,142,0.16);
 }
 
-.emotion-60 {
+.emotion-63 {
   padding-left: 1rem;
   padding-right: 1rem;
   padding-top: 0.5rem;
@@ -347,7 +366,7 @@ exports[`PivotTable - PivotTableBoard should render correctly 1`] = `
   width: calc(100% / 12 * 12);
 }
 
-.emotion-59 {
+.emotion-62 {
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: minmax(min-content,max-content);
@@ -358,7 +377,7 @@ exports[`PivotTable - PivotTableBoard should render correctly 1`] = `
   justify-content: flex-end;
 }
 
-.emotion-57 {
+.emotion-60 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5rem;
@@ -390,7 +409,7 @@ exports[`PivotTable - PivotTableBoard should render correctly 1`] = `
   padding: calc(0.75rem - 1px) 1rem;
 }
 
-.emotion-57 > span {
+.emotion-60 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -401,20 +420,20 @@ exports[`PivotTable - PivotTableBoard should render correctly 1`] = `
   display: inline-flex;
 }
 
-.emotion-57:not(:disabled):active {
+.emotion-60:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-57:focus {
+.emotion-60:focus {
   outline: none;
   box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
 }
 
-.emotion-57:not(:disabled):hover {
+.emotion-60:not(:disabled):hover {
   background-color: #F0F0F5;
 }
 
-.emotion-58 {
+.emotion-61 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5rem;
@@ -449,7 +468,7 @@ exports[`PivotTable - PivotTableBoard should render correctly 1`] = `
   padding: calc(0.75rem - 1px) 1rem;
 }
 
-.emotion-58 > span {
+.emotion-61 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -460,20 +479,20 @@ exports[`PivotTable - PivotTableBoard should render correctly 1`] = `
   display: inline-flex;
 }
 
-.emotion-58:not(:disabled):active {
+.emotion-61:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-58:focus {
+.emotion-61:focus {
   outline: none;
   box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
 }
 
-.emotion-58:not(:disabled):hover {
+.emotion-61:not(:disabled):hover {
   background-color: #F0F0F5;
 }
 
-.emotion-58:not(:disabled):hover {
+.emotion-61:not(:disabled):hover {
   background-color: #0051A2;
 }
 
@@ -590,7 +609,7 @@ exports[`PivotTable - PivotTableBoard should render correctly 1`] = `
 
 <div>
   <div
-    class="emotion-61"
+    class="emotion-64"
   >
     <div
       class="emotion-15"
@@ -789,6 +808,7 @@ exports[`PivotTable - PivotTableBoard should render correctly 1`] = `
         >
           <div
             class="emotion-20"
+            data-testid="droppable-row"
           >
             <div
               class="emotion-19"
@@ -813,14 +833,14 @@ exports[`PivotTable - PivotTableBoard should render correctly 1`] = `
           <h4
             class="emotion-0"
           >
-            Form of presentation
+            Kind of presentation
           </h4>
         </div>
         <div
           class="emotion-13"
         >
           <div
-            css="css-hcvid6"
+            class="emotion-47"
           >
             <div
               class="emotion-46"
@@ -884,33 +904,35 @@ exports[`PivotTable - PivotTableBoard should render correctly 1`] = `
       </div>
     </div>
     <div
-      class="emotion-56"
+      class="emotion-59"
     >
       <div
-        css="css-mtcuwc"
+        class="emotion-58"
       >
         <div
-          class="emotion-55"
+          class="emotion-57"
         >
           <div
-            class="emotion-52"
+            class="emotion-54"
           >
             <div
-              class="emotion-51"
+              class="emotion-53"
             >
-              <b>
+              <span
+                class="emotion-51"
+              >
                 Applied filters
-              </b>
+              </span>
               <div
                 class="emotion-46"
               />
             </div>
           </div>
           <div
-            class="emotion-54"
+            class="emotion-56"
           >
             <button
-              class="emotion-53"
+              class="emotion-55"
               type="button"
             >
               <span>
@@ -922,21 +944,22 @@ exports[`PivotTable - PivotTableBoard should render correctly 1`] = `
       </div>
     </div>
     <div
-      class="emotion-60"
+      class="emotion-63"
     >
       <div
-        class="emotion-59"
+        class="emotion-62"
       >
         <button
-          class="emotion-57"
+          class="emotion-60"
           type="button"
         >
           <span>
             Clear table
           </span>
         </button>
+        <div />
         <button
-          class="emotion-58"
+          class="emotion-61"
           type="button"
         >
           <span>
@@ -950,7 +973,18 @@ exports[`PivotTable - PivotTableBoard should render correctly 1`] = `
 `;
 
 exports[`PivotTable - PivotTableBoard should render with initial fields 1`] = `
-.emotion-72 {
+.emotion-46 {
+  padding: 0.75rem;
+  margin: 0.25rem;
+  min-height: 7.18rem;
+}
+
+.emotion-69 {
+  border: 1px solid #D3D4DD;
+  padding: 0.75rem 1.25rem;
+}
+
+.emotion-75 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1173,7 +1207,7 @@ exports[`PivotTable - PivotTableBoard should render with initial fields 1`] = `
   cursor: not-allowed;
 }
 
-.emotion-67 {
+.emotion-70 {
   padding-left: 1rem;
   padding-right: 1rem;
   padding-top: 0.5rem;
@@ -1181,12 +1215,12 @@ exports[`PivotTable - PivotTableBoard should render with initial fields 1`] = `
 }
 
 @media (min-width:600px) {
-  .emotion-67 {
+  .emotion-70 {
     width: calc(100% / 12 * 12);
   }
 }
 
-.emotion-66 {
+.emotion-68 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1204,7 +1238,7 @@ exports[`PivotTable - PivotTableBoard should render with initial fields 1`] = `
   flex-wrap: wrap;
 }
 
-.emotion-63 {
+.emotion-65 {
   padding-left: 1rem;
   padding-right: 1rem;
   padding-top: 0.5rem;
@@ -1212,7 +1246,7 @@ exports[`PivotTable - PivotTableBoard should render with initial fields 1`] = `
   width: calc(100% / 12 * 10);
 }
 
-.emotion-62 {
+.emotion-64 {
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: minmax(min-content,max-content);
@@ -1223,25 +1257,33 @@ exports[`PivotTable - PivotTableBoard should render with initial fields 1`] = `
   align-items: center;
 }
 
-.emotion-52 {
+.emotion-50 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #24252E;
+  font-weight: bold;
+}
+
+.emotion-54 {
   display: inline-block;
   margin-bottom: 0.25rem;
   margin-top: 0.25rem;
 }
 
-.emotion-52:first-of-type {
+.emotion-54:first-of-type {
   margin-top: 0;
 }
 
-.emotion-52:last-of-type {
+.emotion-54:last-of-type {
   margin-bottom: 0;
 }
 
-.emotion-52:empty {
+.emotion-54:empty {
   display: none;
 }
 
-.emotion-65 {
+.emotion-67 {
   padding-left: 1rem;
   padding-right: 1rem;
   padding-top: 0.5rem;
@@ -1249,7 +1291,7 @@ exports[`PivotTable - PivotTableBoard should render with initial fields 1`] = `
   width: calc(100% / 12 * 2);
 }
 
-.emotion-64 {
+.emotion-66 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5rem;
@@ -1282,7 +1324,7 @@ exports[`PivotTable - PivotTableBoard should render with initial fields 1`] = `
   float: right;
 }
 
-.emotion-64 > span {
+.emotion-66 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1293,20 +1335,20 @@ exports[`PivotTable - PivotTableBoard should render with initial fields 1`] = `
   display: inline-flex;
 }
 
-.emotion-64:not(:disabled):active {
+.emotion-66:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-64:focus {
+.emotion-66:focus {
   outline: none;
   box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
 }
 
-.emotion-64:not(:disabled):hover {
+.emotion-66:not(:disabled):hover {
   background-color: rgba(122,123,142,0.16);
 }
 
-.emotion-71 {
+.emotion-74 {
   padding-left: 1rem;
   padding-right: 1rem;
   padding-top: 0.5rem;
@@ -1314,7 +1356,7 @@ exports[`PivotTable - PivotTableBoard should render with initial fields 1`] = `
   width: calc(100% / 12 * 12);
 }
 
-.emotion-70 {
+.emotion-73 {
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: minmax(min-content,max-content);
@@ -1325,7 +1367,7 @@ exports[`PivotTable - PivotTableBoard should render with initial fields 1`] = `
   justify-content: flex-end;
 }
 
-.emotion-68 {
+.emotion-71 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5rem;
@@ -1357,7 +1399,7 @@ exports[`PivotTable - PivotTableBoard should render with initial fields 1`] = `
   padding: calc(0.75rem - 1px) 1rem;
 }
 
-.emotion-68 > span {
+.emotion-71 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1368,20 +1410,20 @@ exports[`PivotTable - PivotTableBoard should render with initial fields 1`] = `
   display: inline-flex;
 }
 
-.emotion-68:not(:disabled):active {
+.emotion-71:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-68:focus {
+.emotion-71:focus {
   outline: none;
   box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
 }
 
-.emotion-68:not(:disabled):hover {
+.emotion-71:not(:disabled):hover {
   background-color: #F0F0F5;
 }
 
-.emotion-69 {
+.emotion-72 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5rem;
@@ -1416,7 +1458,7 @@ exports[`PivotTable - PivotTableBoard should render with initial fields 1`] = `
   padding: calc(0.75rem - 1px) 1rem;
 }
 
-.emotion-69 > span {
+.emotion-72 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1427,20 +1469,20 @@ exports[`PivotTable - PivotTableBoard should render with initial fields 1`] = `
   display: inline-flex;
 }
 
-.emotion-69:not(:disabled):active {
+.emotion-72:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-69:focus {
+.emotion-72:focus {
   outline: none;
   box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
 }
 
-.emotion-69:not(:disabled):hover {
+.emotion-72:not(:disabled):hover {
   background-color: #F0F0F5;
 }
 
-.emotion-69:not(:disabled):hover {
+.emotion-72:not(:disabled):hover {
   background-color: #0051A2;
 }
 
@@ -1534,7 +1576,7 @@ exports[`PivotTable - PivotTableBoard should render with initial fields 1`] = `
   grid-gap: 0.5rem;
 }
 
-.emotion-51 {
+.emotion-53 {
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: minmax(min-content,max-content);
@@ -1545,7 +1587,7 @@ exports[`PivotTable - PivotTableBoard should render with initial fields 1`] = `
   align-items: center;
 }
 
-.emotion-50 {
+.emotion-52 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -1569,14 +1611,14 @@ exports[`PivotTable - PivotTableBoard should render with initial fields 1`] = `
   margin-bottom: 0.25rem;
 }
 
-.emotion-49 {
+.emotion-51 {
   fill: currentColor;
   font-size: 1.5rem;
   font-size: 1rem;
   margin-left: 0.125rem;
 }
 
-.emotion-49:hover {
+.emotion-51:hover {
   cursor: pointer;
   color: #D01E29;
 }
@@ -1604,7 +1646,7 @@ exports[`PivotTable - PivotTableBoard should render with initial fields 1`] = `
 
 <div>
   <div
-    class="emotion-72"
+    class="emotion-75"
   >
     <div
       class="emotion-6"
@@ -1757,6 +1799,7 @@ exports[`PivotTable - PivotTableBoard should render with initial fields 1`] = `
         >
           <div
             class="emotion-15"
+            data-testid="droppable-row"
           >
             <div>
               <div
@@ -1822,14 +1865,14 @@ exports[`PivotTable - PivotTableBoard should render with initial fields 1`] = `
           <h4
             class="emotion-0"
           >
-            Form of presentation
+            Kind of presentation
           </h4>
         </div>
         <div
           class="emotion-4"
         >
           <div
-            css="css-hcvid6"
+            class="emotion-46"
           >
             <div
               class="emotion-45"
@@ -1893,45 +1936,47 @@ exports[`PivotTable - PivotTableBoard should render with initial fields 1`] = `
       </div>
     </div>
     <div
-      class="emotion-67"
+      class="emotion-70"
     >
       <div
-        css="css-mtcuwc"
+        class="emotion-69"
       >
         <div
-          class="emotion-66"
+          class="emotion-68"
         >
           <div
-            class="emotion-63"
+            class="emotion-65"
           >
             <div
-              class="emotion-62"
+              class="emotion-64"
             >
-              <b>
+              <span
+                class="emotion-50"
+              >
                 Applied filters
-              </b>
+              </span>
               <div
                 class="emotion-45"
               >
                 <div
-                  class="emotion-52"
+                  class="emotion-54"
                 >
                   <div
-                    class="emotion-51"
+                    class="emotion-53"
                   >
                     <div>
                       Name
                     </div>
                     <div
-                      css="css-17cbn3s"
+                      css="css-qqmm8i"
                     >
                       <span
-                        class="emotion-50"
+                        class="emotion-52"
                       >
                         Apple
                         <svg
                           aria-hidden="true"
-                          class="emotion-49"
+                          class="emotion-51"
                           height="1em"
                           role="img"
                           viewBox="0 0 24 24"
@@ -1948,24 +1993,24 @@ exports[`PivotTable - PivotTableBoard should render with initial fields 1`] = `
                   </div>
                 </div>
                 <div
-                  class="emotion-52"
+                  class="emotion-54"
                 >
                   <div
-                    class="emotion-51"
+                    class="emotion-53"
                   >
                     <div>
                       Size
                     </div>
                     <div
-                      css="css-17cbn3s"
+                      css="css-qqmm8i"
                     >
                       <span
-                        class="emotion-50"
+                        class="emotion-52"
                       >
                         Medium
                         <svg
                           aria-hidden="true"
-                          class="emotion-49"
+                          class="emotion-51"
                           height="1em"
                           role="img"
                           viewBox="0 0 24 24"
@@ -1979,12 +2024,12 @@ exports[`PivotTable - PivotTableBoard should render with initial fields 1`] = `
                         </svg>
                       </span>
                       <span
-                        class="emotion-50"
+                        class="emotion-52"
                       >
                         Very small
                         <svg
                           aria-hidden="true"
-                          class="emotion-49"
+                          class="emotion-51"
                           height="1em"
                           role="img"
                           viewBox="0 0 24 24"
@@ -1998,12 +2043,12 @@ exports[`PivotTable - PivotTableBoard should render with initial fields 1`] = `
                         </svg>
                       </span>
                       <span
-                        class="emotion-50"
+                        class="emotion-52"
                       >
                         Small
                         <svg
                           aria-hidden="true"
-                          class="emotion-49"
+                          class="emotion-51"
                           height="1em"
                           role="img"
                           viewBox="0 0 24 24"
@@ -2023,10 +2068,10 @@ exports[`PivotTable - PivotTableBoard should render with initial fields 1`] = `
             </div>
           </div>
           <div
-            class="emotion-65"
+            class="emotion-67"
           >
             <button
-              class="emotion-64"
+              class="emotion-66"
               type="button"
             >
               <span>
@@ -2038,21 +2083,22 @@ exports[`PivotTable - PivotTableBoard should render with initial fields 1`] = `
       </div>
     </div>
     <div
-      class="emotion-71"
+      class="emotion-74"
     >
       <div
-        class="emotion-70"
+        class="emotion-73"
       >
         <button
-          class="emotion-68"
+          class="emotion-71"
           type="button"
         >
           <span>
             Clear table
           </span>
         </button>
+        <div />
         <button
-          class="emotion-69"
+          class="emotion-72"
           type="button"
         >
           <span>

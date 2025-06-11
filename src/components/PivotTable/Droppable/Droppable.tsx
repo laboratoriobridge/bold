@@ -1,17 +1,16 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
-import { useMemo } from 'react'
+import { CSSProperties, useMemo } from 'react'
 import { useDrop } from 'react-dnd'
-import { useLocale, useStyles } from '../../..'
+import { Theme, useLocale, useStyles } from '../../..'
 import { InternalDraggable } from '../Draggable/InternalDraggable'
 
 import { InternalFilterDraggable } from '../Draggable/InternalFilterDraggable'
 import { KeyMap } from '../model'
-import { droppableCreateStyles } from './style'
 import { DroppableFilter } from './types/Filter'
 import { KeyNavigationDirection } from './types/model'
 
-export interface DroppableProps<T extends object> {
+export interface DroppableProps<T extends object> extends React.HTMLAttributes<HTMLDivElement> {
   /**
    * The name of the droppable, as an identifier
    */
@@ -50,8 +49,7 @@ export interface DroppableProps<T extends object> {
   /**
    * Function used to navigate a draggable between droppables using the directional arrows
    */
-  onKeyNav?: (dir: KeyNavigationDirection, origin: string, key?: keyof T) => void
-  ['data-testid']?: string
+  onKeyNav?: (dir: KeyNavigationDirection, origin: string, key?: keyof T) => boolean
 }
 
 export interface DragItem<T> {
@@ -72,7 +70,7 @@ export interface DragItem<T> {
 }
 
 export function Droppable<T extends object>(props: DroppableProps<T>) {
-  const { name, keyState, keyMapping, accept, filter, handleKeyUpdate, onKeyNav } = props
+  const { name, keyState, keyMapping, accept, filter, handleKeyUpdate, onKeyNav, ...rest } = props
 
   if (filter) {
     if (filter.keys.size === 0)
@@ -158,9 +156,9 @@ export function Droppable<T extends object>(props: DroppableProps<T>) {
 
   const hasKeys = keyState.length > 0
 
-  const { classes } = useStyles(droppableCreateStyles, hasKeys)
+  const { classes } = useStyles(createStyles, hasKeys)
   return (
-    <div ref={drag} className={classes.box} data-testid={props['data-testid']}>
+    <div ref={drag} className={classes.box} {...rest}>
       {hasKeys ? (
         <div>{draggableButtons}</div>
       ) : (
@@ -171,3 +169,18 @@ export function Droppable<T extends object>(props: DroppableProps<T>) {
     </div>
   )
 }
+
+const createStyles = (theme: Theme, hasKeys: boolean) => ({
+  placeholder: {
+    alignSelf: 'center',
+    textAlign: 'center',
+  } as CSSProperties,
+  box: {
+    display: 'flex',
+    minHeight: '7.18rem',
+    minWidth: '16rem',
+    margin: '0.25rem',
+    padding: '0.75rem',
+    justifyContent: hasKeys ? 'flex-start' : 'center',
+  } as CSSProperties,
+})

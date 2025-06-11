@@ -79,7 +79,7 @@ const locale: LocaleConfiguration = {
     availableFields: 'Campos disponíveis',
     rows: 'Linhas',
     columns: 'Colunas',
-    formOfPresentation: 'Forma de apresentação',
+    kindOfPresentation: 'Forma de apresentação',
     appliedFilters: 'Filtros aplicados',
     clearFilters: 'Limpar filtros',
     clearTable: 'Limpar tabela',

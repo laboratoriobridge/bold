@@ -60,6 +60,7 @@ export function Aggregators<T extends object>(props: AggregatorsProps<T>) {
       </div>
       {aggregator.keyDependent && (
         <Select<keyof T>
+          data-testid={'aggregator-key-select'}
           disabled={numberKeysIsEmpty}
           items={numberKeys as Array<keyof T>}
           itemToString={itemToString}

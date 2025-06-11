@@ -1,72 +1,145 @@
-import { getFilterValuesTags, getInitialKeysAndFilters } from './utils'
+import { BoardField, FieldFiltersByKey, FieldValuesByKey } from './model'
+import { getInitialKeys, handleTagFilterRemove, initializeActiveFilters } from './utils'
 
-describe('getInitialKeysAndFilters', () => {
-  it('should return initial keys and filters based on initialFields', () => {
-    const valuesByKey = new Map([
-      ['key1', ['value1', 'value2']],
-      ['key2', ['value3', 'value4']],
-      ['key3', ['value5']],
+type Test = {
+  name: string
+  size?: string
+}
+
+describe('getInitialKeys', () => {
+  it('should return initial keys based on initialFields', () => {
+    const valuesByKey: FieldValuesByKey<Test> = new Map([
+      ['name', ['Apple', 'Banana']],
+      ['size', ['Very small', 'Small']],
     ])
-    const allFiltersByKey = new Map([
-      ['key1', new Set(['value1'])],
-      ['key2', new Set(['value3', 'value4'])],
-    ])
-    const initialFields = [
-      { key: 'key1', origin: 'row', filters: ['value1'] },
-      { key: 'key2', origin: 'column', filters: ['value3'] },
+
+    const initialFields: Array<BoardField<Test>> = [
+      { key: 'name', origin: 'row', filters: ['Apple'] },
+      { key: 'size', origin: 'column', filters: ['Small'] },
     ]
-    const setFilterState = jest.fn()
 
-    const result = getInitialKeysAndFilters(valuesByKey, allFiltersByKey, initialFields, setFilterState)
+    const result = getInitialKeys(valuesByKey, initialFields)
 
-    expect(result).toEqual({
-      initialRowKeys: ['key1'],
-      initialColumnKeys: ['key2'],
-      initialAvailableKeys: ['key3'],
-    })
-    expect(setFilterState).toHaveBeenCalledWith(
-      new Map([
-        ['key1', new Set(['value1'])],
-        ['key2', new Set(['value3'])],
-      ])
-    )
+    const expected = {
+      initialRowKeys: ['name'],
+      initialColumnKeys: ['size'],
+      initialAvailableKeys: [],
+    }
+
+    expect(result).toEqual(expected)
+  })
+
+  it('should return empty arrays when no initial fields are provided', () => {
+    const valuesByKey: FieldValuesByKey<Test> = new Map([
+      ['name', ['Apple', 'Banana']],
+      ['size', ['Very small', 'Small']],
+    ])
+
+    const initialFields: Array<BoardField<Test>> = []
+
+    const result = getInitialKeys(valuesByKey, initialFields)
+
+    const expected = {
+      initialRowKeys: [],
+      initialColumnKeys: [],
+      initialAvailableKeys: ['name', 'size'],
+    }
+
+    expect(result).toEqual(expected)
   })
 })
 
-describe('getFilterValuesTags', () => {
-  it('should return tags for filter values', () => {
-    const filterState = new Map([['key1', new Set(['value1', 'value2'])]])
-    const keys = new Map([['key1', ['value1', 'value2', 'value3', 'value4']]])
-    const keyMapping = new Map([['key1', { keyName: 'Key 1', formatter: (value: string) => `Formatted ${value}` }]])
-    const handleFilterUpdate = jest.fn()
+describe('initializeActiveFilters', () => {
+  it('should initialize active filters based on initialFields', () => {
+    const allFiltersByKey: FieldFiltersByKey<Test> = new Map([
+      ['name', new Set('Apple')],
+      ['size', new Set('Very small')],
+    ])
 
-    const result = getFilterValuesTags(filterState, keys, keyMapping, handleFilterUpdate)
+    const valuesByKey: FieldValuesByKey<Test> = new Map([
+      ['name', ['Apple', 'Banana']],
+      ['size', ['Very small', 'Small']],
+    ])
 
-    expect(result).toHaveLength(1)
-    expect(result[0].props.children[1].props.children).toHaveLength(2)
+    const initialFields: Array<BoardField<Test>> = [
+      { key: 'name', origin: 'row', filters: ['Apple'] },
+      { key: 'size', origin: 'column', filters: ['Small'] },
+    ]
+
+    const setFilterState = jest.fn()
+
+    initializeActiveFilters(allFiltersByKey, valuesByKey, initialFields, setFilterState)
+
+    expect(setFilterState).toHaveBeenCalledWith(
+      new Map([
+        ['name', new Set(['Apple'])],
+        ['size', new Set(['Small'])],
+      ])
+    )
   })
 
-  it('should return an empty array if no filters are applied', () => {
-    const filterState = new Map()
-    const keys = new Map([['key1', ['value1', 'value2']]])
-    const keyMapping = new Map([['key1', { keyName: 'Key 1', formatter: (value: string) => value }]])
-    const handleFilterUpdate = jest.fn()
+  it('should initialize with all filters when no initial fields are provided', () => {
+    const allFiltersByKey: FieldFiltersByKey<Test> = new Map([
+      ['name', new Set(['Apple'])],
+      ['size', new Set(['Very small'])],
+    ])
 
-    const result = getFilterValuesTags(filterState, keys, keyMapping, handleFilterUpdate)
+    const valuesByKey: FieldValuesByKey<Test> = new Map([
+      ['name', ['Apple', 'Banana']],
+      ['size', ['Very small', 'Small']],
+    ])
 
-    expect(result).toEqual([])
+    const initialFields: Array<BoardField<Test>> = []
+    const setFilterState = jest.fn()
+
+    initializeActiveFilters(allFiltersByKey, valuesByKey, initialFields, setFilterState)
+
+    expect(setFilterState).toHaveBeenCalledTimes(1)
+
+    expect(setFilterState).toHaveBeenCalledWith(allFiltersByKey)
   })
 
-  it('should handle cases where more than 3 filter values are selected', () => {
-    const filterState = new Map([['key1', new Set(['value1', 'value2', 'value3', 'value4'])]])
-    const keys = new Map([['key1', ['value1', 'value2', 'value3', 'value4', 'value5']]])
-    const keyMapping = new Map([['key1', { keyName: 'Key 1', formatter: (value: string) => value }]])
-    const handleFilterUpdate = jest.fn()
+  describe('handleTagFilterRemove', () => {
+    it('should remove a single value from a Set containing multiple values', () => {
+      const filterState: FieldFiltersByKey<Test> = new Map([
+        ['name', new Set(['Apple', 'Banana', 'Orange'])],
+        ['size', new Set(['Small'])],
+      ])
 
-    const result = getFilterValuesTags(filterState, keys, keyMapping, handleFilterUpdate)
+      const result = handleTagFilterRemove('name', 'Banana', filterState)
 
-    expect(result).toHaveLength(1)
-    expect(result[0].props.children[1].props.children).toHaveLength(4)
-    expect(result[0].props.children[1].props.children[3].props.children).toBe('+ 1 Key 1')
+      const expected = new Set(['Apple', 'Orange'])
+      expect(result).toEqual(expected)
+      expect(result.has('Banana')).toBe(false)
+      expect(result.size).toBe(2)
+    })
+
+    it('should return an empty Set when the last value is removed', () => {
+      const filterState: FieldFiltersByKey<Test> = new Map([['name', new Set(['Apple'])]])
+
+      const result = handleTagFilterRemove('name', 'Apple', filterState)
+
+      expect(result).toEqual(new Set())
+      expect(result.size).toBe(0)
+    })
+
+    it('should return an identical Set if the value to be removed does not exist', () => {
+      const initialSet = new Set(['Apple', 'Banana'])
+      const filterState: FieldFiltersByKey<Test> = new Map([['name', initialSet]])
+
+      const result = handleTagFilterRemove('name', 'Watermelon', filterState)
+
+      expect(result).toEqual(initialSet)
+      expect(result.size).toBe(2)
+    })
+
+    it('should return an empty Set if the key does not exist in the filter state', () => {
+      const filterState: FieldFiltersByKey<Test> = new Map([['name', new Set(['Apple'])]])
+
+      const result = handleTagFilterRemove('size', 'Small', filterState)
+
+      expect(result).toEqual(new Set())
+      expect(result.size).toBe(0)
+    })
   })
 })

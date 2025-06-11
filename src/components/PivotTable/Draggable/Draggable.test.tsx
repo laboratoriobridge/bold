@@ -2,7 +2,7 @@ import { fireEvent, render } from '@testing-library/react'
 import React from 'react'
 import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
-import { DropableDiv } from './FilterDraggable.test'
+import { DroppableDiv } from './FilterDraggable.test'
 import { KeyMapping } from './types/KeyMapping'
 import { Draggable, DraggableProps } from './Draggable'
 
@@ -10,7 +10,7 @@ type Pet = {
   name: string
 }
 
-const origin = 'keys_avaible'
+const origin = 'keys_available'
 
 const petKeyMapping = new Map<keyof Pet, KeyMapping>([['name', { keyName: 'Name' }]])
 
@@ -24,7 +24,6 @@ const createDefaultComponent = (props: Partial<DraggableProps<Pet>> = {}) => (
     type={'test'}
     onDragEnd={() => {}}
     value={petKeyMapping.get(key).keyName}
-    onKeyNav={() => {}}
     origin={origin}
     {...props}
   />
@@ -38,51 +37,25 @@ describe('Draggable', () => {
     })
   })
 
-  describe('handleKeyDown', () => {
-    it('should call the onKeyNav with direction as left when the user press the ArrowLeft key', () => {
-      const keyNav = jest.fn()
-      const { getByRole } = render(createDefaultComponent({ onKeyNav: keyNav }))
-
-      fireEvent.keyDown(getByRole('button'), { key: 'ArrowLeft', code: 'ArrowLeft' })
-      expect(keyNav).toBeCalledWith('left', origin)
-    })
-
-    it('should call the onKeyNav with direction as right when the user press the ArrowRight key', () => {
-      const keyNav = jest.fn()
-      const { getByRole } = render(createDefaultComponent({ onKeyNav: keyNav }))
-
-      fireEvent.keyDown(getByRole('button'), { key: 'ArrowRight', code: 'ArrowRight' })
-      expect(keyNav).toBeCalledWith('right', origin)
-    })
-
-    it('should not call the onKeyNav when the user presses any key other than left and right', () => {
-      const keyNav = jest.fn()
-      const { getByRole } = render(createDefaultComponent({ onKeyNav: keyNav }))
-
-      fireEvent.keyDown(getByRole('button'), { key: 'Enter', code: 'Enter' })
-      expect(keyNav).not.toHaveBeenCalled()
-    })
-  })
-
   describe('Drag and drop', () => {
     it('should call onDragEnd when the drag event ends', () => {
       const onDragEnd = jest.fn()
       const { container } = render(
         <DndProvider backend={HTML5Backend}>
-          <DropableDiv type={'test'}>{createDefaultComponent({ onDragEnd: onDragEnd })}</DropableDiv>
-          <DropableDiv type={'test'} />
+          <DroppableDiv type={'test'}>{createDefaultComponent({ onDragEnd: onDragEnd })}</DroppableDiv>
+          <DroppableDiv type={'test'} />
         </DndProvider>
       )
 
-      const dragabble = container.querySelectorAll('div[class*=dropable]')[0].firstChild
+      const draggable = container.querySelectorAll('div[class*=dropable]')[0].firstChild
 
       const secondDiv = container.querySelectorAll('div[class*=dropable]')[1]
 
-      fireEvent.dragStart(dragabble)
+      fireEvent.dragStart(draggable)
       fireEvent.dragEnter(secondDiv)
       fireEvent.dragOver(secondDiv)
       fireEvent.drop(secondDiv)
-      fireEvent.dragEnd(dragabble)
+      fireEvent.dragEnd(draggable)
 
       expect(onDragEnd).toHaveBeenCalled()
     })
