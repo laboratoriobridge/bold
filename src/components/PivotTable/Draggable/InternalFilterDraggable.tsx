@@ -6,10 +6,11 @@ import { useStyles } from '../../../styles'
 import { useLocale } from '../../../i18n'
 import { FilterDraggableProps } from './FilterDraggable'
 import { ActualQuantity } from './types/ActualQuantity'
-import { getKeyDirection, getQuantityValue } from './util'
+import { getQuantityValue } from './util'
 import { DraggableRow } from './DraggableRow'
 import { draggableCreateStyles } from './style'
 import { DraggableWrapper } from './DraggableWrapper'
+import { useDraggableKeyNavigation } from './useDraggableNavigation'
 
 export function InternalFilterDraggable<T extends object>(props: FilterDraggableProps<T>) {
   const {
@@ -70,10 +71,7 @@ export function InternalFilterDraggable<T extends object>(props: FilterDraggable
     setAll(getQuantityValue(selectedItems, filterItems))
   }
 
-  const handleKeyDown = (filterKey: keyof T) => (event: any) => {
-    onKeyNav(getKeyDirection(event.nativeEvent.key), origin, filterKey)
-    onDragEnd()
-  }
+  const { handleKeyDown } = useDraggableKeyNavigation(onDragEnd, origin, onKeyNav)
 
   const handleSearch = () => (event: any) =>
     setSearchedFilterSet(

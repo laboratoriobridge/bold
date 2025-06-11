@@ -16,7 +16,7 @@ export interface DraggableProps<T extends object> extends Pick<DroppableProps<T>
   type: string
 
   /**
-   * Used to know which dropable it came from
+   * Used to know which droppable it came from
    */
   origin: string
 

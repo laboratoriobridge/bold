@@ -11,7 +11,7 @@ type Pet = {
   name: string
 }
 
-const origin = 'keys_avaible'
+const origin = 'keys_available'
 
 const petKeyMapping = new Map<keyof Pet, KeyMapping>([['name', { keyName: 'Name' }]])
 
@@ -26,7 +26,6 @@ const createFilterComponent = (props: Partial<FilterDraggableProps<Pet>> = {}) =
       name={key}
       type={'test'}
       onDragEnd={() => {}}
-      onKeyNav={() => {}}
       value={petKeyMapping.get(key).keyName}
       origin={origin}
       selectedItems={new Set<string>()}
@@ -37,7 +36,7 @@ const createFilterComponent = (props: Partial<FilterDraggableProps<Pet>> = {}) =
   </LocaleContext.Provider>
 )
 
-export function DropableDiv(props: any) {
+export function DroppableDiv(props: any) {
   const [, drag] = useDrop({
     accept: props.type,
     drop() {
@@ -119,48 +118,6 @@ describe('FilterDraggable', () => {
     expect(() => {
       getAllByRole('checkbox')
     }).toThrowError()
-  })
-
-  describe('handleKeyDown', () => {
-    it('should call the onKeyNav with direction as up when the user press the ArrowUp key', () => {
-      const keyNav = jest.fn()
-      const { getByRole } = render(createFilterComponent({ onKeyNav: keyNav }))
-
-      fireEvent.keyDown(getByRole('button'), { key: 'ArrowUp', code: 'ArrowUp' })
-      expect(keyNav).toBeCalledWith('up', origin, 'name')
-    })
-
-    it('should call the onKeyNav with direction as down when the user press the ArrowDown key', () => {
-      const keyNav = jest.fn()
-      const { getByRole } = render(createFilterComponent({ onKeyNav: keyNav }))
-
-      fireEvent.keyDown(getByRole('button'), { key: 'ArrowDown', code: 'ArrowDown' })
-      expect(keyNav).toBeCalledWith('down', origin, 'name')
-    })
-
-    it('should call the onKeyNav with direction as left when the user press the ArrowLeft key', () => {
-      const keyNav = jest.fn()
-      const { getByRole } = render(createFilterComponent({ onKeyNav: keyNav }))
-
-      fireEvent.keyDown(getByRole('button'), { key: 'ArrowLeft', code: 'ArrowLeft' })
-      expect(keyNav).toBeCalledWith('left', origin, 'name')
-    })
-
-    it('should call the onKeyNav with direction as right when the user press the ArrowRight key', () => {
-      const keyNav = jest.fn()
-      const { getByRole } = render(createFilterComponent({ onKeyNav: keyNav }))
-
-      fireEvent.keyDown(getByRole('button'), { key: 'ArrowRight', code: 'ArrowRight' })
-      expect(keyNav).toBeCalledWith('right', origin, 'name')
-    })
-
-    it('should call the onKeyNav with null when the user press a non-arrow key', () => {
-      const keyNav = jest.fn()
-      const { getByRole } = render(createFilterComponent({ onKeyNav: keyNav }))
-
-      fireEvent.keyDown(getByRole('button'), { key: 'Enter', code: 'Enter' })
-      expect(keyNav).toBeCalledWith(null, origin, 'name')
-    })
   })
 
   describe('handleFilterUpdate', () => {
@@ -356,8 +313,8 @@ describe('FilterDraggable', () => {
       const onDragEnd = jest.fn()
       const { container } = render(
         <DndProvider backend={HTML5Backend}>
-          <DropableDiv type={'test'}>{createFilterComponent({ onDragEnd: onDragEnd })}</DropableDiv>
-          <DropableDiv type={'test'} />
+          <DroppableDiv type={'test'}>{createFilterComponent({ onDragEnd: onDragEnd })}</DroppableDiv>
+          <DroppableDiv type={'test'} />
         </DndProvider>
       )
 
