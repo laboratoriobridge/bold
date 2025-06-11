@@ -1,5 +1,6 @@
 import { action } from '@storybook/addon-actions'
 import React from 'react'
+import { KeyNavigationDirection } from '../Droppable/types/model'
 import { Draggable } from './Draggable'
 import { FilterDraggable } from './FilterDraggable'
 import { KeyMapping } from './types/KeyMapping'
@@ -22,6 +23,11 @@ const keys = new Map<keyof Fruit, string[]>([
   ['name', ['Apple', 'Banana', 'Blackberry', 'Lemon', 'Orange', 'Watermelon']],
 ])
 
+const onKeyNav = (dir: KeyNavigationDirection, origin: string, key: keyof Fruit) => {
+  action('onKeyNav')(dir, origin, key)
+  return false
+}
+
 export const Default = () => (
   <Draggable<Fruit>
     key={key as string}
@@ -30,7 +36,7 @@ export const Default = () => (
     value={keyMapping.get(key).keyName || (key as string)}
     origin={origin}
     onDragEnd={action('onDragEnd')}
-    onKeyNav={action('onKeyNav')}
+    onKeyNav={onKeyNav}
   />
 )
 
@@ -46,6 +52,6 @@ export const Filter = () => (
     selectedItems={new Set<string>(['Apple'])}
     onFilterUpdate={action('onFilterUpdate')}
     onDragEnd={action('onDragEnd')}
-    onKeyNav={action('onKeyNav')}
+    onKeyNav={onKeyNav}
   />
 )
