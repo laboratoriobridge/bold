@@ -35,20 +35,17 @@ export function getInitialKeys<T>(
 export function initializeActiveFilters<T>(
   allFiltersByKey: FieldFiltersByKey<T>,
   keys: FieldValuesByKey<T>,
-  initialFields?: Array<BoardField<T>>,
-  setFilterState?: (filter: FieldFiltersByKey<T>) => void
-): void {
+  initialFields?: Array<BoardField<T>>
+): FieldFiltersByKey<T> {
   const activeFiltersByKey = new Map(allFiltersByKey)
-
-  initialFields?.forEach(({ key, filters }) => {
-    if (filters && filters.length > 0) {
+  initialFields
+    ?.filter(({ filters }) => !!filters?.length)
+    .forEach(({ key, filters }) => {
       const currentFieldValues = keys.get(key)
       const validFilters = intersection(filters, currentFieldValues)
       activeFiltersByKey.set(key, new Set(validFilters))
-    }
-  })
-
-  setFilterState?.(activeFiltersByKey)
+    })
+  return activeFiltersByKey
 }
 
 export function handleTagFilterRemove<T extends object>(

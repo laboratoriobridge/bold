@@ -1,11 +1,10 @@
 import React, { CSSProperties } from 'react'
-import { css } from '@emotion/core'
 import { Heading } from '../../Heading'
 import { modal } from '../../Modal/auto'
 import { Icon } from '../../Icon'
 import { PivotTableBoardLabels } from './model'
 
-export const renderClearTableModal = (labels: PivotTableBoardLabels, onTableReset: () => void) => () =>
+export const renderClearTableModal = (labels: PivotTableBoardLabels, onConfirm: () => void) => () =>
   modal({
     size: 'small',
     render: () => (
@@ -18,7 +17,7 @@ export const renderClearTableModal = (labels: PivotTableBoardLabels, onTableRese
     ),
     actions: [
       { label: labels.clearTableCancel },
-      { label: labels.clearTableConfirm, kind: 'danger', onClick: onTableReset, 'data-testid': 'confirm-clear-table' },
+      { label: labels.clearTableConfirm, kind: 'danger', onClick: onConfirm, 'data-testid': 'confirm-clear-table' },
     ],
   })()
 
@@ -27,8 +26,8 @@ const styles = {
     display: 'flex',
     alignItems: 'center',
   } as CSSProperties,
-  icon: css({
+  icon: {
     marginRight: '1rem',
     verticalAlign: 'middle',
-  }),
+  },
 }

@@ -23,7 +23,9 @@ export function Tag(props: TagProps) {
     <span className={css(classes.tag, classes[type], style)} {...rest}>
       {icon && <Icon icon={icon} style={classes.icon} />}
       {children}
-      {removable && <Icon icon='timesDefault' style={classes.removeIcon} onClick={onRemove} />}
+      {removable && (
+        <Icon icon='timesDefault' style={classes.removeIcon} onClick={onRemove} data-testid='remove-tag-button' />
+      )}
     </span>
   )
 }

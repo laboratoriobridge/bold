@@ -56,7 +56,7 @@ describe('initializeActiveFilters', () => {
       ['size', new Set('Very small')],
     ])
 
-    const valuesByKey: FieldValuesByKey<Test> = new Map([
+    const keys: FieldValuesByKey<Test> = new Map([
       ['name', ['Apple', 'Banana']],
       ['size', ['Very small', 'Small']],
     ])
@@ -66,11 +66,9 @@ describe('initializeActiveFilters', () => {
       { key: 'size', origin: 'column', filters: ['Small'] },
     ]
 
-    const setFilterState = jest.fn()
+    const result = initializeActiveFilters(allFiltersByKey, keys, initialFields)
 
-    initializeActiveFilters(allFiltersByKey, valuesByKey, initialFields, setFilterState)
-
-    expect(setFilterState).toHaveBeenCalledWith(
+    expect(result).toEqual(
       new Map([
         ['name', new Set(['Apple'])],
         ['size', new Set(['Small'])],
@@ -90,13 +88,15 @@ describe('initializeActiveFilters', () => {
     ])
 
     const initialFields: Array<BoardField<Test>> = []
-    const setFilterState = jest.fn()
 
-    initializeActiveFilters(allFiltersByKey, valuesByKey, initialFields, setFilterState)
+    const result = initializeActiveFilters(allFiltersByKey, valuesByKey, initialFields)
 
-    expect(setFilterState).toHaveBeenCalledTimes(1)
-
-    expect(setFilterState).toHaveBeenCalledWith(allFiltersByKey)
+    expect(result).toEqual(
+      new Map([
+        ['name', new Set(['Apple'])],
+        ['size', new Set(['Very small'])],
+      ])
+    )
   })
 
   describe('handleTagFilterRemove', () => {

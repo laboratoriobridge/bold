@@ -117,6 +117,7 @@ exports[`should accept "removable" prop and render remove icon 1`] = `
     <svg
       aria-hidden="true"
       class="emotion-0"
+      data-testid="remove-tag-button"
       height="1em"
       role="img"
       viewBox="0 0 24 24"

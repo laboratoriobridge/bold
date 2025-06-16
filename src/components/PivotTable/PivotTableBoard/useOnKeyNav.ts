@@ -1,3 +1,4 @@
+import { useCallback } from 'react'
 import { KeyNavigationDirection } from '../Droppable/types/model'
 
 interface UseOnKeyNavProps<T> {
@@ -11,33 +12,36 @@ interface UseOnKeyNavProps<T> {
 
 export const useOnKeyNav = <T extends object>(props: UseOnKeyNavProps<T>) => {
   const { setColumnKeys, setRowKeys, setAvailableKeys, columnKeys, rowKeys, availableKeys } = props
-  const onKeyNav = (dir: KeyNavigationDirection, origin: string, key?: keyof T): boolean => {
-    const actions: Record<string, Partial<Record<KeyNavigationDirection, () => void>>> = {
-      filter: {
-        right: () => setColumnKeys([...columnKeys, key]),
-        down: () => setRowKeys([...rowKeys, key]),
-      },
-      column: {
-        right: () => setRowKeys([...rowKeys, key]),
-        down: () => setRowKeys([...rowKeys, key]),
-        left: () => setAvailableKeys([...availableKeys, key]),
-      },
-      row: {
-        right: () => setColumnKeys([...columnKeys, key]),
-        left: () => setAvailableKeys([...availableKeys, key]),
-        up: () => setAvailableKeys([...availableKeys, key]),
-      },
-    }
+  const onKeyNav = useCallback(
+    (direction: KeyNavigationDirection, origin: string, key?: keyof T): boolean => {
+      const actions: Record<string, Partial<Record<KeyNavigationDirection, () => void>>> = {
+        filter: {
+          right: () => setColumnKeys([...columnKeys, key]),
+          down: () => setRowKeys([...rowKeys, key]),
+        },
+        column: {
+          right: () => setRowKeys([...rowKeys, key]),
+          down: () => setRowKeys([...rowKeys, key]),
+          left: () => setAvailableKeys([...availableKeys, key]),
+        },
+        row: {
+          right: () => setColumnKeys([...columnKeys, key]),
+          left: () => setAvailableKeys([...availableKeys, key]),
+          up: () => setAvailableKeys([...availableKeys, key]),
+        },
+      }
 
-    const action = actions[origin]?.[dir]
+      const action = actions[origin]?.[direction]
 
-    if (action) {
-      action()
-      return true
-    }
+      if (action) {
+        action()
+        return true
+      }
 
-    return false
-  }
+      return false
+    },
+    [setColumnKeys, setRowKeys, setAvailableKeys, columnKeys, rowKeys, availableKeys]
+  )
 
   return onKeyNav
 }

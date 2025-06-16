@@ -2,7 +2,7 @@ import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
 import React, { CSSProperties, useCallback, useEffect, useMemo, useState } from 'react'
 import { HFlow } from '../../HFlow'
-import { Theme, useStyles, useTheme } from '../../../styles'
+import { Theme, useStyles } from '../../../styles'
 import { Aggregator } from '../Aggregators/model'
 import { Cell, Grid } from '../../Grid'
 import { Box } from '../Box/Box'
@@ -18,10 +18,10 @@ import { BoardField, FieldFiltersByKey, FieldValuesByKey, RowColumnKeys } from '
 import { renderClearTableModal } from './render'
 import { FilterValuesTags } from './FilterValuesTags'
 import { useOnKeyNav } from './useOnKeyNav'
-import { getInitialKeys, initializeActiveFilters } from './utils'
+import { getInitialKeys, handleTagFilterRemove, initializeActiveFilters } from './utils'
 interface BoardAggregatorProps<T extends object> {
-  handleChange: (aggregator: Aggregator) => void
-  handleKeyChange: (key: keyof T) => void
+  onChange: (aggregator: Aggregator) => void
+  onKeyChange: (key: keyof T) => void
   value: Aggregator
   key: keyof T
 }
@@ -30,24 +30,22 @@ interface PivotTableBoardProps<T extends object> {
   keyMapping: KeyMap<T>
   numberKeys: Array<keyof T>
   isBuilding: boolean
-  handleSubmit: (values: RowColumnKeys<T>, filterValues: FieldFiltersByKey<T>) => void
-  handleReset: () => void
+  onSubmit: (values: RowColumnKeys<T>, filterValues: FieldFiltersByKey<T>) => void
+  onReset: () => void
   aggregator: BoardAggregatorProps<T>
   initialFields?: Array<BoardField<T>>
 }
 
 export function PivotTableBoard<T extends object>(props: PivotTableBoardProps<T>) {
-  const { keys, keyMapping, handleSubmit, numberKeys, isBuilding, handleReset, aggregator, initialFields } = props
+  const { keys, keyMapping, onSubmit, numberKeys, isBuilding, onReset, aggregator, initialFields } = props
 
   const { pivotTableBoard: pivotTableBoardLabels } = useLocale()
 
-  const allFiltersByKey = useMemo(() => {
-    const map = new Map<keyof T, Set<string>>()
-    keys.forEach((values, key) => map.set(key, new Set(values)))
-    return map
-  }, [keys])
+  const allFiltersByKey = useMemo(() => new Map(Array.from(keys).map(([key, values]) => [key, new Set(values)])), [
+    keys,
+  ])
 
-  const [filterState, setFilterState] = useState<FieldFiltersByKey<T>>(new Map<keyof T, Set<string>>(allFiltersByKey))
+  const [filterState, setFilterState] = useState<FieldFiltersByKey<T>>(allFiltersByKey)
 
   const [initialized, setInitialized] = useState(false)
   const [rowKeys, setRowKeys] = useState<Array<keyof T>>([])
@@ -58,7 +56,7 @@ export function PivotTableBoard<T extends object>(props: PivotTableBoardProps<T>
     if (!initialized) {
       const { initialRowKeys, initialColumnKeys, initialAvailableKeys } = getInitialKeys(keys, initialFields)
 
-      initializeActiveFilters(allFiltersByKey, keys, initialFields, setFilterState)
+      setFilterState(initializeActiveFilters(allFiltersByKey, keys, initialFields))
 
       setRowKeys(initialRowKeys)
       setColumnKeys(initialColumnKeys)
@@ -67,34 +65,29 @@ export function PivotTableBoard<T extends object>(props: PivotTableBoardProps<T>
     }
   }, [initialized, keys, allFiltersByKey, initialFields])
 
-  const theme = useTheme()
-  const { classes } = useStyles(createStyles, theme)
+  const { classes } = useStyles(createStyles)
 
-  const onTableCreate = useCallback(() => handleSubmit([rowKeys, columnKeys], filterState), [
+  const handleGenerateTableClick = useCallback(() => onSubmit([rowKeys, columnKeys], filterState), [
     columnKeys,
     filterState,
-    handleSubmit,
+    onSubmit,
     rowKeys,
   ])
 
   const handleClearFilters = useCallback(() => setFilterState(allFiltersByKey), [allFiltersByKey])
 
-  const handleUpdateAvailableKeys = useCallback((availableKeys: Array<keyof T>) => setAvailableKeys(availableKeys), [])
-  const handleUpdateRowKeys = useCallback((rowKeys: Array<keyof T>) => setRowKeys(rowKeys), [])
-  const handleUpdateColumnKeys = useCallback((columnKeys: Array<keyof T>) => setColumnKeys(columnKeys), [])
-
-  const onTableReset = useCallback(() => {
-    handleUpdateColumnKeys([])
-    handleUpdateRowKeys([])
+  const handleTableReset = useCallback(() => {
+    setColumnKeys([])
+    setRowKeys([])
     handleClearFilters()
-    handleReset()
-    handleUpdateAvailableKeys(Array.from(keys.keys()))
-  }, [handleClearFilters, handleReset, handleUpdateAvailableKeys, handleUpdateColumnKeys, handleUpdateRowKeys, keys])
+    onReset()
+    setAvailableKeys(Array.from(keys.keys()))
+  }, [handleClearFilters, onReset, keys])
 
   const onKeyNav = useOnKeyNav({
-    setColumnKeys: handleUpdateColumnKeys,
-    setRowKeys: handleUpdateRowKeys,
-    setAvailableKeys: handleUpdateAvailableKeys,
+    setColumnKeys,
+    setRowKeys,
+    setAvailableKeys,
     columnKeys,
     rowKeys,
     availableKeys,
@@ -102,14 +95,24 @@ export function PivotTableBoard<T extends object>(props: PivotTableBoardProps<T>
 
   const handleFilterUpdate = useCallback(
     (key: keyof T, filter: Set<string>) => {
-      if (filter.size === 0) {
-        filterState.delete(key)
-      } else {
-        filterState.set(key, filter)
-      }
-      setFilterState(new Map(filterState))
+      setFilterState(() => {
+        const newState = new Map(filterState)
+        if (filter.size === 0) {
+          newState.delete(key)
+        } else {
+          newState.set(key, filter)
+        }
+        return newState
+      })
     },
     [filterState]
+  )
+
+  const handleRemoveTag = useCallback(
+    (key: keyof T, value: string) => {
+      handleFilterUpdate(key, handleTagFilterRemove(key, value, filterState))
+    },
+    [filterState, handleFilterUpdate]
   )
 
   const filter: DroppableFilter<T> = useMemo(
@@ -131,7 +134,7 @@ export function PivotTableBoard<T extends object>(props: PivotTableBoardProps<T>
               keyState={availableKeys}
               filter={filter}
               keyMapping={keyMapping}
-              handleKeyUpdate={handleUpdateAvailableKeys}
+              handleKeyUpdate={setAvailableKeys}
               onKeyNav={onKeyNav}
               name='filter'
               accept='filter'
@@ -145,7 +148,7 @@ export function PivotTableBoard<T extends object>(props: PivotTableBoardProps<T>
               keyState={columnKeys}
               filter={filter}
               keyMapping={keyMapping}
-              handleKeyUpdate={handleUpdateColumnKeys}
+              handleKeyUpdate={setColumnKeys}
               onKeyNav={onKeyNav}
               name='column'
               accept='filter'
@@ -159,7 +162,7 @@ export function PivotTableBoard<T extends object>(props: PivotTableBoardProps<T>
               keyState={rowKeys}
               filter={filter}
               keyMapping={keyMapping}
-              handleKeyUpdate={handleUpdateRowKeys}
+              handleKeyUpdate={setRowKeys}
               onKeyNav={onKeyNav}
               name='row'
               accept='filter'
@@ -172,8 +175,8 @@ export function PivotTableBoard<T extends object>(props: PivotTableBoardProps<T>
               <Aggregators
                 numberKeys={numberKeys}
                 keyMapping={keyMapping}
-                handleAggregatorChange={aggregator.handleChange}
-                handleAggregatorKeyChange={aggregator.handleKeyChange}
+                handleAggregatorChange={aggregator.onChange}
+                handleAggregatorKeyChange={aggregator.onKeyChange}
                 aggregator={aggregator.value}
                 aggregatorKey={aggregator.key}
               />
@@ -190,7 +193,7 @@ export function PivotTableBoard<T extends object>(props: PivotTableBoardProps<T>
                     filterState={filterState}
                     keys={keys}
                     keyMapping={keyMapping}
-                    handleFilterUpdate={handleFilterUpdate}
+                    onRemoveTag={handleRemoveTag}
                   />
                 </HFlow>
               </Cell>
@@ -210,11 +213,21 @@ export function PivotTableBoard<T extends object>(props: PivotTableBoardProps<T>
         </Cell>
         <Cell size={12}>
           <HFlow justifyContent='flex-end'>
-            <Button kind='normal' size='medium' onClick={renderClearTableModal(pivotTableBoardLabels, onTableReset)}>
+            <Button
+              kind='normal'
+              size='medium'
+              onClick={renderClearTableModal(pivotTableBoardLabels, handleTableReset)}
+            >
               {pivotTableBoardLabels.clearTable}
             </Button>
             <ModalMountTarget />
-            <Button kind='primary' size='medium' onClick={onTableCreate} loading={isBuilding} disabled={isBuilding}>
+            <Button
+              kind='primary'
+              size='medium'
+              onClick={handleGenerateTableClick}
+              loading={isBuilding}
+              disabled={isBuilding}
+            >
               {pivotTableBoardLabels.generateTable}
             </Button>
           </HFlow>
@@ -231,7 +244,7 @@ const createStyles = (theme: Theme) => ({
     minHeight: '7.18rem',
   } as CSSProperties,
   filtersContainer: {
-    border: `1px solid ${theme.pallete.gray.c80}`,
+    border: `1px solid ${theme.pallete.divider}`,
     padding: '0.75rem 1.25rem',
   } as CSSProperties,
 })

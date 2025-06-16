@@ -22,8 +22,8 @@ describe('PivotTable - PivotTableBoard', () => {
   ])
 
   const aggregator = {
-    handleChange: jest.fn(),
-    handleKeyChange: jest.fn(),
+    onChange: jest.fn(),
+    onKeyChange: jest.fn(),
     value: { id: AggregatorEnum.COUNT, label: 'Count', value: undefined, keyDependent: false },
     key: 'name' as keyof Test,
   }
@@ -44,8 +44,8 @@ describe('PivotTable - PivotTableBoard', () => {
         keyMapping={keyMapping}
         numberKeys={[]}
         isBuilding={false}
-        handleSubmit={() => null}
-        handleReset={() => null}
+        onSubmit={() => null}
+        onReset={() => null}
         aggregator={aggregator}
       />
     )
@@ -59,8 +59,8 @@ describe('PivotTable - PivotTableBoard', () => {
         keyMapping={keyMapping}
         numberKeys={[]}
         isBuilding={false}
-        handleSubmit={() => null}
-        handleReset={() => null}
+        onSubmit={() => null}
+        onReset={() => null}
         aggregator={aggregator}
         initialFields={initialFields}
       />
@@ -77,8 +77,8 @@ describe('PivotTable - PivotTableBoard', () => {
         keys={keys}
         keyMapping={keyMapping}
         numberKeys={[]}
-        handleSubmit={handleSubmit}
-        handleReset={handleReset}
+        onSubmit={handleSubmit}
+        onReset={handleReset}
         aggregator={aggregator}
         isBuilding={false}
         initialFields={initialFields}
@@ -105,8 +105,8 @@ describe('PivotTable - PivotTableBoard', () => {
         keys={keys}
         keyMapping={keyMapping}
         numberKeys={[]}
-        handleSubmit={handleSubmit}
-        handleReset={handleReset}
+        onSubmit={handleSubmit}
+        onReset={handleReset}
         aggregator={aggregator}
         isBuilding={false}
       />
@@ -146,8 +146,8 @@ describe('PivotTable - PivotTableBoard', () => {
         keyMapping={keyMapping}
         numberKeys={[]}
         isBuilding={false}
-        handleSubmit={() => null}
-        handleReset={handleReset}
+        onSubmit={() => null}
+        onReset={handleReset}
         aggregator={aggregator}
         initialFields={initialFields}
       />
@@ -183,11 +183,11 @@ describe('PivotTable - PivotTableBoard', () => {
         keyMapping={keyMapping}
         numberKeys={['name', 'size']}
         isBuilding={false}
-        handleSubmit={() => null}
-        handleReset={() => null}
+        onSubmit={() => null}
+        onReset={() => null}
         aggregator={{
-          handleChange: jest.fn(),
-          handleKeyChange: handleKeyChange,
+          onChange: jest.fn(),
+          onKeyChange: handleKeyChange,
           value: { id: AggregatorEnum.MAXIMUM, label: 'Maximum', value: undefined, keyDependent: true },
           key: 'size' as keyof Test,
         }}
@@ -210,11 +210,11 @@ describe('PivotTable - PivotTableBoard', () => {
         keyMapping={keyMapping}
         numberKeys={[]}
         isBuilding={false}
-        handleSubmit={() => null}
-        handleReset={() => null}
+        onSubmit={() => null}
+        onReset={() => null}
         aggregator={{
-          handleChange: handleChange,
-          handleKeyChange: jest.fn(),
+          onChange: handleChange,
+          onKeyChange: jest.fn(),
           value: {
             id: AggregatorEnum.COUNT,
             label: 'Count',
@@ -250,8 +250,8 @@ describe('PivotTable - PivotTableBoard', () => {
         keys={keys}
         keyMapping={keyMapping}
         numberKeys={[]}
-        handleSubmit={jest.fn()}
-        handleReset={jest.fn()}
+        onSubmit={jest.fn()}
+        onReset={jest.fn()}
         aggregator={aggregator}
         isBuilding={false}
       />
@@ -266,8 +266,8 @@ describe('PivotTable - PivotTableBoard', () => {
         keys={keys}
         keyMapping={keyMapping}
         numberKeys={[]}
-        handleSubmit={jest.fn()}
-        handleReset={jest.fn()}
+        onSubmit={jest.fn()}
+        onReset={jest.fn()}
         aggregator={aggregator}
         isBuilding={true}
       />
@@ -284,8 +284,8 @@ describe('PivotTable - PivotTableBoard', () => {
           keys={keys}
           keyMapping={keyMapping}
           numberKeys={[]}
-          handleSubmit={handleSubmit}
-          handleReset={handleReset}
+          onSubmit={handleSubmit}
+          onReset={handleReset}
           aggregator={aggregator}
           isBuilding={false}
           initialFields={initialFields}

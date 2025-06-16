@@ -49,7 +49,7 @@ export interface DroppableProps<T extends object> extends React.HTMLAttributes<H
   /**
    * Function used to navigate a draggable between droppables using the directional arrows
    */
-  onKeyNav?: (dir: KeyNavigationDirection, origin: string, key?: keyof T) => boolean
+  onKeyNav?: (direction: KeyNavigationDirection, origin: string, key?: keyof T) => boolean
 }
 
 export interface DragItem<T> {

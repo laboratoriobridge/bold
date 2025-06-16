@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react'
+import { fireEvent, render } from '@testing-library/react'
 import React from 'react'
 import { KeyMap } from '../model'
 import { FieldFiltersByKey, FieldValuesByKey } from './model'
@@ -26,7 +26,7 @@ describe('PivotTableBoard - FilterValuesTags', () => {
     ])
 
     const { container } = render(
-      <FilterValuesTags filterState={filterState} keys={keys} keyMapping={keyMapping} handleFilterUpdate={jest.fn()} />
+      <FilterValuesTags filterState={filterState} keys={keys} keyMapping={keyMapping} onRemoveTag={jest.fn()} />
     )
 
     expect(container.firstChild).toBeEmptyDOMElement()
@@ -36,7 +36,7 @@ describe('PivotTableBoard - FilterValuesTags', () => {
     const filterState: FieldFiltersByKey<Test> = new Map([['name', new Set(['Apple', 'Banana'])]])
 
     const { getByText, queryByText } = render(
-      <FilterValuesTags filterState={filterState} keys={keys} keyMapping={keyMapping} handleFilterUpdate={jest.fn()} />
+      <FilterValuesTags filterState={filterState} keys={keys} keyMapping={keyMapping} onRemoveTag={jest.fn()} />
     )
 
     expect(getByText('Name')).toBeInTheDocument()
@@ -51,16 +51,30 @@ describe('PivotTableBoard - FilterValuesTags', () => {
       ['name', new Set(['Apple', 'Banana', 'Blackberry', 'Lemon'])],
     ])
 
-    render(
-      <FilterValuesTags filterState={filterState} keys={keys} keyMapping={keyMapping} handleFilterUpdate={jest.fn()} />
+    const { getByText, queryByText } = render(
+      <FilterValuesTags filterState={filterState} keys={keys} keyMapping={keyMapping} onRemoveTag={jest.fn()} />
     )
 
-    expect(screen.getByText('Apple')).toBeInTheDocument()
-    expect(screen.getByText('Banana')).toBeInTheDocument()
-    expect(screen.getByText('Blackberry')).toBeInTheDocument()
+    expect(getByText('Apple')).toBeInTheDocument()
+    expect(getByText('Banana')).toBeInTheDocument()
+    expect(getByText('Blackberry')).toBeInTheDocument()
 
-    expect(screen.queryByText('Lemon')).not.toBeInTheDocument()
+    expect(queryByText('Lemon')).not.toBeInTheDocument()
 
-    expect(screen.getByText('+ 1 Name')).toBeInTheDocument()
+    expect(getByText('+ 1 Name')).toBeInTheDocument()
+  })
+
+  it('should call onRemoveTag with the correct key and value when a tag is removed', async () => {
+    const onRemoveTag = jest.fn()
+    const filterState: FieldFiltersByKey<Test> = new Map([['name', new Set(['Apple'])]])
+
+    const { findByTestId } = render(
+      <FilterValuesTags filterState={filterState} keys={keys} keyMapping={keyMapping} onRemoveTag={onRemoveTag} />
+    )
+
+    fireEvent.click(await findByTestId('remove-tag-button'))
+
+    expect(onRemoveTag).toHaveBeenCalledTimes(1)
+    expect(onRemoveTag).toHaveBeenCalledWith('name', 'Apple')
   })
 })

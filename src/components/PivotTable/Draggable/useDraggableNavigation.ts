@@ -1,18 +1,22 @@
+import { useCallback } from 'react'
 import { KeyNavigationDirection } from '../Droppable/types/model'
-import { keyDirectionMap } from './model'
+import { KeyNavigationEnum } from './model'
 
 export const useDraggableKeyNavigation = <T>(
-  onDragEnd: () => void,
+  onKeyNavSuccess: () => void,
   origin: string,
-  onKeyNav?: (dir: KeyNavigationDirection, origin: string, key?: keyof T) => boolean
+  onKeyNav?: (direction: KeyNavigationDirection, origin: string, key?: keyof T) => boolean
 ) => {
-  const handleKeyDown = (filterKey?: keyof T) => (event: any) => {
-    if (onKeyNav) {
-      if (onKeyNav(keyDirectionMap[event.nativeEvent.key], origin, filterKey)) {
-        onDragEnd()
+  const handleKeyDown = useCallback(
+    (filterKey?: keyof T) => (event: any) => {
+      if (onKeyNav) {
+        if (onKeyNav(KeyNavigationEnum[event.nativeEvent.key], origin, filterKey)) {
+          onKeyNavSuccess()
+        }
       }
-    }
-  }
+    },
+    [onKeyNav, onKeyNavSuccess, origin]
+  )
 
   return { handleKeyDown }
 }

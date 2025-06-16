@@ -69,11 +69,11 @@ export const Default = () => {
       keyMapping={keyMapping}
       numberKeys={numberKeys}
       isBuilding={boolean('isBuilding', false)}
-      handleSubmit={handleSubmit}
-      handleReset={handleReset}
+      onSubmit={handleSubmit}
+      onReset={handleReset}
       aggregator={{
-        handleChange: handleAggregatorChange,
-        handleKeyChange: handleAggregatorKey,
+        onChange: handleAggregatorChange,
+        onKeyChange: handleAggregatorKey,
         value: aggregator,
         key: aggregatorKey,
       }}

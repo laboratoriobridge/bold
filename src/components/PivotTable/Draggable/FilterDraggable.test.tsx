@@ -6,6 +6,10 @@ import { LocaleContext } from '../../../i18n'
 import enUS from '../../../i18n/locales/en-US'
 import { KeyMapping } from './types/KeyMapping'
 import { FilterDraggable, FilterDraggableProps } from './FilterDraggable'
+import { useDraggableKeyNavigation } from './useDraggableNavigation'
+
+jest.mock('./useDraggableNavigation')
+const mockedUseDraggableKeyNavigation = useDraggableKeyNavigation as jest.Mock
 
 type Pet = {
   name: string
@@ -49,13 +53,26 @@ export function DroppableDiv(props: any) {
   })
 
   return (
-    <div ref={drag} className='dropable'>
+    <div ref={drag} className='droppable'>
       {props.children}
     </div>
   )
 }
 
 describe('FilterDraggable', () => {
+  const mockKeyDownHandler = jest.fn()
+  const mockHandleKeyDown = jest.fn().mockReturnValue(mockKeyDownHandler)
+
+  beforeEach(() => {
+    mockedUseDraggableKeyNavigation.mockClear()
+    mockHandleKeyDown.mockClear()
+    mockKeyDownHandler.mockClear()
+
+    mockedUseDraggableKeyNavigation.mockReturnValue({
+      handleKeyDown: mockHandleKeyDown,
+    })
+  })
+
   describe('render', () => {
     it('should render correctly with no values of selectedItems', () => {
       const { container } = render(createFilterComponent())
@@ -318,17 +335,37 @@ describe('FilterDraggable', () => {
         </DndProvider>
       )
 
-      const dragabble = container.querySelectorAll('div[class*=dropable]')[0].firstChild
+      const draggable = container.querySelectorAll('div[class*=droppable]')[0].firstChild
 
-      const secondDiv = container.querySelectorAll('div[class*=dropable]')[1]
+      const secondDiv = container.querySelectorAll('div[class*=droppable]')[1]
 
-      fireEvent.dragStart(dragabble)
+      fireEvent.dragStart(draggable)
       fireEvent.dragEnter(secondDiv)
       fireEvent.dragOver(secondDiv)
       fireEvent.drop(secondDiv)
-      fireEvent.dragEnd(dragabble)
+      fireEvent.dragEnd(draggable)
 
       expect(onDragEnd).toHaveBeenCalled()
+    })
+  })
+
+  describe('Keyboard navigation', () => {
+    it('should call useDraggableKeyNavigation with correct params and trigger its returned function on key down', () => {
+      const onDragEnd = jest.fn()
+      const onKeyNav = jest.fn()
+
+      const { getByRole } = render(
+        <DndProvider backend={HTML5Backend}>
+          <DroppableDiv type={'test'}>{createFilterComponent({ onDragEnd, onKeyNav })}</DroppableDiv>
+          <DroppableDiv type={'test'} />
+        </DndProvider>
+      )
+
+      fireEvent.keyDown(getByRole('button', { name: /Name/i }), { key: 'ArrowDown', code: 'ArrowDown' })
+
+      expect(mockedUseDraggableKeyNavigation).toHaveBeenCalledWith(onDragEnd, origin, onKeyNav)
+      expect(mockHandleKeyDown).toHaveBeenCalledWith(key)
+      expect(mockKeyDownHandler).toHaveBeenCalledTimes(1)
     })
   })
 })
