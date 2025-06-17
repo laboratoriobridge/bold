@@ -29,6 +29,25 @@ describe('getInitialKeys', () => {
     expect(result).toEqual(expected)
   })
 
+  it('should return remaining keys in availableKeys when initialFields is partially provided', () => {
+    const valuesByKey: FieldValuesByKey<Test> = new Map([
+      ['name', ['Apple', 'Banana']],
+      ['size', ['Very small', 'Small']],
+    ])
+
+    const initialFields: Array<BoardField<Test>> = [{ key: 'name', origin: 'row', filters: ['Apple'] }]
+
+    const result = getInitialKeys(valuesByKey, initialFields)
+
+    const expected = {
+      initialRowKeys: ['name'],
+      initialColumnKeys: [],
+      initialAvailableKeys: ['size'],
+    }
+
+    expect(result).toEqual(expected)
+  })
+
   it('should return empty arrays when no initial fields are provided', () => {
     const valuesByKey: FieldValuesByKey<Test> = new Map([
       ['name', ['Apple', 'Banana']],
@@ -106,9 +125,13 @@ describe('initializeActiveFilters', () => {
         ['size', new Set(['Small'])],
       ])
 
+      const originalSizeSet = filterState.get('size')
+
       const result = handleTagFilterRemove('name', 'Banana', filterState)
 
       const expected = new Set(['Apple', 'Orange'])
+
+      expect(filterState.get('size')).toEqual(originalSizeSet)
       expect(result).toEqual(expected)
       expect(result.has('Banana')).toBe(false)
       expect(result.size).toBe(2)

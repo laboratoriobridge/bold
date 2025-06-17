@@ -1,5 +1,8 @@
 import { useCallback } from 'react'
 import { KeyNavigationDirection } from '../Droppable/types/model'
+import { PivotTableBoardOrigin } from './model'
+
+type KeyNavActions = Record<PivotTableBoardOrigin, Partial<Record<KeyNavigationDirection, () => void>>>
 
 interface UseOnKeyNavProps<T> {
   setColumnKeys: (keys: Array<keyof T>) => void
@@ -13,8 +16,8 @@ interface UseOnKeyNavProps<T> {
 export const useOnKeyNav = <T extends object>(props: UseOnKeyNavProps<T>) => {
   const { setColumnKeys, setRowKeys, setAvailableKeys, columnKeys, rowKeys, availableKeys } = props
   const onKeyNav = useCallback(
-    (direction: KeyNavigationDirection, origin: string, key?: keyof T): boolean => {
-      const actions: Record<string, Partial<Record<KeyNavigationDirection, () => void>>> = {
+    (direction: KeyNavigationDirection, origin: PivotTableBoardOrigin, key?: keyof T): boolean => {
+      const actions: KeyNavActions = {
         filter: {
           right: () => setColumnKeys([...columnKeys, key]),
           down: () => setRowKeys([...rowKeys, key]),
@@ -31,7 +34,7 @@ export const useOnKeyNav = <T extends object>(props: UseOnKeyNavProps<T>) => {
         },
       }
 
-      const action = actions[origin]?.[direction]
+      const action = actions[origin][direction]
 
       if (action) {
         action()

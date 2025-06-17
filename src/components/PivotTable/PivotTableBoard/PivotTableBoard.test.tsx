@@ -1,5 +1,6 @@
 import React from 'react'
 import { fireEvent, render, within } from '@testing-library/react'
+import { noop } from 'lodash'
 import { KeyMap } from '../model'
 import { AggregatorEnum } from '../Aggregators/model'
 import { PivotTableBoard } from './PivotTableBoard'
@@ -44,8 +45,8 @@ describe('PivotTable - PivotTableBoard', () => {
         keyMapping={keyMapping}
         numberKeys={[]}
         isBuilding={false}
-        onSubmit={() => null}
-        onReset={() => null}
+        onSubmit={noop}
+        onReset={noop}
         aggregator={aggregator}
       />
     )
@@ -59,8 +60,8 @@ describe('PivotTable - PivotTableBoard', () => {
         keyMapping={keyMapping}
         numberKeys={[]}
         isBuilding={false}
-        onSubmit={() => null}
-        onReset={() => null}
+        onSubmit={noop}
+        onReset={noop}
         aggregator={aggregator}
         initialFields={initialFields}
       />
@@ -183,8 +184,8 @@ describe('PivotTable - PivotTableBoard', () => {
         keyMapping={keyMapping}
         numberKeys={['name', 'size']}
         isBuilding={false}
-        onSubmit={() => null}
-        onReset={() => null}
+        onSubmit={noop}
+        onReset={noop}
         aggregator={{
           onChange: jest.fn(),
           onKeyChange: handleKeyChange,
@@ -210,8 +211,8 @@ describe('PivotTable - PivotTableBoard', () => {
         keyMapping={keyMapping}
         numberKeys={[]}
         isBuilding={false}
-        onSubmit={() => null}
-        onReset={() => null}
+        onSubmit={noop}
+        onReset={noop}
         aggregator={{
           onChange: handleChange,
           onKeyChange: jest.fn(),
@@ -241,6 +242,34 @@ describe('PivotTable - PivotTableBoard', () => {
           }),
         ]),
       })
+    )
+  })
+
+  it('should call handleClearFilters when the user clicks the clear filters button', async () => {
+    const handleSubmit = jest.fn()
+    const { getByRole } = render(
+      <PivotTableBoard<Test>
+        keys={keys}
+        keyMapping={keyMapping}
+        numberKeys={[]}
+        onSubmit={handleSubmit}
+        onReset={noop}
+        aggregator={aggregator}
+        isBuilding={false}
+        initialFields={initialFields}
+      />
+    )
+
+    fireEvent.click(getByRole('button', { name: /Clear filters/i }))
+
+    fireEvent.click(getByRole('button', { name: /Generate table/i }))
+
+    expect(handleSubmit).toHaveBeenCalledWith(
+      [['name'], ['size']],
+      new Map([
+        ['name', new Set(['Apple', 'Banana', 'Blackberry', 'Lemon', 'Orange', 'Watermelon'])],
+        ['size', new Set(['Medium', 'Very small', 'Small', 'Medium', 'Big', 'Very big'])],
+      ])
     )
   })
 

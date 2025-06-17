@@ -35,9 +35,7 @@ describe('Draggable', () => {
   const mockHandleKeyDown = jest.fn().mockReturnValue(mockKeyDownHandler)
 
   beforeEach(() => {
-    mockedUseDraggableKeyNavigation.mockClear()
-    mockHandleKeyDown.mockClear()
-    mockKeyDownHandler.mockClear()
+    jest.clearAllMocks()
 
     mockedUseDraggableKeyNavigation.mockReturnValue({
       handleKeyDown: mockHandleKeyDown,
@@ -56,8 +54,8 @@ describe('Draggable', () => {
       const onDragEnd = jest.fn()
       const { container } = render(
         <DndProvider backend={HTML5Backend}>
-          <DroppableDiv type={'test'}>{createDefaultComponent({ onDragEnd: onDragEnd })}</DroppableDiv>
-          <DroppableDiv type={'test'} />
+          <DroppableDiv type='test'>{createDefaultComponent({ onDragEnd })}</DroppableDiv>
+          <DroppableDiv type='test' />
         </DndProvider>
       )
 

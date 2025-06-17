@@ -14,17 +14,19 @@ import { useLocale } from '../../../i18n'
 import { ModalMountTarget } from '../../Modal'
 import { KeyMap } from '../model'
 import { Text } from '../../Text'
-import { BoardField, FieldFiltersByKey, FieldValuesByKey, RowColumnKeys } from './model'
+import { BoardField, FieldFiltersByKey, FieldValuesByKey, PivotTableBoardOrigin, RowColumnKeys } from './model'
 import { renderClearTableModal } from './render'
 import { FilterValuesTags } from './FilterValuesTags'
 import { useOnKeyNav } from './useOnKeyNav'
 import { getInitialKeys, handleTagFilterRemove, initializeActiveFilters } from './utils'
+
 interface BoardAggregatorProps<T extends object> {
   onChange: (aggregator: Aggregator) => void
   onKeyChange: (key: keyof T) => void
   value: Aggregator
   key: keyof T
 }
+
 interface PivotTableBoardProps<T extends object> {
   keys: FieldValuesByKey<T>
   keyMapping: KeyMap<T>
@@ -129,7 +131,7 @@ export function PivotTableBoard<T extends object>(props: PivotTableBoardProps<T>
       <Grid>
         <Cell md={6} sm={12} xs={12}>
           <Box label={pivotTableBoardLabels.availableFields}>
-            <Droppable<T>
+            <Droppable<T, PivotTableBoardOrigin>
               data-testid='droppable-available'
               keyState={availableKeys}
               filter={filter}
@@ -143,7 +145,7 @@ export function PivotTableBoard<T extends object>(props: PivotTableBoardProps<T>
         </Cell>
         <Cell md={6} sm={12} xs={12}>
           <Box label={pivotTableBoardLabels.columns} icon='hamburguerMenu' rotation='90'>
-            <Droppable<T>
+            <Droppable<T, PivotTableBoardOrigin>
               data-testid='droppable-column'
               keyState={columnKeys}
               filter={filter}
@@ -157,7 +159,7 @@ export function PivotTableBoard<T extends object>(props: PivotTableBoardProps<T>
         </Cell>
         <Cell md={6} sm={12} xs={12}>
           <Box label={pivotTableBoardLabels.rows} icon='hamburguerMenu'>
-            <Droppable<T>
+            <Droppable<T, PivotTableBoardOrigin>
               data-testid='droppable-row'
               keyState={rowKeys}
               filter={filter}

@@ -1,10 +1,10 @@
-import { CSSProperties, ReactElement } from 'react'
-import React from 'react'
+import React, { CSSProperties, ReactElement } from 'react'
 import { KeyMap } from '../model'
 import { VFlow } from '../../VFlow'
 import { Tag } from '../../Tag'
 import { HFlow } from '../../HFlow'
 import { Theme, useStyles } from '../../../styles'
+import { EMPTY_ARRAY } from '../../../util'
 import { FieldFiltersByKey, FieldValuesByKey } from './model'
 
 const MAX_FILTER_TAGS = 3
@@ -48,7 +48,7 @@ export const FilterValuesTags = <T extends object>(props: FilterValuesTagsProps<
           <div className={classes.tagsContainer}>{tags}</div>
         </HFlow>
       )
-    }
+    } else return EMPTY_ARRAY
   })
 
   return <VFlow vSpacing={0.5}>{filterValuesTags}</VFlow>

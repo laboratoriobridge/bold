@@ -2,6 +2,7 @@ import { act } from '@testing-library/react'
 import { renderHook } from '@testing-library/react-hooks'
 import { KeyNavigationDirection } from '../Droppable/types/model'
 import { useOnKeyNav } from './useOnKeyNav'
+import { PivotTableBoardOrigin } from './model'
 
 type Test = {
   name: string
@@ -86,6 +87,18 @@ describe('useOnKeyNav', () => {
       expect(result).toBe(true)
     })
 
+    it('should call setRowKeys when direction is "down"', () => {
+      const onKeyNav = renderOnKeyNavHook({ columnKeys: ['name'] })
+      const keyToMove = 'value'
+      let result: boolean = false
+      act(() => {
+        result = onKeyNav('down', 'column', keyToMove)
+      })
+      expect(setRowKeys).toHaveBeenCalledTimes(1)
+      expect(setRowKeys).toHaveBeenCalledWith(['value'])
+      expect(result).toBe(true)
+    })
+
     it('should call setAvailableKeys when direction is "left"', () => {
       const onKeyNav = renderOnKeyNavHook({ availableKeys: ['name'] })
       const keyToMove = 'value'
@@ -116,6 +129,20 @@ describe('useOnKeyNav', () => {
       expect(result).toBe(true)
     })
 
+    it('should call setAvailableKeys when direction is "left"', () => {
+      const onKeyNav = renderOnKeyNavHook({ availableKeys: ['name'] })
+      const keyToMove = 'value'
+
+      let result: boolean = false
+      act(() => {
+        result = onKeyNav('left', 'row', keyToMove)
+      })
+
+      expect(setAvailableKeys).toHaveBeenCalledTimes(1)
+      expect(setAvailableKeys).toHaveBeenCalledWith(['name', 'value'])
+      expect(result).toBe(true)
+    })
+
     it('should call setAvailableKeys when direction is "up"', () => {
       const onKeyNav = renderOnKeyNavHook({ availableKeys: ['name'] })
       const keyToMove = 'value'
@@ -142,15 +169,15 @@ describe('useOnKeyNav', () => {
         origin: 'row',
       },
       {
-        dir: 'right',
-        origin: 'invalid_origin',
+        dir: 'up',
+        origin: 'column',
       },
     ]
 
     it.each(invalidCases)('should do nothing and return false', ({ dir, origin }) => {
       const onKeyNav = renderOnKeyNavHook()
 
-      const result = onKeyNav(dir as KeyNavigationDirection, origin, 'name')
+      const result = onKeyNav(dir as KeyNavigationDirection, origin as PivotTableBoardOrigin, 'name')
 
       expect(setColumnKeys).not.toHaveBeenCalled()
       expect(setRowKeys).not.toHaveBeenCalled()

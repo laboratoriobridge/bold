@@ -8,12 +8,12 @@ type Test = {
 }
 
 describe('useDraggableKeyNavigation', () => {
-  let onDragEnd: jest.Mock
+  let onKeyNavSuccess: jest.Mock
   let onKeyNav: jest.Mock
   const origin = 'test-origin'
 
   beforeEach(() => {
-    onDragEnd = jest.fn()
+    onKeyNavSuccess = jest.fn()
     onKeyNav = jest.fn()
   })
 
@@ -22,55 +22,55 @@ describe('useDraggableKeyNavigation', () => {
   })
 
   it('should not do anything if onKeyNav is not provided', () => {
-    const { result } = renderHook(() => useDraggableKeyNavigation<Test>(onDragEnd, origin))
+    const { result } = renderHook(() => useDraggableKeyNavigation<Test>(onKeyNavSuccess, origin))
     const event = { nativeEvent: { key: 'ArrowLeft' } }
 
     act(() => {
-      result.current.handleKeyDown()(event)
+      result.current.handleKeyDown()(event as React.KeyboardEvent)
     })
 
-    expect(onDragEnd).not.toBeCalled()
+    expect(onKeyNavSuccess).not.toBeCalled()
   })
 
-  it('should call onDragEnd when a navigation key is pressed and onKeyNav returns true', () => {
+  it('should call onKeyNavSuccess when a navigation key is pressed and onKeyNav returns true', () => {
     onKeyNav.mockReturnValue(true)
-    const { result } = renderHook(() => useDraggableKeyNavigation<Test>(onDragEnd, origin, onKeyNav))
+    const { result } = renderHook(() => useDraggableKeyNavigation<Test>(onKeyNavSuccess, origin, onKeyNav))
     const event = { nativeEvent: { key: 'ArrowRight' } }
 
     act(() => {
-      result.current.handleKeyDown()(event)
+      result.current.handleKeyDown()(event as React.KeyboardEvent)
     })
 
     expect(onKeyNav).toHaveBeenCalledWith('right', origin, undefined)
-    expect(onDragEnd).toHaveBeenCalledTimes(1)
+    expect(onKeyNavSuccess).toHaveBeenCalledTimes(1)
   })
 
-  it('should not call onDragEnd when a navigation key is pressed and onKeyNav returns false', () => {
+  it('should not call onKeyNavSuccess when a navigation key is pressed and onKeyNav returns false', () => {
     onKeyNav.mockReturnValue(false)
-    const { result } = renderHook(() => useDraggableKeyNavigation<Test>(onDragEnd, origin, onKeyNav))
+    const { result } = renderHook(() => useDraggableKeyNavigation<Test>(onKeyNavSuccess, origin, onKeyNav))
     const event = { nativeEvent: { key: 'ArrowDown' } }
 
     act(() => {
-      result.current.handleKeyDown()(event)
+      result.current.handleKeyDown()(event as React.KeyboardEvent)
     })
 
     expect(onKeyNav).toHaveBeenCalledWith('down', origin, undefined)
-    expect(onDragEnd).not.toBeCalled()
+    expect(onKeyNavSuccess).not.toBeCalled()
   })
 
   it('should correctly pass the filterKey to onKeyNav when provided', () => {
     onKeyNav.mockReturnValue(true)
-    const { result } = renderHook(() => useDraggableKeyNavigation<Test>(onDragEnd, origin, onKeyNav))
+    const { result } = renderHook(() => useDraggableKeyNavigation<Test>(onKeyNavSuccess, origin, onKeyNav))
     const filterKey: keyof Test = 'name'
     const event = { nativeEvent: { key: 'ArrowUp' } }
 
     const keyDownHandler = result.current.handleKeyDown(filterKey)
     act(() => {
-      keyDownHandler(event)
+      keyDownHandler(event as React.KeyboardEvent)
     })
 
     expect(onKeyNav).toHaveBeenCalledWith('up', origin, 'name')
-    expect(onDragEnd).toHaveBeenCalledTimes(1)
+    expect(onKeyNavSuccess).toHaveBeenCalledTimes(1)
   })
 
   describe('keyDirectionMap integration', () => {
@@ -85,30 +85,30 @@ describe('useDraggableKeyNavigation', () => {
       'should call onKeyNav with direction "$expectedDirection" when key "$key" is pressed',
       ({ key, expectedDirection }) => {
         onKeyNav.mockReturnValue(true)
-        const { result } = renderHook(() => useDraggableKeyNavigation<Test>(onDragEnd, origin, onKeyNav))
+        const { result } = renderHook(() => useDraggableKeyNavigation<Test>(onKeyNavSuccess, origin, onKeyNav))
         const event = { nativeEvent: { key } }
 
         act(() => {
-          result.current.handleKeyDown()(event)
+          result.current.handleKeyDown()(event as React.KeyboardEvent)
         })
 
         expect(onKeyNav).toHaveBeenCalledWith(expectedDirection, origin, undefined)
-        expect(onDragEnd).toHaveBeenCalledTimes(1)
+        expect(onKeyNavSuccess).toHaveBeenCalledTimes(1)
       }
     )
 
     const invalidCases = [{ key: 'Enter' }, { key: 'Tab' }, { key: 'Escape' }]
 
-    it.each(invalidCases)('should not call onDragEnd when a non-navigation key "$key" is pressed', ({ key }) => {
-      const { result } = renderHook(() => useDraggableKeyNavigation<Test>(onDragEnd, origin, onKeyNav))
+    it.each(invalidCases)('should not call onKeyNavSuccess when a non-navigation key "$key" is pressed', ({ key }) => {
+      const { result } = renderHook(() => useDraggableKeyNavigation<Test>(onKeyNavSuccess, origin, onKeyNav))
       const event = { nativeEvent: { key } }
 
       act(() => {
-        result.current.handleKeyDown()(event)
+        result.current.handleKeyDown()(event as React.KeyboardEvent)
       })
 
       expect(onKeyNav).toHaveBeenCalledWith(undefined, origin, undefined)
-      expect(onDragEnd).not.toHaveBeenCalled()
+      expect(onKeyNavSuccess).not.toHaveBeenCalled()
     })
   })
 })

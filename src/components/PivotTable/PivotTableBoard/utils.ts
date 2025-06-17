@@ -53,7 +53,8 @@ export function handleTagFilterRemove<T extends object>(
   value: string,
   filterState: FieldFiltersByKey<T>
 ): Set<string> {
-  const values = Array.from(filterState.get(key) ?? new Set<string>())
+  const filter = filterState.get(key)
+  const values = filter ? Array.from(filter) : []
 
   return new Set(values.filter((item) => item !== value))
 }

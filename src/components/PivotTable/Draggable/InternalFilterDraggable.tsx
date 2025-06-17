@@ -12,7 +12,7 @@ import { draggableCreateStyles } from './style'
 import { DraggableWrapper } from './DraggableWrapper'
 import { useDraggableKeyNavigation } from './useDraggableNavigation'
 
-export function InternalFilterDraggable<T extends object>(props: FilterDraggableProps<T>) {
+export function InternalFilterDraggable<T extends object, TOrigin = string>(props: FilterDraggableProps<T, TOrigin>) {
   const {
     name,
     origin,

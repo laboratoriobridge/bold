@@ -1,6 +1,4 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/core'
-import { CSSProperties, useMemo } from 'react'
+import React, { CSSProperties, useMemo } from 'react'
 import { useDrop } from 'react-dnd'
 import { Theme, useLocale, useStyles } from '../../..'
 import { InternalDraggable } from '../Draggable/InternalDraggable'
@@ -10,11 +8,11 @@ import { KeyMap } from '../model'
 import { DroppableFilter } from './types/Filter'
 import { KeyNavigationDirection } from './types/model'
 
-export interface DroppableProps<T extends object> extends React.HTMLAttributes<HTMLDivElement> {
+export interface DroppableProps<T extends object, TOrigin = string> extends React.HTMLAttributes<HTMLDivElement> {
   /**
    * The name of the droppable, as an identifier
    */
-  name: string
+  name: TOrigin
 
   /**
    * The name of the type of draggable accepted by the droppable. Items can be dragged between droppables that accept the same type of draggables.
@@ -49,7 +47,7 @@ export interface DroppableProps<T extends object> extends React.HTMLAttributes<H
   /**
    * Function used to navigate a draggable between droppables using the directional arrows
    */
-  onKeyNav?: (direction: KeyNavigationDirection, origin: string, key?: keyof T) => boolean
+  onKeyNav?: (direction: KeyNavigationDirection, origin: TOrigin, key?: keyof T) => boolean
 }
 
 export interface DragItem<T> {
@@ -69,7 +67,7 @@ export interface DragItem<T> {
   origin: string
 }
 
-export function Droppable<T extends object>(props: DroppableProps<T>) {
+export function Droppable<T extends object, TOrigin = string>(props: DroppableProps<T, TOrigin>) {
   const { name, keyState, keyMapping, accept, filter, handleKeyUpdate, onKeyNav, ...rest } = props
 
   if (filter) {
@@ -123,7 +121,7 @@ export function Droppable<T extends object>(props: DroppableProps<T>) {
         const filterOptions = filter?.keys.get(key)
         if (filter?.state && filterOptions?.length > 0) {
           return (
-            <InternalFilterDraggable<T>
+            <InternalFilterDraggable<T, TOrigin>
               key={key as string}
               type={accept}
               name={key}
@@ -138,7 +136,7 @@ export function Droppable<T extends object>(props: DroppableProps<T>) {
           )
         } else {
           return (
-            <InternalDraggable<T>
+            <InternalDraggable<T, TOrigin>
               key={key as string}
               type={accept}
               name={key}

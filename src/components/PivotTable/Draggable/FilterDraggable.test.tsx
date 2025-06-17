@@ -64,9 +64,7 @@ describe('FilterDraggable', () => {
   const mockHandleKeyDown = jest.fn().mockReturnValue(mockKeyDownHandler)
 
   beforeEach(() => {
-    mockedUseDraggableKeyNavigation.mockClear()
-    mockHandleKeyDown.mockClear()
-    mockKeyDownHandler.mockClear()
+    jest.clearAllMocks()
 
     mockedUseDraggableKeyNavigation.mockReturnValue({
       handleKeyDown: mockHandleKeyDown,
@@ -330,8 +328,8 @@ describe('FilterDraggable', () => {
       const onDragEnd = jest.fn()
       const { container } = render(
         <DndProvider backend={HTML5Backend}>
-          <DroppableDiv type={'test'}>{createFilterComponent({ onDragEnd: onDragEnd })}</DroppableDiv>
-          <DroppableDiv type={'test'} />
+          <DroppableDiv type='test'>{createFilterComponent({ onDragEnd })}</DroppableDiv>
+          <DroppableDiv type='test' />
         </DndProvider>
       )
 
@@ -356,8 +354,8 @@ describe('FilterDraggable', () => {
 
       const { getByRole } = render(
         <DndProvider backend={HTML5Backend}>
-          <DroppableDiv type={'test'}>{createFilterComponent({ onDragEnd, onKeyNav })}</DroppableDiv>
-          <DroppableDiv type={'test'} />
+          <DroppableDiv type='test'>{createFilterComponent({ onDragEnd, onKeyNav })}</DroppableDiv>
+          <DroppableDiv type='test' />
         </DndProvider>
       )
 
