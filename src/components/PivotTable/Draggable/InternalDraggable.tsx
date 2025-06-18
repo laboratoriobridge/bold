@@ -5,9 +5,9 @@ import { useStyles } from '../../../styles'
 import { DraggableProps } from './Draggable'
 import { DraggableWrapper } from './DraggableWrapper'
 import { draggableCreateStyles } from './style'
-import { getKeyDirection } from './util'
+import { useDraggableKeyNavigation } from './useDraggableNavigation'
 
-export function InternalDraggable<T extends object>(props: DraggableProps<T>) {
+export function InternalDraggable<T extends object, TOrigin = string>(props: DraggableProps<T, TOrigin>) {
   const { name, origin, value, onDragEnd, onKeyNav, type } = props
 
   const { classes } = useStyles(draggableCreateStyles)
@@ -22,18 +22,13 @@ export function InternalDraggable<T extends object>(props: DraggableProps<T>) {
     }),
   })
 
-  const handleKeyDown = (event: any) => {
-    if (onKeyNav) {
-      onKeyNav(getKeyDirection(event.nativeEvent.key), origin)
-      onDragEnd()
-    }
-  }
+  const { handleKeyDown } = useDraggableKeyNavigation(onDragEnd, origin, onKeyNav)
 
   return (
     <DraggableWrapper drag={drag} isDragging={isDragging}>
       <Button
         style={[classes.button, 'padding-right: 1.25rem;']}
-        onKeyDown={handleKeyDown}
+        onKeyDown={handleKeyDown(name)}
         size='small'
         kind='primary'
         skin='ghost'

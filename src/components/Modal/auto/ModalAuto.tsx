@@ -6,7 +6,7 @@ import { Modal, ModalDepthLevel, ModalProps } from '../Modal'
 import { ModalBody } from '../ModalBody'
 import { ModalFooter } from '../ModalFooter'
 
-export type ButtonAction = ButtonProps & { label?: React.ReactNode }
+export type ButtonAction = ButtonProps & { label?: React.ReactNode; ['data-testid']?: string }
 
 export interface ModalAutoProps {
   actions?: ButtonAction[]

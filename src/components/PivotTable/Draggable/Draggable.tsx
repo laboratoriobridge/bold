@@ -4,7 +4,8 @@ import { HTML5Backend } from 'react-dnd-html5-backend'
 import { DroppableProps } from '../Droppable/Droppable'
 import { InternalDraggable } from './InternalDraggable'
 
-export interface DraggableProps<T extends object> extends Pick<DroppableProps<T>, 'onKeyNav'> {
+export interface DraggableProps<T extends object, TOrigin = string>
+  extends Pick<DroppableProps<T, TOrigin>, 'onKeyNav'> {
   /**
    * The name of the draggable, as an identifier
    */
@@ -16,9 +17,9 @@ export interface DraggableProps<T extends object> extends Pick<DroppableProps<T>
   type: string
 
   /**
-   * Used to know which dropable it came from
+   * Used to know which droppable it came from
    */
-  origin: string
+  origin: TOrigin
 
   /**
    * The text that will appear on the draggable button

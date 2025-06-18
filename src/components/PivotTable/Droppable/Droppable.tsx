@@ -1,20 +1,18 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/core'
-import { useMemo } from 'react'
+import React, { CSSProperties, useMemo } from 'react'
 import { useDrop } from 'react-dnd'
-import { useLocale, useStyles } from '../../..'
+import { Theme, useLocale, useStyles } from '../../..'
 import { InternalDraggable } from '../Draggable/InternalDraggable'
 
 import { InternalFilterDraggable } from '../Draggable/InternalFilterDraggable'
 import { KeyMap } from '../model'
-import { droppableCreateStyles } from './style'
 import { DroppableFilter } from './types/Filter'
+import { KeyNavigationDirection } from './types/model'
 
-export interface DroppableProps<T extends object> {
+export interface DroppableProps<T extends object, TOrigin = string> extends React.HTMLAttributes<HTMLDivElement> {
   /**
    * The name of the droppable, as an identifier
    */
-  name: string
+  name: TOrigin
 
   /**
    * The name of the type of draggable accepted by the droppable. Items can be dragged between droppables that accept the same type of draggables.
@@ -49,7 +47,7 @@ export interface DroppableProps<T extends object> {
   /**
    * Function used to navigate a draggable between droppables using the directional arrows
    */
-  onKeyNav?: (dir: 'left' | 'right' | 'up' | 'down' | null, origin: string, key?: keyof T) => void
+  onKeyNav?: (direction: KeyNavigationDirection, origin: TOrigin, key?: keyof T) => boolean
 }
 
 export interface DragItem<T> {
@@ -69,8 +67,8 @@ export interface DragItem<T> {
   origin: string
 }
 
-export function Droppable<T extends object>(props: DroppableProps<T>) {
-  const { name, keyState, keyMapping, accept, filter, handleKeyUpdate, onKeyNav } = props
+export function Droppable<T extends object, TOrigin = string>(props: DroppableProps<T, TOrigin>) {
+  const { name, keyState, keyMapping, accept, filter, handleKeyUpdate, onKeyNav, ...rest } = props
 
   if (filter) {
     if (filter.keys.size === 0)
@@ -123,7 +121,7 @@ export function Droppable<T extends object>(props: DroppableProps<T>) {
         const filterOptions = filter?.keys.get(key)
         if (filter?.state && filterOptions?.length > 0) {
           return (
-            <InternalFilterDraggable<T>
+            <InternalFilterDraggable<T, TOrigin>
               key={key as string}
               type={accept}
               name={key}
@@ -138,7 +136,7 @@ export function Droppable<T extends object>(props: DroppableProps<T>) {
           )
         } else {
           return (
-            <InternalDraggable<T>
+            <InternalDraggable<T, TOrigin>
               key={key as string}
               type={accept}
               name={key}
@@ -156,9 +154,9 @@ export function Droppable<T extends object>(props: DroppableProps<T>) {
 
   const hasKeys = keyState.length > 0
 
-  const { classes } = useStyles(droppableCreateStyles, hasKeys)
+  const { classes } = useStyles(createStyles, hasKeys)
   return (
-    <div ref={drag} className={classes.box}>
+    <div ref={drag} className={classes.box} {...rest}>
       {hasKeys ? (
         <div>{draggableButtons}</div>
       ) : (
@@ -169,3 +167,18 @@ export function Droppable<T extends object>(props: DroppableProps<T>) {
     </div>
   )
 }
+
+const createStyles = (theme: Theme, hasKeys: boolean) => ({
+  placeholder: {
+    alignSelf: 'center',
+    textAlign: 'center',
+  } as CSSProperties,
+  box: {
+    display: 'flex',
+    minHeight: '7.18rem',
+    minWidth: '16rem',
+    margin: '0.25rem',
+    padding: '0.75rem',
+    justifyContent: hasKeys ? 'flex-start' : 'center',
+  } as CSSProperties,
+})
