@@ -3,6 +3,8 @@ import { Rectangle } from 'recharts'
 import { blue } from '../../styles/colors'
 
 import { splitIntoLines } from '../../util/string'
+import { Tooltip } from '../Tooltip'
+import { Icon } from '../Icon'
 import { RangeArea } from './model'
 
 export interface RangeAreaTickProps<XDomain> {
@@ -21,7 +23,15 @@ export function RangeAreaTick<XDomain>(props: RangeAreaTickProps<XDomain>) {
 
   return (
     <>
-      <text x={x} y={y} dx={15} dy={-15} textAnchor='middle' fill={fill} style={{ fontWeight: 'bold' }}>
+      <text
+        x={x - (!!referenceArea.tooltip ? 50 : 0)}
+        y={y}
+        dx={15}
+        dy={-15}
+        textAnchor='middle'
+        fill={fill}
+        style={{ fontWeight: 'bold' }}
+      >
         {nameLines.map(
           (namePart, i) =>
             namePart && (
@@ -31,6 +41,11 @@ export function RangeAreaTick<XDomain>(props: RangeAreaTickProps<XDomain>) {
             )
         )}
       </text>
+      {referenceArea.tooltip && (
+        <Tooltip text={referenceArea.tooltip}>
+          <Icon x={x + width / 2 + 30} y={y - 32} icon='infoCircleFilled' fill='primary' />
+        </Tooltip>
+      )}
       <Rectangle x={x} y={y - 7} width={width} height={4} fill={fill} />
     </>
   )

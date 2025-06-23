@@ -68,6 +68,7 @@ export interface PieChartDataPoint {
 
 export interface RangeArea<XDomain> {
   name: string
+  tooltip?: string
   init: XDomain
   end: XDomain
   strokeColor?: string | false
