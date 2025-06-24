@@ -163,14 +163,12 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
             return
           }
 
-          const index = selectedItems.indexOf(newSelectedItem)
-          if (index > 0) {
-            handleChange([...selectedItems.slice(0, index), ...selectedItems.slice(index + 1)])
-          } else if (index === 0) {
-            handleChange([...selectedItems.slice(1)])
+          if (isSelected(newSelectedItem)) {
+            handleChange(selectedItems.filter((it) => !itemIsEqual(it, newSelectedItem)))
           } else {
             handleChange([...selectedItems, newSelectedItem])
           }
+
           clearFilterOnSelect && setInputValue('')
 
           break
