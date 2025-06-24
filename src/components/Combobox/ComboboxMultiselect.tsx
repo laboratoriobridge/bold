@@ -61,10 +61,14 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
     getItemId,
     open,
     popperProps,
+    inputRef: externalInputRef,
     ...rest
   } = props
 
+  const [selectedItems, setSelectedItems] = useState<T[]>(EMPTY_ARRAY as T[])
+  const [inputValue, setInputValue] = React.useState('')
   const [itemsLoaded, setItemsLoaded] = useState(false)
+
   const locale = useLocale()
 
   const isAsync = typeof items === 'function'
@@ -78,6 +82,18 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
   )
   const isLoading = externalLoading || (isAsync && loadingItems)
 
+  useEffect(() => {
+    composeHandlers(loadItems, onFilterChange)(inputValue)
+  }, [inputValue, loadItems, onFilterChange])
+
+  const handleChange = useCallback(
+    (newSelectedItems: T[]) => {
+      setSelectedItems(newSelectedItems)
+      onChange?.(newSelectedItems)
+    },
+    [onChange]
+  )
+
   // Reload items when changed
   useEffect(() => setItemsLoaded(false), [items])
 
@@ -85,18 +101,23 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
   const wrapperRef = useRef<HTMLDivElement>()
   const [menuRef, setMenuRef] = useState<HTMLDivElement>()
 
-  const {
-    getSelectedItemProps,
-    getDropdownProps,
-    addSelectedItem,
-    setSelectedItems,
-    removeSelectedItem,
+  const { getSelectedItemProps, getDropdownProps, removeSelectedItem, reset } = useMultipleSelection<T>({
     selectedItems,
-    reset,
-  } = useMultipleSelection<T>({
     defaultSelectedItems: EMPTY_ARRAY as [],
-    onSelectedItemsChange: ({ selectedItems }) => {
-      onChange?.(selectedItems)
+    onStateChange({ selectedItems: newSelectedItems, type }) {
+      switch (type) {
+        case useMultipleSelection.stateChangeTypes.SelectedItemKeyDownBackspace:
+        case useMultipleSelection.stateChangeTypes.SelectedItemKeyDownDelete:
+        case useMultipleSelection.stateChangeTypes.DropdownKeyDownBackspace:
+        case useMultipleSelection.stateChangeTypes.FunctionRemoveSelectedItem:
+          handleChange(newSelectedItems)
+          break
+        case useMultipleSelection.stateChangeTypes.FunctionReset:
+          handleChange(EMPTY_ARRAY as [])
+          break
+        default:
+          break
+      }
     },
   })
 
@@ -105,7 +126,7 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
     if (valueDiffsSelectedItems) setSelectedItems(value)
   }, [value, valueDiffsSelectedItems, setSelectedItems])
 
-  const { classes, css } = useStyles(createStyles, props, !!selectedItems.length)
+  const { classes, css } = useStyles(createStyles, disabled, clearable, !!selectedItems.length)
   const isSelected = useCallback((item: T) => selectedItems.some((selectedItem) => itemIsEqual(item, selectedItem)), [
     selectedItems,
     itemIsEqual,
@@ -127,18 +148,40 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
     getToggleButtonProps,
     getItemProps,
     openMenu,
-    setInputValue,
   } = useCombobox<T>({
-    defaultHighlightedIndex: 0,
     selectedItem: null,
     items: loadedItems,
+    inputValue,
 
     stateReducer: comboboxMultiselectStateReducer,
     itemToString,
-    onInputValueChange: ({ inputValue }) => composeHandlers(loadItems, onFilterChange)(inputValue),
-    onSelectedItemChange: ({ selectedItem }) => {
-      isSelected(selectedItem) ? removeSelectedItem(selectedItem) : addSelectedItem(selectedItem)
-      clearFilterOnSelect && setInputValue('')
+    onStateChange: ({ inputValue: newInputValue, type, selectedItem: newSelectedItem }) => {
+      switch (type) {
+        case useCombobox.stateChangeTypes.InputKeyDownEnter:
+        case useCombobox.stateChangeTypes.ItemClick: {
+          if (!newSelectedItem) {
+            return
+          }
+
+          const index = selectedItems.indexOf(newSelectedItem)
+          if (index > 0) {
+            handleChange([...selectedItems.slice(0, index), ...selectedItems.slice(index + 1)])
+          } else if (index === 0) {
+            handleChange([...selectedItems.slice(1)])
+          } else {
+            handleChange([...selectedItems, newSelectedItem])
+          }
+          clearFilterOnSelect && setInputValue('')
+
+          break
+        }
+        case useCombobox.stateChangeTypes.InputBlur:
+        case useCombobox.stateChangeTypes.InputChange:
+          setInputValue(newInputValue)
+          break
+        default:
+          break
+      }
     },
     onIsOpenChange: ({ isOpen, inputValue }) => {
       isOpen && !itemsLoaded && loadItems(inputValue)
@@ -181,13 +224,6 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
   const invalid = !!formControlProps.error
 
   const handleWrapperClick = () => inputRef.current.focus()
-  const handleItemClick = useCallback(
-    (item: T) => {
-      isSelected(item) ? removeSelectedItem(item) : addSelectedItem(item)
-      clearFilterOnSelect && setInputValue('')
-    },
-    [isSelected, removeSelectedItem, addSelectedItem]
-  )
   const handleItemRemove = useCallback(
     (item: T) => (e: React.MouseEvent<HTMLSpanElement>) => {
       removeSelectedItem(item)
@@ -232,7 +268,7 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
           ))}
 
           <TextInputBase
-            inputRef={composeRefs(inputRef, downshiftInputRef)}
+            inputRef={composeRefs(inputRef, downshiftInputRef, externalInputRef)}
             className={classes.input}
             disabled={disabled}
             invalid={invalid}
@@ -251,7 +287,6 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
             data-testid='menu'
             className={classes.menu}
             style={{ ...popperStyles, width: wrapperRef.current?.clientWidth, minWidth: menuMinWidth }}
-            onItemClick={handleItemClick}
             isItemSelected={isSelected}
             {...popperAttributes}
             ref={setMenuRef}
@@ -280,6 +315,8 @@ function comboboxMultiselectStateReducer<T>(
       return {
         ...changes,
         isOpen: true, // keep the menu open after selection.
+        highlightedIndex: state.highlightedIndex,
+        inputValue: '',
       }
     case useCombobox.stateChangeTypes.InputBlur:
       return {
@@ -296,11 +333,7 @@ function comboboxMultiselectStateReducer<T>(
   }
 }
 
-export const createStyles = (
-  theme: Theme,
-  { disabled, clearable }: ComboboxMultiselectProps<any>,
-  hasSelectedItems: boolean
-) => {
+export const createStyles = (theme: Theme, disabled: boolean, clearable: boolean, hasSelectedItems: boolean) => {
   const parts = createStyleParts(theme)
   return {
     wrapper: {
