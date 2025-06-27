@@ -23,29 +23,28 @@ export function RangeAreaTick<XDomain>(props: RangeAreaTickProps<XDomain>) {
 
   return (
     <>
-      <text
-        x={x - (!!referenceArea.tooltip ? 50 : 0)}
-        y={y}
-        dx={15}
-        dy={-15}
-        textAnchor='middle'
-        fill={fill}
-        style={{ fontWeight: 'bold' }}
-      >
-        {nameLines.map(
-          (namePart, i) =>
-            namePart && (
-              <tspan key={namePart} dx={width / 2} dy={(nameLines.length - i) * -15} x={x} y={y} textAnchor='middle'>
-                {namePart}
-              </tspan>
-            )
+      <g transform={`translate(${x + width / 2}, ${y})`}>
+        <text textAnchor='middle' fill={fill} style={{ fontWeight: 'bold' }}>
+          {nameLines.map(
+            (namePart, i) =>
+              namePart && (
+                <tspan
+                  key={namePart}
+                  dx={referenceArea.tooltip ? -12 : 0}
+                  dy={(nameLines.length - i) * -15}
+                  textAnchor='middle'
+                >
+                  {namePart}
+                </tspan>
+              )
+          )}
+        </text>
+        {referenceArea.tooltip && (
+          <Tooltip text={referenceArea.tooltip}>
+            <Icon x={20} y={-(nameLines.length * 15) / 2 - 20} icon='infoCircleFilled' size={1} fill='normal' />
+          </Tooltip>
         )}
-      </text>
-      {referenceArea.tooltip && (
-        <Tooltip text={referenceArea.tooltip}>
-          <Icon x={x + width / 2 + 30} y={y - 32} icon='infoCircleFilled' fill='primary' />
-        </Tooltip>
-      )}
+      </g>
       <Rectangle x={x} y={y - 7} width={width} height={4} fill={fill} />
     </>
   )

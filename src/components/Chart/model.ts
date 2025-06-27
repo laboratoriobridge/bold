@@ -66,6 +66,13 @@ export interface PieChartDataPoint {
   color?: string
 }
 
+interface RangeAreaMask<XDomain> {
+  show?: boolean
+  hideDots?: boolean
+  hideDotsOffset?: XDomain
+  fillOpacity?: number
+}
+
 export interface RangeArea<XDomain> {
   name: string
   tooltip?: string
@@ -75,6 +82,7 @@ export interface RangeArea<XDomain> {
   fillColor?: string | false
   fillOpacity?: number
   tickColor?: string | false
+  mask?: RangeAreaMask<XDomain>
 }
 
 export interface ReferenceAreaRange<XDomain> {
