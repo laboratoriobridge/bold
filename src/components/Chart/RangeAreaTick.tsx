@@ -23,25 +23,27 @@ export function RangeAreaTick<XDomain>(props: RangeAreaTickProps<XDomain>) {
 
   return (
     <>
-      <g transform={`translate(${x + width / 2}, ${y})`}>
+      <g transform={`translate(${x + width / 2 - (referenceArea.tooltip ? 10 : 0)}, ${y - nameLines.length * 16.5})`}>
         <text textAnchor='middle' fill={fill} style={{ fontWeight: 'bold' }}>
           {nameLines.map(
             (namePart, i) =>
               namePart && (
-                <tspan
-                  key={namePart}
-                  dx={referenceArea.tooltip ? -12 : 0}
-                  dy={(nameLines.length - i) * -15}
-                  textAnchor='middle'
-                >
+                <tspan key={namePart} x={0} dy={i === 0 ? 0 : 17} textAnchor='middle'>
                   {namePart}
                 </tspan>
               )
           )}
         </text>
+
         {referenceArea.tooltip && (
           <Tooltip text={referenceArea.tooltip}>
-            <Icon x={20} y={-(nameLines.length * 15) / 2 - 20} icon='infoCircleFilled' size={1} fill='normal' />
+            <Icon
+              x={width / 2 - 20}
+              y={((nameLines.length - 1) * 16.5) / 2 - 15}
+              icon='infoCircleFilled'
+              size={1}
+              fill='normal'
+            />
           </Tooltip>
         )}
       </g>

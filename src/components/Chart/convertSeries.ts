@@ -23,8 +23,18 @@ export function convertSeries<XDomain>(
 
   const hiddenRanges = rangeAreas?.filter((r) => r.mask?.hideDots) ?? []
 
-  const isHidden = (x: XDomain): boolean =>
-    hiddenRanges.some((r) => +(r.mask?.hideDotsOffset ?? r.init) <= +x && +x <= +r.end)
+  const isHidden = (x: XDomain): boolean => {
+    return hiddenRanges.some((r) => {
+      if (typeof x === 'string') {
+        const iX = domainPoints.indexOf(x)
+        const iInit = domainPoints.indexOf(r.init)
+        const iEnd = domainPoints.indexOf(r.end)
+        return iX >= iInit && iX < iEnd
+      }
+
+      return +(r.mask?.hideDotsOffset ?? r.init) <= +x && +x <= +r.end
+    })
+  }
 
   const data = (series ?? [])
     .flatMap((serie, serieIndex) => {
