@@ -1,5 +1,5 @@
 import createMonotoneCubicInterpolator from './createMonotoneCubicInterpolator'
-import { AxisDomain, ChartSeries, ChartSeriesDataPoint, DataPoint, ReferenceAreaWithPercents } from './model'
+import { AxisDomain, ChartSeries, ChartSeriesDataPoint, DataPoint, RangeArea, ReferenceAreaWithPercents } from './model'
 import { getDataPointValue, getOutlierSeriesName, getDomainMaxValue, getOutlierStepFromDomain } from './util'
 
 export function convertSeries<XDomain>(
@@ -7,7 +7,8 @@ export function convertSeries<XDomain>(
   domainPoints: XDomain[],
   adaptedYDomain: AxisDomain,
   refsAreas?: ReferenceAreaWithPercents<XDomain>[],
-  outlierSeries?: ChartSeries<XDomain>[]
+  outlierSeries?: ChartSeries<XDomain>[],
+  rangeAreas?: RangeArea<XDomain>[]
 ): any[] {
   const outlierTickValue = getOutlierTickValue(adaptedYDomain)
 
@@ -20,16 +21,36 @@ export function convertSeries<XDomain>(
     })
   })
 
+  const hiddenRanges = rangeAreas?.filter((r) => r.mask?.show && r.mask?.hideDots) ?? []
+
+  const isHidden = (x: XDomain): boolean => {
+    return hiddenRanges.some((r) => {
+      if (typeof x === 'string') {
+        const iX = domainPoints.indexOf(x)
+        const iInit = domainPoints.indexOf(r.mask?.hideDotsOffset ?? r.init)
+        const iEnd = domainPoints.indexOf(r.end)
+        return iX >= iInit && iX < iEnd
+      }
+
+      return +(r.mask?.hideDotsOffset ?? r.init) <= +x && +x <= +r.end
+    })
+  }
+
   const data = (series ?? [])
     .flatMap((serie, serieIndex) => {
       return (serie.data as any[]).map((data: ChartSeriesDataPoint<XDomain>, dataIndex: number) => {
         const hasOutliers = outlierSeries && seriesHasOutliers(outlierSeries, serieIndex, dataIndex)
+        const x = (data as DataPoint<XDomain>).x ?? domainPoints[dataIndex]
+
+        const value = !isHidden(x)
+          ? hasOutliers
+            ? getOutlierSeriesConfig(serie.name, data, outlierTickValue)
+            : { [serie.name]: getDataPointValue(data) }
+          : {}
 
         return {
           x: (data as DataPoint<XDomain>).x ?? domainPoints[dataIndex],
-          ...(hasOutliers
-            ? getOutlierSeriesConfig(serie.name, data, outlierTickValue)
-            : { [serie.name]: getDataPointValue(data) }),
+          ...value,
         }
       })
     })

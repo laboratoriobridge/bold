@@ -42,6 +42,9 @@ export interface ChartProps<XDomain> {
   height: number
 }
 
+const RANGE_AREA_MASK_ID = 'mask-range-area'
+export const LABEL_PORTAL_LAYER_ID = 'label-portal-layer'
+
 export function Chart<XDomain>(props: ChartProps<XDomain>) {
   const {
     type,
@@ -72,7 +75,15 @@ export function Chart<XDomain>(props: ChartProps<XDomain>) {
   const yDomainPoints = getDomainPoints(adaptedYDomain, hasOutliers)
 
   const referenceAreasWithPercents = convertReferenceRangesToPercents(referenceAreas, adaptedYDomain as ValueRange)
-  const data = convertSeries(rangedSeries, domainPoints, adaptedYDomain, referenceAreasWithPercents, outlierSeries)
+
+  const data = convertSeries(
+    rangedSeries,
+    domainPoints,
+    adaptedYDomain,
+    referenceAreasWithPercents,
+    outlierSeries,
+    rangeAreas
+  )
 
   return (
     <ComposedChart
@@ -101,7 +112,9 @@ export function Chart<XDomain>(props: ChartProps<XDomain>) {
       {referenceAreas && renderReferenceAxis('y', referenceAreasWithPercents)}
 
       {referenceAreas?.map((ra, i) => renderReferenceAreas(ra, i, colorScheme ?? 'default'))}
+
       {rangeAreas?.map((ra) => [
+        defMaskPattern(),
         <RechartsReferenceArea
           yAxisId='data'
           x1={getRangeAreaInit(ra, xAxis.domain)}
@@ -113,23 +126,9 @@ export function Chart<XDomain>(props: ChartProps<XDomain>) {
           fillOpacity={ra.fillOpacity ?? 0.2}
           label={<RangeAreaTick<XDomain> referenceArea={ra} />}
         />,
-        ...(ra.strokeColor
-          ? [
-              <ReferenceLine
-                yAxisId='data'
-                stroke={ra.strokeColor}
-                x={typeof ra.init === 'string' ? ra.init : +ra.init}
-                position='start'
-              />,
-              <ReferenceLine
-                yAxisId='data'
-                stroke={ra.strokeColor}
-                x={typeof ra.end === 'string' ? ra.end : +ra.end}
-                position='start'
-              />,
-            ]
-          : []),
+        ...renderRangeAreaStroke(ra),
       ])}
+
       {series.map((s, i) =>
         renderSeries(
           type,
@@ -145,7 +144,26 @@ export function Chart<XDomain>(props: ChartProps<XDomain>) {
         )
       )}
 
+      {rangeAreas?.map((ra) => [
+        ...(ra.mask?.show
+          ? [
+              <RechartsReferenceArea
+                yAxisId='data'
+                x1={getRangeAreaInit(ra, xAxis.domain)}
+                x2={getRangeAreaEnd(ra, xAxis.domain)}
+                y1={getAxisDomainInit(adaptedYDomain)}
+                y2={getAxisDomainEnd(adaptedYDomain, hasOutliers)}
+                fillOpacity={ra.mask?.fillOpacity ?? 1}
+                fill={`url(#${RANGE_AREA_MASK_ID})`}
+              />,
+              ...renderRangeAreaStroke(ra),
+            ]
+          : []),
+      ])}
+
       {tooltip?.type === 'line' && renderTooltip(xAxis, yAxis, tooltip?.render)}
+
+      <g id={LABEL_PORTAL_LAYER_ID} />
     </ComposedChart>
   )
 }
@@ -167,4 +185,34 @@ function getRangeAreaInit<XDomain>(ra: RangeArea<XDomain>, domain: AxisDomain): 
 function getRangeAreaEnd<XDomain>(ra: RangeArea<XDomain>, domain: AxisDomain): string | number {
   if (Array.isArray(domain)) return domain.includes(ra.end as any) ? (ra.end as any) : domain[domain.length - 1]
   return Math.min(+ra.end, +domain.end)
+}
+
+function renderRangeAreaStroke<XDomain>(rangeAreas: RangeArea<XDomain>) {
+  return rangeAreas.strokeColor
+    ? [
+        <ReferenceLine
+          yAxisId='data'
+          stroke={rangeAreas.strokeColor}
+          x={typeof rangeAreas.init === 'string' ? rangeAreas.init : +rangeAreas.init}
+          position='start'
+        />,
+        <ReferenceLine
+          yAxisId='data'
+          stroke={rangeAreas.strokeColor}
+          x={typeof rangeAreas.end === 'string' ? rangeAreas.end : +rangeAreas.end}
+          position='start'
+        />,
+      ]
+    : []
+}
+
+function defMaskPattern() {
+  return (
+    <defs>
+      <pattern id={RANGE_AREA_MASK_ID} patternUnits='userSpaceOnUse' width='30' height='60' viewBox='0 0 30 60'>
+        <rect width='30' height='60' fill='white' fillOpacity='1' />
+        <path d='M 0 60 L 30 0 M -30 60 L 0 0 M 30 60 L 60 0' stroke='#D3D4DD' strokeWidth='1' />
+      </pattern>
+    </defs>
+  )
 }

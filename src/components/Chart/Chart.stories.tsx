@@ -558,6 +558,11 @@ export const rangeArea = () => {
         init: 'Page E',
         end: 'Page F',
         tickColor: green.c60,
+        mask: {
+          show: true,
+          fillOpacity: 0.6,
+          hideDots: true,
+        },
         fillColor: 'none',
         strokeColor: green.c60,
       },
