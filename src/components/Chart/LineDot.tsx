@@ -21,12 +21,13 @@ export interface LineDotProps<XDomain> {
 export function LineDot<XDomain>(props: LineDotProps<XDomain>) {
   const { cx, cy, showTooltip, stroke, payload, value, xDomain, dataKey: seriesName, dotShape, tooltipRenderer } = props
   const { classes } = useStyles(createStyles)
+  const labelValue = payload.outlierspv?.value ?? (Array.isArray(value) ? value[value.length - 1] : value)
   return (
     <ChartTooltip
       showTooltip={showTooltip}
       seriesName={seriesName}
       label={payload.x}
-      value={Array.isArray(value) ? value[value.length - 1] : value}
+      value={labelValue}
       labelDomain={xDomain}
       renderer={tooltipRenderer}
     >
