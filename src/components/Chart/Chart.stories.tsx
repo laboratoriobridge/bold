@@ -552,17 +552,21 @@ export const rangeArea = () => {
   const ranges = object(
     'Range Areas',
     [
-      { name: 'Area 1 Area 1-2 Area 1-3 Area 1-4', init: 'Page A', end: 'Page C' },
+      {
+        name: 'Area 1 Area 1-2 Area 1-3 Area 1-4',
+        init: 'Page A',
+        end: 'Page C',
+        mask: {
+          show: true,
+          fillOpacity: 0.6,
+          showDots: false,
+        },
+      },
       {
         name: 'Area 2 Stroke 2',
         init: 'Page E',
         end: 'Page F',
         tickColor: green.c60,
-        mask: {
-          show: true,
-          fillOpacity: 0.6,
-          hideDots: true,
-        },
         fillColor: 'none',
         strokeColor: green.c60,
       },

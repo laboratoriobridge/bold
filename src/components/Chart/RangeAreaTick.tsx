@@ -20,10 +20,15 @@ export function RangeAreaTick<XDomain>(props: RangeAreaTickProps<XDomain>) {
 
   const nameLines = splitIntoLines(referenceArea.name, Math.floor(width / 10))
   const fill = (referenceArea.tickColor ?? referenceArea.fillColor ?? blue.c60) || 'none'
+  const centerX = x + width / 2
+  const iconOffset = referenceArea.tooltip ? 10 : 0
+  const totalTextHeight = nameLines.length * 16.5
+  const translateX = centerX - iconOffset
+  const translateY = y - totalTextHeight
 
   return (
     <>
-      <g transform={`translate(${x + width / 2 - (referenceArea.tooltip ? 10 : 0)}, ${y - nameLines.length * 16.5})`}>
+      <g transform={`translate(${translateX}, ${translateY})`}>
         <text textAnchor='middle' fill={fill} style={{ fontWeight: 'bold' }}>
           {nameLines.map(
             (namePart, i) =>

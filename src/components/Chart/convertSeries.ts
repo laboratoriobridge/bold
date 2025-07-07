@@ -21,18 +21,18 @@ export function convertSeries<XDomain>(
     })
   })
 
-  const hiddenRanges = rangeAreas?.filter((r) => r.mask?.show && r.mask?.hideDots) ?? []
+  const hiddenRanges = rangeAreas?.filter((r) => r.mask?.show && !r.mask?.showDots) ?? []
 
   const isHidden = (x: XDomain): boolean => {
     return hiddenRanges.some((r) => {
       if (typeof x === 'string') {
         const iX = domainPoints.indexOf(x)
-        const iInit = domainPoints.indexOf(r.mask?.hideDotsOffset ?? r.init)
+        const iInit = domainPoints.indexOf(r.mask?.showDotsOffset ?? r.init)
         const iEnd = domainPoints.indexOf(r.end)
         return iX >= iInit && iX < iEnd
       }
 
-      return +(r.mask?.hideDotsOffset ?? r.init) <= +x && +x <= +r.end
+      return +(r.mask?.showDotsOffset ?? r.init) <= +x && +x <= +r.end
     })
   }
 
