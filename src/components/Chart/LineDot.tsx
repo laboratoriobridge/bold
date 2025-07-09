@@ -4,6 +4,7 @@ import { useStyles } from '../../styles'
 import { ChartTooltip } from './ChartTooltip'
 import { CustomDot } from './CustomDot'
 import { AxisDomain, DotShape, TooltipRenderer } from './model'
+import { getOutlierSeriesName } from './util'
 
 export interface LineDotProps<XDomain> {
   cx?: number
@@ -21,12 +22,14 @@ export interface LineDotProps<XDomain> {
 export function LineDot<XDomain>(props: LineDotProps<XDomain>) {
   const { cx, cy, showTooltip, stroke, payload, value, xDomain, dataKey: seriesName, dotShape, tooltipRenderer } = props
   const { classes } = useStyles(createStyles)
+  const labelValue =
+    payload[getOutlierSeriesName(seriesName)]?.value ?? (Array.isArray(value) ? value[value.length - 1] : value)
   return (
     <ChartTooltip
       showTooltip={showTooltip}
       seriesName={seriesName}
       label={payload.x}
-      value={Array.isArray(value) ? value[value.length - 1] : value}
+      value={labelValue}
       labelDomain={xDomain}
       renderer={tooltipRenderer}
     >
