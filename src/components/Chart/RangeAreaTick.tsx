@@ -43,7 +43,7 @@ export function RangeAreaTick<XDomain>(props: RangeAreaTickProps<XDomain>) {
         {referenceArea.tooltip && (
           <Tooltip text={referenceArea.tooltip}>
             <Icon
-              x={width / 2 - 20}
+              x={width / 3}
               y={((nameLines.length - 1) * 16.5) / 2 - 15}
               icon='infoCircleFilled'
               size={1}

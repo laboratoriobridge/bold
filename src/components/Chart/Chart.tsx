@@ -43,7 +43,6 @@ export interface ChartProps<XDomain> {
 }
 
 const RANGE_AREA_MASK_ID = 'mask-range-area'
-export const LABEL_PORTAL_LAYER_ID = 'label-portal-layer'
 
 export function Chart<XDomain>(props: ChartProps<XDomain>) {
   const {
@@ -129,21 +128,6 @@ export function Chart<XDomain>(props: ChartProps<XDomain>) {
         ...renderRangeAreaStroke(ra),
       ])}
 
-      {series.map((s, i) =>
-        renderSeries(
-          type,
-          s,
-          i,
-          xAxis,
-          stacked,
-          colorScheme ?? 'default',
-          tooltip?.type === 'point',
-          s.name,
-          tooltip?.render,
-          data
-        )
-      )}
-
       {rangeAreas?.map((ra) => [
         ...(ra.mask?.show
           ? [
@@ -161,9 +145,22 @@ export function Chart<XDomain>(props: ChartProps<XDomain>) {
           : []),
       ])}
 
-      {tooltip?.type === 'line' && renderTooltip(xAxis, yAxis, tooltip?.render)}
+      {series.map((s, i) =>
+        renderSeries(
+          type,
+          s,
+          i,
+          xAxis,
+          stacked,
+          colorScheme ?? 'default',
+          tooltip?.type === 'point',
+          s.name,
+          tooltip?.render,
+          data
+        )
+      )}
 
-      <g id={LABEL_PORTAL_LAYER_ID} />
+      {tooltip?.type === 'line' && renderTooltip(xAxis, yAxis, tooltip?.render)}
     </ComposedChart>
   )
 }
