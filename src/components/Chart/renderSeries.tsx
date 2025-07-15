@@ -80,34 +80,29 @@ function renderLine<XDomain>(
     <Line
       {...getDefaultRenderProps(name, color, dataKey)}
       activeDot={{ r: 12, fill: color, opacity: 0.3 }}
-      dot={(props) =>
-        props.payload.showDot === false ? (
-          false
-        ) : dot === false ? (
+      dot={
+        dot === false ? (
           false
         ) : (
-          <LineDot
-            showTooltip={showTooltip}
-            xDomain={xDomain}
-            tooltipRenderer={tooltipRenderer}
-            dotShape={dot}
-            {...props}
-          />
+          <LineDot showTooltip={showTooltip} xDomain={xDomain} tooltipRenderer={tooltipRenderer} dotShape={dot} />
         )
       }
       strokeWidth={2}
       yAxisId='data'
       connectNulls
-      label={(dataPoint) =>
-        data[dataPoint.index]?.['showDot'] !== false ? (
+      label={(dataPoint) => {
+        const outlierValue = data[dataPoint.index][getOutlierSeriesName(name)]
+        const showLabel = data[dataPoint.index]['showDot'] ?? true
+        return (
           <SeriesLabel
-            outlierValue={data[dataPoint.index][getOutlierSeriesName(name)]}
+            outlierValue={outlierValue}
             seriesType={SeriesType.Line}
             color={color}
+            showLabel={showLabel}
             {...dataPoint}
           />
-        ) : null
-      }
+        )
+      }}
       strokeDasharray={dashed && '6 4'}
       legendType={dot === false ? 'plainline' : (dot as LegendType) ?? 'circle'}
     />

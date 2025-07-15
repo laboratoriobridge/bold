@@ -21,6 +21,13 @@ export function convertSeries<XDomain>(
     })
   })
 
+  const addTick = (x: XDomain): XDomain => {
+    if (typeof x === 'number') return ((x + 1) as unknown) as XDomain
+    if (x instanceof Date) return (new Date(x.getTime() + 1) as unknown) as XDomain
+    if (typeof x === 'object' && x !== null) return ((+x + 1) as unknown) as XDomain
+    return x
+  }
+
   const hiddenRanges = rangeAreas?.filter((r) => r.mask?.show && !r.mask?.showDots) ?? []
 
   const isHidden = (x: XDomain): boolean => {
@@ -55,12 +62,11 @@ export function convertSeries<XDomain>(
       })
     })
     .concat(...refs)
-    .sort((a, b) => (a.x === b.x ? 0 : a.x > b.x ? 1 : -1))
     .concat(
       ...(rangeAreas ?? [])
         .filter((r) => r.mask?.yAtEnd !== undefined)
         .map((r) => ({
-          x: r.end,
+          x: addTick(r.end),
           showDot: false,
           ...series.reduce((acc, serie) => {
             acc[serie.name] = r.mask!.yAtEnd
@@ -68,6 +74,7 @@ export function convertSeries<XDomain>(
           }, {} as Record<string, XDomain>),
         }))
     )
+    .sort((a, b) => (a.x === b.x ? 0 : a.x > b.x ? 1 : -1))
     .reduce((map, obj) => {
       map.set(obj.x, { ...map.get(obj.x), ...obj })
       return map

@@ -12,6 +12,7 @@ export interface SeriesLabelProps {
   color?: string
   value?: any
   outlierValue?: any
+  showLabel?: boolean
 }
 
 const MIN_OFF_SET = 20
@@ -22,7 +23,7 @@ const getOutlierIconOffset = (widthLabel: number) => {
 }
 
 export function SeriesLabel<XDomain>(props: SeriesLabelProps) {
-  const { seriesType, x, y, color, value, outlierValue } = props
+  const { seriesType, x, y, color, value, outlierValue, showLabel = true } = props
 
   const [refLabel, widthLabel] = useWidth()
 
@@ -32,23 +33,25 @@ export function SeriesLabel<XDomain>(props: SeriesLabelProps) {
     case SeriesType.Line:
       const iconOffset = getOutlierIconOffset(widthLabel)
 
-      return outlierValue?.value != null ? (
-        <>
-          <Icon
-            icon='angleUp'
-            scale={1}
-            x={x - iconOffset}
-            y={y - 25}
-            style={{ fill: theme.pallete.status.danger.main }}
-          />
-          <text ref={refLabel} x={x} y={y} dy={-9} style={{ fill: color }}>
-            {outlierValue.value}
+      return showLabel ? (
+        outlierValue?.value != null ? (
+          <>
+            <Icon
+              icon='angleUp'
+              scale={1}
+              x={x - iconOffset}
+              y={y - 25}
+              style={{ fill: theme.pallete.status.danger.main }}
+            />
+            <text ref={refLabel} x={x} y={y} dy={-9} style={{ fill: color }}>
+              {outlierValue.value}
+            </text>
+          </>
+        ) : (
+          <text x={x} y={y} dy={-9} style={{ fill: color }} textAnchor='middle'>
+            {value}
           </text>
-        </>
-      ) : (
-        <text x={x} y={y} dy={-9} style={{ fill: color }} textAnchor='middle'>
-          {value}
-        </text>
-      )
+        )
+      ) : null
   }
 }

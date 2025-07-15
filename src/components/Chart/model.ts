@@ -71,7 +71,7 @@ interface RangeAreaMask<XDomain> {
   showDots?: boolean
   showDotsOffset?: XDomain
   fillOpacity?: number
-  yAtEnd?: XDomain
+  yAtEnd?: any
 }
 
 export interface RangeArea<XDomain> {

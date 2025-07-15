@@ -24,7 +24,10 @@ export function LineDot<XDomain>(props: LineDotProps<XDomain>) {
   const { classes } = useStyles(createStyles)
   const labelValue =
     payload[getOutlierSeriesName(seriesName)]?.value ?? (Array.isArray(value) ? value[value.length - 1] : value)
-  return (
+
+  const showDot = payload['showDot'] ?? true
+
+  return showDot ? (
     <ChartTooltip
       showTooltip={showTooltip}
       seriesName={seriesName}
@@ -37,7 +40,7 @@ export function LineDot<XDomain>(props: LineDotProps<XDomain>) {
         <CustomDot cx={cx} cy={cy} stroke={stroke} shape={dotShape} />
       </g>
     </ChartTooltip>
-  )
+  ) : null
 }
 
 const createStyles = () => ({

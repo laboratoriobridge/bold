@@ -19,6 +19,8 @@ import {
   ReferenceAreaRange,
   SeriesType,
   OutliersType,
+  DateRangeStep,
+  DateRange,
 } from './model'
 import { PieChart } from './PieChart'
 
@@ -581,12 +583,77 @@ export const rangeArea = () => {
     <ChartContainer>
       <ChartHeader title='Chart Title' />
       <ChartBody height={500}>
-        <Chart<string>
+        <Chart<number>
           type={SeriesType.Line}
-          series={series}
-          rangeAreas={ranges}
-          xAxis={{ title: 'X Axis', domain: ['Page A', 'Page B', 'Page C', 'Page D', 'Page E', 'Page F', 'Page G'] }}
-          yAxis={{ title: 'Y Axis', domain: { init: 3000, end: 10000, step: 5500 }, unit: 'unit' }}
+          series={[
+            {
+              name: 'IMC',
+              data: [
+                {
+                  x: new Date('2025-07-14T03:00:00.000Z').getTime(),
+                  y: 22.89,
+                },
+                {
+                  x: new Date('2025-02-01T03:00:00.000Z').getTime(),
+                  y: 27.47,
+                },
+                {
+                  x: new Date('2024-11-01T03:00:00.000Z').getTime(),
+                  y: 33.3,
+                },
+                {
+                  x: new Date('2024-10-01T03:00:00.000Z').getTime(),
+                  y: 29.14,
+                },
+                {
+                  x: new Date('2024-01-01T03:00:00.000Z').getTime(),
+                  y: 24.97,
+                },
+                {
+                  x: new Date('2024-01-01T03:00:00.000Z').getTime(),
+                  y: 22.89,
+                },
+              ],
+            },
+          ]}
+          rangeAreas={[
+            {
+              name: 'Gestação',
+              init: new Date('2025-07-14T03:00:00.000Z').getTime(),
+              end: new Date('2026-05-05T02:59:59.999Z').getTime(),
+              fillColor: 'none',
+              tickColor: '#498FFF',
+              strokeColor: '#696979',
+              tooltip: 'Somente o IMC pré-gestacional é considerado no período da gestação',
+              mask: {
+                show: true,
+                showDots: false,
+                showDotsOffset: new Date('2025-07-28T03:00:00.000Z').getTime(),
+                fillOpacity: 1,
+                yAtEnd: 40.89,
+              },
+            },
+          ]}
+          xAxis={{
+            title: 'Idade (meses completos e anos)',
+            domain: ({
+              init: new Date('2022-07-15T03:00:01.000Z').getTime(),
+              end: new Date('2032-07-15T03:00:00.000Z').getTime(),
+              step: {
+                amount: 6,
+                unit: 'month',
+              } as DateRangeStep,
+            } as unknown) as DateRange,
+          }}
+          yAxis={{
+            title: 'IMC',
+            unit: 'kg/m²',
+            domain: {
+              init: 10,
+              end: 46,
+              step: 2,
+            },
+          }}
           outliers={outliers}
         />
       </ChartBody>
