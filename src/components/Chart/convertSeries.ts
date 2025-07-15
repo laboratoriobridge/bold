@@ -56,6 +56,18 @@ export function convertSeries<XDomain>(
     })
     .concat(...refs)
     .sort((a, b) => (a.x === b.x ? 0 : a.x > b.x ? 1 : -1))
+    .concat(
+      ...(rangeAreas ?? [])
+        .filter((r) => r.mask?.yAtEnd !== undefined)
+        .map((r) => ({
+          x: r.end,
+          showDot: false,
+          ...series.reduce((acc, serie) => {
+            acc[serie.name] = r.mask!.yAtEnd
+            return acc
+          }, {} as Record<string, XDomain>),
+        }))
+    )
     .reduce((map, obj) => {
       map.set(obj.x, { ...map.get(obj.x), ...obj })
       return map

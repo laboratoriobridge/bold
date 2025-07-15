@@ -26,6 +26,8 @@ export function RangeAreaTick<XDomain>(props: RangeAreaTickProps<XDomain>) {
   const translateX = centerX - iconOffset
   const translateY = y - totalTextHeight
 
+  const tooltipX = Math.max(Math.floor(width / 10) * 4, nameLines[0].length * 4)
+
   return (
     <>
       <g transform={`translate(${translateX}, ${translateY})`}>
@@ -43,7 +45,7 @@ export function RangeAreaTick<XDomain>(props: RangeAreaTickProps<XDomain>) {
         {referenceArea.tooltip && (
           <Tooltip text={referenceArea.tooltip}>
             <Icon
-              x={width / 3}
+              x={tooltipX ?? 0}
               y={((nameLines.length - 1) * 16.5) / 2 - 15}
               icon='infoCircleFilled'
               size={1}
