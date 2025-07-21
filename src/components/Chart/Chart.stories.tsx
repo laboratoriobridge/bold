@@ -18,8 +18,6 @@ import {
   ReferenceAreaRange,
   SeriesType,
   OutliersType,
-  DateRangeStep,
-  DateRange,
   RangeArea,
 } from './model'
 import { PieChart } from './PieChart'
