@@ -129,7 +129,7 @@ export function Chart<XDomain>(props: ChartProps<XDomain>) {
       ])}
 
       {rangeAreas?.map((ra) => [
-        ...(ra.mask?.show
+        ...(ra.mask?.show && !ra.mask?.overDots
           ? [
               <RechartsReferenceArea
                 yAxisId='data'
@@ -159,6 +159,23 @@ export function Chart<XDomain>(props: ChartProps<XDomain>) {
           data
         )
       )}
+
+      {rangeAreas?.map((ra) => [
+        ...(ra.mask?.show && ra.mask?.overDots
+          ? [
+              <RechartsReferenceArea
+                yAxisId='data'
+                x1={getRangeAreaInit(ra, xAxis.domain)}
+                x2={getRangeAreaEnd(ra, xAxis.domain)}
+                y1={getAxisDomainInit(adaptedYDomain)}
+                y2={getAxisDomainEnd(adaptedYDomain, hasOutliers)}
+                fillOpacity={ra.mask?.fillOpacity ?? 1}
+                fill={`url(#${RANGE_AREA_MASK_ID})`}
+              />,
+              ...renderRangeAreaStroke(ra),
+            ]
+          : []),
+      ])}
 
       {tooltip?.type === 'line' && renderTooltip(xAxis, yAxis, tooltip?.render)}
     </ComposedChart>
