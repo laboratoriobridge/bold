@@ -14,8 +14,6 @@ import {
   SeriesType,
   TooltipRenderer,
 } from './model'
-import { SeriesLabel } from './SeriesLabel'
-import { getOutlierSeriesName } from './util'
 
 export function renderSeries<XDomain>(
   chartType: SeriesType,
@@ -84,25 +82,18 @@ function renderLine<XDomain>(
         dot === false ? (
           false
         ) : (
-          <LineDot showTooltip={showTooltip} xDomain={xDomain} tooltipRenderer={tooltipRenderer} dotShape={dot} />
+          <LineDot
+            showTooltip={showTooltip}
+            color={color}
+            xDomain={xDomain}
+            tooltipRenderer={tooltipRenderer}
+            dotShape={dot}
+          />
         )
       }
       strokeWidth={2}
       yAxisId='data'
       connectNulls
-      label={(dataPoint) => {
-        const outlierValue = data[dataPoint.index][getOutlierSeriesName(name)]
-        const showLabel = data[dataPoint.index]['showDot'] ?? true
-        return (
-          <SeriesLabel
-            outlierValue={outlierValue}
-            seriesType={SeriesType.Line}
-            color={color}
-            showLabel={showLabel}
-            {...dataPoint}
-          />
-        )
-      }}
       strokeDasharray={dashed && '6 4'}
       legendType={dot === false ? 'plainline' : (dot as LegendType) ?? 'circle'}
     />
@@ -132,21 +123,18 @@ function renderArea<XDomain>(
         dot === false ? (
           false
         ) : (
-          <LineDot showTooltip={showTooltip} xDomain={xDomain} tooltipRenderer={tooltipRenderer} dotShape={dot} />
+          <LineDot
+            showTooltip={showTooltip}
+            color={color}
+            xDomain={xDomain}
+            tooltipRenderer={tooltipRenderer}
+            dotShape={dot}
+          />
         )
       }
       strokeWidth={2}
       yAxisId='data'
       connectNulls
-      label={(dataPoint) => (
-        <SeriesLabel
-          outlierValue={data[dataPoint.index][getOutlierSeriesName(name)]}
-          seriesName={name}
-          seriesType={SeriesType.Line}
-          color={color}
-          {...dataPoint}
-        />
-      )}
       strokeDasharray={dashed && '6 4'}
       legendType={dot === false ? 'plainline' : (dot as LegendType) ?? 'circle'}
       stackId={stacked ? 'stackId' : undefined}
