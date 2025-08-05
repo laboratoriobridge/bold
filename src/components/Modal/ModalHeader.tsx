@@ -11,15 +11,12 @@ import { ModalHeaderIcon } from './ModalHeaderIcon'
 export type HeaderIconObject = {
   name: IconImage
   fill?: IconColor
-  stroke?: IconColor
 }
 
 export type HeaderIconType = IconImage | HeaderIconObject
 
 export type HeaderType = {
   icon?: HeaderIconType
-  background?: string
-  showBottomBorder?: boolean
 }
 
 interface ModalHeaderProps {
@@ -32,9 +29,9 @@ interface ModalHeaderProps {
 
 export const ModalHeader = (props: ModalHeaderProps) => {
   const { title, subtitle, header, showCloseIcon = true, onCloseButtonClick } = props
-  const { icon, background, showBottomBorder = true } = header ?? {}
+  const { icon } = header ?? {}
 
-  const { classes } = useStyles(createStyles, background, showBottomBorder)
+  const { classes } = useStyles(createStyles)
 
   return (
     <HFlow
@@ -67,16 +64,13 @@ export const ModalHeader = (props: ModalHeaderProps) => {
   )
 }
 
-export const createStyles = (theme: Theme, background: string, showBottomBorder: boolean) => ({
+export const createStyles = (theme: Theme) => ({
   header: {
     position: 'relative',
     zIndex: 1,
     width: '100%',
     height: 'fit-content',
     padding: '1.5rem 1rem 1rem 2rem',
-    backgroundColor: background ? background : theme.pallete.surface.main,
-    ...(showBottomBorder && {
-      boxShadow: `0 1px 5px 0 ${theme.pallete.divider}, 0 2px 1px -1px ${theme.pallete.divider}`,
-    }),
+    backgroundColor: theme.pallete.surface.main,
   } as React.CSSProperties,
 })

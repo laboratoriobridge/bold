@@ -13,6 +13,7 @@ import { Modal, ModalSize } from './Modal'
 import { ModalBody } from './ModalBody'
 import { ModalContainer } from './ModalContainer'
 import { ModalFooter } from './ModalFooter'
+import { HeaderType } from './ModalHeader'
 
 const sizes: { [key in ModalSize]: ModalSize } = {
   large: 'large',
@@ -32,15 +33,12 @@ export const Default = () => {
   const size = select('size', sizes, 'large')
   const title = text('title', 'Modal Title')
   const subtitle = title ? text('subtitle', 'Modal Subtitle') : undefined
-  const header = title
+  const header: HeaderType = title
     ? {
         icon: {
           name: select('header.icon.name', icons, 'bridge'),
           fill: select('header.icon.fill', iconColors, 'primary'),
-          stroke: select('header.icon.stroke', iconColors, 'inherit'),
         },
-        background: text('header.background', 'white'),
-        showBottomBorder: boolean('header.showBottomBorder', true),
       }
     : undefined
   const onClose = action('close')
