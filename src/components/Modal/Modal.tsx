@@ -9,9 +9,12 @@ import { ModalContainer, ModalContainerProps } from './ModalContainer'
 
 export type ModalSize = 'small' | 'large' | 'auto'
 export type ModalDepthLevel = 1 | 2 | 3 | 4 | 5
+export type ModalScroll = 'paper' | 'body'
+
 export interface ModalProps extends ModalContainerProps {
   open: boolean
   size?: ModalSize
+  scroll?: ModalScroll
   children?: React.ReactNode
   containerRef?: Ref<HTMLDivElement>
 
@@ -34,6 +37,8 @@ export interface ModalProps extends ModalContainerProps {
   closeOnBackdropClick?: boolean
 }
 
+export const ModalContext = React.createContext<{ scroll: ModalScroll }>(null)
+
 export function Modal(props: ModalProps) {
   const {
     open,
@@ -43,6 +48,7 @@ export function Modal(props: ModalProps) {
     containerRef,
     style,
     onClose,
+    scroll = 'paper',
     title,
     subtitle,
     header,
@@ -50,7 +56,7 @@ export function Modal(props: ModalProps) {
     manageOverflow,
     ...rest
   } = props
-  const { classes, css } = useStyles(createStyles, depthLevel)
+  const { classes, css } = useStyles(createStyles, depthLevel, scroll)
 
   // Kill body scroll when opened
   useEffect(() => {
@@ -81,35 +87,37 @@ export function Modal(props: ModalProps) {
   }, [open, onClose])
 
   return (
-    <FadeTransition in={open}>
-      {({ className }) => (
-        <>
-          {open && (
-            <Portal>
-              <FocusTrap>
-                <div className={className}>
-                  <div className={classes.modal}>
-                    <ModalContainer
-                      ref={containerRef}
-                      title={title}
-                      subtitle={subtitle}
-                      header={header}
-                      style={css(classes.container, classes[size], style)}
-                      onClose={onClose}
-                      {...rest}
-                    >
-                      {children}
-                    </ModalContainer>
-                  </div>
+    <ModalContext.Provider value={{ scroll }}>
+      <FadeTransition in={open}>
+        {({ className }) => (
+          <>
+            {open && (
+              <Portal>
+                <FocusTrap>
+                  <div className={className}>
+                    <div className={classes.modal}>
+                      <ModalContainer
+                        ref={containerRef}
+                        title={title}
+                        subtitle={subtitle}
+                        header={header}
+                        style={css(classes.container, classes[size], style)}
+                        onClose={onClose}
+                        {...rest}
+                      >
+                        {children}
+                      </ModalContainer>
+                    </div>
 
-                  <ModalBackdrop depthLevel={depthLevel} onClick={closeOnBackdropClick ? onClose : undefined} />
-                </div>
-              </FocusTrap>
-            </Portal>
-          )}
-        </>
-      )}
-    </FadeTransition>
+                    <ModalBackdrop depthLevel={depthLevel} onClick={closeOnBackdropClick ? onClose : undefined} />
+                  </div>
+                </FocusTrap>
+              </Portal>
+            )}
+          </>
+        )}
+      </FadeTransition>
+    </ModalContext.Provider>
   )
 }
 
@@ -120,7 +128,7 @@ Modal.defaultProps = {
   manageOverflow: true,
 } as Partial<ModalProps>
 
-const createStyles = (theme: Theme, depthLevel: number) => ({
+const createStyles = (theme: Theme, depthLevel: number, scroll: ModalScroll) => ({
   modal: {
     position: 'fixed',
     left: '0',
@@ -136,7 +144,7 @@ const createStyles = (theme: Theme, depthLevel: number) => ({
   } as React.CSSProperties,
   container: {
     maxHeight: '80vh',
-    overflow: 'auto',
+    overflow: scroll === 'paper' ? 'hidden' : 'auto',
   },
   bodyWhenOpened: {
     overflow: 'hidden',

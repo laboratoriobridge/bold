@@ -9,12 +9,14 @@ export interface ModalFooterProps extends Omit<React.HTMLAttributes<HTMLDivEleme
 
 export function ModalFooter(props: ModalFooterProps) {
   const { style, children, ...rest } = props
-  const { classes, css } = useStyles(theme => ({
+  const { classes, css } = useStyles((theme) => ({
     footer: {
       backgroundColor: theme.pallete.surface.background,
       padding: '1rem',
       borderBottomLeftRadius: theme.radius.modal,
       borderBottomRightRadius: theme.radius.modal,
+      height: '5rem',
+      borderTop: `1px solid ${theme.pallete.divider}`,
     },
   }))
 

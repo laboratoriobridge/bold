@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Theme, useStyles } from '../../styles'
 import { Heading } from '../Heading'
 import { HFlow } from '../HFlow'
@@ -7,6 +7,7 @@ import { IconColor } from '../Icon/Icon'
 import { VFlow } from '../VFlow'
 import { ModalCloseButton } from './ModalCloseButton'
 import { ModalHeaderIcon } from './ModalHeaderIcon'
+import { ModalContext, ModalScroll } from './Modal'
 
 export type HeaderIconObject = {
   name: IconImage
@@ -31,7 +32,8 @@ export const ModalHeader = (props: ModalHeaderProps) => {
   const { title, subtitle, header, showCloseIcon = true, onCloseButtonClick } = props
   const { icon } = header ?? {}
 
-  const { classes } = useStyles(createStyles)
+  const { scroll } = useContext(ModalContext)
+  const { classes } = useStyles(createStyles, scroll)
 
   return (
     <HFlow
@@ -64,13 +66,15 @@ export const ModalHeader = (props: ModalHeaderProps) => {
   )
 }
 
-export const createStyles = (theme: Theme) => ({
+export const createStyles = (theme: Theme, scroll: ModalScroll) => ({
   header: {
     position: 'relative',
     zIndex: 1,
     width: '100%',
-    height: 'fit-content',
+    height: '6rem',
     padding: '1.5rem 1rem 1rem 2rem',
     backgroundColor: theme.pallete.surface.main,
+    boxShadow:
+      scroll === 'paper' ? `0 1px 5px 0 ${theme.pallete.divider}, 0 2px 1px -1px ${theme.pallete.divider}` : '',
   } as React.CSSProperties,
 })

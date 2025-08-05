@@ -7,9 +7,10 @@ import { Button } from '../Button'
 import { HFlow } from '../HFlow'
 import { Icons } from '../Icon'
 import { IconMap } from '../Icon/generated/types'
+import { VFlow } from '../VFlow'
 import { modal } from './auto'
 import { ModalMountTarget } from './auto/ModalMountTarget'
-import { Modal, ModalSize } from './Modal'
+import { Modal, ModalScroll, ModalSize } from './Modal'
 import { ModalBody } from './ModalBody'
 import { ModalContainer } from './ModalContainer'
 import { ModalFooter } from './ModalFooter'
@@ -19,6 +20,11 @@ const sizes: { [key in ModalSize]: ModalSize } = {
   large: 'large',
   small: 'small',
   auto: 'auto',
+}
+
+const scrolls: { [key in ModalScroll]: ModalScroll } = {
+  body: 'body',
+  paper: 'paper',
 }
 
 const icons: Icons[] = Object.keys(IconMap) as Icons[]
@@ -31,6 +37,7 @@ export default {
 export const Default = () => {
   const open = boolean('open', true)
   const size = select('size', sizes, 'large')
+  const scroll = select('scroll', scrolls, 'paper')
   const title = text('title', 'Modal Title')
   const subtitle = title ? text('subtitle', 'Modal Subtitle') : undefined
   const header: HeaderType = title
@@ -47,26 +54,82 @@ export const Default = () => {
     <div>
       <p>Default</p>
 
-      <Modal open={open} size={size} title={title} subtitle={subtitle} header={header} onClose={onClose}>
+      <Modal
+        open={open}
+        size={size}
+        scroll={scroll}
+        title={title}
+        subtitle={subtitle}
+        header={header}
+        onClose={onClose}
+      >
         <ModalBody>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer molestie, dui id luctus commodo, nunc enim
-            facilisis odio, vel hendrerit erat neque eu nisl. Donec urna felis, pharetra nec urna a, efficitur lobortis
-            urna. Mauris varius purus vehicula lorem mollis, a cursus enim malesuada. Integer at congue enim. Nullam
-            purus mauris, fermentum nec mattis in, cursus nec tellus. Nunc sodales orci tortor, at feugiat purus
-            hendrerit a. Suspendisse potenti. Nam porta urna vitae nibh pharetra eleifend. Nullam urna eros, auctor
-            vitae maximus non, feugiat eget odio. Cras venenatis, lectus eget consectetur volutpat, urna felis efficitur
-            enim, vitae viverra purus risus sed purus.
-          </p>
+          <VFlow>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer molestie, dui id luctus commodo, nunc
+              enim facilisis odio, vel hendrerit erat neque eu nisl. Donec urna felis, pharetra nec urna a, efficitur
+              lobortis urna. Mauris varius purus vehicula lorem mollis, a cursus enim malesuada. Integer at congue enim.
+              Nullam purus mauris, fermentum nec mattis in, cursus nec tellus. Nunc sodales orci tortor, at feugiat
+              purus hendrerit a. Suspendisse potenti. Nam porta urna vitae nibh pharetra eleifend. Nullam urna eros,
+              auctor vitae maximus non, feugiat eget odio. Cras venenatis, lectus eget consectetur volutpat, urna felis
+              efficitur enim, vitae viverra purus risus sed purus.
+            </p>
 
-          <p>
-            Aliquam placerat eget massa vel congue. Suspendisse libero erat, auctor ac tristique et, ultrices quis
-            dolor. Suspendisse commodo lacinia lectus ut egestas. Cras in urna eget leo mollis luctus eu eget felis.
-            Mauris vel libero vel lectus cursus placerat. Nunc non ligula urna. Aliquam id quam at quam sodales gravida
-            condimentum quis eros. am dolor nisl, ullamcorper ac varius nec, vulputate sed metus. Cras lacus ante,
-            dapibus facilisis risus at, varius commodo nulla. Nunc volutpat pellentesque mauris et sodales. Suspendisse
-            finibus, dui at tristique mollis, felis mauris vulputate leo, sed vehicula lacus nibh ut dolor.
-          </p>
+            <p>
+              Aliquam placerat eget massa vel congue. Suspendisse libero erat, auctor ac tristique et, ultrices quis
+              dolor. Suspendisse commodo lacinia lectus ut egestas. Cras in urna eget leo mollis luctus eu eget felis.
+              Mauris vel libero vel lectus cursus placerat. Nunc non ligula urna. Aliquam id quam at quam sodales
+              gravida condimentum quis eros. am dolor nisl, ullamcorper ac varius nec, vulputate sed metus. Cras lacus
+              ante, dapibus facilisis risus at, varius commodo nulla. Nunc volutpat pellentesque mauris et sodales.
+              Suspendisse finibus, dui at tristique mollis, felis mauris vulputate leo, sed vehicula lacus nibh ut
+              dolor.
+            </p>
+            <p>
+              Aliquam placerat eget massa vel congue. Suspendisse libero erat, auctor ac tristique et, ultrices quis
+              dolor. Suspendisse commodo lacinia lectus ut egestas. Cras in urna eget leo mollis luctus eu eget felis.
+              Mauris vel libero vel lectus cursus placerat. Nunc non ligula urna. Aliquam id quam at quam sodales
+              gravida condimentum quis eros. am dolor nisl, ullamcorper ac varius nec, vulputate sed metus. Cras lacus
+              ante, dapibus facilisis risus at, varius commodo nulla. Nunc volutpat pellentesque mauris et sodales.
+              Suspendisse finibus, dui at tristique mollis, felis mauris vulputate leo, sed vehicula lacus nibh ut
+              dolor.
+            </p>
+            <p>
+              Aliquam placerat eget massa vel congue. Suspendisse libero erat, auctor ac tristique et, ultrices quis
+              dolor. Suspendisse commodo lacinia lectus ut egestas. Cras in urna eget leo mollis luctus eu eget felis.
+              Mauris vel libero vel lectus cursus placerat. Nunc non ligula urna. Aliquam id quam at quam sodales
+              gravida condimentum quis eros. am dolor nisl, ullamcorper ac varius nec, vulputate sed metus. Cras lacus
+              ante, dapibus facilisis risus at, varius commodo nulla. Nunc volutpat pellentesque mauris et sodales.
+              Suspendisse finibus, dui at tristique mollis, felis mauris vulputate leo, sed vehicula lacus nibh ut
+              dolor.
+            </p>
+            <p>
+              Aliquam placerat eget massa vel congue. Suspendisse libero erat, auctor ac tristique et, ultrices quis
+              dolor. Suspendisse commodo lacinia lectus ut egestas. Cras in urna eget leo mollis luctus eu eget felis.
+              Mauris vel libero vel lectus cursus placerat. Nunc non ligula urna. Aliquam id quam at quam sodales
+              gravida condimentum quis eros. am dolor nisl, ullamcorper ac varius nec, vulputate sed metus. Cras lacus
+              ante, dapibus facilisis risus at, varius commodo nulla. Nunc volutpat pellentesque mauris et sodales.
+              Suspendisse finibus, dui at tristique mollis, felis mauris vulputate leo, sed vehicula lacus nibh ut
+              dolor.
+            </p>
+            <p>
+              Aliquam placerat eget massa vel congue. Suspendisse libero erat, auctor ac tristique et, ultrices quis
+              dolor. Suspendisse commodo lacinia lectus ut egestas. Cras in urna eget leo mollis luctus eu eget felis.
+              Mauris vel libero vel lectus cursus placerat. Nunc non ligula urna. Aliquam id quam at quam sodales
+              gravida condimentum quis eros. am dolor nisl, ullamcorper ac varius nec, vulputate sed metus. Cras lacus
+              ante, dapibus facilisis risus at, varius commodo nulla. Nunc volutpat pellentesque mauris et sodales.
+              Suspendisse finibus, dui at tristique mollis, felis mauris vulputate leo, sed vehicula lacus nibh ut
+              dolor.
+            </p>
+            <p>
+              Aliquam placerat eget massa vel congue. Suspendisse libero erat, auctor ac tristique et, ultrices quis
+              dolor. Suspendisse commodo lacinia lectus ut egestas. Cras in urna eget leo mollis luctus eu eget felis.
+              Mauris vel libero vel lectus cursus placerat. Nunc non ligula urna. Aliquam id quam at quam sodales
+              gravida condimentum quis eros. am dolor nisl, ullamcorper ac varius nec, vulputate sed metus. Cras lacus
+              ante, dapibus facilisis risus at, varius commodo nulla. Nunc volutpat pellentesque mauris et sodales.
+              Suspendisse finibus, dui at tristique mollis, felis mauris vulputate leo, sed vehicula lacus nibh ut
+              dolor.
+            </p>
+          </VFlow>
         </ModalBody>
         <ModalFooter>
           <HFlow justifyContent='flex-end'>
