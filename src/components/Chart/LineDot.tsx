@@ -48,7 +48,7 @@ export function LineDot<XDomain>(props: LineDotProps<XDomain>) {
         outlierValue={outlierValue}
         seriesType={SeriesType.Line}
         color={color}
-        showLabel={showDot}
+        hideLabel={showDot}
         x={cx}
         y={cy}
         value={labelValue}

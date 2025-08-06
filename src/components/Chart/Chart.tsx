@@ -75,13 +75,18 @@ export function Chart<XDomain>(props: ChartProps<XDomain>) {
 
   const referenceAreasWithPercents = convertReferenceRangesToPercents(referenceAreas, adaptedYDomain as ValueRange)
 
+  const hiddenRanges = rangeAreas?.filter((r) => r.mask?.show && r.mask?.hideDots) ?? []
+
+  const yAtEndRanges = rangeAreas?.filter((r) => r.mask?.yAtEnd !== undefined) ?? []
+
   const data = convertSeries(
     rangedSeries,
     domainPoints,
     adaptedYDomain,
     referenceAreasWithPercents,
     outlierSeries,
-    rangeAreas
+    hiddenRanges,
+    yAtEndRanges
   )
 
   return (

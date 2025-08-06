@@ -559,7 +559,7 @@ export const rangeArea = () => {
         mask: {
           show: true,
           fillOpacity: 0.6,
-          showDots: false,
+          hideDots: true,
         },
       },
       {

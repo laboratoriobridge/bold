@@ -8,7 +8,8 @@ export function convertSeries<XDomain>(
   adaptedYDomain: AxisDomain,
   refsAreas?: ReferenceAreaWithPercents<XDomain>[],
   outlierSeries?: ChartSeries<XDomain>[],
-  rangeAreas?: RangeArea<XDomain>[]
+  hiddenRanges?: RangeArea<XDomain>[],
+  yAtEndRanges?: RangeArea<XDomain>[]
 ): any[] {
   const outlierTickValue = getOutlierTickValue(adaptedYDomain)
 
@@ -28,19 +29,21 @@ export function convertSeries<XDomain>(
     return x
   }
 
-  const hiddenRanges = rangeAreas?.filter((r) => r.mask?.show && !r.mask?.showDots) ?? []
-
   const isHidden = (x: XDomain): boolean => {
-    return hiddenRanges.some((r) => {
-      if (typeof x === 'string') {
-        const iX = domainPoints.indexOf(x)
-        const iInit = domainPoints.indexOf(r.mask?.showDotsOffset ?? r.init)
-        const iEnd = domainPoints.indexOf(r.end)
-        return iX >= iInit && iX < iEnd
-      }
+    if (!hiddenRanges || !hiddenRanges.length) return false
 
-      return +(r.mask?.showDotsOffset ?? r.init) <= +x && +x <= +r.end
-    })
+    const isStringDomain = typeof x === 'string'
+
+    const isHiddenHandler = isStringDomain
+      ? (r: RangeArea<XDomain>) => {
+          const iX = domainPoints.indexOf(x)
+          const iInit = domainPoints.indexOf(r.mask?.hideDotsStart ?? r.init)
+          const iEnd = domainPoints.indexOf(r.end)
+          return iX >= iInit && iX < iEnd
+        }
+      : (r: RangeArea<XDomain>) => +(r.mask?.hideDotsStart ?? r.init) <= +x && +x <= +r.end
+
+    return hiddenRanges?.some(isHiddenHandler) ?? false
   }
 
   const data = (series ?? [])
@@ -63,16 +66,14 @@ export function convertSeries<XDomain>(
     })
     .concat(...refs)
     .concat(
-      ...(rangeAreas ?? [])
-        .filter((r) => r.mask?.yAtEnd !== undefined)
-        .map((r) => ({
-          x: addTick(r.end),
-          showDot: false,
-          ...series.reduce((acc, serie) => {
-            acc[serie.name] = r.mask!.yAtEnd
-            return acc
-          }, {} as Record<string, XDomain>),
-        }))
+      ...(yAtEndRanges ?? []).map((r) => ({
+        x: addTick(r.end),
+        showDot: false,
+        ...series.reduce((acc, serie) => {
+          acc[serie.name] = r.mask!.yAtEnd
+          return acc
+        }, {} as Record<string, XDomain>),
+      }))
     )
     .sort((a, b) => (a.x === b.x ? 0 : a.x > b.x ? 1 : -1))
     .reduce((map, obj) => {

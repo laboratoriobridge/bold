@@ -12,7 +12,7 @@ export interface SeriesLabelProps {
   color?: string
   value?: any
   outlierValue?: any
-  showLabel?: boolean
+  hideLabel?: boolean
 }
 
 const MIN_OFF_SET = 20
@@ -23,7 +23,7 @@ const getOutlierIconOffset = (widthLabel: number) => {
 }
 
 export function SeriesLabel<XDomain>(props: SeriesLabelProps) {
-  const { seriesType, x, y, color, value, outlierValue, showLabel = true } = props
+  const { seriesType, x, y, color, value, outlierValue, hideLabel = false } = props
 
   const [refLabel, widthLabel] = useWidth()
 
@@ -33,7 +33,7 @@ export function SeriesLabel<XDomain>(props: SeriesLabelProps) {
     case SeriesType.Line:
       const iconOffset = getOutlierIconOffset(widthLabel)
 
-      return showLabel ? (
+      return !hideLabel ? (
         outlierValue?.value != null ? (
           <>
             <Icon
