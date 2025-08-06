@@ -1,6 +1,6 @@
 import FocusTrap from 'focus-trap-react'
 import React, { MutableRefObject, Ref, useEffect, useRef } from 'react'
-import { Theme, useIsOverflowing, useStyles } from '../../styles'
+import { Theme, useStyles } from '../../styles'
 import { zIndexLevel } from '../../styles/theme/zIndex'
 import { Portal } from '../Portal'
 import { FadeTransition } from '../Transition/FadeTransition'
