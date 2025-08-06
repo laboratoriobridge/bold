@@ -14,9 +14,14 @@ export type ModalScroll = 'body' | 'full'
 export interface ModalProps extends ModalContainerProps {
   open: boolean
   size?: ModalSize
-  scroll?: ModalScroll
   children?: React.ReactNode
   containerRef?: Ref<HTMLDivElement>
+
+  /**
+   * Determine the container for scrolling the dialog
+   * @default 'body'
+   */
+  scroll?: ModalScroll
 
   /**
    * Allows you to customize the depth of the container and the backdrop of the modal
