@@ -9,7 +9,7 @@ import { ModalContainer, ModalContainerProps } from './ModalContainer'
 
 export type ModalSize = 'small' | 'large' | 'auto'
 export type ModalDepthLevel = 1 | 2 | 3 | 4 | 5
-export type ModalScroll = 'paper' | 'body'
+export type ModalScroll = 'body' | 'full'
 
 export interface ModalProps extends ModalContainerProps {
   open: boolean
@@ -48,14 +48,12 @@ export function Modal(props: ModalProps) {
     containerRef,
     style,
     onClose,
-    scroll = 'paper',
-    title,
-    subtitle,
-    header,
+    scroll = 'body',
     depthLevel,
     manageOverflow,
     ...rest
   } = props
+
   const { classes, css } = useStyles(createStyles, depthLevel, scroll)
 
   // Kill body scroll when opened
@@ -96,15 +94,7 @@ export function Modal(props: ModalProps) {
                 <FocusTrap>
                   <div className={className}>
                     <div className={classes.modal}>
-                      <ModalContainer
-                        ref={containerRef}
-                        title={title}
-                        subtitle={subtitle}
-                        header={header}
-                        style={css(classes.container, classes[size], style)}
-                        onClose={onClose}
-                        {...rest}
-                      >
+                      <ModalContainer ref={containerRef} style={css(classes[size], style)} onClose={onClose} {...rest}>
                         {children}
                       </ModalContainer>
                     </div>
@@ -123,12 +113,13 @@ export function Modal(props: ModalProps) {
 
 Modal.defaultProps = {
   size: 'large',
+  scroll: 'body',
   closeOnBackdropClick: true,
   depthLevel: 1,
   manageOverflow: true,
 } as Partial<ModalProps>
 
-const createStyles = (theme: Theme, depthLevel: number, scroll: ModalScroll) => ({
+const createStyles = (theme: Theme, depthLevel: number) => ({
   modal: {
     position: 'fixed',
     left: '0',
@@ -142,10 +133,6 @@ const createStyles = (theme: Theme, depthLevel: number, scroll: ModalScroll) => 
     alignItems: 'center',
     padding: '2rem',
   } as React.CSSProperties,
-  container: {
-    maxHeight: '80vh',
-    overflow: scroll === 'paper' ? 'hidden' : 'auto',
-  },
   bodyWhenOpened: {
     overflow: 'hidden',
   },

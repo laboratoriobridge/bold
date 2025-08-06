@@ -9,47 +9,31 @@ import { ModalCloseButton } from './ModalCloseButton'
 import { ModalHeaderIcon } from './ModalHeaderIcon'
 import { ModalContext, ModalScroll } from './Modal'
 
-export type HeaderIconObject = {
-  name: IconImage
-  fill?: IconColor
-}
-
-export type HeaderIconType = IconImage | HeaderIconObject
-
-export type HeaderType = {
-  icon?: HeaderIconType
-}
-
-interface ModalHeaderProps {
+export interface ModalHeaderProps {
   title: string
   subtitle?: string
-  header?: HeaderType
-  showCloseIcon?: boolean
+  icon?: IconImage
+  iconFill?: IconColor
+  showCloseButton?: boolean
   onCloseButtonClick?: () => void
 }
 
 export const ModalHeader = (props: ModalHeaderProps) => {
-  const { title, subtitle, header, showCloseIcon = true, onCloseButtonClick } = props
-  const { icon } = header ?? {}
+  const { title, subtitle, icon, iconFill = 'normal', showCloseButton = true, onCloseButtonClick } = props
 
   const { scroll } = useContext(ModalContext)
   const { classes } = useStyles(createStyles, scroll)
 
   return (
     <HFlow
-      hSpacing={1}
+      hSpacing={0.5}
       justifyContent='space-between'
       alignItems='flex-start'
       style={classes.header}
       data-testid='modal-header'
     >
-      <HFlow
-        hSpacing={1.25}
-        justifyContent='flex-start'
-        alignItems={subtitle ? 'flex-start' : 'center'}
-        data-testid='modal-header-title-area'
-      >
-        {icon && <ModalHeaderIcon icon={icon} />}
+      <HFlow hSpacing={1} justifyContent='flex-start' alignItems='center' data-testid='modal-header-title-area'>
+        {icon && <ModalHeaderIcon icon={icon} iconFill={iconFill} />}
         <VFlow vSpacing={0}>
           <Heading level={1} color='normal' fontWeight='bold'>
             {title}
@@ -61,20 +45,17 @@ export const ModalHeader = (props: ModalHeaderProps) => {
           )}
         </VFlow>
       </HFlow>
-      {showCloseIcon && <ModalCloseButton onClick={onCloseButtonClick} />}
+      {showCloseButton && <ModalCloseButton onClick={onCloseButtonClick} />}
     </HFlow>
   )
 }
 
 export const createStyles = (theme: Theme, scroll: ModalScroll) => ({
   header: {
-    position: 'relative',
-    zIndex: 1,
     width: '100%',
-    height: '6rem',
     padding: '1.5rem 1rem 1rem 2rem',
+    zIndex: 1,
     backgroundColor: theme.pallete.surface.main,
-    boxShadow:
-      scroll === 'paper' ? `0 1px 5px 0 ${theme.pallete.divider}, 0 2px 1px -1px ${theme.pallete.divider}` : '',
+    boxShadow: scroll === 'body' ? theme.shadows.outer[10] : '',
   } as React.CSSProperties,
 })

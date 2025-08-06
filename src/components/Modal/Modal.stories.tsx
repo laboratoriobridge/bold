@@ -4,17 +4,16 @@ import React from 'react'
 import { TextColor } from '../../styles'
 import { textColorMap } from '../../styles/theme/createPallete'
 import { Button } from '../Button'
-import { HFlow } from '../HFlow'
 import { Icons } from '../Icon'
 import { IconMap } from '../Icon/generated/types'
 import { VFlow } from '../VFlow'
+import { Switch } from '../Switch'
 import { modal } from './auto'
 import { ModalMountTarget } from './auto/ModalMountTarget'
 import { Modal, ModalScroll, ModalSize } from './Modal'
 import { ModalBody } from './ModalBody'
-import { ModalContainer } from './ModalContainer'
 import { ModalFooter } from './ModalFooter'
-import { HeaderType } from './ModalHeader'
+import { ModalFooterButton } from './ModalFooterButton'
 
 const sizes: { [key in ModalSize]: ModalSize } = {
   large: 'large',
@@ -24,7 +23,7 @@ const sizes: { [key in ModalSize]: ModalSize } = {
 
 const scrolls: { [key in ModalScroll]: ModalScroll } = {
   body: 'body',
-  paper: 'paper',
+  full: 'full',
 }
 
 const icons: Icons[] = Object.keys(IconMap) as Icons[]
@@ -37,17 +36,15 @@ export default {
 export const Default = () => {
   const open = boolean('open', true)
   const size = select('size', sizes, 'large')
-  const scroll = select('scroll', scrolls, 'paper')
+  const scroll = select('scroll', scrolls, 'body')
   const title = text('title', 'Modal Title')
-  const subtitle = title ? text('subtitle', 'Modal Subtitle') : undefined
-  const header: HeaderType = title
-    ? {
-        icon: {
-          name: select('header.icon.name', icons, 'bridge'),
-          fill: select('header.icon.fill', iconColors, 'primary'),
-        },
-      }
-    : undefined
+  const subtitle = text('subtitle', 'Modal Subtitle')
+  const hasIcon = boolean('hasIcon', true)
+  const icon = hasIcon ? select('icon', icons, 'bridge') : undefined
+  const iconFill = hasIcon ? select('iconFill', iconColors, 'normal') : undefined
+  const showCloseButton = boolean('showCloseButton', true)
+  const manageOverflow = boolean('manageOverflow', true)
+  const closeOnBackdropClick = boolean('closeOnBackdropClick', true)
   const onClose = action('close')
 
   return (
@@ -58,9 +55,13 @@ export const Default = () => {
         open={open}
         size={size}
         scroll={scroll}
+        showCloseButton={showCloseButton}
         title={title}
         subtitle={subtitle}
-        header={header}
+        icon={icon}
+        iconFill={iconFill}
+        manageOverflow={manageOverflow}
+        closeOnBackdropClick={closeOnBackdropClick}
         onClose={onClose}
       >
         <ModalBody>
@@ -131,14 +132,20 @@ export const Default = () => {
             </p>
           </VFlow>
         </ModalBody>
-        <ModalFooter>
-          <HFlow justifyContent='flex-end'>
-            <Button onClick={action('cancel clicked')}>Cancel</Button>
-            <Button kind='primary' onClick={action('save clicked')}>
+        <ModalFooter
+          primarySlot={
+            <ModalFooterButton kind='primary' onClick={action('save clicked')}>
               Save
-            </Button>
-          </HFlow>
-        </ModalFooter>
+            </ModalFooterButton>
+          }
+          secondarySlot={<ModalFooterButton onClick={action('cancel clicked')}>Cancel</ModalFooterButton>}
+          tertiarySlot={
+            <ModalFooterButton kind='primary' skin='outline' onClick={action('cancel clicked')}>
+              Button
+            </ModalFooterButton>
+          }
+          complementarySlot={<Switch label='Label text' />}
+        />
       </Modal>
     </div>
   )
@@ -148,12 +155,17 @@ export const Auto = () => (
   <div>
     <Button
       onClick={modal({
+        title: 'Confirm',
         size: 'small',
-        render: () => 'Confirm?',
-        actions: [
-          { label: 'Cancel', onClick: action('Cancel') },
-          { label: 'Ok', kind: 'primary', onClick: action('Ok') },
-        ],
+        render: () => 'Are you sure?',
+        actions: {
+          primarySlot: {
+            label: 'Ok',
+            kind: 'primary',
+            onClick: action('Ok'),
+          },
+          secondarySlot: { label: 'Cancel', onClick: action('Cancel') },
+        },
       })}
     >
       Auto modal
@@ -162,23 +174,16 @@ export const Auto = () => (
   </div>
 )
 
-export const Parts = () => (
-  <ModalContainer onClose={action('onClose')}>
-    <ModalBody>Teste</ModalBody>
-    <ModalFooter>
-      <HFlow justifyContent='flex-end'>
-        <Button>Secondary</Button>
-        <Button kind='primary'>Primary</Button>
-      </HFlow>
-    </ModalFooter>
-  </ModalContainer>
-)
-
 export const ModalOverlap = () => (
   <div>
-    <p>ModalOverlap</p>
+    <p>Modal Overlap</p>
 
-    <Modal open={boolean('open', true)} size={select('main modal size', sizes, 'large')} onClose={action('close')}>
+    <Modal
+      title='Modal Overlap'
+      open={boolean('open', true)}
+      size={select('main modal size', sizes, 'large')}
+      onClose={action('close')}
+    >
       <ModalBody>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer molestie, dui id luctus commodo, nunc enim
@@ -190,27 +195,32 @@ export const ModalOverlap = () => (
           purus risus sed purus.
         </p>
       </ModalBody>
-      <ModalFooter>
-        <HFlow justifyContent='flex-end'>
-          <Button onClick={action('cancel clicked')}>Cancel</Button>
-          <Button
+      <ModalFooter
+        primarySlot={
+          <ModalFooterButton
             kind='primary'
             onClick={modal({
+              title: 'Confirm?',
               size: 'small',
               render: () => 'Confirm?',
               depthLevel: 2,
               manageOverflow: false,
               onClose: action('close'),
-              actions: [
-                { label: 'Cancel', onClick: action('Cancel') },
-                { label: 'Ok', kind: 'primary', onClick: action('Ok') },
-              ],
+              actions: {
+                primarySlot: {
+                  label: 'Ok',
+                  kind: 'primary',
+                  onClick: action('Ok'),
+                },
+                secondarySlot: { label: 'Cancel', onClick: action('Cancel') },
+              },
             })}
           >
             Open a modal that overlaps
-          </Button>
-        </HFlow>
-      </ModalFooter>
+          </ModalFooterButton>
+        }
+        secondarySlot={<ModalFooterButton onClick={action('cancel clicked')}>Cancel</ModalFooterButton>}
+      />
     </Modal>
     <ModalMountTarget />
   </div>

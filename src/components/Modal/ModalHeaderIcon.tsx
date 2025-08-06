@@ -1,20 +1,14 @@
 import React from 'react'
-import { Icon } from '../Icon'
-import { HeaderIconObject, HeaderIconType } from './ModalHeader'
+import { Icon, IconImage } from '../Icon'
+import { IconColor } from '../Icon/Icon'
 
 interface ModalHeaderIconProps {
-  icon: HeaderIconType
+  icon: IconImage
+  iconFill: IconColor
 }
 
-const isHeaderIconObject = (icon: HeaderIconType): icon is HeaderIconObject =>
-  typeof icon === 'object' && 'name' in icon
-
 export const ModalHeaderIcon = (props: ModalHeaderIconProps) => {
-  const { icon } = props
+  const { icon, iconFill } = props
 
-  if (isHeaderIconObject(icon)) {
-    return <Icon icon={icon.name} size={3} fill={icon.fill} stroke={icon.stroke} />
-  }
-
-  return <Icon icon={icon} size={3} />
+  return <Icon icon={icon} fill={iconFill} size={3} />
 }
