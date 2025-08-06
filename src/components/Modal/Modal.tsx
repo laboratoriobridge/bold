@@ -1,6 +1,6 @@
 import FocusTrap from 'focus-trap-react'
-import React, { Ref, useEffect } from 'react'
-import { Theme, useStyles } from '../../styles'
+import React, { MutableRefObject, Ref, useEffect, useRef } from 'react'
+import { Theme, useIsOverflowing, useStyles } from '../../styles'
 import { zIndexLevel } from '../../styles/theme/zIndex'
 import { Portal } from '../Portal'
 import { FadeTransition } from '../Transition/FadeTransition'
@@ -37,7 +37,9 @@ export interface ModalProps extends ModalContainerProps {
   closeOnBackdropClick?: boolean
 }
 
-export const ModalContext = React.createContext<{ scroll: ModalScroll }>(null)
+export const ModalContext = React.createContext<{ scroll: ModalScroll; bodyRef: MutableRefObject<HTMLDivElement> }>(
+  null
+)
 
 export function Modal(props: ModalProps) {
   const {
@@ -55,6 +57,7 @@ export function Modal(props: ModalProps) {
   } = props
 
   const { classes, css } = useStyles(createStyles, depthLevel, scroll)
+  const bodyRef = useRef()
 
   // Kill body scroll when opened
   useEffect(() => {
@@ -85,7 +88,7 @@ export function Modal(props: ModalProps) {
   }, [open, onClose])
 
   return (
-    <ModalContext.Provider value={{ scroll }}>
+    <ModalContext.Provider value={{ scroll, bodyRef }}>
       <FadeTransition in={open}>
         {({ className }) => (
           <>

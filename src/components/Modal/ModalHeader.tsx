@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Theme, useStyles } from '../../styles'
+import { Theme, useIsOverflowing, useStyles } from '../../styles'
 import { Heading } from '../Heading'
 import { HFlow } from '../HFlow'
 import { IconImage } from '../Icon'
@@ -7,22 +7,23 @@ import { IconColor } from '../Icon/Icon'
 import { VFlow } from '../VFlow'
 import { ModalCloseButton } from './ModalCloseButton'
 import { ModalHeaderIcon } from './ModalHeaderIcon'
-import { ModalContext, ModalScroll } from './Modal'
+import { ModalContext } from './Modal'
 
 export interface ModalHeaderProps {
   title: string
   subtitle?: string
   icon?: IconImage
   iconFill?: IconColor
-  showCloseButton?: boolean
+  hasCloseIcon?: boolean
   onCloseButtonClick?: () => void
 }
 
 export const ModalHeader = (props: ModalHeaderProps) => {
-  const { title, subtitle, icon, iconFill = 'normal', showCloseButton = true, onCloseButtonClick } = props
+  const { title, subtitle, icon, iconFill = 'normal', hasCloseIcon = true, onCloseButtonClick } = props
 
-  const { scroll } = useContext(ModalContext)
-  const { classes } = useStyles(createStyles, scroll)
+  const { scroll, bodyRef } = useContext(ModalContext)
+  const isBodyOverflowing = useIsOverflowing(bodyRef, 'vertical')
+  const { classes } = useStyles(createStyles, scroll === 'body' && isBodyOverflowing)
 
   return (
     <HFlow
@@ -45,17 +46,17 @@ export const ModalHeader = (props: ModalHeaderProps) => {
           )}
         </VFlow>
       </HFlow>
-      {showCloseButton && <ModalCloseButton onClick={onCloseButtonClick} />}
+      {hasCloseIcon && <ModalCloseButton onClick={onCloseButtonClick} />}
     </HFlow>
   )
 }
 
-export const createStyles = (theme: Theme, scroll: ModalScroll) => ({
+export const createStyles = (theme: Theme, showHeaderShadow: boolean) => ({
   header: {
     width: '100%',
     padding: '1.5rem 1rem 1rem 2rem',
     zIndex: 1,
     backgroundColor: theme.pallete.surface.main,
-    boxShadow: scroll === 'body' ? theme.shadows.outer[10] : '',
+    boxShadow: showHeaderShadow ? theme.shadows.outer[10] : '',
   } as React.CSSProperties,
 })

@@ -11,7 +11,7 @@ export interface ModalBodyProps extends Omit<React.HTMLAttributes<HTMLDivElement
 export function ModalBody(props: ModalBodyProps) {
   const { children, style, ...rest } = props
 
-  const { scroll } = useContext(ModalContext)
+  const { scroll, bodyRef } = useContext(ModalContext)
   const { classes, css } = useStyles(() => ({
     body: {
       padding: '1rem 2rem 2rem 2rem',
@@ -20,7 +20,7 @@ export function ModalBody(props: ModalBodyProps) {
   }))
 
   return (
-    <div className={css(classes.body, style)} {...rest}>
+    <div className={css(classes.body, style)} ref={bodyRef} {...rest}>
       {children}
     </div>
   )

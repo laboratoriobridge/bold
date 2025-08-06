@@ -50,6 +50,6 @@ const createStyles = (theme: Theme, scroll: ModalScroll) => ({
     position: 'relative',
     overflow: scroll === 'body' ? 'hidden' : 'auto',
     display: 'grid',
-    gridTemplateRows: scroll === 'body' ? '1fr auto 1fr' : 'initial',
+    gridTemplateRows: scroll === 'body' ? '1fr auto auto' : 'initial',
   } as CSSProperties,
 })

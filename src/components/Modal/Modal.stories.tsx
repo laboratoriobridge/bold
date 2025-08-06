@@ -42,7 +42,7 @@ export const Default = () => {
   const hasIcon = boolean('hasIcon', true)
   const icon = hasIcon ? select('icon', icons, 'bridge') : undefined
   const iconFill = hasIcon ? select('iconFill', iconColors, 'normal') : undefined
-  const showCloseButton = boolean('showCloseButton', true)
+  const hasCloseIcon = boolean('hasCloseIcon', true)
   const manageOverflow = boolean('manageOverflow', true)
   const closeOnBackdropClick = boolean('closeOnBackdropClick', true)
   const onClose = action('close')
@@ -55,7 +55,7 @@ export const Default = () => {
         open={open}
         size={size}
         scroll={scroll}
-        showCloseButton={showCloseButton}
+        hasCloseIcon={hasCloseIcon}
         title={title}
         subtitle={subtitle}
         icon={icon}
