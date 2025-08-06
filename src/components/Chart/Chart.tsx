@@ -25,6 +25,7 @@ import { renderReferenceAreas, renderSeries } from './renderSeries'
 import { renderTooltip } from './renderTooltip'
 import { getAxisDomainEnd, getAxisDomainInit } from './util'
 import { splitOutlierSeries } from './getOutlierSeries'
+import { RANGE_AREA_MASK_ID, RangeAreaMaskChartPattern } from './RangeAreaMaskChartPattern'
 
 export interface ChartProps<XDomain> {
   type?: SeriesType
@@ -41,8 +42,6 @@ export interface ChartProps<XDomain> {
   width?: number
   height: number
 }
-
-const RANGE_AREA_MASK_ID = 'mask-range-area'
 
 export function Chart<XDomain>(props: ChartProps<XDomain>) {
   const {
@@ -118,7 +117,7 @@ export function Chart<XDomain>(props: ChartProps<XDomain>) {
       {referenceAreas?.map((ra, i) => renderReferenceAreas(ra, i, colorScheme ?? 'default'))}
 
       {rangeAreas?.map((ra) => [
-        defMaskPattern(),
+        RangeAreaMaskChartPattern(),
         <RechartsReferenceArea
           yAxisId='data'
           x1={getRangeAreaInit(ra, xAxis.domain)}
@@ -134,7 +133,7 @@ export function Chart<XDomain>(props: ChartProps<XDomain>) {
       ])}
 
       {rangeAreas?.map((ra) => [
-        ...(ra.mask?.show && !ra.mask?.overDots
+        ...(ra.mask?.show && !ra.mask?.overlayDots
           ? [
               <RechartsReferenceArea
                 yAxisId='data'
@@ -166,7 +165,7 @@ export function Chart<XDomain>(props: ChartProps<XDomain>) {
       )}
 
       {rangeAreas?.map((ra) => [
-        ...(ra.mask?.show && ra.mask?.overDots
+        ...(ra.mask?.show && ra.mask?.overlayDots
           ? [
               <RechartsReferenceArea
                 yAxisId='data'
@@ -223,19 +222,4 @@ function renderRangeAreaStroke<XDomain>(rangeAreas: RangeArea<XDomain>) {
         />,
       ]
     : []
-}
-
-function defMaskPattern() {
-  return (
-    <defs>
-      <pattern id={RANGE_AREA_MASK_ID} patternUnits='userSpaceOnUse' width='21' height='60' viewBox='0 0 21 60'>
-        <rect width='21' height='60' fill='white' fillOpacity='1' />
-        <path
-          d='M 0 60 L 21 0 M -21 60 L 0 0 M 21 60 L 42 0 M 42 60 L 63 0 M 63 60 L 84 0'
-          stroke='#D3D4DD'
-          strokeWidth='1.6'
-        />
-      </pattern>
-    </defs>
-  )
 }

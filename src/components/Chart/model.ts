@@ -72,7 +72,7 @@ interface RangeAreaMask<XDomain> {
   hideDotsStart?: XDomain
   fillOpacity?: number
   yAtEnd?: any
-  overDots?: boolean
+  overlayDots?: boolean
 }
 
 export interface RangeArea<XDomain> {
