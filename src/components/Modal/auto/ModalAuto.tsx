@@ -26,7 +26,7 @@ export interface ModalAutoRenderProps {
 
 export const ModalAuto = memo((props: ModalAutoProps) => {
   const { actions, render, dispose, onClose, ...rest } = props
-  const { primarySlot, secondarySlot, tertiarySlot, complementarySlot } = actions
+  const { primarySlot, secondarySlot, tertiarySlot, complementarySlot } = actions ?? {}
 
   const [isOpen, setIsOpen] = useState(false)
 

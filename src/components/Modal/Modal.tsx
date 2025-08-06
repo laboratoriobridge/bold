@@ -37,9 +37,10 @@ export interface ModalProps extends ModalContainerProps {
   closeOnBackdropClick?: boolean
 }
 
-export const ModalContext = React.createContext<{ scroll: ModalScroll; bodyRef: MutableRefObject<HTMLDivElement> }>(
-  null
-)
+export const ModalContext = React.createContext<{ scroll: ModalScroll; bodyRef: MutableRefObject<HTMLDivElement> }>({
+  scroll: 'body',
+  bodyRef: null,
+})
 
 export function Modal(props: ModalProps) {
   const {

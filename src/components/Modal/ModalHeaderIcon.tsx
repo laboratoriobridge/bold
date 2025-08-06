@@ -4,11 +4,11 @@ import { IconColor } from '../Icon/Icon'
 
 interface ModalHeaderIconProps {
   icon: IconImage
-  iconFill: IconColor
+  iconFill?: IconColor
 }
 
 export const ModalHeaderIcon = (props: ModalHeaderIconProps) => {
-  const { icon, iconFill } = props
+  const { icon, iconFill = 'normal' } = props
 
   return <Icon icon={icon} fill={iconFill} size={3} />
 }

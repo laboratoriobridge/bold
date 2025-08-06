@@ -13,7 +13,7 @@ export interface ModalContainerProps
 }
 
 export const ModalContainer = forwardRef<HTMLDivElement, ModalContainerProps>((props, ref) => {
-  const { style, onClose, hasCloseIcon, children, title, subtitle, icon, iconFill, ...rest } = props
+  const { style, onClose, hasCloseIcon = true, children, title, subtitle, icon, iconFill, ...rest } = props
 
   const { scroll } = useContext(ModalContext)
   const { classes, css } = useStyles(createStyles, scroll)
@@ -34,7 +34,7 @@ export const ModalContainer = forwardRef<HTMLDivElement, ModalContainerProps>((p
 })
 
 ModalContainer.defaultProps = {
-  showCloseIcon: true,
+  hasCloseIcon: true,
   onClose: () => null,
 } as Partial<ModalContainerProps>
 
