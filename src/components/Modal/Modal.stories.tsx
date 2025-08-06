@@ -8,6 +8,9 @@ import { Icons } from '../Icon'
 import { IconMap } from '../Icon/generated/types'
 import { VFlow } from '../VFlow'
 import { Switch } from '../Switch'
+import { SwapMe } from '../SwapMe/SwapMe'
+import { Checkbox } from '../Checkbox'
+import { Alert } from '../Alert'
 import { modal } from './auto'
 import { ModalMountTarget } from './auto/ModalMountTarget'
 import { Modal, ModalScroll, ModalSize } from './Modal'
@@ -140,11 +143,11 @@ export const Default = () => {
           }
           secondarySlot={<ModalFooterButton onClick={action('cancel clicked')}>Cancel</ModalFooterButton>}
           tertiarySlot={
-            <ModalFooterButton kind='primary' skin='outline' onClick={action('cancel clicked')}>
+            <ModalFooterButton kind='primary' skin='outline' onClick={action('tertiary slot button clicked')}>
               Button
             </ModalFooterButton>
           }
-          complementarySlot={<Switch label='Label text' />}
+          complementarySlot={<Switch label='Label text' onClick={action('switch clicked')} />}
         />
       </Modal>
     </div>
@@ -225,3 +228,96 @@ export const ModalOverlap = () => (
     <ModalMountTarget />
   </div>
 )
+
+export const SwapSlots = () => {
+  const open = boolean('Open', true)
+  const onClose = action('close')
+
+  const mainSlots = {
+    swapme: (
+      <SwapMe
+        style={{
+          height: '23rem',
+        }}
+      />
+    ),
+    text: (
+      <VFlow>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer molestie, dui id luctus commodo, nunc enim
+          facilisis odio, vel hendrerit erat neque eu nisl. Donec urna felis, pharetra nec urna a, efficitur lobortis
+          urna. Mauris varius purus vehicula lorem mollis, a cursus enim malesuada. Integer at congue enim. Nullam purus
+          mauris, fermentum nec mattis in, cursus nec tellus. Nunc sodales orci tortor, at feugiat purus hendrerit a.
+          Suspendisse potenti. Nam porta urna vitae nibh pharetra eleifend. Nullam urna eros, auctor vitae maximus non,
+          feugiat eget odio. Cras venenatis, lectus eget consectetur volutpat, urna felis efficitur enim, vitae viverra
+          purus risus sed purus.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer molestie, dui id luctus commodo, nunc enim
+          facilisis odio, vel hendrerit erat neque eu nisl. Donec urna felis, pharetra nec urna a, efficitur lobortis
+          urna. Mauris varius purus vehicula lorem mollis, a cursus enim malesuada. Integer at congue enim. Nullam purus
+          mauris, fermentum nec mattis in, cursus nec tellus. Nunc sodales orci tortor, at feugiat purus hendrerit a.
+          Suspendisse potenti. Nam porta urna vitae nibh pharetra eleifend. Nullam urna eros, auctor vitae maximus non,
+          feugiat eget odio. Cras venenatis, lectus eget consectetur volutpat, urna felis efficitur enim, vitae viverra
+          purus risus sed purus.
+        </p>
+      </VFlow>
+    ),
+  }
+
+  const footerPreferredSlots = {
+    swapme: <SwapMe />,
+    button: (
+      <ModalFooterButton kind='primary' onClick={action('click button')}>
+        Click me
+      </ModalFooterButton>
+    ),
+    switch: <Switch label='Label text' />,
+    checkbox: <Checkbox label='Label text' />,
+    alert: (
+      <Alert type='warning' inline>
+        Alert message
+      </Alert>
+    ),
+  }
+
+  const footerPreferredSlotsOptions = {
+    'Swap me': 'swapme',
+    Button: 'button',
+    Switch: 'switch',
+    Checkbox: 'checkbox',
+    Alert: 'alert',
+  }
+
+  const mainSlotsOptions = {
+    'Swap me': 'swapme',
+    Text: 'text',
+  }
+
+  const swapMainSlot = select('Swap main slot', mainSlotsOptions, 'swapme')
+  const swapPrimarySlot = select('Swap primary slot', footerPreferredSlotsOptions, 'button')
+  const swapSecondarySlot = select('Swap secondary slot', footerPreferredSlotsOptions, 'swapme')
+  const swapTertiarySlot = select('Swap tertiary slot', footerPreferredSlotsOptions, 'swapme')
+  const swapComplementarySlot = select('Swap complementary slot', footerPreferredSlotsOptions, 'swapme')
+
+  return (
+    <div>
+      <p>Modal swap slots preferred values</p>
+      <Modal
+        open={open}
+        title='Modal swap slots preferred values'
+        subtitle='Swap slots are a flexible component that can be replaced with other components in the design system. These components can be predefined with preferred values if needed. Swap slots can be hidden if not in use.'
+        icon='infoCircleOutline'
+        onClose={onClose}
+      >
+        <ModalBody>{mainSlots[swapMainSlot]}</ModalBody>
+        <ModalFooter
+          primarySlot={footerPreferredSlots[swapPrimarySlot]}
+          secondarySlot={footerPreferredSlots[swapSecondarySlot]}
+          tertiarySlot={footerPreferredSlots[swapTertiarySlot]}
+          complementarySlot={footerPreferredSlots[swapComplementarySlot]}
+        />
+      </Modal>
+    </div>
+  )
+}
