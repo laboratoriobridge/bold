@@ -2,9 +2,9 @@ import React from 'react'
 import { Button, ButtonProps } from '../Button'
 import { useStyles } from '../../styles'
 
-export interface ModalFooterButton extends Omit<ButtonProps, 'size'> {}
+interface ModalFooterButtonProps extends Omit<ButtonProps, 'size'> {}
 
-export function ModalFooterButton(props: ModalFooterButton) {
+export function ModalFooterButton(props: ModalFooterButtonProps) {
   const { style, ...rest } = props
 
   const { classes, css } = useStyles(() => ({
