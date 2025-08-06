@@ -68,7 +68,7 @@ export function convertSeries<XDomain>(
     .concat(
       ...(yAtEndRanges ?? []).map((r) => ({
         x: addTick(r.end),
-        showDot: false,
+        hideDot: true,
         ...series.reduce((acc, serie) => {
           acc[serie.name] = r.mask!.yAtEnd
           return acc

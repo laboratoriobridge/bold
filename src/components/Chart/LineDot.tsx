@@ -39,16 +39,15 @@ export function LineDot<XDomain>(props: LineDotProps<XDomain>) {
   const labelValue =
     payload[getOutlierSeriesName(seriesName)]?.value ?? (Array.isArray(value) ? value[value.length - 1] : value)
 
-  const showDot = payload?.['showDot'] ?? true
+  const hideDot = payload?.['hideDot'] ?? false
   const outlierValue = payload?.[getOutlierSeriesName(seriesName)]
 
-  return showDot ? (
+  return !hideDot ? (
     <>
       <SeriesLabel
         outlierValue={outlierValue}
         seriesType={SeriesType.Line}
         color={color}
-        hideLabel={showDot}
         x={cx}
         y={cy}
         value={labelValue}
