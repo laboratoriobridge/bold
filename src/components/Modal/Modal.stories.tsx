@@ -9,7 +9,6 @@ import { IconMap } from '../Icon/generated/types'
 import { VFlow } from '../VFlow'
 
 import { HFlow } from '../HFlow'
-import { Switch } from '../Switch'
 import { modal } from './auto'
 import { ModalMountTarget } from './auto/ModalMountTarget'
 import { Modal, ModalScroll, ModalSize } from './Modal'
