@@ -17,21 +17,14 @@ beforeEach(() => {
   jest.clearAllMocks()
 })
 
-const mockBodyRef = { current: document.createElement('div') }
 const mockContextValue = {
-  bodyRef: mockBodyRef,
+  bodyRef: { current: document.createElement('div') },
   scroll: 'body' as ModalScroll,
 }
 
 describe('ModalHeader', () => {
   describe('basic rendering', () => {
     it('should render correctly', () => {
-      const mockBodyRef = { current: document.createElement('div') }
-      const mockContextValue = {
-        bodyRef: mockBodyRef,
-        scroll: 'body' as ModalScroll,
-      }
-
       const { container } = render(
         <ModalContext.Provider value={mockContextValue}>
           <ModalHeader title='title' />
