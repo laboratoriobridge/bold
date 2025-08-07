@@ -1,6 +1,6 @@
 import { action } from '@storybook/addon-actions'
 import { boolean, select, text } from '@storybook/addon-knobs'
-import React from 'react'
+import React, { useState } from 'react'
 import { TextColor } from '../../styles'
 import { textColorMap } from '../../styles/theme/createPallete'
 import { Button } from '../Button'
@@ -11,6 +11,7 @@ import { Switch } from '../Switch'
 import { SwapMe } from '../SwapMe/SwapMe'
 import { Checkbox } from '../Checkbox'
 import { Alert } from '../Alert'
+import { Heading } from '../Heading'
 import { modal } from './auto'
 import { ModalMountTarget } from './auto/ModalMountTarget'
 import { Modal, ModalScroll, ModalSize } from './Modal'
@@ -230,8 +231,7 @@ export const ModalOverlap = () => (
 )
 
 export const SwapSlots = () => {
-  const open = boolean('Open', true)
-  const onClose = action('close')
+  const [open, setOpen] = useState(false)
 
   const mainSlots = {
     swapme: (
@@ -301,14 +301,30 @@ export const SwapSlots = () => {
   const swapComplementarySlot = select('Swap complementary slot', footerPreferredSlotsOptions, 'swapme')
 
   return (
-    <div>
-      <p>Modal swap slots preferred values</p>
+    <VFlow>
+      <VFlow vSpacing={0.25}>
+        <Heading level={1}>Modal swap slots preferred values</Heading>
+        <VFlow>
+          <p>
+            Swap slots are a flexible component that can be replaced with other components in the design system. These
+            components can be predefined with preferred values if needed. Swap slots can be hidden if not in use.
+          </p>
+          <p>
+            In the modal, there are five types of swap slots: secondary slot, tertiary slot, complementary slot, sidebar
+            slot and main slot. Four of them have preferred values, except main slot, which can be fully customized by
+            the user.
+          </p>
+          <Button kind='primary' onClick={() => setOpen(true)}>
+            Open modal
+          </Button>
+        </VFlow>
+      </VFlow>
       <Modal
         open={open}
         title='Modal swap slots preferred values'
         subtitle='Swap slots are a flexible component that can be replaced with other components in the design system. These components can be predefined with preferred values if needed. Swap slots can be hidden if not in use.'
         icon='infoCircleOutline'
-        onClose={onClose}
+        onClose={() => setOpen(false)}
       >
         <ModalBody>{mainSlots[swapMainSlot]}</ModalBody>
         <ModalFooter
@@ -318,6 +334,6 @@ export const SwapSlots = () => {
           complementarySlot={footerPreferredSlots[swapComplementarySlot]}
         />
       </Modal>
-    </div>
+    </VFlow>
   )
 }
