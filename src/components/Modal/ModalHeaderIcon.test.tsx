@@ -1,8 +1,6 @@
 import { render, screen } from '@testing-library/react'
 import React from 'react'
-import { createTheme, ThemeContext } from '../../styles'
 import { ModalHeaderIcon } from './ModalHeaderIcon'
-import { HeaderIconObject } from './ModalHeader'
 
 describe('ModalHeaderIcon', () => {
   it('should render correctly', () => {
@@ -10,7 +8,7 @@ describe('ModalHeaderIcon', () => {
 
     expect(container).toMatchInlineSnapshot(`
       .emotion-0 {
-        fill: currentColor;
+        fill: #24252E;
         font-size: 3rem;
       }
 
@@ -34,26 +32,6 @@ describe('ModalHeaderIcon', () => {
   it('should render the icon when "icon" is a string (IconImage)', () => {
     render(<ModalHeaderIcon icon='infoCircleOutline' />)
     expect(document.querySelector('svg')).toBeInTheDocument()
-  })
-
-  it('should render the icon when "icon" is an object (HeaderIconObject)', () => {
-    const theme = createTheme()
-    const iconObj: HeaderIconObject = {
-      name: 'infoCircleOutline',
-      fill: 'primary',
-      stroke: 'danger',
-    }
-
-    render(
-      <ThemeContext.Provider value={theme}>
-        <ModalHeaderIcon icon={iconObj} />
-      </ThemeContext.Provider>
-    )
-
-    const svg = document.querySelector('svg')
-    expect(svg).toBeInTheDocument()
-    expect(svg).toHaveStyle(`fill: ${theme.pallete.primary.main};`)
-    expect(svg).toHaveStyle(`stroke: ${theme.pallete.status.danger.main};`)
   })
 
   it('should render the icon when "icon" is a SVG (HeaderIconObject)', () => {

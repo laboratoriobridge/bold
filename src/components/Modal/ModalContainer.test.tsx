@@ -1,8 +1,5 @@
-import { fireEvent, render } from '@testing-library/react'
+import { render } from '@testing-library/react'
 import React from 'react'
-
-import { LocaleContext } from '../../i18n'
-import ptBr from '../../i18n/locales/pt-BR'
 
 import { ModalContainer } from './ModalContainer'
 import { ModalHeader } from './ModalHeader'
@@ -18,54 +15,30 @@ beforeEach(() => {
 })
 
 it('should render correctly', () => {
-  const { container } = render(<ModalContainer>Container</ModalContainer>)
+  const { container } = render(<ModalContainer title='Modal container'>Container</ModalContainer>)
   expect(container).toMatchSnapshot()
 })
 
 it('should accept the "style" prop', () => {
-  const { container } = render(<ModalContainer style={{ color: 'red' }}>Container</ModalContainer>)
-  expect(container).toMatchSnapshot()
-})
-
-it('should call "onClose" when close button is pressed', () => {
-  const handleClose = jest.fn()
-  const { container } = render(<ModalContainer onClose={handleClose}>Container</ModalContainer>)
-  const button = container.querySelector('button')
-  expect(handleClose).not.toHaveBeenCalled()
-  fireEvent.click(button)
-  expect(handleClose).toHaveBeenCalled()
-})
-
-it('should have close icon only if "hasCloseIcon" is true', () => {
-  const { container: containerWithoutClose } = render(<ModalContainer hasCloseIcon={false}>Container</ModalContainer>)
-  expect(containerWithoutClose.querySelector('button')).toBeFalsy()
-
-  const { container: containerWithClose } = render(<ModalContainer>Container</ModalContainer>)
-  expect(containerWithClose.querySelector('button')).toBeTruthy()
-})
-
-it('should allow message customization via locale context', () => {
   const { container } = render(
-    <LocaleContext.Provider value={ptBr}>
-      <ModalContainer>Container</ModalContainer>
-    </LocaleContext.Provider>
+    <ModalContainer title='Modal container' style={{ color: 'red' }}>
+      Container
+    </ModalContainer>
   )
-  expect(container.querySelector('button').getAttribute('aria-label')).toEqual(ptBr.modal.close)
+  expect(container).toMatchSnapshot()
 })
 
 it('should provide a ref to the div html element', () => {
   const ref = React.createRef<HTMLDivElement>()
-  render(<ModalContainer ref={ref}>Container</ModalContainer>)
+  render(
+    <ModalContainer title='Modal container' ref={ref}>
+      Container
+    </ModalContainer>
+  )
   expect(ref.current.tagName).toEqual('DIV')
 })
 
-describe('conditional rendering and prop passing to ModalHeader', () => {
-  it('does not render ModalHeader when title is not provided', () => {
-    render(<ModalContainer>Container content</ModalContainer>)
-
-    expect(ModalHeader).not.toHaveBeenCalled()
-  })
-
+describe('prop passing to ModalHeader', () => {
   it('passes all expected props correctly to ModalHeader', () => {
     const onClose = jest.fn()
 
@@ -73,7 +46,8 @@ describe('conditional rendering and prop passing to ModalHeader', () => {
       <ModalContainer
         title='title'
         subtitle='subtitle'
-        header={{ icon: 'infoCircleOutline', background: 'red', showBottomBorder: true }}
+        icon='infoCircleFilled'
+        iconFill='primary'
         onClose={onClose}
         hasCloseIcon
       >
@@ -85,8 +59,9 @@ describe('conditional rendering and prop passing to ModalHeader', () => {
       expect.objectContaining({
         title: 'title',
         subtitle: 'subtitle',
-        header: { icon: 'infoCircleOutline', background: 'red', showBottomBorder: true },
-        showCloseIcon: true,
+        icon: 'infoCircleFilled',
+        iconFill: 'primary',
+        hasCloseIcon: true,
         onCloseButtonClick: onClose,
       }),
       {}

@@ -2,7 +2,8 @@
 
 exports[`should accept the "style" prop 1`] = `
 .emotion-0 {
-  padding: 2.5rem;
+  padding: 1rem 2rem 2rem 2rem;
+  overflow: auto;
   color: red;
 }
 
@@ -17,7 +18,8 @@ exports[`should accept the "style" prop 1`] = `
 
 exports[`should render correctly 1`] = `
 .emotion-0 {
-  padding: 2.5rem;
+  padding: 1rem 2rem 2rem 2rem;
+  overflow: auto;
 }
 
 <div>
