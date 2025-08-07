@@ -326,7 +326,6 @@ exports[`should render correctly 1`] = `
         >
           <div
             class="emotion-3"
-            data-testid="modal-header-title-area"
           >
             <div
               class="emotion-2"
@@ -729,7 +728,6 @@ exports[`should render correctly with depth 1`] = `
         >
           <div
             class="emotion-3"
-            data-testid="modal-header-title-area"
           >
             <div
               class="emotion-2"
@@ -1128,7 +1126,6 @@ exports[`should render correctly without 'overflow hidden' prop in document clas
         >
           <div
             class="emotion-3"
-            data-testid="modal-header-title-area"
           >
             <div
               class="emotion-2"

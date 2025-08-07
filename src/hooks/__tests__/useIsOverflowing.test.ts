@@ -1,27 +1,10 @@
 import { renderHook } from '@testing-library/react-hooks'
 import { useIsOverflowing } from '../useIsOverflowing'
 
-class MockResizeObserver {
-  callback: ResizeObserverCallback
-  constructor(callback: ResizeObserverCallback) {
-    this.callback = callback
-  }
-  observe = jest.fn()
-  disconnect = jest.fn()
-  unobserve = jest.fn()
-  trigger = (entry: Partial<ResizeObserverEntry>) => {
-    this.callback([entry as ResizeObserverEntry], this)
-  }
-}
-
 describe('useIsOverflowing', () => {
-  let ResizeObserverMock: any
   let element: HTMLElement
 
   beforeEach(() => {
-    ResizeObserverMock = MockResizeObserver
-    globalThis.ResizeObserver = ResizeObserverMock
-
     element = document.createElement('div')
     Object.defineProperties(element, {
       scrollWidth: { value: 120, writable: true },

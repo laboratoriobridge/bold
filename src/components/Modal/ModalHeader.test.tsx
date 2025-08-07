@@ -1,9 +1,11 @@
 import React from 'react'
 import { fireEvent, render, screen } from '@testing-library/react'
-// import { createTheme, ThemeContext } from '../../styles'
+import { createTheme, ThemeContext } from '../../styles'
 import { LocaleContext } from '../../i18n/LocaleContext'
 import ptBr from '../../i18n/locales/pt-BR'
+import { Modal } from './Modal'
 import { ModalHeader } from './ModalHeader'
+import { ModalBody } from './ModalBody'
 import { ModalHeaderIcon } from './ModalHeaderIcon'
 import { ModalContext, ModalScroll } from './Modal'
 
@@ -69,25 +71,62 @@ describe('ModalHeader', () => {
   })
 
   describe('header box shadow', () => {
-    // const theme = createTheme()
-    // it('should apply box-shadow when "scroll" is set to "body" and modal body content is vertically overflowing', () => {
-    //   render(
-    //     <ThemeContext.Provider value={theme}>
-    //       <ModalHeader title='title' header={{ showBottomBorder: true }} />
-    //     </ThemeContext.Provider>
-    //   )
-    //   expect(screen.getByTestId('modal-header')).toHaveStyle(
-    //     `box-shadow: 0 1px 5px 0 ${theme.pallete.divider},0 2px 1px -1px ${theme.pallete.divider}`
-    //   )
-    // })
-    // it('should not apply box-shadow when "scroll" is set to "body" and modal body content is not vertically overflowing', () => {
-    //   render(<ModalHeader title='title' header={{ showBottomBorder: false }} />)
-    //   expect(getComputedStyle(screen.getByTestId('modal-header')).boxShadow).toBe('')
-    // })
-    // it('should not apply box-shadow when "scroll" is set to "full"', () => {
-    //   render(<ModalHeader title='title' header={{ showBottomBorder: false }} />)
-    //   expect(getComputedStyle(screen.getByTestId('modal-header')).boxShadow).toBe('')
-    // })
+    it("should not apply shadow to ModalHeader when scroll is 'full' and content is not overflowing", () => {
+      const { getByTestId } = render(
+        <Modal open scroll='full' title='Modal title'>
+          <ModalBody>Short content</ModalBody>
+        </Modal>
+      )
+      const modalHeader = getByTestId('modal-header')
+      expect(getComputedStyle(modalHeader).boxShadow).toBe('')
+    })
+
+    it("should not apply shadow to ModalHeader when scroll is 'full' and content is overflowing", () => {
+      const { getByTestId } = render(
+        <Modal open title='Modal title'>
+          <ModalBody>Short content</ModalBody>
+        </Modal>
+      )
+      const modalHeader = getByTestId('modal-header')
+      expect(getComputedStyle(modalHeader).boxShadow).toBe('')
+    })
+
+    it("should not apply shadow to ModalHeader when scroll is 'body' and content is not overflowing", () => {
+      const { getByTestId } = render(
+        <Modal open title='Modal title'>
+          <ModalBody>Short content</ModalBody>
+        </Modal>
+      )
+      const modalHeader = getByTestId('modal-header')
+      expect(getComputedStyle(modalHeader).boxShadow).toBe('')
+    })
+
+    it("should apply shadow to ModalHeader when scroll is 'body' and content is overflowing", async () => {
+      const theme = createTheme()
+
+      const createComponent = () => (
+        <ThemeContext.Provider value={theme}>
+          <Modal open title='Modal title'>
+            <ModalBody data-testid='modal-body'>
+              <div>Content</div>
+            </ModalBody>
+          </Modal>
+        </ThemeContext.Provider>
+      )
+
+      const { getByTestId, rerender } = render(createComponent())
+
+      const modalBody = getByTestId('modal-body')
+
+      Object.defineProperty(modalBody, 'scrollHeight', { value: 500 })
+      Object.defineProperty(modalBody, 'clientHeight', { value: 300 })
+
+      rerender(createComponent())
+
+      const modalHeader = screen.getByTestId('modal-header')
+
+      expect(getComputedStyle(modalHeader).boxShadow).toBe('0 1px 5px 0 rgba(0,0,0,0.12),0 2px 1px 0 rgba(0,0,0,0.04)')
+    })
   })
 
   describe('close button', () => {
@@ -152,14 +191,14 @@ describe('ModalHeader', () => {
     })
 
     it('should allow message customization via locale context', () => {
-      const { container } = render(
+      const { getByRole } = render(
         <LocaleContext.Provider value={ptBr}>
           <ModalContext.Provider value={mockContextValue}>
             <ModalHeader title='Modal container' />
           </ModalContext.Provider>
         </LocaleContext.Provider>
       )
-      expect(container.querySelector('button').getAttribute('aria-label')).toEqual(ptBr.modal.close)
+      expect(getByRole('button').getAttribute('aria-label')).toEqual(ptBr.modal.close)
     })
   })
 

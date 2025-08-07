@@ -141,7 +141,6 @@ exports[`ModalHeader basic rendering should render correctly 1`] = `
   >
     <div
       class="emotion-3"
-      data-testid="modal-header-title-area"
     >
       <div
         class="emotion-2"

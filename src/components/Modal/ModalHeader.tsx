@@ -34,7 +34,7 @@ export const ModalHeader = (props: ModalHeaderProps) => {
       style={classes.header}
       data-testid='modal-header'
     >
-      <HFlow hSpacing={1} justifyContent='flex-start' alignItems='center' data-testid='modal-header-title-area'>
+      <HFlow hSpacing={1} justifyContent='flex-start' alignItems='center'>
         {icon && <ModalHeaderIcon icon={icon} iconFill={iconFill} />}
         <VFlow vSpacing={0}>
           <Heading level={1} color='normal' fontWeight='bold'>

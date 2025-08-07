@@ -7,11 +7,11 @@ interface ModalFooterButtonProps extends Omit<ButtonProps, 'size'> {}
 export function ModalFooterButton(props: ModalFooterButtonProps) {
   const { style, ...rest } = props
 
-  const { classes, css } = useStyles(() => ({
+  const { classes } = useStyles(() => ({
     button: {
       minWidth: '9rem',
     },
   }))
 
-  return <Button style={css(classes.button, style)} {...rest} />
+  return <Button style={[classes.button, style]} {...rest} />
 }
