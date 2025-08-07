@@ -8,15 +8,8 @@ export const renderClearTableModal = (labels: PivotTableBoardLabels, onConfirm: 
     icon: 'exclamationTriangleOutline',
     iconFill: 'danger',
     render: () => null,
-    actions: {
-      primarySlot: {
-        label: labels.clearTableConfirm,
-        kind: 'danger',
-        onClick: onConfirm,
-        'data-testid': 'confirm-clear-table',
-      },
-      secondarySlot: {
-        label: labels.clearTableCancel,
-      },
-    },
+    actions: [
+      { label: labels.clearTableCancel },
+      { label: labels.clearTableConfirm, kind: 'danger', onClick: onConfirm, 'data-testid': 'confirm-clear-table' },
+    ],
   })()

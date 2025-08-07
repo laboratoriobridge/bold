@@ -1,104 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should accept the "style" prop 1`] = `
-.emotion-2 {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: minmax(min-content,max-content);
-  grid-gap: 0.5rem;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  width: 100%;
-  grid-template-columns: 1fr;
-}
-
-.emotion-1 {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: minmax(min-content,max-content);
-  grid-gap: 1rem;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: end;
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-}
-
 .emotion-0 {
-  font-family: "IBM Plex Sans",sans-serif;
-  font-size: 0.8125rem;
-  line-height: 1.5rem;
-  color: #24252E;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-transition: all .2s;
-  transition: all .2s;
-  font-weight: bold;
-  cursor: pointer;
-  background-color: #FFFFFF;
-  border: 1px solid #696979;
-  border-radius: 4px;
-  color: #24252E;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font-size: 0.875rem;
-  padding: calc(0.75rem - 1px) 1rem;
-  min-width: 9rem;
-}
-
-.emotion-0 > span {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-}
-
-.emotion-0:not(:disabled):active {
-  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
-}
-
-.emotion-0:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
-}
-
-.emotion-0:not(:disabled):hover {
-  background-color: #F0F0F5;
-}
-
-.emotion-3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   background-color: #F0F0F5;
   padding: 1rem;
   border-bottom-left-radius: 4px;
@@ -111,38 +14,15 @@ exports[`should accept the "style" prop 1`] = `
 
 <div>
   <div
-    class="emotion-3"
+    class="emotion-0"
   >
-    <div
-      class="emotion-2"
-    >
-      <div
-        class="emotion-1"
-      >
-        <button
-          class="emotion-0"
-          type="button"
-        >
-          <span>
-            Click
-          </span>
-        </button>
-      </div>
-    </div>
+    Footer
   </div>
 </div>
 `;
 
 exports[`should render correctly 1`] = `
-.emotion-3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+.emotion-0 {
   background-color: #F0F0F5;
   padding: 1rem;
   border-bottom-left-radius: 4px;
@@ -152,115 +32,11 @@ exports[`should render correctly 1`] = `
   border-top: 1px solid #D3D4DD;
 }
 
-.emotion-2 {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: minmax(min-content,max-content);
-  grid-gap: 0.5rem;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  width: 100%;
-  grid-template-columns: 1fr;
-}
-
-.emotion-1 {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: minmax(min-content,max-content);
-  grid-gap: 1rem;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: end;
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-}
-
-.emotion-0 {
-  font-family: "IBM Plex Sans",sans-serif;
-  font-size: 0.8125rem;
-  line-height: 1.5rem;
-  color: #24252E;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-transition: all .2s;
-  transition: all .2s;
-  font-weight: bold;
-  cursor: pointer;
-  background-color: #FFFFFF;
-  border: 1px solid #696979;
-  border-radius: 4px;
-  color: #24252E;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font-size: 0.875rem;
-  padding: calc(0.75rem - 1px) 1rem;
-  min-width: 9rem;
-}
-
-.emotion-0 > span {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-}
-
-.emotion-0:not(:disabled):active {
-  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
-}
-
-.emotion-0:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
-}
-
-.emotion-0:not(:disabled):hover {
-  background-color: #F0F0F5;
-}
-
 <div>
   <div
-    class="emotion-3"
+    class="emotion-0"
   >
-    <div
-      class="emotion-2"
-    >
-      <div
-        class="emotion-1"
-      >
-        <button
-          class="emotion-0"
-          type="button"
-        >
-          <span>
-            Click
-          </span>
-        </button>
-      </div>
-    </div>
+    Footer
   </div>
 </div>
 `;

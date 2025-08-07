@@ -14,12 +14,7 @@ it('should render correctly', () => {
       dispose={jest.fn()}
       render={() => <span>Body</span>}
       size='small'
-      actions={{
-        primarySlot: {
-          label: 'Confirm',
-          onClick: jest.fn(),
-        },
-      }}
+      actions={[{ label: 'Confirm', onClick: jest.fn() }]}
     />
   )
   const { rerender } = render(component)
@@ -34,12 +29,7 @@ it('should render correctly with depth', () => {
       dispose={jest.fn()}
       render={() => <span>Body</span>}
       depthLevel={3}
-      actions={{
-        primarySlot: {
-          label: 'Confirm',
-          onClick: jest.fn(),
-        },
-      }}
+      actions={[{ label: 'Confirm', onClick: jest.fn() }]}
     />
   )
   const { rerender } = render(component)
@@ -54,12 +44,7 @@ it(`should render correctly without 'overflow hidden' prop in document classList
       dispose={jest.fn()}
       render={() => <span>Body</span>}
       manageOverflow={false}
-      actions={{
-        primarySlot: {
-          label: 'Confirm',
-          onClick: jest.fn(),
-        },
-      }}
+      actions={[{ label: 'Confirm', onClick: jest.fn() }]}
     />
   )
   const { rerender } = render(component)
@@ -82,14 +67,7 @@ it('should close modal when a button is clicked', () => {
       title='Modal auto'
       dispose={jest.fn()}
       render={() => <span>Body</span>}
-      actions={{
-        primarySlot: {
-          label: 'Confirm',
-          kind: 'primary',
-          onClick: confirmHandler,
-        },
-        secondarySlot: { label: 'Cancel' },
-      }}
+      actions={[{ label: 'Cancel' }, { label: 'Confirm', kind: 'primary', onClick: confirmHandler }]}
     />
   )
 
