@@ -26,7 +26,7 @@ export const useTransition = (enter: boolean, { enterTimeout = 1, exitTimeout = 
       enterTimeoutRef.current && clearTimeout(enterTimeoutRef.current)
       exitTimeoutRef.current && clearTimeout(exitTimeoutRef.current)
     }
-  }, [enter])
+  }, [enter, enterTimeout, exitTimeout])
 
   return state
 }
