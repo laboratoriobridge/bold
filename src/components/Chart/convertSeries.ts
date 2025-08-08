@@ -37,11 +37,11 @@ export function convertSeries<XDomain>(
     const isHiddenHandler = isStringDomain
       ? (r: RangeArea<XDomain>) => {
           const iX = domainPoints.indexOf(x)
-          const iInit = domainPoints.indexOf(r.mask?.hideDotsStart ?? r.init)
-          const iEnd = domainPoints.indexOf(r.end)
+          const iInit = domainPoints.indexOf(r.mask?.hideDots?.from ?? r.init)
+          const iEnd = domainPoints.indexOf(r.mask?.hideDots?.to ?? r.end)
           return iX >= iInit && iX < iEnd
         }
-      : (r: RangeArea<XDomain>) => +(r.mask?.hideDotsStart ?? r.init) <= +x && +x <= +r.end
+      : (r: RangeArea<XDomain>) => +(r.mask?.hideDots.from ?? r.init) <= +x && +x <= +(r.mask?.hideDots?.to ?? r.end)
 
     return hiddenRanges?.some(isHiddenHandler) ?? false
   }

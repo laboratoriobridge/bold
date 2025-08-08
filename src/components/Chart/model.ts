@@ -68,8 +68,7 @@ export interface PieChartDataPoint {
 
 interface RangeAreaMask<XDomain> {
   show?: boolean
-  hideDots?: boolean
-  hideDotsStart?: XDomain
+  hideDots?: { from: XDomain; to: XDomain }
   fillOpacity?: number
   yAtEnd?: any
   overlayDots?: boolean
