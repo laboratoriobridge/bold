@@ -20,7 +20,6 @@ exports[`Modal should accept "depthLevel" prop and pass down to ModalContainer 1
   background-color: #FFFFFF;
   min-width: 520px;
   pointer-events: auto;
-  position: relative;
   overflow: hidden;
   display: grid;
   grid-template-rows: 1fr auto auto;
@@ -448,7 +447,6 @@ exports[`Modal should accept "style" prop and pass down to ModalContainer 1`] = 
   background-color: #FFFFFF;
   min-width: 520px;
   pointer-events: auto;
-  position: relative;
   overflow: hidden;
   display: grid;
   grid-template-rows: 1fr auto auto;
@@ -574,7 +572,6 @@ exports[`Modal should render correctly when opened 1`] = `
   background-color: #FFFFFF;
   min-width: 520px;
   pointer-events: auto;
-  position: relative;
   overflow: hidden;
   display: grid;
   grid-template-rows: 1fr auto auto;
@@ -832,7 +829,6 @@ exports[`Modal should'n add "overflow: hidden" property to document when manageO
   background-color: #FFFFFF;
   min-width: 520px;
   pointer-events: auto;
-  position: relative;
   overflow: hidden;
   display: grid;
   grid-template-rows: 1fr auto auto;
@@ -1237,7 +1233,6 @@ exports[`Modal sizes should accept the "auto" size and render accordingly 1`] = 
   background-color: #FFFFFF;
   min-width: 520px;
   pointer-events: auto;
-  position: relative;
   overflow: hidden;
   display: grid;
   grid-template-rows: 1fr auto auto;
@@ -1356,7 +1351,6 @@ exports[`Modal sizes should accept the "large" size and render accordingly 1`] =
   background-color: #FFFFFF;
   min-width: 520px;
   pointer-events: auto;
-  position: relative;
   overflow: hidden;
   display: grid;
   grid-template-rows: 1fr auto auto;
@@ -1761,7 +1755,6 @@ exports[`Modal sizes should accept the "small" size and render accordingly 1`] =
   background-color: #FFFFFF;
   min-width: 520px;
   pointer-events: auto;
-  position: relative;
   overflow: hidden;
   display: grid;
   grid-template-rows: 1fr auto auto;

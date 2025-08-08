@@ -14,10 +14,6 @@ describe('useIsOverflowing', () => {
     })
   })
 
-  afterEach(() => {
-    jest.clearAllMocks()
-  })
-
   it('returns true when horizontally overflowing', () => {
     const ref = { current: element }
     const { result } = renderHook(() => useIsOverflowing(ref, 'horizontal'))

@@ -47,7 +47,6 @@ const createStyles = (theme: Theme, scroll: ModalScroll) => ({
     backgroundColor: theme.pallete.surface.main,
     minWidth: 520,
     pointerEvents: 'auto',
-    position: 'relative',
     overflow: scroll === 'body' ? 'hidden' : 'auto',
     display: 'grid',
     gridTemplateRows: scroll === 'body' ? '1fr auto auto' : 'initial',

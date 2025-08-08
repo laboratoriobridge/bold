@@ -36,7 +36,6 @@ exports[`should render correctly 1`] = `
   background-color: #FFFFFF;
   min-width: 520px;
   pointer-events: auto;
-  position: relative;
   overflow: hidden;
   display: grid;
   grid-template-rows: 1fr auto auto;
@@ -628,7 +627,6 @@ exports[`should render correctly with depth 1`] = `
   background-color: #FFFFFF;
   min-width: 520px;
   pointer-events: auto;
-  position: relative;
   overflow: hidden;
   display: grid;
   grid-template-rows: 1fr auto auto;
@@ -1003,7 +1001,6 @@ exports[`should render correctly without 'overflow hidden' prop in document clas
   background-color: #FFFFFF;
   min-width: 520px;
   pointer-events: auto;
-  position: relative;
   overflow: hidden;
   display: grid;
   grid-template-rows: 1fr auto auto;

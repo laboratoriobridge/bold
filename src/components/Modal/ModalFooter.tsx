@@ -19,7 +19,7 @@ export function ModalFooter(props: ModalFooterProps) {
   )
 }
 
-export const createStyles = (theme: Theme) => ({
+const createStyles = (theme: Theme) => ({
   footer: {
     backgroundColor: theme.pallete.surface.background,
     padding: '1rem',

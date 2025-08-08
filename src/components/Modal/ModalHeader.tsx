@@ -52,7 +52,7 @@ export const ModalHeader = (props: ModalHeaderProps) => {
   )
 }
 
-export const createStyles = (theme: Theme, showHeaderShadow: boolean) => ({
+const createStyles = (theme: Theme, showHeaderShadow: boolean) => ({
   header: {
     width: '100%',
     padding: '1.5rem 1rem 1rem 2rem',

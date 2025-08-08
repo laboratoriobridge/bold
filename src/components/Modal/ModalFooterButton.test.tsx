@@ -8,7 +8,7 @@ it('should render correctly', () => {
   expect(container).toMatchSnapshot()
 })
 
-it('should apply min-width style', () => {
+it('should have min-width style', () => {
   const { getByRole } = render(<ModalFooterButton>Label</ModalFooterButton>)
 
   expect(getByRole('button')).toHaveStyle('min-width: 9rem')
