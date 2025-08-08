@@ -334,6 +334,7 @@ exports[`emptyItem should render when items is empty 1`] = `
               <li
                 aria-selected="false"
                 class="emotion-5"
+                role="option"
               >
                 No results were found
               </li>
@@ -680,6 +681,7 @@ exports[`emptyItem should render when items is null 1`] = `
               <li
                 aria-selected="false"
                 class="emotion-5"
+                role="option"
               >
                 No results were found
               </li>
