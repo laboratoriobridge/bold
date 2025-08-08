@@ -25,6 +25,7 @@ import { renderReferenceAreas, renderSeries } from './renderSeries'
 import { renderTooltip } from './renderTooltip'
 import { getAxisDomainEnd, getAxisDomainInit } from './util'
 import { splitOutlierSeries } from './getOutlierSeries'
+import { RANGE_AREA_MASK_ID, RangeAreaMaskChartPattern } from './RangeAreaMaskChartPattern'
 
 export interface ChartProps<XDomain> {
   type?: SeriesType
@@ -72,7 +73,20 @@ export function Chart<XDomain>(props: ChartProps<XDomain>) {
   const yDomainPoints = getDomainPoints(adaptedYDomain, hasOutliers)
 
   const referenceAreasWithPercents = convertReferenceRangesToPercents(referenceAreas, adaptedYDomain as ValueRange)
-  const data = convertSeries(rangedSeries, domainPoints, adaptedYDomain, referenceAreasWithPercents, outlierSeries)
+
+  const hiddenRanges = rangeAreas?.filter((r) => r.mask?.show && r.mask?.hideDots) ?? []
+
+  const yAtEndRanges = rangeAreas?.filter((r) => r.mask?.yAtEnd !== undefined) ?? []
+
+  const data = convertSeries(
+    rangedSeries,
+    domainPoints,
+    adaptedYDomain,
+    referenceAreasWithPercents,
+    outlierSeries,
+    hiddenRanges,
+    yAtEndRanges
+  )
 
   return (
     <ComposedChart
@@ -101,7 +115,9 @@ export function Chart<XDomain>(props: ChartProps<XDomain>) {
       {referenceAreas && renderReferenceAxis('y', referenceAreasWithPercents)}
 
       {referenceAreas?.map((ra, i) => renderReferenceAreas(ra, i, colorScheme ?? 'default'))}
+
       {rangeAreas?.map((ra) => [
+        RangeAreaMaskChartPattern(),
         <RechartsReferenceArea
           yAxisId='data'
           x1={getRangeAreaInit(ra, xAxis.domain)}
@@ -113,23 +129,26 @@ export function Chart<XDomain>(props: ChartProps<XDomain>) {
           fillOpacity={ra.fillOpacity ?? 0.2}
           label={<RangeAreaTick<XDomain> referenceArea={ra} />}
         />,
-        ...(ra.strokeColor
+        ...renderRangeAreaStroke(ra),
+      ])}
+
+      {rangeAreas?.map((ra) => [
+        ...(ra.mask?.show && !ra.mask?.overlayDots
           ? [
-              <ReferenceLine
+              <RechartsReferenceArea
                 yAxisId='data'
-                stroke={ra.strokeColor}
-                x={typeof ra.init === 'string' ? ra.init : +ra.init}
-                position='start'
+                x1={getRangeAreaInit(ra, xAxis.domain)}
+                x2={getRangeAreaEnd(ra, xAxis.domain)}
+                y1={getAxisDomainInit(adaptedYDomain)}
+                y2={getAxisDomainEnd(adaptedYDomain, hasOutliers)}
+                fillOpacity={ra.mask?.fillOpacity ?? 1}
+                fill={`url(#${RANGE_AREA_MASK_ID})`}
               />,
-              <ReferenceLine
-                yAxisId='data'
-                stroke={ra.strokeColor}
-                x={typeof ra.end === 'string' ? ra.end : +ra.end}
-                position='start'
-              />,
+              ...renderRangeAreaStroke(ra),
             ]
           : []),
       ])}
+
       {series.map((s, i) =>
         renderSeries(
           type,
@@ -144,6 +163,23 @@ export function Chart<XDomain>(props: ChartProps<XDomain>) {
           data
         )
       )}
+
+      {rangeAreas?.map((ra) => [
+        ...(ra.mask?.show && ra.mask?.overlayDots
+          ? [
+              <RechartsReferenceArea
+                yAxisId='data'
+                x1={getRangeAreaInit(ra, xAxis.domain)}
+                x2={getRangeAreaEnd(ra, xAxis.domain)}
+                y1={getAxisDomainInit(adaptedYDomain)}
+                y2={getAxisDomainEnd(adaptedYDomain, hasOutliers)}
+                fillOpacity={ra.mask?.fillOpacity ?? 1}
+                fill={`url(#${RANGE_AREA_MASK_ID})`}
+              />,
+              ...renderRangeAreaStroke(ra),
+            ]
+          : []),
+      ])}
 
       {tooltip?.type === 'line' && renderTooltip(xAxis, yAxis, tooltip?.render)}
     </ComposedChart>
@@ -167,4 +203,23 @@ function getRangeAreaInit<XDomain>(ra: RangeArea<XDomain>, domain: AxisDomain): 
 function getRangeAreaEnd<XDomain>(ra: RangeArea<XDomain>, domain: AxisDomain): string | number {
   if (Array.isArray(domain)) return domain.includes(ra.end as any) ? (ra.end as any) : domain[domain.length - 1]
   return Math.min(+ra.end, +domain.end)
+}
+
+function renderRangeAreaStroke<XDomain>(rangeAreas: RangeArea<XDomain>) {
+  return rangeAreas.strokeColor
+    ? [
+        <ReferenceLine
+          yAxisId='data'
+          stroke={rangeAreas.strokeColor}
+          x={typeof rangeAreas.init === 'string' ? rangeAreas.init : +rangeAreas.init}
+          position='start'
+        />,
+        <ReferenceLine
+          yAxisId='data'
+          stroke={rangeAreas.strokeColor}
+          x={typeof rangeAreas.end === 'string' ? rangeAreas.end : +rangeAreas.end}
+          position='start'
+        />,
+      ]
+    : []
 }
