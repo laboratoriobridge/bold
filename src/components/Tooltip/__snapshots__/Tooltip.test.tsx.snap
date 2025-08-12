@@ -9,7 +9,7 @@ exports[`should render correctly 1`] = `
   </div>
   <div>
     <span
-      data-testid="span"
+      data-testid="tooltip-inner-span"
       title="Tooltip text"
     >
       Testing
@@ -61,7 +61,7 @@ exports[`should render correctly 2`] = `
   <div>
     <span
       aria-describedby="tooltip-abc"
-      data-testid="span"
+      data-testid="tooltip-inner-span"
     >
       Testing
     </span>

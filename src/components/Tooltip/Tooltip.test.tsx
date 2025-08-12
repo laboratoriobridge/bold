@@ -21,10 +21,10 @@ const TooltipTest = (props: Partial<TooltipProps>) => {
       text='Tooltip text'
       offset={2}
       placement='bottom-start'
-      container={document.getElementById('portal-root') ?? undefined}
+      container={document.getElementById('portal-root')!}
       {...props}
     >
-      <span data-testid='span'>Testing</span>
+      <span data-testid='tooltip-inner-span'>Testing</span>
     </Tooltip>
   )
 }
@@ -46,7 +46,7 @@ it('should not render tooltip if text if null or empty', async () => {
   expect(document.getElementById('portal-root')).not.toBeNull()
   expect(document.getElementById('portal-root')?.innerHTML).toEqual('')
 
-  expect(getByTestId('span').getAttribute('aria-describedby')).toBeFalsy()
+  expect(getByTestId('tooltip-inner-span').getAttribute('aria-describedby')).toBeFalsy()
 })
 
 it('should show tooltip when pointer enters component', async () => {
@@ -116,7 +116,7 @@ it('should compose onPointerEnter, onPointerLeave, onFocus and onBlur functions'
 
 it('should switch "title" and "aria-describedby" props on target element when tooltip is visible/invisible', async () => {
   const { getByTestId } = await actRender(<TooltipTest text='lorem' />)
-  const target = getByTestId('span')
+  const target = getByTestId('tooltip-inner-span')
 
   expect(target.getAttribute('aria-describedby')).toEqual(null)
   expect(target.getAttribute('title')).toEqual('lorem')

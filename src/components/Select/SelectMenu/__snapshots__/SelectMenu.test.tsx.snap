@@ -45,6 +45,7 @@ exports[`should render correctly 1`] = `
 <div>
   <ul
     class="emotion-2"
+    role="listbox"
   >
     <li
       aria-selected="false"

@@ -1137,6 +1137,7 @@ exports[`should render correctly when opened 1`] = `
           >
             <ul
               class="emotion-10"
+              role="listbox"
             >
               <li
                 aria-selected="false"
@@ -1514,6 +1515,7 @@ exports[`should respect the specified menu min-width 1`] = `
           >
             <ul
               class="emotion-10"
+              role="listbox"
             >
               <li
                 aria-selected="false"
