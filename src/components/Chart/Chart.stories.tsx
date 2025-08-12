@@ -14,11 +14,11 @@ import {
   BarChartSeries,
   ChartSeries,
   PieChartDataPoint,
-  RangeArea,
   ReferenceArea,
   ReferenceAreaRange,
   SeriesType,
   OutliersType,
+  RangeArea,
 } from './model'
 import { PieChart } from './PieChart'
 
@@ -552,7 +552,16 @@ export const rangeArea = () => {
   const ranges = object(
     'Range Areas',
     [
-      { name: 'Area 1 Area 1-2 Area 1-3 Area 1-4', init: 'Page A', end: 'Page C' },
+      {
+        name: 'Area 1 Area 1-2 Area 1-3 Area 1-4',
+        init: 'Page A',
+        end: 'Page C',
+        mask: {
+          show: true,
+          fillOpacity: 0.6,
+          hideDots: true,
+        },
+      },
       {
         name: 'Area 2 Stroke 2',
         init: 'Page E',
