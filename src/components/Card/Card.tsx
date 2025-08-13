@@ -1,12 +1,12 @@
 import React from 'react'
 
-import { ExternalStyles, focusBoxShadow, hexToRGB, Theme, useStyles } from '../../styles'
+import { ExternalStyles, focusBoxShadow, hexToRGB, Theme, useCss } from '../../styles'
 
 export type CardVariant = 'elevated' | 'flat' | 'outline'
 
 export interface CardProps {
-  children?: React.ReactNode
   variant?: CardVariant
+  children?: React.ReactNode
   selected?: boolean
   disabled?: boolean
   error?: React.ReactNode
@@ -17,25 +17,24 @@ export interface CardProps {
 export function Card(props: CardProps) {
   const { variant = 'outline', children, selected, disabled, error, style, onClick } = props
 
-  const isClickable = !!onClick
-  const isDisabled = disabled
-  const isSelected = isClickable && selected
-  const isInvalid = !!error
-
-  const { theme, css } = useStyles()
+  const { theme, css } = useCss()
 
   const baseStyles = createBaseStyles(theme)
   const variantStyle = createVariantStyles(theme)
   const clickableStyles = createClickableStyles(theme)
+
+  const isClickable = !!onClick
+  const isSelected = isClickable && selected
+  const isInvalid = !!error
 
   const classes = css(baseStyles.card, variantStyle[variant], isClickable && clickableStyles, style)
 
   if (onClick) {
     return (
       <button
-        className={classes}
         type='button'
-        disabled={isDisabled}
+        className={classes}
+        disabled={disabled}
         data-variant={variant}
         data-selected={isSelected}
         data-invalid={isInvalid}
@@ -55,6 +54,7 @@ export function Card(props: CardProps) {
 
 const createBaseStyles = (theme: Theme) => ({
   card: {
+    ...theme.typography.variant('main'),
     width: '100%',
     border: 0,
     borderRadius: `${theme.radius.popper}px`,
@@ -91,7 +91,7 @@ const createVariantStyles = (theme: Theme): { [key in CardVariant]: ExternalStyl
 
 const createClickableStyles = (theme: Theme): ExternalStyles => ({
   cursor: 'pointer',
-  textAlign: 'left',
+  textAlign: 'initial',
   ':not(:disabled):hover': {
     background: hexToRGB(theme.pallete.gray.c50, 0.1),
     '&[data-variant="elevated"]': {

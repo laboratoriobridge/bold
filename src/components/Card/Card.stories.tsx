@@ -11,7 +11,7 @@ import { Text } from '../Text'
 import { Tag } from '../Tag'
 import { Heading } from '../Heading'
 import { Status } from '../Status'
-import { Card, CardProps, CardVariant } from './Card'
+import { Card, CardVariant } from './Card'
 
 const variants: { [key in CardVariant]: CardVariant } = {
   elevated: 'elevated',
@@ -19,32 +19,30 @@ const variants: { [key in CardVariant]: CardVariant } = {
   outline: 'outline',
 }
 
+const Content = () => (
+  <HFlow hSpacing={0.5} style={{ gridAutoColumns: 'auto 1fr' }}>
+    <Checkbox />
+    <HFlow alignItems='center' justifyContent='space-between'>
+      <VFlow vSpacing={0.5}>
+        <VFlow vSpacing={0.25}>
+          <HFlow hSpacing={0.5} alignItems='center'>
+            <Heading level={4}>Title</Heading>
+            <Tag>Tag label</Tag>
+          </HFlow>
+          <Text>Description</Text>
+        </VFlow>
+        <Status type='info' text='Status description' />
+      </VFlow>
+      <Button skin='ghost' size='small'>
+        <Icon icon='adjust' />
+      </Button>
+    </HFlow>
+  </HFlow>
+)
+
 export default {
   title: 'Components/Card',
 }
-
-const CardDefault = (props: CardProps) => (
-  <Card {...props}>
-    <HFlow hSpacing={0.5} style={{ gridAutoColumns: 'auto 1fr' }}>
-      <Checkbox />
-      <HFlow alignItems='center' justifyContent='space-between'>
-        <VFlow vSpacing={0.5}>
-          <VFlow vSpacing={0.25}>
-            <HFlow hSpacing={0.5} alignItems='center'>
-              <Heading level={4}>Title</Heading>
-              <Tag>Tag label</Tag>
-            </HFlow>
-            <Text>Description</Text>
-          </VFlow>
-          <Status type='info' text='Status description' />
-        </VFlow>
-        <Button skin='ghost' size='small'>
-          <Icon icon='adjust' />
-        </Button>
-      </HFlow>
-    </HFlow>
-  </Card>
-)
 
 export const Default = () => {
   const variant = select('variant', variants, 'outline')
@@ -54,17 +52,21 @@ export const Default = () => {
 
   return (
     <VFlow>
-      <HeadingSection level={2} title='Interactive'>
-        <CardDefault
+      <HeadingSection level={2} vSpace={8} title='Interactive'>
+        <Card
           variant={variant}
           selected={selected}
           disabled={disabled}
           error={invalid}
           onClick={action('Card clicked')}
-        />
+        >
+          <Content />
+        </Card>
       </HeadingSection>
-      <HeadingSection level={2} title='Non interactive'>
-        <CardDefault variant={variant} selected={selected} disabled={disabled} error={invalid} />
+      <HeadingSection level={2} vSpace={8} title='Non-interactive'>
+        <Card variant={variant} selected={selected} disabled={disabled} error={invalid}>
+          <Content />
+        </Card>
       </HeadingSection>
     </VFlow>
   )
@@ -75,14 +77,20 @@ export const Variants = () => {
 
   return (
     <VFlow>
-      <HeadingSection level={2} title='Outline card'>
-        <CardDefault variant='outline' error={invalid} />
+      <HeadingSection level={2} vSpace={8} title='Outline card'>
+        <Card variant='outline' error={invalid}>
+          <Content />
+        </Card>
       </HeadingSection>
-      <HeadingSection level={2} title='Elevated card'>
-        <CardDefault variant='elevated' error={invalid} />
+      <HeadingSection level={2} vSpace={8} title='Elevated card'>
+        <Card variant='elevated' error={invalid}>
+          <Content />
+        </Card>
       </HeadingSection>
-      <HeadingSection level={2} title='Flat card'>
-        <CardDefault variant='flat' error={invalid} />
+      <HeadingSection level={2} vSpace={8} title='Flat card'>
+        <Card variant='flat' error={invalid}>
+          <Content />
+        </Card>
       </HeadingSection>
     </VFlow>
   )
@@ -95,32 +103,32 @@ export const Clickable = () => {
 
   return (
     <VFlow>
-      <HeadingSection level={2} title='Outline card'>
-        <CardDefault
+      <HeadingSection level={2} vSpace={8} title='Outline card'>
+        <Card
           variant='outline'
           selected={selected}
           disabled={disabled}
           error={invalid}
           onClick={action('Card clicked')}
-        />
+        >
+          <Content />
+        </Card>
       </HeadingSection>
-      <HeadingSection level={2} title='Elevated card'>
-        <CardDefault
+      <HeadingSection level={2} vSpace={8} title='Elevated card'>
+        <Card
           variant='elevated'
           selected={selected}
           disabled={disabled}
           error={invalid}
           onClick={action('Card clicked')}
-        />
+        >
+          <Content />
+        </Card>
       </HeadingSection>
-      <HeadingSection level={2} title='Flat card'>
-        <CardDefault
-          variant='flat'
-          selected={selected}
-          disabled={disabled}
-          error={invalid}
-          onClick={action('Card clicked')}
-        />
+      <HeadingSection level={2} vSpace={8} title='Flat card'>
+        <Card variant='flat' selected={selected} disabled={disabled} error={invalid} onClick={action('Card clicked')}>
+          <Content />
+        </Card>
       </HeadingSection>
     </VFlow>
   )
