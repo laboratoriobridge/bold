@@ -19,7 +19,7 @@ export function Card(props: CardProps) {
 
   const { theme, css } = useCss()
 
-  const baseStyles = createBaseStyles(theme)
+  const baseStyles = createBaseStyles(theme, disabled)
   const variantStyle = createVariantStyles(theme)
   const clickableStyles = createClickableStyles(theme)
 
@@ -40,7 +40,7 @@ export function Card(props: CardProps) {
         data-invalid={isInvalid}
         onClick={onClick}
       >
-        {children}
+        <div className={css(baseStyles.inner)}>{children}</div>
       </button>
     )
   }
@@ -52,7 +52,7 @@ export function Card(props: CardProps) {
   )
 }
 
-const createBaseStyles = (theme: Theme) => ({
+const createBaseStyles = (theme: Theme, isDisabled: boolean) => ({
   card: {
     ...theme.typography.variant('main'),
     width: '100%',
@@ -61,12 +61,15 @@ const createBaseStyles = (theme: Theme) => ({
     padding: '1rem',
     transition: 'all .2s',
   } as ExternalStyles,
+  inner: {
+    opacity: isDisabled ? 0.4 : 1,
+  } as ExternalStyles,
 })
 
 const createVariantStyles = (theme: Theme): { [key in CardVariant]: ExternalStyles } => ({
   elevated: {
     background: theme.pallete.surface.main,
-    border: `1px solid ${theme.pallete.gray.c60}`,
+    border: `1px solid ${theme.pallete.gray.c80}`,
     boxShadow: theme.shadows.outer[40],
     '&[data-invalid="true"]': {
       borderColor: theme.pallete.status.danger.main,
@@ -74,7 +77,7 @@ const createVariantStyles = (theme: Theme): { [key in CardVariant]: ExternalStyl
   } as ExternalStyles,
   outline: {
     background: theme.pallete.surface.main,
-    border: `1px solid ${theme.pallete.gray.c60}`,
+    border: `1px solid ${theme.pallete.gray.c80}`,
     borderRadius: `${theme.radius.popper}px`,
     '&[data-invalid="true"]': {
       borderColor: theme.pallete.status.danger.main,
@@ -92,6 +95,9 @@ const createVariantStyles = (theme: Theme): { [key in CardVariant]: ExternalStyl
 const createClickableStyles = (theme: Theme): ExternalStyles => ({
   cursor: 'pointer',
   textAlign: 'initial',
+  '&[data-variant="outline"], &[data-variant="flat"]': {
+    borderColor: theme.pallete.gray.c60,
+  },
   ':not(:disabled):hover': {
     background: hexToRGB(theme.pallete.gray.c50, 0.1),
     '&[data-variant="elevated"]': {
@@ -108,21 +114,15 @@ const createClickableStyles = (theme: Theme): ExternalStyles => ({
   ':not(:disabled):active': {
     boxShadow: theme.shadows.inner['10'],
     '&[data-variant="elevated"]': {
-      boxShadow: `${theme.shadows.outer[40]}, ${theme.shadows.inner['10']}`,
-    },
-  },
-  ':disabled': {
-    opacity: 0.5,
-    cursor: 'not-allowed',
-    '& *': {
-      pointerEvents: 'none',
+      // use zero box shadow to keep transition smooth
+      boxShadow: `0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0), ${theme.shadows.inner['10']}`,
     },
   },
   '&[data-selected="true"]': {
     background: theme.pallete.primary.c90,
     borderColor: theme.pallete.primary.main,
     ':not(:disabled):hover': {
-      background: theme.pallete.primary.c90, // att color for hover?
+      background: theme.pallete.primary.c80,
     },
     '&[data-invalid="true"]': {
       background: theme.pallete.status.danger.c90,
@@ -131,7 +131,7 @@ const createClickableStyles = (theme: Theme): ExternalStyles => ({
   '&[data-invalid="true"]': {
     borderColor: theme.pallete.status.danger.main,
     ':not(:disabled):hover': {
-      background: theme.pallete.status.danger.c90,
+      background: theme.pallete.status.danger.c80,
     },
     ':focus': {
       outline: 'none',
@@ -140,5 +140,18 @@ const createClickableStyles = (theme: Theme): ExternalStyles => ({
     ':not(:disabled):active': {
       boxShadow: theme.shadows.inner['10'],
     },
-  } as ExternalStyles,
+  },
+  ':disabled': {
+    cursor: 'not-allowed',
+    borderColor: theme.pallete.gray.c80,
+    '&[data-selected="true"]': {
+      borderColor: theme.pallete.primary.c80,
+    },
+    '&[data-invalid="true"]': {
+      borderColor: theme.pallete.status.danger.c80,
+    },
+    '& *': {
+      pointerEvents: 'none',
+    },
+  },
 })
