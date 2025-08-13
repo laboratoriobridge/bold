@@ -9,12 +9,16 @@ import { IconMap } from '../Icon/generated/types'
 import { VFlow } from '../VFlow'
 
 import { HFlow } from '../HFlow'
-import { modal } from './auto'
-import { ModalMountTarget } from './auto/ModalMountTarget'
-import { Modal, ModalScroll, ModalSize } from './Modal'
-import { ModalBody } from './ModalBody'
-import { ModalFooter } from './ModalFooter'
-import { ModalFooterButton } from './ModalFooterButton'
+import {
+  Modal,
+  ModalScroll,
+  ModalSize,
+  ModalBody,
+  ModalFooter,
+  ModalFooterButton,
+  modal,
+  ModalMountTarget,
+} from '../Modal'
 
 const sizes: { [key in ModalSize]: ModalSize } = {
   large: 'large',
