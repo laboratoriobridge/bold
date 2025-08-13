@@ -8,7 +8,7 @@ const createComponent = (options?: Partial<RovingTabIndexOptions>) => {
   const config = merge(
     {},
     {
-      getItems: root => Array.from(root.querySelectorAll('li')),
+      getItems: (root) => Array.from(root.querySelectorAll('li')),
     },
     options
   )
@@ -19,7 +19,7 @@ function Component({ config }: { config: RovingTabIndexOptions }) {
   const rootRef = useRovingTabIndex(config)
 
   return (
-    <ul ref={rootRef}>
+    <ul data-testid='roving-tabindex-ul' ref={rootRef}>
       <li>1</li>
       <li>2</li>
       <li>3</li>
@@ -56,8 +56,8 @@ it('should set focused item tabindex to 0 and other items to -1', () => {
 })
 
 it('should move focus between items according to specified navigation keys', () => {
-  const { container } = render(createComponent())
-  const ul = container.querySelector('ul')
+  const { container, getByTestId } = render(createComponent())
+  const ul = getByTestId('roving-tabindex-ul')
   const li = container.querySelectorAll('li')
   li[0].focus()
 
@@ -94,8 +94,8 @@ it('should move focus between items according to specified navigation keys', () 
 })
 
 it('should navigate wrapping around first and last items when specied', () => {
-  const { container } = render(createComponent({ wrapAround: true }))
-  const ul = container.querySelector('ul')
+  const { container, getByTestId } = render(createComponent({ wrapAround: true }))
+  const ul = getByTestId('roving-tabindex-ul')
   const li = container.querySelectorAll('li')
   li[0].focus()
 
@@ -107,12 +107,12 @@ it('should navigate wrapping around first and last items when specied', () => {
 })
 
 it('should manave focus only on specified items', () => {
-  const { container } = render(
+  const { container, getByTestId } = render(
     createComponent({
-      getItems: root => Array.from(root.querySelectorAll('li')).slice(0, 2),
+      getItems: (root) => Array.from(root.querySelectorAll('li')).slice(0, 2),
     })
   )
-  const ul = container.querySelector('ul')
+  const ul = getByTestId('roving-tabindex-ul')
   const li = container.querySelectorAll('li')
 
   expect(li[0].getAttribute('tabindex')).toEqual('0')
@@ -127,7 +127,7 @@ it('should manave focus only on specified items', () => {
 })
 
 it('should allow override of navigation keys', () => {
-  const { container } = render(
+  const { container, getByTestId } = render(
     createComponent({
       nextKeys: ['S', 'D'],
       prevKeys: ['W', 'A'],
@@ -135,7 +135,7 @@ it('should allow override of navigation keys', () => {
       lastKeys: [']'],
     })
   )
-  const ul = container.querySelector('ul')
+  const ul = getByTestId('roving-tabindex-ul')
   const li = container.querySelectorAll('li')
   li[0].focus()
 

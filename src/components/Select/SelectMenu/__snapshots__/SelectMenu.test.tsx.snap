@@ -45,16 +45,19 @@ exports[`should render correctly 1`] = `
 <div>
   <ul
     class="emotion-2"
+    role="listbox"
   >
     <li
       aria-selected="false"
       class="emotion-0"
+      role="option"
     >
       Item 1
     </li>
     <li
       aria-selected="false"
       class="emotion-0"
+      role="option"
     >
       Item 2
     </li>

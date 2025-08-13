@@ -24,6 +24,7 @@ export interface TooltipState {
 export function Tooltip(props: TooltipProps) {
   const { text, offset, children, style: externalStyle, transitionDelay, container, ...rest } = props
   const child = React.Children.only(children)
+  const { onPointerEnter, onFocus, onBlur } = child.props ?? {}
 
   const { css, theme, classes } = useStyles(createStyles, props)
   const [visible, setVisible] = useState<boolean>(false)
@@ -68,20 +69,29 @@ export function Tooltip(props: TooltipProps) {
     return () => window.removeEventListener('pointerover', handleWindowPointerOver)
   }, [rootRef, visible])
 
-  const handlePointerEnter = useCallback((e: React.PointerEvent<HTMLElement>) => {
-    setVisible(true)
-    child.props.onPointerEnter && child.props.onPointerEnter(e)
-  }, [])
+  const handlePointerEnter = useCallback(
+    (e: React.PointerEvent<HTMLElement>) => {
+      setVisible(true)
+      onPointerEnter?.(e)
+    },
+    [onPointerEnter]
+  )
 
-  const handleFocus = useCallback((e) => {
-    setVisible(true)
-    child.props.onFocus && child.props.onFocus(e)
-  }, [])
+  const handleFocus = useCallback(
+    (e) => {
+      setVisible(true)
+      onFocus?.(e)
+    },
+    [onFocus]
+  )
 
-  const handleBlur = useCallback((e) => {
-    setVisible(false)
-    child.props.onBlur && child.props.onBlur(e)
-  }, [])
+  const handleBlur = useCallback(
+    (e) => {
+      setVisible(false)
+      onBlur?.(e)
+    },
+    [onBlur]
+  )
 
   if (!text) {
     return child
