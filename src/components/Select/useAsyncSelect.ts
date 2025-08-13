@@ -18,13 +18,13 @@ export function useAsyncSelect<T>(loadItems: AsyncSelectLoadFn<T>, debounceMs = 
     (filter: string) => {
       setLoading(true)
       loadItems(filter)
-        .then(loadedItems => setItems(loadedItems))
+        .then((loadedItems) => setItems(loadedItems))
         .finally(() => setLoading(false))
     },
     [loadItems]
   )
 
-  const debouncedLoad = useMemo(() => debounce(load, debounceMs), [load])
+  const debouncedLoad = useMemo(() => debounce(load, debounceMs), [debounceMs, load])
 
   const handleFilterChange = (filter: string) => {
     setLoading(true)

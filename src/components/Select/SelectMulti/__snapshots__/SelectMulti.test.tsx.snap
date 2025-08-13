@@ -842,6 +842,7 @@ exports[`should render correctly when opened 1`] = `
           >
             <ul
               class="emotion-27"
+              role="listbox"
             >
               <li
                 aria-selected="false"
