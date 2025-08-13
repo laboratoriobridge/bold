@@ -2,7 +2,7 @@ import React from 'react'
 
 import { ExternalStyles, focusBoxShadow, hexToRGB, Theme, useCss } from '../../styles'
 
-export type CardVariant = 'elevated' | 'flat' | 'outline'
+export type CardVariant = 'outline' | 'float' | 'plain'
 
 export interface CardProps {
   variant?: CardVariant
@@ -67,7 +67,7 @@ const createBaseStyles = (theme: Theme, isDisabled: boolean) => ({
 })
 
 const createVariantStyles = (theme: Theme): { [key in CardVariant]: ExternalStyles } => ({
-  elevated: {
+  float: {
     background: theme.pallete.surface.main,
     border: `1px solid ${theme.pallete.gray.c80}`,
     boxShadow: theme.shadows.outer[40],
@@ -83,7 +83,7 @@ const createVariantStyles = (theme: Theme): { [key in CardVariant]: ExternalStyl
       borderColor: theme.pallete.status.danger.main,
     },
   } as ExternalStyles,
-  flat: {
+  plain: {
     background: theme.pallete.surface.main,
     borderRadius: `${theme.radius.popper}px`,
     '&[data-invalid="true"]': {
@@ -95,25 +95,25 @@ const createVariantStyles = (theme: Theme): { [key in CardVariant]: ExternalStyl
 const createClickableStyles = (theme: Theme): ExternalStyles => ({
   cursor: 'pointer',
   textAlign: 'initial',
-  '&[data-variant="outline"], &[data-variant="flat"]': {
+  '&[data-variant="outline"], &[data-variant="plain"]': {
     borderColor: theme.pallete.gray.c60,
   },
   ':not(:disabled):hover': {
     background: hexToRGB(theme.pallete.gray.c50, 0.1),
-    '&[data-variant="elevated"]': {
+    '&[data-variant="float"]': {
       boxShadow: theme.shadows.outer[160],
     },
   },
   ':focus': {
     outline: 'none',
     boxShadow: focusBoxShadow(theme),
-    '&[data-variant="elevated"]': {
+    '&[data-variant="float"]': {
       boxShadow: `${theme.shadows.outer[40]}, ${focusBoxShadow(theme)}`,
     },
   },
   ':not(:disabled):active': {
     boxShadow: theme.shadows.inner['10'],
-    '&[data-variant="elevated"]': {
+    '&[data-variant="float"]': {
       // use zero box shadow to keep transition smooth
       boxShadow: `0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0), ${theme.shadows.inner['10']}`,
     },

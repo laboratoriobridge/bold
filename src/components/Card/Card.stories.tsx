@@ -14,9 +14,9 @@ import { Status } from '../Status'
 import { Card, CardVariant } from './Card'
 
 const variants: { [key in CardVariant]: CardVariant } = {
-  elevated: 'elevated',
-  flat: 'flat',
   outline: 'outline',
+  float: 'float',
+  plain: 'plain',
 }
 
 const Content = () => (
@@ -82,13 +82,13 @@ export const Variants = () => {
           <Content />
         </Card>
       </HeadingSection>
-      <HeadingSection level={2} vSpace={8} title='Elevated card'>
-        <Card variant='elevated' error={invalid}>
+      <HeadingSection level={2} vSpace={8} title='Float card'>
+        <Card variant='float' error={invalid}>
           <Content />
         </Card>
       </HeadingSection>
-      <HeadingSection level={2} vSpace={8} title='Flat card'>
-        <Card variant='flat' error={invalid}>
+      <HeadingSection level={2} vSpace={8} title='Plain card'>
+        <Card variant='plain' error={invalid}>
           <Content />
         </Card>
       </HeadingSection>
@@ -114,19 +114,13 @@ export const Clickable = () => {
           <Content />
         </Card>
       </HeadingSection>
-      <HeadingSection level={2} vSpace={8} title='Elevated card'>
-        <Card
-          variant='elevated'
-          selected={selected}
-          disabled={disabled}
-          error={invalid}
-          onClick={action('Card clicked')}
-        >
+      <HeadingSection level={2} vSpace={8} title='Float card'>
+        <Card variant='float' selected={selected} disabled={disabled} error={invalid} onClick={action('Card clicked')}>
           <Content />
         </Card>
       </HeadingSection>
-      <HeadingSection level={2} vSpace={8} title='Flat card'>
-        <Card variant='flat' selected={selected} disabled={disabled} error={invalid} onClick={action('Card clicked')}>
+      <HeadingSection level={2} vSpace={8} title='Plain card'>
+        <Card variant='plain' selected={selected} disabled={disabled} error={invalid} onClick={action('Card clicked')}>
           <Content />
         </Card>
       </HeadingSection>
