@@ -5,7 +5,7 @@ import { Modal, ModalProps } from '../Modal'
 import { ModalBody } from '../ModalBody'
 import { ModalFooter } from '../ModalFooter'
 import { HFlow } from '../../HFlow'
-import { ModalAutoFooterButton } from './ModalAutoFooterButton'
+import { ModalFooterButton } from '../ModalFooterButton'
 
 export type ButtonAction = ButtonProps & { label?: React.ReactNode; ['data-testid']?: string }
 
@@ -41,14 +41,21 @@ export const ModalAuto = memo((props: ModalAutoProps) => {
     setTimeout(dispose, 500)
   }
 
+  const handleAction = (actionClick: ButtonAction['onClick']) => (e: React.MouseEvent<HTMLButtonElement>) => {
+    actionClick?.(e)
+    close()
+  }
+
   return (
     <Modal open={isOpen} onClose={close} {...rest}>
       <ModalBody>{render({ close })}</ModalBody>
       {actions && (
         <ModalFooter>
           <HFlow justifyContent='flex-end'>
-            {actions.map((action, idx) => (
-              <ModalAutoFooterButton key={idx} action={action} onClose={close} />
+            {actions.map(({ label, onClick, ...action }, idx) => (
+              <ModalFooterButton key={idx} onClick={handleAction(onClick)} {...action}>
+                {label}
+              </ModalFooterButton>
             ))}
           </HFlow>
         </ModalFooter>
