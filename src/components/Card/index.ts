@@ -1,1 +1,3 @@
-export { Card, CardProps, CardVariant } from './Card'
+export { Card, CardProps } from './Card'
+export { ClickableCard, ClickableCardProps } from './ClickableCard'
+export { CardVariant } from './CardVariants'
