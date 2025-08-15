@@ -7,13 +7,14 @@ export function useIsOverflowing(ref: MutableRefObject<HTMLElement>, dimension: 
   const [isOverflowing, setIsOverflowing] = useState(false)
 
   useEffect(() => {
-    const { current } = ref
+    const { current } = ref ?? {}
 
     const trigger = () => {
       setIsOverflowing(getIsOverflowing(current, dimension))
     }
 
     const observer = new ResizeObserver(trigger)
+
     if (current) {
       observer.observe(current)
       trigger()

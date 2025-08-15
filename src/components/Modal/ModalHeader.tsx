@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { Theme, useStyles } from '../../styles'
 import { Heading } from '../Heading'
 import { HFlow } from '../HFlow'
@@ -6,9 +6,9 @@ import { IconImage } from '../Icon'
 import { IconColor } from '../Icon/Icon'
 import { VFlow } from '../VFlow'
 import { useIsOverflowing } from '../../hooks'
+import { useModalContext } from '../../hooks'
 import { ModalCloseButton } from './ModalCloseButton'
 import { ModalHeaderIcon } from './ModalHeaderIcon'
-import { ModalContext } from './Modal'
 
 export interface ModalHeaderProps {
   title: string
@@ -22,7 +22,7 @@ export interface ModalHeaderProps {
 export const ModalHeader = (props: ModalHeaderProps) => {
   const { title, subtitle, icon, iconFill = 'normal', hasCloseIcon = true, onCloseButtonClick } = props
 
-  const { scroll, bodyRef } = useContext(ModalContext)
+  const { scroll, bodyRef } = useModalContext()
   const isBodyOverflowing = useIsOverflowing(bodyRef, 'vertical')
   const { classes } = useStyles(createStyles, scroll === 'body' && isBodyOverflowing)
 

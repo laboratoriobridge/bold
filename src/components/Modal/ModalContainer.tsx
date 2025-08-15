@@ -1,9 +1,10 @@
-import React, { CSSProperties, forwardRef, useContext } from 'react'
+import React, { CSSProperties, forwardRef } from 'react'
 
 import { ExternalStyles, Theme, useStyles } from '../../styles'
 import { Omit } from '../../util'
+import { useModalContext } from '../../hooks'
 import { ModalHeader, ModalHeaderProps } from './ModalHeader'
-import { ModalContext, ModalScroll } from './Modal'
+import { ModalScroll } from './Modal'
 
 export interface ModalContainerProps
   extends Omit<React.HTMLAttributes<HTMLDivElement>, 'style' | 'title'>,
@@ -15,7 +16,7 @@ export interface ModalContainerProps
 export const ModalContainer = forwardRef<HTMLDivElement, ModalContainerProps>((props, ref) => {
   const { style, onClose, hasCloseIcon = true, children, title, subtitle, icon, iconFill, ...rest } = props
 
-  const { scroll } = useContext(ModalContext)
+  const { scroll } = useModalContext()
   const { classes, css } = useStyles(createStyles, scroll)
 
   return (

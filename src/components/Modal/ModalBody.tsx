@@ -1,8 +1,8 @@
-import React, { useContext } from 'react'
+import React from 'react'
 
 import { ExternalStyles, useStyles } from '../../styles'
 import { Omit } from '../../util'
-import { ModalContext } from './Modal'
+import { useModalContext } from '../../hooks'
 
 export interface ModalBodyProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'style'> {
   style?: ExternalStyles
@@ -11,7 +11,7 @@ export interface ModalBodyProps extends Omit<React.HTMLAttributes<HTMLDivElement
 export function ModalBody(props: ModalBodyProps) {
   const { children, style, ...rest } = props
 
-  const { scroll, bodyRef } = useContext(ModalContext)
+  const { scroll, bodyRef } = useModalContext()
   const { classes, css } = useStyles(() => ({
     body: {
       padding: '1rem 2rem 2rem 2rem',

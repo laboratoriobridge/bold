@@ -1,9 +1,10 @@
 import FocusTrap from 'focus-trap-react'
-import React, { MutableRefObject, Ref, useEffect, useRef } from 'react'
+import React, { Ref, useEffect, useMemo, useRef } from 'react'
 import { Theme, useStyles } from '../../styles'
 import { zIndexLevel } from '../../styles/theme/zIndex'
 import { Portal } from '../Portal'
 import { FadeTransition } from '../Transition/FadeTransition'
+import { ModalContextProps, ModalContextProvider } from '../../hooks/useModalContext'
 import { ModalBackdrop } from './ModalBackdrop'
 import { ModalContainer, ModalContainerProps } from './ModalContainer'
 
@@ -42,11 +43,6 @@ export interface ModalProps extends ModalContainerProps {
   closeOnBackdropClick?: boolean
 }
 
-export const ModalContext = React.createContext<{ scroll: ModalScroll; bodyRef: MutableRefObject<HTMLDivElement> }>({
-  scroll: 'body',
-  bodyRef: null,
-})
-
 export function Modal(props: ModalProps) {
   const {
     open,
@@ -64,6 +60,8 @@ export function Modal(props: ModalProps) {
 
   const { classes, css } = useStyles(createStyles, depthLevel, scroll)
   const bodyRef = useRef()
+
+  const modalContextValue: ModalContextProps = useMemo(() => ({ scroll, bodyRef }), [scroll])
 
   // Kill body scroll when opened
   useEffect(() => {
@@ -94,7 +92,7 @@ export function Modal(props: ModalProps) {
   }, [open, onClose])
 
   return (
-    <ModalContext.Provider value={{ scroll, bodyRef }}>
+    <ModalContextProvider value={modalContextValue}>
       <FadeTransition in={open}>
         {({ className }) => (
           <>
@@ -116,7 +114,7 @@ export function Modal(props: ModalProps) {
           </>
         )}
       </FadeTransition>
-    </ModalContext.Provider>
+    </ModalContextProvider>
   )
 }
 
