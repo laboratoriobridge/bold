@@ -4,11 +4,24 @@ import { ExternalStyles, useCss } from '../../styles'
 import { CardVariant, createBaseStyles, createVariantStyles } from './CardVariants'
 
 export interface CardProps {
-  variant?: CardVariant
   children?: React.ReactNode
-  error?: React.ReactNode
-  disabled?: boolean
   style?: ExternalStyles
+
+  /**
+   * Defines the visual style of the Card
+   * @default 'outline'
+   */
+  variant?: CardVariant
+
+  /**
+   * Specify whether the Card should have a error appearance
+   */
+  error?: React.ReactNode
+
+  /**
+   * Specify whether the Card should have a disabled appearance
+   */
+  disabled?: boolean
 }
 
 export function Card(props: CardProps) {

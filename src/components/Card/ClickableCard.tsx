@@ -3,12 +3,29 @@ import { ExternalStyles, useCss } from '../../styles'
 import { CardVariant, createBaseStyles, createClickableStyles, createVariantStyles } from './CardVariants'
 
 export interface ClickableCardProps extends Omit<ComponentProps<'button'>, 'style' | 'children'> {
-  variant?: CardVariant
   children?: React.ReactNode
-  selected?: boolean
-  error?: React.ReactNode
-  disabled?: boolean
   style?: ExternalStyles
+
+  /**
+   * Defines the visual style of the Card
+   * @default 'outline'
+   */
+  variant?: CardVariant
+
+  /**
+   * Specify whether the Card should be selected
+   */
+  selected?: boolean
+
+  /**
+   * Specify whether the Card should have a error appearance
+   */
+  error?: React.ReactNode
+
+  /**
+   * Specify whether the Card should be disabled
+   */
+  disabled?: boolean
 }
 
 export function ClickableCard(props: ClickableCardProps) {
