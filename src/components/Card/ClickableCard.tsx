@@ -55,6 +55,7 @@ export function ClickableCard(props: ClickableCardProps) {
       data-variant={variant}
       data-selected={selected}
       data-invalid={isInvalid}
+      aria-pressed={selected}
       {...buttonProps}
     >
       <div className={css(disabled && baseStyles.innerDisabled)}>{children}</div>
