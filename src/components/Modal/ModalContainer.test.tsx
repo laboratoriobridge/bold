@@ -59,14 +59,7 @@ describe('prop passing to ModalHeader', () => {
 
     render(
       <ModalContextProvider value={mockContextValue}>
-        <ModalContainer
-          title='title'
-          subtitle='subtitle'
-          icon='infoCircleFilled'
-          iconFill='primary'
-          onClose={onClose}
-          hasCloseIcon
-        >
+        <ModalContainer title='title' subtitle='subtitle' icon='infoCircleFilled' onClose={onClose} hasCloseIcon>
           Container
         </ModalContainer>
       </ModalContextProvider>
@@ -77,7 +70,6 @@ describe('prop passing to ModalHeader', () => {
         title: 'title',
         subtitle: 'subtitle',
         icon: 'infoCircleFilled',
-        iconFill: 'primary',
         hasCloseIcon: true,
         onCloseButtonClick: onClose,
       }),

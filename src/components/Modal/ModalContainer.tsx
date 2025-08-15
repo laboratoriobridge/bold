@@ -14,7 +14,7 @@ export interface ModalContainerProps
 }
 
 export const ModalContainer = forwardRef<HTMLDivElement, ModalContainerProps>((props, ref) => {
-  const { style, onClose, hasCloseIcon = true, children, title, subtitle, icon, iconFill, ...rest } = props
+  const { style, onClose, hasCloseIcon = true, children, title, subtitle, icon, ...rest } = props
 
   const { scroll } = useModalContext()
   const { classes, css } = useStyles(createStyles, scroll)
@@ -25,7 +25,6 @@ export const ModalContainer = forwardRef<HTMLDivElement, ModalContainerProps>((p
         title={title}
         subtitle={subtitle}
         icon={icon}
-        iconFill={iconFill}
         hasCloseIcon={hasCloseIcon}
         onCloseButtonClick={onClose}
       />

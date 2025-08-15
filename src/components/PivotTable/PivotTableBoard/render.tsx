@@ -5,8 +5,7 @@ export const renderClearTableModal = (labels: PivotTableBoardLabels, onConfirm: 
   modal({
     size: 'small',
     title: labels.clearTableTitle,
-    icon: 'exclamationTriangleOutline',
-    iconFill: 'danger',
+    icon: { name: 'exclamationTriangleOutline', fill: 'danger' },
     render: () => null,
     actions: [
       { label: labels.clearTableCancel },
