@@ -63,8 +63,7 @@ export const Default = () => {
         hasCloseIcon={hasCloseIcon}
         title={title}
         subtitle={subtitle}
-        icon={icon}
-        iconFill={iconFill}
+        icon={iconFill ? { name: icon, fill: iconFill } : icon}
         manageOverflow={manageOverflow}
         closeOnBackdropClick={closeOnBackdropClick}
         onClose={onClose}

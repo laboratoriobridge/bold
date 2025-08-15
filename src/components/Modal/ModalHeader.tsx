@@ -2,25 +2,22 @@ import React from 'react'
 import { Theme, useStyles } from '../../styles'
 import { Heading } from '../Heading'
 import { HFlow } from '../HFlow'
-import { IconImage } from '../Icon'
-import { IconColor } from '../Icon/Icon'
 import { VFlow } from '../VFlow'
 import { useIsOverflowing } from '../../hooks'
 import { useModalContext } from '../../hooks'
 import { ModalCloseButton } from './ModalCloseButton'
-import { ModalHeaderIcon } from './ModalHeaderIcon'
+import { ModalHeaderIconType, ModalHeaderIcon } from './ModalHeaderIcon'
 
 export interface ModalHeaderProps {
   title: string
   subtitle?: string
-  icon?: IconImage
-  iconFill?: IconColor
+  icon?: ModalHeaderIconType
   hasCloseIcon?: boolean
   onCloseButtonClick?: () => void
 }
 
 export const ModalHeader = (props: ModalHeaderProps) => {
-  const { title, subtitle, icon, iconFill = 'normal', hasCloseIcon = true, onCloseButtonClick } = props
+  const { title, subtitle, icon, hasCloseIcon = true, onCloseButtonClick } = props
 
   const { scroll, bodyRef } = useModalContext()
   const isBodyOverflowing = useIsOverflowing(bodyRef, 'vertical')
@@ -35,7 +32,7 @@ export const ModalHeader = (props: ModalHeaderProps) => {
       data-testid='modal-header'
     >
       <HFlow hSpacing={1} justifyContent='flex-start' alignItems='center'>
-        {icon && <ModalHeaderIcon icon={icon} iconFill={iconFill} />}
+        {icon && <ModalHeaderIcon icon={icon} />}
         <VFlow vSpacing={0}>
           <Heading level={1} color='normal' fontWeight='bold'>
             {title}
