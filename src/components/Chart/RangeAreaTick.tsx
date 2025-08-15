@@ -30,7 +30,7 @@ export function RangeAreaTick<XDomain>(props: RangeAreaTickProps<XDomain>) {
   const halfText = totalTextHeight / 2
 
   const barTop = y - 7
-  const gap = 8
+  const gap = 4
 
   const labelCenterY = barTop - gap - halfText
 
