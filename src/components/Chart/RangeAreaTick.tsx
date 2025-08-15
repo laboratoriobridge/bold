@@ -40,7 +40,7 @@ export function RangeAreaTick<XDomain>(props: RangeAreaTickProps<XDomain>) {
   const firstDy = -((nameLines.length - 1) / 2) * lineHeight
 
   const ICON_PX = 16
-  const tooltipX = Math.max(Math.floor(width / 10) * 4, (nameLines[0]?.length || 0) * 4)
+  const tooltipX = (nameLines[0]?.length || 0) * 4
   const tooltipCenterOffset = -1
   const tooltipY = -ICON_PX / 2 + tooltipCenterOffset
 
