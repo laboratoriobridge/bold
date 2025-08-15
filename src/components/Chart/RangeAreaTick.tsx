@@ -41,7 +41,7 @@ export function RangeAreaTick<XDomain>(props: RangeAreaTickProps<XDomain>) {
 
   const ICON_PX = 16
   const tooltipX = Math.max(Math.floor(width / 10) * 4, (nameLines[0]?.length || 0) * 4)
-  const tooltipCenterOffset = -3
+  const tooltipCenterOffset = -1
   const tooltipY = -ICON_PX / 2 + tooltipCenterOffset
 
   return (
@@ -59,7 +59,7 @@ export function RangeAreaTick<XDomain>(props: RangeAreaTickProps<XDomain>) {
 
         {referenceArea.tooltip && (
           <Tooltip text={referenceArea.tooltip}>
-            <Icon x={tooltipX} y={tooltipY} icon='infoCircleFilled' size={1.25} fill='normal' />
+            <Icon x={tooltipX} y={tooltipY} icon='infoCircleFilled' size={1} fill='normal' />
           </Tooltip>
         )}
       </g>
