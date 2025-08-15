@@ -29,10 +29,14 @@ it('should change to "entered" state when "enter" changes and "enterTimeout" has
   const { container, rerender } = render(<TestComponent enter={false} enterTimeout={100} />)
   rerender(<TestComponent enter={true} enterTimeout={100} />)
 
-  act(() => jest.advanceTimersByTime(99))
+  act(() => {
+    jest.advanceTimersByTime(99)
+  })
   expect(container.textContent).toEqual('entering')
 
-  act(() => jest.advanceTimersByTime(100))
+  act(() => {
+    jest.advanceTimersByTime(100)
+  })
   expect(container.textContent).toEqual('entered')
 })
 
@@ -47,10 +51,14 @@ it('should change to "exited" state when "enter" changes and "exitTimeout" has f
   const { container, rerender } = render(<TestComponent enter={true} exitTimeout={100} />)
   rerender(<TestComponent enter={false} exitTimeout={100} />)
 
-  act(() => jest.advanceTimersByTime(99))
+  act(() => {
+    jest.advanceTimersByTime(99)
+  })
   expect(container.textContent).toEqual('exiting')
 
-  act(() => jest.advanceTimersByTime(100))
+  act(() => {
+    jest.advanceTimersByTime(100)
+  })
   expect(container.textContent).toEqual('exited')
 })
 
