@@ -2,8 +2,7 @@ import React, { ComponentProps } from 'react'
 import { ExternalStyles, useCss } from '../../styles'
 import { CardVariant, createBaseStyles, createClickableStyles, createVariantStyles } from './CardVariants'
 
-export interface ClickableCardProps extends Omit<ComponentProps<'button'>, 'style' | 'children'> {
-  children?: React.ReactNode
+export interface ClickableCardProps extends Omit<ComponentProps<'button'>, 'style'> {
   style?: ExternalStyles
 
   /**
@@ -29,19 +28,19 @@ export interface ClickableCardProps extends Omit<ComponentProps<'button'>, 'styl
 }
 
 export function ClickableCard(props: ClickableCardProps) {
-  const { variant, children, error, disabled, selected, style, ...buttonProps } = props
+  const { variant = 'outline', children, error, disabled, selected, style, ...buttonProps } = props
 
   const { theme, css } = useCss()
 
   const baseStyles = createBaseStyles(theme)
-  const variantStyle = createVariantStyles(theme)
+  const variantStyles = createVariantStyles(theme)
   const clickableStyles = createClickableStyles(theme)
 
   const isInvalid = !!error
 
   const classes = css(
     baseStyles.card,
-    variantStyle[variant],
+    variantStyles[variant],
     clickableStyles,
     disabled && baseStyles.cardDisabled,
     style

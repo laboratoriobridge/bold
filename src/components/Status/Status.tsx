@@ -1,25 +1,25 @@
 import React from 'react'
 import { ExternalStyles, Theme, useStyles } from '../../styles'
-import { HFlow, HFlowProps } from '../HFlow'
+import { HFlow } from '../HFlow'
 import { Icon, Icons } from '../Icon'
 import { Text } from '../Text'
 
 export type StatusType = 'info' | 'success' | 'warning' | 'danger'
 
-export interface StatusProps extends Pick<HFlowProps, 'hSpacing'> {
+export interface StatusProps {
   type: StatusType
   text: string
   style?: ExternalStyles
 }
 
 export function Status(props: StatusProps) {
-  const { type, text, hSpacing = 0.5, style } = props
+  const { type, text, style } = props
 
   const { theme, css } = useStyles()
   const typeStyle = createTypesStyles(theme)[type]
 
   return (
-    <HFlow hSpacing={hSpacing} alignItems='center' justifyContent='flex-start' style={css(typeStyle.style, style)}>
+    <HFlow hSpacing={0.5} alignItems='center' justifyContent='flex-start' style={css(typeStyle.style, style)}>
       <Icon icon={typeStyle.icon} size={1} />
       <Text color='inherit'>{text}</Text>
     </HFlow>
