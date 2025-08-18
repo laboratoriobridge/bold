@@ -3,7 +3,7 @@ import { fireEvent, render, screen } from '@testing-library/react'
 import { createTheme, ThemeContext } from '../../styles'
 import { LocaleContext } from '../../i18n/LocaleContext'
 import ptBr from '../../i18n/locales/pt-BR'
-import { ModalContextProvider } from '../../hooks/useModalContext'
+import { ModalContextProps, ModalContextProvider } from '../../hooks/useModalContext'
 import { Modal } from './Modal'
 import { ModalHeader } from './ModalHeader'
 import { ModalBody } from './ModalBody'
@@ -18,7 +18,7 @@ beforeEach(() => {
   jest.clearAllMocks()
 })
 
-const mockContextValue = {
+const mockContextValue: ModalContextProps = {
   bodyRef: { current: document.createElement('div') },
   scroll: 'body' as ModalScroll,
 }

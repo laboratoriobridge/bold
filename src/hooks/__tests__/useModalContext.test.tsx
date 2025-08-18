@@ -1,6 +1,6 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
-import { useModalContext, ModalContextProvider } from '../useModalContext'
+import { useModalContext, ModalContextProvider, ModalContextProps } from '../useModalContext'
 import { ModalScroll } from '../../components/Modal'
 
 function TestComponent() {
@@ -15,7 +15,7 @@ function TestComponent() {
 }
 
 it('should return provided context values when inside ModalContextProvider', () => {
-  const mockContextValue = {
+  const mockContextValue: ModalContextProps = {
     bodyRef: { current: document.createElement('div') },
     scroll: 'body' as ModalScroll,
   }

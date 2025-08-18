@@ -1,11 +1,11 @@
 import { render } from '@testing-library/react'
 import * as React from 'react'
 
-import { ModalContextProvider } from '../../hooks/useModalContext'
+import { ModalContextProps, ModalContextProvider } from '../../hooks/useModalContext'
 import { Modal, ModalScroll } from './Modal'
 import { ModalBody } from './ModalBody'
 
-const mockContextValue = {
+const mockContextValue: ModalContextProps = {
   bodyRef: { current: document.createElement('div') },
   scroll: 'body' as ModalScroll,
 }

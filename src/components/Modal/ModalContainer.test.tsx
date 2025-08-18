@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react'
 import React from 'react'
 
-import { ModalContextProvider } from '../../hooks/useModalContext'
+import { ModalContextProps, ModalContextProvider } from '../../hooks/useModalContext'
 import { ModalContainer } from './ModalContainer'
 import { ModalHeader } from './ModalHeader'
 import { ModalScroll } from './Modal'
@@ -12,7 +12,7 @@ jest.mock('./ModalHeader', () => ({
   ModalHeader: jest.fn((props) => <div {...props} />),
 }))
 
-const mockContextValue = {
+const mockContextValue: ModalContextProps = {
   bodyRef: { current: document.createElement('div') },
   scroll: 'body' as ModalScroll,
 }
