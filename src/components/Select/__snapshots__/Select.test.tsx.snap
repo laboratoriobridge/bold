@@ -330,10 +330,12 @@ exports[`emptyItem should render when items is empty 1`] = `
           >
             <ul
               class="emotion-6"
+              role="listbox"
             >
               <li
                 aria-selected="false"
                 class="emotion-5"
+                role="option"
               >
                 No results were found
               </li>
@@ -676,10 +678,12 @@ exports[`emptyItem should render when items is null 1`] = `
           >
             <ul
               class="emotion-6"
+              role="listbox"
             >
               <li
                 aria-selected="false"
                 class="emotion-5"
+                role="option"
               >
                 No results were found
               </li>
@@ -1146,6 +1150,7 @@ exports[`select custom components should accept actions inside AppendItem 1`] = 
           >
             <ul
               class="emotion-12"
+              role="listbox"
             >
               <li
                 aria-selected="false"
@@ -1660,6 +1665,7 @@ exports[`select custom components should accept actions inside PrependItem 1`] =
             </div>
             <ul
               class="emotion-13"
+              role="listbox"
             >
               <li
                 aria-selected="false"

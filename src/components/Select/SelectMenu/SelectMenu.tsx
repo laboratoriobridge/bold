@@ -12,7 +12,7 @@ export function SelectMenu(props: SelectMenuProps) {
   const { style, menuRef, ...rest } = props
   const { classes, css } = useStyles(createStyles)
 
-  return <ul className={css(classes.list, style)} ref={menuRef} {...rest} />
+  return <ul role='listbox' className={css(classes.list, style)} ref={menuRef} {...rest} />
 }
 
 export const createStyles = (theme: Theme) => ({

@@ -440,6 +440,7 @@ exports[`SelectInline should render correctly when opened 1`] = `
               >
                 <ul
                   class="emotion-9"
+                  role="listbox"
                 >
                   <li
                     aria-selected="false"

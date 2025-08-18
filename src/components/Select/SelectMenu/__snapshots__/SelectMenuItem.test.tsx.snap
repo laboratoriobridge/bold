@@ -35,6 +35,7 @@ exports[`SelectCreateItem should render correctly 1`] = `
   <li
     aria-selected="false"
     class="emotion-0"
+    role="option"
   >
     Select an item or type a new value
   </li>
@@ -76,6 +77,7 @@ exports[`SelectEmptyItem should render correctly 1`] = `
   <li
     aria-selected="false"
     class="emotion-0"
+    role="option"
   >
     No results were found
   </li>
@@ -113,6 +115,7 @@ exports[`SelectHelperMenuItem should render correctly 1`] = `
   <li
     aria-selected="false"
     class="emotion-0"
+    role="option"
   >
     Loading
   </li>
@@ -188,6 +191,7 @@ exports[`SelectLoadingItem should render correctly 1`] = `
   <li
     aria-selected="false"
     class="emotion-1"
+    role="option"
   >
     Loading...
     <span
@@ -228,6 +232,7 @@ exports[`SelectMenuItem should render correctly 1`] = `
   <li
     aria-selected="false"
     class="emotion-0"
+    role="option"
   >
     Item
   </li>
@@ -266,6 +271,7 @@ exports[`SelectMenuItem should render correctly when custom style defined 1`] = 
   <li
     aria-selected="false"
     class="emotion-0"
+    role="option"
   >
     Item
   </li>
@@ -305,6 +311,7 @@ exports[`SelectMenuItem should render correctly when selected 1`] = `
   <li
     aria-selected="true"
     class="emotion-0"
+    role="option"
   >
     Item
   </li>

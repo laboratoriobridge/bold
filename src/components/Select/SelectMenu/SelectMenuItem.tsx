@@ -17,6 +17,7 @@ export function SelectMenuItem(props: SelectMenuItemProps) {
   return (
     <li
       className={css(classes.item, selected && classes.selected, style)}
+      role='option'
       aria-selected={selected ? 'true' : 'false'}
       {...rest}
     />
