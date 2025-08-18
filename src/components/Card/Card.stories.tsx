@@ -20,7 +20,7 @@ const variants: { [key in CardVariant]: CardVariant } = {
   plain: 'plain',
 }
 
-const CardDefaultContent = () => (
+const CardContent = () => (
   <HFlow hSpacing={0.5} style={{ gridAutoColumns: 'auto 1fr' }}>
     <Checkbox />
     <HFlow alignItems='center' justifyContent='space-between'>
@@ -41,7 +41,7 @@ const CardDefaultContent = () => (
   </HFlow>
 )
 
-const CardClickableContent = () => (
+const ClickableCardContent = () => (
   <HFlow hSpacing={0.5} style={{ gridAutoColumns: 'auto 1fr' }}>
     <Checkbox />
     <VFlow vSpacing={0.5}>
@@ -69,7 +69,7 @@ export const Default = () => {
   return (
     <div style={{ paddingBottom: '0.5rem' }}>
       <Card variant={variant} disabled={disabled} error={invalid}>
-        <CardDefaultContent />
+        <CardContent />
       </Card>
     </div>
   )
@@ -90,7 +90,7 @@ export const Clickable = () => {
         error={invalid}
         onClick={action('Card clicked')}
       >
-        <CardClickableContent />
+        <ClickableCardContent />
       </ClickableCard>
     </div>
   )
@@ -112,42 +112,42 @@ export const Variants = () => {
       <Cell size={6}>
         <HeadingSection level={4} vSpace={8} title='Outline'>
           <Card variant='outline' error={invalid} disabled={disabled}>
-            <CardDefaultContent />
+            <CardContent />
           </Card>
         </HeadingSection>
       </Cell>
       <Cell size={6}>
         <HeadingSection level={4} vSpace={8} title='Outline'>
           <ClickableCard variant='outline' selected={selected} error={invalid} disabled={disabled}>
-            <CardClickableContent />
+            <ClickableCardContent />
           </ClickableCard>
         </HeadingSection>
       </Cell>
       <Cell size={6}>
         <HeadingSection level={4} vSpace={8} title='Float'>
           <Card variant='float' error={invalid} disabled={disabled}>
-            <CardDefaultContent />
+            <CardContent />
           </Card>
         </HeadingSection>
       </Cell>
       <Cell size={6}>
         <HeadingSection level={4} vSpace={8} title='Float'>
           <ClickableCard variant='float' selected={selected} error={invalid} disabled={disabled}>
-            <CardClickableContent />
+            <ClickableCardContent />
           </ClickableCard>
         </HeadingSection>
       </Cell>
       <Cell size={6}>
         <HeadingSection level={4} vSpace={8} title='Plain'>
           <Card variant='plain' error={invalid} disabled={disabled}>
-            <CardDefaultContent />
+            <CardContent />
           </Card>
         </HeadingSection>
       </Cell>
       <Cell size={6}>
         <HeadingSection level={4} vSpace={8} title='Plain'>
           <ClickableCard variant='plain' selected={selected} error={invalid} disabled={disabled}>
-            <CardClickableContent />
+            <ClickableCardContent />
           </ClickableCard>
         </HeadingSection>
       </Cell>
