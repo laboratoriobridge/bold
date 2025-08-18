@@ -41,7 +41,7 @@ export const ModalAuto = memo((props: ModalAutoProps) => {
     setTimeout(dispose, 500)
   }
 
-  const handleAction = (actionClick: ButtonAction['onClick']) => (e: React.MouseEvent<HTMLButtonElement>) => {
+  const getHandleAction = (actionClick: ButtonAction['onClick']) => (e: React.MouseEvent<HTMLButtonElement>) => {
     actionClick?.(e)
     close()
   }
@@ -53,7 +53,7 @@ export const ModalAuto = memo((props: ModalAutoProps) => {
         <ModalFooter>
           <HFlow justifyContent='flex-end'>
             {actions.map(({ label, onClick, ...action }, idx) => (
-              <ModalFooterButton key={idx} onClick={handleAction(onClick)} {...action}>
+              <ModalFooterButton key={idx} onClick={getHandleAction(onClick)} {...action}>
                 {label}
               </ModalFooterButton>
             ))}
