@@ -17,8 +17,8 @@ describe('variants', () => {
   it('should render outline variant by default', () => {
     const { getByTestId } = render(<Card data-testid='card-outline'>Content</Card>)
     const card = getByTestId('card-outline')
-    expect(card).toHaveStyle('background: rgb(255, 255, 255)')
-    expect(card).toHaveStyle('border: 1px solid #d3d4dd')
+    expect(getComputedStyle(card).background).toBe('rgb(255, 255, 255)')
+    expect(getComputedStyle(card).border).toBe('1px solid #d3d4dd')
     expect(getComputedStyle(card).boxShadow).toBe('')
   })
 
@@ -29,10 +29,10 @@ describe('variants', () => {
       </Card>
     )
     const card = getByTestId('card-float')
-    expect(card).toHaveStyle('background: rgb(255, 255, 255)')
-    expect(card).toHaveStyle('border: 1px solid #d3d4dd')
-    expect(card).toHaveStyle(
-      'box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2),0 1px 10px 0 rgba(0,0,0,0.12),0 4px 5px 0 rgba(0,0,0,0.14)'
+    expect(getComputedStyle(card).background).toBe('rgb(255, 255, 255)')
+    expect(getComputedStyle(card).border).toBe('1px solid #d3d4dd')
+    expect(getComputedStyle(card).boxShadow).toBe(
+      '0 2px 4px -1px rgba(0,0,0,0.2),0 1px 10px 0 rgba(0,0,0,0.12),0 4px 5px 0 rgba(0,0,0,0.14)'
     )
   })
 
@@ -43,8 +43,8 @@ describe('variants', () => {
       </Card>
     )
     const card = getByTestId('card-plain')
-    expect(card).toHaveStyle('background: rgb(255, 255, 255)')
-    expect(card).toHaveStyle('border: 0px')
+    expect(getComputedStyle(card).background).toBe('rgb(255, 255, 255)')
+    expect(getComputedStyle(card).border).toBe('0px')
     expect(getComputedStyle(card).boxShadow).toBe('')
   })
 })
@@ -59,9 +59,9 @@ describe('states', () => {
         </Card>
       )
       const card = getByTestId('card-disabled')
-      expect(card).toHaveStyle('cursor: not-allowed')
-      expect(card).toHaveStyle('border-color: #d3d4dd')
-      expect(card).toHaveStyle('background: rgb(255, 255, 255)')
+      expect(getComputedStyle(card).cursor).toBe('not-allowed')
+      expect(getComputedStyle(card).borderColor).toBe('#d3d4dd')
+      expect(getComputedStyle(card).background).toBe('rgb(255, 255, 255)')
     }
   )
 
@@ -72,7 +72,7 @@ describe('states', () => {
       </Card>
     )
     const button = getByTestId('card-button')
-    expect(button).toHaveStyle('pointer-events: none')
+    expect(getComputedStyle(button).pointerEvents).toBe('none')
   })
 
   it('should apply invalid styles in outline variant when error specified', () => {
@@ -82,7 +82,7 @@ describe('states', () => {
       </Card>
     )
     const card = getByTestId('card-outline-invalid')
-    expect(card).toHaveStyle('border-color: #d01e29')
+    expect(getComputedStyle(card).borderColor).toBe('#d01e29')
   })
 
   it('should apply invalid styles in float variant when error specified', () => {
@@ -92,7 +92,7 @@ describe('states', () => {
       </Card>
     )
     const card = getByTestId('card-float-invalid')
-    expect(card).toHaveStyle('border-color: #d01e29')
+    expect(getComputedStyle(card).borderColor).toBe('#d01e29')
   })
 
   it('should apply invalid styles in plain variant when error specified', () => {

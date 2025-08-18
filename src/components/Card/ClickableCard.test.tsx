@@ -133,8 +133,8 @@ describe('states', () => {
       )
       const card = getByTestId('clickable-card-disabled')
       expect(getComputedStyle(card).cursor).toBe('not-allowed')
-      expect(card).toHaveStyle('border-color: #d3d4dd')
-      expect(card).toHaveStyle('background: rgb(255, 255, 255)')
+      expect(getComputedStyle(card).borderColor).toBe('#d3d4dd')
+      expect(getComputedStyle(card).background).toBe('rgb(255, 255, 255)')
     }
   )
 
@@ -148,8 +148,8 @@ describe('states', () => {
       )
       const card = getByTestId('clickable-card-disabled-invalid')
       expect(getComputedStyle(card).cursor).toBe('not-allowed')
-      expect(card).toHaveStyle('border-color: #d3d4dd')
-      expect(card).toHaveStyle('background: rgb(255, 255, 255)')
+      expect(getComputedStyle(card).borderColor).toBe('#d3d4dd')
+      expect(getComputedStyle(card).background).toBe('rgb(255, 255, 255)')
     }
   )
 
@@ -162,8 +162,8 @@ describe('states', () => {
         </ClickableCard>
       )
       const card = getByTestId('clickable-card-selected-invalid')
-      expect(card).toHaveStyle('border-color: #d01e29')
-      expect(card).toHaveStyle('background: rgb(254, 236, 237)')
+      expect(getComputedStyle(card).borderColor).toBe('#d01e29')
+      expect(getComputedStyle(card).background).toBe('rgb(254, 236, 237)')
     }
   )
 
@@ -174,7 +174,7 @@ describe('states', () => {
       </ClickableCard>
     )
     const card = getByTestId('clickable-card-selected-invalid')
-    expect(card).toHaveStyle('background: rgb(254, 236, 237)')
+    expect(getComputedStyle(card).background).toBe('rgb(254, 236, 237)')
   })
 
   it.each<CardVariant>(['outline', 'float', 'plain'])(
@@ -187,8 +187,8 @@ describe('states', () => {
       )
       const card = getByTestId('clickable-card-selected-disabled')
       expect(getComputedStyle(card).cursor).toBe('not-allowed')
-      expect(card).toHaveStyle('border-color: #c5d4ff')
-      expect(card).toHaveStyle('background: rgb(236, 240, 255)')
+      expect(getComputedStyle(card).borderColor).toBe('#c5d4ff')
+      expect(getComputedStyle(card).background).toBe('rgb(236, 240, 255)')
     }
   )
 })
