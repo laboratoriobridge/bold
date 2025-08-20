@@ -1,7 +1,8 @@
-import { fireEvent, render, waitFor } from '@testing-library/react'
+import { fireEvent, getByRole, render, waitFor } from '@testing-library/react'
 import React from 'react'
 import { findDOMNode } from 'react-dom'
 import { Modal, ModalProps } from './Modal'
+import { ModalBody } from './ModalBody'
 
 jest.mock('../../util/string')
 
@@ -143,9 +144,15 @@ it('should have a focus on first element when opened', async () => {
   expect(document.activeElement).toEqual(button)
 
   rerender(createComponent({ open: true }))
-  const dialog = document.body.querySelector('[role="dialog"]')
+
+  const dialog = getByRole(document.body, 'dialog')
+
+  const firstFocusableElement = dialog.querySelector(
+    'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+  )
+
   await waitFor(() => {
-    expect(document.activeElement).toEqual(dialog.firstElementChild)
+    expect(document.activeElement).toEqual(firstFocusableElement)
   })
 })
 
@@ -157,4 +164,46 @@ it('should accept "containerRef" prop and pass down to ModalContainer', () => {
     </Modal>
   )
   expect(document.body.querySelector('[aria-modal="true"]')).toBe(findDOMNode(ref.current))
+})
+
+describe('modal scroll mode', () => {
+  it("should set Modal overflow to hidden when scroll is 'body'", () => {
+    const { getByRole } = render(
+      <Modal open>
+        <ModalBody data-testid=''>Modal content</ModalBody>
+      </Modal>
+    )
+    const dialog = getByRole('dialog')
+    expect(dialog).toHaveStyle('overflow: hidden;')
+  })
+
+  it("should set ModalBody overflow to auto when scroll is 'body'", () => {
+    const { getByTestId } = render(
+      <Modal open>
+        <ModalBody data-testid='modal-body'>Modal content</ModalBody>
+      </Modal>
+    )
+    const modalBody = getByTestId('modal-body')
+    expect(modalBody).toHaveStyle('overflow: auto;')
+  })
+
+  it("should set Modal overflow to auto when scroll is 'full'", () => {
+    const { getByRole } = render(
+      <Modal open scroll='full'>
+        <ModalBody data-testid=''>Modal content</ModalBody>
+      </Modal>
+    )
+    const dialog = getByRole('dialog')
+    expect(dialog).toHaveStyle('overflow: auto;')
+  })
+
+  it("should set ModalBody overflow to hidden when scroll is 'full'", () => {
+    const { getByTestId } = render(
+      <Modal open scroll='full'>
+        <ModalBody data-testid='modal-body'>Modal content</ModalBody>
+      </Modal>
+    )
+    const modalBody = getByTestId('modal-body')
+    expect(modalBody).toHaveStyle('overflow: hidden;')
+  })
 })
