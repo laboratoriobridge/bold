@@ -1,0 +1,262 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should accept "style" prop 1`] = `
+.emotion-1 {
+  width: 100%;
+  border: 0;
+  border-radius: 2px;
+  padding: 1rem;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  background: #FFFFFF;
+  border: 1px solid #D3D4DD;
+  border-radius: 2px;
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #24252E;
+  cursor: pointer;
+  text-align: initial;
+  background: red;
+}
+
+.emotion-1[data-invalid="true"] {
+  border-color: #D01E29;
+}
+
+.emotion-1[data-disabled="true"] {
+  border-color: #D3D4DD;
+  background: #FFFFFF;
+}
+
+.emotion-1[data-variant="outline"],
+.emotion-1[data-variant="plain"] {
+  border-color: #8F8FA2;
+}
+
+.emotion-1:not(:disabled):hover {
+  background: rgba(122,123,142,0.1);
+}
+
+.emotion-1:not(:disabled):hover[data-variant="float"] {
+  box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
+}
+
+.emotion-1:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
+}
+
+.emotion-1:focus[data-variant="float"] {
+  box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2),0 1px 10px 0 rgba(0,0,0,0.12),0 4px 5px 0 rgba(0,0,0,0.14),0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
+}
+
+.emotion-1:not(:disabled):not(:active):hover:focus[data-variant="float"] {
+  box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14),0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
+}
+
+.emotion-1:not(:disabled):active {
+  box-shadow: inset 0 1px 4px 0 rgba(0,0,0,0.14),inset 0 2px 4px 0 rgba(0,0,0,0.08);
+}
+
+.emotion-1:not(:disabled):active[data-variant="float"] {
+  box-shadow: 0 0 0 0 rgba(0,0,0,0),0 0 0 0 rgba(0,0,0,0),0 0 0 0 rgba(0,0,0,0),inset 0 1px 4px 0 rgba(0,0,0,0.14),inset 0 2px 4px 0 rgba(0,0,0,0.08);
+}
+
+.emotion-1[data-selected="true"] {
+  background: #ECF0FF;
+  border-color: #0069D0;
+}
+
+.emotion-1[data-selected="true"]:not(:disabled):hover {
+  background: #C5D4FF;
+}
+
+.emotion-1[data-selected="true"][data-invalid="true"] {
+  background: #FEECED;
+}
+
+.emotion-1[data-invalid="true"] {
+  border-color: #D01E29;
+}
+
+.emotion-1[data-invalid="true"]:not(:disabled):hover {
+  background: #FAC8C9;
+}
+
+.emotion-1[data-invalid="true"]:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #D01E29;
+}
+
+.emotion-1[data-invalid="true"]:not(:disabled):active {
+  box-shadow: inset 0 1px 4px 0 rgba(0,0,0,0.14),inset 0 2px 4px 0 rgba(0,0,0,0.08);
+}
+
+.emotion-1[data-invalid="true"]:not(:disabled):not(:active):hover:focus[data-variant="float"] {
+  box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14),0 0 0 2px #F0F0F5,0 0 0 4px #D01E29;
+}
+
+.emotion-1:disabled {
+  border-color: #D3D4DD;
+}
+
+.emotion-1:disabled[data-selected="true"] {
+  border-color: #C5D4FF;
+}
+
+.emotion-1:disabled[data-invalid="true"] {
+  border-color: #D3D4DD;
+  background: #FFFFFF;
+}
+
+.emotion-1:disabled[data-invalid="true"][data-selected="true"] {
+  border-color: #FAC8C9;
+  background: #FEECED;
+}
+
+<div>
+  <button
+    class="emotion-1"
+    data-invalid="false"
+    data-variant="outline"
+    type="button"
+  >
+    <div
+      class="emotion-0"
+    >
+      Content
+    </div>
+  </button>
+</div>
+`;
+
+exports[`should render correctly 1`] = `
+.emotion-1 {
+  width: 100%;
+  border: 0;
+  border-radius: 2px;
+  padding: 1rem;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  background: #FFFFFF;
+  border: 1px solid #D3D4DD;
+  border-radius: 2px;
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #24252E;
+  cursor: pointer;
+  text-align: initial;
+}
+
+.emotion-1[data-invalid="true"] {
+  border-color: #D01E29;
+}
+
+.emotion-1[data-disabled="true"] {
+  border-color: #D3D4DD;
+  background: #FFFFFF;
+}
+
+.emotion-1[data-variant="outline"],
+.emotion-1[data-variant="plain"] {
+  border-color: #8F8FA2;
+}
+
+.emotion-1:not(:disabled):hover {
+  background: rgba(122,123,142,0.1);
+}
+
+.emotion-1:not(:disabled):hover[data-variant="float"] {
+  box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
+}
+
+.emotion-1:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
+}
+
+.emotion-1:focus[data-variant="float"] {
+  box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2),0 1px 10px 0 rgba(0,0,0,0.12),0 4px 5px 0 rgba(0,0,0,0.14),0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
+}
+
+.emotion-1:not(:disabled):not(:active):hover:focus[data-variant="float"] {
+  box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14),0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
+}
+
+.emotion-1:not(:disabled):active {
+  box-shadow: inset 0 1px 4px 0 rgba(0,0,0,0.14),inset 0 2px 4px 0 rgba(0,0,0,0.08);
+}
+
+.emotion-1:not(:disabled):active[data-variant="float"] {
+  box-shadow: 0 0 0 0 rgba(0,0,0,0),0 0 0 0 rgba(0,0,0,0),0 0 0 0 rgba(0,0,0,0),inset 0 1px 4px 0 rgba(0,0,0,0.14),inset 0 2px 4px 0 rgba(0,0,0,0.08);
+}
+
+.emotion-1[data-selected="true"] {
+  background: #ECF0FF;
+  border-color: #0069D0;
+}
+
+.emotion-1[data-selected="true"]:not(:disabled):hover {
+  background: #C5D4FF;
+}
+
+.emotion-1[data-selected="true"][data-invalid="true"] {
+  background: #FEECED;
+}
+
+.emotion-1[data-invalid="true"] {
+  border-color: #D01E29;
+}
+
+.emotion-1[data-invalid="true"]:not(:disabled):hover {
+  background: #FAC8C9;
+}
+
+.emotion-1[data-invalid="true"]:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #D01E29;
+}
+
+.emotion-1[data-invalid="true"]:not(:disabled):active {
+  box-shadow: inset 0 1px 4px 0 rgba(0,0,0,0.14),inset 0 2px 4px 0 rgba(0,0,0,0.08);
+}
+
+.emotion-1[data-invalid="true"]:not(:disabled):not(:active):hover:focus[data-variant="float"] {
+  box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14),0 0 0 2px #F0F0F5,0 0 0 4px #D01E29;
+}
+
+.emotion-1:disabled {
+  border-color: #D3D4DD;
+}
+
+.emotion-1:disabled[data-selected="true"] {
+  border-color: #C5D4FF;
+}
+
+.emotion-1:disabled[data-invalid="true"] {
+  border-color: #D3D4DD;
+  background: #FFFFFF;
+}
+
+.emotion-1:disabled[data-invalid="true"][data-selected="true"] {
+  border-color: #FAC8C9;
+  background: #FEECED;
+}
+
+<div>
+  <button
+    class="emotion-1"
+    data-invalid="false"
+    data-variant="outline"
+    type="button"
+  >
+    <div
+      class="emotion-0"
+    >
+      Content
+    </div>
+  </button>
+</div>
+`;

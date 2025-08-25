@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should accept "style" prop 1`] = `
+.emotion-1 {
+  width: 100%;
+  border: 0;
+  border-radius: 2px;
+  padding: 1rem;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  background: #FFFFFF;
+  border: 1px solid #D3D4DD;
+  border-radius: 2px;
+  background: red;
+}
+
+.emotion-1[data-invalid="true"] {
+  border-color: #D01E29;
+}
+
+.emotion-1[data-disabled="true"] {
+  border-color: #D3D4DD;
+  background: #FFFFFF;
+}
+
+<div>
+  <div
+    class="emotion-1"
+    data-invalid="false"
+  >
+    <div
+      class="emotion-0"
+    >
+      Content
+    </div>
+  </div>
+</div>
+`;
+
+exports[`should render correctly 1`] = `
+.emotion-1 {
+  width: 100%;
+  border: 0;
+  border-radius: 2px;
+  padding: 1rem;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  background: #FFFFFF;
+  border: 1px solid #D3D4DD;
+  border-radius: 2px;
+}
+
+.emotion-1[data-invalid="true"] {
+  border-color: #D01E29;
+}
+
+.emotion-1[data-disabled="true"] {
+  border-color: #D3D4DD;
+  background: #FFFFFF;
+}
+
+<div>
+  <div
+    class="emotion-1"
+    data-invalid="false"
+  >
+    <div
+      class="emotion-0"
+    >
+      Content
+    </div>
+  </div>
+</div>
+`;
