@@ -16,10 +16,10 @@ export interface TableColumnConfig<T = any> {
 }
 
 export interface DataTableProps<T = any> extends TableProps {
-  rows: T[]
+  rows: ReadonlyArray<T>
   columns: Array<TableColumnConfig<T>>
   loading?: boolean
-  sort?: string[]
+  sort?: ReadonlyArray<string>
   onSortChange?(sort: string[]): void
   render?(renderProps: DataTableRenderProps): React.ReactNode
   onRowClick?(row: T): any
@@ -34,7 +34,7 @@ export function DataTable<T = any>(props: DataTableProps<T>) {
   const { css } = useCss()
 
   const getColumn = (columnName: string): TableColumnConfig => {
-    return props.columns.find(col => col.name === columnName)
+    return props.columns.find((col) => col.name === columnName)
   }
 
   const getHeaderProps = (column: TableColumnConfig | string): TableHeaderProps & { key; 'data-name' } => {
@@ -104,7 +104,7 @@ export function DataTableDefault(props: DataTableRenderProps) {
     <Table {...rest}>
       <TableHead>
         <TableRow>
-          {columns.map(col => (
+          {columns.map((col) => (
             <TableHeader key={col.name} {...getHeaderProps(col)}>
               {col.header}
             </TableHeader>
@@ -116,10 +116,10 @@ export function DataTableDefault(props: DataTableRenderProps) {
   )
 }
 
-const changeSort = (sort: string[], name: string, dir: SortDirection): string[] => {
+const changeSort = (sort: ReadonlyArray<string>, name: string, dir: SortDirection): string[] => {
   const newSort = dir === 'ASC' ? name : `-${name}`
   let swap = false
-  const newArray = sort.map(s => {
+  const newArray = sort.map((s) => {
     if (s === name || s === `-${name}`) {
       swap = true
       return newSort

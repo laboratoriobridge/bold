@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { CSSProperties } from 'react'
 
-import { ExternalStyles, useStyles } from '../../styles'
+import { ExternalStyles, Theme, useStyles } from '../../styles'
 import { Omit } from '../../util'
 
 export interface ModalFooterProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'style'> {
@@ -8,15 +8,9 @@ export interface ModalFooterProps extends Omit<React.HTMLAttributes<HTMLDivEleme
 }
 
 export function ModalFooter(props: ModalFooterProps) {
-  const { style, children, ...rest } = props
-  const { classes, css } = useStyles(theme => ({
-    footer: {
-      backgroundColor: theme.pallete.surface.background,
-      padding: '1rem',
-      borderBottomLeftRadius: theme.radius.modal,
-      borderBottomRightRadius: theme.radius.modal,
-    },
-  }))
+  const { children, style, ...rest } = props
+
+  const { classes, css } = useStyles(createStyles)
 
   return (
     <div className={css(classes.footer, style)} {...rest}>
@@ -24,3 +18,15 @@ export function ModalFooter(props: ModalFooterProps) {
     </div>
   )
 }
+
+const createStyles = (theme: Theme) => ({
+  footer: {
+    backgroundColor: theme.pallete.surface.background,
+    padding: '1rem',
+    borderBottomLeftRadius: theme.radius.modal,
+    borderBottomRightRadius: theme.radius.modal,
+    height: '5rem',
+    width: '100%',
+    borderTop: `1px solid ${theme.pallete.divider}`,
+  } as CSSProperties,
+})

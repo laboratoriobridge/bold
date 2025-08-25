@@ -550,7 +550,7 @@ exports[`PivotTable - PivotTableBoard should render correctly 1`] = `
   border: solid 1px #8F8FA2;
   color: #24252E;
   border-radius: 2px;
-  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.2),0 2px 1px -1px rgba(0,0,0,0.12),0 1px 1px 0 rgba(0,0,0,0.14);
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.12),0 2px 1px 0 rgba(0,0,0,0.04);
   padding-left: 0px;
   font-size: 13px;
 }
@@ -1550,7 +1550,7 @@ exports[`PivotTable - PivotTableBoard should render with initial fields 1`] = `
   border: solid 1px #8F8FA2;
   color: #24252E;
   border-radius: 2px;
-  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.2),0 2px 1px -1px rgba(0,0,0,0.12),0 1px 1px 0 rgba(0,0,0,0.14);
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.12),0 2px 1px 0 rgba(0,0,0,0.04);
   padding-left: 0px;
   font-size: 13px;
 }

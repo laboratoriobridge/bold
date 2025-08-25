@@ -1,8 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import React from 'react'
 import { createTheme, ThemeContext } from '../../styles'
-import { ModalHeaderIcon } from './ModalHeaderIcon'
-import { HeaderIconObject } from './ModalHeader'
+import { ModalHeaderIcon, ModalHeaderIconObject } from './ModalHeaderIcon'
 
 describe('ModalHeaderIcon', () => {
   it('should render correctly', () => {
@@ -36,12 +35,11 @@ describe('ModalHeaderIcon', () => {
     expect(document.querySelector('svg')).toBeInTheDocument()
   })
 
-  it('should render the icon when "icon" is an object (HeaderIconObject)', () => {
+  it('should render the icon when "icon" is an object (ModalHeaderIconObject)', () => {
     const theme = createTheme()
-    const iconObj: HeaderIconObject = {
+    const iconObj: ModalHeaderIconObject = {
       name: 'infoCircleOutline',
       fill: 'primary',
-      stroke: 'danger',
     }
 
     render(
@@ -53,7 +51,6 @@ describe('ModalHeaderIcon', () => {
     const svg = document.querySelector('svg')
     expect(svg).toBeInTheDocument()
     expect(svg).toHaveStyle(`fill: ${theme.pallete.primary.main};`)
-    expect(svg).toHaveStyle(`stroke: ${theme.pallete.status.danger.main};`)
   })
 
   it('should render the icon when "icon" is a SVG (HeaderIconObject)', () => {

@@ -1,35 +1,16 @@
 import React, { memo, useEffect, useState } from 'react'
 
-import { Button, ButtonProps } from '../../Button'
-import { HFlow } from '../../HFlow'
-import { Modal, ModalDepthLevel, ModalProps } from '../Modal'
+import { ButtonProps } from '../../Button'
+import { Modal, ModalProps } from '../Modal'
 import { ModalBody } from '../ModalBody'
 import { ModalFooter } from '../ModalFooter'
+import { HFlow } from '../../HFlow'
+import { ModalFooterButton } from '../ModalFooterButton'
 
 export type ButtonAction = ButtonProps & { label?: React.ReactNode; ['data-testid']?: string }
 
-export interface ModalAutoProps {
+export interface ModalAutoProps extends Omit<ModalProps, 'open'> {
   actions?: ButtonAction[]
-  size?: ModalProps['size']
-
-  /**
-   * @description allows you to customize the depth of the container and the backdrop of the modal
-   * @default 1 - the lowest possible value
-   */
-  depthLevel?: ModalDepthLevel
-
-  /**
-   * @description allows you to remove the document's overflow property when a modal is closed
-   * @default true
-   */
-  manageOverflow?: boolean
-
-  /**
-   * Specify whether the `onClose` prop should called when backdrop is clicked.
-   * @default true
-   */
-  closeOnBackdropClick?: boolean
-
   render(renderProps: ModalAutoRenderProps): React.ReactNode
   dispose(): void
   onClose?(): any
@@ -44,7 +25,7 @@ export interface ModalAutoRenderProps {
 }
 
 export const ModalAuto = memo((props: ModalAutoProps) => {
-  const { actions, size, render, dispose, onClose, closeOnBackdropClick, ...rest } = props
+  const { actions, render, dispose, onClose, ...rest } = props
 
   const [isOpen, setIsOpen] = useState(false)
 
@@ -60,25 +41,22 @@ export const ModalAuto = memo((props: ModalAutoProps) => {
     setTimeout(dispose, 500)
   }
 
-  const handleAction = (action: ButtonProps) => (e) => {
-    action.onClick && action.onClick(e)
+  const getHandleAction = (actionClick: ButtonAction['onClick']) => (e: React.MouseEvent<HTMLButtonElement>) => {
+    actionClick?.(e)
     close()
   }
 
   return (
-    <Modal open={isOpen} size={size} onClose={close} closeOnBackdropClick={closeOnBackdropClick} {...rest}>
+    <Modal open={isOpen} onClose={close} {...rest}>
       <ModalBody>{render({ close })}</ModalBody>
       {actions && (
         <ModalFooter>
           <HFlow justifyContent='flex-end'>
-            {actions.map((action, idx) => {
-              const { label, ...rest } = action
-              return (
-                <Button key={idx} style={{ minWidth: 144 }} {...rest} onClick={handleAction(action)}>
-                  {label}
-                </Button>
-              )
-            })}
+            {actions.map(({ label, onClick, ...action }, idx) => (
+              <ModalFooterButton key={idx} onClick={getHandleAction(onClick)} {...action}>
+                {label}
+              </ModalFooterButton>
+            ))}
           </HFlow>
         </ModalFooter>
       )}

@@ -10,7 +10,7 @@ import { SelectMultiItem } from './SelectMultiItem'
 
 export interface SelectMultiInputProps<T> extends Omit<InputProps, 'style'> {
   wrapperRef?: React.RefObject<HTMLDivElement>
-  items: T[]
+  items: ReadonlyArray<T>
   invalid?: boolean
   clearable?: boolean
   renderItem(item: T): React.ReactNode

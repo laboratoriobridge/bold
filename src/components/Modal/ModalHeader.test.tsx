@@ -1,8 +1,14 @@
 import React from 'react'
 import { fireEvent, render, screen } from '@testing-library/react'
 import { createTheme, ThemeContext } from '../../styles'
+import { LocaleContext } from '../../i18n/LocaleContext'
+import ptBr from '../../i18n/locales/pt-BR'
+import { ModalContextProps, ModalContextProvider } from '../../hooks/useModalContext'
+import { Modal } from './Modal'
 import { ModalHeader } from './ModalHeader'
+import { ModalBody } from './ModalBody'
 import { ModalHeaderIcon } from './ModalHeaderIcon'
+import { ModalScroll } from './Modal'
 
 jest.mock('./ModalHeaderIcon', () => ({
   ModalHeaderIcon: jest.fn((props) => <div {...props} />),
@@ -12,142 +18,202 @@ beforeEach(() => {
   jest.clearAllMocks()
 })
 
+const mockContextValue: ModalContextProps = {
+  bodyRef: { current: document.createElement('div') },
+  scroll: 'body' as ModalScroll,
+}
+
 describe('ModalHeader', () => {
   describe('basic rendering', () => {
     it('should render correctly', () => {
-      const { container } = render(<ModalHeader title='title' />)
+      const { container } = render(
+        <ModalContextProvider value={mockContextValue}>
+          <ModalHeader title='title' />
+        </ModalContextProvider>
+      )
       expect(container).toMatchSnapshot()
     })
 
     it('should render the title when "title" prop is provided', () => {
-      render(<ModalHeader title='title' />)
+      render(
+        <ModalContextProvider value={mockContextValue}>
+          <ModalHeader title='title' />
+        </ModalContextProvider>
+      )
       expect(screen.getByText('title')).toBeInTheDocument()
     })
 
     it('should render the subtitle when "subtitle" prop is provided', () => {
-      render(<ModalHeader title='title' subtitle='subtitle' />)
+      render(
+        <ModalContextProvider value={mockContextValue}>
+          <ModalHeader title='title' subtitle='subtitle' />
+        </ModalContextProvider>
+      )
       expect(screen.getByText('subtitle')).toBeInTheDocument()
     })
 
     it('should render only the title when only "title" prop is provided', () => {
-      render(<ModalHeader title='title' />)
+      render(
+        <ModalContextProvider value={mockContextValue}>
+          <ModalHeader title='title' />
+        </ModalContextProvider>
+      )
       const texts = screen.getAllByText('title')
       expect(texts).toHaveLength(1)
       expect(screen.getByTestId('modal-header').textContent).toBe('title')
     })
   })
 
-  describe('title area alignment', () => {
-    it('should set align-items to flex-start when subtitle is provided', () => {
-      render(<ModalHeader title='title' subtitle='subtitle' />)
-      const container = screen.getByTestId('modal-header-title-area')
-      expect(container).toHaveStyle('align-items: flex-start')
+  describe('header box shadow', () => {
+    it("should not apply shadow to ModalHeader when scroll is 'full' and content is not overflowing", () => {
+      const { getByTestId } = render(
+        <Modal open scroll='full' title='Modal title'>
+          <ModalBody>Short content</ModalBody>
+        </Modal>
+      )
+      const modalHeader = getByTestId('modal-header')
+      expect(getComputedStyle(modalHeader).boxShadow).toBe('')
     })
 
-    it('should set align-items to center when subtitle is not provided', () => {
-      render(<ModalHeader title='title' />)
-      const container = screen.getByTestId('modal-header-title-area')
-      expect(container).toHaveStyle('align-items: center')
+    it("should not apply shadow to ModalHeader when scroll is 'full' and content is overflowing", () => {
+      const { getByTestId } = render(
+        <Modal open title='Modal title'>
+          <ModalBody>Short content</ModalBody>
+        </Modal>
+      )
+      const modalHeader = getByTestId('modal-header')
+      expect(getComputedStyle(modalHeader).boxShadow).toBe('')
     })
-  })
 
-  describe('styles', () => {
-    const theme = createTheme()
+    it("should not apply shadow to ModalHeader when scroll is 'body' and content is not overflowing", () => {
+      const { getByTestId } = render(
+        <Modal open title='Modal title'>
+          <ModalBody>Short content</ModalBody>
+        </Modal>
+      )
+      const modalHeader = getByTestId('modal-header')
+      expect(getComputedStyle(modalHeader).boxShadow).toBe('')
+    })
 
-    it('should apply background-color when "background" prop is set in "header"', () => {
-      render(
+    it("should apply shadow to ModalHeader when scroll is 'body' and content is overflowing", async () => {
+      const theme = createTheme()
+
+      const createComponent = () => (
         <ThemeContext.Provider value={theme}>
-          <ModalHeader title='title' header={{ background: 'red' }} />
+          <Modal open title='Modal title'>
+            <ModalBody data-testid='modal-body'>
+              <div>Content</div>
+            </ModalBody>
+          </Modal>
         </ThemeContext.Provider>
       )
-      expect(screen.getByTestId('modal-header')).toHaveStyle(`background-color: red`)
-    })
 
-    it('should apply background-color default when "background" prop is not set in "header"', () => {
-      render(
-        <ThemeContext.Provider value={theme}>
-          <ModalHeader title='title' />
-        </ThemeContext.Provider>
-      )
-      expect(screen.getByTestId('modal-header')).toHaveStyle(`background-color: ${theme.pallete.surface.main}`)
-    })
+      const { getByTestId, rerender } = render(createComponent())
 
-    it('should apply box-shadow when "showBottomBorder" is set to true in "header"', () => {
-      render(
-        <ThemeContext.Provider value={theme}>
-          <ModalHeader title='title' header={{ showBottomBorder: true }} />
-        </ThemeContext.Provider>
-      )
-      expect(screen.getByTestId('modal-header')).toHaveStyle(
-        `box-shadow: 0 1px 5px 0 ${theme.pallete.divider},0 2px 1px -1px ${theme.pallete.divider}`
-      )
-    })
+      const modalBody = getByTestId('modal-body')
 
-    it('should apply box-shadow when "showBottomBorder" is not set in "header" (default true)', () => {
-      render(
-        <ThemeContext.Provider value={theme}>
-          <ModalHeader title='title' />
-        </ThemeContext.Provider>
-      )
-      expect(screen.getByTestId('modal-header')).toHaveStyle(
-        `box-shadow: 0 1px 5px 0 ${theme.pallete.divider},0 2px 1px -1px ${theme.pallete.divider}`
-      )
-    })
+      Object.defineProperty(modalBody, 'scrollHeight', { value: 500 })
+      Object.defineProperty(modalBody, 'clientHeight', { value: 300 })
 
-    it('should not apply box-shadow when "showBottomBorder" is set to false in "header"', () => {
-      render(<ModalHeader title='title' header={{ showBottomBorder: false }} />)
-      expect(getComputedStyle(screen.getByTestId('modal-header')).boxShadow).toBe('')
+      rerender(createComponent())
+
+      const modalHeader = screen.getByTestId('modal-header')
+
+      expect(getComputedStyle(modalHeader).boxShadow).toBe('0 1px 5px 0 rgba(0,0,0,0.12),0 2px 1px 0 rgba(0,0,0,0.04)')
     })
   })
 
   describe('close button', () => {
-    it('should render close button when "showCloseIcon" is true', () => {
-      render(<ModalHeader title='title' showCloseIcon />)
+    it('should render close button when "hasCloseIcon" is true', () => {
+      render(
+        <ModalContextProvider value={mockContextValue}>
+          <ModalHeader title='title' hasCloseIcon />
+        </ModalContextProvider>
+      )
       expect(screen.getByRole('button')).toBeInTheDocument()
     })
 
-    it('should render close button when "showCloseIcon" is not provided (default true)', () => {
-      render(<ModalHeader title='title' />)
+    it('should render close button when "hasCloseIcon" is not provided (default true)', () => {
+      render(
+        <ModalContextProvider value={mockContextValue}>
+          <ModalHeader title='title' />
+        </ModalContextProvider>
+      )
       expect(screen.getByRole('button')).toBeInTheDocument()
     })
 
-    it('should not render close button when "showCloseIcon" is false', () => {
-      render(<ModalHeader title='title' showCloseIcon={false} />)
+    it('should not render close button when "hasCloseIcon" is false', () => {
+      render(
+        <ModalContextProvider value={mockContextValue}>
+          <ModalHeader title='title' hasCloseIcon={false} />
+        </ModalContextProvider>
+      )
       expect(screen.queryByRole('button')).toBeNull()
     })
 
-    it('should call onCloseButtonClick when close button is clicked and "showCloseIcon" is true', () => {
+    it('should call onCloseButtonClick when close button is clicked and "hasCloseIcon" is true', () => {
       const onCloseMock = jest.fn()
-      render(<ModalHeader title='title' onCloseButtonClick={onCloseMock} showCloseIcon />)
+      render(
+        <ModalContextProvider value={mockContextValue}>
+          <ModalHeader title='title' onCloseButtonClick={onCloseMock} hasCloseIcon />
+        </ModalContextProvider>
+      )
       fireEvent.click(screen.getByRole('button'))
       expect(onCloseMock).toHaveBeenCalledTimes(1)
     })
 
-    it('should call onCloseButtonClick when close button is clicked and "showCloseIcon" is not provided (default true)', () => {
+    it('should call onCloseButtonClick when close button is clicked and "hasCloseIcon" is not provided (default true)', () => {
       const onCloseMock = jest.fn()
-      render(<ModalHeader title='title' onCloseButtonClick={onCloseMock} />)
+      render(
+        <ModalContextProvider value={mockContextValue}>
+          <ModalHeader title='title' onCloseButtonClick={onCloseMock} />
+        </ModalContextProvider>
+      )
       fireEvent.click(screen.getByRole('button'))
       expect(onCloseMock).toHaveBeenCalledTimes(1)
     })
 
-    it('should not call onCloseButtonClick when "showCloseIcon" is false', () => {
+    it('should not call onCloseButtonClick when "hasCloseIcon" is false', () => {
       const onCloseMock = jest.fn()
-      render(<ModalHeader title='title' showCloseIcon={false} onCloseButtonClick={onCloseMock} />)
+      render(
+        <ModalContextProvider value={mockContextValue}>
+          <ModalHeader title='title' hasCloseIcon={false} onCloseButtonClick={onCloseMock} />
+        </ModalContextProvider>
+      )
       expect(screen.queryByRole('button')).toBeNull()
       expect(onCloseMock).not.toHaveBeenCalled()
+    })
+
+    it('should allow message customization via locale context', () => {
+      const { getByRole } = render(
+        <LocaleContext.Provider value={ptBr}>
+          <ModalContextProvider value={mockContextValue}>
+            <ModalHeader title='Modal container' />
+          </ModalContextProvider>
+        </LocaleContext.Provider>
+      )
+      expect(getByRole('button').getAttribute('aria-label')).toEqual(ptBr.modal.close)
     })
   })
 
   describe('Header icon', () => {
     it('does not render ModalHeaderIcon when icon is not provided', () => {
-      render(<ModalHeader title='title' showCloseIcon={false} />)
+      render(
+        <ModalContextProvider value={mockContextValue}>
+          <ModalHeader title='title' hasCloseIcon={false} />
+        </ModalContextProvider>
+      )
 
       const svgTags = document.querySelectorAll('svg')
       expect(svgTags.length).toBe(0)
     })
 
     it('passes all expected props correctly to ModalHeaderIcon', () => {
-      render(<ModalHeader title='title' header={{ icon: 'infoCircleOutline' }} />)
+      render(
+        <ModalContextProvider value={mockContextValue}>
+          <ModalHeader title='title' icon='infoCircleOutline' />
+        </ModalContextProvider>
+      )
 
       expect(ModalHeaderIcon).toHaveBeenCalledWith(
         expect.objectContaining({

@@ -8,7 +8,7 @@ export interface SelectDownshiftProps<T> extends Omit<DownshiftProps<T>, 'childr
   /**
    * Items to be populated on the select component.
    */
-  items: T[]
+  items: ReadonlyArray<T>
 
   /**
    * Whether the select menu should be opened when the select is focused.
@@ -72,7 +72,7 @@ export function SelectDownshift<T>(props: SelectDownshiftProps<T>) {
 
   const stateReducer = useMemo(() => createReducer(props), [props])
 
-  const [visibleItems, setVisibleItems] = useState<T[]>(items)
+  const [visibleItems, setVisibleItems] = useState<ReadonlyArray<T>>(items)
   useEffect(() => {
     setVisibleItems(props.items)
   }, [props.items])
@@ -113,22 +113,22 @@ export function SelectDownshift<T>(props: SelectDownshiftProps<T>) {
     props.onChange && props.onChange(item, getStateAndHelpers(downshift))
   }
 
-  const createGetInputProps = getInputProps => (options: any) => {
+  const createGetInputProps = (getInputProps) => (options: any) => {
     const { autoComplete, ...rest } = getInputProps(options)
     return rest
   }
 
   const getStateAndHelpers = (downshift: ControllerStateAndHelpers<T>): SelectDownshiftRenderProps<T> => ({
     ...downshift,
-    items,
-    visibleItems,
+    items: items as T[],
+    visibleItems: visibleItems as T[],
     setVisibleItems,
     getInputProps: createGetInputProps(downshift.getInputProps),
   })
 
   return (
     <Downshift {...rest} stateReducer={stateReducer} onStateChange={handleStateChange} onChange={handleChange}>
-      {downshift => children(getStateAndHelpers(downshift))}
+      {(downshift) => children(getStateAndHelpers(downshift))}
     </Downshift>
   )
 }
