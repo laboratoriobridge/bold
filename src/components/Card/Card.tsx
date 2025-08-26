@@ -13,12 +13,12 @@ export interface CardProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 's
   variant?: CardVariant
 
   /**
-   * Specify whether the Card should have a error appearance
+   * Specify whether the Card should have error appearance
    */
   error?: React.ReactNode
 
   /**
-   * Specify whether the Card should have a disabled appearance
+   * Specify whether the Card should have disabled appearance
    */
   disabled?: boolean
 }
