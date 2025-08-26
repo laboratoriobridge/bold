@@ -28,12 +28,13 @@ export function Status(props: StatusProps) {
 
 export const createTypesStyles = (
   theme: Theme
-): {
-  [key in StatusType]: {
+): Record<
+  StatusType,
+  {
     icon: Icons
     style: ExternalStyles
   }
-} => {
+> => {
   return {
     info: {
       icon: 'infoCircleOutline',
