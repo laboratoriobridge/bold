@@ -125,7 +125,6 @@ export const createClickableStyles = (theme: Theme): ExternalStyles => ({
       borderColor: theme.pallete.primary.c80,
     },
     '&[data-invalid="true"]': {
-      borderColor: theme.pallete.gray.c80,
       background: theme.pallete.surface.main,
       '&[data-selected="true"]': {
         borderColor: theme.pallete.status.danger.c80,
