@@ -21,42 +21,44 @@ export const createBaseStyles = (theme: Theme) => ({
   } as ExternalStyles,
 })
 
-export const createVariantStyles = (theme: Theme): { [key in CardVariant]: ExternalStyles } => ({
+export const createVariantStyles = (
+  theme: Theme
+): Record<CardVariant, { base: ExternalStyles; disabled: ExternalStyles; invalid: ExternalStyles }> => ({
   float: {
-    background: theme.pallete.surface.main,
-    border: `1px solid ${theme.pallete.gray.c80}`,
-    boxShadow: theme.shadows.outer[40],
-    '&[data-invalid="true"]': {
+    base: {
+      background: theme.pallete.surface.main,
+      border: `1px solid ${theme.pallete.gray.c80}`,
+      boxShadow: theme.shadows.outer[40],
+    },
+    invalid: {
       borderColor: theme.pallete.status.danger.main,
     },
-    '&[data-disabled="true"]': {
+    disabled: {
       borderColor: theme.pallete.gray.c80,
       background: theme.pallete.surface.main,
     },
-  } as ExternalStyles,
+  },
   outline: {
-    background: theme.pallete.surface.main,
-    border: `1px solid ${theme.pallete.gray.c80}`,
-    borderRadius: `${theme.radius.popper}px`,
-    '&[data-invalid="true"]': {
+    base: {
+      background: theme.pallete.surface.main,
+      border: `1px solid ${theme.pallete.gray.c80}`,
+      borderRadius: `${theme.radius.popper}px`,
+    },
+    invalid: {
       borderColor: theme.pallete.status.danger.main,
     },
-    '&[data-disabled="true"]': {
-      borderColor: theme.pallete.gray.c80,
-      background: theme.pallete.surface.main,
-    },
-  } as ExternalStyles,
+    disabled: { borderColor: theme.pallete.gray.c80, background: theme.pallete.surface.main },
+  },
   plain: {
-    background: theme.pallete.surface.main,
-    borderRadius: `${theme.radius.popper}px`,
-    '&[data-invalid="true"]': {
+    base: {
+      background: theme.pallete.surface.main,
+      borderRadius: `${theme.radius.popper}px`,
+    },
+    invalid: {
       background: theme.pallete.status.danger.c90,
     },
-    '&[data-disabled="true"]': {
-      borderColor: theme.pallete.gray.c80,
-      background: theme.pallete.surface.main,
-    },
-  } as ExternalStyles,
+    disabled: { borderColor: theme.pallete.gray.c80, background: theme.pallete.surface.main },
+  },
 })
 
 export const createClickableStyles = (theme: Theme): ExternalStyles => ({

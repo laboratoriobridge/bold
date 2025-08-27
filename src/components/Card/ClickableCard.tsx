@@ -33,16 +33,18 @@ export function ClickableCard(props: ClickableCardProps) {
   const { theme, css } = useCss()
 
   const baseStyles = createBaseStyles(theme)
-  const variantStyles = createVariantStyles(theme)
+  const variantStyles = createVariantStyles(theme)[variant]
   const clickableStyles = createClickableStyles(theme)
 
   const isInvalid = !!error
 
   const classes = css(
     baseStyles.card,
-    variantStyles[variant],
+    variantStyles.base,
     clickableStyles,
+    isInvalid && variantStyles.invalid,
     disabled && baseStyles.cardDisabled,
+    disabled && variantStyles.disabled,
     style
   )
 

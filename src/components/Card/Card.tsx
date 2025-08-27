@@ -29,15 +29,20 @@ export function Card(props: CardProps) {
   const { theme, css } = useCss()
 
   const baseStyles = createBaseStyles(theme)
-  const variantStyles = createVariantStyles(theme)
+  const variantStyles = createVariantStyles(theme)[variant]
 
   const isInvalid = !!error
 
   return (
     <div
-      className={css(baseStyles.card, variantStyles[variant], disabled && baseStyles.cardDisabled, style)}
-      data-invalid={isInvalid}
-      data-disabled={disabled}
+      className={css(
+        baseStyles.card,
+        variantStyles.base,
+        isInvalid && variantStyles.invalid,
+        disabled && baseStyles.cardDisabled,
+        disabled && variantStyles.disabled,
+        style
+      )}
       {...rest}
     >
       <div className={css(disabled && baseStyles.innerDisabled)}>{children}</div>

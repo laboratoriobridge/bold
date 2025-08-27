@@ -20,15 +20,6 @@ exports[`should accept "style" prop 1`] = `
   background: red;
 }
 
-.emotion-1[data-invalid="true"] {
-  border-color: #D01E29;
-}
-
-.emotion-1[data-disabled="true"] {
-  border-color: #D3D4DD;
-  background: #FFFFFF;
-}
-
 .emotion-1[data-variant="outline"],
 .emotion-1[data-variant="plain"] {
   border-color: #8F8FA2;
@@ -147,15 +138,6 @@ exports[`should render correctly 1`] = `
   color: #24252E;
   cursor: pointer;
   text-align: initial;
-}
-
-.emotion-1[data-invalid="true"] {
-  border-color: #D01E29;
-}
-
-.emotion-1[data-disabled="true"] {
-  border-color: #D3D4DD;
-  background: #FFFFFF;
 }
 
 .emotion-1[data-variant="outline"],
