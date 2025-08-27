@@ -6,13 +6,13 @@ import { ModalBody } from '../ModalBody'
 import { ModalFooter } from '../ModalFooter'
 import { HFlow } from '../../HFlow'
 import { ModalFooterButton } from '../ModalFooterButton'
-import { ModalHeader, ModalHeaderProps } from '../ModalHeader'
+import { ModalHeader, ModalHeaderWithProps } from '../ModalHeader'
 
 export type ButtonAction = ButtonProps & { label?: React.ReactNode; ['data-testid']?: string }
 
 export interface ModalAutoProps
   extends Omit<ModalProps, 'open' | 'title'>,
-    Omit<ModalHeaderProps, 'onCloseButtonClick'> {
+    Omit<ModalHeaderWithProps, 'onCloseButtonClick'> {
   actions?: ButtonAction[]
   render(renderProps: ModalAutoRenderProps): React.ReactNode
   dispose(): void
