@@ -76,13 +76,30 @@ describe('ModalHeader', () => {
     })
 
     it("should not apply shadow to ModalHeader when scroll is 'full' and content is overflowing", () => {
-      const { getByTestId } = render(
-        <Modal open>
-          <ModalHeader title='Modal title' />
-          <ModalBody>Short content</ModalBody>
-        </Modal>
+      const theme = createTheme()
+
+      const createComponent = () => (
+        <ThemeContext.Provider value={theme}>
+          <Modal open scroll='full'>
+            <ModalHeader title='Modal title' />
+            <ModalBody data-testid='modal-body'>
+              <div>Long content</div>
+            </ModalBody>
+          </Modal>
+        </ThemeContext.Provider>
       )
-      const modalHeader = getByTestId('modal-header')
+
+      const { getByTestId, rerender } = render(createComponent())
+
+      const modalBody = getByTestId('modal-body')
+
+      Object.defineProperty(modalBody, 'scrollHeight', { value: 500 })
+      Object.defineProperty(modalBody, 'clientHeight', { value: 300 })
+
+      rerender(createComponent())
+
+      const modalHeader = screen.getByTestId('modal-header')
+
       expect(getComputedStyle(modalHeader).boxShadow).toBe('')
     })
 
@@ -105,7 +122,7 @@ describe('ModalHeader', () => {
           <Modal open>
             <ModalHeader title='Modal title' />
             <ModalBody data-testid='modal-body'>
-              <div>Content</div>
+              <div>Long content</div>
             </ModalBody>
           </Modal>
         </ThemeContext.Provider>
