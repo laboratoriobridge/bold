@@ -8,11 +8,10 @@ import { ModalScroll } from './Modal'
 
 export interface ModalContainerProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'style'> {
   style?: ExternalStyles
-  onClose?(): void
 }
 
 export const ModalContainer = forwardRef<HTMLDivElement, ModalContainerProps>((props, ref) => {
-  const { style, onClose, children, ...rest } = props
+  const { style, children, ...rest } = props
 
   const { scroll } = useModalContext()
   const { classes, css } = useStyles(createStyles, scroll)
@@ -23,11 +22,6 @@ export const ModalContainer = forwardRef<HTMLDivElement, ModalContainerProps>((p
     </div>
   )
 })
-
-ModalContainer.defaultProps = {
-  hasCloseIcon: true,
-  onClose: () => null,
-} as Partial<ModalContainerProps>
 
 const createStyles = (theme: Theme, scroll: ModalScroll) => ({
   wrapper: {

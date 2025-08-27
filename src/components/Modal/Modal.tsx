@@ -17,6 +17,7 @@ export interface ModalProps extends ModalContainerProps {
   size?: ModalSize
   children?: React.ReactNode
   containerRef?: Ref<HTMLDivElement>
+  onClose?(): void
 
   /**
    * Determine the container for scrolling the dialog
@@ -79,7 +80,7 @@ export function Modal(props: ModalProps) {
     // Attach "Escape" to close modal
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
-        onClose()
+        onClose?.()
       }
     }
 
@@ -101,7 +102,7 @@ export function Modal(props: ModalProps) {
                 <FocusTrap focusTrapOptions={{ fallbackFocus: () => modalRef.current }}>
                   <div className={className}>
                     <div className={classes.modal} ref={modalRef}>
-                      <ModalContainer ref={containerRef} style={css(classes[size], style)} onClose={onClose} {...rest}>
+                      <ModalContainer ref={containerRef} style={css(classes[size], style)} {...rest}>
                         {children}
                       </ModalContainer>
                     </div>
