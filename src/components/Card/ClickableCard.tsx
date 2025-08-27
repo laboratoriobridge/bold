@@ -17,7 +17,7 @@ export interface ClickableCardProps extends Omit<ComponentProps<'button'>, 'styl
   selected?: boolean
 
   /**
-   * Specify whether the Card should have a error appearance
+   * Specify whether the Card should have error appearance
    */
   invalid?: boolean
 
