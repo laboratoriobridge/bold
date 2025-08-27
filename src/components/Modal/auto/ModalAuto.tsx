@@ -28,7 +28,7 @@ export interface ModalAutoRenderProps {
 }
 
 export const ModalAuto = memo((props: ModalAutoProps) => {
-  const { actions, title, subtitle, icon, hasCloseIcon, render, dispose, onClose, ...rest } = props
+  const { actions, title, subtitle, icon, hasCloseButton, render, dispose, onClose, ...rest } = props
 
   const [isOpen, setIsOpen] = useState(false)
 
@@ -51,7 +51,7 @@ export const ModalAuto = memo((props: ModalAutoProps) => {
 
   return (
     <Modal open={isOpen} onClose={close} {...rest}>
-      <ModalHeader title={title} subtitle={subtitle} icon={icon} hasCloseIcon={hasCloseIcon} />
+      <ModalHeader title={title} subtitle={subtitle} icon={icon} hasCloseButton={hasCloseButton} />
       <ModalBody>{render({ close })}</ModalBody>
       {actions && (
         <ModalFooter>

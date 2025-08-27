@@ -9,7 +9,7 @@ import { ModalCloseButton } from './ModalCloseButton'
 import { ModalHeaderIconType, ModalHeaderIcon } from './ModalHeaderIcon'
 
 type ModalHeaderBaseProps = {
-  hasCloseIcon?: boolean
+  hasCloseButton?: boolean
   onCloseButtonClick?: () => void
 }
 
@@ -27,7 +27,7 @@ export function ModalHeader(props: ModalHeaderWithChildren): JSX.Element
 export function ModalHeader(props: ModalHeaderWithProps): JSX.Element
 
 export function ModalHeader(props: ModalHeaderWithProps | ModalHeaderWithChildren) {
-  const { hasCloseIcon = true, onCloseButtonClick } = props
+  const { hasCloseButton = true, onCloseButtonClick } = props
 
   const { scroll, bodyRef } = useModalContext()
   const isBodyOverflowing = useIsOverflowing(bodyRef, 'vertical')
@@ -58,7 +58,7 @@ export function ModalHeader(props: ModalHeaderWithProps | ModalHeaderWithChildre
           </VFlow>
         </HFlow>
       )}
-      {hasCloseIcon && <ModalCloseButton onClick={onCloseButtonClick} />}
+      {hasCloseButton && <ModalCloseButton onClick={onCloseButtonClick} />}
     </HFlow>
   )
 }

@@ -144,16 +144,16 @@ describe('ModalHeader', () => {
   })
 
   describe('close button', () => {
-    it('should render close button when "hasCloseIcon" is true', () => {
+    it('should render close button when "hasCloseButton" is true', () => {
       render(
         <ModalContextProvider value={mockContextValue}>
-          <ModalHeader title='title' hasCloseIcon />
+          <ModalHeader title='title' hasCloseButton />
         </ModalContextProvider>
       )
       expect(screen.getByRole('button')).toBeInTheDocument()
     })
 
-    it('should render close button when "hasCloseIcon" is not provided (default true)', () => {
+    it('should render close button when "hasCloseButton" is not provided (default true)', () => {
       render(
         <ModalContextProvider value={mockContextValue}>
           <ModalHeader title='title' />
@@ -162,27 +162,27 @@ describe('ModalHeader', () => {
       expect(screen.getByRole('button')).toBeInTheDocument()
     })
 
-    it('should not render close button when "hasCloseIcon" is false', () => {
+    it('should not render close button when "hasCloseButton" is false', () => {
       render(
         <ModalContextProvider value={mockContextValue}>
-          <ModalHeader title='title' hasCloseIcon={false} />
+          <ModalHeader title='title' hasCloseButton={false} />
         </ModalContextProvider>
       )
       expect(screen.queryByRole('button')).toBeNull()
     })
 
-    it('should call onCloseButtonClick when close button is clicked and "hasCloseIcon" is true', () => {
+    it('should call onCloseButtonClick when close button is clicked and "hasCloseButton" is true', () => {
       const onCloseMock = jest.fn()
       render(
         <ModalContextProvider value={mockContextValue}>
-          <ModalHeader title='title' onCloseButtonClick={onCloseMock} hasCloseIcon />
+          <ModalHeader title='title' onCloseButtonClick={onCloseMock} hasCloseButton />
         </ModalContextProvider>
       )
       fireEvent.click(screen.getByRole('button'))
       expect(onCloseMock).toHaveBeenCalledTimes(1)
     })
 
-    it('should call onCloseButtonClick when close button is clicked and "hasCloseIcon" is not provided (default true)', () => {
+    it('should call onCloseButtonClick when close button is clicked and "hasCloseButton" is not provided (default true)', () => {
       const onCloseMock = jest.fn()
       render(
         <ModalContextProvider value={mockContextValue}>
@@ -193,11 +193,11 @@ describe('ModalHeader', () => {
       expect(onCloseMock).toHaveBeenCalledTimes(1)
     })
 
-    it('should not call onCloseButtonClick when "hasCloseIcon" is false', () => {
+    it('should not call onCloseButtonClick when "hasCloseButton" is false', () => {
       const onCloseMock = jest.fn()
       render(
         <ModalContextProvider value={mockContextValue}>
-          <ModalHeader title='title' hasCloseIcon={false} onCloseButtonClick={onCloseMock} />
+          <ModalHeader title='title' hasCloseButton={false} onCloseButtonClick={onCloseMock} />
         </ModalContextProvider>
       )
       expect(screen.queryByRole('button')).toBeNull()
@@ -220,7 +220,7 @@ describe('ModalHeader', () => {
     it('does not render ModalHeaderIcon when icon is not provided', () => {
       render(
         <ModalContextProvider value={mockContextValue}>
-          <ModalHeader title='title' hasCloseIcon={false} />
+          <ModalHeader title='title' hasCloseButton={false} />
         </ModalContextProvider>
       )
 

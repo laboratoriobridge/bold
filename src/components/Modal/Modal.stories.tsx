@@ -48,9 +48,9 @@ export const Default = () => {
   const hasIcon = boolean('hasIcon', true)
   const icon = hasIcon ? select('icon', icons, 'bridge') : undefined
   const iconFill = hasIcon ? select('iconFill', iconColors, 'normal') : undefined
-  const hasCloseIcon = boolean('hasCloseIcon', true)
   const manageOverflow = boolean('manageOverflow', true)
   const closeOnBackdropClick = boolean('closeOnBackdropClick', true)
+  const hasCloseButton = boolean('hasCloseButton', true)
   const onClose = action('close')
 
   return (
@@ -69,7 +69,7 @@ export const Default = () => {
           title={title}
           subtitle={subtitle}
           icon={iconFill ? { name: icon, fill: iconFill } : icon}
-          hasCloseIcon={hasCloseIcon}
+          hasCloseButton={hasCloseButton}
         />
         <ModalBody>
           <VFlow>
