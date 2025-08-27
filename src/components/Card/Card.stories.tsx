@@ -68,7 +68,7 @@ export const Default = () => {
 
   return (
     <div style={{ paddingBottom: '0.5rem' }}>
-      <Card variant={variant} disabled={disabled} error={invalid}>
+      <Card variant={variant} disabled={disabled} invalid={invalid}>
         <CardContent />
       </Card>
     </div>
@@ -87,7 +87,7 @@ export const Clickable = () => {
         variant={variant}
         selected={selected}
         disabled={disabled}
-        error={invalid}
+        invalid={invalid}
         onClick={action('Card clicked')}
       >
         <ClickableCardContent />
@@ -111,42 +111,42 @@ export const Variants = () => {
       </Cell>
       <Cell size={6}>
         <HeadingSection level={4} vSpace={8} title='Outline'>
-          <Card variant='outline' error={invalid} disabled={disabled}>
+          <Card variant='outline' invalid={invalid} disabled={disabled}>
             <CardContent />
           </Card>
         </HeadingSection>
       </Cell>
       <Cell size={6}>
         <HeadingSection level={4} vSpace={8} title='Outline'>
-          <ClickableCard variant='outline' selected={selected} error={invalid} disabled={disabled}>
+          <ClickableCard variant='outline' selected={selected} invalid={invalid} disabled={disabled}>
             <ClickableCardContent />
           </ClickableCard>
         </HeadingSection>
       </Cell>
       <Cell size={6}>
         <HeadingSection level={4} vSpace={8} title='Float'>
-          <Card variant='float' error={invalid} disabled={disabled}>
+          <Card variant='float' invalid={invalid} disabled={disabled}>
             <CardContent />
           </Card>
         </HeadingSection>
       </Cell>
       <Cell size={6}>
         <HeadingSection level={4} vSpace={8} title='Float'>
-          <ClickableCard variant='float' selected={selected} error={invalid} disabled={disabled}>
+          <ClickableCard variant='float' selected={selected} invalid={invalid} disabled={disabled}>
             <ClickableCardContent />
           </ClickableCard>
         </HeadingSection>
       </Cell>
       <Cell size={6}>
         <HeadingSection level={4} vSpace={8} title='Plain'>
-          <Card variant='plain' error={invalid} disabled={disabled}>
+          <Card variant='plain' invalid={invalid} disabled={disabled}>
             <CardContent />
           </Card>
         </HeadingSection>
       </Cell>
       <Cell size={6}>
         <HeadingSection level={4} vSpace={8} title='Plain'>
-          <ClickableCard variant='plain' selected={selected} error={invalid} disabled={disabled}>
+          <ClickableCard variant='plain' selected={selected} invalid={invalid} disabled={disabled}>
             <ClickableCardContent />
           </ClickableCard>
         </HeadingSection>

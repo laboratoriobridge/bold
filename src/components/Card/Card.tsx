@@ -15,7 +15,7 @@ export interface CardProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 's
   /**
    * Specify whether the Card should have error appearance
    */
-  error?: React.ReactNode
+  invalid?: boolean
 
   /**
    * Specify whether the Card should have disabled appearance
@@ -24,21 +24,19 @@ export interface CardProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 's
 }
 
 export function Card(props: CardProps) {
-  const { variant = 'outline', children, error, disabled, style, ...rest } = props
+  const { variant = 'outline', children, invalid, disabled, style, ...rest } = props
 
   const { theme, css } = useCss()
 
   const baseStyles = createBaseStyles(theme)
   const variantStyles = createVariantStyles(theme)[variant]
 
-  const isInvalid = !!error
-
   return (
     <div
       className={css(
         baseStyles.card,
         variantStyles.base,
-        isInvalid && variantStyles.invalid,
+        invalid && variantStyles.invalid,
         disabled && baseStyles.cardDisabled,
         disabled && variantStyles.disabled,
         style

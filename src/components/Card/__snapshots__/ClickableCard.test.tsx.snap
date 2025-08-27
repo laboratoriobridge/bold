@@ -108,7 +108,6 @@ exports[`should accept "style" prop 1`] = `
 <div>
   <button
     class="emotion-1"
-    data-invalid="false"
     data-variant="outline"
     type="button"
   >
@@ -228,7 +227,6 @@ exports[`should render correctly 1`] = `
 <div>
   <button
     class="emotion-1"
-    data-invalid="false"
     data-variant="outline"
     type="button"
   >

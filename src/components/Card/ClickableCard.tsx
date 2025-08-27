@@ -19,7 +19,7 @@ export interface ClickableCardProps extends Omit<ComponentProps<'button'>, 'styl
   /**
    * Specify whether the Card should have a error appearance
    */
-  error?: React.ReactNode
+  invalid?: boolean
 
   /**
    * Specify whether the Card should be disabled
@@ -28,7 +28,7 @@ export interface ClickableCardProps extends Omit<ComponentProps<'button'>, 'styl
 }
 
 export function ClickableCard(props: ClickableCardProps) {
-  const { variant = 'outline', children, error, disabled, selected, style, ...buttonProps } = props
+  const { variant = 'outline', children, invalid, disabled, selected, style, ...buttonProps } = props
 
   const { theme, css } = useCss()
 
@@ -36,13 +36,11 @@ export function ClickableCard(props: ClickableCardProps) {
   const variantStyles = createVariantStyles(theme)[variant]
   const clickableStyles = createClickableStyles(theme)
 
-  const isInvalid = !!error
-
   const classes = css(
     baseStyles.card,
     variantStyles.base,
     clickableStyles,
-    isInvalid && variantStyles.invalid,
+    invalid && variantStyles.invalid,
     disabled && baseStyles.cardDisabled,
     disabled && variantStyles.disabled,
     style
@@ -55,7 +53,7 @@ export function ClickableCard(props: ClickableCardProps) {
       disabled={disabled}
       data-variant={variant}
       data-selected={selected}
-      data-invalid={isInvalid}
+      data-invalid={invalid}
       aria-pressed={selected}
       {...buttonProps}
     >

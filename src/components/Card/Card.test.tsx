@@ -77,7 +77,7 @@ describe('states', () => {
 
   it('should apply invalid styles in outline variant when error specified', () => {
     const { getByTestId } = render(
-      <Card variant='outline' error='Error' data-testid='card-outline-invalid'>
+      <Card variant='outline' invalid data-testid='card-outline-invalid'>
         Content
       </Card>
     )
@@ -87,7 +87,7 @@ describe('states', () => {
 
   it('should apply invalid styles in float variant when error specified', () => {
     const { getByTestId } = render(
-      <Card variant='float' error='Error' data-testid='card-float-invalid'>
+      <Card variant='float' invalid data-testid='card-float-invalid'>
         Content
       </Card>
     )
@@ -97,7 +97,7 @@ describe('states', () => {
 
   it('should apply invalid styles in plain variant when error specified', () => {
     const { getByTestId } = render(
-      <Card variant='plain' error='Error' data-testid='card-plain-invalid'>
+      <Card variant='plain' invalid data-testid='card-plain-invalid'>
         Content
       </Card>
     )

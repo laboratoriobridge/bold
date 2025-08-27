@@ -103,7 +103,7 @@ describe('states', () => {
     'should apply invalid styles in outline and float variants when error specified',
     (variant) => {
       const { getByTestId } = render(
-        <ClickableCard variant={variant} error='Error' data-testid='clickable-card-invalid'>
+        <ClickableCard variant={variant} invalid data-testid='clickable-card-invalid'>
           Content
         </ClickableCard>
       )
@@ -115,7 +115,7 @@ describe('states', () => {
 
   it('should apply invalid styles in plain variant when error specified', () => {
     const { getByTestId } = render(
-      <ClickableCard variant='plain' error='Error' data-testid='clickable-card-invalid'>
+      <ClickableCard variant='plain' invalid data-testid='clickable-card-invalid'>
         Content
       </ClickableCard>
     )
@@ -142,7 +142,7 @@ describe('states', () => {
     'should prioritize disabled styles when the card is disabled and error specified',
     (variant) => {
       const { getByTestId } = render(
-        <ClickableCard variant={variant} disabled error='Error' data-testid='clickable-card-disabled-invalid'>
+        <ClickableCard variant={variant} disabled invalid data-testid='clickable-card-disabled-invalid'>
           Content
         </ClickableCard>
       )
@@ -157,7 +157,7 @@ describe('states', () => {
     'should apply correctly styles in outline and float variants when is selected and error specified',
     (variant) => {
       const { getByTestId } = render(
-        <ClickableCard variant={variant} selected error='Error' data-testid='clickable-card-selected-invalid'>
+        <ClickableCard variant={variant} selected invalid data-testid='clickable-card-selected-invalid'>
           Content
         </ClickableCard>
       )
@@ -169,7 +169,7 @@ describe('states', () => {
 
   it('should apply correctly styles in plain variant when is selected and error specified', () => {
     const { getByTestId } = render(
-      <ClickableCard variant='plain' selected error='Error' data-testid='clickable-card-selected-invalid'>
+      <ClickableCard variant='plain' selected invalid data-testid='clickable-card-selected-invalid'>
         Content
       </ClickableCard>
     )
