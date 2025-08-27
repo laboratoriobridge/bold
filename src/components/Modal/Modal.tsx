@@ -1,5 +1,5 @@
 import FocusTrap from 'focus-trap-react'
-import React, { Ref, useEffect, useMemo, useRef } from 'react'
+import React, { Ref, useEffect, useMemo, useRef, useState } from 'react'
 import { Theme, useStyles } from '../../styles'
 import { zIndexLevel } from '../../styles/theme/zIndex'
 import { Portal } from '../Portal'
@@ -62,7 +62,12 @@ export function Modal(props: ModalProps) {
   const { classes, css } = useStyles(createStyles, depthLevel, scroll)
   const bodyRef = useRef()
   const modalRef = useRef<HTMLDivElement>(null)
-  const modalContextValue: ModalContextProps = useMemo(() => ({ scroll, bodyRef, onClose }), [scroll, onClose])
+  const [hasHeader, setHasHeader] = useState(false)
+  const modalContextValue: ModalContextProps = useMemo(() => ({ scroll, bodyRef, hasHeader, setHasHeader, onClose }), [
+    scroll,
+    hasHeader,
+    onClose,
+  ])
 
   // Kill body scroll when opened
   useEffect(() => {

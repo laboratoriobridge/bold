@@ -13,8 +13,8 @@ export interface ModalContainerProps extends Omit<React.HTMLAttributes<HTMLDivEl
 export const ModalContainer = forwardRef<HTMLDivElement, ModalContainerProps>((props, ref) => {
   const { style, children, ...rest } = props
 
-  const { scroll } = useModalContext()
-  const { classes, css } = useStyles(createStyles, scroll)
+  const { scroll, hasHeader } = useModalContext()
+  const { classes, css } = useStyles(createStyles, scroll, hasHeader)
 
   return (
     <div role='dialog' aria-modal='true' ref={ref} className={css(classes.wrapper, style)} {...rest}>
@@ -23,17 +23,20 @@ export const ModalContainer = forwardRef<HTMLDivElement, ModalContainerProps>((p
   )
 })
 
-const createStyles = (theme: Theme, scroll: ModalScroll) => ({
-  wrapper: {
-    maxHeight: '80vh',
-    border: `1px solid ${theme.pallete.divider}`,
-    boxShadow: theme.shadows.outer['160'],
-    borderRadius: theme.radius.modal,
-    backgroundColor: theme.pallete.surface.main,
-    minWidth: 520,
-    pointerEvents: 'auto',
-    overflow: scroll === 'body' ? 'hidden' : 'auto',
-    display: 'grid',
-    gridTemplateRows: scroll === 'body' ? '1fr auto auto' : 'initial',
-  } as CSSProperties,
-})
+const createStyles = (theme: Theme, scroll: ModalScroll, hasHeader: boolean) => {
+  const gridTemplateRowsScrollBody = hasHeader ? 'auto 1fr auto' : '1fr auto'
+  return {
+    wrapper: {
+      maxHeight: '80vh',
+      border: `1px solid ${theme.pallete.divider}`,
+      boxShadow: theme.shadows.outer['160'],
+      borderRadius: theme.radius.modal,
+      backgroundColor: theme.pallete.surface.main,
+      minWidth: 520,
+      pointerEvents: 'auto',
+      overflow: scroll === 'body' ? 'hidden' : 'auto',
+      display: 'grid',
+      gridTemplateRows: scroll === 'body' ? gridTemplateRowsScrollBody : 'initial',
+    } as CSSProperties,
+  }
+}

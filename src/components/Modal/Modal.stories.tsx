@@ -52,6 +52,8 @@ export const Default = () => {
   const closeOnBackdropClick = boolean('closeOnBackdropClick', true)
   const hasCloseButton = boolean('hasCloseButton', true)
   const onClose = action('close')
+  const hasHeader = boolean('hasHeader', true)
+  const hasFooter = boolean('hasFooter', true)
 
   return (
     <div>
@@ -65,12 +67,14 @@ export const Default = () => {
         closeOnBackdropClick={closeOnBackdropClick}
         onClose={onClose}
       >
-        <ModalHeader
-          title={title}
-          subtitle={subtitle}
-          icon={iconFill ? { name: icon, fill: iconFill } : icon}
-          hasCloseButton={hasCloseButton}
-        />
+        {hasHeader && (
+          <ModalHeader
+            title={title}
+            subtitle={subtitle}
+            icon={iconFill ? { name: icon, fill: iconFill } : icon}
+            hasCloseButton={hasCloseButton}
+          />
+        )}
         <ModalBody>
           <VFlow>
             <p>
@@ -138,14 +142,16 @@ export const Default = () => {
             </p>
           </VFlow>
         </ModalBody>
-        <ModalFooter>
-          <HFlow alignItems='center' justifyContent='flex-end'>
-            <ModalFooterButton onClick={action('cancel clicked')}>Cancel</ModalFooterButton>
-            <ModalFooterButton kind='primary' onClick={action('save clicked')}>
-              Save
-            </ModalFooterButton>
-          </HFlow>
-        </ModalFooter>
+        {hasFooter && (
+          <ModalFooter>
+            <HFlow alignItems='center' justifyContent='flex-end'>
+              <ModalFooterButton onClick={action('cancel clicked')}>Cancel</ModalFooterButton>
+              <ModalFooterButton kind='primary' onClick={action('save clicked')}>
+                Save
+              </ModalFooterButton>
+            </HFlow>
+          </ModalFooter>
+        )}
       </Modal>
     </div>
   )

@@ -1,4 +1,4 @@
-import React, { CSSProperties, ReactNode } from 'react'
+import React, { CSSProperties, ReactNode, useEffect } from 'react'
 import { Theme, useStyles } from '../../styles'
 import { Heading } from '../Heading'
 import { HFlow } from '../HFlow'
@@ -29,9 +29,14 @@ export function ModalHeader(props: ModalHeaderWithProps): JSX.Element
 export function ModalHeader(props: ModalHeaderWithProps | ModalHeaderWithChildren) {
   const { hasCloseButton = true, onCloseButtonClick } = props
 
-  const { scroll, bodyRef } = useModalContext()
+  const { scroll, bodyRef, setHasHeader } = useModalContext()
   const isBodyOverflowing = useIsOverflowing(bodyRef, 'vertical')
   const { classes } = useStyles(createStyles, scroll === 'body' && isBodyOverflowing)
+
+  useEffect(() => {
+    setHasHeader(true)
+    return () => setHasHeader(false)
+  }, [setHasHeader])
 
   return (
     <HFlow
