@@ -8,7 +8,6 @@ import { Modal } from './Modal'
 import { ModalHeader } from './ModalHeader'
 import { ModalBody } from './ModalBody'
 import { ModalHeaderIcon } from './ModalHeaderIcon'
-import { ModalScroll } from './Modal'
 
 jest.mock('./ModalHeaderIcon', () => ({
   ModalHeaderIcon: jest.fn((props) => <div {...props} />),
@@ -20,7 +19,7 @@ beforeEach(() => {
 
 const mockContextValue: ModalContextProps = {
   bodyRef: { current: document.createElement('div') },
-  scroll: 'body' as ModalScroll,
+  scroll: 'body',
 }
 
 describe('ModalHeader', () => {
@@ -67,7 +66,8 @@ describe('ModalHeader', () => {
   describe('header box shadow', () => {
     it("should not apply shadow to ModalHeader when scroll is 'full' and content is not overflowing", () => {
       const { getByTestId } = render(
-        <Modal open scroll='full' title='Modal title'>
+        <Modal open scroll='full'>
+          <ModalHeader title='Modal title' />
           <ModalBody>Short content</ModalBody>
         </Modal>
       )
@@ -77,7 +77,8 @@ describe('ModalHeader', () => {
 
     it("should not apply shadow to ModalHeader when scroll is 'full' and content is overflowing", () => {
       const { getByTestId } = render(
-        <Modal open title='Modal title'>
+        <Modal open>
+          <ModalHeader title='Modal title' />
           <ModalBody>Short content</ModalBody>
         </Modal>
       )
@@ -87,7 +88,8 @@ describe('ModalHeader', () => {
 
     it("should not apply shadow to ModalHeader when scroll is 'body' and content is not overflowing", () => {
       const { getByTestId } = render(
-        <Modal open title='Modal title'>
+        <Modal open>
+          <ModalHeader title='Modal title' />
           <ModalBody>Short content</ModalBody>
         </Modal>
       )
@@ -100,7 +102,8 @@ describe('ModalHeader', () => {
 
       const createComponent = () => (
         <ThemeContext.Provider value={theme}>
-          <Modal open title='Modal title'>
+          <Modal open>
+            <ModalHeader title='Modal title' />
             <ModalBody data-testid='modal-body'>
               <div>Content</div>
             </ModalBody>

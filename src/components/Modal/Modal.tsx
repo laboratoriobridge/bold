@@ -60,7 +60,7 @@ export function Modal(props: ModalProps) {
 
   const { classes, css } = useStyles(createStyles, depthLevel, scroll)
   const bodyRef = useRef()
-
+  const modalRef = useRef<HTMLDivElement>(null)
   const modalContextValue: ModalContextProps = useMemo(() => ({ scroll, bodyRef, onClose }), [scroll, onClose])
 
   // Kill body scroll when opened
@@ -98,9 +98,9 @@ export function Modal(props: ModalProps) {
           <>
             {open && (
               <Portal>
-                <FocusTrap>
+                <FocusTrap focusTrapOptions={{ fallbackFocus: () => modalRef.current }}>
                   <div className={className}>
-                    <div className={classes.modal}>
+                    <div className={classes.modal} ref={modalRef}>
                       <ModalContainer ref={containerRef} style={css(classes[size], style)} onClose={onClose} {...rest}>
                         {children}
                       </ModalContainer>

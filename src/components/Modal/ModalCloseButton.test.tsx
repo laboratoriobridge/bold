@@ -1,9 +1,20 @@
 import React from 'react'
 import { fireEvent, render } from '@testing-library/react'
+import { ModalContextProps } from '../../hooks'
+import { ModalContextProvider } from '../../hooks/useModalContext'
 import { ModalCloseButton } from './ModalCloseButton'
 
+const mockContextValue: ModalContextProps = {
+  bodyRef: { current: document.createElement('div') },
+  scroll: 'body',
+}
+
 it('should render correctly', () => {
-  const { container } = render(<ModalCloseButton onClick={jest.fn()} />)
+  const { container } = render(
+    <ModalContextProvider value={mockContextValue}>
+      <ModalCloseButton onClick={jest.fn()} />
+    </ModalContextProvider>
+  )
 
   expect(container).toMatchInlineSnapshot(`
     .emotion-1 {
@@ -96,14 +107,22 @@ it('should render correctly', () => {
 })
 
 it('should apply external styles prop', () => {
-  const { getByRole } = render(<ModalCloseButton onClick={jest.fn()} style={{ backgroundColor: 'red' }} />)
+  const { getByRole } = render(
+    <ModalContextProvider value={mockContextValue}>
+      <ModalCloseButton onClick={jest.fn()} style={{ backgroundColor: 'red' }} />
+    </ModalContextProvider>
+  )
 
   expect(getByRole('button')).toHaveStyle('background-color: red')
 })
 
 it('should call onClick when the button is clicked', () => {
   const onClickMock = jest.fn()
-  const { getByRole } = render(<ModalCloseButton onClick={onClickMock} />)
+  const { getByRole } = render(
+    <ModalContextProvider value={mockContextValue}>
+      <ModalCloseButton onClick={onClickMock} />
+    </ModalContextProvider>
+  )
 
   expect(onClickMock).not.toHaveBeenCalled()
   fireEvent.click(getByRole('button'))
