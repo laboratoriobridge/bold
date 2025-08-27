@@ -5,10 +5,11 @@ import { Button } from '../Button'
 import { Icon } from '../Icon'
 import { Tooltip } from '../Tooltip'
 import { useModalContext } from '../../hooks'
+import { composeHandlers } from '../../util/react'
 
 interface ModalCloseButtonProps {
   style?: ExternalStyles
-  onClick?: () => void
+  onClick?(): void
 }
 
 export const ModalCloseButton = (props: ModalCloseButtonProps) => {
@@ -17,7 +18,7 @@ export const ModalCloseButton = (props: ModalCloseButtonProps) => {
   const locale = useLocale()
   const { onClose: onCloseModal } = useModalContext()
 
-  const handleClick = onCloseModal ? onCloseModal : onClick
+  const handleClick = composeHandlers(onCloseModal, onClick)
 
   return (
     <Tooltip text={locale.modal.close}>
