@@ -61,7 +61,7 @@ export function Modal(props: ModalProps) {
   const { classes, css } = useStyles(createStyles, depthLevel, scroll)
   const bodyRef = useRef()
 
-  const modalContextValue: ModalContextProps = useMemo(() => ({ scroll, bodyRef }), [scroll])
+  const modalContextValue: ModalContextProps = useMemo(() => ({ scroll, bodyRef, onClose }), [scroll, onClose])
 
   // Kill body scroll when opened
   useEffect(() => {

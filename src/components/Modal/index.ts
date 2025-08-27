@@ -1,6 +1,7 @@
 export * from './auto'
 export { Modal, ModalProps, ModalSize, ModalScroll } from './Modal'
 export { ModalBackdrop, ModalBackdropProps } from './ModalBackdrop'
+export { ModalHeader, ModalHeaderProps } from './ModalHeader'
 export { ModalBody, ModalBodyProps } from './ModalBody'
 export { ModalContainer, ModalContainerProps } from './ModalContainer'
 export { ModalFooter, ModalFooterProps } from './ModalFooter'

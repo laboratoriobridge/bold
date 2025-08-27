@@ -19,6 +19,7 @@ import {
   modal,
   ModalMountTarget,
 } from '../Modal'
+import { ModalHeader } from './ModalHeader'
 
 const sizes: { [key in ModalSize]: ModalSize } = {
   large: 'large',
@@ -60,14 +61,16 @@ export const Default = () => {
         open={open}
         size={size}
         scroll={scroll}
-        hasCloseIcon={hasCloseIcon}
-        title={title}
-        subtitle={subtitle}
-        icon={iconFill ? { name: icon, fill: iconFill } : icon}
         manageOverflow={manageOverflow}
         closeOnBackdropClick={closeOnBackdropClick}
         onClose={onClose}
       >
+        <ModalHeader
+          title={title}
+          subtitle={subtitle}
+          icon={iconFill ? { name: icon, fill: iconFill } : icon}
+          hasCloseIcon={hasCloseIcon}
+        />
         <ModalBody>
           <VFlow>
             <p>
@@ -79,7 +82,6 @@ export const Default = () => {
               auctor vitae maximus non, feugiat eget odio. Cras venenatis, lectus eget consectetur volutpat, urna felis
               efficitur enim, vitae viverra purus risus sed purus.
             </p>
-
             <p>
               Aliquam placerat eget massa vel congue. Suspendisse libero erat, auctor ac tristique et, ultrices quis
               dolor. Suspendisse commodo lacinia lectus ut egestas. Cras in urna eget leo mollis luctus eu eget felis.
@@ -172,12 +174,8 @@ export const ModalOverlap = () => (
   <div>
     <p>Modal Overlap</p>
 
-    <Modal
-      title='Modal Overlap'
-      open={boolean('open', true)}
-      size={select('main modal size', sizes, 'large')}
-      onClose={action('close')}
-    >
+    <Modal open={boolean('open', true)} size={select('main modal size', sizes, 'large')} onClose={action('close')}>
+      <ModalHeader title='Modal Overlap' />
       <ModalBody>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer molestie, dui id luctus commodo, nunc enim

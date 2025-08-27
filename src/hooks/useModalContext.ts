@@ -4,6 +4,7 @@ import { ModalScroll } from '../components/Modal'
 export interface ModalContextProps {
   scroll: ModalScroll
   bodyRef: MutableRefObject<HTMLDivElement>
+  onClose?(): void
 }
 
 const ModalContext = createContext<ModalContextProps>(undefined)

@@ -9,8 +9,8 @@ import { ModalCloseButton } from './ModalCloseButton'
 import { ModalHeaderIconType, ModalHeaderIcon } from './ModalHeaderIcon'
 
 export interface ModalHeaderProps {
-  title: string
-  subtitle?: string
+  title: React.ReactNode
+  subtitle?: React.ReactNode
   icon?: ModalHeaderIconType
   hasCloseIcon?: boolean
   onCloseButtonClick?: () => void
