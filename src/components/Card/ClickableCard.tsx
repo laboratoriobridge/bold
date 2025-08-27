@@ -1,5 +1,6 @@
 import React, { ComponentProps } from 'react'
-import { ExternalStyles, useCss } from '../../styles'
+import { css } from 'emotion'
+import { ExternalStyles, Theme, useTheme } from '../../styles'
 import { CardVariant, createBaseStyles, createClickableStyles, createVariantStyles } from './CardVariants'
 
 export interface ClickableCardProps extends Omit<ComponentProps<'button'>, 'style'> {
@@ -30,26 +31,13 @@ export interface ClickableCardProps extends Omit<ComponentProps<'button'>, 'styl
 export function ClickableCard(props: ClickableCardProps) {
   const { variant = 'outline', children, invalid, disabled, selected, style, ...buttonProps } = props
 
-  const { theme, css } = useCss()
-
-  const baseStyles = createBaseStyles(theme)
-  const variantStyles = createVariantStyles(theme)[variant]
-  const clickableStyles = createClickableStyles(theme)
-
-  const classes = css(
-    baseStyles.card,
-    variantStyles.base,
-    clickableStyles,
-    invalid && variantStyles.invalid,
-    disabled && baseStyles.cardDisabled,
-    disabled && variantStyles.disabled,
-    style
-  )
+  const theme = useTheme()
+  const styles = createStyles(theme, variant, disabled, invalid, style)
 
   return (
     <button
       type='button'
-      className={classes}
+      className={styles.card}
       disabled={disabled}
       data-variant={variant}
       data-selected={selected}
@@ -57,7 +45,32 @@ export function ClickableCard(props: ClickableCardProps) {
       aria-pressed={selected}
       {...buttonProps}
     >
-      <div className={css(disabled && baseStyles.innerDisabled)}>{children}</div>
+      <div className={styles.inner}>{children}</div>
     </button>
   )
+}
+
+const createStyles = (
+  theme: Theme,
+  variant: CardVariant,
+  disabled: boolean,
+  invalid: boolean,
+  externalStyles: ExternalStyles
+) => {
+  const baseStyles = createBaseStyles(theme)
+  const variantStyles = createVariantStyles(theme)[variant]
+  const clickableStyles = createClickableStyles(theme)
+
+  return {
+    card: css(
+      baseStyles.card,
+      variantStyles.base,
+      clickableStyles,
+      invalid && variantStyles.invalid,
+      disabled && baseStyles.cardDisabled,
+      disabled && variantStyles.disabled,
+      externalStyles
+    ),
+    inner: css(disabled && baseStyles.innerDisabled),
+  }
 }
