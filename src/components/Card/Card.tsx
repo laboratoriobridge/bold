@@ -2,7 +2,7 @@ import React from 'react'
 
 import { css } from 'emotion'
 import { ExternalStyles, Theme, useTheme } from '../../styles'
-import { CardVariant, createBaseStyles, createVariantStyles } from './CardVariants'
+import { CardVariant, createBaseStyles, createVariantStyles } from './cardVariants'
 
 export interface CardProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'style'> {
   style?: ExternalStyles

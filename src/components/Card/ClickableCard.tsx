@@ -1,7 +1,7 @@
 import React, { ComponentProps } from 'react'
 import { css } from 'emotion'
 import { ExternalStyles, Theme, useTheme } from '../../styles'
-import { CardVariant, createBaseStyles, createClickableStyles, createVariantStyles } from './CardVariants'
+import { CardVariant, createBaseStyles, createClickableStyles, createVariantStyles } from './cardVariants'
 
 export interface ClickableCardProps extends Omit<ComponentProps<'button'>, 'style'> {
   style?: ExternalStyles
