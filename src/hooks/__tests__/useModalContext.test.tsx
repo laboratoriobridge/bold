@@ -34,6 +34,6 @@ it('should throw an error when used outside ModalContextProvider', () => {
   const renderWithoutProvider = () => render(<TestComponent />)
 
   expect(renderWithoutProvider).toThrow(
-    'Modal subcomponents (ModalBody, ModalContainer, ModalFooter) must be used inside <Modal>'
+    'Modal subcomponents (ModalHeader, ModalBody, ModalContainer, ModalFooter, ModalCloseButton) must be used inside <Modal>'
   )
 })

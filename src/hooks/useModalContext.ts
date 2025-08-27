@@ -15,7 +15,9 @@ export function useModalContext() {
   const context = useContext(ModalContext)
 
   if (!context) {
-    throw new Error('Modal subcomponents (ModalBody, ModalContainer, ModalFooter) must be used inside <Modal>')
+    throw new Error(
+      'Modal subcomponents (ModalHeader, ModalBody, ModalContainer, ModalFooter, ModalCloseButton) must be used inside <Modal>'
+    )
   }
 
   return context
