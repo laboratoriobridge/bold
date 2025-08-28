@@ -50,6 +50,7 @@ Array [
   "ModalContainer",
   "ModalFooter",
   "ModalFooterButton",
+  "ModalCloseButton",
   "MonthField",
   "MonthPaginator",
   "MonthRangePicker",
