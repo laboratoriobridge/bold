@@ -28,5 +28,7 @@ const createStyles = (theme: Theme) => ({
     height: '5rem',
     width: '100%',
     borderTop: `1px solid ${theme.pallete.divider}`,
+    gridColumn: '1 / -1',
+    gridRow: '3',
   } as CSSProperties,
 })

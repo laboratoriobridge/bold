@@ -5,7 +5,11 @@ export interface ModalContextValue {
   scroll: ModalScroll
   bodyRef: MutableRefObject<HTMLDivElement>
   hasHeader: boolean
+  hasLeftSidebar: boolean
+  hasRightSidebar: boolean
   setHasHeader: Dispatch<SetStateAction<boolean>>
+  setHasLeftSidebar: Dispatch<SetStateAction<boolean>>
+  setHasRightSidebar: Dispatch<SetStateAction<boolean>>
   onClose?(): void
 }
 

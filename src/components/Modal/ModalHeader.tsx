@@ -29,9 +29,12 @@ export function ModalHeader(props: ModalHeaderWithProps): JSX.Element
 export function ModalHeader(props: ModalHeaderWithProps | ModalHeaderWithChildren) {
   const { hasCloseButton = true, onCloseButtonClick } = props
 
-  const { scroll, bodyRef, setHasHeader } = useModalContext()
+  const { scroll, bodyRef, hasLeftSidebar, hasRightSidebar, setHasHeader } = useModalContext()
   const isBodyOverflowing = useIsOverflowing(bodyRef, 'vertical')
-  const { classes } = useStyles(createStyles, scroll === 'body' && isBodyOverflowing)
+  const hasSidebar = hasLeftSidebar || hasRightSidebar
+  const showHeaderShadow = scroll === 'body' && isBodyOverflowing
+  const showHeaderBorder = hasSidebar && (scroll === 'full' || (scroll === 'body' && !isBodyOverflowing))
+  const { classes } = useStyles(createStyles, showHeaderShadow, showHeaderBorder, hasSidebar)
 
   useEffect(() => {
     setHasHeader(true)
@@ -72,13 +75,16 @@ const isHeaderWithChildren = (
   props: ModalHeaderWithProps | ModalHeaderWithChildren
 ): props is ModalHeaderWithChildren => 'children' in props
 
-const createStyles = (theme: Theme, showHeaderShadow: boolean) => ({
+const createStyles = (theme: Theme, showHeaderShadow: boolean, showHeaderBorder: boolean, hasSidebar: boolean) => ({
   header: {
     width: '100%',
     gridTemplateColumns: '1fr auto',
     padding: '1.5rem 1rem 1rem 2rem',
     zIndex: 1,
-    backgroundColor: theme.pallete.surface.main,
+    backgroundColor: hasSidebar ? theme.pallete.gray.c90 : theme.pallete.surface.main,
+    borderBottom: showHeaderBorder ? `1px solid ${theme.pallete.divider}` : 'none',
     boxShadow: showHeaderShadow ? theme.shadows.outer[10] : '',
+    gridRow: '1',
+    gridColumn: '1 / -1',
   } as CSSProperties,
 })

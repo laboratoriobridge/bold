@@ -18,7 +18,7 @@ export const ModalContainer = forwardRef<HTMLDivElement, ModalContainerProps>((p
 
   return (
     <div role='dialog' aria-modal='true' ref={ref} className={css(classes.wrapper, style)} {...rest}>
-      {children}
+      <div className={classes.inner}>{children}</div>
     </div>
   )
 })
@@ -36,7 +36,14 @@ const createStyles = (theme: Theme, scroll: ModalScroll, hasHeader: boolean) => 
       pointerEvents: 'auto',
       overflow: scroll === 'body' ? 'hidden' : 'auto',
       display: 'grid',
-      gridTemplateRows: scroll === 'body' ? gridTemplateRowsScrollBody : 'initial',
+      gridTemplateRows: '1fr',
+    } as CSSProperties,
+    inner: {
+      display: 'grid',
+      gridTemplateColumns: 'auto 1fr auto',
+      gridTemplateRows: scroll === 'body' ? gridTemplateRowsScrollBody : 'max-content',
+      height: '100%',
+      minHeight: 0,
     } as CSSProperties,
   }
 }

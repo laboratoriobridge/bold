@@ -63,11 +63,22 @@ export function Modal(props: ModalProps) {
   const bodyRef = useRef()
   const modalRef = useRef<HTMLDivElement>(null)
   const [hasHeader, setHasHeader] = useState(false)
-  const modalContextValue: ModalContextValue = useMemo(() => ({ scroll, bodyRef, hasHeader, setHasHeader, onClose }), [
-    scroll,
-    hasHeader,
-    onClose,
-  ])
+  const [hasLeftSidebar, setHasLeftSidebar] = useState(false)
+  const [hasRightSidebar, setHasRightSidebar] = useState(false)
+  const modalContextValue: ModalContextValue = useMemo(
+    () => ({
+      scroll,
+      bodyRef,
+      hasHeader,
+      hasLeftSidebar,
+      hasRightSidebar,
+      setHasHeader,
+      setHasLeftSidebar,
+      setHasRightSidebar,
+      onClose,
+    }),
+    [scroll, hasHeader, hasLeftSidebar, hasRightSidebar, onClose]
+  )
 
   // Kill body scroll when opened
   useEffect(() => {
