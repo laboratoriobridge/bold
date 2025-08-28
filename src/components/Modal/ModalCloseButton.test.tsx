@@ -1,12 +1,14 @@
 import React from 'react'
 import { fireEvent, render } from '@testing-library/react'
-import { ModalContextProps } from '../../hooks'
+import { ModalContextValue } from '../../hooks'
 import { ModalContextProvider } from '../../hooks/useModalContext'
 import { ModalCloseButton } from './ModalCloseButton'
 
-const mockContextValue: ModalContextProps = {
+const mockContextValue: ModalContextValue = {
   bodyRef: { current: document.createElement('div') },
   scroll: 'body',
+  hasHeader: false,
+  setHasHeader: jest.fn(),
 }
 
 it('should render correctly', () => {

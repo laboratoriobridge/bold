@@ -1,14 +1,16 @@
 import { render } from '@testing-library/react'
 import React from 'react'
 
-import { ModalContextProps, ModalContextProvider } from '../../hooks/useModalContext'
+import { ModalContextValue, ModalContextProvider } from '../../hooks/useModalContext'
 import { ModalContainer } from './ModalContainer'
 
 jest.mock('../../util/string')
 
-const mockContextValue: ModalContextProps = {
+const mockContextValue: ModalContextValue = {
   bodyRef: { current: document.createElement('div') },
   scroll: 'body',
+  hasHeader: false,
+  setHasHeader: jest.fn(),
 }
 
 beforeEach(() => {

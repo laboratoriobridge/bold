@@ -1,7 +1,7 @@
 import { createContext, Dispatch, MutableRefObject, SetStateAction, useContext } from 'react'
 import { ModalScroll } from '../components/Modal'
 
-export interface ModalContextProps {
+export interface ModalContextValue {
   scroll: ModalScroll
   bodyRef: MutableRefObject<HTMLDivElement>
   hasHeader: boolean
@@ -9,7 +9,7 @@ export interface ModalContextProps {
   onClose?(): void
 }
 
-const ModalContext = createContext<ModalContextProps>(undefined)
+const ModalContext = createContext<ModalContextValue>(undefined)
 
 export const ModalContextProvider = ModalContext.Provider
 

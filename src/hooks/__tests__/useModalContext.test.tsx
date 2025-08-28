@@ -1,6 +1,6 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
-import { useModalContext, ModalContextProvider, ModalContextProps } from '../useModalContext'
+import { useModalContext, ModalContextProvider, ModalContextValue } from '../useModalContext'
 
 function TestComponent() {
   const { scroll, bodyRef } = useModalContext()
@@ -14,9 +14,11 @@ function TestComponent() {
 }
 
 it('should return provided context values when inside ModalContextProvider', () => {
-  const mockContextValue: ModalContextProps = {
+  const mockContextValue: ModalContextValue = {
     bodyRef: { current: document.createElement('div') },
     scroll: 'body',
+    hasHeader: false,
+    setHasHeader: jest.fn(),
   }
 
   render(
