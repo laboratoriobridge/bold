@@ -4,7 +4,7 @@ import { Theme, useStyles } from '../../styles'
 import { zIndexLevel } from '../../styles/theme/zIndex'
 import { Portal } from '../Portal'
 import { FadeTransition } from '../Transition/FadeTransition'
-import { ModalContextProps, ModalContextProvider } from '../../hooks/useModalContext'
+import { ModalContextValue, ModalContextProvider } from '../../hooks/useModalContext'
 import { ModalBackdrop } from './ModalBackdrop'
 import { ModalContainer, ModalContainerProps } from './ModalContainer'
 
@@ -63,7 +63,7 @@ export function Modal(props: ModalProps) {
   const bodyRef = useRef()
   const modalRef = useRef<HTMLDivElement>(null)
   const [hasHeader, setHasHeader] = useState(false)
-  const modalContextValue: ModalContextProps = useMemo(() => ({ scroll, bodyRef, hasHeader, setHasHeader, onClose }), [
+  const modalContextValue: ModalContextValue = useMemo(() => ({ scroll, bodyRef, hasHeader, setHasHeader, onClose }), [
     scroll,
     hasHeader,
     onClose,
