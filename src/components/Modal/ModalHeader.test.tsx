@@ -20,14 +20,27 @@ beforeEach(() => {
 const mockContextValue: ModalContextProps = {
   bodyRef: { current: document.createElement('div') },
   scroll: 'body',
+  hasHeader: true,
+  setHasHeader: jest.fn(),
 }
 
 describe('ModalHeader', () => {
   describe('basic rendering', () => {
-    it('should render correctly', () => {
+    it('should render correctly with props', () => {
       const { container } = render(
         <ModalContextProvider value={mockContextValue}>
-          <ModalHeader title='title' />
+          <ModalHeader title='title' subtitle='subtitle' icon='infoCircleFilled' />
+        </ModalContextProvider>
+      )
+      expect(container).toMatchSnapshot()
+    })
+
+    it('should render correctly with children', () => {
+      const { container } = render(
+        <ModalContextProvider value={mockContextValue}>
+          <ModalHeader>
+            <div>Custom header</div>
+          </ModalHeader>
         </ModalContextProvider>
       )
       expect(container).toMatchSnapshot()
@@ -144,7 +157,7 @@ describe('ModalHeader', () => {
   })
 
   describe('close button', () => {
-    it('should render close button when "hasCloseButton" is true', () => {
+    it('should render close button when "hasCloseButton" is true and modal is called with props', () => {
       render(
         <ModalContextProvider value={mockContextValue}>
           <ModalHeader title='title' hasCloseButton />
@@ -153,7 +166,18 @@ describe('ModalHeader', () => {
       expect(screen.getByRole('button')).toBeInTheDocument()
     })
 
-    it('should render close button when "hasCloseButton" is not provided (default true)', () => {
+    it('should render close button when "hasCloseButton" is true and modal is called with children', () => {
+      render(
+        <ModalContextProvider value={mockContextValue}>
+          <ModalHeader>
+            <div>Custom header</div>
+          </ModalHeader>
+        </ModalContextProvider>
+      )
+      expect(screen.getByRole('button')).toBeInTheDocument()
+    })
+
+    it('should render close button when "hasCloseButton" is not provided (default true) and modal is called with props', () => {
       render(
         <ModalContextProvider value={mockContextValue}>
           <ModalHeader title='title' />
@@ -162,10 +186,32 @@ describe('ModalHeader', () => {
       expect(screen.getByRole('button')).toBeInTheDocument()
     })
 
-    it('should not render close button when "hasCloseButton" is false', () => {
+    it('should render close button when "hasCloseButton" is not provided (default true) and modal is called with children', () => {
+      render(
+        <ModalContextProvider value={mockContextValue}>
+          <ModalHeader>
+            <div>Custom header</div>
+          </ModalHeader>
+        </ModalContextProvider>
+      )
+      expect(screen.getByRole('button')).toBeInTheDocument()
+    })
+
+    it('should not render close button when "hasCloseButton" is false and modal is called with props', () => {
       render(
         <ModalContextProvider value={mockContextValue}>
           <ModalHeader title='title' hasCloseButton={false} />
+        </ModalContextProvider>
+      )
+      expect(screen.queryByRole('button')).toBeNull()
+    })
+
+    it('should not render close button when "hasCloseButton" is false and modal is called with children', () => {
+      render(
+        <ModalContextProvider value={mockContextValue}>
+          <ModalHeader>
+            <div>Custom header</div>
+          </ModalHeader>
         </ModalContextProvider>
       )
       expect(screen.queryByRole('button')).toBeNull()
