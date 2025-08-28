@@ -7,7 +7,7 @@ import { Tooltip } from '../Tooltip'
 import { useModalContext } from '../../hooks'
 import { composeHandlers } from '../../util/react'
 
-interface ModalCloseButtonProps {
+export interface ModalCloseButtonProps {
   style?: ExternalStyles
   onClick?(): void
 }
