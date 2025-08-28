@@ -4,14 +4,14 @@ import { ModalContextValue } from '../../hooks'
 import { ModalContextProvider } from '../../hooks/useModalContext'
 import { ModalCloseButton } from './ModalCloseButton'
 
-const mockContextValue: ModalContextValue = {
-  bodyRef: { current: document.createElement('div') },
-  scroll: 'body',
-  hasHeader: false,
-  setHasHeader: jest.fn(),
-}
-
 it('should render correctly', () => {
+  const mockContextValue: ModalContextValue = {
+    bodyRef: { current: document.createElement('div') },
+    scroll: 'body',
+    hasHeader: false,
+    setHasHeader: jest.fn(),
+  }
+
   const { container } = render(
     <ModalContextProvider value={mockContextValue}>
       <ModalCloseButton onClick={jest.fn()} />
@@ -109,6 +109,13 @@ it('should render correctly', () => {
 })
 
 it('should apply external styles prop', () => {
+  const mockContextValue: ModalContextValue = {
+    bodyRef: { current: document.createElement('div') },
+    scroll: 'body',
+    hasHeader: false,
+    setHasHeader: jest.fn(),
+  }
+
   const { getByRole } = render(
     <ModalContextProvider value={mockContextValue}>
       <ModalCloseButton onClick={jest.fn()} style={{ backgroundColor: 'red' }} />
@@ -118,8 +125,16 @@ it('should apply external styles prop', () => {
   expect(getByRole('button')).toHaveStyle('background-color: red')
 })
 
-it('should call onClick when the button is clicked', () => {
+it('should call prop onClick when provided and no context onClose exists', () => {
   const onClickMock = jest.fn()
+
+  const mockContextValue: ModalContextValue = {
+    bodyRef: { current: document.createElement('div') },
+    scroll: 'body',
+    hasHeader: false,
+    setHasHeader: jest.fn(),
+  }
+
   const { getByRole } = render(
     <ModalContextProvider value={mockContextValue}>
       <ModalCloseButton onClick={onClickMock} />
@@ -128,5 +143,49 @@ it('should call onClick when the button is clicked', () => {
 
   expect(onClickMock).not.toHaveBeenCalled()
   fireEvent.click(getByRole('button'))
+  expect(onClickMock).toHaveBeenCalledTimes(1)
+})
+
+it('should call context onClose when no prop onClick is provided', () => {
+  const onCloseMock = jest.fn()
+
+  const mockContextValue: ModalContextValue = {
+    bodyRef: { current: document.createElement('div') },
+    scroll: 'body',
+    hasHeader: false,
+    setHasHeader: jest.fn(),
+    onClose: onCloseMock,
+  }
+
+  const { getByRole } = render(
+    <ModalContextProvider value={mockContextValue}>
+      <ModalCloseButton />
+    </ModalContextProvider>
+  )
+
+  fireEvent.click(getByRole('button'))
+  expect(onCloseMock).toHaveBeenCalledTimes(1)
+})
+
+it('should call both prop onClick and context onClose when both are provided', () => {
+  const onCloseMock = jest.fn()
+  const onClickMock = jest.fn()
+
+  const mockContextValue: ModalContextValue = {
+    bodyRef: { current: document.createElement('div') },
+    scroll: 'body',
+    hasHeader: false,
+    setHasHeader: jest.fn(),
+    onClose: onCloseMock,
+  }
+
+  const { getByRole } = render(
+    <ModalContextProvider value={mockContextValue}>
+      <ModalCloseButton onClick={onClickMock} />
+    </ModalContextProvider>
+  )
+
+  fireEvent.click(getByRole('button'))
+  expect(onCloseMock).toHaveBeenCalledTimes(1)
   expect(onClickMock).toHaveBeenCalledTimes(1)
 })
