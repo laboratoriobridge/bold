@@ -28,20 +28,6 @@ exports[`should render correctly 1`] = `
   overflow: hidden;
 }
 
-.emotion-11 {
-  max-height: 80vh;
-  border: 1px solid #D3D4DD;
-  box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
-  border-radius: 4px;
-  background-color: #FFFFFF;
-  min-width: 520px;
-  pointer-events: auto;
-  overflow: hidden;
-  display: grid;
-  grid-template-rows: 1fr auto auto;
-  width: 520px;
-}
-
 .emotion-6 {
   display: grid;
   grid-auto-flow: column;
@@ -56,6 +42,7 @@ exports[`should render correctly 1`] = `
   -ms-flex-pack: justify;
   justify-content: space-between;
   width: 100%;
+  grid-template-columns: 1fr auto;
   padding: 1.5rem 1rem 1rem 2rem;
   z-index: 1;
   background-color: #FFFFFF;
@@ -275,6 +262,20 @@ exports[`should render correctly 1`] = `
   opacity: 0;
 }
 
+.emotion-11 {
+  max-height: 80vh;
+  border: 1px solid #D3D4DD;
+  box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  min-width: 520px;
+  pointer-events: auto;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  width: 520px;
+}
+
 <body
   class="emotion-15"
 >
@@ -387,6 +388,7 @@ exports[`should render correctly with depth 1`] = `
   -ms-flex-pack: justify;
   justify-content: space-between;
   width: 100%;
+  grid-template-columns: 1fr auto;
   padding: 1.5rem 1rem 1rem 2rem;
   z-index: 1;
   background-color: #FFFFFF;
@@ -619,6 +621,16 @@ exports[`should render correctly with depth 1`] = `
   padding: 2rem;
 }
 
+.emotion-13 {
+  position: fixed;
+  z-index: 1450;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(211,212,221,0.7);
+}
+
 .emotion-11 {
   max-height: 80vh;
   border: 1px solid #D3D4DD;
@@ -629,18 +641,8 @@ exports[`should render correctly with depth 1`] = `
   pointer-events: auto;
   overflow: hidden;
   display: grid;
-  grid-template-rows: 1fr auto auto;
+  grid-template-rows: auto 1fr auto;
   width: 900px;
-}
-
-.emotion-13 {
-  position: fixed;
-  z-index: 1450;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background: rgba(211,212,221,0.7);
 }
 
 <body
@@ -774,6 +776,7 @@ exports[`should render correctly without 'overflow hidden' prop in document clas
   -ms-flex-pack: justify;
   justify-content: space-between;
   width: 100%;
+  grid-template-columns: 1fr auto;
   padding: 1.5rem 1rem 1rem 2rem;
   z-index: 1;
   background-color: #FFFFFF;
@@ -1003,7 +1006,7 @@ exports[`should render correctly without 'overflow hidden' prop in document clas
   pointer-events: auto;
   overflow: hidden;
   display: grid;
-  grid-template-rows: 1fr auto auto;
+  grid-template-rows: auto 1fr auto;
   width: 900px;
 }
 

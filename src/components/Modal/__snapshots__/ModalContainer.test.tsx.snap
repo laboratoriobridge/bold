@@ -11,7 +11,7 @@ exports[`should accept the "style" prop 1`] = `
   pointer-events: auto;
   overflow: hidden;
   display: grid;
-  grid-template-rows: 1fr auto auto;
+  grid-template-rows: 1fr auto;
   color: red;
 }
 
@@ -20,10 +20,8 @@ exports[`should accept the "style" prop 1`] = `
     aria-modal="true"
     class="emotion-0"
     role="dialog"
+    title="Modal container"
   >
-    <div
-      title="Modal container"
-    />
     Container
   </div>
 </div>
@@ -40,7 +38,7 @@ exports[`should render correctly 1`] = `
   pointer-events: auto;
   overflow: hidden;
   display: grid;
-  grid-template-rows: 1fr auto auto;
+  grid-template-rows: 1fr auto;
 }
 
 <div>
@@ -48,10 +46,8 @@ exports[`should render correctly 1`] = `
     aria-modal="true"
     class="emotion-0"
     role="dialog"
+    title="Modal container"
   >
-    <div
-      title="Modal container"
-    />
     Container
   </div>
 </div>

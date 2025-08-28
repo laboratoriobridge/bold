@@ -43,6 +43,7 @@ Array [
   "ModalMountTarget",
   "Modal",
   "ModalBackdrop",
+  "ModalHeader",
   "ModalBody",
   "ModalContainer",
   "ModalFooter",
