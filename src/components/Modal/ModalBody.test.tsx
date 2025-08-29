@@ -8,7 +8,11 @@ const mockContextValue: ModalContextValue = {
   bodyRef: { current: document.createElement('div') },
   scroll: 'body',
   hasHeader: false,
+  hasLeftSidebar: false,
+  hasRightSidebar: false,
   setHasHeader: jest.fn(),
+  setHasLeftSidebar: jest.fn(),
+  setHasRightSidebar: jest.fn(),
 }
 
 it('should render correctly', () => {
@@ -39,12 +43,12 @@ it("should set ModalBody overflow to auto when scroll is 'body'", () => {
   expect(modalBody).toHaveStyle('overflow: auto;')
 })
 
-it("should set ModalBody overflow to hidden when scroll is 'full'", () => {
+it("should set ModalBody overflow to initial when scroll is 'full'", () => {
   const { getByTestId } = render(
     <ModalContextProvider value={{ ...mockContextValue, scroll: 'full' }}>
       <ModalBody data-testid='modal-body'>Modal content</ModalBody>
     </ModalContextProvider>
   )
   const modalBody = getByTestId('modal-body')
-  expect(modalBody).toHaveStyle('overflow: hidden;')
+  expect(modalBody).toHaveStyle('overflow: initial;')
 })

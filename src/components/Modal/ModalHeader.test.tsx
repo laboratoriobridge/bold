@@ -8,6 +8,7 @@ import { Modal } from './Modal'
 import { ModalHeader } from './ModalHeader'
 import { ModalBody } from './ModalBody'
 import { ModalHeaderIcon } from './ModalHeaderIcon'
+import { ModalSidebar } from './ModalSidebar'
 
 jest.mock('./ModalHeaderIcon', () => ({
   ModalHeaderIcon: jest.fn((props) => <div {...props} />),
@@ -21,7 +22,11 @@ const mockContextValue: ModalContextValue = {
   bodyRef: { current: document.createElement('div') },
   scroll: 'body',
   hasHeader: true,
+  hasLeftSidebar: false,
+  hasRightSidebar: false,
   setHasHeader: jest.fn(),
+  setHasLeftSidebar: jest.fn(),
+  setHasRightSidebar: jest.fn(),
 }
 
 describe('ModalHeader', () => {
@@ -287,6 +292,102 @@ describe('ModalHeader', () => {
         }),
         {}
       )
+    })
+  })
+
+  describe('sidebar presence', () => {
+    it('should apply background to ModalHeader when there is sidebar', () => {
+      const { getByTestId } = render(
+        <Modal open scroll='full'>
+          <ModalHeader title='Modal title' />
+          <ModalSidebar side='left' />
+          <ModalBody>Short content</ModalBody>
+        </Modal>
+      )
+      const modalHeader = getByTestId('modal-header')
+      expect(getComputedStyle(modalHeader).background).toBe('rgb(240, 240, 245)')
+    })
+
+    it("should not apply border to ModalHeader when scroll is 'full' and there is no sidebar", () => {
+      const { getByTestId } = render(
+        <Modal open scroll='full'>
+          <ModalHeader title='Modal title' />
+          <ModalBody>Short content</ModalBody>
+        </Modal>
+      )
+      const modalHeader = getByTestId('modal-header')
+      expect(getComputedStyle(modalHeader).borderBottom).toBe('')
+    })
+
+    it("should not apply border to ModalHeader when scroll is 'body' and there is no sidebar", () => {
+      const { getByTestId } = render(
+        <Modal open scroll='body'>
+          <ModalHeader title='Modal title' />
+          <ModalBody>Short content</ModalBody>
+        </Modal>
+      )
+      const modalHeader = getByTestId('modal-header')
+      expect(getComputedStyle(modalHeader).borderBottom).toBe('')
+    })
+
+    it("should apply border to ModalHeader when scroll is 'body' and there is sidebar", () => {
+      const { getByTestId } = render(
+        <Modal open scroll='body'>
+          <ModalHeader title='Modal title' />
+          <ModalSidebar side='left' />
+          <ModalBody>Short content</ModalBody>
+        </Modal>
+      )
+      const modalHeader = getByTestId('modal-header')
+      expect(getComputedStyle(modalHeader).borderBottom).toBe('1px solid #D3D4DD')
+    })
+
+    it("should apply border to ModalHeader when scroll is 'full' and there is sidebar", () => {
+      const { getByTestId } = render(
+        <Modal open scroll='full'>
+          <ModalHeader title='Modal title' />
+          <ModalSidebar side='left' />
+          <ModalBody>Short content</ModalBody>
+        </Modal>
+      )
+      const modalHeader = getByTestId('modal-header')
+      expect(getComputedStyle(modalHeader).borderBottom).toBe('1px solid #D3D4DD')
+    })
+
+    it("should apply border to ModalHeader when scroll is 'body' and content is not overflowing and there is sidebar", () => {
+      const { getByTestId } = render(
+        <Modal open>
+          <ModalHeader title='Modal title' />
+          <ModalSidebar side='left' />
+          <ModalBody>Short content</ModalBody>
+        </Modal>
+      )
+      const modalHeader = getByTestId('modal-header')
+      expect(getComputedStyle(modalHeader).borderBottom).toBe('1px solid #D3D4DD')
+      expect(getComputedStyle(modalHeader).boxShadow).toBe('')
+    })
+
+    it("should apply shadow to ModalHeader when scroll is 'body' and content is overflowing and there is sidebar", async () => {
+      const createComponent = () => (
+        <Modal open>
+          <ModalHeader title='Modal title' />
+          <ModalSidebar side='left' />
+          <ModalBody data-testid='modal-body'>Long content</ModalBody>
+        </Modal>
+      )
+
+      const { getByTestId, rerender } = render(createComponent())
+
+      const modalBody = getByTestId('modal-body')
+      Object.defineProperty(modalBody, 'scrollHeight', { value: 500 })
+      Object.defineProperty(modalBody, 'clientHeight', { value: 300 })
+
+      rerender(createComponent())
+
+      const modalHeader = screen.getByTestId('modal-header')
+
+      expect(getComputedStyle(modalHeader).borderBottom).toBe('')
+      expect(getComputedStyle(modalHeader).boxShadow).toBe('0 1px 5px 0 rgba(0,0,0,0.12),0 2px 1px 0 rgba(0,0,0,0.04)')
     })
   })
 })

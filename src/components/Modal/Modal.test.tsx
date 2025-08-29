@@ -197,13 +197,13 @@ describe('modal scroll mode', () => {
     expect(dialog).toHaveStyle('overflow: auto;')
   })
 
-  it("should set ModalBody overflow to hidden when scroll is 'full'", () => {
+  it("should set ModalBody overflow to initial when scroll is 'full'", () => {
     const { getByTestId } = render(
       <Modal open scroll='full'>
         <ModalBody data-testid='modal-body'>Modal content</ModalBody>
       </Modal>
     )
     const modalBody = getByTestId('modal-body')
-    expect(modalBody).toHaveStyle('overflow: hidden;')
+    expect(modalBody).toHaveStyle('overflow: initial;')
   })
 })
