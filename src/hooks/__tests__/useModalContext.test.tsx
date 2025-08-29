@@ -72,27 +72,6 @@ it('should call setPart when modal has header', () => {
   expect(mockSetPart).toHaveBeenCalledWith('hasHeader', true)
 })
 
-it('should not call setPart when modal has no header', () => {
-  const setPart = jest.fn()
-
-  const mockContextValue: ModalContextValue = {
-    bodyRef: { current: document.createElement('div') },
-    scroll: 'body',
-    hasHeader: false,
-    hasLeftSidebar: false,
-    hasRightSidebar: false,
-    setPart: jest.fn(),
-  }
-
-  render(
-    <ModalContextProvider value={mockContextValue}>
-      <ModalBody>Body content</ModalBody>
-    </ModalContextProvider>
-  )
-
-  expect(setPart).not.toHaveBeenCalled()
-})
-
 it('should call setPart when modal has left sidebar', () => {
   const mockSetPart = jest.fn()
 
@@ -114,27 +93,6 @@ it('should call setPart when modal has left sidebar', () => {
 
   expect(mockSetPart).toHaveBeenCalledTimes(1)
   expect(mockSetPart).toHaveBeenCalledWith('hasLeftSidebar', true)
-})
-
-it('should not call setPart when modal has no left sidebar', () => {
-  const mockSetPart = jest.fn()
-
-  const mockContextValue: ModalContextValue = {
-    bodyRef: { current: document.createElement('div') },
-    scroll: 'body',
-    hasHeader: true,
-    hasLeftSidebar: false,
-    hasRightSidebar: false,
-    setPart: jest.fn(),
-  }
-
-  render(
-    <ModalContextProvider value={mockContextValue}>
-      <ModalBody>Body content</ModalBody>
-    </ModalContextProvider>
-  )
-
-  expect(mockSetPart).not.toHaveBeenCalled()
 })
 
 it('should call setPart when modal has right sidebar', () => {
@@ -160,13 +118,13 @@ it('should call setPart when modal has right sidebar', () => {
   expect(mockSetPart).toHaveBeenCalledWith('hasRightSidebar', true)
 })
 
-it('should not call setPart when modal has no right sidebar', () => {
+it('should not call setPart when modal has no optional sections (header, left sidebar, right sidebar)', () => {
   const mockSetPart = jest.fn()
 
   const mockContextValue: ModalContextValue = {
     bodyRef: { current: document.createElement('div') },
     scroll: 'body',
-    hasHeader: true,
+    hasHeader: false,
     hasLeftSidebar: false,
     hasRightSidebar: false,
     setPart: mockSetPart,
