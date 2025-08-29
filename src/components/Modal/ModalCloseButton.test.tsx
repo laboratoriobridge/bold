@@ -11,9 +11,7 @@ it('should render correctly', () => {
     hasHeader: false,
     hasLeftSidebar: false,
     hasRightSidebar: false,
-    setHasHeader: jest.fn(),
-    setHasLeftSidebar: jest.fn(),
-    setHasRightSidebar: jest.fn(),
+    setPart: jest.fn(),
   }
 
   const { container } = render(
@@ -119,9 +117,7 @@ it('should apply external styles prop', () => {
     hasHeader: false,
     hasLeftSidebar: false,
     hasRightSidebar: false,
-    setHasHeader: jest.fn(),
-    setHasLeftSidebar: jest.fn(),
-    setHasRightSidebar: jest.fn(),
+    setPart: jest.fn(),
   }
 
   const { getByRole } = render(
@@ -142,9 +138,7 @@ it('should call prop onClick when provided and no context onClose exists', () =>
     hasHeader: false,
     hasLeftSidebar: false,
     hasRightSidebar: false,
-    setHasHeader: jest.fn(),
-    setHasLeftSidebar: jest.fn(),
-    setHasRightSidebar: jest.fn(),
+    setPart: jest.fn(),
   }
 
   const { getByRole } = render(
@@ -167,9 +161,7 @@ it('should call context onClose when no prop onClick is provided', () => {
     hasHeader: false,
     hasLeftSidebar: false,
     hasRightSidebar: false,
-    setHasHeader: jest.fn(),
-    setHasLeftSidebar: jest.fn(),
-    setHasRightSidebar: jest.fn(),
+    setPart: jest.fn(),
     onClose: onCloseMock,
   }
 
@@ -193,9 +185,7 @@ it('should call both prop onClick and context onClose when both are provided', (
     hasHeader: false,
     hasLeftSidebar: false,
     hasRightSidebar: false,
-    setHasHeader: jest.fn(),
-    setHasLeftSidebar: jest.fn(),
-    setHasRightSidebar: jest.fn(),
+    setPart: jest.fn(),
     onClose: onCloseMock,
   }
 

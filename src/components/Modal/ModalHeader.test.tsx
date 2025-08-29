@@ -24,9 +24,7 @@ const mockContextValue: ModalContextValue = {
   hasHeader: true,
   hasLeftSidebar: false,
   hasRightSidebar: false,
-  setHasHeader: jest.fn(),
-  setHasLeftSidebar: jest.fn(),
-  setHasRightSidebar: jest.fn(),
+  setPart: jest.fn(),
 }
 
 describe('ModalHeader', () => {

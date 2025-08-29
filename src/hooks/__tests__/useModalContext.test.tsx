@@ -28,9 +28,7 @@ it('should return provided context values when inside ModalContextProvider', () 
     hasHeader: true,
     hasLeftSidebar: false,
     hasRightSidebar: false,
-    setHasHeader: jest.fn(),
-    setHasLeftSidebar: jest.fn(),
-    setHasRightSidebar: jest.fn(),
+    setPart: jest.fn(),
   }
 
   render(
@@ -52,31 +50,8 @@ it('should throw an error when used outside ModalContextProvider', () => {
   )
 })
 
-it('should call setHasHeader when modal has header', () => {
-  const mockSetHasHeader = jest.fn()
-
-  const mockContextValue: ModalContextValue = {
-    bodyRef: { current: document.createElement('div') },
-    scroll: 'body',
-    hasHeader: true,
-    hasLeftSidebar: false,
-    hasRightSidebar: false,
-    setHasHeader: mockSetHasHeader,
-    setHasLeftSidebar: jest.fn(),
-    setHasRightSidebar: jest.fn(),
-  }
-
-  render(
-    <ModalContextProvider value={mockContextValue}>
-      <ModalHeader title='Modal title' />
-    </ModalContextProvider>
-  )
-
-  expect(mockSetHasHeader).toHaveBeenCalledTimes(1)
-})
-
-it('should not call setHasHeader when modal has no header', () => {
-  const mockSetHasHeader = jest.fn()
+it('should call setPart when modal has header', () => {
+  const mockSetPart = jest.fn()
 
   const mockContextValue: ModalContextValue = {
     bodyRef: { current: document.createElement('div') },
@@ -84,22 +59,42 @@ it('should not call setHasHeader when modal has no header', () => {
     hasHeader: false,
     hasLeftSidebar: false,
     hasRightSidebar: false,
-    setHasHeader: mockSetHasHeader,
-    setHasLeftSidebar: jest.fn(),
-    setHasRightSidebar: jest.fn(),
+    setPart: mockSetPart,
   }
 
   render(
     <ModalContextProvider value={mockContextValue}>
-      <ModalBody>Modal body content</ModalBody>
+      <ModalHeader title='Modal title' />
     </ModalContextProvider>
   )
 
-  expect(mockSetHasHeader).not.toHaveBeenCalled()
+  expect(mockSetPart).toHaveBeenCalledTimes(1)
+  expect(mockSetPart).toHaveBeenCalledWith('hasHeader', true)
 })
 
-it('should call setHasLeftSidebar when modal has left sidebar', () => {
-  const mockSetHasLeftSidebar = jest.fn()
+it('should not call setHasHeader when modal has no header', () => {
+  const setPart = jest.fn()
+
+  const mockContextValue: ModalContextValue = {
+    bodyRef: { current: document.createElement('div') },
+    scroll: 'body',
+    hasHeader: false,
+    hasLeftSidebar: false,
+    hasRightSidebar: false,
+    setPart: jest.fn(),
+  }
+
+  render(
+    <ModalContextProvider value={mockContextValue}>
+      <ModalBody>Body content</ModalBody>
+    </ModalContextProvider>
+  )
+
+  expect(setPart).not.toHaveBeenCalled()
+})
+
+it('should call setPart when modal has left sidebar', () => {
+  const mockSetPart = jest.fn()
 
   const mockContextValue: ModalContextValue = {
     bodyRef: { current: document.createElement('div') },
@@ -107,23 +102,22 @@ it('should call setHasLeftSidebar when modal has left sidebar', () => {
     hasHeader: true,
     hasLeftSidebar: true,
     hasRightSidebar: false,
-    setHasLeftSidebar: mockSetHasLeftSidebar,
-    setHasRightSidebar: jest.fn(),
-    setHasHeader: jest.fn(),
+    setPart: mockSetPart,
   }
 
   render(
     <ModalContextProvider value={mockContextValue}>
-      <ModalHeader title='Modal title' />
       <ModalSidebar position='left' />
+      <ModalBody>Body content</ModalBody>
     </ModalContextProvider>
   )
 
-  expect(mockSetHasLeftSidebar).toHaveBeenCalledTimes(1)
+  expect(mockSetPart).toHaveBeenCalledTimes(1)
+  expect(mockSetPart).toHaveBeenCalledWith('hasLeftSidebar', true)
 })
 
-it('should not call setHasLeftSidebar when modal has no left sidebar', () => {
-  const mockSetHasLeftSidebar = jest.fn()
+it('should not call setPart when modal has no left sidebar', () => {
+  const mockSetPart = jest.fn()
 
   const mockContextValue: ModalContextValue = {
     bodyRef: { current: document.createElement('div') },
@@ -131,22 +125,20 @@ it('should not call setHasLeftSidebar when modal has no left sidebar', () => {
     hasHeader: true,
     hasLeftSidebar: false,
     hasRightSidebar: false,
-    setHasLeftSidebar: mockSetHasLeftSidebar,
-    setHasRightSidebar: jest.fn(),
-    setHasHeader: jest.fn(),
+    setPart: jest.fn(),
   }
 
   render(
     <ModalContextProvider value={mockContextValue}>
-      <ModalHeader title='Modal title' />
+      <ModalBody>Body content</ModalBody>
     </ModalContextProvider>
   )
 
-  expect(mockSetHasLeftSidebar).not.toHaveBeenCalled()
+  expect(mockSetPart).not.toHaveBeenCalled()
 })
 
-it('should call setHasRightSidebar when modal has right sidebar', () => {
-  const mockSetHasRightSidebar = jest.fn()
+it('should call setPart when modal has right sidebar', () => {
+  const mockSetPart = jest.fn()
 
   const mockContextValue: ModalContextValue = {
     bodyRef: { current: document.createElement('div') },
@@ -154,23 +146,22 @@ it('should call setHasRightSidebar when modal has right sidebar', () => {
     hasHeader: true,
     hasLeftSidebar: false,
     hasRightSidebar: true,
-    setHasLeftSidebar: jest.fn(),
-    setHasRightSidebar: mockSetHasRightSidebar,
-    setHasHeader: jest.fn(),
+    setPart: mockSetPart,
   }
 
   render(
     <ModalContextProvider value={mockContextValue}>
-      <ModalHeader title='Modal title' />
       <ModalSidebar position='right' />
+      <ModalBody>Body content</ModalBody>
     </ModalContextProvider>
   )
 
-  expect(mockSetHasRightSidebar).toHaveBeenCalledTimes(1)
+  expect(mockSetPart).toHaveBeenCalledTimes(1)
+  expect(mockSetPart).toHaveBeenCalledWith('hasRightSidebar', true)
 })
 
-it('should not call setHasLeftSidebar when modal has no right sidebar', () => {
-  const mockSetHasRightSidebar = jest.fn()
+it('should not call setPart when modal has no right sidebar', () => {
+  const mockSetPart = jest.fn()
 
   const mockContextValue: ModalContextValue = {
     bodyRef: { current: document.createElement('div') },
@@ -178,16 +169,41 @@ it('should not call setHasLeftSidebar when modal has no right sidebar', () => {
     hasHeader: true,
     hasLeftSidebar: false,
     hasRightSidebar: false,
-    setHasLeftSidebar: jest.fn(),
-    setHasRightSidebar: mockSetHasRightSidebar,
-    setHasHeader: jest.fn(),
+    setPart: mockSetPart,
+  }
+
+  render(
+    <ModalContextProvider value={mockContextValue}>
+      <ModalBody>Body content</ModalBody>
+    </ModalContextProvider>
+  )
+
+  expect(mockSetPart).not.toHaveBeenCalled()
+})
+
+it('should call setPart three times when modal has header, left sidebar and right sidebar', () => {
+  const mockSetPart = jest.fn()
+
+  const mockContextValue: ModalContextValue = {
+    bodyRef: { current: document.createElement('div') },
+    scroll: 'body',
+    hasHeader: true,
+    hasLeftSidebar: false,
+    hasRightSidebar: true,
+    setPart: mockSetPart,
   }
 
   render(
     <ModalContextProvider value={mockContextValue}>
       <ModalHeader title='Modal title' />
+      <ModalSidebar position='left' />
+      <ModalBody>Body content</ModalBody>
+      <ModalSidebar position='right' />
     </ModalContextProvider>
   )
 
-  expect(mockSetHasRightSidebar).not.toHaveBeenCalled()
+  expect(mockSetPart).toHaveBeenCalledTimes(3)
+  expect(mockSetPart).toHaveBeenCalledWith('hasHeader', true)
+  expect(mockSetPart).toHaveBeenCalledWith('hasLeftSidebar', true)
+  expect(mockSetPart).toHaveBeenCalledWith('hasRightSidebar', true)
 })

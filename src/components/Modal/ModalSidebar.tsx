@@ -13,19 +13,19 @@ export interface ModalSidebarProps extends Omit<React.HTMLAttributes<HTMLDivElem
 export function ModalSidebar(props: ModalSidebarProps) {
   const { position, style, children, ...rest } = props
 
-  const { scroll, setHasLeftSidebar, setHasRightSidebar } = useModalContext()
+  const { scroll, setPart } = useModalContext()
   const { classes } = useStyles(createStyles, position, scroll)
 
   useEffect(() => {
     if (position === 'left') {
-      setHasLeftSidebar(true)
-      return () => setHasLeftSidebar(false)
+      setPart('hasLeftSidebar', true)
+      return () => setPart('hasLeftSidebar', false)
     }
     if (position === 'right') {
-      setHasRightSidebar(true)
-      return () => setHasRightSidebar(false)
+      setPart('hasRightSidebar', true)
+      return () => setPart('hasRightSidebar', false)
     }
-  }, [setHasLeftSidebar, setHasRightSidebar, position])
+  }, [setPart, position])
 
   return (
     <div className={classes.sidebar} {...rest}>

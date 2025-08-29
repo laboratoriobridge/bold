@@ -1,10 +1,10 @@
 import FocusTrap from 'focus-trap-react'
-import React, { Ref, useEffect, useMemo, useRef, useState } from 'react'
+import React, { Ref, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { Theme, useStyles } from '../../styles'
 import { zIndexLevel } from '../../styles/theme/zIndex'
 import { Portal } from '../Portal'
 import { FadeTransition } from '../Transition/FadeTransition'
-import { ModalContextValue, ModalContextProvider } from '../../hooks/useModalContext'
+import { ModalContextValue, ModalContextProvider, ModalPartsState } from '../../hooks/useModalContext'
 import { ModalBackdrop } from './ModalBackdrop'
 import { ModalContainer, ModalContainerProps } from './ModalContainer'
 
@@ -62,22 +62,27 @@ export function Modal(props: ModalProps) {
   const { classes, css } = useStyles(createStyles, depthLevel, scroll)
   const bodyRef = useRef()
   const modalRef = useRef<HTMLDivElement>(null)
-  const [hasHeader, setHasHeader] = useState(false)
-  const [hasLeftSidebar, setHasLeftSidebar] = useState(false)
-  const [hasRightSidebar, setHasRightSidebar] = useState(false)
+
+  const [parts, setParts] = useState<ModalPartsState>({
+    hasHeader: false,
+    hasLeftSidebar: false,
+    hasRightSidebar: false,
+  })
+
+  const setPart = useCallback(
+    (key: keyof ModalPartsState, value: boolean) => setParts((prev) => ({ ...prev, [key]: value })),
+    []
+  )
+
   const modalContextValue: ModalContextValue = useMemo(
     () => ({
+      ...parts,
       scroll,
       bodyRef,
-      hasHeader,
-      hasLeftSidebar,
-      hasRightSidebar,
-      setHasHeader,
-      setHasLeftSidebar,
-      setHasRightSidebar,
+      setPart,
       onClose,
     }),
-    [scroll, hasHeader, hasLeftSidebar, hasRightSidebar, onClose]
+    [scroll, parts, setPart, onClose]
   )
 
   // Kill body scroll when opened
