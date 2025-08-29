@@ -72,7 +72,7 @@ it('should call setPart when modal has header', () => {
   expect(mockSetPart).toHaveBeenCalledWith('hasHeader', true)
 })
 
-it('should not call setHasHeader when modal has no header', () => {
+it('should not call setPart when modal has no header', () => {
   const setPart = jest.fn()
 
   const mockContextValue: ModalContextValue = {
