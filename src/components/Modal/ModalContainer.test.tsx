@@ -10,7 +10,11 @@ const mockContextValue: ModalContextValue = {
   bodyRef: { current: document.createElement('div') },
   scroll: 'body',
   hasHeader: false,
+  hasLeftSidebar: false,
+  hasRightSidebar: false,
   setHasHeader: jest.fn(),
+  setHasLeftSidebar: jest.fn(),
+  setHasRightSidebar: jest.fn(),
 }
 
 beforeEach(() => {

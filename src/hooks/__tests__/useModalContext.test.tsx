@@ -115,7 +115,7 @@ it('should call setHasLeftSidebar when modal has left sidebar', () => {
   render(
     <ModalContextProvider value={mockContextValue}>
       <ModalHeader title='Modal title' />
-      <ModalSidebar side='left' />
+      <ModalSidebar position='left' />
     </ModalContextProvider>
   )
 
@@ -162,7 +162,7 @@ it('should call setHasRightSidebar when modal has right sidebar', () => {
   render(
     <ModalContextProvider value={mockContextValue}>
       <ModalHeader title='Modal title' />
-      <ModalSidebar side='right' />
+      <ModalSidebar position='right' />
     </ModalContextProvider>
   )
 

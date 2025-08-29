@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Modal should accept "depthLevel" prop and pass down to ModalContainer 1`] = `
-.emotion-4 {
+.emotion-5 {
   overflow: hidden;
 }
 
-.emotion-3 {
+.emotion-4 {
   -webkit-transition: opacity 200ms ease-in-out;
   transition: opacity 200ms ease-in-out;
   opacity: 0;
@@ -13,6 +13,14 @@ exports[`Modal should accept "depthLevel" prop and pass down to ModalContainer 1
 }
 
 .emotion-0 {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: 1fr auto;
+  height: 100%;
+  min-height: 0;
+}
+
+.emotion-1 {
   max-height: 80vh;
   border: 1px solid #D3D4DD;
   box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
@@ -22,11 +30,11 @@ exports[`Modal should accept "depthLevel" prop and pass down to ModalContainer 1
   pointer-events: auto;
   overflow: hidden;
   display: grid;
-  grid-template-rows: 1fr auto;
+  grid-template-rows: 1fr;
   width: 900px;
 }
 
-.emotion-1 {
+.emotion-2 {
   position: fixed;
   left: 0;
   top: 0;
@@ -49,7 +57,7 @@ exports[`Modal should accept "depthLevel" prop and pass down to ModalContainer 1
   padding: 2rem;
 }
 
-.emotion-2 {
+.emotion-3 {
   position: fixed;
   z-index: 1250;
   top: 0;
@@ -60,25 +68,29 @@ exports[`Modal should accept "depthLevel" prop and pass down to ModalContainer 1
 }
 
 <body
-  class="emotion-4"
+  class="emotion-5"
 >
   <div />
   <div
-    class="emotion-3"
+    class="emotion-4"
   >
     <div
-      class="emotion-1"
+      class="emotion-2"
     >
       <div
         aria-modal="true"
-        class="emotion-0"
+        class="emotion-1"
         role="dialog"
       >
-        Testing.
+        <div
+          class="emotion-0"
+        >
+          Testing.
+        </div>
       </div>
     </div>
     <div
-      class="emotion-2"
+      class="emotion-3"
       data-testid="backdrop"
     />
   </div>
@@ -86,7 +98,7 @@ exports[`Modal should accept "depthLevel" prop and pass down to ModalContainer 1
 `;
 
 exports[`Modal should accept "style" prop and pass down to ModalContainer 1`] = `
-.emotion-1 {
+.emotion-2 {
   position: fixed;
   left: 0;
   top: 0;
@@ -109,18 +121,26 @@ exports[`Modal should accept "style" prop and pass down to ModalContainer 1`] = 
   padding: 2rem;
 }
 
-.emotion-4 {
+.emotion-5 {
   overflow: hidden;
 }
 
-.emotion-3 {
+.emotion-4 {
   -webkit-transition: opacity 200ms ease-in-out;
   transition: opacity 200ms ease-in-out;
   opacity: 0;
   opacity: 1;
 }
 
-.emotion-2 {
+.emotion-0 {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: 1fr auto;
+  height: 100%;
+  min-height: 0;
+}
+
+.emotion-3 {
   position: fixed;
   z-index: 1050;
   top: 0;
@@ -130,7 +150,7 @@ exports[`Modal should accept "style" prop and pass down to ModalContainer 1`] = 
   background: rgba(211,212,221,0.7);
 }
 
-.emotion-0 {
+.emotion-1 {
   max-height: 80vh;
   border: 1px solid #D3D4DD;
   box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
@@ -140,31 +160,35 @@ exports[`Modal should accept "style" prop and pass down to ModalContainer 1`] = 
   pointer-events: auto;
   overflow: hidden;
   display: grid;
-  grid-template-rows: 1fr auto;
+  grid-template-rows: 1fr;
   width: 900px;
   color: red;
 }
 
 <body
-  class="emotion-4"
+  class="emotion-5"
 >
   <div />
   <div
-    class="emotion-3"
+    class="emotion-4"
   >
     <div
-      class="emotion-1"
+      class="emotion-2"
     >
       <div
         aria-modal="true"
-        class="emotion-0"
+        class="emotion-1"
         role="dialog"
       >
-        Testing.
+        <div
+          class="emotion-0"
+        >
+          Testing.
+        </div>
       </div>
     </div>
     <div
-      class="emotion-2"
+      class="emotion-3"
       data-testid="backdrop"
     />
   </div>
@@ -178,7 +202,104 @@ exports[`Modal should render correctly when closed 1`] = `
 `;
 
 exports[`Modal should render correctly when opened 1`] = `
+.emotion-2 {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 1100;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.emotion-5 {
+  overflow: hidden;
+}
+
+.emotion-4 {
+  -webkit-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
+  opacity: 0;
+  opacity: 1;
+}
+
+.emotion-0 {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: 1fr auto;
+  height: 100%;
+  min-height: 0;
+}
+
 .emotion-1 {
+  max-height: 80vh;
+  border: 1px solid #D3D4DD;
+  box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  min-width: 520px;
+  pointer-events: auto;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: 1fr;
+  width: 900px;
+}
+
+.emotion-3 {
+  position: fixed;
+  z-index: 1050;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(211,212,221,0.7);
+}
+
+<body
+  class="emotion-5"
+>
+  <div />
+  <div
+    class="emotion-4"
+  >
+    <div
+      class="emotion-2"
+    >
+      <div
+        aria-modal="true"
+        class="emotion-1"
+        role="dialog"
+      >
+        <div
+          class="emotion-0"
+        >
+          Testing.
+        </div>
+      </div>
+    </div>
+    <div
+      class="emotion-3"
+      data-testid="backdrop"
+    />
+  </div>
+</body>
+`;
+
+exports[`Modal should'n add "overflow: hidden" property to document when manageOverflow is false 1`] = `
+.emotion-2 {
   position: fixed;
   left: 0;
   top: 0;
@@ -202,10 +323,6 @@ exports[`Modal should render correctly when opened 1`] = `
 }
 
 .emotion-4 {
-  overflow: hidden;
-}
-
-.emotion-3 {
   -webkit-transition: opacity 200ms ease-in-out;
   transition: opacity 200ms ease-in-out;
   opacity: 0;
@@ -213,87 +330,14 @@ exports[`Modal should render correctly when opened 1`] = `
 }
 
 .emotion-0 {
-  max-height: 80vh;
-  border: 1px solid #D3D4DD;
-  box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
-  border-radius: 4px;
-  background-color: #FFFFFF;
-  min-width: 520px;
-  pointer-events: auto;
-  overflow: hidden;
   display: grid;
+  grid-template-columns: auto 1fr auto;
   grid-template-rows: 1fr auto;
-  width: 900px;
+  height: 100%;
+  min-height: 0;
 }
 
-.emotion-2 {
-  position: fixed;
-  z-index: 1050;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background: rgba(211,212,221,0.7);
-}
-
-<body
-  class="emotion-4"
->
-  <div />
-  <div
-    class="emotion-3"
-  >
-    <div
-      class="emotion-1"
-    >
-      <div
-        aria-modal="true"
-        class="emotion-0"
-        role="dialog"
-      >
-        Testing.
-      </div>
-    </div>
-    <div
-      class="emotion-2"
-      data-testid="backdrop"
-    />
-  </div>
-</body>
-`;
-
-exports[`Modal should'n add "overflow: hidden" property to document when manageOverflow is false 1`] = `
 .emotion-1 {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100vh;
-  pointer-events: none;
-  z-index: 1100;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  padding: 2rem;
-}
-
-.emotion-3 {
-  -webkit-transition: opacity 200ms ease-in-out;
-  transition: opacity 200ms ease-in-out;
-  opacity: 0;
-  opacity: 1;
-}
-
-.emotion-0 {
   max-height: 80vh;
   border: 1px solid #D3D4DD;
   box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
@@ -303,11 +347,11 @@ exports[`Modal should'n add "overflow: hidden" property to document when manageO
   pointer-events: auto;
   overflow: hidden;
   display: grid;
-  grid-template-rows: 1fr auto;
+  grid-template-rows: 1fr;
   width: 900px;
 }
 
-.emotion-2 {
+.emotion-3 {
   position: fixed;
   z-index: 1050;
   top: 0;
@@ -322,21 +366,25 @@ exports[`Modal should'n add "overflow: hidden" property to document when manageO
 >
   <div />
   <div
-    class="emotion-3"
+    class="emotion-4"
   >
     <div
-      class="emotion-1"
+      class="emotion-2"
     >
       <div
         aria-modal="true"
-        class="emotion-0"
+        class="emotion-1"
         role="dialog"
       >
-        Testing.
+        <div
+          class="emotion-0"
+        >
+          Testing.
+        </div>
       </div>
     </div>
     <div
-      class="emotion-2"
+      class="emotion-3"
       data-testid="backdrop"
     />
   </div>
@@ -344,7 +392,7 @@ exports[`Modal should'n add "overflow: hidden" property to document when manageO
 `;
 
 exports[`Modal sizes should accept the "auto" size and render accordingly 1`] = `
-.emotion-1 {
+.emotion-2 {
   position: fixed;
   left: 0;
   top: 0;
@@ -367,18 +415,26 @@ exports[`Modal sizes should accept the "auto" size and render accordingly 1`] = 
   padding: 2rem;
 }
 
-.emotion-4 {
+.emotion-5 {
   overflow: hidden;
 }
 
-.emotion-3 {
+.emotion-4 {
   -webkit-transition: opacity 200ms ease-in-out;
   transition: opacity 200ms ease-in-out;
   opacity: 0;
   opacity: 1;
 }
 
-.emotion-2 {
+.emotion-0 {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: 1fr auto;
+  height: 100%;
+  min-height: 0;
+}
+
+.emotion-3 {
   position: fixed;
   z-index: 1050;
   top: 0;
@@ -388,7 +444,7 @@ exports[`Modal sizes should accept the "auto" size and render accordingly 1`] = 
   background: rgba(211,212,221,0.7);
 }
 
-.emotion-0 {
+.emotion-1 {
   max-height: 80vh;
   border: 1px solid #D3D4DD;
   box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
@@ -398,30 +454,34 @@ exports[`Modal sizes should accept the "auto" size and render accordingly 1`] = 
   pointer-events: auto;
   overflow: hidden;
   display: grid;
-  grid-template-rows: 1fr auto;
+  grid-template-rows: 1fr;
   max-width: 100%;
 }
 
 <body
-  class="emotion-4"
+  class="emotion-5"
 >
   <div />
   <div
-    class="emotion-3"
+    class="emotion-4"
   >
     <div
-      class="emotion-1"
+      class="emotion-2"
     >
       <div
         aria-modal="true"
-        class="emotion-0"
+        class="emotion-1"
         role="dialog"
       >
-        Testing.
+        <div
+          class="emotion-0"
+        >
+          Testing.
+        </div>
       </div>
     </div>
     <div
-      class="emotion-2"
+      class="emotion-3"
       data-testid="backdrop"
     />
   </div>
@@ -429,7 +489,7 @@ exports[`Modal sizes should accept the "auto" size and render accordingly 1`] = 
 `;
 
 exports[`Modal sizes should accept the "large" size and render accordingly 1`] = `
-.emotion-1 {
+.emotion-2 {
   position: fixed;
   left: 0;
   top: 0;
@@ -452,11 +512,11 @@ exports[`Modal sizes should accept the "large" size and render accordingly 1`] =
   padding: 2rem;
 }
 
-.emotion-4 {
+.emotion-5 {
   overflow: hidden;
 }
 
-.emotion-3 {
+.emotion-4 {
   -webkit-transition: opacity 200ms ease-in-out;
   transition: opacity 200ms ease-in-out;
   opacity: 0;
@@ -464,6 +524,14 @@ exports[`Modal sizes should accept the "large" size and render accordingly 1`] =
 }
 
 .emotion-0 {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: 1fr auto;
+  height: 100%;
+  min-height: 0;
+}
+
+.emotion-1 {
   max-height: 80vh;
   border: 1px solid #D3D4DD;
   box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
@@ -473,11 +541,11 @@ exports[`Modal sizes should accept the "large" size and render accordingly 1`] =
   pointer-events: auto;
   overflow: hidden;
   display: grid;
-  grid-template-rows: 1fr auto;
+  grid-template-rows: 1fr;
   width: 900px;
 }
 
-.emotion-2 {
+.emotion-3 {
   position: fixed;
   z-index: 1050;
   top: 0;
@@ -488,25 +556,29 @@ exports[`Modal sizes should accept the "large" size and render accordingly 1`] =
 }
 
 <body
-  class="emotion-4"
+  class="emotion-5"
 >
   <div />
   <div
-    class="emotion-3"
+    class="emotion-4"
   >
     <div
-      class="emotion-1"
+      class="emotion-2"
     >
       <div
         aria-modal="true"
-        class="emotion-0"
+        class="emotion-1"
         role="dialog"
       >
-        Testing.
+        <div
+          class="emotion-0"
+        >
+          Testing.
+        </div>
       </div>
     </div>
     <div
-      class="emotion-2"
+      class="emotion-3"
       data-testid="backdrop"
     />
   </div>
@@ -514,7 +586,7 @@ exports[`Modal sizes should accept the "large" size and render accordingly 1`] =
 `;
 
 exports[`Modal sizes should accept the "small" size and render accordingly 1`] = `
-.emotion-1 {
+.emotion-2 {
   position: fixed;
   left: 0;
   top: 0;
@@ -537,18 +609,26 @@ exports[`Modal sizes should accept the "small" size and render accordingly 1`] =
   padding: 2rem;
 }
 
-.emotion-4 {
+.emotion-5 {
   overflow: hidden;
 }
 
-.emotion-3 {
+.emotion-4 {
   -webkit-transition: opacity 200ms ease-in-out;
   transition: opacity 200ms ease-in-out;
   opacity: 0;
   opacity: 1;
 }
 
-.emotion-2 {
+.emotion-0 {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: 1fr auto;
+  height: 100%;
+  min-height: 0;
+}
+
+.emotion-3 {
   position: fixed;
   z-index: 1050;
   top: 0;
@@ -558,7 +638,7 @@ exports[`Modal sizes should accept the "small" size and render accordingly 1`] =
   background: rgba(211,212,221,0.7);
 }
 
-.emotion-0 {
+.emotion-1 {
   max-height: 80vh;
   border: 1px solid #D3D4DD;
   box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
@@ -568,30 +648,34 @@ exports[`Modal sizes should accept the "small" size and render accordingly 1`] =
   pointer-events: auto;
   overflow: hidden;
   display: grid;
-  grid-template-rows: 1fr auto;
+  grid-template-rows: 1fr;
   width: 520px;
 }
 
 <body
-  class="emotion-4"
+  class="emotion-5"
 >
   <div />
   <div
-    class="emotion-3"
+    class="emotion-4"
   >
     <div
-      class="emotion-1"
+      class="emotion-2"
     >
       <div
         aria-modal="true"
-        class="emotion-0"
+        class="emotion-1"
         role="dialog"
       >
-        Testing.
+        <div
+          class="emotion-0"
+        >
+          Testing.
+        </div>
       </div>
     </div>
     <div
-      class="emotion-2"
+      class="emotion-3"
       data-testid="backdrop"
     />
   </div>

@@ -51,6 +51,7 @@ Array [
   "ModalFooter",
   "ModalFooterButton",
   "ModalCloseButton",
+  "ModalSidebar",
   "MonthField",
   "MonthPaginator",
   "MonthRangePicker",

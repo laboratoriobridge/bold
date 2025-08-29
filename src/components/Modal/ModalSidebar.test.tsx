@@ -19,7 +19,7 @@ const mockContextValue: ModalContextValue = {
 it('should render correctly', () => {
   const { container } = render(
     <ModalContextProvider value={mockContextValue}>
-      <ModalSidebar side='left'>Content</ModalSidebar>
+      <ModalSidebar position='left'>Content</ModalSidebar>
     </ModalContextProvider>
   )
   expect(container).toMatchSnapshot()
@@ -28,7 +28,7 @@ it('should render correctly', () => {
 it('should accept "style" prop', () => {
   const { container } = render(
     <ModalContextProvider value={mockContextValue}>
-      <ModalSidebar side='left' style={{ background: 'red' }}>
+      <ModalSidebar position='left' style={{ background: 'red' }}>
         Content
       </ModalSidebar>
     </ModalContextProvider>
@@ -39,7 +39,7 @@ it('should accept "style" prop', () => {
 it('should apply border right when side is left', () => {
   const { getByTestId } = render(
     <ModalContextProvider value={mockContextValue}>
-      <ModalSidebar side='left' data-testid='sidebar-left-border'>
+      <ModalSidebar position='left' data-testid='sidebar-left-border'>
         Content
       </ModalSidebar>
     </ModalContextProvider>
@@ -52,7 +52,7 @@ it('should apply border right when side is left', () => {
 it('should apply border left when side is right', () => {
   const { getByTestId } = render(
     <ModalContextProvider value={mockContextValue}>
-      <ModalSidebar side='right' data-testid='sidebar-right-border'>
+      <ModalSidebar position='right' data-testid='sidebar-right-border'>
         Content
       </ModalSidebar>
     </ModalContextProvider>

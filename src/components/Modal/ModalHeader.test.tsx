@@ -300,7 +300,7 @@ describe('ModalHeader', () => {
       const { getByTestId } = render(
         <Modal open scroll='full'>
           <ModalHeader title='Modal title' />
-          <ModalSidebar side='left' />
+          <ModalSidebar position='left' />
           <ModalBody>Short content</ModalBody>
         </Modal>
       )
@@ -334,7 +334,7 @@ describe('ModalHeader', () => {
       const { getByTestId } = render(
         <Modal open scroll='body'>
           <ModalHeader title='Modal title' />
-          <ModalSidebar side='left' />
+          <ModalSidebar position='left' />
           <ModalBody>Short content</ModalBody>
         </Modal>
       )
@@ -346,7 +346,7 @@ describe('ModalHeader', () => {
       const { getByTestId } = render(
         <Modal open scroll='full'>
           <ModalHeader title='Modal title' />
-          <ModalSidebar side='left' />
+          <ModalSidebar position='left' />
           <ModalBody>Short content</ModalBody>
         </Modal>
       )
@@ -358,7 +358,7 @@ describe('ModalHeader', () => {
       const { getByTestId } = render(
         <Modal open>
           <ModalHeader title='Modal title' />
-          <ModalSidebar side='left' />
+          <ModalSidebar position='left' />
           <ModalBody>Short content</ModalBody>
         </Modal>
       )
@@ -371,7 +371,7 @@ describe('ModalHeader', () => {
       const createComponent = () => (
         <Modal open>
           <ModalHeader title='Modal title' />
-          <ModalSidebar side='left' />
+          <ModalSidebar position='left' />
           <ModalBody data-testid='modal-body'>Long content</ModalBody>
         </Modal>
       )
