@@ -13,20 +13,20 @@ type ModalHeaderBaseProps = {
   onCloseButtonClick?: () => void
 }
 
-export type ModalHeaderWithProps = ModalHeaderBaseProps & {
+export type ModalHeaderContentProps = ModalHeaderBaseProps & {
   title: ReactNode
   subtitle?: ReactNode
   icon?: ModalHeaderIconType
 }
 
-export type ModalHeaderWithChildren = ModalHeaderBaseProps & {
+export type ModalHeaderChildrenProps = ModalHeaderBaseProps & {
   children: ReactNode
 }
 
-export function ModalHeader(props: ModalHeaderWithChildren): JSX.Element
-export function ModalHeader(props: ModalHeaderWithProps): JSX.Element
+export function ModalHeader(props: ModalHeaderContentProps): JSX.Element
+export function ModalHeader(props: ModalHeaderChildrenProps): JSX.Element
 
-export function ModalHeader(props: ModalHeaderWithProps | ModalHeaderWithChildren) {
+export function ModalHeader(props: ModalHeaderContentProps | ModalHeaderChildrenProps) {
   const { hasCloseButton = true, onCloseButtonClick } = props
 
   const { scroll, bodyRef, hasLeftSidebar, hasRightSidebar, setPart } = useModalContext()
@@ -72,8 +72,8 @@ export function ModalHeader(props: ModalHeaderWithProps | ModalHeaderWithChildre
 }
 
 const isHeaderWithChildren = (
-  props: ModalHeaderWithProps | ModalHeaderWithChildren
-): props is ModalHeaderWithChildren => 'children' in props
+  props: ModalHeaderContentProps | ModalHeaderChildrenProps
+): props is ModalHeaderChildrenProps => 'children' in props
 
 const createStyles = (theme: Theme, showHeaderShadow: boolean, showHeaderBorder: boolean, hasSidebar: boolean) => ({
   header: {

@@ -172,7 +172,7 @@ describe('ModalHeader', () => {
     it('should render close button when "hasCloseButton" is true and modal is called with children', () => {
       render(
         <ModalContextProvider value={mockContextValue}>
-          <ModalHeader>
+          <ModalHeader hasCloseButton={true}>
             <div>Custom header</div>
           </ModalHeader>
         </ModalContextProvider>
