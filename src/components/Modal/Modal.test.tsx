@@ -1,6 +1,8 @@
 import { fireEvent, getByRole, render, waitFor } from '@testing-library/react'
 import React from 'react'
 import { findDOMNode } from 'react-dom'
+import { createMockModalContext } from '../../test/utils/createMockModalContext'
+import { ModalContextProvider } from '../../hooks/useModalContext'
 import { Modal, ModalProps } from './Modal'
 import { ModalBody } from './ModalBody'
 
@@ -205,5 +207,21 @@ describe('modal scroll mode', () => {
     )
     const modalBody = getByTestId('modal-body')
     expect(modalBody).toHaveStyle('overflow: initial;')
+  })
+})
+
+describe('modal sections state', () => {
+  it('should not call setSectionState when modal has no optional sections (header, left sidebar, right sidebar)', () => {
+    const mockSetSectionState = jest.fn()
+
+    const mockContextValue = createMockModalContext({ setSectionState: mockSetSectionState })
+
+    render(
+      <ModalContextProvider value={mockContextValue}>
+        <ModalBody>Body content</ModalBody>
+      </ModalContextProvider>
+    )
+
+    expect(mockSetSectionState).not.toHaveBeenCalled()
   })
 })

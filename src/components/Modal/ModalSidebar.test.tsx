@@ -3,6 +3,7 @@ import React from 'react'
 import { ModalContextProvider } from '../../hooks/useModalContext'
 import { createMockModalContext } from '../../test/utils/createMockModalContext'
 import { ModalSidebar } from './ModalSidebar'
+import { ModalBody } from './ModalBody'
 
 const mockContextValue = createMockModalContext({ hasLeftSidebar: true })
 
@@ -50,4 +51,36 @@ it('should apply border left when side is right', () => {
   const sidebar = getByTestId('sidebar-right-border')
   expect(getComputedStyle(sidebar).borderLeft).toBe('1px solid #D3D4DD')
   expect(getComputedStyle(sidebar).borderRight).toBe('0px')
+})
+
+it('should call setSectionState when modal has left sidebar', () => {
+  const mockSetSectionState = jest.fn()
+
+  const mockContextValue = createMockModalContext({ setSectionState: mockSetSectionState })
+
+  render(
+    <ModalContextProvider value={mockContextValue}>
+      <ModalSidebar position='left' />
+      <ModalBody>Body content</ModalBody>
+    </ModalContextProvider>
+  )
+
+  expect(mockSetSectionState).toHaveBeenCalledTimes(1)
+  expect(mockSetSectionState).toHaveBeenCalledWith('hasLeftSidebar', true)
+})
+
+it('should call setSectionState when modal has right sidebar', () => {
+  const mockSetSectionState = jest.fn()
+
+  const mockContextValue = createMockModalContext({ setSectionState: mockSetSectionState })
+
+  render(
+    <ModalContextProvider value={mockContextValue}>
+      <ModalSidebar position='right' />
+      <ModalBody>Body content</ModalBody>
+    </ModalContextProvider>
+  )
+
+  expect(mockSetSectionState).toHaveBeenCalledTimes(1)
+  expect(mockSetSectionState).toHaveBeenCalledWith('hasRightSidebar', true)
 })

@@ -382,4 +382,21 @@ describe('ModalHeader', () => {
       expect(getComputedStyle(modalHeader).boxShadow).toBe('0 1px 5px 0 rgba(0,0,0,0.12),0 2px 1px 0 rgba(0,0,0,0.04)')
     })
   })
+
+  describe('modal sections state', () => {
+    it('should call setSectionState when modal has header', () => {
+      const mockSetSectionState = jest.fn()
+
+      const mockContextValue = createMockModalContext({ setSectionState: mockSetSectionState })
+
+      render(
+        <ModalContextProvider value={mockContextValue}>
+          <ModalHeader title='Modal title' />
+        </ModalContextProvider>
+      )
+
+      expect(mockSetSectionState).toHaveBeenCalledTimes(1)
+      expect(mockSetSectionState).toHaveBeenCalledWith('hasHeader', true)
+    })
+  })
 })
