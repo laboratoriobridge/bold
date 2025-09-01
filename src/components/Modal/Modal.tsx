@@ -1,10 +1,10 @@
 import FocusTrap from 'focus-trap-react'
-import React, { Ref, useEffect, useMemo, useRef } from 'react'
+import React, { Ref, useEffect, useMemo, useRef, useState } from 'react'
 import { Theme, useStyles } from '../../styles'
 import { zIndexLevel } from '../../styles/theme/zIndex'
 import { Portal } from '../Portal'
 import { FadeTransition } from '../Transition/FadeTransition'
-import { ModalContextProps, ModalContextProvider } from '../../hooks/useModalContext'
+import { ModalContextValue, ModalContextProvider } from '../../hooks/useModalContext'
 import { ModalBackdrop } from './ModalBackdrop'
 import { ModalContainer, ModalContainerProps } from './ModalContainer'
 
@@ -17,6 +17,7 @@ export interface ModalProps extends ModalContainerProps {
   size?: ModalSize
   children?: React.ReactNode
   containerRef?: Ref<HTMLDivElement>
+  onClose?(): void
 
   /**
    * Determine the container for scrolling the dialog
@@ -60,8 +61,13 @@ export function Modal(props: ModalProps) {
 
   const { classes, css } = useStyles(createStyles, depthLevel, scroll)
   const bodyRef = useRef()
-
-  const modalContextValue: ModalContextProps = useMemo(() => ({ scroll, bodyRef }), [scroll])
+  const modalRef = useRef<HTMLDivElement>(null)
+  const [hasHeader, setHasHeader] = useState(false)
+  const modalContextValue: ModalContextValue = useMemo(() => ({ scroll, bodyRef, hasHeader, setHasHeader, onClose }), [
+    scroll,
+    hasHeader,
+    onClose,
+  ])
 
   // Kill body scroll when opened
   useEffect(() => {
@@ -79,7 +85,7 @@ export function Modal(props: ModalProps) {
     // Attach "Escape" to close modal
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
-        onClose()
+        onClose?.()
       }
     }
 
@@ -98,10 +104,10 @@ export function Modal(props: ModalProps) {
           <>
             {open && (
               <Portal>
-                <FocusTrap>
+                <FocusTrap focusTrapOptions={{ fallbackFocus: () => modalRef.current }}>
                   <div className={className}>
-                    <div className={classes.modal}>
-                      <ModalContainer ref={containerRef} style={css(classes[size], style)} onClose={onClose} {...rest}>
+                    <div className={classes.modal} ref={modalRef}>
+                      <ModalContainer ref={containerRef} style={css(classes[size], style)} {...rest}>
                         {children}
                       </ModalContainer>
                     </div>

@@ -6,10 +6,13 @@ import { ModalBody } from '../ModalBody'
 import { ModalFooter } from '../ModalFooter'
 import { HFlow } from '../../HFlow'
 import { ModalFooterButton } from '../ModalFooterButton'
+import { ModalHeader, ModalHeaderContentProps } from '../ModalHeader'
 
 export type ButtonAction = ButtonProps & { label?: React.ReactNode; ['data-testid']?: string }
 
-export interface ModalAutoProps extends Omit<ModalProps, 'open'> {
+export interface ModalAutoProps
+  extends Omit<ModalProps, 'open' | 'title'>,
+    Omit<ModalHeaderContentProps, 'onCloseButtonClick'> {
   actions?: ButtonAction[]
   render(renderProps: ModalAutoRenderProps): React.ReactNode
   dispose(): void
@@ -25,7 +28,7 @@ export interface ModalAutoRenderProps {
 }
 
 export const ModalAuto = memo((props: ModalAutoProps) => {
-  const { actions, render, dispose, onClose, ...rest } = props
+  const { actions, title, subtitle, icon, hasCloseButton, render, dispose, onClose, ...rest } = props
 
   const [isOpen, setIsOpen] = useState(false)
 
@@ -48,6 +51,7 @@ export const ModalAuto = memo((props: ModalAutoProps) => {
 
   return (
     <Modal open={isOpen} onClose={close} {...rest}>
+      <ModalHeader title={title} subtitle={subtitle} icon={icon} hasCloseButton={hasCloseButton} />
       <ModalBody>{render({ close })}</ModalBody>
       {actions && (
         <ModalFooter>

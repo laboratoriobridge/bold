@@ -3,12 +3,11 @@ import { fireEvent, render, screen } from '@testing-library/react'
 import { createTheme, ThemeContext } from '../../styles'
 import { LocaleContext } from '../../i18n/LocaleContext'
 import ptBr from '../../i18n/locales/pt-BR'
-import { ModalContextProps, ModalContextProvider } from '../../hooks/useModalContext'
+import { ModalContextValue, ModalContextProvider } from '../../hooks/useModalContext'
 import { Modal } from './Modal'
 import { ModalHeader } from './ModalHeader'
 import { ModalBody } from './ModalBody'
 import { ModalHeaderIcon } from './ModalHeaderIcon'
-import { ModalScroll } from './Modal'
 
 jest.mock('./ModalHeaderIcon', () => ({
   ModalHeaderIcon: jest.fn((props) => <div {...props} />),
@@ -18,17 +17,30 @@ beforeEach(() => {
   jest.clearAllMocks()
 })
 
-const mockContextValue: ModalContextProps = {
+const mockContextValue: ModalContextValue = {
   bodyRef: { current: document.createElement('div') },
-  scroll: 'body' as ModalScroll,
+  scroll: 'body',
+  hasHeader: true,
+  setHasHeader: jest.fn(),
 }
 
 describe('ModalHeader', () => {
   describe('basic rendering', () => {
-    it('should render correctly', () => {
+    it('should render correctly with props', () => {
       const { container } = render(
         <ModalContextProvider value={mockContextValue}>
-          <ModalHeader title='title' />
+          <ModalHeader title='title' subtitle='subtitle' icon='infoCircleFilled' />
+        </ModalContextProvider>
+      )
+      expect(container).toMatchSnapshot()
+    })
+
+    it('should render correctly with children', () => {
+      const { container } = render(
+        <ModalContextProvider value={mockContextValue}>
+          <ModalHeader>
+            <div>Custom header</div>
+          </ModalHeader>
         </ModalContextProvider>
       )
       expect(container).toMatchSnapshot()
@@ -67,7 +79,8 @@ describe('ModalHeader', () => {
   describe('header box shadow', () => {
     it("should not apply shadow to ModalHeader when scroll is 'full' and content is not overflowing", () => {
       const { getByTestId } = render(
-        <Modal open scroll='full' title='Modal title'>
+        <Modal open scroll='full'>
+          <ModalHeader title='Modal title' />
           <ModalBody>Short content</ModalBody>
         </Modal>
       )
@@ -76,18 +89,37 @@ describe('ModalHeader', () => {
     })
 
     it("should not apply shadow to ModalHeader when scroll is 'full' and content is overflowing", () => {
-      const { getByTestId } = render(
-        <Modal open title='Modal title'>
-          <ModalBody>Short content</ModalBody>
-        </Modal>
+      const theme = createTheme()
+
+      const createComponent = () => (
+        <ThemeContext.Provider value={theme}>
+          <Modal open scroll='full'>
+            <ModalHeader title='Modal title' />
+            <ModalBody data-testid='modal-body'>
+              <div>Long content</div>
+            </ModalBody>
+          </Modal>
+        </ThemeContext.Provider>
       )
-      const modalHeader = getByTestId('modal-header')
+
+      const { getByTestId, rerender } = render(createComponent())
+
+      const modalBody = getByTestId('modal-body')
+
+      Object.defineProperty(modalBody, 'scrollHeight', { value: 500 })
+      Object.defineProperty(modalBody, 'clientHeight', { value: 300 })
+
+      rerender(createComponent())
+
+      const modalHeader = screen.getByTestId('modal-header')
+
       expect(getComputedStyle(modalHeader).boxShadow).toBe('')
     })
 
     it("should not apply shadow to ModalHeader when scroll is 'body' and content is not overflowing", () => {
       const { getByTestId } = render(
-        <Modal open title='Modal title'>
+        <Modal open>
+          <ModalHeader title='Modal title' />
           <ModalBody>Short content</ModalBody>
         </Modal>
       )
@@ -100,9 +132,10 @@ describe('ModalHeader', () => {
 
       const createComponent = () => (
         <ThemeContext.Provider value={theme}>
-          <Modal open title='Modal title'>
+          <Modal open>
+            <ModalHeader title='Modal title' />
             <ModalBody data-testid='modal-body'>
-              <div>Content</div>
+              <div>Long content</div>
             </ModalBody>
           </Modal>
         </ThemeContext.Provider>
@@ -124,16 +157,27 @@ describe('ModalHeader', () => {
   })
 
   describe('close button', () => {
-    it('should render close button when "hasCloseIcon" is true', () => {
+    it('should render close button when "hasCloseButton" is true and modal is called with props', () => {
       render(
         <ModalContextProvider value={mockContextValue}>
-          <ModalHeader title='title' hasCloseIcon />
+          <ModalHeader title='title' hasCloseButton />
         </ModalContextProvider>
       )
       expect(screen.getByRole('button')).toBeInTheDocument()
     })
 
-    it('should render close button when "hasCloseIcon" is not provided (default true)', () => {
+    it('should render close button when "hasCloseButton" is true and modal is called with children', () => {
+      render(
+        <ModalContextProvider value={mockContextValue}>
+          <ModalHeader hasCloseButton={true}>
+            <div>Custom header</div>
+          </ModalHeader>
+        </ModalContextProvider>
+      )
+      expect(screen.getByRole('button')).toBeInTheDocument()
+    })
+
+    it('should render close button when "hasCloseButton" is not provided (default true) and modal is called with props', () => {
       render(
         <ModalContextProvider value={mockContextValue}>
           <ModalHeader title='title' />
@@ -142,27 +186,49 @@ describe('ModalHeader', () => {
       expect(screen.getByRole('button')).toBeInTheDocument()
     })
 
-    it('should not render close button when "hasCloseIcon" is false', () => {
+    it('should render close button when "hasCloseButton" is not provided (default true) and modal is called with children', () => {
       render(
         <ModalContextProvider value={mockContextValue}>
-          <ModalHeader title='title' hasCloseIcon={false} />
+          <ModalHeader>
+            <div>Custom header</div>
+          </ModalHeader>
+        </ModalContextProvider>
+      )
+      expect(screen.getByRole('button')).toBeInTheDocument()
+    })
+
+    it('should not render close button when "hasCloseButton" is false and modal is called with props', () => {
+      render(
+        <ModalContextProvider value={mockContextValue}>
+          <ModalHeader title='title' hasCloseButton={false} />
         </ModalContextProvider>
       )
       expect(screen.queryByRole('button')).toBeNull()
     })
 
-    it('should call onCloseButtonClick when close button is clicked and "hasCloseIcon" is true', () => {
+    it('should not render close button when "hasCloseButton" is false and modal is called with children', () => {
+      render(
+        <ModalContextProvider value={mockContextValue}>
+          <ModalHeader hasCloseButton={false}>
+            <div>Custom header</div>
+          </ModalHeader>
+        </ModalContextProvider>
+      )
+      expect(screen.queryByRole('button')).toBeNull()
+    })
+
+    it('should call onCloseButtonClick when close button is clicked and "hasCloseButton" is true', () => {
       const onCloseMock = jest.fn()
       render(
         <ModalContextProvider value={mockContextValue}>
-          <ModalHeader title='title' onCloseButtonClick={onCloseMock} hasCloseIcon />
+          <ModalHeader title='title' onCloseButtonClick={onCloseMock} hasCloseButton />
         </ModalContextProvider>
       )
       fireEvent.click(screen.getByRole('button'))
       expect(onCloseMock).toHaveBeenCalledTimes(1)
     })
 
-    it('should call onCloseButtonClick when close button is clicked and "hasCloseIcon" is not provided (default true)', () => {
+    it('should call onCloseButtonClick when close button is clicked and "hasCloseButton" is not provided (default true)', () => {
       const onCloseMock = jest.fn()
       render(
         <ModalContextProvider value={mockContextValue}>
@@ -173,11 +239,11 @@ describe('ModalHeader', () => {
       expect(onCloseMock).toHaveBeenCalledTimes(1)
     })
 
-    it('should not call onCloseButtonClick when "hasCloseIcon" is false', () => {
+    it('should not call onCloseButtonClick when "hasCloseButton" is false', () => {
       const onCloseMock = jest.fn()
       render(
         <ModalContextProvider value={mockContextValue}>
-          <ModalHeader title='title' hasCloseIcon={false} onCloseButtonClick={onCloseMock} />
+          <ModalHeader title='title' hasCloseButton={false} onCloseButtonClick={onCloseMock} />
         </ModalContextProvider>
       )
       expect(screen.queryByRole('button')).toBeNull()
@@ -200,7 +266,7 @@ describe('ModalHeader', () => {
     it('does not render ModalHeaderIcon when icon is not provided', () => {
       render(
         <ModalContextProvider value={mockContextValue}>
-          <ModalHeader title='title' hasCloseIcon={false} />
+          <ModalHeader title='title' hasCloseButton={false} />
         </ModalContextProvider>
       )
 

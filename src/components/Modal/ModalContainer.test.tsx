@@ -1,20 +1,16 @@
 import { render } from '@testing-library/react'
 import React from 'react'
 
-import { ModalContextProps, ModalContextProvider } from '../../hooks/useModalContext'
+import { ModalContextValue, ModalContextProvider } from '../../hooks/useModalContext'
 import { ModalContainer } from './ModalContainer'
-import { ModalHeader } from './ModalHeader'
-import { ModalScroll } from './Modal'
 
 jest.mock('../../util/string')
 
-jest.mock('./ModalHeader', () => ({
-  ModalHeader: jest.fn((props) => <div {...props} />),
-}))
-
-const mockContextValue: ModalContextProps = {
+const mockContextValue: ModalContextValue = {
   bodyRef: { current: document.createElement('div') },
-  scroll: 'body' as ModalScroll,
+  scroll: 'body',
+  hasHeader: false,
+  setHasHeader: jest.fn(),
 }
 
 beforeEach(() => {
@@ -51,29 +47,4 @@ it('should provide a ref to the div html element', () => {
     </ModalContextProvider>
   )
   expect(ref.current.tagName).toEqual('DIV')
-})
-
-describe('prop passing to ModalHeader', () => {
-  it('passes all expected props correctly to ModalHeader', () => {
-    const onClose = jest.fn()
-
-    render(
-      <ModalContextProvider value={mockContextValue}>
-        <ModalContainer title='title' subtitle='subtitle' icon='infoCircleFilled' onClose={onClose} hasCloseIcon>
-          Container
-        </ModalContainer>
-      </ModalContextProvider>
-    )
-
-    expect(ModalHeader).toHaveBeenCalledWith(
-      expect.objectContaining({
-        title: 'title',
-        subtitle: 'subtitle',
-        icon: 'infoCircleFilled',
-        hasCloseIcon: true,
-        onCloseButtonClick: onClose,
-      }),
-      {}
-    )
-  })
 })
