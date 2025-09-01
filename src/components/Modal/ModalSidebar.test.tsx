@@ -1,18 +1,10 @@
 import { render } from '@testing-library/react'
 import React from 'react'
-import { ModalContextValue } from '../../hooks'
 import { ModalContextProvider } from '../../hooks/useModalContext'
-import { ModalScroll } from './Modal'
+import { createMockModalContext } from '../../test/utils/createMockModalContext'
 import { ModalSidebar } from './ModalSidebar'
 
-const mockContextValue: ModalContextValue = {
-  bodyRef: { current: document.createElement('div') },
-  scroll: 'body' as ModalScroll,
-  hasHeader: false,
-  hasLeftSidebar: true,
-  hasRightSidebar: false,
-  setSectionState: jest.fn(),
-}
+const mockContextValue = createMockModalContext({ hasLeftSidebar: true })
 
 it('should render correctly', () => {
   const { container } = render(

@@ -1,7 +1,8 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
-import { useModalContext, ModalContextProvider, ModalContextValue } from '../useModalContext'
+import { useModalContext, ModalContextProvider } from '../useModalContext'
 import { ModalBody, ModalHeader, ModalSidebar } from '../../components/Modal'
+import { createMockModalContext } from '../../test/utils/createMockModalContext'
 
 function TestComponent() {
   const { scroll, bodyRef, hasHeader, hasLeftSidebar, hasRightSidebar } = useModalContext()
@@ -22,14 +23,7 @@ function TestComponent() {
 }
 
 it('should return provided context values when inside ModalContextProvider', () => {
-  const mockContextValue: ModalContextValue = {
-    bodyRef: { current: document.createElement('div') },
-    scroll: 'body',
-    hasHeader: true,
-    hasLeftSidebar: false,
-    hasRightSidebar: false,
-    setSectionState: jest.fn(),
-  }
+  const mockContextValue = createMockModalContext({ hasHeader: true })
 
   render(
     <ModalContextProvider value={mockContextValue}>
@@ -53,14 +47,7 @@ it('should throw an error when used outside ModalContextProvider', () => {
 it('should call setSectionState when modal has header', () => {
   const mockSetSectionState = jest.fn()
 
-  const mockContextValue: ModalContextValue = {
-    bodyRef: { current: document.createElement('div') },
-    scroll: 'body',
-    hasHeader: false,
-    hasLeftSidebar: false,
-    hasRightSidebar: false,
-    setSectionState: mockSetSectionState,
-  }
+  const mockContextValue = createMockModalContext({ setSectionState: mockSetSectionState })
 
   render(
     <ModalContextProvider value={mockContextValue}>
@@ -75,14 +62,7 @@ it('should call setSectionState when modal has header', () => {
 it('should call setSectionState when modal has left sidebar', () => {
   const mockSetSectionState = jest.fn()
 
-  const mockContextValue: ModalContextValue = {
-    bodyRef: { current: document.createElement('div') },
-    scroll: 'body',
-    hasHeader: true,
-    hasLeftSidebar: true,
-    hasRightSidebar: false,
-    setSectionState: mockSetSectionState,
-  }
+  const mockContextValue = createMockModalContext({ setSectionState: mockSetSectionState })
 
   render(
     <ModalContextProvider value={mockContextValue}>
@@ -98,14 +78,7 @@ it('should call setSectionState when modal has left sidebar', () => {
 it('should call setSectionState when modal has right sidebar', () => {
   const mockSetSectionState = jest.fn()
 
-  const mockContextValue: ModalContextValue = {
-    bodyRef: { current: document.createElement('div') },
-    scroll: 'body',
-    hasHeader: true,
-    hasLeftSidebar: false,
-    hasRightSidebar: true,
-    setSectionState: mockSetSectionState,
-  }
+  const mockContextValue = createMockModalContext({ setSectionState: mockSetSectionState })
 
   render(
     <ModalContextProvider value={mockContextValue}>
@@ -121,14 +94,7 @@ it('should call setSectionState when modal has right sidebar', () => {
 it('should not call setSectionState when modal has no optional sections (header, left sidebar, right sidebar)', () => {
   const mockSetSectionState = jest.fn()
 
-  const mockContextValue: ModalContextValue = {
-    bodyRef: { current: document.createElement('div') },
-    scroll: 'body',
-    hasHeader: false,
-    hasLeftSidebar: false,
-    hasRightSidebar: false,
-    setSectionState: mockSetSectionState,
-  }
+  const mockContextValue = createMockModalContext({ setSectionState: mockSetSectionState })
 
   render(
     <ModalContextProvider value={mockContextValue}>
@@ -142,14 +108,7 @@ it('should not call setSectionState when modal has no optional sections (header,
 it('should call setSectionState three times when modal has header, left sidebar and right sidebar', () => {
   const mockSetSectionState = jest.fn()
 
-  const mockContextValue: ModalContextValue = {
-    bodyRef: { current: document.createElement('div') },
-    scroll: 'body',
-    hasHeader: true,
-    hasLeftSidebar: false,
-    hasRightSidebar: true,
-    setSectionState: mockSetSectionState,
-  }
+  const mockContextValue = createMockModalContext({ setSectionState: mockSetSectionState })
 
   render(
     <ModalContextProvider value={mockContextValue}>
