@@ -1,10 +1,10 @@
 import FocusTrap from 'focus-trap-react'
-import React, { Ref, useEffect, useMemo, useRef, useState } from 'react'
+import React, { Ref, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { Theme, useStyles } from '../../styles'
 import { zIndexLevel } from '../../styles/theme/zIndex'
 import { Portal } from '../Portal'
 import { FadeTransition } from '../Transition/FadeTransition'
-import { ModalContextValue, ModalContextProvider } from '../../hooks/useModalContext'
+import { ModalContextValue, ModalContextProvider, ModalSectionsState } from '../../hooks/useModalContext'
 import { ModalBackdrop } from './ModalBackdrop'
 import { ModalContainer, ModalContainerProps } from './ModalContainer'
 
@@ -62,12 +62,28 @@ export function Modal(props: ModalProps) {
   const { classes, css } = useStyles(createStyles, depthLevel, scroll)
   const bodyRef = useRef()
   const modalRef = useRef<HTMLDivElement>(null)
-  const [hasHeader, setHasHeader] = useState(false)
-  const modalContextValue: ModalContextValue = useMemo(() => ({ scroll, bodyRef, hasHeader, setHasHeader, onClose }), [
-    scroll,
-    hasHeader,
-    onClose,
-  ])
+
+  const [sectionsState, setSectionsState] = useState<ModalSectionsState>({
+    hasHeader: false,
+    hasLeftSidebar: false,
+    hasRightSidebar: false,
+  })
+
+  const setSectionState = useCallback(
+    (key: keyof ModalSectionsState, isPresent: boolean) => setSectionsState((prev) => ({ ...prev, [key]: isPresent })),
+    []
+  )
+
+  const modalContextValue: ModalContextValue = useMemo(
+    () => ({
+      ...sectionsState,
+      scroll,
+      bodyRef,
+      setSectionState,
+      onClose,
+    }),
+    [scroll, sectionsState, setSectionState, onClose]
+  )
 
   // Kill body scroll when opened
   useEffect(() => {

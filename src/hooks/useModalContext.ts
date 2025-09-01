@@ -1,11 +1,16 @@
-import { createContext, Dispatch, MutableRefObject, SetStateAction, useContext } from 'react'
+import { createContext, MutableRefObject, useContext } from 'react'
 import { ModalScroll } from '../components/Modal'
 
-export interface ModalContextValue {
+export interface ModalSectionsState {
+  hasHeader: boolean
+  hasLeftSidebar: boolean
+  hasRightSidebar: boolean
+}
+
+export interface ModalContextValue extends ModalSectionsState {
   scroll: ModalScroll
   bodyRef: MutableRefObject<HTMLDivElement>
-  hasHeader: boolean
-  setHasHeader: Dispatch<SetStateAction<boolean>>
+  setSectionState: (key: keyof ModalSectionsState, isPresent: boolean) => void
   onClose?(): void
 }
 

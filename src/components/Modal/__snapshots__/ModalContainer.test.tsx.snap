@@ -2,6 +2,14 @@
 
 exports[`should accept the "style" prop 1`] = `
 .emotion-0 {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: 1fr auto;
+  height: 100%;
+  min-height: 0;
+}
+
+.emotion-1 {
   max-height: 80vh;
   border: 1px solid #D3D4DD;
   box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
@@ -11,24 +19,28 @@ exports[`should accept the "style" prop 1`] = `
   pointer-events: auto;
   overflow: hidden;
   display: grid;
-  grid-template-rows: 1fr auto;
+  grid-template-rows: 1fr;
   color: red;
 }
 
 <div>
   <div
     aria-modal="true"
-    class="emotion-0"
+    class="emotion-1"
     role="dialog"
     title="Modal container"
   >
-    Container
+    <div
+      class="emotion-0"
+    >
+      Container
+    </div>
   </div>
 </div>
 `;
 
 exports[`should render correctly 1`] = `
-.emotion-0 {
+.emotion-1 {
   max-height: 80vh;
   border: 1px solid #D3D4DD;
   box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
@@ -38,17 +50,29 @@ exports[`should render correctly 1`] = `
   pointer-events: auto;
   overflow: hidden;
   display: grid;
+  grid-template-rows: 1fr;
+}
+
+.emotion-0 {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   grid-template-rows: 1fr auto;
+  height: 100%;
+  min-height: 0;
 }
 
 <div>
   <div
     aria-modal="true"
-    class="emotion-0"
+    class="emotion-1"
     role="dialog"
     title="Modal container"
   >
-    Container
+    <div
+      class="emotion-0"
+    >
+      Container
+    </div>
   </div>
 </div>
 `;

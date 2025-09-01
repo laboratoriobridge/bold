@@ -1,16 +1,11 @@
 import React from 'react'
 import { fireEvent, render } from '@testing-library/react'
-import { ModalContextValue } from '../../hooks'
 import { ModalContextProvider } from '../../hooks/useModalContext'
+import { createMockModalContext } from '../../test/utils/createMockModalContext'
 import { ModalCloseButton } from './ModalCloseButton'
 
 it('should render correctly', () => {
-  const mockContextValue: ModalContextValue = {
-    bodyRef: { current: document.createElement('div') },
-    scroll: 'body',
-    hasHeader: false,
-    setHasHeader: jest.fn(),
-  }
+  const mockContextValue = createMockModalContext()
 
   const { container } = render(
     <ModalContextProvider value={mockContextValue}>
@@ -109,12 +104,7 @@ it('should render correctly', () => {
 })
 
 it('should apply external styles prop', () => {
-  const mockContextValue: ModalContextValue = {
-    bodyRef: { current: document.createElement('div') },
-    scroll: 'body',
-    hasHeader: false,
-    setHasHeader: jest.fn(),
-  }
+  const mockContextValue = createMockModalContext()
 
   const { getByRole } = render(
     <ModalContextProvider value={mockContextValue}>
@@ -128,12 +118,7 @@ it('should apply external styles prop', () => {
 it('should call prop onClick when provided and no context onClose exists', () => {
   const onClickMock = jest.fn()
 
-  const mockContextValue: ModalContextValue = {
-    bodyRef: { current: document.createElement('div') },
-    scroll: 'body',
-    hasHeader: false,
-    setHasHeader: jest.fn(),
-  }
+  const mockContextValue = createMockModalContext()
 
   const { getByRole } = render(
     <ModalContextProvider value={mockContextValue}>
@@ -149,13 +134,7 @@ it('should call prop onClick when provided and no context onClose exists', () =>
 it('should call context onClose when no prop onClick is provided', () => {
   const onCloseMock = jest.fn()
 
-  const mockContextValue: ModalContextValue = {
-    bodyRef: { current: document.createElement('div') },
-    scroll: 'body',
-    hasHeader: false,
-    setHasHeader: jest.fn(),
-    onClose: onCloseMock,
-  }
+  const mockContextValue = createMockModalContext({ onClose: onCloseMock })
 
   const { getByRole } = render(
     <ModalContextProvider value={mockContextValue}>
@@ -171,13 +150,7 @@ it('should call both prop onClick and context onClose when both are provided', (
   const onCloseMock = jest.fn()
   const onClickMock = jest.fn()
 
-  const mockContextValue: ModalContextValue = {
-    bodyRef: { current: document.createElement('div') },
-    scroll: 'body',
-    hasHeader: false,
-    setHasHeader: jest.fn(),
-    onClose: onCloseMock,
-  }
+  const mockContextValue = createMockModalContext({ onClose: onCloseMock })
 
   const { getByRole } = render(
     <ModalContextProvider value={mockContextValue}>

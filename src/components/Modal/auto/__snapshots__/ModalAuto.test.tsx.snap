@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render correctly 1`] = `
-.emotion-12 {
+.emotion-13 {
   position: fixed;
   left: 0;
   top: 0;
@@ -24,245 +24,11 @@ exports[`should render correctly 1`] = `
   padding: 2rem;
 }
 
-.emotion-15 {
+.emotion-16 {
   overflow: hidden;
 }
 
-.emotion-6 {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: minmax(min-content,max-content);
-  grid-gap: 0.5rem;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  width: 100%;
-  grid-template-columns: 1fr auto;
-  padding: 1.5rem 1rem 1rem 2rem;
-  z-index: 1;
-  background-color: #FFFFFF;
-}
-
-.emotion-3 {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: minmax(min-content,max-content);
-  grid-gap: 1rem;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-}
-
-.emotion-2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.emotion-1 {
-  display: inline-block;
-  margin-bottom: 0rem;
-  margin-top: 0rem;
-}
-
-.emotion-1:first-of-type {
-  margin-top: 0;
-}
-
-.emotion-1:last-of-type {
-  margin-bottom: 0;
-}
-
-.emotion-1:empty {
-  display: none;
-}
-
-.emotion-0 {
-  font-family: "IBM Plex Sans",sans-serif;
-  font-size: 1.5rem;
-  line-height: 1.5;
-  color: #24252E;
-  font-weight: bold;
-  color: #24252E;
-  font-weight: bold;
-}
-
-.emotion-5 {
-  font-family: "IBM Plex Sans",sans-serif;
-  font-size: 0.8125rem;
-  line-height: 1.5rem;
-  color: #24252E;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-transition: all .2s;
-  transition: all .2s;
-  font-weight: bold;
-  cursor: pointer;
-  background-color: transparent;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  color: #24252E;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font-size: 0.875rem;
-  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
-}
-
-.emotion-5 > span {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-}
-
-.emotion-5:not(:disabled):active {
-  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
-}
-
-.emotion-5:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0069D0;
-}
-
-.emotion-5:not(:disabled):hover {
-  background-color: rgba(58,58,71,0.1);
-}
-
-.emotion-4 {
-  fill: currentColor;
-  font-size: 1.5rem;
-}
-
-.emotion-7 {
-  padding: 1rem 2rem 2rem 2rem;
-  overflow: auto;
-}
-
-.emotion-10 {
-  background-color: #F0F0F5;
-  padding: 1rem;
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 4px;
-  height: 5rem;
-  width: 100%;
-  border-top: 1px solid #D3D4DD;
-}
-
-.emotion-9 {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: minmax(min-content,max-content);
-  grid-gap: 1rem;
-  -webkit-box-pack: end;
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-}
-
-.emotion-8 {
-  font-family: "IBM Plex Sans",sans-serif;
-  font-size: 0.8125rem;
-  line-height: 1.5rem;
-  color: #24252E;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-transition: all .2s;
-  transition: all .2s;
-  font-weight: bold;
-  cursor: pointer;
-  background-color: #FFFFFF;
-  border: 1px solid #696979;
-  border-radius: 4px;
-  color: #24252E;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font-size: 0.875rem;
-  padding: calc(0.75rem - 1px) 1rem;
-  min-width: 9rem;
-}
-
-.emotion-8 > span {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-}
-
-.emotion-8:not(:disabled):active {
-  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
-}
-
-.emotion-8:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
-}
-
-.emotion-8:not(:disabled):hover {
-  background-color: #F0F0F5;
-}
-
-.emotion-13 {
-  position: fixed;
-  z-index: 1050;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background: rgba(211,212,221,0.7);
-}
-
-.emotion-14 {
-  -webkit-transition: opacity 200ms ease-in-out;
-  transition: opacity 200ms ease-in-out;
-  opacity: 0;
-  opacity: 0;
-}
-
-.emotion-11 {
+.emotion-12 {
   max-height: 80vh;
   border: 1px solid #D3D4DD;
   box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
@@ -272,106 +38,8 @@ exports[`should render correctly 1`] = `
   pointer-events: auto;
   overflow: hidden;
   display: grid;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: 1fr;
   width: 520px;
-}
-
-<body
-  class="emotion-15"
->
-  <div />
-  <div
-    class="emotion-14"
-  >
-    <div
-      class="emotion-12"
-    >
-      <div
-        aria-modal="true"
-        class="emotion-11"
-        role="dialog"
-      >
-        <div
-          class="emotion-6"
-          data-testid="modal-header"
-        >
-          <div
-            class="emotion-3"
-          >
-            <div
-              class="emotion-2"
-            >
-              <div
-                class="emotion-1"
-              >
-                <h1
-                  class="emotion-0"
-                >
-                  Modal auto
-                </h1>
-              </div>
-            </div>
-          </div>
-          <button
-            aria-label="Close"
-            class="emotion-5"
-            title="Close"
-            type="button"
-          >
-            <span>
-              <svg
-                aria-hidden="true"
-                class="emotion-4"
-                height="1em"
-                role="img"
-                viewBox="0 0 24 24"
-                width="1em"
-              >
-                <path
-                  clip-rule="evenodd"
-                  d="M8.071 6.657l4.243 4.242 4.242-4.242c.464-.48.935-.48 1.415 0s.48.95 0 1.414l-4.243 4.243 4.243 4.242c.471.472.471.943 0 1.415-.472.471-.943.471-1.415 0l-4.242-4.243L8.07 17.97c-.46.482-.932.482-1.414 0-.482-.483-.482-.954 0-1.415l4.242-4.242L6.657 8.07c-.472-.47-.472-.942 0-1.414s.943-.472 1.414 0v.001z"
-                  fill-rule="evenodd"
-                />
-              </svg>
-            </span>
-          </button>
-        </div>
-        <div
-          class="emotion-7"
-        >
-          <span>
-            Body
-          </span>
-        </div>
-        <div
-          class="emotion-10"
-        >
-          <div
-            class="emotion-9"
-          >
-            <button
-              class="emotion-8"
-              type="button"
-            >
-              <span>
-                Confirm
-              </span>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      class="emotion-13"
-      data-testid="backdrop"
-    />
-  </div>
-</body>
-`;
-
-exports[`should render correctly with depth 1`] = `
-.emotion-15 {
-  overflow: hidden;
 }
 
 .emotion-6 {
@@ -392,6 +60,9 @@ exports[`should render correctly with depth 1`] = `
   padding: 1.5rem 1rem 1rem 2rem;
   z-index: 1;
   background-color: #FFFFFF;
+  border-bottom: none;
+  grid-row: 1;
+  grid-column: 1 / -1;
 }
 
 .emotion-3 {
@@ -511,6 +182,8 @@ exports[`should render correctly with depth 1`] = `
 .emotion-7 {
   padding: 1rem 2rem 2rem 2rem;
   overflow: auto;
+  grid-column: 2;
+  grid-row: 2;
 }
 
 .emotion-10 {
@@ -521,6 +194,8 @@ exports[`should render correctly with depth 1`] = `
   height: 5rem;
   width: 100%;
   border-top: 1px solid #D3D4DD;
+  grid-column: 1 / -1;
+  grid-row: 3;
 }
 
 .emotion-9 {
@@ -592,13 +267,372 @@ exports[`should render correctly with depth 1`] = `
 }
 
 .emotion-14 {
+  position: fixed;
+  z-index: 1050;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(211,212,221,0.7);
+}
+
+.emotion-15 {
   -webkit-transition: opacity 200ms ease-in-out;
   transition: opacity 200ms ease-in-out;
   opacity: 0;
   opacity: 0;
 }
 
-.emotion-12 {
+.emotion-11 {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: auto 1fr auto;
+  height: 100%;
+  min-height: 0;
+}
+
+<body
+  class="emotion-16"
+>
+  <div />
+  <div
+    class="emotion-15"
+  >
+    <div
+      class="emotion-13"
+    >
+      <div
+        aria-modal="true"
+        class="emotion-12"
+        role="dialog"
+      >
+        <div
+          class="emotion-11"
+        >
+          <div
+            class="emotion-6"
+            data-testid="modal-header"
+          >
+            <div
+              class="emotion-3"
+            >
+              <div
+                class="emotion-2"
+              >
+                <div
+                  class="emotion-1"
+                >
+                  <h1
+                    class="emotion-0"
+                  >
+                    Modal auto
+                  </h1>
+                </div>
+              </div>
+            </div>
+            <button
+              aria-label="Close"
+              class="emotion-5"
+              title="Close"
+              type="button"
+            >
+              <span>
+                <svg
+                  aria-hidden="true"
+                  class="emotion-4"
+                  height="1em"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <path
+                    clip-rule="evenodd"
+                    d="M8.071 6.657l4.243 4.242 4.242-4.242c.464-.48.935-.48 1.415 0s.48.95 0 1.414l-4.243 4.243 4.243 4.242c.471.472.471.943 0 1.415-.472.471-.943.471-1.415 0l-4.242-4.243L8.07 17.97c-.46.482-.932.482-1.414 0-.482-.483-.482-.954 0-1.415l4.242-4.242L6.657 8.07c-.472-.47-.472-.942 0-1.414s.943-.472 1.414 0v.001z"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </span>
+            </button>
+          </div>
+          <div
+            class="emotion-7"
+          >
+            <span>
+              Body
+            </span>
+          </div>
+          <div
+            class="emotion-10"
+          >
+            <div
+              class="emotion-9"
+            >
+              <button
+                class="emotion-8"
+                type="button"
+              >
+                <span>
+                  Confirm
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="emotion-14"
+      data-testid="backdrop"
+    />
+  </div>
+</body>
+`;
+
+exports[`should render correctly with depth 1`] = `
+.emotion-16 {
+  overflow: hidden;
+}
+
+.emotion-6 {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(min-content,max-content);
+  grid-gap: 0.5rem;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  width: 100%;
+  grid-template-columns: 1fr auto;
+  padding: 1.5rem 1rem 1rem 2rem;
+  z-index: 1;
+  background-color: #FFFFFF;
+  border-bottom: none;
+  grid-row: 1;
+  grid-column: 1 / -1;
+}
+
+.emotion-3 {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(min-content,max-content);
+  grid-gap: 1rem;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-1 {
+  display: inline-block;
+  margin-bottom: 0rem;
+  margin-top: 0rem;
+}
+
+.emotion-1:first-of-type {
+  margin-top: 0;
+}
+
+.emotion-1:last-of-type {
+  margin-bottom: 0;
+}
+
+.emotion-1:empty {
+  display: none;
+}
+
+.emotion-0 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  color: #24252E;
+  font-weight: bold;
+  color: #24252E;
+  font-weight: bold;
+}
+
+.emotion-5 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5rem;
+  color: #24252E;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #24252E;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 0.875rem;
+  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
+}
+
+.emotion-5 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-5:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-5:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0069D0;
+}
+
+.emotion-5:not(:disabled):hover {
+  background-color: rgba(58,58,71,0.1);
+}
+
+.emotion-4 {
+  fill: currentColor;
+  font-size: 1.5rem;
+}
+
+.emotion-7 {
+  padding: 1rem 2rem 2rem 2rem;
+  overflow: auto;
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.emotion-10 {
+  background-color: #F0F0F5;
+  padding: 1rem;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  height: 5rem;
+  width: 100%;
+  border-top: 1px solid #D3D4DD;
+  grid-column: 1 / -1;
+  grid-row: 3;
+}
+
+.emotion-9 {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(min-content,max-content);
+  grid-gap: 1rem;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.emotion-8 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5rem;
+  color: #24252E;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #FFFFFF;
+  border: 1px solid #696979;
+  border-radius: 4px;
+  color: #24252E;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 0.875rem;
+  padding: calc(0.75rem - 1px) 1rem;
+  min-width: 9rem;
+}
+
+.emotion-8 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-8:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-8:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
+}
+
+.emotion-8:not(:disabled):hover {
+  background-color: #F0F0F5;
+}
+
+.emotion-15 {
+  -webkit-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
+  opacity: 0;
+  opacity: 0;
+}
+
+.emotion-11 {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: auto 1fr auto;
+  height: 100%;
+  min-height: 0;
+}
+
+.emotion-13 {
   position: fixed;
   left: 0;
   top: 0;
@@ -621,17 +655,7 @@ exports[`should render correctly with depth 1`] = `
   padding: 2rem;
 }
 
-.emotion-13 {
-  position: fixed;
-  z-index: 1450;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background: rgba(211,212,221,0.7);
-}
-
-.emotion-11 {
+.emotion-12 {
   max-height: 80vh;
   border: 1px solid #D3D4DD;
   box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
@@ -641,97 +665,111 @@ exports[`should render correctly with depth 1`] = `
   pointer-events: auto;
   overflow: hidden;
   display: grid;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: 1fr;
   width: 900px;
 }
 
+.emotion-14 {
+  position: fixed;
+  z-index: 1450;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(211,212,221,0.7);
+}
+
 <body
-  class="emotion-15"
+  class="emotion-16"
 >
   <div />
   <div
-    class="emotion-14"
+    class="emotion-15"
   >
     <div
-      class="emotion-12"
+      class="emotion-13"
     >
       <div
         aria-modal="true"
-        class="emotion-11"
+        class="emotion-12"
         role="dialog"
       >
         <div
-          class="emotion-6"
-          data-testid="modal-header"
+          class="emotion-11"
         >
           <div
-            class="emotion-3"
+            class="emotion-6"
+            data-testid="modal-header"
           >
             <div
-              class="emotion-2"
+              class="emotion-3"
             >
               <div
-                class="emotion-1"
+                class="emotion-2"
               >
-                <h1
-                  class="emotion-0"
+                <div
+                  class="emotion-1"
                 >
-                  Modal auto
-                </h1>
+                  <h1
+                    class="emotion-0"
+                  >
+                    Modal auto
+                  </h1>
+                </div>
               </div>
             </div>
-          </div>
-          <button
-            aria-label="Close"
-            class="emotion-5"
-            title="Close"
-            type="button"
-          >
-            <span>
-              <svg
-                aria-hidden="true"
-                class="emotion-4"
-                height="1em"
-                role="img"
-                viewBox="0 0 24 24"
-                width="1em"
-              >
-                <path
-                  clip-rule="evenodd"
-                  d="M8.071 6.657l4.243 4.242 4.242-4.242c.464-.48.935-.48 1.415 0s.48.95 0 1.414l-4.243 4.243 4.243 4.242c.471.472.471.943 0 1.415-.472.471-.943.471-1.415 0l-4.242-4.243L8.07 17.97c-.46.482-.932.482-1.414 0-.482-.483-.482-.954 0-1.415l4.242-4.242L6.657 8.07c-.472-.47-.472-.942 0-1.414s.943-.472 1.414 0v.001z"
-                  fill-rule="evenodd"
-                />
-              </svg>
-            </span>
-          </button>
-        </div>
-        <div
-          class="emotion-7"
-        >
-          <span>
-            Body
-          </span>
-        </div>
-        <div
-          class="emotion-10"
-        >
-          <div
-            class="emotion-9"
-          >
             <button
-              class="emotion-8"
+              aria-label="Close"
+              class="emotion-5"
+              title="Close"
               type="button"
             >
               <span>
-                Confirm
+                <svg
+                  aria-hidden="true"
+                  class="emotion-4"
+                  height="1em"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <path
+                    clip-rule="evenodd"
+                    d="M8.071 6.657l4.243 4.242 4.242-4.242c.464-.48.935-.48 1.415 0s.48.95 0 1.414l-4.243 4.243 4.243 4.242c.471.472.471.943 0 1.415-.472.471-.943.471-1.415 0l-4.242-4.243L8.07 17.97c-.46.482-.932.482-1.414 0-.482-.483-.482-.954 0-1.415l4.242-4.242L6.657 8.07c-.472-.47-.472-.942 0-1.414s.943-.472 1.414 0v.001z"
+                    fill-rule="evenodd"
+                  />
+                </svg>
               </span>
             </button>
+          </div>
+          <div
+            class="emotion-7"
+          >
+            <span>
+              Body
+            </span>
+          </div>
+          <div
+            class="emotion-10"
+          >
+            <div
+              class="emotion-9"
+            >
+              <button
+                class="emotion-8"
+                type="button"
+              >
+                <span>
+                  Confirm
+                </span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
     </div>
     <div
-      class="emotion-13"
+      class="emotion-14"
       data-testid="backdrop"
     />
   </div>
@@ -739,7 +777,7 @@ exports[`should render correctly with depth 1`] = `
 `;
 
 exports[`should render correctly without 'overflow hidden' prop in document classList 1`] = `
-.emotion-12 {
+.emotion-13 {
   position: fixed;
   left: 0;
   top: 0;
@@ -780,6 +818,9 @@ exports[`should render correctly without 'overflow hidden' prop in document clas
   padding: 1.5rem 1rem 1rem 2rem;
   z-index: 1;
   background-color: #FFFFFF;
+  border-bottom: none;
+  grid-row: 1;
+  grid-column: 1 / -1;
 }
 
 .emotion-3 {
@@ -899,6 +940,8 @@ exports[`should render correctly without 'overflow hidden' prop in document clas
 .emotion-7 {
   padding: 1rem 2rem 2rem 2rem;
   overflow: auto;
+  grid-column: 2;
+  grid-row: 2;
 }
 
 .emotion-10 {
@@ -909,6 +952,8 @@ exports[`should render correctly without 'overflow hidden' prop in document clas
   height: 5rem;
   width: 100%;
   border-top: 1px solid #D3D4DD;
+  grid-column: 1 / -1;
+  grid-row: 3;
 }
 
 .emotion-9 {
@@ -979,7 +1024,7 @@ exports[`should render correctly without 'overflow hidden' prop in document clas
   background-color: #F0F0F5;
 }
 
-.emotion-13 {
+.emotion-14 {
   position: fixed;
   z-index: 1050;
   top: 0;
@@ -989,7 +1034,7 @@ exports[`should render correctly without 'overflow hidden' prop in document clas
   background: rgba(211,212,221,0.7);
 }
 
-.emotion-14 {
+.emotion-15 {
   -webkit-transition: opacity 200ms ease-in-out;
   transition: opacity 200ms ease-in-out;
   opacity: 0;
@@ -997,6 +1042,14 @@ exports[`should render correctly without 'overflow hidden' prop in document clas
 }
 
 .emotion-11 {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: auto 1fr auto;
+  height: 100%;
+  min-height: 0;
+}
+
+.emotion-12 {
   max-height: 80vh;
   border: 1px solid #D3D4DD;
   box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
@@ -1006,7 +1059,7 @@ exports[`should render correctly without 'overflow hidden' prop in document clas
   pointer-events: auto;
   overflow: hidden;
   display: grid;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: 1fr;
   width: 900px;
 }
 
@@ -1015,88 +1068,92 @@ exports[`should render correctly without 'overflow hidden' prop in document clas
 >
   <div />
   <div
-    class="emotion-14"
+    class="emotion-15"
   >
     <div
-      class="emotion-12"
+      class="emotion-13"
     >
       <div
         aria-modal="true"
-        class="emotion-11"
+        class="emotion-12"
         role="dialog"
       >
         <div
-          class="emotion-6"
-          data-testid="modal-header"
+          class="emotion-11"
         >
           <div
-            class="emotion-3"
+            class="emotion-6"
+            data-testid="modal-header"
           >
             <div
-              class="emotion-2"
+              class="emotion-3"
             >
               <div
-                class="emotion-1"
+                class="emotion-2"
               >
-                <h1
-                  class="emotion-0"
+                <div
+                  class="emotion-1"
                 >
-                  Modal auto
-                </h1>
+                  <h1
+                    class="emotion-0"
+                  >
+                    Modal auto
+                  </h1>
+                </div>
               </div>
             </div>
-          </div>
-          <button
-            aria-label="Close"
-            class="emotion-5"
-            title="Close"
-            type="button"
-          >
-            <span>
-              <svg
-                aria-hidden="true"
-                class="emotion-4"
-                height="1em"
-                role="img"
-                viewBox="0 0 24 24"
-                width="1em"
-              >
-                <path
-                  clip-rule="evenodd"
-                  d="M8.071 6.657l4.243 4.242 4.242-4.242c.464-.48.935-.48 1.415 0s.48.95 0 1.414l-4.243 4.243 4.243 4.242c.471.472.471.943 0 1.415-.472.471-.943.471-1.415 0l-4.242-4.243L8.07 17.97c-.46.482-.932.482-1.414 0-.482-.483-.482-.954 0-1.415l4.242-4.242L6.657 8.07c-.472-.47-.472-.942 0-1.414s.943-.472 1.414 0v.001z"
-                  fill-rule="evenodd"
-                />
-              </svg>
-            </span>
-          </button>
-        </div>
-        <div
-          class="emotion-7"
-        >
-          <span>
-            Body
-          </span>
-        </div>
-        <div
-          class="emotion-10"
-        >
-          <div
-            class="emotion-9"
-          >
             <button
-              class="emotion-8"
+              aria-label="Close"
+              class="emotion-5"
+              title="Close"
               type="button"
             >
               <span>
-                Confirm
+                <svg
+                  aria-hidden="true"
+                  class="emotion-4"
+                  height="1em"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <path
+                    clip-rule="evenodd"
+                    d="M8.071 6.657l4.243 4.242 4.242-4.242c.464-.48.935-.48 1.415 0s.48.95 0 1.414l-4.243 4.243 4.243 4.242c.471.472.471.943 0 1.415-.472.471-.943.471-1.415 0l-4.242-4.243L8.07 17.97c-.46.482-.932.482-1.414 0-.482-.483-.482-.954 0-1.415l4.242-4.242L6.657 8.07c-.472-.47-.472-.942 0-1.414s.943-.472 1.414 0v.001z"
+                    fill-rule="evenodd"
+                  />
+                </svg>
               </span>
             </button>
+          </div>
+          <div
+            class="emotion-7"
+          >
+            <span>
+              Body
+            </span>
+          </div>
+          <div
+            class="emotion-10"
+          >
+            <div
+              class="emotion-9"
+            >
+              <button
+                class="emotion-8"
+                type="button"
+              >
+                <span>
+                  Confirm
+                </span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
     </div>
     <div
-      class="emotion-13"
+      class="emotion-14"
       data-testid="backdrop"
     />
   </div>

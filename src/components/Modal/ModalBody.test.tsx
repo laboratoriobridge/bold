@@ -1,15 +1,11 @@
 import { render } from '@testing-library/react'
 import * as React from 'react'
 
-import { ModalContextValue, ModalContextProvider } from '../../hooks/useModalContext'
+import { ModalContextProvider } from '../../hooks/useModalContext'
+import { createMockModalContext } from '../../test/utils/createMockModalContext'
 import { ModalBody } from './ModalBody'
 
-const mockContextValue: ModalContextValue = {
-  bodyRef: { current: document.createElement('div') },
-  scroll: 'body',
-  hasHeader: false,
-  setHasHeader: jest.fn(),
-}
+const mockContextValue = createMockModalContext()
 
 it('should render correctly', () => {
   const { container } = render(
@@ -39,12 +35,12 @@ it("should set ModalBody overflow to auto when scroll is 'body'", () => {
   expect(modalBody).toHaveStyle('overflow: auto;')
 })
 
-it("should set ModalBody overflow to hidden when scroll is 'full'", () => {
+it("should set ModalBody overflow to initial when scroll is 'full'", () => {
   const { getByTestId } = render(
     <ModalContextProvider value={{ ...mockContextValue, scroll: 'full' }}>
       <ModalBody data-testid='modal-body'>Modal content</ModalBody>
     </ModalContextProvider>
   )
   const modalBody = getByTestId('modal-body')
-  expect(modalBody).toHaveStyle('overflow: hidden;')
+  expect(modalBody).toHaveStyle('overflow: initial;')
 })
