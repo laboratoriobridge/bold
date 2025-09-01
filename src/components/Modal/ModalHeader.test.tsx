@@ -294,7 +294,7 @@ describe('ModalHeader', () => {
   })
 
   describe('sidebar presence', () => {
-    it('should apply background to ModalHeader when there is sidebar', () => {
+    it('should apply background to ModalHeader when there is a sidebar', () => {
       const { getByTestId } = render(
         <Modal open scroll='full'>
           <ModalHeader title='Modal title' />
@@ -328,7 +328,7 @@ describe('ModalHeader', () => {
       expect(getComputedStyle(modalHeader).borderBottom).toBe('')
     })
 
-    it("should apply border to ModalHeader when scroll is 'body' and there is sidebar", () => {
+    it("should apply border to ModalHeader when scroll is 'body' and there is a sidebar", () => {
       const { getByTestId } = render(
         <Modal open scroll='body'>
           <ModalHeader title='Modal title' />
@@ -340,7 +340,7 @@ describe('ModalHeader', () => {
       expect(getComputedStyle(modalHeader).borderBottom).toBe('1px solid #D3D4DD')
     })
 
-    it("should apply border to ModalHeader when scroll is 'full' and there is sidebar", () => {
+    it("should apply border to ModalHeader when scroll is 'full' and there is a sidebar", () => {
       const { getByTestId } = render(
         <Modal open scroll='full'>
           <ModalHeader title='Modal title' />
@@ -352,7 +352,7 @@ describe('ModalHeader', () => {
       expect(getComputedStyle(modalHeader).borderBottom).toBe('1px solid #D3D4DD')
     })
 
-    it("should apply border to ModalHeader when scroll is 'body' and content is not overflowing and there is sidebar", () => {
+    it("should apply border to ModalHeader when scroll is 'body' and content is not overflowing and there is a sidebar", () => {
       const { getByTestId } = render(
         <Modal open>
           <ModalHeader title='Modal title' />
@@ -365,7 +365,7 @@ describe('ModalHeader', () => {
       expect(getComputedStyle(modalHeader).boxShadow).toBe('')
     })
 
-    it("should apply shadow to ModalHeader when scroll is 'body' and content is overflowing and there is sidebar", async () => {
+    it("should apply shadow to ModalHeader when scroll is 'body' and content is overflowing and there is a sidebar", async () => {
       const createComponent = () => (
         <Modal open>
           <ModalHeader title='Modal title' />
