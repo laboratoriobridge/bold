@@ -11,7 +11,7 @@ const mockContextValue: ModalContextValue = {
   hasHeader: false,
   hasLeftSidebar: true,
   hasRightSidebar: false,
-  setPart: jest.fn(),
+  setSectionState: jest.fn(),
 }
 
 it('should render correctly', () => {

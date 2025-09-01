@@ -29,7 +29,7 @@ export function ModalHeader(props: ModalHeaderChildrenProps): JSX.Element
 export function ModalHeader(props: ModalHeaderContentProps | ModalHeaderChildrenProps) {
   const { hasCloseButton = true, onCloseButtonClick } = props
 
-  const { scroll, bodyRef, hasLeftSidebar, hasRightSidebar, setPart } = useModalContext()
+  const { scroll, bodyRef, hasLeftSidebar, hasRightSidebar, setSectionState } = useModalContext()
   const isBodyOverflowing = useIsOverflowing(bodyRef, 'vertical')
   const hasSidebar = hasLeftSidebar || hasRightSidebar
   const showHeaderShadow = scroll === 'body' && isBodyOverflowing
@@ -37,9 +37,9 @@ export function ModalHeader(props: ModalHeaderContentProps | ModalHeaderChildren
   const { classes } = useStyles(createStyles, showHeaderShadow, showHeaderBorder, hasSidebar)
 
   useEffect(() => {
-    setPart('hasHeader', true)
-    return () => setPart('hasHeader', false)
-  }, [setPart])
+    setSectionState('hasHeader', true)
+    return () => setSectionState('hasHeader', false)
+  }, [setSectionState])
 
   return (
     <HFlow

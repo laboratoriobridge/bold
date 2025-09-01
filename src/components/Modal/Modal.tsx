@@ -4,7 +4,7 @@ import { Theme, useStyles } from '../../styles'
 import { zIndexLevel } from '../../styles/theme/zIndex'
 import { Portal } from '../Portal'
 import { FadeTransition } from '../Transition/FadeTransition'
-import { ModalContextValue, ModalContextProvider, ModalPartsState } from '../../hooks/useModalContext'
+import { ModalContextValue, ModalContextProvider, ModalSectionsState } from '../../hooks/useModalContext'
 import { ModalBackdrop } from './ModalBackdrop'
 import { ModalContainer, ModalContainerProps } from './ModalContainer'
 
@@ -63,26 +63,26 @@ export function Modal(props: ModalProps) {
   const bodyRef = useRef()
   const modalRef = useRef<HTMLDivElement>(null)
 
-  const [parts, setParts] = useState<ModalPartsState>({
+  const [sectionsState, setSectionsState] = useState<ModalSectionsState>({
     hasHeader: false,
     hasLeftSidebar: false,
     hasRightSidebar: false,
   })
 
-  const setPart = useCallback(
-    (key: keyof ModalPartsState, value: boolean) => setParts((prev) => ({ ...prev, [key]: value })),
+  const setSectionState = useCallback(
+    (key: keyof ModalSectionsState, isPresent: boolean) => setSectionsState((prev) => ({ ...prev, [key]: isPresent })),
     []
   )
 
   const modalContextValue: ModalContextValue = useMemo(
     () => ({
-      ...parts,
+      ...sectionsState,
       scroll,
       bodyRef,
-      setPart,
+      setSectionState,
       onClose,
     }),
-    [scroll, parts, setPart, onClose]
+    [scroll, sectionsState, setSectionState, onClose]
   )
 
   // Kill body scroll when opened
