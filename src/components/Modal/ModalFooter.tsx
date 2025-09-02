@@ -10,7 +10,8 @@ export interface ModalFooterProps extends Omit<React.HTMLAttributes<HTMLDivEleme
 export function ModalFooter(props: ModalFooterProps) {
   const { children, style, ...rest } = props
 
-  const { classes, css } = useStyles(createStyles)
+  const hasHeader = true
+  const { classes, css } = useStyles(createStyles, hasHeader)
 
   return (
     <div className={css(classes.footer, style)} {...rest}>
@@ -19,7 +20,7 @@ export function ModalFooter(props: ModalFooterProps) {
   )
 }
 
-const createStyles = (theme: Theme) => ({
+const createStyles = (theme: Theme, hasHeader: boolean) => ({
   footer: {
     backgroundColor: theme.pallete.surface.background,
     padding: '1rem',
@@ -29,6 +30,6 @@ const createStyles = (theme: Theme) => ({
     width: '100%',
     borderTop: `1px solid ${theme.pallete.divider}`,
     gridColumn: '1 / -1',
-    gridRow: '3',
+    gridRow: hasHeader ? '3' : '2',
   } as CSSProperties,
 })
