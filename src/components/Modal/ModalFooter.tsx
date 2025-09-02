@@ -2,6 +2,7 @@ import React, { CSSProperties } from 'react'
 
 import { ExternalStyles, Theme, useStyles } from '../../styles'
 import { Omit } from '../../util'
+import { useModalContext } from '../../hooks'
 
 export interface ModalFooterProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'style'> {
   style?: ExternalStyles
@@ -10,7 +11,7 @@ export interface ModalFooterProps extends Omit<React.HTMLAttributes<HTMLDivEleme
 export function ModalFooter(props: ModalFooterProps) {
   const { children, style, ...rest } = props
 
-  const hasHeader = true
+  const { hasHeader } = useModalContext()
   const { classes, css } = useStyles(createStyles, hasHeader)
 
   return (
