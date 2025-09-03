@@ -10,7 +10,7 @@ exports[`should accept the "style" prop 1`] = `
   width: 100%;
   border-top: 1px solid #D3D4DD;
   grid-column: 1 / -1;
-  grid-row: 3;
+  grid-row: 2;
   color: red;
 }
 
@@ -33,7 +33,7 @@ exports[`should render correctly 1`] = `
   width: 100%;
   border-top: 1px solid #D3D4DD;
   grid-column: 1 / -1;
-  grid-row: 3;
+  grid-row: 2;
 }
 
 <div>

@@ -179,25 +179,6 @@ exports[`should render correctly 1`] = `
   font-size: 1.5rem;
 }
 
-.emotion-7 {
-  padding: 1rem 2rem 2rem 2rem;
-  overflow: auto;
-  grid-column: 2;
-  grid-row: 2;
-}
-
-.emotion-10 {
-  background-color: #F0F0F5;
-  padding: 1rem;
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 4px;
-  height: 5rem;
-  width: 100%;
-  border-top: 1px solid #D3D4DD;
-  grid-column: 1 / -1;
-  grid-row: 3;
-}
-
 .emotion-9 {
   display: grid;
   grid-auto-flow: column;
@@ -289,6 +270,25 @@ exports[`should render correctly 1`] = `
   grid-template-rows: auto 1fr auto;
   height: 100%;
   min-height: 0;
+}
+
+.emotion-7 {
+  padding: 1rem 2rem 2rem 2rem;
+  overflow: auto;
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.emotion-10 {
+  background-color: #F0F0F5;
+  padding: 1rem;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  height: 5rem;
+  width: 100%;
+  border-top: 1px solid #D3D4DD;
+  grid-column: 1 / -1;
+  grid-row: 3;
 }
 
 <body
@@ -530,25 +530,6 @@ exports[`should render correctly with depth 1`] = `
   font-size: 1.5rem;
 }
 
-.emotion-7 {
-  padding: 1rem 2rem 2rem 2rem;
-  overflow: auto;
-  grid-column: 2;
-  grid-row: 2;
-}
-
-.emotion-10 {
-  background-color: #F0F0F5;
-  padding: 1rem;
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 4px;
-  height: 5rem;
-  width: 100%;
-  border-top: 1px solid #D3D4DD;
-  grid-column: 1 / -1;
-  grid-row: 3;
-}
-
 .emotion-9 {
   display: grid;
   grid-auto-flow: column;
@@ -630,6 +611,25 @@ exports[`should render correctly with depth 1`] = `
   grid-template-rows: auto 1fr auto;
   height: 100%;
   min-height: 0;
+}
+
+.emotion-7 {
+  padding: 1rem 2rem 2rem 2rem;
+  overflow: auto;
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.emotion-10 {
+  background-color: #F0F0F5;
+  padding: 1rem;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  height: 5rem;
+  width: 100%;
+  border-top: 1px solid #D3D4DD;
+  grid-column: 1 / -1;
+  grid-row: 3;
 }
 
 .emotion-13 {
@@ -937,25 +937,6 @@ exports[`should render correctly without 'overflow hidden' prop in document clas
   font-size: 1.5rem;
 }
 
-.emotion-7 {
-  padding: 1rem 2rem 2rem 2rem;
-  overflow: auto;
-  grid-column: 2;
-  grid-row: 2;
-}
-
-.emotion-10 {
-  background-color: #F0F0F5;
-  padding: 1rem;
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 4px;
-  height: 5rem;
-  width: 100%;
-  border-top: 1px solid #D3D4DD;
-  grid-column: 1 / -1;
-  grid-row: 3;
-}
-
 .emotion-9 {
   display: grid;
   grid-auto-flow: column;
@@ -1047,6 +1028,25 @@ exports[`should render correctly without 'overflow hidden' prop in document clas
   grid-template-rows: auto 1fr auto;
   height: 100%;
   min-height: 0;
+}
+
+.emotion-7 {
+  padding: 1rem 2rem 2rem 2rem;
+  overflow: auto;
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.emotion-10 {
+  background-color: #F0F0F5;
+  padding: 1rem;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  height: 5rem;
+  width: 100%;
+  border-top: 1px solid #D3D4DD;
+  grid-column: 1 / -1;
+  grid-row: 3;
 }
 
 .emotion-12 {

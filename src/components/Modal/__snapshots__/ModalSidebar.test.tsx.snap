@@ -8,8 +8,9 @@ exports[`should accept "style" prop 1`] = `
   padding: 1rem;
   width: 300px;
   overflow-y: auto;
-  grid-row: 2;
+  grid-row: 1;
   grid-column: 1;
+  background: red;
 }
 
 <div>
@@ -29,7 +30,7 @@ exports[`should render correctly 1`] = `
   padding: 1rem;
   width: 300px;
   overflow-y: auto;
-  grid-row: 2;
+  grid-row: 1;
   grid-column: 1;
 }
 

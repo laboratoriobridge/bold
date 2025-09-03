@@ -13,8 +13,8 @@ export interface ModalSidebarProps extends Omit<React.HTMLAttributes<HTMLDivElem
 export function ModalSidebar(props: ModalSidebarProps) {
   const { position, style, children, ...rest } = props
 
-  const { scroll, setSectionState } = useModalContext()
-  const { classes } = useStyles(createStyles, position, scroll)
+  const { scroll, hasHeader, setSectionState } = useModalContext()
+  const { classes, css } = useStyles(createStyles, position, scroll, hasHeader)
 
   useEffect(() => {
     if (position === 'left') {
@@ -28,13 +28,13 @@ export function ModalSidebar(props: ModalSidebarProps) {
   }, [setSectionState, position])
 
   return (
-    <div className={classes.sidebar} {...rest}>
+    <div className={css(classes.sidebar, style)} {...rest}>
       {children}
     </div>
   )
 }
 
-const createStyles = (theme: Theme, position: ModalSidebarPosition, scroll: ModalScroll) => ({
+const createStyles = (theme: Theme, position: ModalSidebarPosition, scroll: ModalScroll, hasHeader: boolean) => ({
   sidebar: {
     background: theme.pallete.gray.c90,
     border: 0,
@@ -43,7 +43,7 @@ const createStyles = (theme: Theme, position: ModalSidebarPosition, scroll: Moda
     padding: '1rem',
     width: '300px',
     overflowY: scroll === 'body' ? 'auto' : 'initial',
-    gridRow: '2',
+    gridRow: hasHeader ? '2' : '1',
     gridColumn: position === 'left' ? '1' : '3',
   } as React.CSSProperties,
 })
