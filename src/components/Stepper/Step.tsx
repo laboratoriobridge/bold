@@ -4,9 +4,12 @@ import { ExternalStyles, focusBoxShadow, Theme, useStyles } from '../../styles'
 import { Omit } from '../../util'
 import { getComponents } from '../../util/overrides'
 import CheckIcon from '../Icon/generated/CheckDefault'
+import { StepInactiveIcon } from './StepInactiveIcon'
+
+export type StepStatus = 'active' | 'completed' | 'incompleted' | 'inactive'
 
 export interface StepProps extends Omit<React.HTMLAttributes<HTMLSpanElement>, 'style'> {
-  status?: 'active' | 'completed' | 'incompleted'
+  status?: StepStatus
   hasConnector?: boolean
   style?: ExternalStyles
   overrides?: {
@@ -30,6 +33,7 @@ export function Step(props: StepProps) {
       <IconContainer className={classes.iconContainer}>
         {Icon && <Icon className={classes.icon} />}
         {!Icon && status === 'completed' && <CheckIcon className={classes.icon} />}
+        {!Icon && status === 'inactive' && <StepInactiveIcon />}
       </IconContainer>
 
       <Label className={classes.stepLabel}>{children}</Label>
@@ -66,8 +70,9 @@ const createStyles = (theme: Theme, { status }: StepProps) => ({
     left: 'calc(-50% + 0.5rem)',
     right: 'calc(50% + 0.5rem)',
     borderTopWidth: '2px',
-    borderTopStyle: 'solid',
-    borderTopColor: status === 'incompleted' ? theme.pallete.gray.c80 : theme.pallete.primary.main,
+    borderTopStyle: status === 'inactive' ? 'dashed' : 'solid',
+    borderTopColor:
+      status === 'incompleted' || status === 'inactive' ? theme.pallete.gray.c80 : theme.pallete.primary.main,
     transition: 'all .4s ease',
   } as CSSProperties,
   iconContainer: {
@@ -78,7 +83,7 @@ const createStyles = (theme: Theme, { status }: StepProps) => ({
     width: '1rem',
     height: '1rem',
     borderRadius: '50%',
-    background: status === 'incompleted' ? theme.pallete.gray.c80 : theme.pallete.primary.main,
+    background: status === 'incompleted' || status === 'inactive' ? theme.pallete.gray.c80 : theme.pallete.primary.main,
     textAlign: 'center',
     marginBottom: '0.75rem',
     transition: 'all .4s ease',
