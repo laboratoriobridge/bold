@@ -54,51 +54,57 @@ export const defaultComponents: StepProps['overrides'] = {
   Label: 'span',
 }
 
-const createStyles = (theme: Theme, { status }: StepProps) => ({
-  step: {
-    position: 'relative',
-    flex: '1',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    textAlign: 'center',
-    padding: '0 0.5rem',
-  } as CSSProperties,
-  connector: {
-    position: 'absolute',
-    top: '0.5rem',
-    left: 'calc(-50% + 0.5rem)',
-    right: 'calc(50% + 0.5rem)',
-    borderTopWidth: '2px',
-    borderTopStyle: status === 'inactive' ? 'dashed' : 'solid',
-    borderTopColor:
-      status === 'incompleted' || status === 'inactive' ? theme.pallete.gray.c80 : theme.pallete.primary.main,
-    transition: 'all .4s ease',
-  } as CSSProperties,
-  iconContainer: {
-    zIndex: 1,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: '1rem',
-    height: '1rem',
-    borderRadius: '50%',
-    background: status === 'incompleted' || status === 'inactive' ? theme.pallete.gray.c60 : theme.pallete.primary.main,
-    textAlign: 'center',
-    marginBottom: '0.75rem',
-    transition: 'all .4s ease',
-    boxShadow:
-      (status === 'active' && focusBoxShadow(theme, 'primary')) ||
-      (status === 'completed' && `0 0 0 4px ${theme.pallete.primary.main}`),
-  } as CSSProperties,
-  icon: {
-    fill: theme.pallete.primary.c100,
-    width: '1rem',
-    height: '1rem',
-  } as CSSProperties,
-  stepLabel: {
-    fontWeight: 'bold',
-    color: status === 'active' && theme.pallete.primary.main,
-    transition: 'all .4s ease',
-  } as CSSProperties,
-})
+const createStyles = (theme: Theme, { status }: StepProps) => {
+  const activeLabelColor = status === 'active' && theme.pallete.primary.main
+  const inactiveLabelColor = status === 'inactive' && theme.pallete.text.disabled
+
+  return {
+    step: {
+      position: 'relative',
+      flex: '1',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      textAlign: 'center',
+      padding: '0 0.5rem',
+    } as CSSProperties,
+    connector: {
+      position: 'absolute',
+      top: '0.5rem',
+      left: 'calc(-50% + 0.5rem)',
+      right: 'calc(50% + 0.5rem)',
+      borderTopWidth: '2px',
+      borderTopStyle: status === 'inactive' ? 'dashed' : 'solid',
+      borderTopColor:
+        status === 'incompleted' || status === 'inactive' ? theme.pallete.gray.c80 : theme.pallete.primary.main,
+      transition: 'all .4s ease',
+    } as CSSProperties,
+    iconContainer: {
+      zIndex: 1,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      width: '1rem',
+      height: '1rem',
+      borderRadius: '50%',
+      background:
+        status === 'incompleted' || status === 'inactive' ? theme.pallete.gray.c60 : theme.pallete.primary.main,
+      textAlign: 'center',
+      marginBottom: '0.75rem',
+      transition: 'all .4s ease',
+      boxShadow:
+        (status === 'active' && focusBoxShadow(theme, 'primary')) ||
+        (status === 'completed' && `0 0 0 4px ${theme.pallete.primary.main}`),
+    } as CSSProperties,
+    icon: {
+      fill: theme.pallete.primary.c100,
+      width: '1rem',
+      height: '1rem',
+    } as CSSProperties,
+    stepLabel: {
+      fontWeight: 'bold',
+      color: activeLabelColor || inactiveLabelColor || theme.pallete.text.main,
+      transition: 'all .4s ease',
+    } as CSSProperties,
+  }
+}
