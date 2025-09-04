@@ -83,7 +83,7 @@ const createStyles = (theme: Theme, { status }: StepProps) => ({
     width: '1rem',
     height: '1rem',
     borderRadius: '50%',
-    background: status === 'incompleted' || status === 'inactive' ? theme.pallete.gray.c80 : theme.pallete.primary.main,
+    background: status === 'incompleted' || status === 'inactive' ? theme.pallete.gray.c60 : theme.pallete.primary.main,
     textAlign: 'center',
     marginBottom: '0.75rem',
     transition: 'all .4s ease',
