@@ -19,7 +19,7 @@ function PagedTableExample() {
   const handleSortChange = (sort: string[]) => setParams(state => ({ ...state, sort }))
   const handlePageChange = (page: number) => setParams(state => ({ ...state, page }))
   const handleSizeChange = (size: number) =>
-    setParams(state => ({ ...state, size, totalPages: Math.max(1, state.totalElements / size) }))
+    setParams(state => ({ ...state, size, totalPages: Math.max(1, Math.ceil(state.totalElements / size)) }))
 
   const rows = allRows
     // Naive sorting for example purposes:
