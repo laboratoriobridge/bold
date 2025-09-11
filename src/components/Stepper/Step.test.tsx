@@ -18,17 +18,22 @@ it('should render correctly when status is active', () => {
   expect(container).toMatchSnapshot()
 })
 
+it('should render correctly when status is inactive', () => {
+  const { container } = render(<Step status='inactive'>Inactive step</Step>)
+  expect(container).toMatchSnapshot()
+})
+
 it('should accept "style" prop', () => {
   const { container } = render(<Step style={{ color: 'red' }}>Step red</Step>)
   expect(container).toMatchSnapshot()
 })
 
 it('should allow override of components', () => {
-  const RootOverride = props => <span id='root' {...props} />
-  const ConnectorOverride = props => <span id='connector' {...props} />
-  const IconOverride = props => <span id='icon' {...props} />
-  const IconContainerOverride = props => <span id='icon-container' {...props} />
-  const LabelOverride = props => <span id='label' {...props} />
+  const RootOverride = (props) => <span id='root' {...props} />
+  const ConnectorOverride = (props) => <span id='connector' {...props} />
+  const IconOverride = (props) => <span id='icon' {...props} />
+  const IconContainerOverride = (props) => <span id='icon-container' {...props} />
+  const LabelOverride = (props) => <span id='label' {...props} />
 
   const { container } = render(
     <Step
@@ -47,7 +52,7 @@ it('should allow override of components', () => {
 })
 
 it('should not render Connector when "hasConnector" props is false', () => {
-  const Connector = props => <span id='connector' />
+  const Connector = (props) => <span id='connector' />
 
   const { rerender, container } = render(
     <Step overrides={{ Connector }} hasConnector={false}>
