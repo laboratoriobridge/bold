@@ -3,7 +3,7 @@
 exports[`should accept "style" prop 1`] = `
 .emotion-0 {
   position: absolute;
-  top: 0.5rem;
+  top: calc(0.75rem - 1px);
   left: calc(-50% + 0.5rem);
   right: calc(50% + 0.5rem);
   border-top-width: 2px;
@@ -13,7 +13,7 @@ exports[`should accept "style" prop 1`] = `
   transition: all .4s ease;
 }
 
-.emotion-1 {
+.emotion-2 {
   z-index: 1;
   display: -webkit-box;
   display: -webkit-flex;
@@ -27,24 +27,32 @@ exports[`should accept "style" prop 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  text-align: center;
+  position: relative;
+}
+
+.emotion-1 {
   width: 1rem;
   height: 1rem;
   border-radius: 50%;
+  position: absolute;
+  top: calc(50% - 0.5rem);
+  left: calc(50% - 0.5rem);
   background: #8F8FA2;
-  text-align: center;
-  margin-bottom: 0.75rem;
-  -webkit-transition: all .4s ease;
-  transition: all .4s ease;
-}
-
-.emotion-2 {
-  font-weight: bold;
-  color: #24252E;
   -webkit-transition: all .4s ease;
   transition: all .4s ease;
 }
 
 .emotion-3 {
+  color: #24252E;
+  font-weight: bold;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+}
+
+.emotion-4 {
   position: relative;
   -webkit-flex: 1;
   -ms-flex: 1;
@@ -62,21 +70,26 @@ exports[`should accept "style" prop 1`] = `
   align-items: center;
   text-align: center;
   padding: 0 0.5rem;
+  gap: 0.75rem;
   color: red;
 }
 
 <div>
   <span
-    class="emotion-3"
+    class="emotion-4"
   >
     <span
       class="emotion-0"
     />
     <span
-      class="emotion-1"
-    />
-    <span
       class="emotion-2"
+    >
+      <div
+        class="emotion-1"
+      />
+    </span>
+    <span
+      class="emotion-3"
     >
       Step red
     </span>
@@ -103,11 +116,12 @@ exports[`should allow override of components 1`] = `
   align-items: center;
   text-align: center;
   padding: 0 0.5rem;
+  gap: 0.75rem;
 }
 
 .emotion-0 {
   position: absolute;
-  top: 0.5rem;
+  top: calc(0.75rem - 1px);
   left: calc(-50% + 0.5rem);
   right: calc(50% + 0.5rem);
   border-top-width: 2px;
@@ -131,25 +145,22 @@ exports[`should allow override of components 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  width: 1rem;
-  height: 1rem;
-  border-radius: 50%;
-  background: #8F8FA2;
+  width: 1.5rem;
+  height: 1.5rem;
   text-align: center;
-  margin-bottom: 0.75rem;
-  -webkit-transition: all .4s ease;
-  transition: all .4s ease;
+  position: relative;
 }
 
 .emotion-1 {
-  fill: #FFFFFF;
-  width: 1rem;
-  height: 1rem;
+  z-index: 1;
+  fill: #8F8FA2;
+  width: 1.25rem;
+  height: 1.25rem;
 }
 
 .emotion-3 {
-  font-weight: bold;
   color: #24252E;
+  font-weight: bold;
   -webkit-transition: all .4s ease;
   transition: all .4s ease;
 }
@@ -183,90 +194,6 @@ exports[`should allow override of components 1`] = `
 `;
 
 exports[`should render correctly when status is active 1`] = `
-.emotion-3 {
-  position: relative;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  text-align: center;
-  padding: 0 0.5rem;
-}
-
-.emotion-0 {
-  position: absolute;
-  top: 0.5rem;
-  left: calc(-50% + 0.5rem);
-  right: calc(50% + 0.5rem);
-  border-top-width: 2px;
-  border-top-style: solid;
-  border-top-color: #0069D0;
-  -webkit-transition: all .4s ease;
-  transition: all .4s ease;
-}
-
-.emotion-1 {
-  z-index: 1;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  width: 1rem;
-  height: 1rem;
-  border-radius: 50%;
-  background: #0069D0;
-  text-align: center;
-  margin-bottom: 0.75rem;
-  -webkit-transition: all .4s ease;
-  transition: all .4s ease;
-  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
-}
-
-.emotion-2 {
-  font-weight: bold;
-  color: #0069D0;
-  -webkit-transition: all .4s ease;
-  transition: all .4s ease;
-}
-
-<div>
-  <span
-    class="emotion-3"
-  >
-    <span
-      class="emotion-0"
-    />
-    <span
-      class="emotion-1"
-    />
-    <span
-      class="emotion-2"
-    >
-      Active step
-    </span>
-  </span>
-</div>
-`;
-
-exports[`should render correctly when status is completed 1`] = `
 .emotion-4 {
   position: relative;
   -webkit-flex: 1;
@@ -285,31 +212,7 @@ exports[`should render correctly when status is completed 1`] = `
   align-items: center;
   text-align: center;
   padding: 0 0.5rem;
-}
-
-.emotion-1 {
-  fill: #FFFFFF;
-  width: 1rem;
-  height: 1rem;
-}
-
-.emotion-3 {
-  font-weight: bold;
-  color: #24252E;
-  -webkit-transition: all .4s ease;
-  transition: all .4s ease;
-}
-
-.emotion-0 {
-  position: absolute;
-  top: 0.5rem;
-  left: calc(-50% + 0.5rem);
-  right: calc(50% + 0.5rem);
-  border-top-width: 2px;
-  border-top-style: solid;
-  border-top-color: #0069D0;
-  -webkit-transition: all .4s ease;
-  transition: all .4s ease;
+  gap: 0.75rem;
 }
 
 .emotion-2 {
@@ -326,15 +229,249 @@ exports[`should render correctly when status is completed 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  text-align: center;
+  position: relative;
+}
+
+.emotion-0 {
+  position: absolute;
+  top: calc(0.75rem - 1px);
+  left: calc(-50% + 0.5rem);
+  right: calc(50% + 0.5rem);
+  border-top-width: 2px;
+  border-top-style: solid;
+  border-top-color: #0069D0;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+}
+
+.emotion-1 {
   width: 1rem;
   height: 1rem;
   border-radius: 50%;
+  position: absolute;
+  top: calc(50% - 0.5rem);
+  left: calc(50% - 0.5rem);
   background: #0069D0;
-  text-align: center;
-  margin-bottom: 0.75rem;
+  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
   -webkit-transition: all .4s ease;
   transition: all .4s ease;
+}
+
+.emotion-3 {
+  color: #0069D0;
+  font-weight: bold;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+}
+
+<div>
+  <span
+    class="emotion-4"
+  >
+    <span
+      class="emotion-0"
+    />
+    <span
+      class="emotion-2"
+    >
+      <div
+        class="emotion-1"
+      />
+    </span>
+    <span
+      class="emotion-3"
+    >
+      Active step
+    </span>
+  </span>
+</div>
+`;
+
+exports[`should render correctly when status is completed 1`] = `
+.emotion-5 {
+  position: relative;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 0.5rem;
+  gap: 0.75rem;
+}
+
+.emotion-3 {
+  z-index: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  text-align: center;
+  position: relative;
+}
+
+.emotion-4 {
+  color: #24252E;
+  font-weight: bold;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+}
+
+.emotion-0 {
+  position: absolute;
+  top: calc(0.75rem - 1px);
+  left: calc(-50% + 0.5rem);
+  right: calc(50% + 0.5rem);
+  border-top-width: 2px;
+  border-top-style: solid;
+  border-top-color: #0069D0;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+}
+
+.emotion-1 {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  position: absolute;
+  top: calc(50% - 0.5rem);
+  left: calc(50% - 0.5rem);
+  background: #0069D0;
   box-shadow: 0 0 0 4px #0069D0;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+}
+
+.emotion-2 {
+  z-index: 1;
+  fill: #FFFFFF;
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+<div>
+  <span
+    class="emotion-5"
+  >
+    <span
+      class="emotion-0"
+    />
+    <span
+      class="emotion-3"
+    >
+      <div
+        class="emotion-1"
+      />
+      <svg
+        class="emotion-2"
+        height="1em"
+        viewBox="0 0 24 24"
+        width="1em"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M18.294 6.293a1 1 0 111.414 1.414l-9 9a1 1 0 01-1.414 0l-5.001-5.001a1 1 0 011.414-1.414l4.294 4.294 8.293-8.293z"
+          fill-rule="evenodd"
+        />
+      </svg>
+    </span>
+    <span
+      class="emotion-4"
+    >
+      Completed step
+    </span>
+  </span>
+</div>
+`;
+
+exports[`should render correctly when status is inactive 1`] = `
+.emotion-4 {
+  position: relative;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 0.5rem;
+  gap: 0.75rem;
+}
+
+.emotion-2 {
+  z-index: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  text-align: center;
+  position: relative;
+}
+
+.emotion-1 {
+  z-index: 1;
+  fill: #8F8FA2;
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.emotion-0 {
+  position: absolute;
+  top: calc(0.75rem - 1px);
+  left: calc(-50% + 0.5rem);
+  right: calc(50% + 0.5rem);
+  border-top-width: 2px;
+  border-top-style: dashed;
+  border-top-color: #D3D4DD;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+}
+
+.emotion-3 {
+  color: #AAAAB9;
+  font-weight: bold;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
 }
 
 <div>
@@ -354,128 +491,12 @@ exports[`should render correctly when status is completed 1`] = `
         width="1em"
       >
         <path
-          clip-rule="evenodd"
-          d="M18.294 6.293a1 1 0 111.414 1.414l-9 9a1 1 0 01-1.414 0l-5.001-5.001a1 1 0 011.414-1.414l4.294 4.294 8.293-8.293z"
-          fill-rule="evenodd"
+          d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10c0 5.522-4.477 10-10 10S2 17.522 2 12zm14-1H8v2h8v-2z"
         />
       </svg>
     </span>
     <span
       class="emotion-3"
-    >
-      Completed step
-    </span>
-  </span>
-</div>
-`;
-
-exports[`should render correctly when status is inactive 1`] = `
-.emotion-5 {
-  position: relative;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  text-align: center;
-  padding: 0 0.5rem;
-}
-
-.emotion-3 {
-  z-index: 1;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  width: 1rem;
-  height: 1rem;
-  border-radius: 50%;
-  background: #8F8FA2;
-  text-align: center;
-  margin-bottom: 0.75rem;
-  -webkit-transition: all .4s ease;
-  transition: all .4s ease;
-}
-
-.emotion-0 {
-  position: absolute;
-  top: 0.5rem;
-  left: calc(-50% + 0.5rem);
-  right: calc(50% + 0.5rem);
-  border-top-width: 2px;
-  border-top-style: dashed;
-  border-top-color: #D3D4DD;
-  -webkit-transition: all .4s ease;
-  transition: all .4s ease;
-}
-
-.emotion-4 {
-  font-weight: bold;
-  color: #AAAAB9;
-  -webkit-transition: all .4s ease;
-  transition: all .4s ease;
-}
-
-.emotion-2 {
-  width: 1rem;
-  height: 1rem;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.emotion-1 {
-  width: 6px;
-  height: 2px;
-  background: #FFFFFF;
-}
-
-<div>
-  <span
-    class="emotion-5"
-  >
-    <span
-      class="emotion-0"
-    />
-    <span
-      class="emotion-3"
-    >
-      <div
-        class="emotion-2"
-      >
-        <div
-          class="emotion-1"
-        />
-      </div>
-    </span>
-    <span
-      class="emotion-4"
     >
       Inactive step
     </span>
@@ -484,7 +505,7 @@ exports[`should render correctly when status is inactive 1`] = `
 `;
 
 exports[`should render correctly when status is incompleted 1`] = `
-.emotion-3 {
+.emotion-4 {
   position: relative;
   -webkit-flex: 1;
   -ms-flex: 1;
@@ -502,11 +523,12 @@ exports[`should render correctly when status is incompleted 1`] = `
   align-items: center;
   text-align: center;
   padding: 0 0.5rem;
+  gap: 0.75rem;
 }
 
 .emotion-0 {
   position: absolute;
-  top: 0.5rem;
+  top: calc(0.75rem - 1px);
   left: calc(-50% + 0.5rem);
   right: calc(50% + 0.5rem);
   border-top-width: 2px;
@@ -516,7 +538,7 @@ exports[`should render correctly when status is incompleted 1`] = `
   transition: all .4s ease;
 }
 
-.emotion-1 {
+.emotion-2 {
   z-index: 1;
   display: -webkit-box;
   display: -webkit-flex;
@@ -530,35 +552,47 @@ exports[`should render correctly when status is incompleted 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  text-align: center;
+  position: relative;
+}
+
+.emotion-1 {
   width: 1rem;
   height: 1rem;
   border-radius: 50%;
+  position: absolute;
+  top: calc(50% - 0.5rem);
+  left: calc(50% - 0.5rem);
   background: #8F8FA2;
-  text-align: center;
-  margin-bottom: 0.75rem;
   -webkit-transition: all .4s ease;
   transition: all .4s ease;
 }
 
-.emotion-2 {
-  font-weight: bold;
+.emotion-3 {
   color: #24252E;
+  font-weight: bold;
   -webkit-transition: all .4s ease;
   transition: all .4s ease;
 }
 
 <div>
   <span
-    class="emotion-3"
+    class="emotion-4"
   >
     <span
       class="emotion-0"
     />
     <span
-      class="emotion-1"
-    />
-    <span
       class="emotion-2"
+    >
+      <div
+        class="emotion-1"
+      />
+    </span>
+    <span
+      class="emotion-3"
     >
       Incompleted step
     </span>
