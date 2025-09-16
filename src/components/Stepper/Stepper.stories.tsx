@@ -19,7 +19,7 @@ export const Default = () => (
     </Step>
     <Step status='active'>Second and active step</Step>
     <Step>Some incompleted step</Step>
-    <Step>Last and incompleted step</Step>
+    <Step status='inactive'>Last and inactive step</Step>
   </Stepper>
 )
 

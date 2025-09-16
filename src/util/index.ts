@@ -5,6 +5,7 @@ import _merge from 'lodash/merge'
 import _some from 'lodash/some'
 import _range from 'lodash/range'
 import _clamp from 'lodash/clamp'
+import _isNil from 'lodash/isNil'
 
 export * from './array'
 export * from './Observable'
@@ -17,6 +18,7 @@ export const merge = _merge
 export const some = _some
 export const range = _range
 export const clamp = _clamp
+export const isNil = _isNil
 
 /**
  * Check whether the object is a promise.

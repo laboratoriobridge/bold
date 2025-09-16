@@ -143,6 +143,7 @@ Array [
   "some",
   "range",
   "clamp",
+  "isNil",
   "isPromise",
   "EMPTY_ARRAY",
   "Observable",
