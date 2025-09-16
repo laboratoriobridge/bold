@@ -1,8 +1,7 @@
 import React, { CSSProperties } from 'react'
 
-import { isNil } from 'lodash'
 import { ExternalStyles, focusBoxShadow, Theme, useStyles } from '../../styles'
-import { Omit } from '../../util'
+import { isNil, Omit } from '../../util'
 import { getComponents } from '../../util/overrides'
 import CheckIcon from '../Icon/generated/CheckDefault'
 import MinusCircleFilled from '../Icon/generated/MinusCircleFilled'
