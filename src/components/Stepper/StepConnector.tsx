@@ -16,7 +16,6 @@ export function StepConnector(props: StepConnectorProps) {
   const { status, direction, labelHeight } = props
 
   const { gap } = useStepperContext()
-
   const { classes, css } = useStyles((theme) => createStyles(theme, status, gap, labelHeight))
 
   return (

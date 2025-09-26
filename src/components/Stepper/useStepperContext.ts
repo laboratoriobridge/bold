@@ -18,7 +18,9 @@ export function useStepperContext() {
   const context = useContext(StepperContext)
 
   if (!context) {
-    throw new Error('Stepper subcomponents (like Step, StepConnector) must be used inside <Stepper>')
+    throw new Error(
+      'Stepper subcomponents (like Step, StepLabel, StepConnector and StepContent) must be used inside <Stepper>'
+    )
   }
 
   return context

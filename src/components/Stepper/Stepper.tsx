@@ -27,9 +27,7 @@ export interface StepperProps extends Omit<HTMLAttributes<HTMLDivElement>, 'styl
 
   /**
    * Defines the spacing between individual steps in rem units.
-   *
    * If not provided, the stepper will behave responsively, automatically stretching to fill the parent container.
-   *
    */
   gap?: number
 
