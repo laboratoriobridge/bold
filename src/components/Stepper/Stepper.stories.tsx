@@ -1,38 +1,88 @@
 import React from 'react'
 
+import { number, select } from '@storybook/addon-knobs'
 import { Button } from '../Button'
 import { HFlow } from '../HFlow'
 import { VFlow } from '../VFlow'
 
 import { Step } from './Step'
-import { Stepper } from './Stepper'
+import { Stepper, StepperDirection } from './Stepper'
 import { useStepperState } from './useStepperState'
 
 export default {
   title: 'Components/Stepper',
 }
 
-export const Default = () => (
-  <Stepper>
-    <Step status='completed' hasConnector={false}>
-      Completed step
-    </Step>
-    <Step status='active'>Second and active step</Step>
-    <Step>Some incompleted step</Step>
-    <Step status='inactive'>Last and inactive step</Step>
-  </Stepper>
-)
+const directions: { [key in StepperDirection]: StepperDirection } = {
+  horizontal: 'horizontal',
+  vertical: 'vertical',
+}
+
+export const Horizontal = () => {
+  const gap = number('gap', undefined)
+
+  return (
+    <Stepper gap={gap}>
+      <Step status='completed' title='Completed step' />
+      <Step status='active' title='Second and active step' />
+      <Step title='Some incompleted step' />
+      <Step status='inactive' title='Last and inactive step' />
+    </Stepper>
+  )
+}
+export const Vertical = () => {
+  const gap = number('gap', undefined)
+
+  return (
+    <div style={{ height: '400px' }}>
+      <Stepper direction='vertical' gap={gap}>
+        <Step status='completed' title='Completed step' />
+        <Step status='active' title='Second and active step' />
+        <Step title='Some incompleted step' />
+        <Step status='inactive' title='Last and inactive step' />
+      </Stepper>
+    </div>
+  )
+}
+
+export const Components = () => {
+  const direction = select<StepperDirection>('direction', directions, 'horizontal')
+  const gap = number('gap', undefined)
+
+  return (
+    <Stepper direction={direction} gap={gap}>
+      <Step status='completed' title='Completed step' subtitle='Optional'>
+        <VFlow vSpacing={0.5}>
+          <div>Subitem A</div>
+          <div>Subitem B</div>
+          <div>Subitem C</div>
+        </VFlow>
+      </Step>
+      <Step status='active' title='Second and active step' subtitle='Optional'>
+        <VFlow vSpacing={0.5}>
+          <div>Subitem A</div>
+          <div>Subitem B</div>
+          <div>Subitem C</div>
+          <div>Subitem D</div>
+        </VFlow>
+      </Step>
+      <Step title='Some incompleted step' />
+      <Step status='inactive' title='Last and inactive step' />
+    </Stepper>
+  )
+}
 
 export const WithState = () => {
   const { getStepProps, nextStep, previousStep } = useStepperState()
+  const direction = select<StepperDirection>('direction', directions, 'horizontal')
 
   return (
     <VFlow>
-      <Stepper>
-        <Step {...getStepProps(0)}>Step 1</Step>
-        <Step {...getStepProps(1)}>Step 2</Step>
-        <Step {...getStepProps(2)}>Step 3</Step>
-        <Step {...getStepProps(3)}>Step 4</Step>
+      <Stepper direction={direction}>
+        <Step title='Step 1' {...getStepProps(0)} />
+        <Step title='Step 2' {...getStepProps(1)} />
+        <Step title='Step 3' {...getStepProps(2)} />
+        <Step title='Step 4' {...getStepProps(3)} />
       </Stepper>
 
       <HFlow justifyContent='center'>
