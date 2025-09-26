@@ -22,7 +22,7 @@ export function StepContent(props: StepContentProps) {
 
 const DEFAULT_VERTICAL_PADDING = 1.25 // rem
 
-const createStyles = (direction: StepperDirection, gap: number = 0) => {
+const createStyles = (direction: StepperDirection, gap: number | undefined) => {
   const isVertical = direction === 'vertical'
 
   return {
@@ -30,12 +30,13 @@ const createStyles = (direction: StepperDirection, gap: number = 0) => {
       width: '100%',
       padding: `${DEFAULT_VERTICAL_PADDING}rem 0.5rem`,
       paddingLeft: isVertical && '2rem',
-      paddingBottom: isVertical && getPaddingBottom(gap),
+      paddingBottom: getPaddingBottom(direction, gap),
     } as CSSProperties,
   }
 }
 
-const getPaddingBottom = (gap: number = 0): CSSProperties['paddingBottom'] => {
+const getPaddingBottom = (direction: StepperDirection, gap: number = 0): CSSProperties['paddingBottom'] => {
+  if (direction === 'horizontal') return '0'
   if (gap > DEFAULT_VERTICAL_PADDING) return '0'
   if (gap > 0 && gap <= DEFAULT_VERTICAL_PADDING) return `${DEFAULT_VERTICAL_PADDING - gap}rem`
   return `${DEFAULT_VERTICAL_PADDING}rem`

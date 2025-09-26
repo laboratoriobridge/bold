@@ -3,6 +3,7 @@ import { ExternalStyles, Theme, useStyles } from '../../styles'
 import { VFlow } from '../VFlow'
 import { Text } from '../Text'
 import { StepStatus } from './Step'
+import { useStepperContext } from './useStepperContext'
 
 interface StepLabelProps {
   status: StepStatus
@@ -14,11 +15,12 @@ interface StepLabelProps {
 export function StepLabel(props: StepLabelProps) {
   const { status, title, subtitle, style, ...rest } = props
 
+  const { direction } = useStepperContext()
   const { classes, css } = useStyles((theme) => createStyles(theme, status))
 
   return (
     <span className={css(style)} {...rest}>
-      <VFlow vSpacing={0}>
+      <VFlow vSpacing={direction === 'horizontal' ? 0.5 : 0}>
         <Text style={classes.label}>{title}</Text>
         {subtitle && <Text>{subtitle}</Text>}
       </VFlow>
