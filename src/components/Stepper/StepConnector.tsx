@@ -20,6 +20,7 @@ export function StepConnector(props: StepConnectorProps) {
 
   return (
     <span
+      data-testid='step-connector'
       className={css(
         classes.baseConnector,
         direction === 'horizontal' ? classes.connectorHorizontal : classes.connectorVertical

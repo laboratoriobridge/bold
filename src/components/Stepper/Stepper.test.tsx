@@ -14,7 +14,7 @@ it('should accept "style" prop', () => {
 })
 
 it('should allow override of "Root" component', () => {
-  const RootOverride = props => <span id='root' {...props} />
+  const RootOverride = (props) => <span id='root' {...props} />
   const { container } = render(<Stepper overrides={{ Root: RootOverride }}>Stepper content</Stepper>)
   expect(container.querySelector('#root')).toBeTruthy()
   expect(container.querySelector('#root').textContent).toEqual('Stepper content')

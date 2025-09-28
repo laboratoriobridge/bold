@@ -5,18 +5,18 @@ import { getStepProps, useStepperState } from './useStepperState'
 
 describe(`${getStepProps.name}`, () => {
   it(`should return a ${Step.name} component props object based on parameters`, () => {
-    expect(getStepProps(0, 1)).toEqual({ hasConnector: false, status: 'completed' })
-    expect(getStepProps(1, 1)).toEqual({ hasConnector: true, status: 'active' })
-    expect(getStepProps(2, 1)).toEqual({ hasConnector: true, status: 'incompleted' })
+    expect(getStepProps(0, 1)).toEqual({ status: 'completed' })
+    expect(getStepProps(1, 1)).toEqual({ status: 'active' })
+    expect(getStepProps(2, 1)).toEqual({ status: 'incompleted' })
   })
 })
 
 describe(`${useStepperState.name}`, () => {
   it(`should return a "getStepProps" function which returns a ${Step.name} component props object based on current Stepper state`, () => {
     const { result } = renderHook(() => useStepperState(1))
-    expect(result.current.getStepProps(0)).toEqual({ hasConnector: false, status: 'completed' })
-    expect(result.current.getStepProps(1)).toEqual({ hasConnector: true, status: 'active' })
-    expect(result.current.getStepProps(2)).toEqual({ hasConnector: true, status: 'incompleted' })
+    expect(result.current.getStepProps(0)).toEqual({ status: 'completed' })
+    expect(result.current.getStepProps(1)).toEqual({ status: 'active' })
+    expect(result.current.getStepProps(2)).toEqual({ status: 'incompleted' })
   })
   it(`should return a "currentStep" attribute with the current step state`, () => {
     const { result } = renderHook(() => useStepperState(1))
