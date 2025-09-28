@@ -36,7 +36,7 @@ const createStyles = (direction: StepperDirection, gap: number | undefined) => {
 }
 
 const getPaddingBottom = (direction: StepperDirection, gap: number = 0): CSSProperties['paddingBottom'] => {
-  if (direction === 'horizontal' || gap > DEFAULT_VERTICAL_PADDING) return '0'
+  if (direction === 'horizontal' || gap > DEFAULT_VERTICAL_PADDING) return '0rem'
   if (gap > 0 && gap <= DEFAULT_VERTICAL_PADDING) return `${DEFAULT_VERTICAL_PADDING - gap}rem`
   return `${DEFAULT_VERTICAL_PADDING}rem`
 }

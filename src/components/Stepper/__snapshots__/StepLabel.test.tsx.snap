@@ -1,0 +1,127 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render correctly 1`] = `
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-1 {
+  display: inline-block;
+  margin-bottom: 0.25rem;
+  margin-top: 0.25rem;
+}
+
+.emotion-1:first-of-type {
+  margin-top: 0;
+}
+
+.emotion-1:last-of-type {
+  margin-bottom: 0;
+}
+
+.emotion-1:empty {
+  display: none;
+}
+
+.emotion-0 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #24252E;
+  color: #0069D0;
+  font-weight: bold;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+}
+
+<div>
+  <span
+    class="emotion-3"
+  >
+    <div
+      class="emotion-2"
+    >
+      <div
+        class="emotion-1"
+      >
+        <span
+          class="emotion-0"
+        >
+          Step label
+        </span>
+      </div>
+    </div>
+  </span>
+</div>
+`;
+
+exports[`should should accept style prop 1`] = `
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-1 {
+  display: inline-block;
+  margin-bottom: 0.25rem;
+  margin-top: 0.25rem;
+}
+
+.emotion-1:first-of-type {
+  margin-top: 0;
+}
+
+.emotion-1:last-of-type {
+  margin-bottom: 0;
+}
+
+.emotion-1:empty {
+  display: none;
+}
+
+.emotion-0 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #24252E;
+  color: #0069D0;
+  font-weight: bold;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+}
+
+.emotion-3 {
+  color: red;
+}
+
+<div>
+  <span
+    class="emotion-3"
+  >
+    <div
+      class="emotion-2"
+    >
+      <div
+        class="emotion-1"
+      >
+        <span
+          class="emotion-0"
+        >
+          Step label
+        </span>
+      </div>
+    </div>
+  </span>
+</div>
+`;

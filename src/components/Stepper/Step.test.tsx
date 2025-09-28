@@ -98,3 +98,45 @@ it('should not render connector when is last step', async () => {
   expect(container.querySelector('[data-testid="second-step"] [data-testid="step-connector"]')).toBeTruthy()
   expect(container.querySelector('[data-testid="last-step"] [data-testid="step-connector"]')).toBeFalsy()
 })
+
+it('should render children inside StepContent when provided', () => {
+  const mockContextValue = createMockStepperContext()
+
+  const { getByTestId } = render(
+    <StepperContextProvider value={mockContextValue}>
+      <Step title='Parent'>
+        <div data-testid='child'>Child</div>
+      </Step>
+    </StepperContextProvider>
+  )
+
+  expect(getByTestId('child')).toBeInTheDocument()
+})
+
+it('should apply horizontal layout styles', () => {
+  const mockContextValue = createMockStepperContext()
+
+  const { getByTestId } = render(
+    <StepperContextProvider value={mockContextValue}>
+      <Step title='Horizontal step' data-testid='horizontal-step' />
+    </StepperContextProvider>
+  )
+
+  const step = getByTestId('horizontal-step')
+
+  expect(getComputedStyle(step).textAlign).toBe('center')
+})
+
+it('should apply vertical layout styles when direction is vertical', () => {
+  const mockContextValue = createMockStepperContext({ direction: 'vertical' })
+
+  const { getByTestId } = render(
+    <StepperContextProvider value={mockContextValue}>
+      <Step title='Vertical step' data-testid='vertical-step' />
+    </StepperContextProvider>
+  )
+
+  const step = getByTestId('vertical-step')
+
+  expect(getComputedStyle(step).textAlign).toBe('start')
+})

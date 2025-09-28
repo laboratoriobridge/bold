@@ -145,6 +145,7 @@ exports[`should accept "style" prop 1`] = `
           >
             <div
               class="emotion-1"
+              data-testid="background"
             />
           </span>
           <span
@@ -483,6 +484,7 @@ exports[`should render correctly when status is active 1`] = `
           >
             <div
               class="emotion-1"
+              data-testid="background"
             />
           </span>
           <span
@@ -661,9 +663,11 @@ exports[`should render correctly when status is completed 1`] = `
           >
             <div
               class="emotion-1"
+              data-testid="background"
             />
             <svg
               class="emotion-2"
+              data-testid="check-icon"
               height="1em"
               viewBox="0 0 24 24"
               width="1em"
@@ -838,6 +842,7 @@ exports[`should render correctly when status is inactive 1`] = `
           >
             <svg
               class="emotion-1"
+              data-testid="minus-icon"
               height="1em"
               viewBox="0 0 24 24"
               width="1em"
@@ -1015,6 +1020,7 @@ exports[`should render correctly when status is incompleted 1`] = `
           >
             <div
               class="emotion-1"
+              data-testid="background"
             />
           </span>
           <span

@@ -22,10 +22,10 @@ export function StepIcon(props: StepIconProps) {
 
   return (
     <span className={css(classes.iconContainer, style)} {...rest}>
-      {hasBackground && <div className={classes.background} />}
+      {hasBackground && <div className={classes.background} data-testid='background' />}
       {Icon && <Icon className={classes.icon} />}
-      {!Icon && status === 'completed' && <CheckIcon className={classes.icon} />}
-      {!Icon && status === 'inactive' && <MinusCircleFilled className={classes.icon} />}
+      {!Icon && status === 'completed' && <CheckIcon className={classes.icon} data-testid='check-icon' />}
+      {!Icon && status === 'inactive' && <MinusCircleFilled className={classes.icon} data-testid='minus-icon' />}
     </span>
   )
 }
