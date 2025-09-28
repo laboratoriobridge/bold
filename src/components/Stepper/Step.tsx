@@ -1,4 +1,4 @@
-import React, { CSSProperties, ElementType, HTMLAttributes, ReactNode, useEffect, useRef } from 'react'
+import React, { CSSProperties, ElementType, HTMLAttributes, ReactNode, useEffect, useState } from 'react'
 
 import { ExternalStyles, useStyles } from '../../styles'
 import { getComponents } from '../../util/overrides'
@@ -33,17 +33,19 @@ export function Step(props: StepProps) {
   const { classes, css } = useStyles(() => createStyles(direction))
 
   const [labelRef, labelHeight] = useHeight()
-  const stepIndexRef = useRef<number | null>(null)
+  const [stepIndex, setStepIndex] = useState<number | null>(null)
 
-  const stepIndex = stepIndexRef.current ?? 0
   const nextStepStatus = getNextStepStatus(stepIndex)
   const isLastStep = nextStepStatus === undefined
 
   useEffect(() => {
-    if (stepIndexRef.current === null) {
-      stepIndexRef.current = registerStep()
-    }
+    const index = registerStep()
+    setStepIndex(index)
   }, [registerStep])
+
+  if (stepIndex === null) {
+    return null
+  }
 
   return (
     <Root className={css(classes.step, style)} {...rest}>
