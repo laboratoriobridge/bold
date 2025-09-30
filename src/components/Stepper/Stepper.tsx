@@ -65,7 +65,6 @@ export function Stepper(props: StepperProps) {
     () => ({
       direction,
       gap,
-      stepCounterRef,
       incrementStep,
       getNextStepStatus: (currentIndex: number) => stepStatuses[currentIndex + 1],
     }),

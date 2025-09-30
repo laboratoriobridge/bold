@@ -1,11 +1,10 @@
-import { createContext, MutableRefObject, useContext } from 'react'
+import { createContext, useContext } from 'react'
 import { StepperDirection } from './Stepper'
 import { StepStatus } from './Step'
 
 export interface StepperContextValue {
   direction: StepperDirection
   gap: number | undefined
-  stepCounterRef: MutableRefObject<number>
   getNextStepStatus: (currentIndex: number) => StepStatus | undefined
   incrementStep: () => number
 }
