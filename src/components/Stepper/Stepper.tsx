@@ -10,7 +10,7 @@ import React, {
   useRef,
 } from 'react'
 
-import { ExternalStyles, useStyles } from '../../styles'
+import { ExternalStyles, Theme, useStyles } from '../../styles'
 import { isNil, Omit } from '../../util'
 import { getComponents } from '../../util/overrides'
 import { StepperContextProvider, StepperContextValue } from './useStepperContext'
@@ -53,7 +53,7 @@ export function Stepper(props: StepperProps) {
   )
   const stepStatuses = useMemo(() => steps.map((child) => child.props.status ?? 'incompleted'), [steps])
 
-  const { classes, css } = useStyles(() => createStyles(direction, gap, steps.length))
+  const { classes, css } = useStyles(createStyles, direction, gap, steps.length)
 
   const registerStep = useCallback(() => {
     const currentIndex = stepCounterRef.current
@@ -61,15 +61,16 @@ export function Stepper(props: StepperProps) {
     return currentIndex
   }, [])
 
-  const stepperContextValue: StepperContextValue = useMemo(() => {
-    return {
+  const stepperContextValue: StepperContextValue = useMemo(
+    () => ({
       direction,
       gap,
       stepCounterRef,
       registerStep,
       getNextStepStatus: (currentIndex: number) => stepStatuses[currentIndex + 1],
-    }
-  }, [gap, direction, registerStep, stepStatuses])
+    }),
+    [gap, direction, registerStep, stepStatuses]
+  )
 
   return (
     <StepperContextProvider value={stepperContextValue}>
@@ -84,7 +85,7 @@ const defaultComponents: StepperProps['overrides'] = {
   Root: 'div',
 }
 
-const createStyles = (direction: StepperDirection, gap: number | undefined, numberOfSteps: number) => {
+const createStyles = (_theme: Theme, direction: StepperDirection, gap: number | undefined, numberOfSteps: number) => {
   const isHorizontal = direction === 'horizontal'
   const isVertical = direction === 'vertical'
   const hasGap = !isNil(gap)

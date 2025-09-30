@@ -16,7 +16,7 @@ export function StepLabel(props: StepLabelProps) {
   const { status, title, subtitle, style, ...rest } = props
 
   const { direction } = useStepperContext()
-  const { classes, css } = useStyles((theme) => createStyles(theme, status))
+  const { classes, css } = useStyles(createStyles, status)
 
   return (
     <span className={css(style)} {...rest}>
