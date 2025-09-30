@@ -4,12 +4,10 @@ import React from 'react'
 function StepperDefaultDemo() {
   return (
     <Stepper>
-      <Step status='completed' hasConnector={false}>
-        Completed step
-      </Step>
-      <Step status='active'>Second and active step</Step>
-      <Step>Some incompleted step</Step>
-      <Step>Last and incompleted step</Step>
+      <Step status='completed' title='Completed step' />
+      <Step status='active' title='Second and active step' />
+      <Step title='Some incompleted step' />
+      <Step title='Last and incompleted step' />
     </Stepper>
   )
 }
