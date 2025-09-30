@@ -33,12 +33,13 @@ describe('ModalHeader', () => {
     })
 
     it('should accept "style" prop', () => {
-      const { container } = render(
+      const { getByTestId } = render(
         <ModalContextProvider value={mockContextValue}>
           <ModalHeader title='title' style={{ background: 'red' }} />
         </ModalContextProvider>
       )
-      expect(container).toMatchSnapshot()
+      const header = getByTestId('modal-header')
+      expect(getComputedStyle(header).background).toBe('red')
     })
 
     it('should render correctly with children', () => {
