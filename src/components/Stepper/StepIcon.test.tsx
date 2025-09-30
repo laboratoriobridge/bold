@@ -15,7 +15,7 @@ it('should accept style prop', () => {
 
 it('should render custom Icon when provided', () => {
   const CustomIcon = (props: any) => <svg data-testid='custom-icon' {...props} />
-  const { getByTestId, queryByTestId } = render(<StepIcon status='completed' overrides={{ Icon: CustomIcon }} />)
+  const { getByTestId, queryByTestId } = render(<StepIcon status='completed' icon={CustomIcon} />)
   expect(getByTestId('custom-icon')).toBeInTheDocument()
   expect(queryByTestId('check-icon')).not.toBeInTheDocument()
   expect(queryByTestId('minus-icon')).not.toBeInTheDocument()
@@ -51,7 +51,7 @@ it('should render background when status is incompleted without custom icon', ()
 
 it('should not render background when status is incompleted with custom icon', () => {
   const CustomIcon = () => <svg data-testid='custom-icon' />
-  const { queryByTestId } = render(<StepIcon status='incompleted' overrides={{ Icon: CustomIcon }} />)
+  const { queryByTestId } = render(<StepIcon status='incompleted' icon={CustomIcon} />)
   const background = queryByTestId('background')
   expect(background).toBeNull()
 })

@@ -7,14 +7,12 @@ import { StepStatus } from './Step'
 
 interface StepIconProps extends Omit<React.HTMLAttributes<HTMLSpanElement>, 'style'> {
   status: StepStatus
-  overrides?: {
-    Icon?: ElementType
-  }
+  icon?: ElementType
   style?: ExternalStyles
 }
 
 export function StepIcon(props: StepIconProps) {
-  const { status, overrides: { Icon } = {}, style, ...rest } = props
+  const { status, icon: Icon, style, ...rest } = props
 
   const { classes, css } = useStyles((theme) => createStyles(theme, status))
 

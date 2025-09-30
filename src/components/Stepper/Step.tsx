@@ -53,7 +53,7 @@ export function Step(props: StepProps) {
 
       <VFlow vSpacing={0}>
         <div className={classes.labelContainer} ref={labelRef}>
-          <StepIcon status={status} overrides={overrides} />
+          <StepIcon status={status} icon={overrides?.Icon} />
           <StepLabel status={status} title={title} subtitle={subtitle} />
         </div>
 
