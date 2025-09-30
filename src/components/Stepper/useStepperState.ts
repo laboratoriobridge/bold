@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import { StepProps } from './Step'
+import { StepStatus } from './Step'
 
 export function useStepperState(initialCurrStep = 0) {
   const [currentStep, setCurrentStep] = useState(initialCurrStep)
@@ -9,7 +9,7 @@ export function useStepperState(initialCurrStep = 0) {
   const previousStep = () => setCurrentStep((step) => step - 1)
 
   return {
-    getStepProps: (step: number) => getStepProps(step, currentStep),
+    getStepStatus: (step: number) => getStepStatus(step, currentStep),
     currentStep,
     setCurrentStep,
     nextStep,
@@ -23,8 +23,6 @@ export function useStepperState(initialCurrStep = 0) {
  * @param step The step index that will receive the props.
  * @param currentActiveStep The current active stepper step.
  */
-export function getStepProps(step: number, currentActiveStep: number): Pick<StepProps, 'status'> {
-  return {
-    status: (step < currentActiveStep && 'completed') || (step > currentActiveStep && 'incompleted') || 'active',
-  }
+export function getStepStatus(step: number, currentActiveStep: number): StepStatus {
+  return (step < currentActiveStep && 'completed') || (step > currentActiveStep && 'incompleted') || 'active'
 }

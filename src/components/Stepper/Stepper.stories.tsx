@@ -73,16 +73,16 @@ export const Components = () => {
 }
 
 export const WithState = () => {
-  const { getStepProps, nextStep, previousStep } = useStepperState()
+  const { getStepStatus, nextStep, previousStep } = useStepperState()
   const direction = select<StepperDirection>('direction', directions, 'horizontal')
 
   return (
     <VFlow>
       <Stepper direction={direction}>
-        <Step title='Step 1' {...getStepProps(0)} />
-        <Step title='Step 2' {...getStepProps(1)} />
-        <Step title='Step 3' {...getStepProps(2)} />
-        <Step title='Step 4' {...getStepProps(3)} />
+        <Step title='Step 1' status={getStepStatus(0)} />
+        <Step title='Step 2' status={getStepStatus(1)} />
+        <Step title='Step 3' status={getStepStatus(2)} />
+        <Step title='Step 4' status={getStepStatus(3)} />
       </Stepper>
 
       <HFlow justifyContent='center'>
