@@ -13,19 +13,37 @@ it('should render correctly', () => {
     </StepperContextProvider>
   )
 
-  expect(container).toMatchSnapshot()
+  expect(container).toMatchInlineSnapshot(`
+    .emotion-0 {
+      width: 100%;
+      padding: 1.25rem 0.5rem;
+      padding-bottom: 0rem;
+    }
+
+    <div>
+      <div
+        class="emotion-0"
+      >
+        Step content
+      </div>
+    </div>
+  `)
 })
 
 it('should accept style prop', () => {
   const mockContextValue = createMockStepperContext()
 
-  const { container } = render(
+  const { getByTestId } = render(
     <StepperContextProvider value={mockContextValue}>
-      <StepContent style={{ background: 'red' }}>Step content</StepContent>
+      <StepContent data-testid='step-content' style={{ background: 'red' }}>
+        Step content
+      </StepContent>
     </StepperContextProvider>
   )
 
-  expect(container).toMatchSnapshot()
+  const stepContent = getByTestId('step-content')
+
+  expect(getComputedStyle(stepContent).background).toBe('red')
 })
 
 it('should render children inside div', () => {

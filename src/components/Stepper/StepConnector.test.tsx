@@ -12,7 +12,26 @@ it('should render correctly', () => {
       <StepConnector status='active' direction='horizontal' labelHeight={10} />
     </StepperContextProvider>
   )
-  expect(container).toMatchSnapshot()
+  expect(container).toMatchInlineSnapshot(`
+    .emotion-0 {
+      position: absolute;
+      -webkit-transition: border-color .4s ease;
+      transition: border-color .4s ease;
+      width: calc(100% - 1rem);
+      top: calc(0.75rem - 1px);
+      left: calc(50% + 0.5rem);
+      border-top-width: 2px;
+      border-top-style: solid;
+      border-top-color: #0069D0;
+    }
+
+    <div>
+      <span
+        class="emotion-0"
+        data-testid="step-connector"
+      />
+    </div>
+  `)
 })
 
 it('should render span with data-testid', () => {
