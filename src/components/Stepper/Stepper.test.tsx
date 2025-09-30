@@ -62,7 +62,7 @@ it('should correctly compute number of steps and template columns', () => {
   expect(getComputedStyle(stepper).gridTemplateColumns).toBe('repeat(3,1fr)')
 })
 
-it('should increment stepCounterRef when registerStep is called', () => {
+it('should increment stepCounterRef when incrementStep is called', () => {
   let contextValue!: StepperContextValue
 
   const Consumer = () => {
@@ -76,8 +76,8 @@ it('should increment stepCounterRef when registerStep is called', () => {
     </Stepper>
   )
 
-  const idx1 = contextValue.registerStep()
-  const idx2 = contextValue.registerStep()
+  const idx1 = contextValue.incrementStep()
+  const idx2 = contextValue.incrementStep()
   expect(idx1).toBe(0)
   expect(idx2).toBe(1)
 })

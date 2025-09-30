@@ -29,7 +29,7 @@ export function Step(props: StepProps) {
   const { status = 'incompleted', title, subtitle, overrides, children, style, ...rest } = props
   const { Root } = getComponents(overrides, defaultComponents)
 
-  const { direction, getNextStepStatus, registerStep } = useStepperContext()
+  const { direction, getNextStepStatus, incrementStep } = useStepperContext()
   const { classes, css } = useStyles(() => createStyles(direction))
 
   const [labelRef, labelHeight] = useHeight()
@@ -39,9 +39,9 @@ export function Step(props: StepProps) {
   const isLastStep = nextStepStatus === undefined
 
   useEffect(() => {
-    const index = registerStep()
+    const index = incrementStep()
     setStepIndex(index)
-  }, [registerStep])
+  }, [incrementStep])
 
   if (stepIndex === null) {
     return null

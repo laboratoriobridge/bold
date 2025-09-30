@@ -55,7 +55,7 @@ export function Stepper(props: StepperProps) {
 
   const { classes, css } = useStyles(createStyles, direction, gap, steps.length)
 
-  const registerStep = useCallback(() => {
+  const incrementStep = useCallback(() => {
     const currentIndex = stepCounterRef.current
     stepCounterRef.current += 1
     return currentIndex
@@ -66,10 +66,10 @@ export function Stepper(props: StepperProps) {
       direction,
       gap,
       stepCounterRef,
-      registerStep,
+      incrementStep,
       getNextStepStatus: (currentIndex: number) => stepStatuses[currentIndex + 1],
     }),
-    [gap, direction, registerStep, stepStatuses]
+    [gap, direction, incrementStep, stepStatuses]
   )
 
   return (

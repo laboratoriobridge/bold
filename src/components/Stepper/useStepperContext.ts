@@ -7,7 +7,7 @@ export interface StepperContextValue {
   gap: number | undefined
   stepCounterRef: MutableRefObject<number>
   getNextStepStatus: (currentIndex: number) => StepStatus | undefined
-  registerStep: () => number
+  incrementStep: () => number
 }
 
 const StepperContext = createContext<StepperContextValue | undefined>(undefined)
