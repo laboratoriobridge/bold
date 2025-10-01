@@ -1,5 +1,5 @@
 import React, { CSSProperties, ReactNode, useEffect } from 'react'
-import { Theme, useStyles } from '../../styles'
+import { ExternalStyles, Theme, useStyles } from '../../styles'
 import { Heading } from '../Heading'
 import { HFlow } from '../HFlow'
 import { VFlow } from '../VFlow'
@@ -10,6 +10,7 @@ import { ModalHeaderIconType, ModalHeaderIcon } from './ModalHeaderIcon'
 
 type ModalHeaderBaseProps = {
   hasCloseButton?: boolean
+  style?: ExternalStyles
   onCloseButtonClick?: () => void
 }
 
@@ -27,14 +28,14 @@ export function ModalHeader(props: ModalHeaderContentProps): JSX.Element
 export function ModalHeader(props: ModalHeaderChildrenProps): JSX.Element
 
 export function ModalHeader(props: ModalHeaderContentProps | ModalHeaderChildrenProps) {
-  const { hasCloseButton = true, onCloseButtonClick } = props
+  const { hasCloseButton = true, style, onCloseButtonClick } = props
 
   const { scroll, bodyRef, hasLeftSidebar, hasRightSidebar, setSectionState } = useModalContext()
   const isBodyOverflowing = useIsOverflowing(bodyRef, 'vertical')
   const hasSidebar = hasLeftSidebar || hasRightSidebar
   const showHeaderShadow = scroll === 'body' && isBodyOverflowing
   const showHeaderBorder = hasSidebar && (scroll === 'full' || (scroll === 'body' && !isBodyOverflowing))
-  const { classes } = useStyles(createStyles, showHeaderShadow, showHeaderBorder, hasSidebar)
+  const { classes, css } = useStyles(createStyles, showHeaderShadow, showHeaderBorder, hasSidebar)
 
   useEffect(() => {
     setSectionState('hasHeader', true)
@@ -46,7 +47,7 @@ export function ModalHeader(props: ModalHeaderContentProps | ModalHeaderChildren
       hSpacing={0.5}
       justifyContent='space-between'
       alignItems='flex-start'
-      style={classes.header}
+      style={css(classes.header, style)}
       data-testid='modal-header'
     >
       {isHeaderWithChildren(props) ? (
