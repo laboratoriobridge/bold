@@ -1,37 +1,103 @@
-import React, { CSSProperties } from 'react'
+import React, {
+  Children,
+  CSSProperties,
+  ElementType,
+  HTMLAttributes,
+  isValidElement,
+  ReactElement,
+  useCallback,
+  useMemo,
+  useRef,
+} from 'react'
 
-import { ExternalStyles, useStyles } from '../../styles'
-import { Omit } from '../../util'
+import { ExternalStyles, Theme, useStyles } from '../../styles'
+import { isNil, Omit } from '../../util'
 import { getComponents } from '../../util/overrides'
+import { StepperContextProvider, StepperContextValue } from './useStepperContext'
+import { StepProps } from './Step'
 
-export interface StepperProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'style'> {
+export type StepperDirection = 'horizontal' | 'vertical'
+
+export interface StepperProps extends Omit<HTMLAttributes<HTMLDivElement>, 'style'> {
+  /**
+   * Defines the layout direction of the stepper (horizontal or vertical)
+   * @default 'horizontal'
+   */
+  direction?: StepperDirection
+
+  /**
+   * Defines the spacing between individual steps in rem units.
+   * If not provided, the stepper will behave responsively, automatically stretching to fill the parent container.
+   */
+  gap?: number
+
   style?: ExternalStyles
+
   overrides?: {
-    Root?: React.ElementType
+    Root?: ElementType
   }
 }
 
 export function Stepper(props: StepperProps) {
-  const { style, overrides, children, ...rest } = props
+  const { direction = 'horizontal', gap, style, overrides, children, ...rest } = props
   const { Root } = getComponents(overrides, defaultComponents)
-  const { classes, css } = useStyles(createStyles)
+
+  const stepCounterRef = useRef(0)
+
+  const steps = useMemo(
+    () =>
+      Children.toArray(children).filter(
+        (child): child is ReactElement<StepProps> => isValidElement(child) && typeof child.type === 'function'
+      ),
+    [children]
+  )
+  const stepStatuses = useMemo(() => steps.map((child) => child.props.status ?? 'incompleted'), [steps])
+
+  const { classes, css } = useStyles(createStyles, direction, gap, steps.length)
+
+  const incrementStep = useCallback(() => {
+    const currentIndex = stepCounterRef.current
+    stepCounterRef.current += 1
+    return currentIndex
+  }, [])
+
+  const stepperContextValue: StepperContextValue = useMemo(
+    () => ({
+      direction,
+      gap,
+      incrementStep,
+      getNextStepStatus: (currentIndex: number) => stepStatuses[currentIndex + 1],
+    }),
+    [gap, direction, incrementStep, stepStatuses]
+  )
 
   return (
-    <Root className={css(classes.stepper, style)} {...rest}>
-      {children}
-    </Root>
+    <StepperContextProvider value={stepperContextValue}>
+      <Root className={css(classes.stepper, style)} {...rest}>
+        {children}
+      </Root>
+    </StepperContextProvider>
   )
 }
 
-Stepper.defaultProps = {} as Partial<StepperProps>
-
-export const defaultComponents: StepperProps['overrides'] = {
+const defaultComponents: StepperProps['overrides'] = {
   Root: 'div',
 }
 
-const createStyles = () => ({
-  stepper: {
-    display: 'flex',
-    justifyContent: 'space-between',
-  } as CSSProperties,
-})
+const createStyles = (_theme: Theme, direction: StepperDirection, gap: number | undefined, numberOfSteps: number) => {
+  const isHorizontal = direction === 'horizontal'
+  const isVertical = direction === 'vertical'
+  const hasGap = !isNil(gap)
+
+  return {
+    stepper: {
+      width: hasGap && 'max-content',
+      height: isVertical && '100%',
+      display: 'grid',
+      alignItems: isHorizontal && 'flex-start',
+      gap: hasGap && `${gap}rem`,
+      gridTemplateRows: isVertical && `repeat(${numberOfSteps - 1}, ${hasGap ? 'min-content' : 'auto'}) min-content`,
+      gridTemplateColumns: isHorizontal && `repeat(${numberOfSteps}, 1fr)`,
+    } as CSSProperties,
+  }
+}

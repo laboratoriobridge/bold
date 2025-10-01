@@ -82,7 +82,7 @@ Array [
   "Status",
   "Stepper",
   "Step",
-  "getStepProps",
+  "getStepStatus",
   "useStepperState",
   "StickyContainer",
   "Switch",

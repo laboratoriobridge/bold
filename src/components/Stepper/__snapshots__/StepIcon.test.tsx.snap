@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should accept style prop 1`] = `
+.emotion-0 {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  position: absolute;
+  top: calc(50% - 0.5rem);
+  left: calc(50% - 0.5rem);
+  background: #0069D0;
+  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+}
+
+.emotion-1 {
+  z-index: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  text-align: center;
+  position: relative;
+  background: red;
+}
+
+<div>
+  <span
+    class="emotion-1"
+  >
+    <div
+      class="emotion-0"
+      data-testid="background"
+    />
+  </span>
+</div>
+`;
+
+exports[`should render correctly 1`] = `
+.emotion-1 {
+  z-index: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  text-align: center;
+  position: relative;
+}
+
+.emotion-0 {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  position: absolute;
+  top: calc(50% - 0.5rem);
+  left: calc(50% - 0.5rem);
+  background: #0069D0;
+  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+}
+
+<div>
+  <span
+    class="emotion-1"
+  >
+    <div
+      class="emotion-0"
+      data-testid="background"
+    />
+  </span>
+</div>
+`;

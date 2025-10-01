@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react'
 import ResizeObserver from 'resize-observer-polyfill'
 
-export type ContentRect = Pick<DOMRectReadOnly, 'width'>
+export type ContentRect = Pick<DOMRectReadOnly, 'width' | 'height'>
 
 const useMeasure = <T>(item: keyof ContentRect): [(instance: T) => void, number] => {
   const [measure, setMeasure] = useState(0)
@@ -29,3 +29,5 @@ const useMeasure = <T>(item: keyof ContentRect): [(instance: T) => void, number]
 }
 
 export const useWidth = () => useMeasure('width')
+
+export const useHeight = () => useMeasure('height')
