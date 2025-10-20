@@ -15,7 +15,7 @@ it('should render correctly', () => {
   expect(container).toMatchSnapshot()
 })
 
-it('should should accept style prop', () => {
+it('should accept style prop', () => {
   const mockContextValue = createMockStepperContext()
 
   const { container } = render(
