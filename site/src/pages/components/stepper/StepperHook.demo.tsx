@@ -2,15 +2,15 @@ import { Button, HFlow, Step, Stepper, useStepperState, VFlow } from 'bold-ui'
 import React from 'react'
 
 function StepperHookDemo() {
-  const { getStepProps, nextStep, previousStep } = useStepperState(1)
+  const { getStepStatus, nextStep, previousStep } = useStepperState(1)
 
   return (
     <VFlow>
       <Stepper>
-        <Step {...getStepProps(0)}>Step 1</Step>
-        <Step {...getStepProps(1)}>Step 2</Step>
-        <Step {...getStepProps(2)}>Step 3</Step>
-        <Step {...getStepProps(3)}>Step 4</Step>
+        <Step status={getStepStatus(0)} title='Step 1' />
+        <Step status={getStepStatus(1)} title='Step 2' />
+        <Step status={getStepStatus(2)} title='Step 3' />
+        <Step status={getStepStatus(3)} title='Step 4' />
       </Stepper>
 
       <HFlow justifyContent='center'>

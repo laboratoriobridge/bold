@@ -1,125 +1,86 @@
-import React, { CSSProperties } from 'react'
+import React, { CSSProperties, ElementType, HTMLAttributes, ReactNode, useEffect, useState } from 'react'
 
-import { ExternalStyles, focusBoxShadow, Theme, useStyles } from '../../styles'
-import { isNil, Omit } from '../../util'
+import { ExternalStyles, useStyles } from '../../styles'
 import { getComponents } from '../../util/overrides'
-import CheckIcon from '../Icon/generated/CheckDefault'
-import MinusCircleFilled from '../Icon/generated/MinusCircleFilled'
+
+import { VFlow } from '../VFlow'
+import { useHeight } from '../../hooks/useMeasure'
+import { useStepperContext } from './useStepperContext'
+import { StepperDirection } from './Stepper'
+import { StepConnector } from './StepConnector'
+import { StepContent } from './StepContent'
+import { StepLabel } from './StepLabel'
+import { StepIcon } from './StepIcon'
 
 export type StepStatus = 'active' | 'completed' | 'incompleted' | 'inactive'
 
-export interface StepProps extends Omit<React.HTMLAttributes<HTMLSpanElement>, 'style'> {
+export interface StepProps extends Omit<HTMLAttributes<HTMLSpanElement>, 'style' | 'title'> {
   status?: StepStatus
-  hasConnector?: boolean
+  title: ReactNode
+  subtitle?: ReactNode
   style?: ExternalStyles
   overrides?: {
-    Root?: React.ElementType
-    Connector?: React.ElementType
-    IconContainer?: React.ElementType
-    Icon?: React.ElementType
-    Label?: React.ElementType
+    Root?: ElementType
+    Icon?: ElementType
   }
 }
 
 export function Step(props: StepProps) {
-  const { status, hasConnector, style, overrides, children, ...rest } = props
-  const { Root, Icon, IconContainer, Connector, Label } = getComponents(overrides, defaultComponents)
-  const { classes, css } = useStyles(createStyles, props)
+  const { status = 'incompleted', title, subtitle, overrides, children, style, ...rest } = props
+  const { Root } = getComponents(overrides, defaultComponents)
 
-  const hasBackground =
-    status === 'active' || status === 'completed' || (status === 'incompleted' && isNil(overrides?.Icon))
+  const { direction, getNextStepStatus, incrementStep } = useStepperContext()
+  const { classes, css } = useStyles(() => createStyles(direction))
+
+  const [labelRef, labelHeight] = useHeight()
+  const [stepIndex, setStepIndex] = useState<number | null>(null)
+
+  const nextStepStatus = getNextStepStatus(stepIndex)
+  const isLastStep = nextStepStatus === undefined
+
+  useEffect(() => {
+    const index = incrementStep()
+    setStepIndex(index)
+  }, [incrementStep])
+
+  if (stepIndex === null) {
+    return null
+  }
 
   return (
     <Root className={css(classes.step, style)} {...rest}>
-      {hasConnector && <Connector className={css(classes.connector)} />}
+      {!isLastStep && <StepConnector status={nextStepStatus} direction={direction} labelHeight={labelHeight} />}
 
-      <IconContainer className={classes.container}>
-        {hasBackground && <div className={classes.background} />}
-        {Icon && <Icon className={classes.icon} />}
-        {!Icon && status === 'completed' && <CheckIcon className={classes.icon} />}
-        {!Icon && status === 'inactive' && <MinusCircleFilled className={classes.icon} />}
-      </IconContainer>
+      <VFlow vSpacing={0}>
+        <div className={classes.labelContainer} ref={labelRef}>
+          <StepIcon status={status} icon={overrides?.Icon} />
+          <StepLabel status={status} title={title} subtitle={subtitle} />
+        </div>
 
-      <Label className={classes.label}>{children}</Label>
+        {children && <StepContent>{children}</StepContent>}
+      </VFlow>
     </Root>
   )
 }
 
-Step.defaultProps = {
-  status: 'incompleted',
-  hasConnector: true,
-} as Partial<StepProps>
-
 export const defaultComponents: StepProps['overrides'] = {
   Root: 'span',
   Icon: null,
-  IconContainer: 'span',
-  Connector: 'span',
-  Label: 'span',
 }
 
-const createStyles = (theme: Theme, { status }: StepProps) => {
+const createStyles = (direction: StepperDirection) => {
+  const isHorizontal = direction === 'horizontal'
+
   return {
     step: {
       position: 'relative',
-      flex: '1',
+      textAlign: isHorizontal ? 'center' : 'start',
+    } as CSSProperties,
+    labelContainer: {
       display: 'flex',
-      flexDirection: 'column',
+      flexDirection: isHorizontal ? 'column' : 'row',
       alignItems: 'center',
-      textAlign: 'center',
-      padding: '0 0.5rem',
-      gap: '0.75rem',
-    } as CSSProperties,
-    connector: {
-      position: 'absolute',
-      top: 'calc(0.75rem - 1px)',
-      left: 'calc(-50% + 0.5rem)',
-      right: 'calc(50% + 0.5rem)',
-      borderTopWidth: '2px',
-      borderTopStyle: status === 'inactive' ? 'dashed' : 'solid',
-      borderTopColor:
-        status === 'incompleted' || status === 'inactive' ? theme.pallete.gray.c80 : theme.pallete.primary.main,
-      transition: 'all .4s ease',
-    } as CSSProperties,
-    container: {
-      zIndex: 1,
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      width: '1.5rem',
-      height: '1.5rem',
-      textAlign: 'center',
-      position: 'relative',
-    } as CSSProperties,
-    background: {
-      width: '1rem',
-      height: '1rem',
-      borderRadius: '50%',
-      position: 'absolute',
-      top: 'calc(50% - 0.5rem)',
-      left: 'calc(50% - 0.5rem)',
-      background: status === 'incompleted' ? theme.pallete.gray.c60 : theme.pallete.primary.main,
-      boxShadow:
-        (status === 'active' && focusBoxShadow(theme, 'primary')) ||
-        (status === 'completed' && `0 0 0 4px ${theme.pallete.primary.main}`),
-      transition: 'all .4s ease',
-    } as CSSProperties,
-    icon: {
-      zIndex: 1,
-      fill: status === 'completed' || status === 'active' ? theme.pallete.primary.c100 : theme.pallete.gray.c60,
-      width: '1.25rem',
-      height: '1.25rem',
-    } as CSSProperties,
-    label: {
-      color: getLabelColor(status, theme),
-      fontWeight: 'bold',
-      transition: 'all .4s ease',
+      gap: isHorizontal ? '0.75rem' : '0.5rem',
     } as CSSProperties,
   }
-}
-
-const getLabelColor = (status: StepStatus, theme: Theme): CSSProperties['color'] => {
-  if (status === 'active') return theme.pallete.primary.main
-  if (status === 'inactive') return theme.pallete.text.disabled
-  return theme.pallete.text.main
 }

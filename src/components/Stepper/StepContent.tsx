@@ -1,0 +1,42 @@
+import React, { ComponentProps, CSSProperties } from 'react'
+import { ExternalStyles, Theme, useStyles } from '../../styles'
+import { useStepperContext } from './useStepperContext'
+import { StepperDirection } from './Stepper'
+
+interface StepContentProps extends Omit<ComponentProps<'div'>, 'style'> {
+  style?: ExternalStyles
+}
+
+export function StepContent(props: StepContentProps) {
+  const { children, style, ...rest } = props
+
+  const { direction, gap } = useStepperContext()
+  const { classes, css } = useStyles(createStyles, direction, gap)
+
+  return (
+    <div className={css(classes.content, style)} {...rest}>
+      {children}
+    </div>
+  )
+}
+
+const DEFAULT_VERTICAL_PADDING = 1.25 // rem
+
+const createStyles = (_theme: Theme, direction: StepperDirection, gap: number | undefined) => {
+  const isVertical = direction === 'vertical'
+
+  return {
+    content: {
+      width: '100%',
+      padding: `${DEFAULT_VERTICAL_PADDING}rem 0.5rem`,
+      paddingLeft: isVertical && '2rem',
+      paddingBottom: getPaddingBottom(direction, gap),
+    } as CSSProperties,
+  }
+}
+
+const getPaddingBottom = (direction: StepperDirection, gap: number = 0): CSSProperties['paddingBottom'] => {
+  if (direction === 'horizontal' || gap > DEFAULT_VERTICAL_PADDING) return '0rem'
+  if (gap > 0 && gap <= DEFAULT_VERTICAL_PADDING) return `${DEFAULT_VERTICAL_PADDING - gap}rem`
+  return `${DEFAULT_VERTICAL_PADDING}rem`
+}

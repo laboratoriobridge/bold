@@ -1,22 +1,22 @@
 import { act, renderHook } from '@testing-library/react-hooks'
 
 import { Step } from './Step'
-import { getStepProps, useStepperState } from './useStepperState'
+import { getStepStatus, useStepperState } from './useStepperState'
 
-describe(`${getStepProps.name}`, () => {
-  it(`should return a ${Step.name} component props object based on parameters`, () => {
-    expect(getStepProps(0, 1)).toEqual({ hasConnector: false, status: 'completed' })
-    expect(getStepProps(1, 1)).toEqual({ hasConnector: true, status: 'active' })
-    expect(getStepProps(2, 1)).toEqual({ hasConnector: true, status: 'incompleted' })
+describe(`${getStepStatus.name}`, () => {
+  it(`should return a ${Step.name} component status object based on parameters`, () => {
+    expect(getStepStatus(0, 1)).toEqual('completed')
+    expect(getStepStatus(1, 1)).toEqual('active')
+    expect(getStepStatus(2, 1)).toEqual('incompleted')
   })
 })
 
 describe(`${useStepperState.name}`, () => {
-  it(`should return a "getStepProps" function which returns a ${Step.name} component props object based on current Stepper state`, () => {
+  it(`should return a "getStepStatus" function which returns a ${Step.name} component status based on current Stepper state`, () => {
     const { result } = renderHook(() => useStepperState(1))
-    expect(result.current.getStepProps(0)).toEqual({ hasConnector: false, status: 'completed' })
-    expect(result.current.getStepProps(1)).toEqual({ hasConnector: true, status: 'active' })
-    expect(result.current.getStepProps(2)).toEqual({ hasConnector: true, status: 'incompleted' })
+    expect(result.current.getStepStatus(0)).toEqual('completed')
+    expect(result.current.getStepStatus(1)).toEqual('active')
+    expect(result.current.getStepStatus(2)).toEqual('incompleted')
   })
   it(`should return a "currentStep" attribute with the current step state`, () => {
     const { result } = renderHook(() => useStepperState(1))
