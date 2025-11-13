@@ -8,6 +8,7 @@ lib
 storybook-static
 .cache
 .idea
+.npmrc
 
 # Gatsby files
 site/public
