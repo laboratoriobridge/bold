@@ -1,11 +1,13 @@
 import { Cell, Grid, HFlow, Link, Theme, useStyles } from 'bold-ui'
 import React from 'react'
 
+import { getYear } from 'date-fns'
 import { Image } from './mdx'
 import { PageContainer } from './PageContainer'
 
 export function AppFooter() {
   const { classes } = useStyles(createStyles)
+  const currentYear = getYear(new Date())
 
   return (
     <footer className={classes.footer}>
@@ -51,7 +53,7 @@ export function AppFooter() {
           </Cell>
         </Grid>
         <hr />
-        <p>Laboratório Bridge. 2019.</p>
+        <p>Laboratório Bridge. {currentYear}.</p>
       </PageContainer>
     </footer>
   )

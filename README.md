@@ -7,10 +7,6 @@ React implementation of the **Bold Design System**.
 
 https://bold.bridge.ufsc.br/
 
-## WARNING: Beta phase
-
-This project is currently in beta phase (`1.0.0-beta.*` versions) and its API may change without following semver.
-
 ## Getting started
 
 ```sh
