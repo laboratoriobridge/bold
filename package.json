@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
-  "homepage": "https://bold.bridge.ufsc.br",
+  "homepage": "https://bold.bridge.ufsc.tech",
   "engines": {
     "node": ">=14"
   },
