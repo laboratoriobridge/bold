@@ -11,12 +11,9 @@ on:
 jobs:
   build:
     name: loki test
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22-04
     steps:
       - uses: actions/checkout@v3
-
-      - name: Clean Docker resources
-        run: docker system prune -af
 
       - name: Set up node
         uses: actions/setup-node@v3
