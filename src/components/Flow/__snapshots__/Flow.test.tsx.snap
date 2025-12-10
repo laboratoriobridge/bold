@@ -5,8 +5,8 @@ exports[`should render correctly 1`] = `
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: minmax(min-content,max-content);
-  justify-items: start;
   gap: 1rem;
+  justify-items: start;
 }
 
 <div>
