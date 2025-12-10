@@ -29,7 +29,7 @@ const createStyles = (_theme: Theme, { direction, gap, alignItems, justifyConten
     gridAutoColumns: direction === 'horizontal' ? 'minmax(min-content, max-content)' : undefined,
     gridAutoRows: direction === 'vertical' ? 'minmax(min-content, max-content)' : undefined,
     justifyItems,
-    gap: gap ? `${gap}rem` : undefined,
+    gap: `${gap}rem`,
     alignItems,
     justifyContent,
   } as CSSProperties,
