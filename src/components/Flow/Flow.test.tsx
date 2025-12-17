@@ -11,7 +11,31 @@ it('should render correctly', () => {
       <span>3</span>
     </Flow>
   )
-  expect(container).toMatchSnapshot()
+  expect(container).toMatchInlineSnapshot(`
+    .emotion-0 {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: minmax(min-content,max-content);
+      gap: 1rem;
+      justify-items: start;
+    }
+
+    <div>
+      <div
+        class="emotion-0"
+      >
+        <span>
+          1
+        </span>
+        <span>
+          2
+        </span>
+        <span>
+          3
+        </span>
+      </div>
+    </div>
+  `)
 })
 
 it('should render children', () => {
