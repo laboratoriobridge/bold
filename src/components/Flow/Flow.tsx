@@ -17,12 +17,19 @@ export interface FlowProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 's
 
 export function Flow(props: FlowProps) {
   const { direction, gap = 1, alignItems, justifyContent, justifyItems = 'start', style, ...rest } = props
-  const { classes, css } = useStyles(createStyles, { direction, gap, alignItems, justifyContent, justifyItems })
+  const { classes, css } = useStyles(createStyles, direction, gap, alignItems, justifyContent, justifyItems)
 
   return <div className={css(classes.container, style)} {...rest} />
 }
 
-const createStyles = (_theme: Theme, { direction, gap, alignItems, justifyContent, justifyItems }: FlowProps) => ({
+const createStyles = (
+  _theme: Theme,
+  direction: FlowDirection,
+  gap: number,
+  alignItems: AlignItems,
+  justifyContent: JustifyContent,
+  justifyItems: JustifyItems
+) => ({
   container: {
     display: 'grid',
     gridAutoFlow: direction === 'horizontal' ? 'column' : 'row',
