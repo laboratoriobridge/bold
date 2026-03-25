@@ -14,7 +14,7 @@ exports[`should allow styles override 1`] = `
 }
 
 .emotion-3 {
-  padding: 0 1rem;
+  padding: 0.25rem 1rem;
   min-height: 2.5rem;
   border-radius: 2px;
   border-style: solid;
@@ -117,7 +117,7 @@ exports[`should render correctly 1`] = `
 }
 
 .emotion-6 {
-  padding: 0 1rem;
+  padding: 0.25rem 1rem;
   min-height: 2.5rem;
   border-radius: 2px;
   border-style: solid;
@@ -208,7 +208,7 @@ exports[`should render correctly 1`] = `
 }
 
 .emotion-13 {
-  padding: 0 1rem;
+  padding: 0.25rem 1rem;
   min-height: 2.5rem;
   border-radius: 2px;
   border-style: solid;
@@ -232,7 +232,7 @@ exports[`should render correctly 1`] = `
 }
 
 .emotion-20 {
-  padding: 0 1rem;
+  padding: 0.25rem 1rem;
   min-height: 2.5rem;
   border-radius: 2px;
   border-style: solid;
@@ -256,7 +256,7 @@ exports[`should render correctly 1`] = `
 }
 
 .emotion-27 {
-  padding: 0 1rem;
+  padding: 0.25rem 1rem;
   min-height: 2.5rem;
   border-radius: 2px;
   border-style: solid;
@@ -498,28 +498,28 @@ exports[`should render correctly 1`] = `
 `;
 
 exports[`should render correctly when inline 1`] = `
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
 .emotion-1 {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
 }
 
-.emotion-2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: start;
-  -webkit-box-align: start;
-  -ms-flex-align: start;
-  align-items: start;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-}
-
 .emotion-3 {
-  padding: 0 1rem;
+  padding: 0.25rem 1rem;
   min-height: 2rem;
   border-radius: 2px;
   border-style: solid;
@@ -545,12 +545,11 @@ exports[`should render correctly when inline 1`] = `
 .emotion-0 {
   fill: currentColor;
   font-size: 1rem;
-  margin-top: 0.125rem;
   margin-right: 0.5rem;
 }
 
 .emotion-7 {
-  padding: 0 1rem;
+  padding: 0.25rem 1rem;
   min-height: 2rem;
   border-radius: 2px;
   border-style: solid;
@@ -574,7 +573,7 @@ exports[`should render correctly when inline 1`] = `
 }
 
 .emotion-11 {
-  padding: 0 1rem;
+  padding: 0.25rem 1rem;
   min-height: 2rem;
   border-radius: 2px;
   border-style: solid;
@@ -598,7 +597,7 @@ exports[`should render correctly when inline 1`] = `
 }
 
 .emotion-15 {
-  padding: 0 1rem;
+  padding: 0.25rem 1rem;
   min-height: 2rem;
   border-radius: 2px;
   border-style: solid;
