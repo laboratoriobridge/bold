@@ -52,7 +52,7 @@ export function Alert(props: AlertProps) {
 
 export const createStyles = (theme: Theme, { inline }: AlertProps) => ({
   wrapper: {
-    padding: '0 1rem',
+    padding: '0.25rem 1rem',
     minHeight: inline ? '2rem' : '2.5rem',
     borderRadius: '2px',
     borderStyle: 'solid',
@@ -64,11 +64,10 @@ export const createStyles = (theme: Theme, { inline }: AlertProps) => ({
   } as CSSProperties,
   container: {
     display: 'flex',
-    alignItems: inline ? 'start' : 'center',
+    alignItems: 'center',
     flex: 1,
   } as CSSProperties,
   icon: {
-    marginTop: inline && '0.125rem',
     marginRight: '0.5rem',
   } as CSSProperties,
   content: {
@@ -79,7 +78,7 @@ export const createStyles = (theme: Theme, { inline }: AlertProps) => ({
     marginLeft: 'auto',
     paddingLeft: '1rem',
     display: 'inline-flex',
-    alignSelf: inline ? 'start' : 'center',
+    alignSelf: 'center',
   } as CSSProperties,
   closeButton: {
     padding: inline && 0,
