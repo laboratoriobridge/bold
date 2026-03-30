@@ -5540,9 +5540,9 @@ convert-source-map@^1.4.0, convert-source-map@^1.5.0, convert-source-map@^1.5.1,
     safe-buffer "~5.1.1"
 
 convict@^6.0.0:
-  version "6.2.4"
-  resolved "https://registry.yarnpkg.com/convict/-/convict-6.2.4.tgz#be290672bf6397eec808d3b11fc5f71785b02a4b"
-  integrity sha512-qN60BAwdMVdofckX7AlohVJ2x9UvjTNoKVXCL2LxFk1l7757EJqf1nySdMkPQer0bt8kQ5lQiyZ9/2NvrFBuwQ==
+  version "6.2.5"
+  resolved "https://registry.yarnpkg.com/convict/-/convict-6.2.5.tgz#ae061e00fd55e31706f582283e671edae0cde2ef"
+  integrity sha512-JtXpxqDqJ8P0UwEHwhxLzCIXQy97vlYBZR222Sbzb1q1Erex9ASrztJ29SyhWFQjod1AeFBaPzEEC8YvtZMIYg==
   dependencies:
     lodash.clonedeep "^4.5.0"
     yargs-parser "^20.2.7"
@@ -15261,9 +15261,9 @@ yallist@^4.0.0:
   integrity sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==
 
 yaml@^1.7.2:
-  version "1.10.0"
-  resolved "https://registry.yarnpkg.com/yaml/-/yaml-1.10.0.tgz#3b593add944876077d4d683fee01081bd9fff31e"
-  integrity sha512-yr2icI4glYaNG+KWONODapy2/jDdMSDnrONSjblABjD9B4Z5LgiircSt8m8sRZFNi08kG9Sm0uSHtEmP3zaEGg==
+  version "1.10.3"
+  resolved "https://registry.yarnpkg.com/yaml/-/yaml-1.10.3.tgz#76e407ed95c42684fb8e14641e5de62fe65bbcb3"
+  integrity sha512-vIYeF1u3CjlhAFekPPAk2h/Kv4T3mAkMox5OymRiJQB0spDP10LHvt+K7G9Ny6NuuMAb25/6n1qyUjAcGNf/AA==
 
 yargs-parser@18.x, yargs-parser@^18.1.1:
   version "18.1.3"
