@@ -1,5 +1,4 @@
 import { action } from '@storybook/addon-actions'
-import { boolean, select, text } from '@storybook/addon-knobs'
 import React from 'react'
 import { TextColor } from '../../styles'
 import { textColorMap } from '../../styles/theme/createPallete'
@@ -48,20 +47,41 @@ const iconColors: TextColor[] = Object.keys(textColorMap) as TextColor[]
 
 export default {
   title: 'Components/Modal',
+  component: Modal,
+  argTypes: {
+    size: {
+      control: 'select',
+      options: sizes,
+    },
+    scroll: {
+      control: 'select',
+      options: scrolls,
+    },
+    icon: {
+      control: 'select',
+      options: icons,
+    },
+    iconFill: {
+      control: 'select',
+      options: iconColors,
+    },
+  },
+  args: {
+    open: true,
+    size: 'large',
+    scroll: 'body',
+    title: 'Modal Title',
+    subtitle: 'Modal Subtitle',
+    hasIcon: true,
+    icon: 'bridge',
+    iconFill: 'normal',
+    manageOverflow: true,
+    closeOnBackdropClick: true,
+    hasCloseButton: true,
+  },
 }
 
-export const Default = () => {
-  const open = boolean('open', true)
-  const size = select('size', sizes, 'large')
-  const scroll = select('scroll', scrolls, 'body')
-  const title = text('title', 'Modal Title')
-  const subtitle = text('subtitle', 'Modal Subtitle')
-  const hasIcon = boolean('hasIcon', true)
-  const icon = hasIcon ? select('icon', icons, 'bridge') : undefined
-  const iconFill = hasIcon ? select('iconFill', iconColors, 'normal') : undefined
-  const manageOverflow = boolean('manageOverflow', true)
-  const closeOnBackdropClick = boolean('closeOnBackdropClick', true)
-  const hasCloseButton = boolean('hasCloseButton', true)
+export const Default = (args) => {
   const onClose = action('close')
 
   return (
@@ -69,18 +89,18 @@ export const Default = () => {
       <p>Default</p>
 
       <Modal
-        open={open}
-        size={size}
-        scroll={scroll}
-        manageOverflow={manageOverflow}
-        closeOnBackdropClick={closeOnBackdropClick}
+        open={args.open}
+        size={args.size}
+        scroll={args.scroll}
+        manageOverflow={args.manageOverflow}
+        closeOnBackdropClick={args.closeOnBackdropClick}
         onClose={onClose}
       >
         <ModalHeader
-          title={title}
-          subtitle={subtitle}
-          icon={iconFill ? { name: icon, fill: iconFill } : icon}
-          hasCloseButton={hasCloseButton}
+          title={args.title}
+          subtitle={args.subtitle}
+          icon={args.iconFill ? { name: args.icon, fill: args.iconFill } : args.icon}
+          hasCloseButton={args.hasCloseButton}
         />
         <ModalBody>
           <VFlow>
@@ -162,18 +182,14 @@ export const Default = () => {
   )
 }
 
-export const Sidebar = () => {
-  const open = boolean('open', true)
-  const scroll = select('scroll', scrolls, 'body')
-  const position = select('sidebar position', sidebarPositions, 'left')
-
+export const Sidebar = (args) => {
   return (
     <div>
       <p>Default</p>
 
-      <Modal open={open} size='large' scroll={scroll}>
+      <Modal open={args.open} size='large' scroll={args.scroll}>
         <ModalHeader title='Modal with sidebar' subtitle='' icon='infoCircleOutline' />
-        <ModalSidebar position={position}>
+        <ModalSidebar position={args.position}>
           <VFlow vSpacing={0.5}>
             {Array.from({ length: 4 }).map((_, index) => (
               <Card key={index}>
@@ -234,6 +250,17 @@ export const Sidebar = () => {
   )
 }
 
+Sidebar.argTypes = {
+  position: {
+    control: 'select',
+    options: sidebarPositions,
+  },
+}
+
+Sidebar.args = {
+  position: 'left',
+}
+
 export const Auto = () => (
   <div>
     <Button
@@ -253,11 +280,11 @@ export const Auto = () => (
   </div>
 )
 
-export const ModalOverlap = () => (
+export const ModalOverlap = (args) => (
   <div>
     <p>Modal Overlap</p>
 
-    <Modal open={boolean('open', true)} size={select('main modal size', sizes, 'large')} onClose={action('close')}>
+    <Modal open={args.open} size={args.size} onClose={action('close')}>
       <ModalHeader title='Modal Overlap' />
       <ModalBody>
         <p>

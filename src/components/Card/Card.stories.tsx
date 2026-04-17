@@ -1,6 +1,5 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import { boolean, select } from '@storybook/addon-knobs'
 import { VFlow } from '../VFlow'
 import { HeadingSection } from '../HeadingSection'
 import { HFlow } from '../HFlow'
@@ -11,14 +10,8 @@ import { Text } from '../Text'
 import { Tag } from '../Tag'
 import { Heading } from '../Heading'
 import { Status } from '../Status'
-import { Card, ClickableCard, CardVariant } from '../Card'
+import { Card, ClickableCard } from '../Card'
 import { Cell, Grid } from '../Grid'
-
-const variants: { [key in CardVariant]: CardVariant } = {
-  outline: 'outline',
-  float: 'float',
-  plain: 'plain',
-}
 
 const CardContent = () => (
   <HFlow hSpacing={0.5} style={{ gridAutoColumns: 'auto 1fr' }}>
@@ -59,48 +52,34 @@ const ClickableCardContent = () => (
 
 export default {
   title: 'Components/Card',
+  component: Card,
 }
 
-export const Default = () => {
-  const variant = select('variant', variants, 'outline')
-  const invalid = boolean('invalid', false)
-  const disabled = boolean('disabled', false)
-
+export const Default = (args) => {
   return (
     <div style={{ paddingBottom: '0.5rem' }}>
-      <Card variant={variant} disabled={disabled} invalid={invalid}>
+      <Card {...args}>
         <CardContent />
       </Card>
     </div>
   )
 }
 
-export const Clickable = () => {
-  const variant = select('variant', variants, 'outline')
-  const selected = boolean('selected', false)
-  const invalid = boolean('invalid', false)
-  const disabled = boolean('disabled', false)
-
+export const Clickable = (args) => {
   return (
     <div style={{ paddingBottom: '0.5rem' }}>
-      <ClickableCard
-        variant={variant}
-        selected={selected}
-        disabled={disabled}
-        invalid={invalid}
-        onClick={action('Card clicked')}
-      >
+      <ClickableCard {...args} onClick={action('Card clicked')}>
         <ClickableCardContent />
       </ClickableCard>
     </div>
   )
 }
 
-export const Variants = () => {
-  const invalid = boolean('invalid', false)
-  const disabled = boolean('disabled', false)
-  const selected = boolean('selected (clickable only)', false)
+Clickable.args = {
+  selected: false,
+}
 
+export const Variants = (args) => {
   return (
     <Grid>
       <Cell size={6}>
@@ -111,46 +90,50 @@ export const Variants = () => {
       </Cell>
       <Cell size={6}>
         <HeadingSection level={4} vSpace={8} title='Outline'>
-          <Card variant='outline' invalid={invalid} disabled={disabled}>
+          <Card variant='outline' invalid={args.invalid} disabled={args.disabled}>
             <CardContent />
           </Card>
         </HeadingSection>
       </Cell>
       <Cell size={6}>
         <HeadingSection level={4} vSpace={8} title='Outline'>
-          <ClickableCard variant='outline' selected={selected} invalid={invalid} disabled={disabled}>
+          <ClickableCard variant='outline' selected={args.selected} invalid={args.invalid} disabled={args.disabled}>
             <ClickableCardContent />
           </ClickableCard>
         </HeadingSection>
       </Cell>
       <Cell size={6}>
         <HeadingSection level={4} vSpace={8} title='Float'>
-          <Card variant='float' invalid={invalid} disabled={disabled}>
+          <Card variant='float' invalid={args.invalid} disabled={args.disabled}>
             <CardContent />
           </Card>
         </HeadingSection>
       </Cell>
       <Cell size={6}>
         <HeadingSection level={4} vSpace={8} title='Float'>
-          <ClickableCard variant='float' selected={selected} invalid={invalid} disabled={disabled}>
+          <ClickableCard variant='float' selected={args.selected} invalid={args.invalid} disabled={args.disabled}>
             <ClickableCardContent />
           </ClickableCard>
         </HeadingSection>
       </Cell>
       <Cell size={6}>
         <HeadingSection level={4} vSpace={8} title='Plain'>
-          <Card variant='plain' invalid={invalid} disabled={disabled}>
+          <Card variant='plain' invalid={args.invalid} disabled={args.disabled}>
             <CardContent />
           </Card>
         </HeadingSection>
       </Cell>
       <Cell size={6}>
         <HeadingSection level={4} vSpace={8} title='Plain'>
-          <ClickableCard variant='plain' selected={selected} invalid={invalid} disabled={disabled}>
+          <ClickableCard variant='plain' selected={args.selected} invalid={args.invalid} disabled={args.disabled}>
             <ClickableCardContent />
           </ClickableCard>
         </HeadingSection>
       </Cell>
     </Grid>
   )
+}
+
+Variants.args = {
+  selected: false,
 }

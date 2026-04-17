@@ -15,8 +15,7 @@
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "strictNullChecks": false,
-    "noImplicitAny": false,
-    "skipLibCheck": true
+    "noImplicitAny": false
   },
   "exclude": [
     "node_modules",

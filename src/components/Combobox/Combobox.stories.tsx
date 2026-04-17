@@ -1,5 +1,4 @@
 import { action } from '@storybook/addon-actions'
-import { boolean, number, optionsKnob, select, text } from '@storybook/addon-knobs'
 import matchSorter from 'match-sorter'
 import React from 'react'
 import { useTheme } from '../../styles'
@@ -56,77 +55,66 @@ function CustomComponent(props: React.HTMLAttributes<HTMLDivElement>) {
 
 export default {
   title: 'Components/Combobox',
+  component: Combobox,
+  decorators: [
+    (Story) => (
+      <div style={{ minHeight: '200px' }}>
+        <Story />
+      </div>
+    ),
+  ],
+  argTypes: {
+    value: { control: 'select', options: ['', ...fruits.map((e) => e.label)] },
+    open: { control: 'select', options: [undefined, true, false] },
+  },
+  args: {
+    label: 'Fruit',
+    name: 'fruit',
+    items: fruits,
+    error: '',
+    menuMinWidth: undefined,
+    placeholder: 'Select a value...',
+    clearable: true,
+    disabled: false,
+    openOnFocus: true,
+    loading: false,
+    open: undefined,
+    onChange: action('changed'),
+    onFilterChange: action('filter changed'),
+    onBlur: action('blur'),
+    onFocus: action('focus'),
+  },
 }
 
-export const Default = () => (
-  <Combobox<Fruit>
-    value={fruits.find((e) => e.label === select('value', ['', ...fruits.map((e) => e.label)], ''))}
-    label='Fruit'
-    name='fruit'
-    items={fruits}
-    error={text('error', '')}
-    menuMinWidth={number('menuMinWidth (px)', undefined)}
-    itemToString={(item) => item?.label}
-    placeholder={text('placeholder', 'Select a value...')}
-    clearable={boolean('clearable', true)}
-    disabled={boolean('disabled', false)}
-    openOnFocus={boolean('openOnFocus', true)}
-    loading={boolean('loading', false)}
-    open={select('open', [undefined, true, false], undefined)}
-    onChange={action('changed')}
-    onFilterChange={action('filter changed')}
-    onBlur={action('blur')}
-    onFocus={action('focus')}
-  />
-)
+export const Default = (args) => <Combobox<Fruit> {...args} itemToString={(item) => item?.label} />
 
-export const Suggestion = () => (
+export const Suggestion = (args) => (
   <Combobox<Fruit>
+    {...args}
     createNewItem={(str) => ({ value: Math.random(), label: str })}
-    label='Fruit'
-    name='fruit'
-    items={fruits}
-    error={text('error', '')}
     icon={null}
     itemToString={(item) => item && item.label}
-    placeholder='Select a value...'
-    clearable={boolean('clearable', true)}
-    disabled={boolean('disabled', false)}
-    openOnFocus={boolean('openOnFocus', false)}
-    loading={boolean('loading', false)}
-    open={select('open', [undefined, true, false], undefined)}
-    onChange={action('changed')}
-    onBlur={action('blur')}
-    onFocus={action('focus')}
   />
 )
 
-export const Async = () => (
+Suggestion.args = {
+  openOnFocus: false,
+}
+
+export const Async = (args) => (
   <Combobox<Fruit>
-    value={fruits.find((e) => e.label === select('value', ['', ...fruits.map((e) => e.label)], ''))}
+    {...args}
     label='Fruit Repository'
     name='repository'
     items={loadFruitsAsync}
-    error={text('error', '')}
     itemToString={(item) => item && item.label}
-    placeholder='Select a value...'
-    clearable={boolean('clearable', true)}
-    disabled={boolean('disabled', false)}
-    openOnFocus={boolean('openOnFocus', true)}
-    open={select('open', [undefined, true, false], undefined)}
-    loading={boolean('loading', false)}
-    onChange={action('changed')}
-    onBlur={action('blur')}
-    onFocus={action('focus')}
   />
 )
 
-export const CustomComponents = () => (
+export const CustomComponents = (args) => (
   <Combobox<Fruit>
-    label='Fruit'
-    name='fruit'
-    items={fruits}
-    createNewItem={boolean('createNewItem', false) && (() => fruits[0])}
+    {...args}
+    createNewItem={args.createNewItem && (() => fruits[0])}
     itemToString={(item) => item && item.label}
     components={{
       Item: (props) => (
@@ -134,11 +122,11 @@ export const CustomComponents = () => (
           <Text color='success'>Custom {props.itemToString(props.item)}</Text>
         </ComboboxMenuItem>
       ),
-      PrependItem: (props) => <CustomComponent>Prepend item</CustomComponent>,
-      EmptyItem: (props) => <CustomComponent>Empty item</CustomComponent>,
-      CreateItem: (props) => <CustomComponent>Create item</CustomComponent>,
-      LoadingItem: (props) => <CustomComponent>Loading item...</CustomComponent>,
-      AppendItem: (props) => (
+      PrependItem: () => <CustomComponent>Prepend item</CustomComponent>,
+      EmptyItem: () => <CustomComponent>Empty item</CustomComponent>,
+      CreateItem: () => <CustomComponent>Create item</CustomComponent>,
+      LoadingItem: () => <CustomComponent>Loading item...</CustomComponent>,
+      AppendItem: () => (
         <CustomComponent>
           <HFlow alignItems='center' justifyContent='space-between'>
             <Text>
@@ -155,55 +143,48 @@ export const CustomComponents = () => (
   />
 )
 
-export const MultiSelect = () => {
-  const selectedValues = optionsKnob('values', Object.fromEntries(fruits.map((e) => [e.label, e.label])), [], {
-    display: 'multi-select',
-  })
+CustomComponents.args = {
+  createNewItem: false,
+}
 
+export const MultiSelect = (args) => {
   return (
     <Combobox<Fruit>
+      {...args}
       itemIsEqual={(a, b) => a.label === b.label}
-      value={fruits.filter((e) => selectedValues.includes(e.label))}
-      label='Fruit'
-      name='fruit'
-      items={fruits}
-      error={text('error', '')}
-      menuMinWidth={number('menuMinWidth (px)', undefined)}
+      value={fruits.filter((e) => args.selectedValues.includes(e.label))}
       itemToString={(item) => item?.label}
-      placeholder={text('placeholder', 'Select the values...')}
-      clearable={boolean('clearable', true)}
-      disabled={boolean('disabled', false)}
-      openOnFocus={boolean('openOnFocus', true)}
-      clearFilterOnSelect={boolean('clearFilterOnSelect', true)}
-      open={select('open', [undefined, true, false], undefined)}
-      loading={boolean('loading', false)}
-      onChange={action('changed')}
-      onFilterChange={action('filter changed')}
-      onBlur={action('blur')}
-      onFocus={action('focus')}
       multiple
     />
   )
 }
 
-export const Inline = () => (
+MultiSelect.args = {
+  clearFilterOnSelect: true,
+  selectedValues: [],
+}
+
+MultiSelect.argTypes = {
+  selectedValues: {
+    control: 'multi-select',
+    options: fruits.map((e) => e.label),
+  },
+}
+
+export const Inline = (args) => (
   <Combobox<Fruit>
+    {...args}
     inline
-    defaultButtonText={text('defaultButtonText', 'Fruit')}
-    value={fruits.find((e) => e.label === select('value', ['', ...fruits.map((e) => e.label)], ''))}
-    name='fruit'
-    items={fruits}
-    error={text('error', '')}
-    menuMinWidth={number('menuMinWidth (px)', undefined)}
+    defaultButtonText={args.defaultButtonText}
     itemToString={(item) => item?.label}
-    searchBoxPlaceholder={text('searchBoxPlaceholder', 'Search...')}
-    disabled={boolean('disabled', false)}
-    showSearchBox={boolean('showSearchBox', true)}
-    loading={boolean('loading', false)}
-    open={select('open', [undefined, true, false], undefined)}
-    onChange={action('changed')}
-    onFilterChange={action('filter changed')}
-    onBlur={action('blur')}
-    onFocus={action('focus')}
+    searchBoxPlaceholder={args.searchBoxPlaceholder}
+    showSearchBox={args.showSearchBox}
   />
 )
+
+Inline.args = {
+  defaultButtonText: 'Fruit',
+  searchBoxPlaceholder: 'Search...',
+  showSearchBox: true,
+  label: '',
+}

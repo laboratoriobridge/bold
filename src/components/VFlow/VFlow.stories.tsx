@@ -1,4 +1,3 @@
-import { number } from '@storybook/addon-knobs'
 import React from 'react'
 
 import { Button } from '../Button'
@@ -8,10 +7,11 @@ import { VFlow } from './VFlow'
 
 export default {
   title: 'Components/VFlow',
+  component: VFlow,
 }
 
-export const Default = () => (
-  <VFlow vSpacing={number('vSpacing', 1)}>
+export const Default = (args) => (
+  <VFlow {...args}>
     <Text>
       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae ea molestias facere iusto dolor debitis
       suscipit impedit sunt blanditiis itaque ex aliquam eaque minus perspiciatis, beatae, incidunt quaerat

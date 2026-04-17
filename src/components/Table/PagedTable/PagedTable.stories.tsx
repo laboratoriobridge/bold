@@ -1,5 +1,4 @@
 import { action } from '@storybook/addon-actions'
-import { boolean } from '@storybook/addon-knobs'
 import React from 'react'
 
 import { Button } from '../../Button'
@@ -21,22 +20,20 @@ const rows: Row[] = [
 
 export default {
   title: 'Components/Table',
-}
-
-export const _PagedTable = () => (
-  <PagedTable
-    rows={boolean('empty', false) ? [] : rows}
-    page={0}
-    size={10}
-    totalElements={10}
-    totalPages={1}
-    sort={['-id', 'name']}
-    sizeOptions={[10, 30, 50, 100]}
-    onSortChange={action('sort')}
-    onPageChange={action('page-change')}
-    onSizeChange={action('size-change')}
-    loading={boolean('loading', false)}
-    columns={[
+  component: PagedTable,
+  args: {
+    empty: false,
+    page: 0,
+    size: 10,
+    totalElements: 10,
+    totalPages: 1,
+    sort: ['-id', 'name'],
+    sizeOptions: [10, 30, 50, 100],
+    loading: false,
+    onSortChange: action('sort-change'),
+    onPageChange: action('page-change'),
+    onSizeChange: action('size-change'),
+    columns: [
       { name: 'id', header: 'ID', sortable: true, render: (row: Row) => row.id },
       { name: 'name', header: 'Name', sortable: true, render: (row: Row) => row.name },
       { name: 'age', header: 'Age', sortable: true, render: (row: Row) => row.age },
@@ -49,6 +46,8 @@ export const _PagedTable = () => (
           </Button>
         ),
       },
-    ]}
-  />
-)
+    ],
+  },
+}
+
+export const _PagedTable = (args) => <PagedTable {...args} rows={args.empty ? [] : rows} />

@@ -1,4 +1,3 @@
-import { number, select } from '@storybook/addon-knobs'
 import React from 'react'
 
 import { Button } from '../Button'
@@ -21,14 +20,26 @@ const alignItemsOptions: AlignItems[] = ['flex-start', 'flex-end', 'center', 'ba
 
 export default {
   title: 'Components/HFlow',
+  component: HFlow,
+  argTypes: {
+    alignItems: {
+      control: 'select',
+      options: alignItemsOptions,
+    },
+    justifyContent: {
+      control: 'select',
+      options: justifyContentOptions,
+    },
+  },
+  args: {
+    hSpacing: 1,
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+  },
 }
 
-export const Default = () => (
-  <HFlow
-    hSpacing={number('hSpacing', 1)}
-    alignItems={select('alignItems', alignItemsOptions, 'center')}
-    justifyContent={select('justifyContent', justifyContentOptions, 'flex-start')}
-  >
+export const Default = (args) => (
+  <HFlow {...args}>
     <Button kind='primary'>Button 1</Button>
     <Button>Button 2</Button>
     <Icon icon='infoCircleFilled' />

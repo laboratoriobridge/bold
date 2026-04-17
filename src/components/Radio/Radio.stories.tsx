@@ -1,5 +1,4 @@
 import { action } from '@storybook/addon-actions'
-import { boolean, text } from '@storybook/addon-knobs'
 import React from 'react'
 
 import { HFlow } from '../HFlow'
@@ -8,23 +7,21 @@ import { Radio } from './Radio'
 
 export default {
   title: 'Components/Radio',
+  component: Radio,
+  argTypes: {
+    label: { control: 'text' },
+  },
+  args: {
+    label: 'Component label',
+    disabled: false,
+    name: 'radio1',
+    onChange: action('changed'),
+  },
 }
 
-export const Default = () => (
+export const Default = (args) => (
   <HFlow>
-    <Radio
-      name='radio1'
-      label={text('label', 'Component label')}
-      value='1'
-      onChange={action('changed')}
-      disabled={boolean('disabled', false)}
-    />
-    <Radio
-      name='radio1'
-      label={text('label', 'Component label')}
-      value='2'
-      onChange={action('changed')}
-      disabled={boolean('disabled', false)}
-    />
+    <Radio {...args} value='1' />
+    <Radio {...args} value='2' />
   </HFlow>
 )

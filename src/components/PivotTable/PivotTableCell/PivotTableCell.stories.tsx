@@ -1,6 +1,5 @@
 import React from 'react'
 import { times } from 'lodash'
-import { boolean, number, select, text } from '@storybook/addon-knobs'
 import { HFlow } from '../../HFlow'
 import { PivotTableCell } from './PivotTableCell'
 import { GridArea } from './classes/GridArea'
@@ -9,6 +8,7 @@ import { PivotTableCellType } from './model'
 
 export default {
   title: 'Components/PivotTable/PivotTableCell',
+  component: PivotTableCell,
 }
 
 interface CellTypeAndContent {
@@ -54,27 +54,48 @@ export const AllTypes = () => {
   )
 }
 
-export const EditableType = () => {
+export const EditableType = (args) => {
   const gridArea = new GridArea(0, 0)
 
   const maxValue = 10
-  const suffix = ''
-
-  const typeEnumValue = select('type', Object.keys(PivotTableCellType), PivotTableCellType.VALUE)
 
   return (
-    <PivotTableProvider maxValue={maxValue} suffix={text('suffix', suffix)}>
+    <PivotTableProvider maxValue={maxValue} suffix={args.suffix}>
       <HFlow hSpacing={0}>
         <PivotTableCell
-          types={new Set([PivotTableCellType[typeEnumValue]])}
+          types={new Set([PivotTableCellType[args.type]])}
           key={gridArea.toString()}
           gridArea={gridArea}
-          isEndRow={boolean('isEndRow', true)}
-          isEndColumn={boolean('isEndColumn', true)}
+          isEndRow={args.isEndRow}
+          isEndColumn={args.isEndColumn}
         >
-          {number('content', 5, { min: 1, max: 10 })}
+          {args.content}
         </PivotTableCell>
       </HFlow>
     </PivotTableProvider>
   )
+}
+
+EditableType.args = {
+  suffix: '',
+  isEndRow: true,
+  isEndColumn: true,
+  content: 5,
+  type: PivotTableCellType.VALUE,
+}
+
+EditableType.argTypes = {
+  content: {
+    control: {
+      type: 'number',
+      min: 1,
+      max: 10,
+    },
+  },
+  type: {
+    options: Object.keys(PivotTableCellType),
+    control: {
+      type: 'select',
+    },
+  },
 }

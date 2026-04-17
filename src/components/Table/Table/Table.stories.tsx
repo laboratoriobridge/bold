@@ -1,15 +1,15 @@
 import { action } from '@storybook/addon-actions'
-import { boolean } from '@storybook/addon-knobs'
 import React from 'react'
 
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from './index'
 
 export default {
   title: 'Components/Table',
+  component: Table,
 }
 
-export const _Table = () => (
-  <Table hovered={boolean('hovered', false)}>
+export const _Table = (args) => (
+  <Table hovered={args.hovered}>
     <TableHead>
       <TableRow>
         <TableHeader sortable={true} sortDirection='ASC' onSortChange={action('sort-changed')}>
