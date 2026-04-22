@@ -1,6 +1,3 @@
-import { withA11y } from '@storybook/addon-a11y'
-import { withInfo } from '@storybook/addon-info'
-import { withKnobs } from '@storybook/addon-knobs'
 import 'loki/configure-react'
 import { withStorybookTheme } from '../src/stories-addons'
 import mockdate from 'mockdate'
@@ -11,26 +8,11 @@ if (process.env.STORYBOOK_LOKI) {
 }
 
 export const parameters = {
-  info: {
-    inline: true,
-    styles: {
-      infoBody: {
-        border: 'none',
-        boxShadow: 'none',
-        marginTop: 0,
-        marginBottom: 0,
-        padding: '20px 40px',
-      },
-      infoPage: {
-        padding: '0 5px 0 5px',
-      },
-      infoStory: {
-        padding: '0 45px 0 45px',
-      },
+  docs: {
+    canvas: {
+      sourceState: 'shown',
     },
   },
 }
 
-const allDecorators = [withA11y, withKnobs, withStorybookTheme]
-
-export const decorators = process.env.STORYBOOK_LOKI ? allDecorators : [withInfo, ...allDecorators]
+export const decorators = [(Story, context) => withStorybookTheme(Story, context)]
