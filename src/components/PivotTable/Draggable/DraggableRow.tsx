@@ -18,7 +18,11 @@ export function DraggableRow<T>(props: DraggableRowProps<T>) {
 
   if (value && value.length > 0) {
     return (
-      <DropdownItem key={name + value} className={classes.dropdownItem} aria-checked={selected ? 'true' : 'false'}>
+      <DropdownItem
+        key={name.toString() + value}
+        className={classes.dropdownItem}
+        aria-checked={selected ? 'true' : 'false'}
+      >
         <Checkbox
           title={value}
           label={formatter?.(value) ?? value}
