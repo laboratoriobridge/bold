@@ -28,6 +28,7 @@ import { ModalHeader } from './ModalHeader'
 
 const sizes: { [key in ModalSize]: ModalSize } = {
   large: 'large',
+  medium: 'medium',
   small: 'small',
   auto: 'auto',
 }

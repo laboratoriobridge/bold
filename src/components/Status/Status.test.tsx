@@ -292,3 +292,359 @@ it('should accept "style" prop', () => {
     </div>
   `)
 })
+
+describe('custom icon', () => {
+  it('should render with default icon when no custom icon is provided', () => {
+    const { container } = render(<Status type='success' text='Operation successful' />)
+
+    expect(container).toMatchInlineSnapshot(`
+      .emotion-0 {
+        fill: currentColor;
+        font-size: 1rem;
+      }
+
+      .emotion-1 {
+        font-family: "IBM Plex Sans",sans-serif;
+        font-size: 0.8125rem;
+        line-height: 1.5;
+        color: #24252E;
+        color: inherit;
+      }
+
+      .emotion-2 {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: minmax(min-content,max-content);
+        grid-gap: 0.5rem;
+        -webkit-align-items: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: start;
+        -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+        color: #217B00;
+      }
+
+      <div>
+        <div
+          class="emotion-2"
+        >
+          <svg
+            aria-hidden="true"
+            class="emotion-0"
+            height="1em"
+            role="img"
+            viewBox="0 0 24 24"
+            width="1em"
+          >
+            <path
+              d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10c0 5.522-4.477 10-10 10S2 17.522 2 12zm2 0a8 8 0 1016 0 8 8 0 00-16 0zm11.294-3.707a1 1 0 011.414 1.414l-6 6a1 1 0 01-1.414 0l-3.001-3.001a1 1 0 011.414-1.414l2.294 2.294 5.293-5.293z"
+            />
+          </svg>
+          <span
+            class="emotion-1"
+          >
+            Operation successful
+          </span>
+        </div>
+      </div>
+    `)
+  })
+
+  it('should render with custom icon when icon prop is provided', () => {
+    const { container } = render(<Status type='success' text='Custom success message' icon='bellOutline' />)
+
+    expect(container).toMatchInlineSnapshot(`
+      .emotion-0 {
+        fill: currentColor;
+        font-size: 1rem;
+      }
+
+      .emotion-1 {
+        font-family: "IBM Plex Sans",sans-serif;
+        font-size: 0.8125rem;
+        line-height: 1.5;
+        color: #24252E;
+        color: inherit;
+      }
+
+      .emotion-2 {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: minmax(min-content,max-content);
+        grid-gap: 0.5rem;
+        -webkit-align-items: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: start;
+        -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+        color: #217B00;
+      }
+
+      <div>
+        <div
+          class="emotion-2"
+        >
+          <svg
+            aria-hidden="true"
+            class="emotion-0"
+            height="1em"
+            role="img"
+            viewBox="0 0 24 24"
+            width="1em"
+          >
+            <path
+              d="M18 16h1c.667 0 1 .333 1 1s-.333 1-1 1H5c-.667 0-1-.333-1-1s.333-1 1-1h1v-5.961a6.032 6.032 0 014-5.677V4a2 2 0 114 0v.34c2.328.81 4 3.016 4 5.621V16zm-2 0v-6a4 4 0 10-8 0v6h8zm-6 4a2 2 0 004 0h-4z"
+            />
+          </svg>
+          <span
+            class="emotion-1"
+          >
+            Custom success message
+          </span>
+        </div>
+      </div>
+    `)
+  })
+
+  it('should override default info icon with custom icon', () => {
+    const { container } = render(<Status type='info' text='Custom info message' icon='bellOutline' />)
+
+    expect(container).toMatchInlineSnapshot(`
+      .emotion-2 {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: minmax(min-content,max-content);
+        grid-gap: 0.5rem;
+        -webkit-align-items: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: start;
+        -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+        color: #0069D0;
+      }
+
+      .emotion-0 {
+        fill: currentColor;
+        font-size: 1rem;
+      }
+
+      .emotion-1 {
+        font-family: "IBM Plex Sans",sans-serif;
+        font-size: 0.8125rem;
+        line-height: 1.5;
+        color: #24252E;
+        color: inherit;
+      }
+
+      <div>
+        <div
+          class="emotion-2"
+        >
+          <svg
+            aria-hidden="true"
+            class="emotion-0"
+            height="1em"
+            role="img"
+            viewBox="0 0 24 24"
+            width="1em"
+          >
+            <path
+              d="M18 16h1c.667 0 1 .333 1 1s-.333 1-1 1H5c-.667 0-1-.333-1-1s.333-1 1-1h1v-5.961a6.032 6.032 0 014-5.677V4a2 2 0 114 0v.34c2.328.81 4 3.016 4 5.621V16zm-2 0v-6a4 4 0 10-8 0v6h8zm-6 4a2 2 0 004 0h-4z"
+            />
+          </svg>
+          <span
+            class="emotion-1"
+          >
+            Custom info message
+          </span>
+        </div>
+      </div>
+    `)
+  })
+
+  it('should override default warning icon with custom icon', () => {
+    const { container } = render(<Status type='warning' text='Custom warning' icon='bellOutline' />)
+
+    expect(container).toMatchInlineSnapshot(`
+      .emotion-0 {
+        fill: currentColor;
+        font-size: 1rem;
+      }
+
+      .emotion-1 {
+        font-family: "IBM Plex Sans",sans-serif;
+        font-size: 0.8125rem;
+        line-height: 1.5;
+        color: #24252E;
+        color: inherit;
+      }
+
+      .emotion-2 {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: minmax(min-content,max-content);
+        grid-gap: 0.5rem;
+        -webkit-align-items: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: start;
+        -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+        color: #AD5000;
+      }
+
+      <div>
+        <div
+          class="emotion-2"
+        >
+          <svg
+            aria-hidden="true"
+            class="emotion-0"
+            height="1em"
+            role="img"
+            viewBox="0 0 24 24"
+            width="1em"
+          >
+            <path
+              d="M18 16h1c.667 0 1 .333 1 1s-.333 1-1 1H5c-.667 0-1-.333-1-1s.333-1 1-1h1v-5.961a6.032 6.032 0 014-5.677V4a2 2 0 114 0v.34c2.328.81 4 3.016 4 5.621V16zm-2 0v-6a4 4 0 10-8 0v6h8zm-6 4a2 2 0 004 0h-4z"
+            />
+          </svg>
+          <span
+            class="emotion-1"
+          >
+            Custom warning
+          </span>
+        </div>
+      </div>
+    `)
+  })
+
+  it('should override default danger icon with custom icon', () => {
+    const { container } = render(<Status type='danger' text='Custom error' icon='bellOutline' />)
+
+    expect(container).toMatchInlineSnapshot(`
+      .emotion-0 {
+        fill: currentColor;
+        font-size: 1rem;
+      }
+
+      .emotion-1 {
+        font-family: "IBM Plex Sans",sans-serif;
+        font-size: 0.8125rem;
+        line-height: 1.5;
+        color: #24252E;
+        color: inherit;
+      }
+
+      .emotion-2 {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: minmax(min-content,max-content);
+        grid-gap: 0.5rem;
+        -webkit-align-items: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: start;
+        -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+        color: #D01E29;
+      }
+
+      <div>
+        <div
+          class="emotion-2"
+        >
+          <svg
+            aria-hidden="true"
+            class="emotion-0"
+            height="1em"
+            role="img"
+            viewBox="0 0 24 24"
+            width="1em"
+          >
+            <path
+              d="M18 16h1c.667 0 1 .333 1 1s-.333 1-1 1H5c-.667 0-1-.333-1-1s.333-1 1-1h1v-5.961a6.032 6.032 0 014-5.677V4a2 2 0 114 0v.34c2.328.81 4 3.016 4 5.621V16zm-2 0v-6a4 4 0 10-8 0v6h8zm-6 4a2 2 0 004 0h-4z"
+            />
+          </svg>
+          <span
+            class="emotion-1"
+          >
+            Custom error
+          </span>
+        </div>
+      </div>
+    `)
+  })
+
+  it('should maintain status color styling with custom icon', () => {
+    const { container } = render(<Status type='success' text='Success with custom icon' icon='bellOutline' />)
+
+    expect(container).toMatchInlineSnapshot(`
+      .emotion-0 {
+        fill: currentColor;
+        font-size: 1rem;
+      }
+
+      .emotion-1 {
+        font-family: "IBM Plex Sans",sans-serif;
+        font-size: 0.8125rem;
+        line-height: 1.5;
+        color: #24252E;
+        color: inherit;
+      }
+
+      .emotion-2 {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: minmax(min-content,max-content);
+        grid-gap: 0.5rem;
+        -webkit-align-items: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: start;
+        -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+        color: #217B00;
+      }
+
+      <div>
+        <div
+          class="emotion-2"
+        >
+          <svg
+            aria-hidden="true"
+            class="emotion-0"
+            height="1em"
+            role="img"
+            viewBox="0 0 24 24"
+            width="1em"
+          >
+            <path
+              d="M18 16h1c.667 0 1 .333 1 1s-.333 1-1 1H5c-.667 0-1-.333-1-1s.333-1 1-1h1v-5.961a6.032 6.032 0 014-5.677V4a2 2 0 114 0v.34c2.328.81 4 3.016 4 5.621V16zm-2 0v-6a4 4 0 10-8 0v6h8zm-6 4a2 2 0 004 0h-4z"
+            />
+          </svg>
+          <span
+            class="emotion-1"
+          >
+            Success with custom icon
+          </span>
+        </div>
+      </div>
+    `)
+  })
+})

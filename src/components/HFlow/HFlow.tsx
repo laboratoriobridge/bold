@@ -11,6 +11,18 @@ export interface HFlowProps extends Omit<React.HTMLAttributes<HTMLDivElement>, '
   style?: ExternalStyles
 }
 
+/**
+ * @deprecated Use `Flow` component with `direction='horizontal'` instead.
+ *
+ * @example
+ * // Before
+ * <HFlow gap={2}>...</HFlow>
+
+ * // After
+ * <Flow direction='horizontal' gap={2}>...</Flow>
+ *
+ * @deprecatedSince 1.0.1
+ */
 export function HFlow(props: HFlowProps) {
   const { hSpacing, alignItems, justifyContent, style, ...rest } = props
   const { classes, css } = useStyles(createStyles, props)
