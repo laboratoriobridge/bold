@@ -295,6 +295,7 @@ export const AreaChart = (args) => {
 AreaChart.args = {
   stacked: false,
   series: lineSeries,
+  xAxisDomain: ['Page A', 'Page B', 'Page C', 'Page D'],
 }
 
 export const columnChart = (args) => {
@@ -315,7 +316,7 @@ export const columnChart = (args) => {
 
 columnChart.args = {
   stacked: false,
-
+  xAxisDomain: ['Page A', 'Page B', 'Page C', 'Page D'],
   series: lineSeries,
   colorScheme: 'default',
 }

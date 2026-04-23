@@ -23,6 +23,7 @@ export default {
     placeholder: 'Nome',
     maxLength: '' as any,
     onChange: action('changed'),
+    required: true,
   },
 }
 
