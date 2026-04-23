@@ -72,6 +72,15 @@ describe('Modal', () => {
       expect(document.body).toMatchSnapshot()
     })
 
+    it('should accept the "medium" size and render accordingly', () => {
+      render(
+        <Modal open={true} size='medium'>
+          Testing.
+        </Modal>
+      )
+      expect(document.body).toMatchSnapshot()
+    })
+
     it('should accept the "large" size and render accordingly', () => {
       render(
         <Modal open={true} size='large'>
