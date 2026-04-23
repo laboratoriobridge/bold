@@ -1,10 +1,9 @@
 import React, { CSSProperties, ReactNode, useEffect } from 'react'
 import { ExternalStyles, Theme, useStyles } from '../../styles'
 import { Heading } from '../Heading'
-import { HFlow } from '../HFlow'
-import { VFlow } from '../VFlow'
 import { useIsOverflowing } from '../../hooks'
 import { useModalContext } from '../../hooks'
+import { Flow } from '../Flow'
 import { ModalCloseButton } from './ModalCloseButton'
 import { ModalHeaderIconType, ModalHeaderIcon } from './ModalHeaderIcon'
 
@@ -43,8 +42,9 @@ export function ModalHeader(props: ModalHeaderContentProps | ModalHeaderChildren
   }, [setSectionState])
 
   return (
-    <HFlow
-      hSpacing={0.5}
+    <Flow
+      direction='horizontal'
+      gap={0.5}
       justifyContent='space-between'
       alignItems='flex-start'
       style={css(classes.header, style)}
@@ -53,9 +53,9 @@ export function ModalHeader(props: ModalHeaderContentProps | ModalHeaderChildren
       {isHeaderWithChildren(props) ? (
         props.children
       ) : (
-        <HFlow hSpacing={1} justifyContent='flex-start' alignItems='center'>
+        <Flow direction='horizontal' gap={1} justifyContent='flex-start' alignItems='center'>
           {props.icon && <ModalHeaderIcon icon={props.icon} />}
-          <VFlow vSpacing={0}>
+          <Flow direction='vertical' gap={0}>
             <Heading level={1} color='normal' fontWeight='bold'>
               {props.title}
             </Heading>
@@ -64,11 +64,11 @@ export function ModalHeader(props: ModalHeaderContentProps | ModalHeaderChildren
                 {props.subtitle}
               </Heading>
             )}
-          </VFlow>
-        </HFlow>
+          </Flow>
+        </Flow>
       )}
       {hasCloseButton && <ModalCloseButton onClick={onCloseButtonClick} />}
-    </HFlow>
+    </Flow>
   )
 }
 
