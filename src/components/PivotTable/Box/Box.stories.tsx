@@ -6,6 +6,7 @@ import { Box } from './Box'
 
 export default {
   title: 'Components/PivotTable/Box',
+  component: Box,
 }
 
 export const Empty = () => (

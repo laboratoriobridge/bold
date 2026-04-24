@@ -1,4 +1,3 @@
-import { number, select } from '@storybook/addon-knobs'
 import React from 'react'
 
 import { Button } from '../Button'
@@ -27,16 +26,36 @@ const justifyItemsOptions: JustifyItems[] = ['start', 'center', 'end', 'stretch'
 
 export default {
   title: 'Components/Flow',
+  components: Flow,
+  argTypes: {
+    direction: {
+      control: 'select',
+      options: Object.keys(directions),
+    },
+    alignItems: {
+      control: 'select',
+      options: alignItemsOptions,
+    },
+    justifyContent: {
+      control: 'select',
+      options: justifyContentOptions,
+    },
+    justifyItems: {
+      control: 'select',
+      options: justifyItemsOptions,
+    },
+  },
+  args: {
+    direction: 'horizontal',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    justifyItems: 'start',
+    gap: 1,
+  },
 }
 
-export const Default = () => (
-  <Flow
-    direction={select('direction', directions, 'horizontal')}
-    gap={number('gap', 1)}
-    alignItems={select('alignItems', alignItemsOptions, 'center')}
-    justifyContent={select('justifyContent', justifyContentOptions, 'flex-start')}
-    justifyItems={select('justifyItems', justifyItemsOptions, 'start')}
-  >
+export const Default = (args) => (
+  <Flow {...args}>
     <Button kind='primary'>Button 1</Button>
     <Button>Button 2</Button>
     <Text>

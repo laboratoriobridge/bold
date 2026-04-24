@@ -5,6 +5,7 @@ import { FileUploader } from './FileUploader'
 
 export default {
   title: 'Components/FileUploader',
+  component: FileUploader,
 }
 
 export const Initial = () => (
