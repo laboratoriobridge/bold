@@ -54,3 +54,30 @@ it('should have gridRow 3 when has header', () => {
   const modalBody = getByTestId('footer-grid-row')
   expect(modalBody).toHaveStyle('grid-row: 3;')
 })
+
+it('should forward ref to the underlying element', () => {
+  const mockContextValue = createMockModalContext()
+  const ref = React.createRef<HTMLDivElement>()
+
+  render(
+    <ModalContextProvider value={mockContextValue}>
+      <ModalFooter ref={ref}>Content</ModalFooter>
+    </ModalContextProvider>
+  )
+
+  expect(ref.current).toBeInstanceOf(HTMLDivElement)
+})
+
+it('should allow ref access to DOM methods', () => {
+  const mockContextValue = createMockModalContext()
+  const ref = React.createRef<HTMLDivElement>()
+
+  render(
+    <ModalContextProvider value={mockContextValue}>
+      <ModalFooter ref={ref}>Content</ModalFooter>
+    </ModalContextProvider>
+  )
+
+  expect(ref.current?.tagName).toBe('DIV')
+  expect(ref.current?.textContent).toBe('Content')
+})

@@ -26,6 +26,7 @@ Array [
   "DropdownItem",
   "DropdownMenu",
   "FileUploader",
+  "Flow",
   "FormControl",
   "FormLabel",
   "FormError",
