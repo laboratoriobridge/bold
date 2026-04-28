@@ -1,4 +1,4 @@
-import React, { CSSProperties } from 'react'
+import React, { CSSProperties, Ref } from 'react'
 
 import { AlignItems, JustifyContent } from '../Grid'
 import { ExternalStyles, Theme, useStyles } from '../../styles'
@@ -15,12 +15,12 @@ export interface FlowProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 's
   style?: ExternalStyles
 }
 
-export function Flow(props: FlowProps) {
+export const Flow = React.forwardRef((props: FlowProps, ref: Ref<HTMLDivElement>) => {
   const { direction, gap = 1, alignItems, justifyContent, justifyItems = 'start', style, ...rest } = props
   const { classes, css } = useStyles(createStyles, direction, gap, alignItems, justifyContent, justifyItems)
 
-  return <div className={css(classes.container, style)} {...rest} />
-}
+  return <div className={css(classes.container, style)} ref={ref} {...rest} />
+})
 
 const createStyles = (
   _theme: Theme,
