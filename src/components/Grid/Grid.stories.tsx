@@ -1,4 +1,3 @@
-import { number, select } from '@storybook/addon-knobs'
 import React from 'react'
 
 import { AlignItems, AlignSelf, Cell as CellPure, Direction, Grid, JustifyContent } from '../'
@@ -46,6 +45,7 @@ function Cell(props: any) {
 
 export default {
   title: 'Components/Grid',
+  component: Grid,
 }
 
 export const Default = () => (
@@ -92,28 +92,16 @@ export const FlexGrow = () => (
   </Grid>
 )
 
-export const Playground = () => (
+export const Playground = (args) => (
   <>
-    <Grid
-      alignItems={select('alignItems', alignItemsOptions, 'center')}
-      justifyContent={select('justifyContent', justifyContentOptions, 'center')}
-      direction={select('direction', directionOptions, 'row')}
-      gap={number('gap', 2)}
-      gapVertical={number('gapCrossAxis', 1)}
-      wrap
-    >
+    <Grid {...args} wrap>
       <Cell xs={6}>xs=6</Cell>
       <Cell xs={6}>xs=6</Cell>
       <Cell xs={6}>xs=6</Cell>
     </Grid>
     <hr />
     <div style={{ height: 300 }}>
-      <Grid
-        alignItems={select('alignItems', alignItemsOptions, 'center')}
-        justifyContent={select('justifyContent', justifyContentOptions, 'center')}
-        direction={select('direction', directionOptions, 'row')}
-        style={{ height: '100%' }}
-      >
+      <Grid {...args} style={{ height: '100%' }}>
         <Cell xs={1}>1</Cell>
         <Cell xs={1}>
           <div style={{ height: 60 }}>2</div>
@@ -124,15 +112,50 @@ export const Playground = () => (
   </>
 )
 
-export const _Cell = () => (
+Playground.args = {
+  alignItems: 'center',
+  justifyContent: 'center',
+  direction: 'row',
+  gap: 2,
+  gapCrossAxis: 1,
+}
+
+Playground.argTypes = {
+  alignItems: {
+    control: 'select',
+    options: alignItemsOptions,
+  },
+  justifyContent: {
+    control: 'select',
+    options: justifyContentOptions,
+  },
+  direction: {
+    control: 'select',
+    options: directionOptions,
+  },
+}
+
+export const _Cell = (args) => (
   <Grid alignItems='flex-start'>
     <Cell xs={1}>1</Cell>
     <Cell xs={1}>
       <div style={{ height: 60 }}>2</div>
     </Cell>
-    <Cell xs={number('xs', 2) as any} alignSelf={select('alignSelf', alignSelfOptions, 'auto')}>
+    <Cell {...args}>
       <strong>3</strong>
     </Cell>
     <Cell xs={1}>4</Cell>
   </Grid>
 )
+
+_Cell.args = {
+  alignSelf: 'auto',
+  xs: 2,
+}
+
+_Cell.argTypes = {
+  alignSelf: {
+    control: 'select',
+    options: alignSelfOptions,
+  },
+}

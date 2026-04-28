@@ -6,6 +6,7 @@ import { PivotTableProps } from './model'
 
 export default {
   title: 'Components/PivotTable/PivotTableGrid',
+  component: PivotTableGrid,
 }
 
 type Fruit = {

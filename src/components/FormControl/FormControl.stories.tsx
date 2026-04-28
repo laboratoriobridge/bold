@@ -1,4 +1,3 @@
-import { boolean, text } from '@storybook/addon-knobs'
 import React from 'react'
 
 import { TextInput } from '../TextField'
@@ -7,16 +6,18 @@ import { FormControl } from './FormControl'
 
 export default {
   title: 'Components/FormControl',
+  component: FormControl,
+  args: {
+    label: 'Label',
+    htmlFor: 'input-id',
+    error: '',
+    inline: false,
+    required: true,
+  },
 }
 
-export const Default = () => (
-  <FormControl
-    label={text('label', 'Label')}
-    htmlFor={text('id', 'input-id')}
-    error={text('error', '')}
-    inline={boolean('inline', false)}
-    required={boolean('required', true)}
-  >
-    <TextInput id={text('id', 'input-id')} />
+export const Default = (args) => (
+  <FormControl {...args}>
+    <TextInput id={args.htmlFor} />
   </FormControl>
 )

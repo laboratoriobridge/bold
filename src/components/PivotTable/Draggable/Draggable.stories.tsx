@@ -7,6 +7,7 @@ import { KeyMapping } from './types/KeyMapping'
 
 export default {
   title: 'Components/PivotTable/Draggable',
+  component: Draggable,
 }
 
 const origin = 'keys_available'

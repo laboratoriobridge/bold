@@ -1,65 +1,55 @@
 import { action } from '@storybook/addon-actions'
-import { boolean, select, text } from '@storybook/addon-knobs'
 import React, { AnchorHTMLAttributes } from 'react'
+
 import { Icon } from '../Icon'
 import { Button, ButtonProps } from './Button/Button'
-import { ButtonKind, ButtonSize, ButtonSkin } from './Button/ButtonSkins'
-
-const typeOptions: ButtonKind[] = ['normal', 'primary', 'danger']
-const skinOptions: ButtonSkin[] = ['default', 'ghost', 'outline']
-const sizeOptions: ButtonSize[] = ['small', 'medium', 'large']
 
 export default {
   title: 'Components/Button',
+  component: Button,
+  args: {
+    kind: 'normal',
+    loading: false,
+    disabled: false,
+    block: false,
+    onClick: action('button-clicked'),
+  },
 }
 
-export const Default = () => (
-  <Button
-    skin={select('skin', skinOptions, 'default')}
-    size={select('size', sizeOptions, 'medium')}
-    kind={select('kind', typeOptions, 'normal')}
-    loading={boolean('loading', false)}
-    disabled={boolean('disabled', false)}
-    block={boolean('block', false)}
-    onClick={action('button-clicked')}
-  >
-    {text('children', 'Button')}
-  </Button>
-)
+export const Default = (args) => <Button {...args} />
 
-export const WithIcon = () => (
-  <Button
-    skin={select('skin', skinOptions, 'ghost')}
-    size={select('size', sizeOptions, 'small')}
-    kind={select('kind', typeOptions, 'normal')}
-    loading={boolean('loading', false)}
-    disabled={boolean('disabled', false)}
-    block={boolean('block', false)}
-    onClick={action('button-clicked')}
-  >
+Default.args = {
+  children: 'Button',
+  skin: 'default',
+  size: 'medium',
+}
+
+export const WithIcon = (args) => (
+  <Button {...args}>
     <Icon icon='adjust' />
   </Button>
 )
 
-export const WithLink = () => {
+WithIcon.args = {
+  skin: 'ghost',
+  size: 'small',
+  kind: 'normal',
+}
+
+export const WithLink = (args) => {
   const ButtonLink = (props: ButtonProps & AnchorHTMLAttributes<HTMLAnchorElement>) => (
     <Button component='a' {...props} />
   )
 
   return (
-    <ButtonLink
-      href='https://bold.bridge.ufsc.br'
-      component='a'
-      target='_blank'
-      skin={select('skin', skinOptions, 'ghost')}
-      size={select('size', sizeOptions, 'small')}
-      kind={select('kind', typeOptions, 'normal')}
-      loading={boolean('loading', false)}
-      disabled={boolean('disabled', false)}
-      block={boolean('block', false)}
-      onClick={action('button-clicked')}
-    >
+    <ButtonLink href='https://bold.bridge.ufsc.br' target='_blank' {...args}>
       This is a link
     </ButtonLink>
   )
+}
+
+WithLink.args = {
+  skin: 'ghost',
+  size: 'small',
+  kind: 'normal',
 }

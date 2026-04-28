@@ -1,5 +1,4 @@
 import { action } from '@storybook/addon-actions'
-import { boolean, text } from '@storybook/addon-knobs'
 import React from 'react'
 import { DateRange } from './BaseDateRangeInput'
 import { DateRangePicker } from './DateRangePicker'
@@ -12,62 +11,32 @@ const periodWeek: DateRange = { startDate: weekStart, endDate: weekEnd }
 
 export default {
   title: 'Components/DateRangePicker',
+  component: DateRangePicker,
+  decorators: [
+    (Story) => (
+      <div style={{ minHeight: '300px' }}>
+        <Story />
+      </div>
+    ),
+  ],
+  args: {
+    clearable: true,
+    label: 'Text label',
+    disabled: false,
+    error: '',
+    inline: false,
+    required: true,
+    icon: 'calendarOutline',
+    onChange: action('changed'),
+  },
 }
 
-export const Default = () => (
-  <DateRangePicker
-    clearable={boolean('clearable', true)}
-    label={text('label', 'Text label')}
-    disabled={boolean('disabled', false)}
-    error={text('error', '')}
-    inline={boolean('inline', false)}
-    required={boolean('required', true)}
-    onChange={action('changed')}
-    icon='calendarOutline'
-    value={period}
-  />
-)
+export const Default = (args) => <DateRangePicker {...args} value={period} />
 
-export const MinMaxDate = () => (
-  <DateRangePicker
-    clearable={boolean('clearable', true)}
-    label={text('label', 'Text label')}
-    disabled={boolean('disabled', false)}
-    error={text('error', '')}
-    required={boolean('required', true)}
-    onChange={action('changed')}
-    icon='calendarOutline'
-    minDate={todayMinus10}
-    maxDate={new Date()}
-  />
-)
+export const MinMaxDate = (args) => <DateRangePicker {...args} minDate={todayMinus10} maxDate={new Date()} />
 
-export const WeekPicker = () => (
-  <DateRangePicker
-    clearable={boolean('clearable', true)}
-    label={text('label', 'Text label')}
-    disabled={boolean('disabled', false)}
-    error={text('error', '')}
-    required={boolean('required', true)}
-    onChange={action('changed')}
-    icon='calendarOutline'
-    onlyWeeks
-    value={periodWeek}
-  />
-)
+export const WeekPicker = (args) => <DateRangePicker {...args} onlyWeeks value={periodWeek} />
 
-export const WeekPickerMinMaxDate = () => (
-  <DateRangePicker
-    clearable={boolean('clearable', true)}
-    label={text('label', 'Text label')}
-    disabled={boolean('disabled', false)}
-    error={text('error', '')}
-    required={boolean('required', true)}
-    onChange={action('changed')}
-    icon='calendarOutline'
-    minDate={weekStart}
-    maxDate={new Date()}
-    onlyWeeks
-    value={periodWeek}
-  />
+export const WeekPickerMinMaxDate = (args) => (
+  <DateRangePicker {...args} minDate={weekStart} maxDate={new Date()} onlyWeeks value={periodWeek} />
 )
