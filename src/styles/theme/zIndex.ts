@@ -7,7 +7,7 @@ export interface ZIndex {
 export const zIndex: ZIndex = {
   popper: 1200,
   dropdown: 1300,
-  tooltip: 1400,
+  tooltip: 2000,
 }
 
 export interface ModalZIndex {
