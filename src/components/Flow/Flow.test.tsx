@@ -220,3 +220,32 @@ it('should accept "style" prop', () => {
 
   expect(getComputedStyle(flow).background).toBe('red')
 })
+
+it('should forward ref to the underlying element', () => {
+  const ref = React.createRef<HTMLDivElement>()
+
+  render(
+    <Flow direction='vertical' ref={ref}>
+      <span>1</span>
+      <span>2</span>
+      <span>3</span>
+    </Flow>
+  )
+
+  expect(ref.current).toBeInstanceOf(HTMLDivElement)
+})
+
+it('should allow ref access to DOM methods', () => {
+  const ref = React.createRef<HTMLDivElement>()
+
+  render(
+    <Flow direction='vertical' ref={ref}>
+      Content
+    </Flow>
+  )
+
+  expect(ref.current).toBeInstanceOf(HTMLDivElement)
+
+  expect(ref.current?.tagName).toBe('DIV')
+  expect(ref.current?.textContent).toBe('Content')
+})
