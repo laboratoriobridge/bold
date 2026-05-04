@@ -52,6 +52,26 @@ it('should render correctly when inline', () => {
   expect(container).toMatchSnapshot()
 })
 
+it('should render correctly when inline and with close button', () => {
+  const { container } = render(
+    <div>
+      <Alert type='info' inline onCloseClick={click}>
+        Information.
+      </Alert>
+      <Alert type='success' inline onCloseClick={click}>
+        Success message.
+      </Alert>
+      <Alert type='warning' inline onCloseClick={click}>
+        Alert message.
+      </Alert>
+      <Alert type='danger' inline onCloseClick={click}>
+        Error message.
+      </Alert>
+    </div>
+  )
+  expect(container).toMatchSnapshot()
+})
+
 it('should allow styles override', () => {
   const { container } = render(
     <Alert type='info' styles={{ wrapper: { color: 'red' }, container: { color: 'blue' } }}>

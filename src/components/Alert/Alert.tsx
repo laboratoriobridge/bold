@@ -74,7 +74,6 @@ export const createStyles = (theme: Theme, { inline }: AlertProps) => ({
     flex: 1,
   } as CSSProperties,
   closeButtonWrapper: {
-    marginTop: inline && '0.125rem',
     marginLeft: 'auto',
     paddingLeft: '1rem',
     display: 'inline-flex',
