@@ -409,4 +409,33 @@ describe('ModalHeader', () => {
       expect(mockSetSectionState).toHaveBeenCalledWith('hasHeader', true)
     })
   })
+
+  describe('ref forwarding', () => {
+    it('should forward ref to the underlying element', () => {
+      const mockContextValue = createMockModalContext()
+      const ref = React.createRef<HTMLDivElement>()
+
+      render(
+        <ModalContextProvider value={mockContextValue}>
+          <ModalHeader ref={ref}>Content</ModalHeader>
+        </ModalContextProvider>
+      )
+
+      expect(ref.current).toBeInstanceOf(HTMLDivElement)
+    })
+
+    it('should allow ref access to DOM methods', () => {
+      const mockContextValue = createMockModalContext()
+      const ref = React.createRef<HTMLDivElement>()
+
+      render(
+        <ModalContextProvider value={mockContextValue}>
+          <ModalHeader ref={ref}>Content</ModalHeader>
+        </ModalContextProvider>
+      )
+
+      expect(ref.current?.tagName).toBe('DIV')
+      expect(ref.current?.textContent).toBe('Content')
+    })
+  })
 })

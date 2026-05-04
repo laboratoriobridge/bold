@@ -1,26 +1,27 @@
-import React, { CSSProperties } from 'react'
+import React, { CSSProperties, Ref } from 'react'
 
 import { ExternalStyles, Theme, useStyles } from '../../styles'
 import { Omit } from '../../util'
 import { useModalContext } from '../../hooks'
+import { composeRefs } from '../../util/react'
 import { ModalScroll } from './Modal'
 
 export interface ModalBodyProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'style'> {
   style?: ExternalStyles
 }
 
-export function ModalBody(props: ModalBodyProps) {
+export const ModalBody = React.forwardRef((props: ModalBodyProps, ref: Ref<HTMLDivElement>) => {
   const { children, style, ...rest } = props
 
   const { scroll, bodyRef, hasHeader } = useModalContext()
   const { classes, css } = useStyles(createStyles, scroll, hasHeader)
 
   return (
-    <div className={css(classes.body, style)} ref={bodyRef} {...rest}>
+    <div className={css(classes.body, style)} ref={composeRefs(bodyRef, ref)} {...rest}>
       {children}
     </div>
   )
-}
+})
 
 const createStyles = (_theme: Theme, scroll: ModalScroll, hasHeader: boolean) => ({
   body: {
