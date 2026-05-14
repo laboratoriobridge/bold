@@ -15,7 +15,8 @@
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "strictNullChecks": false,
-    "noImplicitAny": false
+    "noImplicitAny": false,
+    "skipLibCheck": true
   },
   "exclude": [
     "node_modules",
@@ -28,8 +29,5 @@
     "build",
     "coverage",
     "site"
-  ],
-  "awesomeTypescriptLoaderOptions": {
-    "useBabel": true
-  }
+  ]
 }

@@ -20,7 +20,7 @@ exports[`should render correctly 1`] = `
 
 exports[`should render correctly 2`] = `
 .emotion-1 {
-  z-index: 1400;
+  z-index: 2000;
   -webkit-transition: opacity 200ms ease;
   transition: opacity 200ms ease;
   opacity: 0;

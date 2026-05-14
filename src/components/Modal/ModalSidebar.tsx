@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { Ref, useEffect } from 'react'
 import { ExternalStyles, Theme, useStyles } from '../../styles'
 import { useModalContext } from '../../hooks'
 import { ModalScroll } from './Modal'
@@ -10,7 +10,7 @@ export interface ModalSidebarProps extends Omit<React.HTMLAttributes<HTMLDivElem
   style?: ExternalStyles
 }
 
-export function ModalSidebar(props: ModalSidebarProps) {
+export const ModalSidebar = React.forwardRef((props: ModalSidebarProps, ref: Ref<HTMLDivElement>) => {
   const { position, style, children, ...rest } = props
 
   const { scroll, hasHeader, setSectionState } = useModalContext()
@@ -28,11 +28,11 @@ export function ModalSidebar(props: ModalSidebarProps) {
   }, [setSectionState, position])
 
   return (
-    <div className={css(classes.sidebar, style)} {...rest}>
+    <div className={css(classes.sidebar, style)} ref={ref} {...rest}>
       {children}
     </div>
   )
-}
+})
 
 const createStyles = (theme: Theme, position: ModalSidebarPosition, scroll: ModalScroll, hasHeader: boolean) => ({
   sidebar: {
