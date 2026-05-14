@@ -8,7 +8,7 @@ import { ModalContextValue, ModalContextProvider, ModalSectionsState } from '../
 import { ModalBackdrop } from './ModalBackdrop'
 import { ModalContainer, ModalContainerProps } from './ModalContainer'
 
-export type ModalSize = 'small' | 'large' | 'auto'
+export type ModalSize = 'small' | 'medium' | 'large' | 'auto'
 export type ModalDepthLevel = 1 | 2 | 3 | 4 | 5
 export type ModalScroll = 'body' | 'full'
 
@@ -166,6 +166,7 @@ const createStyles = (theme: Theme, depthLevel: number) => ({
     overflow: 'hidden',
   },
   large: { width: 900 },
+  medium: { width: 720 },
   small: { width: 520 },
   auto: { maxWidth: '100%' },
 })
