@@ -9,18 +9,19 @@ export type StatusType = 'info' | 'success' | 'warning' | 'danger'
 export interface StatusProps {
   type: StatusType
   text: string
+  icon?: Icons
   style?: ExternalStyles
 }
 
 export function Status(props: StatusProps) {
-  const { type, text, style } = props
+  const { type, text, icon, style } = props
 
   const { theme, css } = useStyles()
   const typeStyle = createTypesStyles(theme)[type]
 
   return (
     <HFlow hSpacing={0.5} alignItems='center' justifyContent='flex-start' style={css(typeStyle.style, style)}>
-      <Icon icon={typeStyle.icon} size={1} />
+      <Icon icon={icon ?? typeStyle.icon} size={1} />
       <Text color='inherit'>{text}</Text>
     </HFlow>
   )

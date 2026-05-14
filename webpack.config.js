@@ -1,7 +1,6 @@
 // @ts-check
 
 const path = require('path')
-const { CheckerPlugin } = require('awesome-typescript-loader')
 const TerserPlugin = require('terser-webpack-plugin')
 
 /**
@@ -23,23 +22,25 @@ const config = {
   module: {
     rules: [
       {
-        loader: 'awesome-typescript-loader',
         test: /\.tsx?$/,
+        loader: 'ts-loader',
+        exclude: /node_modules/,
       },
       {
-        loader: 'raw-loader',
         test: /\.css$/,
+        type: 'asset/source',
       },
     ],
   },
-  plugins: [new CheckerPlugin()],
-  externals: ['react', 'react-dom'],
+  externals: {
+    react: 'react',
+    'react-dom': 'react-dom',
+  },
   optimization: {
     minimize: true,
     minimizer: [
       new TerserPlugin({
         terserOptions: {
-          sourceMap: true,
           compress: {
             keep_fnames: true,
           },

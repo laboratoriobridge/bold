@@ -1,6 +1,8 @@
 import * as Components from './'
 
 export type Icons =
+  | 'abdomenFilled'
+  | 'abdomenOutline'
   | 'abdominalMeasuresFilled'
   | 'abdominalMeasuresOutline'
   | 'addProfessionalFilled'
@@ -71,10 +73,20 @@ export type Icons =
   | 'building'
   | 'busFilled'
   | 'busOutline'
+  | 'calculateFilled'
+  | 'calculateOutline'
   | 'calendarAddFilled'
   | 'calendarAddOutline'
+  | 'calendarCheckFilled'
+  | 'calendarCheckOutline'
+  | 'calendarClockFilled'
+  | 'calendarClockOutline'
   | 'calendarFilled'
   | 'calendarOutline'
+  | 'calendarTimesFilled'
+  | 'calendarTimesOutline'
+  | 'calendarWarningFilled'
+  | 'calendarWarningOutline'
   | 'calendarWithDropFilled'
   | 'calendarWithDropOutline'
   | 'calfMeasuaresFilled'
@@ -135,6 +147,7 @@ export type Icons =
   | 'dropOutline'
   | 'dumbbellFilled'
   | 'dumbbellOutline'
+  | 'ear'
   | 'edema'
   | 'emailFilled'
   | 'emailOutline'
@@ -152,6 +165,7 @@ export type Icons =
   | 'faqOutline'
   | 'faucetFilled'
   | 'faucetOutline'
+  | 'female'
   | 'fence'
   | 'fileEmptyFilled'
   | 'fileEmptyOutline'
@@ -162,10 +176,13 @@ export type Icons =
   | 'filterFilled'
   | 'filterOutline'
   | 'flexedBicepsFilled'
+  | 'flexedBicepsOutline'
   | 'floorPlan'
   | 'flowchart'
   | 'folderFilled'
   | 'folderOutline'
+  | 'footFilled'
+  | 'footOutline'
   | 'fundalHeightFilled'
   | 'fundalHeightOutline'
   | 'gantt'
@@ -227,6 +244,7 @@ export type Icons =
   | 'lockOpenFilled'
   | 'lockOpenOutline'
   | 'lungs'
+  | 'male'
   | 'mapFilled'
   | 'mapMarkerFilled'
   | 'mapMarkerOutline'
@@ -238,6 +256,8 @@ export type Icons =
   | 'medicineBottleFilled'
   | 'medicineBottleOutline'
   | 'medicineExclamation'
+  | 'megaphoneFilled'
+  | 'megaphoneOutline'
   | 'microphoneFilled'
   | 'microphoneOffFilled'
   | 'microphoneOffOutline'
@@ -340,10 +360,13 @@ export type Icons =
   | 'shieldOutline'
   | 'shoppingCartFilled'
   | 'shoppingCartOutline'
+  | 'signature'
   | 'signLanguage'
   | 'signOut'
   | 'sixtyPlus'
   | 'skate'
+  | 'skinFilled'
+  | 'skinOutline'
   | 'smileFaceFilled'
   | 'smileFaceOutline'
   | 'sneakerFilled'
@@ -436,6 +459,8 @@ export type Icons =
 export const IconMap: {
   [key in Icons]: React.ComponentType<React.SVGProps<SVGSVGElement>>
 } = {
+  abdomenFilled: Components.AbdomenFilled,
+  abdomenOutline: Components.AbdomenOutline,
   abdominalMeasuresFilled: Components.AbdominalMeasuresFilled,
   abdominalMeasuresOutline: Components.AbdominalMeasuresOutline,
   addProfessionalFilled: Components.AddProfessionalFilled,
@@ -506,10 +531,20 @@ export const IconMap: {
   building: Components.Building,
   busFilled: Components.BusFilled,
   busOutline: Components.BusOutline,
+  calculateFilled: Components.CalculateFilled,
+  calculateOutline: Components.CalculateOutline,
   calendarAddFilled: Components.CalendarAddFilled,
   calendarAddOutline: Components.CalendarAddOutline,
+  calendarCheckFilled: Components.CalendarCheckFilled,
+  calendarCheckOutline: Components.CalendarCheckOutline,
+  calendarClockFilled: Components.CalendarClockFilled,
+  calendarClockOutline: Components.CalendarClockOutline,
   calendarFilled: Components.CalendarFilled,
   calendarOutline: Components.CalendarOutline,
+  calendarTimesFilled: Components.CalendarTimesFilled,
+  calendarTimesOutline: Components.CalendarTimesOutline,
+  calendarWarningFilled: Components.CalendarWarningFilled,
+  calendarWarningOutline: Components.CalendarWarningOutline,
   calendarWithDropFilled: Components.CalendarWithDropFilled,
   calendarWithDropOutline: Components.CalendarWithDropOutline,
   calfMeasuaresFilled: Components.CalfMeasuaresFilled,
@@ -570,6 +605,7 @@ export const IconMap: {
   dropOutline: Components.DropOutline,
   dumbbellFilled: Components.DumbbellFilled,
   dumbbellOutline: Components.DumbbellOutline,
+  ear: Components.Ear,
   edema: Components.Edema,
   emailFilled: Components.EmailFilled,
   emailOutline: Components.EmailOutline,
@@ -587,6 +623,7 @@ export const IconMap: {
   faqOutline: Components.FaqOutline,
   faucetFilled: Components.FaucetFilled,
   faucetOutline: Components.FaucetOutline,
+  female: Components.Female,
   fence: Components.Fence,
   fileEmptyFilled: Components.FileEmptyFilled,
   fileEmptyOutline: Components.FileEmptyOutline,
@@ -597,10 +634,13 @@ export const IconMap: {
   filterFilled: Components.FilterFilled,
   filterOutline: Components.FilterOutline,
   flexedBicepsFilled: Components.FlexedBicepsFilled,
+  flexedBicepsOutline: Components.FlexedBicepsOutline,
   floorPlan: Components.FloorPlan,
   flowchart: Components.Flowchart,
   folderFilled: Components.FolderFilled,
   folderOutline: Components.FolderOutline,
+  footFilled: Components.FootFilled,
+  footOutline: Components.FootOutline,
   fundalHeightFilled: Components.FundalHeightFilled,
   fundalHeightOutline: Components.FundalHeightOutline,
   gantt: Components.Gantt,
@@ -662,6 +702,7 @@ export const IconMap: {
   lockOpenFilled: Components.LockOpenFilled,
   lockOpenOutline: Components.LockOpenOutline,
   lungs: Components.Lungs,
+  male: Components.Male,
   mapFilled: Components.MapFilled,
   mapMarkerFilled: Components.MapMarkerFilled,
   mapMarkerOutline: Components.MapMarkerOutline,
@@ -673,6 +714,8 @@ export const IconMap: {
   medicineBottleFilled: Components.MedicineBottleFilled,
   medicineBottleOutline: Components.MedicineBottleOutline,
   medicineExclamation: Components.MedicineExclamation,
+  megaphoneFilled: Components.MegaphoneFilled,
+  megaphoneOutline: Components.MegaphoneOutline,
   microphoneFilled: Components.MicrophoneFilled,
   microphoneOffFilled: Components.MicrophoneOffFilled,
   microphoneOffOutline: Components.MicrophoneOffOutline,
@@ -775,10 +818,13 @@ export const IconMap: {
   shieldOutline: Components.ShieldOutline,
   shoppingCartFilled: Components.ShoppingCartFilled,
   shoppingCartOutline: Components.ShoppingCartOutline,
+  signature: Components.Signature,
   signLanguage: Components.SignLanguage,
   signOut: Components.SignOut,
   sixtyPlus: Components.SixtyPlus,
   skate: Components.Skate,
+  skinFilled: Components.SkinFilled,
+  skinOutline: Components.SkinOutline,
   smileFaceFilled: Components.SmileFaceFilled,
   smileFaceOutline: Components.SmileFaceOutline,
   sneakerFilled: Components.SneakerFilled,
