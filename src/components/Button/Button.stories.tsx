@@ -48,7 +48,7 @@ export const WithLink = () => {
 
   return (
     <ButtonLink
-      href='https://bold.bridge.ufsc.br'
+      href='https://bold.bridge.ufsc.tech'
       component='a'
       target='_blank'
       skin={select('skin', skinOptions, 'ghost')}
