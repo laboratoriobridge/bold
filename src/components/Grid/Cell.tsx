@@ -6,7 +6,7 @@ import { Omit } from '../../util'
 import { Grid, GridContext, GridProps, GridResponsiveGap } from './Grid'
 
 export type AlignSelf = 'auto' | 'flex-start' | 'flex-end' | 'center' | 'baseline' | 'stretch'
-export type CellSize = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12
+export type CellSize = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 'hide'
 
 export interface CellProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'style'> {
   style?: ExternalStyles
@@ -62,29 +62,32 @@ export function Cell(props: CellProps) {
   const { classes: gapClasses } = useStyles(createGapStyles, gridProps)
   const { classes: gapVerticalClasses } = useStyles(createGapVerticalStyles, gridProps)
 
-  const className = css(
-    classes.cell,
-    (xs || size) && sizeClasses.xs,
-    sm && sizeClasses.sm,
-    md && sizeClasses.md,
-    lg && sizeClasses.lg,
-    xl && sizeClasses.xl,
-    typeof gap === 'object' && [
-      gap.xs && gapClasses.xs,
-      gap.sm && gapClasses.sm,
-      gap.md && gapClasses.md,
-      gap.lg && gapClasses.lg,
-      gap.xl && gapClasses.xl,
-    ],
-    typeof gapVertical === 'object' && [
-      gapVertical.xs && gapVerticalClasses.xs,
-      gapVertical.sm && gapVerticalClasses.sm,
-      gapVertical.md && gapVerticalClasses.md,
-      gapVertical.lg && gapVerticalClasses.lg,
-      gapVertical.xl && gapVerticalClasses.xl,
-    ],
-    style
-  )
+  const className =
+    size === 'hide'
+      ? classes.hide
+      : css(
+          classes.cell,
+          (xs || size) && sizeClasses.xs,
+          sm && sizeClasses.sm,
+          md && sizeClasses.md,
+          lg && sizeClasses.lg,
+          xl && sizeClasses.xl,
+          typeof gap === 'object' && [
+            gap.xs && gapClasses.xs,
+            gap.sm && gapClasses.sm,
+            gap.md && gapClasses.md,
+            gap.lg && gapClasses.lg,
+            gap.xl && gapClasses.xl,
+          ],
+          typeof gapVertical === 'object' && [
+            gapVertical.xs && gapVerticalClasses.xs,
+            gapVertical.sm && gapVerticalClasses.sm,
+            gapVertical.md && gapVerticalClasses.md,
+            gapVertical.lg && gapVerticalClasses.lg,
+            gapVertical.xl && gapVerticalClasses.xl,
+          ],
+          style
+        )
 
   return <div className={className} {...rest} />
 }
@@ -94,6 +97,9 @@ export const createStyles = (
   { alignSelf, flexBasis, flexGrow, flexShrink }: CellProps,
   { gap, gapVertical }: GridProps
 ) => ({
+  hide: {
+    display: 'none',
+  },
   cell: {
     alignSelf,
     flexBasis,
