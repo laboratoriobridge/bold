@@ -16,7 +16,7 @@ export interface FlowProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 's
 }
 
 export function Flow(props: FlowProps) {
-  const { direction, gap = 1, alignItems, justifyContent, justifyItems = 'start', style, ...rest } = props
+  const { direction, gap = 1, alignItems, justifyContent, justifyItems = 'stretch', style, ...rest } = props
   const { classes, css } = useStyles(createStyles, direction, gap, alignItems, justifyContent, justifyItems)
 
   return <div className={css(classes.container, style)} {...rest} />

@@ -17,7 +17,7 @@ it('should render correctly', () => {
       grid-auto-flow: column;
       grid-auto-columns: minmax(min-content,max-content);
       gap: 1rem;
-      justify-items: start;
+      justify-items: stretch;
     }
 
     <div>
@@ -143,7 +143,7 @@ it('should apply justifyContent', () => {
   expect(styles.justifyContent).toBe('space-between')
 })
 
-it('should apply justifyItems start by default', () => {
+it('should apply justifyItems stretch by default', () => {
   const { getByTestId } = render(
     <Flow direction='vertical' data-testid='flow-with-default-justify-items'>
       <div>Child</div>
@@ -153,7 +153,7 @@ it('should apply justifyItems start by default', () => {
   const flow = getByTestId('flow-with-default-justify-items')
   const styles = getComputedStyle(flow)
 
-  expect(styles.justifyItems).toBe('start')
+  expect(styles.justifyItems).toBe('stretch')
 })
 
 it('should apply custom justifyItems', () => {
