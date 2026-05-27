@@ -1,14 +1,13 @@
-import React, { CSSProperties, ReactNode, useEffect } from 'react'
+import React, { CSSProperties, ReactNode, Ref, RefAttributes, useEffect } from 'react'
 import { ExternalStyles, Theme, useStyles } from '../../styles'
 import { Heading } from '../Heading'
-import { HFlow } from '../HFlow'
-import { VFlow } from '../VFlow'
 import { useIsOverflowing } from '../../hooks'
 import { useModalContext } from '../../hooks'
+import { Flow } from '../Flow'
 import { ModalCloseButton } from './ModalCloseButton'
 import { ModalHeaderIconType, ModalHeaderIcon } from './ModalHeaderIcon'
 
-type ModalHeaderBaseProps = {
+type ModalHeaderBaseProps = RefAttributes<HTMLDivElement> & {
   hasCloseButton?: boolean
   style?: ExternalStyles
   onCloseButtonClick?: () => void
@@ -24,53 +23,59 @@ export type ModalHeaderChildrenProps = ModalHeaderBaseProps & {
   children: ReactNode
 }
 
-export function ModalHeader(props: ModalHeaderContentProps): JSX.Element
-export function ModalHeader(props: ModalHeaderChildrenProps): JSX.Element
-
-export function ModalHeader(props: ModalHeaderContentProps | ModalHeaderChildrenProps) {
-  const { hasCloseButton = true, style, onCloseButtonClick } = props
-
-  const { scroll, bodyRef, hasLeftSidebar, hasRightSidebar, setSectionState } = useModalContext()
-  const isBodyOverflowing = useIsOverflowing(bodyRef, 'vertical')
-  const hasSidebar = hasLeftSidebar || hasRightSidebar
-  const showHeaderShadow = scroll === 'body' && isBodyOverflowing
-  const showHeaderBorder = hasSidebar && (scroll === 'full' || (scroll === 'body' && !isBodyOverflowing))
-  const { classes, css } = useStyles(createStyles, showHeaderShadow, showHeaderBorder, hasSidebar)
-
-  useEffect(() => {
-    setSectionState('hasHeader', true)
-    return () => setSectionState('hasHeader', false)
-  }, [setSectionState])
-
-  return (
-    <HFlow
-      hSpacing={0.5}
-      justifyContent='space-between'
-      alignItems='flex-start'
-      style={css(classes.header, style)}
-      data-testid='modal-header'
-    >
-      {isHeaderWithChildren(props) ? (
-        props.children
-      ) : (
-        <HFlow hSpacing={1} justifyContent='flex-start' alignItems='center'>
-          {props.icon && <ModalHeaderIcon icon={props.icon} />}
-          <VFlow vSpacing={0}>
-            <Heading level={1} color='normal' fontWeight='bold'>
-              {props.title}
-            </Heading>
-            {props.subtitle && (
-              <Heading level={5} color='normal' fontWeight='normal'>
-                {props.subtitle}
-              </Heading>
-            )}
-          </VFlow>
-        </HFlow>
-      )}
-      {hasCloseButton && <ModalCloseButton onClick={onCloseButtonClick} />}
-    </HFlow>
-  )
+interface ModalHeaderComponent {
+  (props: ModalHeaderContentProps): JSX.Element
+  (props: ModalHeaderChildrenProps): JSX.Element
 }
+
+export const ModalHeader = React.forwardRef(
+  (props: ModalHeaderContentProps | ModalHeaderChildrenProps, ref: Ref<HTMLDivElement>) => {
+    const { hasCloseButton = true, style, onCloseButtonClick } = props
+
+    const { scroll, bodyRef, hasLeftSidebar, hasRightSidebar, setSectionState } = useModalContext()
+    const isBodyOverflowing = useIsOverflowing(bodyRef, 'vertical')
+    const hasSidebar = hasLeftSidebar || hasRightSidebar
+    const showHeaderShadow = scroll === 'body' && isBodyOverflowing
+    const showHeaderBorder = hasSidebar && (scroll === 'full' || (scroll === 'body' && !isBodyOverflowing))
+    const { classes, css } = useStyles(createStyles, showHeaderShadow, showHeaderBorder, hasSidebar)
+
+    useEffect(() => {
+      setSectionState('hasHeader', true)
+      return () => setSectionState('hasHeader', false)
+    }, [setSectionState])
+
+    return (
+      <Flow
+        ref={ref}
+        direction='horizontal'
+        gap={0.5}
+        justifyContent='space-between'
+        alignItems='flex-start'
+        style={css(classes.header, style)}
+        data-testid='modal-header'
+      >
+        {isHeaderWithChildren(props) ? (
+          props.children
+        ) : (
+          <Flow direction='horizontal' gap={1} justifyContent='flex-start' alignItems='center'>
+            {props.icon && <ModalHeaderIcon icon={props.icon} />}
+            <Flow direction='vertical' gap={0}>
+              <Heading level={1} color='normal' fontWeight='bold'>
+                {props.title}
+              </Heading>
+              {props.subtitle && (
+                <Heading level={5} color='normal' fontWeight='normal'>
+                  {props.subtitle}
+                </Heading>
+              )}
+            </Flow>
+          </Flow>
+        )}
+        {hasCloseButton && <ModalCloseButton onClick={onCloseButtonClick} />}
+      </Flow>
+    )
+  }
+) as ModalHeaderComponent
 
 const isHeaderWithChildren = (
   props: ModalHeaderContentProps | ModalHeaderChildrenProps

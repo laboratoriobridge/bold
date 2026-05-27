@@ -76,6 +76,6 @@ export default [
     title: 'menu-storybook',
     icon: 'list',
     target: '_blank',
-    href: 'https://bold.bridge.ufsc.br/storybook',
+    href: 'https://bold.bridge.ufsc.tech/storybook',
   },
 ]

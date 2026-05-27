@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: 'http://bold.bridge.ufsc.br',
+    siteUrl: 'http://bold.bridge.ufsc.tech',
   },
   plugins: [
     'gatsby-plugin-typescript',
