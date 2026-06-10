@@ -42,7 +42,7 @@ export const WithLink = (args) => {
   )
 
   return (
-    <ButtonLink href='https://bold.bridge.ufsc.br' target='_blank' {...args}>
+    <ButtonLink href='https://bold.bridge.ufsc.tech' component='a' target='_blank' {...args}>
       This is a link
     </ButtonLink>
   )

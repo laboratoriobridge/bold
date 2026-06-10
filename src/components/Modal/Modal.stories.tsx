@@ -5,10 +5,8 @@ import { textColorMap } from '../../styles/theme/createPallete'
 import { Button } from '../Button'
 import { Icons } from '../Icon'
 import { IconMap } from '../Icon/generated/types'
-import { VFlow } from '../VFlow'
 import { Text } from '../Text'
 
-import { HFlow } from '../HFlow'
 import {
   Modal,
   ModalScroll,
@@ -24,6 +22,7 @@ import {
 import { Card } from '../Card'
 import { Heading } from '../Heading'
 import { Tag } from '../Tag'
+import { Flow } from '../Flow'
 import { ModalHeader } from './ModalHeader'
 
 const sizes: { [key in ModalSize]: ModalSize } = {
@@ -104,7 +103,7 @@ export const Default = (args) => {
           hasCloseButton={args.hasCloseButton}
         />
         <ModalBody>
-          <VFlow>
+          <Flow direction='vertical'>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer molestie, dui id luctus commodo, nunc
               enim facilisis odio, vel hendrerit erat neque eu nisl. Donec urna felis, pharetra nec urna a, efficitur
@@ -168,15 +167,15 @@ export const Default = (args) => {
               Suspendisse finibus, dui at tristique mollis, felis mauris vulputate leo, sed vehicula lacus nibh ut
               dolor.
             </p>
-          </VFlow>
+          </Flow>
         </ModalBody>
         <ModalFooter>
-          <HFlow alignItems='center' justifyContent='flex-end'>
+          <Flow direction='horizontal' alignItems='center' justifyContent='flex-end'>
             <ModalFooterButton onClick={action('cancel clicked')}>Cancel</ModalFooterButton>
             <ModalFooterButton kind='primary' onClick={action('save clicked')}>
               Save
             </ModalFooterButton>
-          </HFlow>
+          </Flow>
         </ModalFooter>
       </Modal>
     </div>
@@ -191,24 +190,24 @@ export const Sidebar = (args) => {
       <Modal open={args.open} size='large' scroll={args.scroll}>
         <ModalHeader title='Modal with sidebar' subtitle='' icon='infoCircleOutline' />
         <ModalSidebar position={args.position}>
-          <VFlow vSpacing={0.5}>
+          <Flow direction='vertical' gap={0.5}>
             {Array.from({ length: 4 }).map((_, index) => (
               <Card key={index}>
-                <VFlow vSpacing={0.25}>
-                  <VFlow vSpacing={0.25}>
-                    <HFlow hSpacing={0.5} alignItems='center'>
+                <Flow direction='vertical' gap={0.25}>
+                  <Flow direction='vertical' gap={0.25}>
+                    <Flow direction='horizontal' gap={0.5} alignItems='center'>
                       <Heading level={4}>Title</Heading>
                       <Tag>Tag label</Tag>
-                    </HFlow>
+                    </Flow>
                     <Text>Description</Text>
-                  </VFlow>
-                </VFlow>
+                  </Flow>
+                </Flow>
               </Card>
             ))}
-          </VFlow>
+          </Flow>
         </ModalSidebar>
         <ModalBody>
-          <VFlow>
+          <Flow direction='vertical'>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer molestie, dui id luctus commodo, nunc
               enim facilisis odio, vel hendrerit erat neque eu nisl. Donec urna felis, pharetra nec urna a, efficitur
@@ -236,15 +235,15 @@ export const Sidebar = (args) => {
               Suspendisse finibus, dui at tristique mollis, felis mauris vulputate leo, sed vehicula lacus nibh ut
               dolor.
             </p>
-          </VFlow>
+          </Flow>
         </ModalBody>
         <ModalFooter>
-          <HFlow alignItems='center' justifyContent='flex-end'>
+          <Flow direction='horizontal' alignItems='center' justifyContent='flex-end'>
             <ModalFooterButton onClick={action('cancel clicked')}>Cancel</ModalFooterButton>
             <ModalFooterButton kind='primary' onClick={action('save clicked')}>
               Save
             </ModalFooterButton>
-          </HFlow>
+          </Flow>
         </ModalFooter>
       </Modal>
     </div>
@@ -299,7 +298,7 @@ export const ModalOverlap = (args) => (
         </p>
       </ModalBody>
       <ModalFooter>
-        <HFlow justifyContent='flex-end'>
+        <Flow direction='horizontal' justifyContent='flex-end'>
           <ModalFooterButton onClick={action('cancel clicked')}>Cancel</ModalFooterButton>
           <ModalFooterButton
             kind='primary'
@@ -318,7 +317,7 @@ export const ModalOverlap = (args) => (
           >
             Open a modal that overlaps
           </ModalFooterButton>
-        </HFlow>
+        </Flow>
       </ModalFooter>
     </Modal>
     <ModalMountTarget />

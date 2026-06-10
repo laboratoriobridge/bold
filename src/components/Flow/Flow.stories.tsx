@@ -49,7 +49,7 @@ export default {
     direction: 'horizontal',
     alignItems: 'center',
     justifyContent: 'flex-start',
-    justifyItems: 'start',
+    justifyItems: 'stretch',
     gap: 1,
   },
 }

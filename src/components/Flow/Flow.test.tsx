@@ -17,7 +17,7 @@ it('should render correctly', () => {
       grid-auto-flow: column;
       grid-auto-columns: minmax(min-content,max-content);
       gap: 1rem;
-      justify-items: start;
+      justify-items: stretch;
     }
 
     <div>
@@ -143,7 +143,7 @@ it('should apply justifyContent', () => {
   expect(styles.justifyContent).toBe('space-between')
 })
 
-it('should apply justifyItems start by default', () => {
+it('should apply justifyItems stretch by default', () => {
   const { getByTestId } = render(
     <Flow direction='vertical' data-testid='flow-with-default-justify-items'>
       <div>Child</div>
@@ -153,7 +153,7 @@ it('should apply justifyItems start by default', () => {
   const flow = getByTestId('flow-with-default-justify-items')
   const styles = getComputedStyle(flow)
 
-  expect(styles.justifyItems).toBe('start')
+  expect(styles.justifyItems).toBe('stretch')
 })
 
 it('should apply custom justifyItems', () => {
@@ -219,4 +219,33 @@ it('should accept "style" prop', () => {
   const flow = getByTestId('flow-with-background')
 
   expect(getComputedStyle(flow).background).toBe('red')
+})
+
+it('should forward ref to the underlying element', () => {
+  const ref = React.createRef<HTMLDivElement>()
+
+  render(
+    <Flow direction='vertical' ref={ref}>
+      <span>1</span>
+      <span>2</span>
+      <span>3</span>
+    </Flow>
+  )
+
+  expect(ref.current).toBeInstanceOf(HTMLDivElement)
+})
+
+it('should allow ref access to DOM methods', () => {
+  const ref = React.createRef<HTMLDivElement>()
+
+  render(
+    <Flow direction='vertical' ref={ref}>
+      Content
+    </Flow>
+  )
+
+  expect(ref.current).toBeInstanceOf(HTMLDivElement)
+
+  expect(ref.current?.tagName).toBe('DIV')
+  expect(ref.current?.textContent).toBe('Content')
 })

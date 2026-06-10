@@ -17,7 +17,7 @@ Please remember to write the documentation in both languages (Portuguese/English
 1. Search for issues with the BUG tag to see if the issue has already been reported by another contributor.
 1. Check if the bug has already been resolved - try to reproduce the bug using the main or branch related to the issue.
 1. When reporting the bug, use our template and try to insert as much information as possible about the problem. Describe the bug, the steps to reproduce the error, the expected behavior and the version of the system. Whenever possible, include images and supplementary information to help explain the context.
-1. To facilitate the search, name the issue as follows: [Component] Error found and add the tag BUG. Use the names specified on the website http://bold.bridge.ufsc.br/
+1. To facilitate the search, name the issue as follows: [Component] Error found and add the tag BUG. Use the names specified on the website http://bold.bridge.ufsc.tech/
 
 Example: [Select] Component doesn't render correctly in Safari
 
