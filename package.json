@@ -68,7 +68,7 @@
     "text-mask-addons": "3.8.0"
   },
   "devDependencies": {
-    "@babel/core": "7.29.0",
+    "@babel/core": "7.29.6",
     "@storybook/addon-a11y": "7.6.24",
     "@storybook/addon-essentials": "7.6.24",
     "@storybook/addon-knobs": "8.0.1",
