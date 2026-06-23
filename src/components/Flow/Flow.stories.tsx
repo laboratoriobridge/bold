@@ -35,7 +35,7 @@ export const Default = () => (
     gap={number('gap', 1)}
     alignItems={select('alignItems', alignItemsOptions, 'center')}
     justifyContent={select('justifyContent', justifyContentOptions, 'flex-start')}
-    justifyItems={select('justifyItems', justifyItemsOptions, 'start')}
+    justifyItems={select('justifyItems', justifyItemsOptions, 'stretch')}
   >
     <Button kind='primary'>Button 1</Button>
     <Button>Button 2</Button>
