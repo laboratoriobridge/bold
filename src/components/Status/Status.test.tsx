@@ -9,7 +9,7 @@ it('should render correctly with type info', () => {
       display: grid;
       grid-auto-flow: column;
       grid-auto-columns: minmax(min-content,max-content);
-      grid-gap: 0.5rem;
+      gap: 0.5rem;
       -webkit-align-items: center;
       -webkit-box-align: center;
       -ms-flex-align: center;
@@ -18,6 +18,7 @@ it('should render correctly with type info', () => {
       -webkit-justify-content: flex-start;
       -ms-flex-pack: start;
       justify-content: flex-start;
+      justify-items: start;
       color: #0069D0;
     }
 
@@ -80,7 +81,7 @@ it('should render correctly with type success', () => {
       display: grid;
       grid-auto-flow: column;
       grid-auto-columns: minmax(min-content,max-content);
-      grid-gap: 0.5rem;
+      gap: 0.5rem;
       -webkit-align-items: center;
       -webkit-box-align: center;
       -ms-flex-align: center;
@@ -89,6 +90,7 @@ it('should render correctly with type success', () => {
       -webkit-justify-content: flex-start;
       -ms-flex-pack: start;
       justify-content: flex-start;
+      justify-items: start;
       color: #217B00;
     }
 
@@ -138,7 +140,7 @@ it('should render correctly with type warning', () => {
       display: grid;
       grid-auto-flow: column;
       grid-auto-columns: minmax(min-content,max-content);
-      grid-gap: 0.5rem;
+      gap: 0.5rem;
       -webkit-align-items: center;
       -webkit-box-align: center;
       -ms-flex-align: center;
@@ -147,6 +149,7 @@ it('should render correctly with type warning', () => {
       -webkit-justify-content: flex-start;
       -ms-flex-pack: start;
       justify-content: flex-start;
+      justify-items: start;
       color: #AD5000;
     }
 
@@ -196,7 +199,7 @@ it('should render correctly with type danger', () => {
       display: grid;
       grid-auto-flow: column;
       grid-auto-columns: minmax(min-content,max-content);
-      grid-gap: 0.5rem;
+      gap: 0.5rem;
       -webkit-align-items: center;
       -webkit-box-align: center;
       -ms-flex-align: center;
@@ -205,6 +208,7 @@ it('should render correctly with type danger', () => {
       -webkit-justify-content: flex-start;
       -ms-flex-pack: start;
       justify-content: flex-start;
+      justify-items: start;
       color: #D01E29;
     }
 
@@ -254,7 +258,7 @@ it('should accept "style" prop', () => {
       display: grid;
       grid-auto-flow: column;
       grid-auto-columns: minmax(min-content,max-content);
-      grid-gap: 0.5rem;
+      gap: 0.5rem;
       -webkit-align-items: center;
       -webkit-box-align: center;
       -ms-flex-align: center;
@@ -263,6 +267,7 @@ it('should accept "style" prop', () => {
       -webkit-justify-content: flex-start;
       -ms-flex-pack: start;
       justify-content: flex-start;
+      justify-items: start;
       color: #0069D0;
       background: red;
     }
@@ -315,7 +320,7 @@ describe('custom icon', () => {
         display: grid;
         grid-auto-flow: column;
         grid-auto-columns: minmax(min-content,max-content);
-        grid-gap: 0.5rem;
+        gap: 0.5rem;
         -webkit-align-items: center;
         -webkit-box-align: center;
         -ms-flex-align: center;
@@ -324,6 +329,7 @@ describe('custom icon', () => {
         -webkit-justify-content: flex-start;
         -ms-flex-pack: start;
         justify-content: flex-start;
+        justify-items: start;
         color: #217B00;
       }
 
@@ -374,7 +380,7 @@ describe('custom icon', () => {
         display: grid;
         grid-auto-flow: column;
         grid-auto-columns: minmax(min-content,max-content);
-        grid-gap: 0.5rem;
+        gap: 0.5rem;
         -webkit-align-items: center;
         -webkit-box-align: center;
         -ms-flex-align: center;
@@ -383,6 +389,7 @@ describe('custom icon', () => {
         -webkit-justify-content: flex-start;
         -ms-flex-pack: start;
         justify-content: flex-start;
+        justify-items: start;
         color: #217B00;
       }
 
@@ -420,7 +427,7 @@ describe('custom icon', () => {
         display: grid;
         grid-auto-flow: column;
         grid-auto-columns: minmax(min-content,max-content);
-        grid-gap: 0.5rem;
+        gap: 0.5rem;
         -webkit-align-items: center;
         -webkit-box-align: center;
         -ms-flex-align: center;
@@ -429,6 +436,7 @@ describe('custom icon', () => {
         -webkit-justify-content: flex-start;
         -ms-flex-pack: start;
         justify-content: flex-start;
+        justify-items: start;
         color: #0069D0;
       }
 
@@ -492,7 +500,7 @@ describe('custom icon', () => {
         display: grid;
         grid-auto-flow: column;
         grid-auto-columns: minmax(min-content,max-content);
-        grid-gap: 0.5rem;
+        gap: 0.5rem;
         -webkit-align-items: center;
         -webkit-box-align: center;
         -ms-flex-align: center;
@@ -501,6 +509,7 @@ describe('custom icon', () => {
         -webkit-justify-content: flex-start;
         -ms-flex-pack: start;
         justify-content: flex-start;
+        justify-items: start;
         color: #AD5000;
       }
 
@@ -551,7 +560,7 @@ describe('custom icon', () => {
         display: grid;
         grid-auto-flow: column;
         grid-auto-columns: minmax(min-content,max-content);
-        grid-gap: 0.5rem;
+        gap: 0.5rem;
         -webkit-align-items: center;
         -webkit-box-align: center;
         -ms-flex-align: center;
@@ -560,6 +569,7 @@ describe('custom icon', () => {
         -webkit-justify-content: flex-start;
         -ms-flex-pack: start;
         justify-content: flex-start;
+        justify-items: start;
         color: #D01E29;
       }
 
@@ -610,7 +620,7 @@ describe('custom icon', () => {
         display: grid;
         grid-auto-flow: column;
         grid-auto-columns: minmax(min-content,max-content);
-        grid-gap: 0.5rem;
+        gap: 0.5rem;
         -webkit-align-items: center;
         -webkit-box-align: center;
         -ms-flex-align: center;
@@ -619,6 +629,7 @@ describe('custom icon', () => {
         -webkit-justify-content: flex-start;
         -ms-flex-pack: start;
         justify-content: flex-start;
+        justify-items: start;
         color: #217B00;
       }
 

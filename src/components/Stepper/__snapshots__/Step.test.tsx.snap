@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should accept "style" prop 1`] = `
-.emotion-7 {
+.emotion-6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -28,32 +28,12 @@ exports[`should accept "style" prop 1`] = `
   border-top-color: #D3D4DD;
 }
 
-.emotion-5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.emotion-8 {
-  display: inline-block;
-  margin-bottom: 0rem;
-  margin-top: 0rem;
-}
-
-.emotion-8:first-of-type {
-  margin-top: 0;
-}
-
-.emotion-8:last-of-type {
-  margin-bottom: 0;
-}
-
-.emotion-8:empty {
-  display: none;
+.emotion-7 {
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-rows: minmax(min-content,max-content);
+  gap: 0rem;
+  justify-items: stretch;
 }
 
 .emotion-2 {
@@ -89,21 +69,11 @@ exports[`should accept "style" prop 1`] = `
 }
 
 .emotion-4 {
-  display: inline-block;
-  margin-bottom: 0.25rem;
-  margin-top: 0.25rem;
-}
-
-.emotion-4:first-of-type {
-  margin-top: 0;
-}
-
-.emotion-4:last-of-type {
-  margin-bottom: 0;
-}
-
-.emotion-4:empty {
-  display: none;
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-rows: minmax(min-content,max-content);
+  gap: 0.5rem;
+  justify-items: stretch;
 }
 
 .emotion-3 {
@@ -117,7 +87,7 @@ exports[`should accept "style" prop 1`] = `
   transition: all .4s ease;
 }
 
-.emotion-10 {
+.emotion-8 {
   position: relative;
   text-align: center;
   color: red;
@@ -125,47 +95,39 @@ exports[`should accept "style" prop 1`] = `
 
 <div>
   <span
-    class="emotion-10"
+    class="emotion-8"
   >
     <span
       class="emotion-0"
       data-testid="step-connector"
     />
     <div
-      class="emotion-5"
+      class="emotion-7"
     >
       <div
-        class="emotion-8"
+        class="emotion-6"
       >
-        <div
-          class="emotion-7"
+        <span
+          class="emotion-2"
         >
-          <span
-            class="emotion-2"
+          <div
+            class="emotion-1"
+            data-testid="background"
+          />
+        </span>
+        <span
+          class="emotion-5"
+        >
+          <div
+            class="emotion-4"
           >
-            <div
-              class="emotion-1"
-              data-testid="background"
-            />
-          </span>
-          <span
-            class="emotion-6"
-          >
-            <div
-              class="emotion-5"
+            <span
+              class="emotion-3"
             >
-              <div
-                class="emotion-4"
-              >
-                <span
-                  class="emotion-3"
-                >
-                  Step red
-                </span>
-              </div>
-            </div>
-          </span>
-        </div>
+              Step red
+            </span>
+          </div>
+        </span>
       </div>
     </div>
   </span>
@@ -173,12 +135,12 @@ exports[`should accept "style" prop 1`] = `
 `;
 
 exports[`should allow override of components 1`] = `
-.emotion-10 {
+.emotion-8 {
   position: relative;
   text-align: center;
 }
 
-.emotion-7 {
+.emotion-6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -205,32 +167,12 @@ exports[`should allow override of components 1`] = `
   border-top-color: #D3D4DD;
 }
 
-.emotion-5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.emotion-8 {
-  display: inline-block;
-  margin-bottom: 0rem;
-  margin-top: 0rem;
-}
-
-.emotion-8:first-of-type {
-  margin-top: 0;
-}
-
-.emotion-8:last-of-type {
-  margin-bottom: 0;
-}
-
-.emotion-8:empty {
-  display: none;
+.emotion-7 {
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-rows: minmax(min-content,max-content);
+  gap: 0rem;
+  justify-items: stretch;
 }
 
 .emotion-2 {
@@ -261,21 +203,11 @@ exports[`should allow override of components 1`] = `
 }
 
 .emotion-4 {
-  display: inline-block;
-  margin-bottom: 0.25rem;
-  margin-top: 0.25rem;
-}
-
-.emotion-4:first-of-type {
-  margin-top: 0;
-}
-
-.emotion-4:last-of-type {
-  margin-bottom: 0;
-}
-
-.emotion-4:empty {
-  display: none;
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-rows: minmax(min-content,max-content);
+  gap: 0.5rem;
+  justify-items: stretch;
 }
 
 .emotion-3 {
@@ -291,7 +223,7 @@ exports[`should allow override of components 1`] = `
 
 <div>
   <span
-    class="emotion-10"
+    class="emotion-8"
     id="root"
   >
     <span
@@ -299,40 +231,32 @@ exports[`should allow override of components 1`] = `
       data-testid="step-connector"
     />
     <div
-      class="emotion-5"
+      class="emotion-7"
     >
       <div
-        class="emotion-8"
+        class="emotion-6"
       >
-        <div
-          class="emotion-7"
+        <span
+          class="emotion-2"
         >
           <span
-            class="emotion-2"
+            class="emotion-1"
+            id="icon"
+          />
+        </span>
+        <span
+          class="emotion-5"
+        >
+          <div
+            class="emotion-4"
           >
             <span
-              class="emotion-1"
-              id="icon"
-            />
-          </span>
-          <span
-            class="emotion-6"
-          >
-            <div
-              class="emotion-5"
+              class="emotion-3"
             >
-              <div
-                class="emotion-4"
-              >
-                <span
-                  class="emotion-3"
-                >
-                  Step with overrides
-                </span>
-              </div>
-            </div>
-          </span>
-        </div>
+              Step with overrides
+            </span>
+          </div>
+        </span>
       </div>
     </div>
   </span>
@@ -340,7 +264,141 @@ exports[`should allow override of components 1`] = `
 `;
 
 exports[`should render correctly when status is active 1`] = `
-.emotion-10 {
+.emotion-8 {
+  position: relative;
+  text-align: center;
+}
+
+.emotion-6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.emotion-0 {
+  position: absolute;
+  -webkit-transition: border-color .4s ease;
+  transition: border-color .4s ease;
+  width: calc(100% - 1rem);
+  top: calc(0.75rem - 1px);
+  left: calc(50% + 0.5rem);
+  border-top-width: 2px;
+  border-top-style: solid;
+  border-top-color: #D3D4DD;
+}
+
+.emotion-7 {
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-rows: minmax(min-content,max-content);
+  gap: 0rem;
+  justify-items: stretch;
+}
+
+.emotion-2 {
+  z-index: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  text-align: center;
+  position: relative;
+}
+
+.emotion-4 {
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-rows: minmax(min-content,max-content);
+  gap: 0.5rem;
+  justify-items: stretch;
+}
+
+.emotion-1 {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  position: absolute;
+  top: calc(50% - 0.5rem);
+  left: calc(50% - 0.5rem);
+  background: #0069D0;
+  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+}
+
+.emotion-3 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #24252E;
+  color: #0069D0;
+  font-weight: bold;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+}
+
+<div>
+  <span
+    class="emotion-8"
+  >
+    <span
+      class="emotion-0"
+      data-testid="step-connector"
+    />
+    <div
+      class="emotion-7"
+    >
+      <div
+        class="emotion-6"
+      >
+        <span
+          class="emotion-2"
+        >
+          <div
+            class="emotion-1"
+            data-testid="background"
+          />
+        </span>
+        <span
+          class="emotion-5"
+        >
+          <div
+            class="emotion-4"
+          >
+            <span
+              class="emotion-3"
+            >
+              Active step
+            </span>
+          </div>
+        </span>
+      </div>
+    </div>
+  </span>
+</div>
+`;
+
+exports[`should render correctly when status is completed 1`] = `
+.emotion-9 {
   position: relative;
   text-align: center;
 }
@@ -372,204 +430,12 @@ exports[`should render correctly when status is active 1`] = `
   border-top-color: #D3D4DD;
 }
 
-.emotion-5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 .emotion-8 {
-  display: inline-block;
-  margin-bottom: 0rem;
-  margin-top: 0rem;
-}
-
-.emotion-8:first-of-type {
-  margin-top: 0;
-}
-
-.emotion-8:last-of-type {
-  margin-bottom: 0;
-}
-
-.emotion-8:empty {
-  display: none;
-}
-
-.emotion-2 {
-  z-index: 1;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  width: 1.5rem;
-  height: 1.5rem;
-  text-align: center;
-  position: relative;
-}
-
-.emotion-4 {
-  display: inline-block;
-  margin-bottom: 0.25rem;
-  margin-top: 0.25rem;
-}
-
-.emotion-4:first-of-type {
-  margin-top: 0;
-}
-
-.emotion-4:last-of-type {
-  margin-bottom: 0;
-}
-
-.emotion-4:empty {
-  display: none;
-}
-
-.emotion-1 {
-  width: 1rem;
-  height: 1rem;
-  border-radius: 50%;
-  position: absolute;
-  top: calc(50% - 0.5rem);
-  left: calc(50% - 0.5rem);
-  background: #0069D0;
-  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
-  -webkit-transition: all .4s ease;
-  transition: all .4s ease;
-}
-
-.emotion-3 {
-  font-family: "IBM Plex Sans",sans-serif;
-  font-size: 0.8125rem;
-  line-height: 1.5;
-  color: #24252E;
-  color: #0069D0;
-  font-weight: bold;
-  -webkit-transition: all .4s ease;
-  transition: all .4s ease;
-}
-
-<div>
-  <span
-    class="emotion-10"
-  >
-    <span
-      class="emotion-0"
-      data-testid="step-connector"
-    />
-    <div
-      class="emotion-5"
-    >
-      <div
-        class="emotion-8"
-      >
-        <div
-          class="emotion-7"
-        >
-          <span
-            class="emotion-2"
-          >
-            <div
-              class="emotion-1"
-              data-testid="background"
-            />
-          </span>
-          <span
-            class="emotion-6"
-          >
-            <div
-              class="emotion-5"
-            >
-              <div
-                class="emotion-4"
-              >
-                <span
-                  class="emotion-3"
-                >
-                  Active step
-                </span>
-              </div>
-            </div>
-          </span>
-        </div>
-      </div>
-    </div>
-  </span>
-</div>
-`;
-
-exports[`should render correctly when status is completed 1`] = `
-.emotion-11 {
-  position: relative;
-  text-align: center;
-}
-
-.emotion-8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.emotion-0 {
-  position: absolute;
-  -webkit-transition: border-color .4s ease;
-  transition: border-color .4s ease;
-  width: calc(100% - 1rem);
-  top: calc(0.75rem - 1px);
-  left: calc(50% + 0.5rem);
-  border-top-width: 2px;
-  border-top-style: solid;
-  border-top-color: #D3D4DD;
-}
-
-.emotion-6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.emotion-9 {
-  display: inline-block;
-  margin-bottom: 0rem;
-  margin-top: 0rem;
-}
-
-.emotion-9:first-of-type {
-  margin-top: 0;
-}
-
-.emotion-9:last-of-type {
-  margin-bottom: 0;
-}
-
-.emotion-9:empty {
-  display: none;
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-rows: minmax(min-content,max-content);
+  gap: 0rem;
+  justify-items: stretch;
 }
 
 .emotion-3 {
@@ -593,21 +459,11 @@ exports[`should render correctly when status is completed 1`] = `
 }
 
 .emotion-5 {
-  display: inline-block;
-  margin-bottom: 0.25rem;
-  margin-top: 0.25rem;
-}
-
-.emotion-5:first-of-type {
-  margin-top: 0;
-}
-
-.emotion-5:last-of-type {
-  margin-bottom: 0;
-}
-
-.emotion-5:empty {
-  display: none;
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-rows: minmax(min-content,max-content);
+  gap: 0.5rem;
+  justify-items: stretch;
 }
 
 .emotion-4 {
@@ -643,60 +499,52 @@ exports[`should render correctly when status is completed 1`] = `
 
 <div>
   <span
-    class="emotion-11"
+    class="emotion-9"
   >
     <span
       class="emotion-0"
       data-testid="step-connector"
     />
     <div
-      class="emotion-6"
+      class="emotion-8"
     >
       <div
-        class="emotion-9"
+        class="emotion-7"
       >
-        <div
-          class="emotion-8"
+        <span
+          class="emotion-3"
         >
-          <span
-            class="emotion-3"
+          <div
+            class="emotion-1"
+            data-testid="background"
+          />
+          <svg
+            class="emotion-2"
+            data-testid="check-icon"
+            height="1em"
+            viewBox="0 0 24 24"
+            width="1em"
           >
-            <div
-              class="emotion-1"
-              data-testid="background"
+            <path
+              clip-rule="evenodd"
+              d="M18.294 6.293a1 1 0 111.414 1.414l-9 9a1 1 0 01-1.414 0l-5.001-5.001a1 1 0 011.414-1.414l4.294 4.294 8.293-8.293z"
+              fill-rule="evenodd"
             />
-            <svg
-              class="emotion-2"
-              data-testid="check-icon"
-              height="1em"
-              viewBox="0 0 24 24"
-              width="1em"
-            >
-              <path
-                clip-rule="evenodd"
-                d="M18.294 6.293a1 1 0 111.414 1.414l-9 9a1 1 0 01-1.414 0l-5.001-5.001a1 1 0 011.414-1.414l4.294 4.294 8.293-8.293z"
-                fill-rule="evenodd"
-              />
-            </svg>
-          </span>
-          <span
-            class="emotion-7"
+          </svg>
+        </span>
+        <span
+          class="emotion-6"
+        >
+          <div
+            class="emotion-5"
           >
-            <div
-              class="emotion-6"
+            <span
+              class="emotion-4"
             >
-              <div
-                class="emotion-5"
-              >
-                <span
-                  class="emotion-4"
-                >
-                  Completed step
-                </span>
-              </div>
-            </div>
-          </span>
-        </div>
+              Completed step
+            </span>
+          </div>
+        </span>
       </div>
     </div>
   </span>
@@ -704,12 +552,12 @@ exports[`should render correctly when status is completed 1`] = `
 `;
 
 exports[`should render correctly when status is inactive 1`] = `
-.emotion-10 {
+.emotion-8 {
   position: relative;
   text-align: center;
 }
 
-.emotion-7 {
+.emotion-6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -736,32 +584,12 @@ exports[`should render correctly when status is inactive 1`] = `
   border-top-color: #D3D4DD;
 }
 
-.emotion-5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.emotion-8 {
-  display: inline-block;
-  margin-bottom: 0rem;
-  margin-top: 0rem;
-}
-
-.emotion-8:first-of-type {
-  margin-top: 0;
-}
-
-.emotion-8:last-of-type {
-  margin-bottom: 0;
-}
-
-.emotion-8:empty {
-  display: none;
+.emotion-7 {
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-rows: minmax(min-content,max-content);
+  gap: 0rem;
+  justify-items: stretch;
 }
 
 .emotion-2 {
@@ -792,21 +620,11 @@ exports[`should render correctly when status is inactive 1`] = `
 }
 
 .emotion-4 {
-  display: inline-block;
-  margin-bottom: 0.25rem;
-  margin-top: 0.25rem;
-}
-
-.emotion-4:first-of-type {
-  margin-top: 0;
-}
-
-.emotion-4:last-of-type {
-  margin-bottom: 0;
-}
-
-.emotion-4:empty {
-  display: none;
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-rows: minmax(min-content,max-content);
+  gap: 0.5rem;
+  justify-items: stretch;
 }
 
 .emotion-3 {
@@ -822,54 +640,46 @@ exports[`should render correctly when status is inactive 1`] = `
 
 <div>
   <span
-    class="emotion-10"
+    class="emotion-8"
   >
     <span
       class="emotion-0"
       data-testid="step-connector"
     />
     <div
-      class="emotion-5"
+      class="emotion-7"
     >
       <div
-        class="emotion-8"
+        class="emotion-6"
       >
-        <div
-          class="emotion-7"
+        <span
+          class="emotion-2"
         >
-          <span
-            class="emotion-2"
+          <svg
+            class="emotion-1"
+            data-testid="minus-icon"
+            height="1em"
+            viewBox="0 0 24 24"
+            width="1em"
           >
-            <svg
-              class="emotion-1"
-              data-testid="minus-icon"
-              height="1em"
-              viewBox="0 0 24 24"
-              width="1em"
-            >
-              <path
-                d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10c0 5.522-4.477 10-10 10S2 17.522 2 12zm14-1H8v2h8v-2z"
-              />
-            </svg>
-          </span>
-          <span
-            class="emotion-6"
+            <path
+              d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10c0 5.522-4.477 10-10 10S2 17.522 2 12zm14-1H8v2h8v-2z"
+            />
+          </svg>
+        </span>
+        <span
+          class="emotion-5"
+        >
+          <div
+            class="emotion-4"
           >
-            <div
-              class="emotion-5"
+            <span
+              class="emotion-3"
             >
-              <div
-                class="emotion-4"
-              >
-                <span
-                  class="emotion-3"
-                >
-                  Inactive step
-                </span>
-              </div>
-            </div>
-          </span>
-        </div>
+              Inactive step
+            </span>
+          </div>
+        </span>
       </div>
     </div>
   </span>
@@ -877,12 +687,12 @@ exports[`should render correctly when status is inactive 1`] = `
 `;
 
 exports[`should render correctly when status is incompleted 1`] = `
-.emotion-10 {
+.emotion-8 {
   position: relative;
   text-align: center;
 }
 
-.emotion-7 {
+.emotion-6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -909,32 +719,12 @@ exports[`should render correctly when status is incompleted 1`] = `
   border-top-color: #D3D4DD;
 }
 
-.emotion-5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.emotion-8 {
-  display: inline-block;
-  margin-bottom: 0rem;
-  margin-top: 0rem;
-}
-
-.emotion-8:first-of-type {
-  margin-top: 0;
-}
-
-.emotion-8:last-of-type {
-  margin-bottom: 0;
-}
-
-.emotion-8:empty {
-  display: none;
+.emotion-7 {
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-rows: minmax(min-content,max-content);
+  gap: 0rem;
+  justify-items: stretch;
 }
 
 .emotion-2 {
@@ -970,21 +760,11 @@ exports[`should render correctly when status is incompleted 1`] = `
 }
 
 .emotion-4 {
-  display: inline-block;
-  margin-bottom: 0.25rem;
-  margin-top: 0.25rem;
-}
-
-.emotion-4:first-of-type {
-  margin-top: 0;
-}
-
-.emotion-4:last-of-type {
-  margin-bottom: 0;
-}
-
-.emotion-4:empty {
-  display: none;
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-rows: minmax(min-content,max-content);
+  gap: 0.5rem;
+  justify-items: stretch;
 }
 
 .emotion-3 {
@@ -1000,47 +780,39 @@ exports[`should render correctly when status is incompleted 1`] = `
 
 <div>
   <span
-    class="emotion-10"
+    class="emotion-8"
   >
     <span
       class="emotion-0"
       data-testid="step-connector"
     />
     <div
-      class="emotion-5"
+      class="emotion-7"
     >
       <div
-        class="emotion-8"
+        class="emotion-6"
       >
-        <div
-          class="emotion-7"
+        <span
+          class="emotion-2"
         >
-          <span
-            class="emotion-2"
+          <div
+            class="emotion-1"
+            data-testid="background"
+          />
+        </span>
+        <span
+          class="emotion-5"
+        >
+          <div
+            class="emotion-4"
           >
-            <div
-              class="emotion-1"
-              data-testid="background"
-            />
-          </span>
-          <span
-            class="emotion-6"
-          >
-            <div
-              class="emotion-5"
+            <span
+              class="emotion-3"
             >
-              <div
-                class="emotion-4"
-              >
-                <span
-                  class="emotion-3"
-                >
-                  Incompleted step
-                </span>
-              </div>
-            </div>
-          </span>
-        </div>
+              Incompleted step
+            </span>
+          </div>
+        </span>
       </div>
     </div>
   </span>

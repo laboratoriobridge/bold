@@ -44,32 +44,12 @@ exports[`rendering renders correcly closed 1`] = `
   bottom: 0;
 }
 
-.emotion-8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 .emotion-7 {
-  display: inline-block;
-  margin-bottom: 0rem;
-  margin-top: 0rem;
-}
-
-.emotion-7:first-of-type {
-  margin-top: 0;
-}
-
-.emotion-7:last-of-type {
-  margin-bottom: 0;
-}
-
-.emotion-7:empty {
-  display: none;
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-rows: minmax(min-content,max-content);
+  gap: 0rem;
+  justify-items: stretch;
 }
 
 .emotion-0 {
@@ -240,69 +220,65 @@ exports[`rendering renders correcly closed 1`] = `
 <body>
   <div>
     <div
-      class="emotion-8"
+      class="emotion-7"
     >
       <div
-        class="emotion-7"
+        class="emotion-6"
       >
-        <div
-          class="emotion-6"
+        <label
+          class="emotion-0"
+          for="test-input-id"
+          id="test-label-id"
         >
-          <label
-            class="emotion-0"
-            for="test-input-id"
-            id="test-label-id"
+          Fruits
+        </label>
+        <div
+          class="emotion-5"
+        >
+          <input
+            aria-activedescendant=""
+            aria-autocomplete="list"
+            aria-controls="test-menu-id"
+            aria-expanded="false"
+            aria-labelledby="test-label-id"
+            autocomplete="off"
+            class="emotion-1"
+            id="test-input-id"
+            label="Fruits"
+            role="combobox"
+            type="text"
+            value=""
+          />
+          <span
+            class="emotion-4"
           >
-            Fruits
-          </label>
-          <div
-            class="emotion-5"
-          >
-            <input
-              aria-activedescendant=""
-              aria-autocomplete="list"
+            <button
               aria-controls="test-menu-id"
               aria-expanded="false"
-              aria-labelledby="test-label-id"
-              autocomplete="off"
-              class="emotion-1"
-              id="test-input-id"
-              label="Fruits"
-              role="combobox"
-              type="text"
-              value=""
-            />
-            <span
-              class="emotion-4"
+              aria-label="Show options"
+              class="emotion-3"
+              id="test-toggle-button-id"
+              tabindex="-1"
+              type="button"
             >
-              <button
-                aria-controls="test-menu-id"
-                aria-expanded="false"
-                aria-label="Show options"
-                class="emotion-3"
-                id="test-toggle-button-id"
-                tabindex="-1"
-                type="button"
-              >
-                <span>
-                  <svg
-                    aria-hidden="true"
-                    class="emotion-2"
-                    height="1em"
-                    role="img"
-                    viewBox="0 0 24 24"
-                    width="1em"
-                  >
-                    <path
-                      clip-rule="evenodd"
-                      d="M16.294 8.294a1 1 0 111.414 1.414l-5 5a1 1 0 01-1.414 0l-5.001-5a1 1 0 011.414-1.415l4.294 4.294 4.293-4.293z"
-                      fill-rule="evenodd"
-                    />
-                  </svg>
-                </span>
-              </button>
-            </span>
-          </div>
+              <span>
+                <svg
+                  aria-hidden="true"
+                  class="emotion-2"
+                  height="1em"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <path
+                    clip-rule="evenodd"
+                    d="M16.294 8.294a1 1 0 111.414 1.414l-5 5a1 1 0 01-1.414 0l-5.001-5a1 1 0 011.414-1.415l4.294 4.294 4.293-4.293z"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </span>
+            </button>
+          </span>
         </div>
       </div>
     </div>
@@ -360,7 +336,7 @@ exports[`rendering renders correcly opened 1`] = `
   bottom: 0;
 }
 
-.emotion-70 {
+.emotion-69 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -376,32 +352,12 @@ exports[`rendering renders correcly opened 1`] = `
   max-height: 20rem;
 }
 
-.emotion-8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 .emotion-7 {
-  display: inline-block;
-  margin-bottom: 0rem;
-  margin-top: 0rem;
-}
-
-.emotion-7:first-of-type {
-  margin-top: 0;
-}
-
-.emotion-7:last-of-type {
-  margin-bottom: 0;
-}
-
-.emotion-7:empty {
-  display: none;
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-rows: minmax(min-content,max-content);
+  gap: 0rem;
+  justify-items: stretch;
 }
 
 .emotion-0 {
@@ -569,7 +525,7 @@ exports[`rendering renders correcly opened 1`] = `
   font-size: 1.5rem;
 }
 
-.emotion-69 {
+.emotion-68 {
   border: 0;
   border-radius: 0;
   box-shadow: none;
@@ -583,7 +539,7 @@ exports[`rendering renders correcly opened 1`] = `
   width: 100%;
 }
 
-.emotion-13 {
+.emotion-12 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5;
@@ -595,32 +551,33 @@ exports[`rendering renders correcly opened 1`] = `
   transition: .1s ease;
 }
 
-.emotion-13:last-of-type {
+.emotion-12:last-of-type {
   border-bottom: none;
 }
 
-.emotion-13:hover {
+.emotion-12:hover {
   background: #F0F0F5;
 }
 
-.emotion-13:focus {
+.emotion-12:focus {
   outline: 0;
   border-radius: 3px;
   box-shadow: inset 0 0 0 2px #0069D0;
 }
 
-.emotion-12 {
+.emotion-11 {
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: minmax(min-content,max-content);
-  grid-gap: 0.5rem;
+  gap: 0.5rem;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  justify-items: start;
 }
 
-.emotion-10 {
+.emotion-9 {
   background-color: #FFFFFF;
   border: 1px solid #8F8FA2;
   border-radius: 2px;
@@ -634,21 +591,21 @@ exports[`rendering renders correcly opened 1`] = `
   min-width: 24px;
 }
 
-.emotion-9 {
+.emotion-8 {
   opacity: 0;
   margin-right: -13px;
 }
 
-.emotion-9:hover + .emotion-10 {
+.emotion-8:hover + .emotion-9 {
   border-color: #7A7B8E;
 }
 
-.emotion-9:checked + .emotion-10 {
+.emotion-8:checked + .emotion-9 {
   background-color: #0069D0;
   border-color: #0069D0;
 }
 
-.emotion-9:checked + .emotion-10:after {
+.emotion-8:checked + .emotion-9:after {
   content: "";
   border-right: 2px solid #FFFFFF;
   border-bottom: 2px solid #FFFFFF;
@@ -665,12 +622,12 @@ exports[`rendering renders correcly opened 1`] = `
   transition: opacity .2s ease;
 }
 
-.emotion-9:indeterminate + .emotion-10 {
+.emotion-8:indeterminate + .emotion-9 {
   background-color: #FFFFFF;
   border-color: #0069D0;
 }
 
-.emotion-9:indeterminate + .emotion-10:after {
+.emotion-8:indeterminate + .emotion-9:after {
   content: "";
   border-bottom: 3px solid #0069D0;
   position: absolute;
@@ -683,21 +640,21 @@ exports[`rendering renders correcly opened 1`] = `
   transition: opacity .2s ease;
 }
 
-.emotion-9:focus + .emotion-10 {
+.emotion-8:focus + .emotion-9 {
   box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
 }
 
-.emotion-9:disabled + .emotion-10 {
+.emotion-8:disabled + .emotion-9 {
   opacity: 0.4;
   cursor: not-allowed;
 }
 
-.emotion-9:disabled + .emotion-10 + .css-1f2k2gl {
+.emotion-8:disabled + .emotion-9 + .css-1f2k2gl {
   color: #AAAAB9;
   cursor: not-allowed;
 }
 
-.emotion-11 {
+.emotion-10 {
   cursor: pointer;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -713,69 +670,65 @@ exports[`rendering renders correcly opened 1`] = `
 <body>
   <div>
     <div
-      class="emotion-8"
+      class="emotion-7"
     >
       <div
-        class="emotion-7"
+        class="emotion-6"
       >
-        <div
-          class="emotion-6"
+        <label
+          class="emotion-0"
+          for="test-input-id"
+          id="test-label-id"
         >
-          <label
-            class="emotion-0"
-            for="test-input-id"
-            id="test-label-id"
+          Fruits
+        </label>
+        <div
+          class="emotion-5"
+        >
+          <input
+            aria-activedescendant=""
+            aria-autocomplete="list"
+            aria-controls="test-menu-id"
+            aria-expanded="true"
+            aria-labelledby="test-label-id"
+            autocomplete="off"
+            class="emotion-1"
+            id="test-input-id"
+            label="Fruits"
+            role="combobox"
+            type="text"
+            value=""
+          />
+          <span
+            class="emotion-4"
           >
-            Fruits
-          </label>
-          <div
-            class="emotion-5"
-          >
-            <input
-              aria-activedescendant=""
-              aria-autocomplete="list"
+            <button
               aria-controls="test-menu-id"
               aria-expanded="true"
-              aria-labelledby="test-label-id"
-              autocomplete="off"
-              class="emotion-1"
-              id="test-input-id"
-              label="Fruits"
-              role="combobox"
-              type="text"
-              value=""
-            />
-            <span
-              class="emotion-4"
+              aria-label="Hide options"
+              class="emotion-3"
+              id="test-toggle-button-id"
+              tabindex="-1"
+              type="button"
             >
-              <button
-                aria-controls="test-menu-id"
-                aria-expanded="true"
-                aria-label="Hide options"
-                class="emotion-3"
-                id="test-toggle-button-id"
-                tabindex="-1"
-                type="button"
-              >
-                <span>
-                  <svg
-                    aria-hidden="true"
-                    class="emotion-2"
-                    height="1em"
-                    role="img"
-                    viewBox="0 0 24 24"
-                    width="1em"
-                  >
-                    <path
-                      clip-rule="evenodd"
-                      d="M7.707 14.707a1 1 0 11-1.414-1.414l5-5a1 1 0 011.414 0l5.001 5.001a1 1 0 01-1.414 1.414L12 10.414l-4.293 4.293z"
-                      fill-rule="evenodd"
-                    />
-                  </svg>
-                </span>
-              </button>
-            </span>
-          </div>
+              <span>
+                <svg
+                  aria-hidden="true"
+                  class="emotion-2"
+                  height="1em"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <path
+                    clip-rule="evenodd"
+                    d="M7.707 14.707a1 1 0 11-1.414-1.414l5-5a1 1 0 011.414 0l5.001 5.001a1 1 0 01-1.414 1.414L12 10.414l-4.293 4.293z"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </span>
+            </button>
+          </span>
         </div>
       </div>
     </div>
@@ -786,7 +739,7 @@ exports[`rendering renders correcly opened 1`] = `
       role="listbox"
     >
       <div
-        class="emotion-70"
+        class="emotion-69"
         data-popper-escaped="true"
         data-popper-placement="bottom-start"
         data-popper-reference-hidden="true"
@@ -795,30 +748,30 @@ exports[`rendering renders correcly opened 1`] = `
         tabindex="-1"
       >
         <ul
-          class="emotion-69"
+          class="emotion-68"
           tabindex="-1"
         >
           <li
             aria-disabled="false"
             aria-selected="false"
-            class="emotion-13"
+            class="emotion-12"
             id="test-item-id-0"
             role="option"
           >
             <div
-              class="emotion-12"
+              class="emotion-11"
             >
               <label
-                class="emotion-11"
+                class="emotion-10"
               >
                 <input
-                  class="emotion-9"
+                  class="emotion-8"
                   readonly=""
                   tabindex="-1"
                   type="checkbox"
                 />
                 <span
-                  class="emotion-10"
+                  class="emotion-9"
                 />
               </label>
               Apple
@@ -827,24 +780,24 @@ exports[`rendering renders correcly opened 1`] = `
           <li
             aria-disabled="false"
             aria-selected="false"
-            class="emotion-13"
+            class="emotion-12"
             id="test-item-id-1"
             role="option"
           >
             <div
-              class="emotion-12"
+              class="emotion-11"
             >
               <label
-                class="emotion-11"
+                class="emotion-10"
               >
                 <input
-                  class="emotion-9"
+                  class="emotion-8"
                   readonly=""
                   tabindex="-1"
                   type="checkbox"
                 />
                 <span
-                  class="emotion-10"
+                  class="emotion-9"
                 />
               </label>
               Avocado
@@ -853,24 +806,24 @@ exports[`rendering renders correcly opened 1`] = `
           <li
             aria-disabled="false"
             aria-selected="false"
-            class="emotion-13"
+            class="emotion-12"
             id="test-item-id-2"
             role="option"
           >
             <div
-              class="emotion-12"
+              class="emotion-11"
             >
               <label
-                class="emotion-11"
+                class="emotion-10"
               >
                 <input
-                  class="emotion-9"
+                  class="emotion-8"
                   readonly=""
                   tabindex="-1"
                   type="checkbox"
                 />
                 <span
-                  class="emotion-10"
+                  class="emotion-9"
                 />
               </label>
               Banana
@@ -879,24 +832,24 @@ exports[`rendering renders correcly opened 1`] = `
           <li
             aria-disabled="false"
             aria-selected="false"
-            class="emotion-13"
+            class="emotion-12"
             id="test-item-id-3"
             role="option"
           >
             <div
-              class="emotion-12"
+              class="emotion-11"
             >
               <label
-                class="emotion-11"
+                class="emotion-10"
               >
                 <input
-                  class="emotion-9"
+                  class="emotion-8"
                   readonly=""
                   tabindex="-1"
                   type="checkbox"
                 />
                 <span
-                  class="emotion-10"
+                  class="emotion-9"
                 />
               </label>
               Blueberry
@@ -905,24 +858,24 @@ exports[`rendering renders correcly opened 1`] = `
           <li
             aria-disabled="false"
             aria-selected="false"
-            class="emotion-13"
+            class="emotion-12"
             id="test-item-id-4"
             role="option"
           >
             <div
-              class="emotion-12"
+              class="emotion-11"
             >
               <label
-                class="emotion-11"
+                class="emotion-10"
               >
                 <input
-                  class="emotion-9"
+                  class="emotion-8"
                   readonly=""
                   tabindex="-1"
                   type="checkbox"
                 />
                 <span
-                  class="emotion-10"
+                  class="emotion-9"
                 />
               </label>
               Coconut
@@ -931,24 +884,24 @@ exports[`rendering renders correcly opened 1`] = `
           <li
             aria-disabled="false"
             aria-selected="false"
-            class="emotion-13"
+            class="emotion-12"
             id="test-item-id-5"
             role="option"
           >
             <div
-              class="emotion-12"
+              class="emotion-11"
             >
               <label
-                class="emotion-11"
+                class="emotion-10"
               >
                 <input
-                  class="emotion-9"
+                  class="emotion-8"
                   readonly=""
                   tabindex="-1"
                   type="checkbox"
                 />
                 <span
-                  class="emotion-10"
+                  class="emotion-9"
                 />
               </label>
               Grape
@@ -957,24 +910,24 @@ exports[`rendering renders correcly opened 1`] = `
           <li
             aria-disabled="false"
             aria-selected="false"
-            class="emotion-13"
+            class="emotion-12"
             id="test-item-id-6"
             role="option"
           >
             <div
-              class="emotion-12"
+              class="emotion-11"
             >
               <label
-                class="emotion-11"
+                class="emotion-10"
               >
                 <input
-                  class="emotion-9"
+                  class="emotion-8"
                   readonly=""
                   tabindex="-1"
                   type="checkbox"
                 />
                 <span
-                  class="emotion-10"
+                  class="emotion-9"
                 />
               </label>
               Lemon
@@ -983,24 +936,24 @@ exports[`rendering renders correcly opened 1`] = `
           <li
             aria-disabled="false"
             aria-selected="false"
-            class="emotion-13"
+            class="emotion-12"
             id="test-item-id-7"
             role="option"
           >
             <div
-              class="emotion-12"
+              class="emotion-11"
             >
               <label
-                class="emotion-11"
+                class="emotion-10"
               >
                 <input
-                  class="emotion-9"
+                  class="emotion-8"
                   readonly=""
                   tabindex="-1"
                   type="checkbox"
                 />
                 <span
-                  class="emotion-10"
+                  class="emotion-9"
                 />
               </label>
               Mango
@@ -1009,24 +962,24 @@ exports[`rendering renders correcly opened 1`] = `
           <li
             aria-disabled="false"
             aria-selected="false"
-            class="emotion-13"
+            class="emotion-12"
             id="test-item-id-8"
             role="option"
           >
             <div
-              class="emotion-12"
+              class="emotion-11"
             >
               <label
-                class="emotion-11"
+                class="emotion-10"
               >
                 <input
-                  class="emotion-9"
+                  class="emotion-8"
                   readonly=""
                   tabindex="-1"
                   type="checkbox"
                 />
                 <span
-                  class="emotion-10"
+                  class="emotion-9"
                 />
               </label>
               Melon
@@ -1035,24 +988,24 @@ exports[`rendering renders correcly opened 1`] = `
           <li
             aria-disabled="false"
             aria-selected="false"
-            class="emotion-13"
+            class="emotion-12"
             id="test-item-id-9"
             role="option"
           >
             <div
-              class="emotion-12"
+              class="emotion-11"
             >
               <label
-                class="emotion-11"
+                class="emotion-10"
               >
                 <input
-                  class="emotion-9"
+                  class="emotion-8"
                   readonly=""
                   tabindex="-1"
                   type="checkbox"
                 />
                 <span
-                  class="emotion-10"
+                  class="emotion-9"
                 />
               </label>
               Orange
@@ -1061,24 +1014,24 @@ exports[`rendering renders correcly opened 1`] = `
           <li
             aria-disabled="false"
             aria-selected="false"
-            class="emotion-13"
+            class="emotion-12"
             id="test-item-id-10"
             role="option"
           >
             <div
-              class="emotion-12"
+              class="emotion-11"
             >
               <label
-                class="emotion-11"
+                class="emotion-10"
               >
                 <input
-                  class="emotion-9"
+                  class="emotion-8"
                   readonly=""
                   tabindex="-1"
                   type="checkbox"
                 />
                 <span
-                  class="emotion-10"
+                  class="emotion-9"
                 />
               </label>
               Peach
@@ -1087,24 +1040,24 @@ exports[`rendering renders correcly opened 1`] = `
           <li
             aria-disabled="false"
             aria-selected="false"
-            class="emotion-13"
+            class="emotion-12"
             id="test-item-id-11"
             role="option"
           >
             <div
-              class="emotion-12"
+              class="emotion-11"
             >
               <label
-                class="emotion-11"
+                class="emotion-10"
               >
                 <input
-                  class="emotion-9"
+                  class="emotion-8"
                   readonly=""
                   tabindex="-1"
                   type="checkbox"
                 />
                 <span
-                  class="emotion-10"
+                  class="emotion-9"
                 />
               </label>
               Pear
@@ -1175,7 +1128,7 @@ exports[`rendering renders correcly opened and loading 1`] = `
   bottom: 0;
 }
 
-.emotion-72 {
+.emotion-71 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1191,32 +1144,12 @@ exports[`rendering renders correcly opened and loading 1`] = `
   max-height: 20rem;
 }
 
-.emotion-8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 .emotion-7 {
-  display: inline-block;
-  margin-bottom: 0rem;
-  margin-top: 0rem;
-}
-
-.emotion-7:first-of-type {
-  margin-top: 0;
-}
-
-.emotion-7:last-of-type {
-  margin-bottom: 0;
-}
-
-.emotion-7:empty {
-  display: none;
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-rows: minmax(min-content,max-content);
+  gap: 0rem;
+  justify-items: stretch;
 }
 
 .emotion-0 {
@@ -1384,7 +1317,7 @@ exports[`rendering renders correcly opened and loading 1`] = `
   font-size: 1.5rem;
 }
 
-.emotion-71 {
+.emotion-70 {
   border: 0;
   border-radius: 0;
   box-shadow: none;
@@ -1398,7 +1331,7 @@ exports[`rendering renders correcly opened and loading 1`] = `
   width: 100%;
 }
 
-.emotion-15 {
+.emotion-14 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5;
@@ -1410,21 +1343,21 @@ exports[`rendering renders correcly opened and loading 1`] = `
   transition: .1s ease;
 }
 
-.emotion-15:last-of-type {
+.emotion-14:last-of-type {
   border-bottom: none;
 }
 
-.emotion-15:hover {
+.emotion-14:hover {
   background: #F0F0F5;
 }
 
-.emotion-15:focus {
+.emotion-14:focus {
   outline: 0;
   border-radius: 3px;
   box-shadow: inset 0 0 0 2px #0069D0;
 }
 
-.emotion-10 {
+.emotion-9 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5;
@@ -1440,21 +1373,21 @@ exports[`rendering renders correcly opened and loading 1`] = `
   cursor: initial;
 }
 
-.emotion-10:last-of-type {
+.emotion-9:last-of-type {
   border-bottom: none;
 }
 
-.emotion-10:hover {
+.emotion-9:hover {
   background: #F0F0F5;
 }
 
-.emotion-10:focus {
+.emotion-9:focus {
   outline: 0;
   border-radius: 3px;
   box-shadow: inset 0 0 0 2px #0069D0;
 }
 
-.emotion-9 {
+.emotion-8 {
   pointer-events: none;
   font-size: 1rem;
   line-height: 1;
@@ -1462,7 +1395,7 @@ exports[`rendering renders correcly opened and loading 1`] = `
   float: right;
 }
 
-.emotion-9:after {
+.emotion-8:after {
   -webkit-animation: animation-0 450ms infinite linear;
   animation: animation-0 450ms infinite linear;
   border: 2px solid currentColor;
@@ -1474,18 +1407,19 @@ exports[`rendering renders correcly opened and loading 1`] = `
   width: 1rem;
 }
 
-.emotion-14 {
+.emotion-13 {
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: minmax(min-content,max-content);
-  grid-gap: 0.5rem;
+  gap: 0.5rem;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  justify-items: start;
 }
 
-.emotion-12 {
+.emotion-11 {
   background-color: #FFFFFF;
   border: 1px solid #8F8FA2;
   border-radius: 2px;
@@ -1499,21 +1433,21 @@ exports[`rendering renders correcly opened and loading 1`] = `
   min-width: 24px;
 }
 
-.emotion-11 {
+.emotion-10 {
   opacity: 0;
   margin-right: -13px;
 }
 
-.emotion-11:hover + .emotion-12 {
+.emotion-10:hover + .emotion-11 {
   border-color: #7A7B8E;
 }
 
-.emotion-11:checked + .emotion-12 {
+.emotion-10:checked + .emotion-11 {
   background-color: #0069D0;
   border-color: #0069D0;
 }
 
-.emotion-11:checked + .emotion-12:after {
+.emotion-10:checked + .emotion-11:after {
   content: "";
   border-right: 2px solid #FFFFFF;
   border-bottom: 2px solid #FFFFFF;
@@ -1530,12 +1464,12 @@ exports[`rendering renders correcly opened and loading 1`] = `
   transition: opacity .2s ease;
 }
 
-.emotion-11:indeterminate + .emotion-12 {
+.emotion-10:indeterminate + .emotion-11 {
   background-color: #FFFFFF;
   border-color: #0069D0;
 }
 
-.emotion-11:indeterminate + .emotion-12:after {
+.emotion-10:indeterminate + .emotion-11:after {
   content: "";
   border-bottom: 3px solid #0069D0;
   position: absolute;
@@ -1548,21 +1482,21 @@ exports[`rendering renders correcly opened and loading 1`] = `
   transition: opacity .2s ease;
 }
 
-.emotion-11:focus + .emotion-12 {
+.emotion-10:focus + .emotion-11 {
   box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
 }
 
-.emotion-11:disabled + .emotion-12 {
+.emotion-10:disabled + .emotion-11 {
   opacity: 0.4;
   cursor: not-allowed;
 }
 
-.emotion-11:disabled + .emotion-12 + .css-1f2k2gl {
+.emotion-10:disabled + .emotion-11 + .css-1f2k2gl {
   color: #AAAAB9;
   cursor: not-allowed;
 }
 
-.emotion-13 {
+.emotion-12 {
   cursor: pointer;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -1578,69 +1512,65 @@ exports[`rendering renders correcly opened and loading 1`] = `
 <body>
   <div>
     <div
-      class="emotion-8"
+      class="emotion-7"
     >
       <div
-        class="emotion-7"
+        class="emotion-6"
       >
-        <div
-          class="emotion-6"
+        <label
+          class="emotion-0"
+          for="test-input-id"
+          id="test-label-id"
         >
-          <label
-            class="emotion-0"
-            for="test-input-id"
-            id="test-label-id"
+          Fruits
+        </label>
+        <div
+          class="emotion-5"
+        >
+          <input
+            aria-activedescendant=""
+            aria-autocomplete="list"
+            aria-controls="test-menu-id"
+            aria-expanded="true"
+            aria-labelledby="test-label-id"
+            autocomplete="off"
+            class="emotion-1"
+            id="test-input-id"
+            label="Fruits"
+            role="combobox"
+            type="text"
+            value=""
+          />
+          <span
+            class="emotion-4"
           >
-            Fruits
-          </label>
-          <div
-            class="emotion-5"
-          >
-            <input
-              aria-activedescendant=""
-              aria-autocomplete="list"
+            <button
               aria-controls="test-menu-id"
               aria-expanded="true"
-              aria-labelledby="test-label-id"
-              autocomplete="off"
-              class="emotion-1"
-              id="test-input-id"
-              label="Fruits"
-              role="combobox"
-              type="text"
-              value=""
-            />
-            <span
-              class="emotion-4"
+              aria-label="Hide options"
+              class="emotion-3"
+              id="test-toggle-button-id"
+              tabindex="-1"
+              type="button"
             >
-              <button
-                aria-controls="test-menu-id"
-                aria-expanded="true"
-                aria-label="Hide options"
-                class="emotion-3"
-                id="test-toggle-button-id"
-                tabindex="-1"
-                type="button"
-              >
-                <span>
-                  <svg
-                    aria-hidden="true"
-                    class="emotion-2"
-                    height="1em"
-                    role="img"
-                    viewBox="0 0 24 24"
-                    width="1em"
-                  >
-                    <path
-                      clip-rule="evenodd"
-                      d="M7.707 14.707a1 1 0 11-1.414-1.414l5-5a1 1 0 011.414 0l5.001 5.001a1 1 0 01-1.414 1.414L12 10.414l-4.293 4.293z"
-                      fill-rule="evenodd"
-                    />
-                  </svg>
-                </span>
-              </button>
-            </span>
-          </div>
+              <span>
+                <svg
+                  aria-hidden="true"
+                  class="emotion-2"
+                  height="1em"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <path
+                    clip-rule="evenodd"
+                    d="M7.707 14.707a1 1 0 11-1.414-1.414l5-5a1 1 0 011.414 0l5.001 5.001a1 1 0 01-1.414 1.414L12 10.414l-4.293 4.293z"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </span>
+            </button>
+          </span>
         </div>
       </div>
     </div>
@@ -1651,7 +1581,7 @@ exports[`rendering renders correcly opened and loading 1`] = `
       role="listbox"
     >
       <div
-        class="emotion-72"
+        class="emotion-71"
         data-popper-escaped="true"
         data-popper-placement="bottom-start"
         data-popper-reference-hidden="true"
@@ -1660,38 +1590,38 @@ exports[`rendering renders correcly opened and loading 1`] = `
         tabindex="-1"
       >
         <ul
-          class="emotion-71"
+          class="emotion-70"
           tabindex="-1"
         >
           <li
-            class="emotion-10"
+            class="emotion-9"
           >
             Loading...
             <span
-              class="emotion-9"
+              class="emotion-8"
             />
           </li>
           <li
             aria-disabled="false"
             aria-selected="false"
-            class="emotion-15"
+            class="emotion-14"
             id="test-item-id-0"
             role="option"
           >
             <div
-              class="emotion-14"
+              class="emotion-13"
             >
               <label
-                class="emotion-13"
+                class="emotion-12"
               >
                 <input
-                  class="emotion-11"
+                  class="emotion-10"
                   readonly=""
                   tabindex="-1"
                   type="checkbox"
                 />
                 <span
-                  class="emotion-12"
+                  class="emotion-11"
                 />
               </label>
               Apple
@@ -1700,24 +1630,24 @@ exports[`rendering renders correcly opened and loading 1`] = `
           <li
             aria-disabled="false"
             aria-selected="false"
-            class="emotion-15"
+            class="emotion-14"
             id="test-item-id-1"
             role="option"
           >
             <div
-              class="emotion-14"
+              class="emotion-13"
             >
               <label
-                class="emotion-13"
+                class="emotion-12"
               >
                 <input
-                  class="emotion-11"
+                  class="emotion-10"
                   readonly=""
                   tabindex="-1"
                   type="checkbox"
                 />
                 <span
-                  class="emotion-12"
+                  class="emotion-11"
                 />
               </label>
               Avocado
@@ -1726,24 +1656,24 @@ exports[`rendering renders correcly opened and loading 1`] = `
           <li
             aria-disabled="false"
             aria-selected="false"
-            class="emotion-15"
+            class="emotion-14"
             id="test-item-id-2"
             role="option"
           >
             <div
-              class="emotion-14"
+              class="emotion-13"
             >
               <label
-                class="emotion-13"
+                class="emotion-12"
               >
                 <input
-                  class="emotion-11"
+                  class="emotion-10"
                   readonly=""
                   tabindex="-1"
                   type="checkbox"
                 />
                 <span
-                  class="emotion-12"
+                  class="emotion-11"
                 />
               </label>
               Banana
@@ -1752,24 +1682,24 @@ exports[`rendering renders correcly opened and loading 1`] = `
           <li
             aria-disabled="false"
             aria-selected="false"
-            class="emotion-15"
+            class="emotion-14"
             id="test-item-id-3"
             role="option"
           >
             <div
-              class="emotion-14"
+              class="emotion-13"
             >
               <label
-                class="emotion-13"
+                class="emotion-12"
               >
                 <input
-                  class="emotion-11"
+                  class="emotion-10"
                   readonly=""
                   tabindex="-1"
                   type="checkbox"
                 />
                 <span
-                  class="emotion-12"
+                  class="emotion-11"
                 />
               </label>
               Blueberry
@@ -1778,24 +1708,24 @@ exports[`rendering renders correcly opened and loading 1`] = `
           <li
             aria-disabled="false"
             aria-selected="false"
-            class="emotion-15"
+            class="emotion-14"
             id="test-item-id-4"
             role="option"
           >
             <div
-              class="emotion-14"
+              class="emotion-13"
             >
               <label
-                class="emotion-13"
+                class="emotion-12"
               >
                 <input
-                  class="emotion-11"
+                  class="emotion-10"
                   readonly=""
                   tabindex="-1"
                   type="checkbox"
                 />
                 <span
-                  class="emotion-12"
+                  class="emotion-11"
                 />
               </label>
               Coconut
@@ -1804,24 +1734,24 @@ exports[`rendering renders correcly opened and loading 1`] = `
           <li
             aria-disabled="false"
             aria-selected="false"
-            class="emotion-15"
+            class="emotion-14"
             id="test-item-id-5"
             role="option"
           >
             <div
-              class="emotion-14"
+              class="emotion-13"
             >
               <label
-                class="emotion-13"
+                class="emotion-12"
               >
                 <input
-                  class="emotion-11"
+                  class="emotion-10"
                   readonly=""
                   tabindex="-1"
                   type="checkbox"
                 />
                 <span
-                  class="emotion-12"
+                  class="emotion-11"
                 />
               </label>
               Grape
@@ -1830,24 +1760,24 @@ exports[`rendering renders correcly opened and loading 1`] = `
           <li
             aria-disabled="false"
             aria-selected="false"
-            class="emotion-15"
+            class="emotion-14"
             id="test-item-id-6"
             role="option"
           >
             <div
-              class="emotion-14"
+              class="emotion-13"
             >
               <label
-                class="emotion-13"
+                class="emotion-12"
               >
                 <input
-                  class="emotion-11"
+                  class="emotion-10"
                   readonly=""
                   tabindex="-1"
                   type="checkbox"
                 />
                 <span
-                  class="emotion-12"
+                  class="emotion-11"
                 />
               </label>
               Lemon
@@ -1856,24 +1786,24 @@ exports[`rendering renders correcly opened and loading 1`] = `
           <li
             aria-disabled="false"
             aria-selected="false"
-            class="emotion-15"
+            class="emotion-14"
             id="test-item-id-7"
             role="option"
           >
             <div
-              class="emotion-14"
+              class="emotion-13"
             >
               <label
-                class="emotion-13"
+                class="emotion-12"
               >
                 <input
-                  class="emotion-11"
+                  class="emotion-10"
                   readonly=""
                   tabindex="-1"
                   type="checkbox"
                 />
                 <span
-                  class="emotion-12"
+                  class="emotion-11"
                 />
               </label>
               Mango
@@ -1882,24 +1812,24 @@ exports[`rendering renders correcly opened and loading 1`] = `
           <li
             aria-disabled="false"
             aria-selected="false"
-            class="emotion-15"
+            class="emotion-14"
             id="test-item-id-8"
             role="option"
           >
             <div
-              class="emotion-14"
+              class="emotion-13"
             >
               <label
-                class="emotion-13"
+                class="emotion-12"
               >
                 <input
-                  class="emotion-11"
+                  class="emotion-10"
                   readonly=""
                   tabindex="-1"
                   type="checkbox"
                 />
                 <span
-                  class="emotion-12"
+                  class="emotion-11"
                 />
               </label>
               Melon
@@ -1908,24 +1838,24 @@ exports[`rendering renders correcly opened and loading 1`] = `
           <li
             aria-disabled="false"
             aria-selected="false"
-            class="emotion-15"
+            class="emotion-14"
             id="test-item-id-9"
             role="option"
           >
             <div
-              class="emotion-14"
+              class="emotion-13"
             >
               <label
-                class="emotion-13"
+                class="emotion-12"
               >
                 <input
-                  class="emotion-11"
+                  class="emotion-10"
                   readonly=""
                   tabindex="-1"
                   type="checkbox"
                 />
                 <span
-                  class="emotion-12"
+                  class="emotion-11"
                 />
               </label>
               Orange
@@ -1934,24 +1864,24 @@ exports[`rendering renders correcly opened and loading 1`] = `
           <li
             aria-disabled="false"
             aria-selected="false"
-            class="emotion-15"
+            class="emotion-14"
             id="test-item-id-10"
             role="option"
           >
             <div
-              class="emotion-14"
+              class="emotion-13"
             >
               <label
-                class="emotion-13"
+                class="emotion-12"
               >
                 <input
-                  class="emotion-11"
+                  class="emotion-10"
                   readonly=""
                   tabindex="-1"
                   type="checkbox"
                 />
                 <span
-                  class="emotion-12"
+                  class="emotion-11"
                 />
               </label>
               Peach
@@ -1960,24 +1890,24 @@ exports[`rendering renders correcly opened and loading 1`] = `
           <li
             aria-disabled="false"
             aria-selected="false"
-            class="emotion-15"
+            class="emotion-14"
             id="test-item-id-11"
             role="option"
           >
             <div
-              class="emotion-14"
+              class="emotion-13"
             >
               <label
-                class="emotion-13"
+                class="emotion-12"
               >
                 <input
-                  class="emotion-11"
+                  class="emotion-10"
                   readonly=""
                   tabindex="-1"
                   type="checkbox"
                 />
                 <span
-                  class="emotion-12"
+                  class="emotion-11"
                 />
               </label>
               Pear
@@ -2034,7 +1964,7 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
   bottom: 0;
 }
 
-.emotion-37 {
+.emotion-36 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2050,32 +1980,12 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
   max-height: 20rem;
 }
 
-.emotion-8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 .emotion-7 {
-  display: inline-block;
-  margin-bottom: 0rem;
-  margin-top: 0rem;
-}
-
-.emotion-7:first-of-type {
-  margin-top: 0;
-}
-
-.emotion-7:last-of-type {
-  margin-bottom: 0;
-}
-
-.emotion-7:empty {
-  display: none;
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-rows: minmax(min-content,max-content);
+  gap: 0rem;
+  justify-items: stretch;
 }
 
 .emotion-0 {
@@ -2243,7 +2153,7 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
   font-size: 1.5rem;
 }
 
-.emotion-36 {
+.emotion-35 {
   border: 0;
   border-radius: 0;
   box-shadow: none;
@@ -2257,7 +2167,7 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
   width: 100%;
 }
 
-.emotion-10 {
+.emotion-9 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5;
@@ -2269,25 +2179,25 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
   transition: .1s ease;
 }
 
-.emotion-10:last-of-type {
+.emotion-9:last-of-type {
   border-bottom: none;
 }
 
-.emotion-10:hover {
+.emotion-9:hover {
   background: #F0F0F5;
 }
 
-.emotion-10:focus {
+.emotion-9:focus {
   outline: 0;
   border-radius: 3px;
   box-shadow: inset 0 0 0 2px #0069D0;
 }
 
-.emotion-35 {
+.emotion-34 {
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: minmax(min-content,max-content);
-  grid-gap: 1rem;
+  gap: 1rem;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2296,16 +2206,17 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  justify-items: start;
 }
 
-.emotion-33 {
+.emotion-32 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5;
   color: #24252E;
 }
 
-.emotion-34 {
+.emotion-33 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5rem;
@@ -2340,7 +2251,7 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
 }
 
-.emotion-34 > span {
+.emotion-33 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2351,24 +2262,24 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
   display: inline-flex;
 }
 
-.emotion-34:not(:disabled):active {
+.emotion-33:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-34:focus {
+.emotion-33:focus {
   outline: none;
   box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
 }
 
-.emotion-34:not(:disabled):hover {
+.emotion-33:not(:disabled):hover {
   background-color: #F0F0F5;
 }
 
-.emotion-34:not(:disabled):hover {
+.emotion-33:not(:disabled):hover {
   background-color: #0051A2;
 }
 
-.emotion-9 {
+.emotion-8 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5;
@@ -2379,70 +2290,66 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
 <body>
   <div>
     <div
-      class="emotion-8"
+      class="emotion-7"
     >
       <div
-        class="emotion-7"
+        class="emotion-6"
       >
-        <div
-          class="emotion-6"
+        <label
+          class="emotion-0"
+          for="test-input-id"
+          id="test-label-id"
         >
-          <label
-            class="emotion-0"
-            for="test-input-id"
-            id="test-label-id"
+          Fruit
+        </label>
+        <div
+          class="emotion-5"
+        >
+          <input
+            aria-activedescendant=""
+            aria-autocomplete="list"
+            aria-controls="test-menu-id"
+            aria-expanded="true"
+            aria-labelledby="test-label-id"
+            autocomplete="off"
+            class="emotion-1"
+            id="test-input-id"
+            label="Fruit"
+            name="fruit"
+            role="combobox"
+            type="text"
+            value=""
+          />
+          <span
+            class="emotion-4"
           >
-            Fruit
-          </label>
-          <div
-            class="emotion-5"
-          >
-            <input
-              aria-activedescendant=""
-              aria-autocomplete="list"
+            <button
               aria-controls="test-menu-id"
               aria-expanded="true"
-              aria-labelledby="test-label-id"
-              autocomplete="off"
-              class="emotion-1"
-              id="test-input-id"
-              label="Fruit"
-              name="fruit"
-              role="combobox"
-              type="text"
-              value=""
-            />
-            <span
-              class="emotion-4"
+              aria-label="Hide options"
+              class="emotion-3"
+              id="test-toggle-button-id"
+              tabindex="-1"
+              type="button"
             >
-              <button
-                aria-controls="test-menu-id"
-                aria-expanded="true"
-                aria-label="Hide options"
-                class="emotion-3"
-                id="test-toggle-button-id"
-                tabindex="-1"
-                type="button"
-              >
-                <span>
-                  <svg
-                    aria-hidden="true"
-                    class="emotion-2"
-                    height="1em"
-                    role="img"
-                    viewBox="0 0 24 24"
-                    width="1em"
-                  >
-                    <path
-                      clip-rule="evenodd"
-                      d="M7.707 14.707a1 1 0 11-1.414-1.414l5-5a1 1 0 011.414 0l5.001 5.001a1 1 0 01-1.414 1.414L12 10.414l-4.293 4.293z"
-                      fill-rule="evenodd"
-                    />
-                  </svg>
-                </span>
-              </button>
-            </span>
-          </div>
+              <span>
+                <svg
+                  aria-hidden="true"
+                  class="emotion-2"
+                  height="1em"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <path
+                    clip-rule="evenodd"
+                    d="M7.707 14.707a1 1 0 11-1.414-1.414l5-5a1 1 0 011.414 0l5.001 5.001a1 1 0 01-1.414 1.414L12 10.414l-4.293 4.293z"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </span>
+            </button>
+          </span>
         </div>
       </div>
     </div>
@@ -2453,7 +2360,7 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
       role="listbox"
     >
       <div
-        class="emotion-37"
+        class="emotion-36"
         data-popper-escaped="true"
         data-popper-placement="bottom-start"
         data-popper-reference-hidden="true"
@@ -2462,7 +2369,7 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
         tabindex="-1"
       >
         <ul
-          class="emotion-36"
+          class="emotion-35"
           tabindex="-1"
         >
           <div
@@ -2473,12 +2380,12 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
           <li
             aria-disabled="false"
             aria-selected="false"
-            class="emotion-10"
+            class="emotion-9"
             id="test-item-id-0"
             role="option"
           >
             <span
-              class="emotion-9"
+              class="emotion-8"
             >
               Custom 
               Apple
@@ -2487,12 +2394,12 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
           <li
             aria-disabled="false"
             aria-selected="false"
-            class="emotion-10"
+            class="emotion-9"
             id="test-item-id-1"
             role="option"
           >
             <span
-              class="emotion-9"
+              class="emotion-8"
             >
               Custom 
               Avocado
@@ -2501,12 +2408,12 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
           <li
             aria-disabled="false"
             aria-selected="false"
-            class="emotion-10"
+            class="emotion-9"
             id="test-item-id-2"
             role="option"
           >
             <span
-              class="emotion-9"
+              class="emotion-8"
             >
               Custom 
               Banana
@@ -2515,12 +2422,12 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
           <li
             aria-disabled="false"
             aria-selected="false"
-            class="emotion-10"
+            class="emotion-9"
             id="test-item-id-3"
             role="option"
           >
             <span
-              class="emotion-9"
+              class="emotion-8"
             >
               Custom 
               Blueberry
@@ -2529,12 +2436,12 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
           <li
             aria-disabled="false"
             aria-selected="false"
-            class="emotion-10"
+            class="emotion-9"
             id="test-item-id-4"
             role="option"
           >
             <span
-              class="emotion-9"
+              class="emotion-8"
             >
               Custom 
               Coconut
@@ -2543,12 +2450,12 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
           <li
             aria-disabled="false"
             aria-selected="false"
-            class="emotion-10"
+            class="emotion-9"
             id="test-item-id-5"
             role="option"
           >
             <span
-              class="emotion-9"
+              class="emotion-8"
             >
               Custom 
               Grape
@@ -2557,12 +2464,12 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
           <li
             aria-disabled="false"
             aria-selected="false"
-            class="emotion-10"
+            class="emotion-9"
             id="test-item-id-6"
             role="option"
           >
             <span
-              class="emotion-9"
+              class="emotion-8"
             >
               Custom 
               Lemon
@@ -2571,12 +2478,12 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
           <li
             aria-disabled="false"
             aria-selected="false"
-            class="emotion-10"
+            class="emotion-9"
             id="test-item-id-7"
             role="option"
           >
             <span
-              class="emotion-9"
+              class="emotion-8"
             >
               Custom 
               Mango
@@ -2585,12 +2492,12 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
           <li
             aria-disabled="false"
             aria-selected="false"
-            class="emotion-10"
+            class="emotion-9"
             id="test-item-id-8"
             role="option"
           >
             <span
-              class="emotion-9"
+              class="emotion-8"
             >
               Custom 
               Melon
@@ -2599,12 +2506,12 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
           <li
             aria-disabled="false"
             aria-selected="false"
-            class="emotion-10"
+            class="emotion-9"
             id="test-item-id-9"
             role="option"
           >
             <span
-              class="emotion-9"
+              class="emotion-8"
             >
               Custom 
               Orange
@@ -2613,12 +2520,12 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
           <li
             aria-disabled="false"
             aria-selected="false"
-            class="emotion-10"
+            class="emotion-9"
             id="test-item-id-10"
             role="option"
           >
             <span
-              class="emotion-9"
+              class="emotion-8"
             >
               Custom 
               Peach
@@ -2627,12 +2534,12 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
           <li
             aria-disabled="false"
             aria-selected="false"
-            class="emotion-10"
+            class="emotion-9"
             id="test-item-id-11"
             role="option"
           >
             <span
-              class="emotion-9"
+              class="emotion-8"
             >
               Custom 
               Pear
@@ -2642,15 +2549,15 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
             style="background: rgb(240, 240, 245); padding: 0.25rem 0.5rem; cursor: initial;"
           >
             <div
-              class="emotion-35"
+              class="emotion-34"
             >
               <span
-                class="emotion-33"
+                class="emotion-32"
               >
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime quod modi, inventore quasi aut sed beatae corrupti repellendus minima voluptatem debitis, quibusdam repudiandae totam voluptatum odit.
               </span>
               <button
-                class="emotion-34"
+                class="emotion-33"
                 data-testid="action-btn"
                 type="button"
               >

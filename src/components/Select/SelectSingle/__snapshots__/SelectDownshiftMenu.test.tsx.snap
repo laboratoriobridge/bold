@@ -5,7 +5,7 @@ exports[`SelectDownshiftComponentCustom should accept actions inside children pr
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: minmax(min-content,max-content);
-  grid-gap: 1rem;
+  gap: 1rem;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -14,6 +14,7 @@ exports[`SelectDownshiftComponentCustom should accept actions inside children pr
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  justify-items: start;
 }
 
 .emotion-0 {

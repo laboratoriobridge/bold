@@ -32,7 +32,8 @@ exports[`Droppable render should render with filter options 1`] = `
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: minmax(min-content,max-content);
-  grid-gap: 0.5rem;
+  gap: 0.5rem;
+  justify-items: start;
 }
 
 .emotion-0 {
@@ -281,7 +282,8 @@ exports[`Droppable render should render without filter options 1`] = `
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: minmax(min-content,max-content);
-  grid-gap: 0.5rem;
+  gap: 0.5rem;
+  justify-items: start;
 }
 
 .emotion-0 {

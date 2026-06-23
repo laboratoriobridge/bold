@@ -165,11 +165,12 @@ exports[`should render correctly 1`] = `
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: minmax(min-content,max-content);
-  grid-gap: 1rem;
+  gap: 1rem;
   -webkit-box-pack: end;
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
+  justify-items: start;
 }
 
 .emotion-7 {
@@ -494,11 +495,12 @@ exports[`should render correctly with depth 1`] = `
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: minmax(min-content,max-content);
-  grid-gap: 1rem;
+  gap: 1rem;
   -webkit-box-pack: end;
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
+  justify-items: start;
 }
 
 .emotion-7 {
@@ -879,11 +881,12 @@ exports[`should render correctly without 'overflow hidden' prop in document clas
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: minmax(min-content,max-content);
-  grid-gap: 1rem;
+  gap: 1rem;
   -webkit-box-pack: end;
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
+  justify-items: start;
 }
 
 .emotion-7 {

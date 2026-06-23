@@ -9,11 +9,12 @@ exports[`MonthPaginator should render correctly with ghost 1`] = `
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: minmax(min-content,max-content);
-  grid-gap: 1rem;
+  gap: 1rem;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  justify-items: start;
 }
 
 .emotion-1 {
@@ -232,11 +233,12 @@ exports[`MonthPaginator should render correctly with month and year 1`] = `
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: minmax(min-content,max-content);
-  grid-gap: 1rem;
+  gap: 1rem;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  justify-items: start;
 }
 
 .emotion-1 {

@@ -8,32 +8,12 @@ exports[`should accept style prop 1`] = `
   display: flex;
 }
 
-.emotion-4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 .emotion-3 {
-  display: inline-block;
-  margin-bottom: 0rem;
-  margin-top: 0rem;
-}
-
-.emotion-3:first-of-type {
-  margin-top: 0;
-}
-
-.emotion-3:last-of-type {
-  margin-bottom: 0;
-}
-
-.emotion-3:empty {
-  display: none;
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-rows: minmax(min-content,max-content);
+  gap: 0rem;
+  justify-items: stretch;
 }
 
 .emotion-0 {
@@ -111,22 +91,18 @@ exports[`should accept style prop 1`] = `
 
 <div>
   <div
-    class="emotion-4"
+    class="emotion-3"
   >
     <div
-      class="emotion-3"
+      class="emotion-2"
     >
+      <textarea
+        class="emotion-0"
+        name="input"
+      />
       <div
-        class="emotion-2"
-      >
-        <textarea
-          class="emotion-0"
-          name="input"
-        />
-        <div
-          class="emotion-1"
-        />
-      </div>
+        class="emotion-1"
+      />
     </div>
   </div>
 </div>
@@ -216,62 +192,38 @@ exports[`should render character counter 1`] = `
   margin-left: auto;
 }
 
-.emotion-5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 .emotion-4 {
-  display: inline-block;
-  margin-bottom: 0rem;
-  margin-top: 0rem;
-}
-
-.emotion-4:first-of-type {
-  margin-top: 0;
-}
-
-.emotion-4:last-of-type {
-  margin-bottom: 0;
-}
-
-.emotion-4:empty {
-  display: none;
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-rows: minmax(min-content,max-content);
+  gap: 0rem;
+  justify-items: stretch;
 }
 
 <div>
   <div
-    class="emotion-5"
+    class="emotion-4"
   >
     <div
-      class="emotion-4"
+      class="emotion-3"
     >
-      <div
-        class="emotion-3"
+      <textarea
+        class="emotion-0"
+        maxlength="200"
+        name="input"
       >
-        <textarea
-          class="emotion-0"
-          maxlength="200"
-          name="input"
-        >
-          Testing counter
-        </textarea>
+        Testing counter
+      </textarea>
+      <div
+        class="emotion-2"
+      >
         <div
-          class="emotion-2"
+          class="emotion-1"
         >
-          <div
-            class="emotion-1"
-          >
-            15
-            /
-            200
-             caracteres
-          </div>
+          15
+          /
+          200
+           caracteres
         </div>
       </div>
     </div>
@@ -363,62 +315,38 @@ exports[`should render character counter 2`] = `
   margin-left: auto;
 }
 
-.emotion-5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 .emotion-4 {
-  display: inline-block;
-  margin-bottom: 0rem;
-  margin-top: 0rem;
-}
-
-.emotion-4:first-of-type {
-  margin-top: 0;
-}
-
-.emotion-4:last-of-type {
-  margin-bottom: 0;
-}
-
-.emotion-4:empty {
-  display: none;
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-rows: minmax(min-content,max-content);
+  gap: 0rem;
+  justify-items: stretch;
 }
 
 <div>
   <div
-    class="emotion-5"
+    class="emotion-4"
   >
     <div
-      class="emotion-4"
+      class="emotion-3"
     >
-      <div
-        class="emotion-3"
+      <textarea
+        class="emotion-0"
+        maxlength="200"
+        name="input"
       >
-        <textarea
-          class="emotion-0"
-          maxlength="200"
-          name="input"
-        >
-          Testing counter
-        </textarea>
+        Testing counter
+      </textarea>
+      <div
+        class="emotion-2"
+      >
         <div
-          class="emotion-2"
+          class="emotion-1"
         >
-          <div
-            class="emotion-1"
-          >
-            0
-            /
-            200
-             caracteres
-          </div>
+          0
+          /
+          200
+           caracteres
         </div>
       </div>
     </div>
@@ -506,32 +434,12 @@ exports[`should render correctly 1`] = `
   display: flex;
 }
 
-.emotion-5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 .emotion-4 {
-  display: inline-block;
-  margin-bottom: 0rem;
-  margin-top: 0rem;
-}
-
-.emotion-4:first-of-type {
-  margin-top: 0;
-}
-
-.emotion-4:last-of-type {
-  margin-bottom: 0;
-}
-
-.emotion-4:empty {
-  display: none;
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-rows: minmax(min-content,max-content);
+  gap: 0rem;
+  justify-items: stretch;
 }
 
 .emotion-0 {
@@ -543,32 +451,28 @@ exports[`should render correctly 1`] = `
 
 <div>
   <div
-    class="emotion-5"
+    class="emotion-4"
   >
     <div
-      class="emotion-4"
+      class="emotion-3"
     >
-      <div
-        class="emotion-3"
+      <label
+        class="emotion-0"
+        id="label-abc"
       >
-        <label
-          class="emotion-0"
-          id="label-abc"
-        >
-          Label
-        </label>
-        <textarea
-          aria-labelledby="label-abc"
-          class="emotion-1"
-          name="input"
-          placeholder="Test"
-        >
-          Value
-        </textarea>
-        <div
-          class="emotion-2"
-        />
-      </div>
+        Label
+      </label>
+      <textarea
+        aria-labelledby="label-abc"
+        class="emotion-1"
+        name="input"
+        placeholder="Test"
+      >
+        Value
+      </textarea>
+      <div
+        class="emotion-2"
+      />
     </div>
   </div>
 </div>
@@ -654,53 +558,29 @@ exports[`should render correctly when disabled 1`] = `
   display: flex;
 }
 
-.emotion-4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 .emotion-3 {
-  display: inline-block;
-  margin-bottom: 0rem;
-  margin-top: 0rem;
-}
-
-.emotion-3:first-of-type {
-  margin-top: 0;
-}
-
-.emotion-3:last-of-type {
-  margin-bottom: 0;
-}
-
-.emotion-3:empty {
-  display: none;
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-rows: minmax(min-content,max-content);
+  gap: 0rem;
+  justify-items: stretch;
 }
 
 <div>
   <div
-    class="emotion-4"
+    class="emotion-3"
   >
     <div
-      class="emotion-3"
+      class="emotion-2"
     >
+      <textarea
+        class="emotion-0"
+        disabled=""
+        name="input"
+      />
       <div
-        class="emotion-2"
-      >
-        <textarea
-          class="emotion-0"
-          disabled=""
-          name="input"
-        />
-        <div
-          class="emotion-1"
-        />
-      </div>
+        class="emotion-1"
+      />
     </div>
   </div>
 </div>
@@ -714,32 +594,12 @@ exports[`should render correctly with error 1`] = `
   display: flex;
 }
 
-.emotion-5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 .emotion-4 {
-  display: inline-block;
-  margin-bottom: 0rem;
-  margin-top: 0rem;
-}
-
-.emotion-4:first-of-type {
-  margin-top: 0;
-}
-
-.emotion-4:last-of-type {
-  margin-bottom: 0;
-}
-
-.emotion-4:empty {
-  display: none;
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-rows: minmax(min-content,max-content);
+  gap: 0rem;
+  justify-items: stretch;
 }
 
 .emotion-0 {
@@ -834,31 +694,27 @@ exports[`should render correctly with error 1`] = `
 
 <div>
   <div
-    class="emotion-5"
+    class="emotion-4"
   >
     <div
-      class="emotion-4"
+      class="emotion-3"
     >
+      <textarea
+        aria-errormessage="error-abc"
+        aria-invalid="true"
+        class="emotion-0"
+        error="Some error"
+        name="input"
+      />
       <div
-        class="emotion-3"
+        class="emotion-2"
       >
-        <textarea
-          aria-errormessage="error-abc"
-          aria-invalid="true"
-          class="emotion-0"
-          error="Some error"
-          name="input"
-        />
         <div
-          class="emotion-2"
+          class="emotion-1"
+          id="error-abc"
+          role="alert"
         >
-          <div
-            class="emotion-1"
-            id="error-abc"
-            role="alert"
-          >
-            Some error
-          </div>
+          Some error
         </div>
       </div>
     </div>
@@ -946,32 +802,12 @@ exports[`textarea label label should have a htmlFor prop equals to the used id 1
   display: flex;
 }
 
-.emotion-5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 .emotion-4 {
-  display: inline-block;
-  margin-bottom: 0rem;
-  margin-top: 0rem;
-}
-
-.emotion-4:first-of-type {
-  margin-top: 0;
-}
-
-.emotion-4:last-of-type {
-  margin-bottom: 0;
-}
-
-.emotion-4:empty {
-  display: none;
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-rows: minmax(min-content,max-content);
+  gap: 0rem;
+  justify-items: stretch;
 }
 
 .emotion-0 {
@@ -983,28 +819,24 @@ exports[`textarea label label should have a htmlFor prop equals to the used id 1
 
 <div>
   <div
-    class="emotion-5"
+    class="emotion-4"
   >
     <div
-      class="emotion-4"
+      class="emotion-3"
     >
-      <div
-        class="emotion-3"
+      <label
+        class="emotion-0"
+        for="foo"
       >
-        <label
-          class="emotion-0"
-          for="foo"
-        >
-          Foo
-        </label>
-        <textarea
-          class="emotion-1"
-          id="foo"
-        />
-        <div
-          class="emotion-2"
-        />
-      </div>
+        Foo
+      </label>
+      <textarea
+        class="emotion-1"
+        id="foo"
+      />
+      <div
+        class="emotion-2"
+      />
     </div>
   </div>
 </div>
@@ -1090,32 +922,12 @@ exports[`textarea label should use aria-labelledby equals to an auto-assigned la
   display: flex;
 }
 
-.emotion-5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 .emotion-4 {
-  display: inline-block;
-  margin-bottom: 0rem;
-  margin-top: 0rem;
-}
-
-.emotion-4:first-of-type {
-  margin-top: 0;
-}
-
-.emotion-4:last-of-type {
-  margin-bottom: 0;
-}
-
-.emotion-4:empty {
-  display: none;
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-rows: minmax(min-content,max-content);
+  gap: 0rem;
+  justify-items: stretch;
 }
 
 .emotion-0 {
@@ -1127,28 +939,24 @@ exports[`textarea label should use aria-labelledby equals to an auto-assigned la
 
 <div>
   <div
-    class="emotion-5"
+    class="emotion-4"
   >
     <div
-      class="emotion-4"
+      class="emotion-3"
     >
-      <div
-        class="emotion-3"
+      <label
+        class="emotion-0"
+        id="label-abc"
       >
-        <label
-          class="emotion-0"
-          id="label-abc"
-        >
-          test
-        </label>
-        <textarea
-          aria-labelledby="label-abc"
-          class="emotion-1"
-        />
-        <div
-          class="emotion-2"
-        />
-      </div>
+        test
+      </label>
+      <textarea
+        aria-labelledby="label-abc"
+        class="emotion-1"
+      />
+      <div
+        class="emotion-2"
+      />
     </div>
   </div>
 </div>
