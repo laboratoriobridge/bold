@@ -6,7 +6,7 @@ exports[`should accept "style" prop 1`] = `
   grid-auto-flow: column;
   grid-auto-columns: minmax(min-content,max-content);
   gap: 1rem;
-  justify-items: start;
+  justify-items: stretch;
   color: red;
 }
 
@@ -41,7 +41,7 @@ exports[`should accept some grid props 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  justify-items: start;
+  justify-items: stretch;
 }
 
 <div>
@@ -67,7 +67,7 @@ exports[`should render correctly 1`] = `
   grid-auto-flow: column;
   grid-auto-columns: minmax(min-content,max-content);
   gap: 1rem;
-  justify-items: start;
+  justify-items: stretch;
 }
 
 <div>

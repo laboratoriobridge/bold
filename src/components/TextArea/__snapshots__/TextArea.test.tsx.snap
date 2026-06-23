@@ -8,9 +8,14 @@ exports[`should accept style prop 1`] = `
   display: flex;
 }
 
-.emotion-3 {
+.emotion-3:empty {
+  display: none;
+}
+
+.emotion-4 {
   display: grid;
   grid-auto-flow: row;
+  grid-auto-columns: minmax(0,1fr);
   grid-auto-rows: minmax(min-content,max-content);
   gap: 0rem;
   justify-items: stretch;
@@ -91,18 +96,22 @@ exports[`should accept style prop 1`] = `
 
 <div>
   <div
-    class="emotion-3"
+    class="emotion-4"
   >
     <div
-      class="emotion-2"
+      class="emotion-3"
     >
-      <textarea
-        class="emotion-0"
-        name="input"
-      />
       <div
-        class="emotion-1"
-      />
+        class="emotion-2"
+      >
+        <textarea
+          class="emotion-0"
+          name="input"
+        />
+        <div
+          class="emotion-1"
+        />
+      </div>
     </div>
   </div>
 </div>
@@ -192,9 +201,14 @@ exports[`should render character counter 1`] = `
   margin-left: auto;
 }
 
-.emotion-4 {
+.emotion-4:empty {
+  display: none;
+}
+
+.emotion-5 {
   display: grid;
   grid-auto-flow: row;
+  grid-auto-columns: minmax(0,1fr);
   grid-auto-rows: minmax(min-content,max-content);
   gap: 0rem;
   justify-items: stretch;
@@ -202,28 +216,32 @@ exports[`should render character counter 1`] = `
 
 <div>
   <div
-    class="emotion-4"
+    class="emotion-5"
   >
     <div
-      class="emotion-3"
+      class="emotion-4"
     >
-      <textarea
-        class="emotion-0"
-        maxlength="200"
-        name="input"
-      >
-        Testing counter
-      </textarea>
       <div
-        class="emotion-2"
+        class="emotion-3"
       >
-        <div
-          class="emotion-1"
+        <textarea
+          class="emotion-0"
+          maxlength="200"
+          name="input"
         >
-          15
-          /
-          200
-           caracteres
+          Testing counter
+        </textarea>
+        <div
+          class="emotion-2"
+        >
+          <div
+            class="emotion-1"
+          >
+            15
+            /
+            200
+             caracteres
+          </div>
         </div>
       </div>
     </div>
@@ -315,9 +333,14 @@ exports[`should render character counter 2`] = `
   margin-left: auto;
 }
 
-.emotion-4 {
+.emotion-4:empty {
+  display: none;
+}
+
+.emotion-5 {
   display: grid;
   grid-auto-flow: row;
+  grid-auto-columns: minmax(0,1fr);
   grid-auto-rows: minmax(min-content,max-content);
   gap: 0rem;
   justify-items: stretch;
@@ -325,28 +348,32 @@ exports[`should render character counter 2`] = `
 
 <div>
   <div
-    class="emotion-4"
+    class="emotion-5"
   >
     <div
-      class="emotion-3"
+      class="emotion-4"
     >
-      <textarea
-        class="emotion-0"
-        maxlength="200"
-        name="input"
-      >
-        Testing counter
-      </textarea>
       <div
-        class="emotion-2"
+        class="emotion-3"
       >
-        <div
-          class="emotion-1"
+        <textarea
+          class="emotion-0"
+          maxlength="200"
+          name="input"
         >
-          0
-          /
-          200
-           caracteres
+          Testing counter
+        </textarea>
+        <div
+          class="emotion-2"
+        >
+          <div
+            class="emotion-1"
+          >
+            0
+            /
+            200
+             caracteres
+          </div>
         </div>
       </div>
     </div>
@@ -434,9 +461,14 @@ exports[`should render correctly 1`] = `
   display: flex;
 }
 
-.emotion-4 {
+.emotion-4:empty {
+  display: none;
+}
+
+.emotion-5 {
   display: grid;
   grid-auto-flow: row;
+  grid-auto-columns: minmax(0,1fr);
   grid-auto-rows: minmax(min-content,max-content);
   gap: 0rem;
   justify-items: stretch;
@@ -451,28 +483,32 @@ exports[`should render correctly 1`] = `
 
 <div>
   <div
-    class="emotion-4"
+    class="emotion-5"
   >
     <div
-      class="emotion-3"
+      class="emotion-4"
     >
-      <label
-        class="emotion-0"
-        id="label-abc"
-      >
-        Label
-      </label>
-      <textarea
-        aria-labelledby="label-abc"
-        class="emotion-1"
-        name="input"
-        placeholder="Test"
-      >
-        Value
-      </textarea>
       <div
-        class="emotion-2"
-      />
+        class="emotion-3"
+      >
+        <label
+          class="emotion-0"
+          id="label-abc"
+        >
+          Label
+        </label>
+        <textarea
+          aria-labelledby="label-abc"
+          class="emotion-1"
+          name="input"
+          placeholder="Test"
+        >
+          Value
+        </textarea>
+        <div
+          class="emotion-2"
+        />
+      </div>
     </div>
   </div>
 </div>
@@ -558,9 +594,14 @@ exports[`should render correctly when disabled 1`] = `
   display: flex;
 }
 
-.emotion-3 {
+.emotion-3:empty {
+  display: none;
+}
+
+.emotion-4 {
   display: grid;
   grid-auto-flow: row;
+  grid-auto-columns: minmax(0,1fr);
   grid-auto-rows: minmax(min-content,max-content);
   gap: 0rem;
   justify-items: stretch;
@@ -568,19 +609,23 @@ exports[`should render correctly when disabled 1`] = `
 
 <div>
   <div
-    class="emotion-3"
+    class="emotion-4"
   >
     <div
-      class="emotion-2"
+      class="emotion-3"
     >
-      <textarea
-        class="emotion-0"
-        disabled=""
-        name="input"
-      />
       <div
-        class="emotion-1"
-      />
+        class="emotion-2"
+      >
+        <textarea
+          class="emotion-0"
+          disabled=""
+          name="input"
+        />
+        <div
+          class="emotion-1"
+        />
+      </div>
     </div>
   </div>
 </div>
@@ -594,9 +639,14 @@ exports[`should render correctly with error 1`] = `
   display: flex;
 }
 
-.emotion-4 {
+.emotion-4:empty {
+  display: none;
+}
+
+.emotion-5 {
   display: grid;
   grid-auto-flow: row;
+  grid-auto-columns: minmax(0,1fr);
   grid-auto-rows: minmax(min-content,max-content);
   gap: 0rem;
   justify-items: stretch;
@@ -694,27 +744,31 @@ exports[`should render correctly with error 1`] = `
 
 <div>
   <div
-    class="emotion-4"
+    class="emotion-5"
   >
     <div
-      class="emotion-3"
+      class="emotion-4"
     >
-      <textarea
-        aria-errormessage="error-abc"
-        aria-invalid="true"
-        class="emotion-0"
-        error="Some error"
-        name="input"
-      />
       <div
-        class="emotion-2"
+        class="emotion-3"
       >
+        <textarea
+          aria-errormessage="error-abc"
+          aria-invalid="true"
+          class="emotion-0"
+          error="Some error"
+          name="input"
+        />
         <div
-          class="emotion-1"
-          id="error-abc"
-          role="alert"
+          class="emotion-2"
         >
-          Some error
+          <div
+            class="emotion-1"
+            id="error-abc"
+            role="alert"
+          >
+            Some error
+          </div>
         </div>
       </div>
     </div>
@@ -802,9 +856,14 @@ exports[`textarea label label should have a htmlFor prop equals to the used id 1
   display: flex;
 }
 
-.emotion-4 {
+.emotion-4:empty {
+  display: none;
+}
+
+.emotion-5 {
   display: grid;
   grid-auto-flow: row;
+  grid-auto-columns: minmax(0,1fr);
   grid-auto-rows: minmax(min-content,max-content);
   gap: 0rem;
   justify-items: stretch;
@@ -819,24 +878,28 @@ exports[`textarea label label should have a htmlFor prop equals to the used id 1
 
 <div>
   <div
-    class="emotion-4"
+    class="emotion-5"
   >
     <div
-      class="emotion-3"
+      class="emotion-4"
     >
-      <label
-        class="emotion-0"
-        for="foo"
-      >
-        Foo
-      </label>
-      <textarea
-        class="emotion-1"
-        id="foo"
-      />
       <div
-        class="emotion-2"
-      />
+        class="emotion-3"
+      >
+        <label
+          class="emotion-0"
+          for="foo"
+        >
+          Foo
+        </label>
+        <textarea
+          class="emotion-1"
+          id="foo"
+        />
+        <div
+          class="emotion-2"
+        />
+      </div>
     </div>
   </div>
 </div>
@@ -922,9 +985,14 @@ exports[`textarea label should use aria-labelledby equals to an auto-assigned la
   display: flex;
 }
 
-.emotion-4 {
+.emotion-4:empty {
+  display: none;
+}
+
+.emotion-5 {
   display: grid;
   grid-auto-flow: row;
+  grid-auto-columns: minmax(0,1fr);
   grid-auto-rows: minmax(min-content,max-content);
   gap: 0rem;
   justify-items: stretch;
@@ -939,24 +1007,28 @@ exports[`textarea label should use aria-labelledby equals to an auto-assigned la
 
 <div>
   <div
-    class="emotion-4"
+    class="emotion-5"
   >
     <div
-      class="emotion-3"
+      class="emotion-4"
     >
-      <label
-        class="emotion-0"
-        id="label-abc"
-      >
-        test
-      </label>
-      <textarea
-        aria-labelledby="label-abc"
-        class="emotion-1"
-      />
       <div
-        class="emotion-2"
-      />
+        class="emotion-3"
+      >
+        <label
+          class="emotion-0"
+          id="label-abc"
+        >
+          test
+        </label>
+        <textarea
+          aria-labelledby="label-abc"
+          class="emotion-1"
+        />
+        <div
+          class="emotion-2"
+        />
+      </div>
     </div>
   </div>
 </div>

@@ -1,9 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should accept the style prop 1`] = `
-.emotion-1 {
+.emotion-1:empty {
+  display: none;
+}
+
+.emotion-2 {
   display: grid;
   grid-auto-flow: row;
+  grid-auto-columns: minmax(0,1fr);
   grid-auto-rows: minmax(min-content,max-content);
   gap: 0rem;
   justify-items: stretch;
@@ -15,21 +20,30 @@ exports[`should accept the style prop 1`] = `
 
 <div>
   <div
-    class="emotion-1"
+    class="emotion-2"
   >
     <div
-      class="emotion-0"
+      class="emotion-1"
     >
-      Test
+      <div
+        class="emotion-0"
+      >
+        Test
+      </div>
     </div>
   </div>
 </div>
 `;
 
 exports[`should render correctly 1`] = `
-.emotion-1 {
+.emotion-1:empty {
+  display: none;
+}
+
+.emotion-2 {
   display: grid;
   grid-auto-flow: row;
+  grid-auto-columns: minmax(0,1fr);
   grid-auto-rows: minmax(min-content,max-content);
   gap: 0rem;
   justify-items: stretch;
@@ -37,21 +51,30 @@ exports[`should render correctly 1`] = `
 
 <div>
   <div
-    class="emotion-1"
+    class="emotion-2"
   >
     <div
-      class="emotion-0"
+      class="emotion-1"
     >
-      Test
+      <div
+        class="emotion-0"
+      >
+        Test
+      </div>
     </div>
   </div>
 </div>
 `;
 
 exports[`should render correctly 2`] = `
-.emotion-4 {
+.emotion-3:empty {
+  display: none;
+}
+
+.emotion-6 {
   display: grid;
   grid-auto-flow: row;
+  grid-auto-columns: minmax(0,1fr);
   grid-auto-rows: minmax(min-content,max-content);
   gap: 0rem;
   justify-items: stretch;
@@ -69,7 +92,7 @@ exports[`should render correctly 2`] = `
   line-height: 20px;
 }
 
-.emotion-3 {
+.emotion-4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -85,30 +108,38 @@ exports[`should render correctly 2`] = `
 
 <div>
   <div
-    class="emotion-4"
+    class="emotion-6"
   >
     <div
-      class="emotion-2"
+      class="emotion-3"
     >
-      <label
-        class="emotion-1"
-        for="test"
+      <div
+        class="emotion-2"
       >
-        Label
-        <span
-          class="emotion-0"
-          title="Required field"
+        <label
+          class="emotion-1"
+          for="test"
         >
-          *
-        </span>
-      </label>
-      Test
+          Label
+          <span
+            class="emotion-0"
+            title="Required field"
+          >
+            *
+          </span>
+        </label>
+        Test
+      </div>
     </div>
     <div
       class="emotion-3"
-      role="alert"
     >
-      Error
+      <div
+        class="emotion-4"
+        role="alert"
+      >
+        Error
+      </div>
     </div>
   </div>
 </div>

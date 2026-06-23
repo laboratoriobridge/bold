@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should accept "style" prop 1`] = `
-.emotion-6 {
+.emotion-7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -28,9 +28,14 @@ exports[`should accept "style" prop 1`] = `
   border-top-color: #D3D4DD;
 }
 
-.emotion-7 {
+.emotion-4:empty {
+  display: none;
+}
+
+.emotion-9 {
   display: grid;
   grid-auto-flow: row;
+  grid-auto-columns: minmax(0,1fr);
   grid-auto-rows: minmax(min-content,max-content);
   gap: 0rem;
   justify-items: stretch;
@@ -68,9 +73,10 @@ exports[`should accept "style" prop 1`] = `
   transition: all .4s ease;
 }
 
-.emotion-4 {
+.emotion-5 {
   display: grid;
   grid-auto-flow: row;
+  grid-auto-columns: minmax(0,1fr);
   grid-auto-rows: minmax(min-content,max-content);
   gap: 0.5rem;
   justify-items: stretch;
@@ -87,7 +93,7 @@ exports[`should accept "style" prop 1`] = `
   transition: all .4s ease;
 }
 
-.emotion-8 {
+.emotion-10 {
   position: relative;
   text-align: center;
   color: red;
@@ -95,39 +101,47 @@ exports[`should accept "style" prop 1`] = `
 
 <div>
   <span
-    class="emotion-8"
+    class="emotion-10"
   >
     <span
       class="emotion-0"
       data-testid="step-connector"
     />
     <div
-      class="emotion-7"
+      class="emotion-9"
     >
       <div
-        class="emotion-6"
+        class="emotion-4"
       >
-        <span
-          class="emotion-2"
+        <div
+          class="emotion-7"
         >
-          <div
-            class="emotion-1"
-            data-testid="background"
-          />
-        </span>
-        <span
-          class="emotion-5"
-        >
-          <div
-            class="emotion-4"
+          <span
+            class="emotion-2"
           >
-            <span
-              class="emotion-3"
+            <div
+              class="emotion-1"
+              data-testid="background"
+            />
+          </span>
+          <span
+            class="emotion-6"
+          >
+            <div
+              class="emotion-5"
             >
-              Step red
-            </span>
-          </div>
-        </span>
+              <div
+                class="emotion-4"
+              >
+                <span
+                  class="emotion-3"
+                >
+                  Step red
+                </span>
+              </div>
+            </div>
+          </span>
+        </div>
       </div>
     </div>
   </span>
@@ -135,12 +149,12 @@ exports[`should accept "style" prop 1`] = `
 `;
 
 exports[`should allow override of components 1`] = `
-.emotion-8 {
+.emotion-10 {
   position: relative;
   text-align: center;
 }
 
-.emotion-6 {
+.emotion-7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -167,9 +181,14 @@ exports[`should allow override of components 1`] = `
   border-top-color: #D3D4DD;
 }
 
-.emotion-7 {
+.emotion-4:empty {
+  display: none;
+}
+
+.emotion-9 {
   display: grid;
   grid-auto-flow: row;
+  grid-auto-columns: minmax(0,1fr);
   grid-auto-rows: minmax(min-content,max-content);
   gap: 0rem;
   justify-items: stretch;
@@ -202,9 +221,10 @@ exports[`should allow override of components 1`] = `
   height: 1.25rem;
 }
 
-.emotion-4 {
+.emotion-5 {
   display: grid;
   grid-auto-flow: row;
+  grid-auto-columns: minmax(0,1fr);
   grid-auto-rows: minmax(min-content,max-content);
   gap: 0.5rem;
   justify-items: stretch;
@@ -223,7 +243,7 @@ exports[`should allow override of components 1`] = `
 
 <div>
   <span
-    class="emotion-8"
+    class="emotion-10"
     id="root"
   >
     <span
@@ -231,32 +251,40 @@ exports[`should allow override of components 1`] = `
       data-testid="step-connector"
     />
     <div
-      class="emotion-7"
+      class="emotion-9"
     >
       <div
-        class="emotion-6"
+        class="emotion-4"
       >
-        <span
-          class="emotion-2"
+        <div
+          class="emotion-7"
         >
           <span
-            class="emotion-1"
-            id="icon"
-          />
-        </span>
-        <span
-          class="emotion-5"
-        >
-          <div
-            class="emotion-4"
+            class="emotion-2"
           >
             <span
-              class="emotion-3"
+              class="emotion-1"
+              id="icon"
+            />
+          </span>
+          <span
+            class="emotion-6"
+          >
+            <div
+              class="emotion-5"
             >
-              Step with overrides
-            </span>
-          </div>
-        </span>
+              <div
+                class="emotion-4"
+              >
+                <span
+                  class="emotion-3"
+                >
+                  Step with overrides
+                </span>
+              </div>
+            </div>
+          </span>
+        </div>
       </div>
     </div>
   </span>
@@ -264,12 +292,12 @@ exports[`should allow override of components 1`] = `
 `;
 
 exports[`should render correctly when status is active 1`] = `
-.emotion-8 {
+.emotion-10 {
   position: relative;
   text-align: center;
 }
 
-.emotion-6 {
+.emotion-7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -296,9 +324,14 @@ exports[`should render correctly when status is active 1`] = `
   border-top-color: #D3D4DD;
 }
 
-.emotion-7 {
+.emotion-4:empty {
+  display: none;
+}
+
+.emotion-9 {
   display: grid;
   grid-auto-flow: row;
+  grid-auto-columns: minmax(0,1fr);
   grid-auto-rows: minmax(min-content,max-content);
   gap: 0rem;
   justify-items: stretch;
@@ -324,9 +357,10 @@ exports[`should render correctly when status is active 1`] = `
   position: relative;
 }
 
-.emotion-4 {
+.emotion-5 {
   display: grid;
   grid-auto-flow: row;
+  grid-auto-columns: minmax(0,1fr);
   grid-auto-rows: minmax(min-content,max-content);
   gap: 0.5rem;
   justify-items: stretch;
@@ -358,39 +392,47 @@ exports[`should render correctly when status is active 1`] = `
 
 <div>
   <span
-    class="emotion-8"
+    class="emotion-10"
   >
     <span
       class="emotion-0"
       data-testid="step-connector"
     />
     <div
-      class="emotion-7"
+      class="emotion-9"
     >
       <div
-        class="emotion-6"
+        class="emotion-4"
       >
-        <span
-          class="emotion-2"
+        <div
+          class="emotion-7"
         >
-          <div
-            class="emotion-1"
-            data-testid="background"
-          />
-        </span>
-        <span
-          class="emotion-5"
-        >
-          <div
-            class="emotion-4"
+          <span
+            class="emotion-2"
           >
-            <span
-              class="emotion-3"
+            <div
+              class="emotion-1"
+              data-testid="background"
+            />
+          </span>
+          <span
+            class="emotion-6"
+          >
+            <div
+              class="emotion-5"
             >
-              Active step
-            </span>
-          </div>
-        </span>
+              <div
+                class="emotion-4"
+              >
+                <span
+                  class="emotion-3"
+                >
+                  Active step
+                </span>
+              </div>
+            </div>
+          </span>
+        </div>
       </div>
     </div>
   </span>
@@ -398,12 +440,12 @@ exports[`should render correctly when status is active 1`] = `
 `;
 
 exports[`should render correctly when status is completed 1`] = `
-.emotion-9 {
+.emotion-11 {
   position: relative;
   text-align: center;
 }
 
-.emotion-7 {
+.emotion-8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -430,9 +472,14 @@ exports[`should render correctly when status is completed 1`] = `
   border-top-color: #D3D4DD;
 }
 
-.emotion-8 {
+.emotion-5:empty {
+  display: none;
+}
+
+.emotion-10 {
   display: grid;
   grid-auto-flow: row;
+  grid-auto-columns: minmax(0,1fr);
   grid-auto-rows: minmax(min-content,max-content);
   gap: 0rem;
   justify-items: stretch;
@@ -458,9 +505,10 @@ exports[`should render correctly when status is completed 1`] = `
   position: relative;
 }
 
-.emotion-5 {
+.emotion-6 {
   display: grid;
   grid-auto-flow: row;
+  grid-auto-columns: minmax(0,1fr);
   grid-auto-rows: minmax(min-content,max-content);
   gap: 0.5rem;
   justify-items: stretch;
@@ -499,52 +547,60 @@ exports[`should render correctly when status is completed 1`] = `
 
 <div>
   <span
-    class="emotion-9"
+    class="emotion-11"
   >
     <span
       class="emotion-0"
       data-testid="step-connector"
     />
     <div
-      class="emotion-8"
+      class="emotion-10"
     >
       <div
-        class="emotion-7"
+        class="emotion-5"
       >
-        <span
-          class="emotion-3"
+        <div
+          class="emotion-8"
         >
-          <div
-            class="emotion-1"
-            data-testid="background"
-          />
-          <svg
-            class="emotion-2"
-            data-testid="check-icon"
-            height="1em"
-            viewBox="0 0 24 24"
-            width="1em"
+          <span
+            class="emotion-3"
           >
-            <path
-              clip-rule="evenodd"
-              d="M18.294 6.293a1 1 0 111.414 1.414l-9 9a1 1 0 01-1.414 0l-5.001-5.001a1 1 0 011.414-1.414l4.294 4.294 8.293-8.293z"
-              fill-rule="evenodd"
+            <div
+              class="emotion-1"
+              data-testid="background"
             />
-          </svg>
-        </span>
-        <span
-          class="emotion-6"
-        >
-          <div
-            class="emotion-5"
-          >
-            <span
-              class="emotion-4"
+            <svg
+              class="emotion-2"
+              data-testid="check-icon"
+              height="1em"
+              viewBox="0 0 24 24"
+              width="1em"
             >
-              Completed step
-            </span>
-          </div>
-        </span>
+              <path
+                clip-rule="evenodd"
+                d="M18.294 6.293a1 1 0 111.414 1.414l-9 9a1 1 0 01-1.414 0l-5.001-5.001a1 1 0 011.414-1.414l4.294 4.294 8.293-8.293z"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </span>
+          <span
+            class="emotion-7"
+          >
+            <div
+              class="emotion-6"
+            >
+              <div
+                class="emotion-5"
+              >
+                <span
+                  class="emotion-4"
+                >
+                  Completed step
+                </span>
+              </div>
+            </div>
+          </span>
+        </div>
       </div>
     </div>
   </span>
@@ -552,12 +608,12 @@ exports[`should render correctly when status is completed 1`] = `
 `;
 
 exports[`should render correctly when status is inactive 1`] = `
-.emotion-8 {
+.emotion-10 {
   position: relative;
   text-align: center;
 }
 
-.emotion-6 {
+.emotion-7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -584,9 +640,14 @@ exports[`should render correctly when status is inactive 1`] = `
   border-top-color: #D3D4DD;
 }
 
-.emotion-7 {
+.emotion-4:empty {
+  display: none;
+}
+
+.emotion-9 {
   display: grid;
   grid-auto-flow: row;
+  grid-auto-columns: minmax(0,1fr);
   grid-auto-rows: minmax(min-content,max-content);
   gap: 0rem;
   justify-items: stretch;
@@ -619,9 +680,10 @@ exports[`should render correctly when status is inactive 1`] = `
   height: 1.25rem;
 }
 
-.emotion-4 {
+.emotion-5 {
   display: grid;
   grid-auto-flow: row;
+  grid-auto-columns: minmax(0,1fr);
   grid-auto-rows: minmax(min-content,max-content);
   gap: 0.5rem;
   justify-items: stretch;
@@ -640,46 +702,54 @@ exports[`should render correctly when status is inactive 1`] = `
 
 <div>
   <span
-    class="emotion-8"
+    class="emotion-10"
   >
     <span
       class="emotion-0"
       data-testid="step-connector"
     />
     <div
-      class="emotion-7"
+      class="emotion-9"
     >
       <div
-        class="emotion-6"
+        class="emotion-4"
       >
-        <span
-          class="emotion-2"
+        <div
+          class="emotion-7"
         >
-          <svg
-            class="emotion-1"
-            data-testid="minus-icon"
-            height="1em"
-            viewBox="0 0 24 24"
-            width="1em"
+          <span
+            class="emotion-2"
           >
-            <path
-              d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10c0 5.522-4.477 10-10 10S2 17.522 2 12zm14-1H8v2h8v-2z"
-            />
-          </svg>
-        </span>
-        <span
-          class="emotion-5"
-        >
-          <div
-            class="emotion-4"
-          >
-            <span
-              class="emotion-3"
+            <svg
+              class="emotion-1"
+              data-testid="minus-icon"
+              height="1em"
+              viewBox="0 0 24 24"
+              width="1em"
             >
-              Inactive step
-            </span>
-          </div>
-        </span>
+              <path
+                d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10c0 5.522-4.477 10-10 10S2 17.522 2 12zm14-1H8v2h8v-2z"
+              />
+            </svg>
+          </span>
+          <span
+            class="emotion-6"
+          >
+            <div
+              class="emotion-5"
+            >
+              <div
+                class="emotion-4"
+              >
+                <span
+                  class="emotion-3"
+                >
+                  Inactive step
+                </span>
+              </div>
+            </div>
+          </span>
+        </div>
       </div>
     </div>
   </span>
@@ -687,12 +757,12 @@ exports[`should render correctly when status is inactive 1`] = `
 `;
 
 exports[`should render correctly when status is incompleted 1`] = `
-.emotion-8 {
+.emotion-10 {
   position: relative;
   text-align: center;
 }
 
-.emotion-6 {
+.emotion-7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -719,9 +789,14 @@ exports[`should render correctly when status is incompleted 1`] = `
   border-top-color: #D3D4DD;
 }
 
-.emotion-7 {
+.emotion-4:empty {
+  display: none;
+}
+
+.emotion-9 {
   display: grid;
   grid-auto-flow: row;
+  grid-auto-columns: minmax(0,1fr);
   grid-auto-rows: minmax(min-content,max-content);
   gap: 0rem;
   justify-items: stretch;
@@ -759,9 +834,10 @@ exports[`should render correctly when status is incompleted 1`] = `
   transition: all .4s ease;
 }
 
-.emotion-4 {
+.emotion-5 {
   display: grid;
   grid-auto-flow: row;
+  grid-auto-columns: minmax(0,1fr);
   grid-auto-rows: minmax(min-content,max-content);
   gap: 0.5rem;
   justify-items: stretch;
@@ -780,39 +856,47 @@ exports[`should render correctly when status is incompleted 1`] = `
 
 <div>
   <span
-    class="emotion-8"
+    class="emotion-10"
   >
     <span
       class="emotion-0"
       data-testid="step-connector"
     />
     <div
-      class="emotion-7"
+      class="emotion-9"
     >
       <div
-        class="emotion-6"
+        class="emotion-4"
       >
-        <span
-          class="emotion-2"
+        <div
+          class="emotion-7"
         >
-          <div
-            class="emotion-1"
-            data-testid="background"
-          />
-        </span>
-        <span
-          class="emotion-5"
-        >
-          <div
-            class="emotion-4"
+          <span
+            class="emotion-2"
           >
-            <span
-              class="emotion-3"
+            <div
+              class="emotion-1"
+              data-testid="background"
+            />
+          </span>
+          <span
+            class="emotion-6"
+          >
+            <div
+              class="emotion-5"
             >
-              Incompleted step
-            </span>
-          </div>
-        </span>
+              <div
+                class="emotion-4"
+              >
+                <span
+                  class="emotion-3"
+                >
+                  Incompleted step
+                </span>
+              </div>
+            </div>
+          </span>
+        </div>
       </div>
     </div>
   </span>

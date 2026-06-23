@@ -11,7 +11,7 @@ exports[`Draggable render should render correctly 1`] = `
   grid-auto-flow: column;
   grid-auto-columns: minmax(min-content,max-content);
   gap: 0.5rem;
-  justify-items: start;
+  justify-items: stretch;
 }
 
 .emotion-0 {
@@ -192,7 +192,7 @@ exports[`FilterDraggable render should render correctly with all values of selec
   grid-auto-flow: column;
   grid-auto-columns: minmax(min-content,max-content);
   gap: 0.5rem;
-  justify-items: start;
+  justify-items: stretch;
 }
 
 .emotion-0 {
@@ -324,7 +324,7 @@ exports[`FilterDraggable render should render correctly with no values of select
   grid-auto-flow: column;
   grid-auto-columns: minmax(min-content,max-content);
   gap: 0.5rem;
-  justify-items: start;
+  justify-items: stretch;
 }
 
 .emotion-0 {
@@ -456,7 +456,7 @@ exports[`FilterDraggable render should render correctly with some values of sele
   grid-auto-flow: column;
   grid-auto-columns: minmax(min-content,max-content);
   gap: 0.5rem;
-  justify-items: start;
+  justify-items: stretch;
 }
 
 .emotion-0 {

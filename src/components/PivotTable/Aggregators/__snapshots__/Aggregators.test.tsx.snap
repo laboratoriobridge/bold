@@ -1,9 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PivotTable - Aggregators should render correctly 1`] = `
-.emotion-11 {
+.emotion-11:empty {
+  display: none;
+}
+
+.emotion-12 {
   display: grid;
   grid-auto-flow: row;
+  grid-auto-columns: minmax(0,1fr);
   grid-auto-rows: minmax(min-content,max-content);
   gap: 1rem;
   justify-items: stretch;
@@ -109,55 +114,59 @@ exports[`PivotTable - Aggregators should render correctly 1`] = `
 
 <div>
   <div
-    class="emotion-11"
+    class="emotion-12"
   >
     <div
-      class="emotion-10"
+      class="emotion-11"
     >
       <div
-        class="emotion-4"
+        class="emotion-10"
       >
-        <label
-          class="emotion-3"
+        <div
+          class="emotion-4"
         >
-          <input
-            checked=""
-            class="emotion-0"
-            name="aggregator"
-            type="radio"
-            value="0"
-          />
-          <span
-            class="emotion-1"
-          />
-          <span
-            class="emotion-2"
+          <label
+            class="emotion-3"
           >
-            Count
-          </span>
-        </label>
-      </div>
-      <div
-        class="emotion-4"
-      >
-        <label
-          class="emotion-3"
+            <input
+              checked=""
+              class="emotion-0"
+              name="aggregator"
+              type="radio"
+              value="0"
+            />
+            <span
+              class="emotion-1"
+            />
+            <span
+              class="emotion-2"
+            >
+              Count
+            </span>
+          </label>
+        </div>
+        <div
+          class="emotion-4"
         >
-          <input
-            class="emotion-0"
-            name="aggregator"
-            type="radio"
-            value="1"
-          />
-          <span
-            class="emotion-1"
-          />
-          <span
-            class="emotion-2"
+          <label
+            class="emotion-3"
           >
-            Percentage
-          </span>
-        </label>
+            <input
+              class="emotion-0"
+              name="aggregator"
+              type="radio"
+              value="1"
+            />
+            <span
+              class="emotion-1"
+            />
+            <span
+              class="emotion-2"
+            >
+              Percentage
+            </span>
+          </label>
+        </div>
       </div>
     </div>
   </div>
@@ -165,9 +174,14 @@ exports[`PivotTable - Aggregators should render correctly 1`] = `
 `;
 
 exports[`PivotTable - Aggregators should render correctly with numberKeys 1`] = `
-.emotion-26 {
+.emotion-26:empty {
+  display: none;
+}
+
+.emotion-27 {
   display: grid;
   grid-auto-flow: row;
+  grid-auto-columns: minmax(0,1fr);
   grid-auto-rows: minmax(min-content,max-content);
   gap: 1rem;
   justify-items: stretch;
@@ -273,121 +287,125 @@ exports[`PivotTable - Aggregators should render correctly with numberKeys 1`] = 
 
 <div>
   <div
-    class="emotion-26"
+    class="emotion-27"
   >
     <div
-      class="emotion-25"
+      class="emotion-26"
     >
       <div
-        class="emotion-4"
+        class="emotion-25"
       >
-        <label
-          class="emotion-3"
+        <div
+          class="emotion-4"
         >
-          <input
-            checked=""
-            class="emotion-0"
-            name="aggregator"
-            type="radio"
-            value="0"
-          />
-          <span
-            class="emotion-1"
-          />
-          <span
-            class="emotion-2"
+          <label
+            class="emotion-3"
           >
-            Count
-          </span>
-        </label>
-      </div>
-      <div
-        class="emotion-4"
-      >
-        <label
-          class="emotion-3"
+            <input
+              checked=""
+              class="emotion-0"
+              name="aggregator"
+              type="radio"
+              value="0"
+            />
+            <span
+              class="emotion-1"
+            />
+            <span
+              class="emotion-2"
+            >
+              Count
+            </span>
+          </label>
+        </div>
+        <div
+          class="emotion-4"
         >
-          <input
-            class="emotion-0"
-            name="aggregator"
-            type="radio"
-            value="1"
-          />
-          <span
-            class="emotion-1"
-          />
-          <span
-            class="emotion-2"
+          <label
+            class="emotion-3"
           >
-            Percentage
-          </span>
-        </label>
-      </div>
-      <div
-        class="emotion-4"
-      >
-        <label
-          class="emotion-3"
+            <input
+              class="emotion-0"
+              name="aggregator"
+              type="radio"
+              value="1"
+            />
+            <span
+              class="emotion-1"
+            />
+            <span
+              class="emotion-2"
+            >
+              Percentage
+            </span>
+          </label>
+        </div>
+        <div
+          class="emotion-4"
         >
-          <input
-            class="emotion-0"
-            name="aggregator"
-            type="radio"
-            value="2"
-          />
-          <span
-            class="emotion-1"
-          />
-          <span
-            class="emotion-2"
+          <label
+            class="emotion-3"
           >
-            Average
-          </span>
-        </label>
-      </div>
-      <div
-        class="emotion-4"
-      >
-        <label
-          class="emotion-3"
+            <input
+              class="emotion-0"
+              name="aggregator"
+              type="radio"
+              value="2"
+            />
+            <span
+              class="emotion-1"
+            />
+            <span
+              class="emotion-2"
+            >
+              Average
+            </span>
+          </label>
+        </div>
+        <div
+          class="emotion-4"
         >
-          <input
-            class="emotion-0"
-            name="aggregator"
-            type="radio"
-            value="3"
-          />
-          <span
-            class="emotion-1"
-          />
-          <span
-            class="emotion-2"
+          <label
+            class="emotion-3"
           >
-            Maximum
-          </span>
-        </label>
-      </div>
-      <div
-        class="emotion-4"
-      >
-        <label
-          class="emotion-3"
+            <input
+              class="emotion-0"
+              name="aggregator"
+              type="radio"
+              value="3"
+            />
+            <span
+              class="emotion-1"
+            />
+            <span
+              class="emotion-2"
+            >
+              Maximum
+            </span>
+          </label>
+        </div>
+        <div
+          class="emotion-4"
         >
-          <input
-            class="emotion-0"
-            name="aggregator"
-            type="radio"
-            value="4"
-          />
-          <span
-            class="emotion-1"
-          />
-          <span
-            class="emotion-2"
+          <label
+            class="emotion-3"
           >
-            Minimum
-          </span>
-        </label>
+            <input
+              class="emotion-0"
+              name="aggregator"
+              type="radio"
+              value="4"
+            />
+            <span
+              class="emotion-1"
+            />
+            <span
+              class="emotion-2"
+            >
+              Minimum
+            </span>
+          </label>
+        </div>
       </div>
     </div>
   </div>

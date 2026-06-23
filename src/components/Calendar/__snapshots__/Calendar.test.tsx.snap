@@ -14,7 +14,7 @@ exports[`Calendar should render correctly 1`] = `
   -webkit-justify-content: space-around;
   -ms-flex-pack: space-around;
   justify-content: space-around;
-  justify-items: start;
+  justify-items: stretch;
   margin-bottom: 0.5rem;
   font-weight: bold;
 }
@@ -28,7 +28,7 @@ exports[`Calendar should render correctly 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  justify-items: start;
+  justify-items: stretch;
 }
 
 .emotion-1 {

@@ -14,7 +14,7 @@ exports[`SelectDownshiftComponentCustom should accept actions inside children pr
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  justify-items: start;
+  justify-items: stretch;
 }
 
 .emotion-0 {

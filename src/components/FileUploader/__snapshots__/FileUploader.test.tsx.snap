@@ -60,7 +60,7 @@ exports[`should render correct without extension 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  justify-items: start;
+  justify-items: stretch;
 }
 
 .emotion-0 {
@@ -254,7 +254,7 @@ exports[`should render correctly at initial state 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  justify-items: start;
+  justify-items: stretch;
 }
 
 .emotion-0 {
@@ -377,7 +377,7 @@ exports[`should render correctly at uploading state 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  justify-items: start;
+  justify-items: stretch;
 }
 
 .emotion-0 {
@@ -606,7 +606,7 @@ exports[`should render correctly complete state 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  justify-items: start;
+  justify-items: stretch;
 }
 
 .emotion-0 {

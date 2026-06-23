@@ -10,7 +10,7 @@ exports[`should render correctly 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  justify-items: start;
+  justify-items: stretch;
 }
 
 .emotion-1 {

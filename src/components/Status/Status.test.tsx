@@ -18,7 +18,7 @@ it('should render correctly with type info', () => {
       -webkit-justify-content: flex-start;
       -ms-flex-pack: start;
       justify-content: flex-start;
-      justify-items: start;
+      justify-items: stretch;
       color: #0069D0;
     }
 
@@ -90,7 +90,7 @@ it('should render correctly with type success', () => {
       -webkit-justify-content: flex-start;
       -ms-flex-pack: start;
       justify-content: flex-start;
-      justify-items: start;
+      justify-items: stretch;
       color: #217B00;
     }
 
@@ -149,7 +149,7 @@ it('should render correctly with type warning', () => {
       -webkit-justify-content: flex-start;
       -ms-flex-pack: start;
       justify-content: flex-start;
-      justify-items: start;
+      justify-items: stretch;
       color: #AD5000;
     }
 
@@ -208,7 +208,7 @@ it('should render correctly with type danger', () => {
       -webkit-justify-content: flex-start;
       -ms-flex-pack: start;
       justify-content: flex-start;
-      justify-items: start;
+      justify-items: stretch;
       color: #D01E29;
     }
 
@@ -267,7 +267,7 @@ it('should accept "style" prop', () => {
       -webkit-justify-content: flex-start;
       -ms-flex-pack: start;
       justify-content: flex-start;
-      justify-items: start;
+      justify-items: stretch;
       color: #0069D0;
       background: red;
     }
@@ -329,7 +329,7 @@ describe('custom icon', () => {
         -webkit-justify-content: flex-start;
         -ms-flex-pack: start;
         justify-content: flex-start;
-        justify-items: start;
+        justify-items: stretch;
         color: #217B00;
       }
 
@@ -389,7 +389,7 @@ describe('custom icon', () => {
         -webkit-justify-content: flex-start;
         -ms-flex-pack: start;
         justify-content: flex-start;
-        justify-items: start;
+        justify-items: stretch;
         color: #217B00;
       }
 
@@ -436,7 +436,7 @@ describe('custom icon', () => {
         -webkit-justify-content: flex-start;
         -ms-flex-pack: start;
         justify-content: flex-start;
-        justify-items: start;
+        justify-items: stretch;
         color: #0069D0;
       }
 
@@ -509,7 +509,7 @@ describe('custom icon', () => {
         -webkit-justify-content: flex-start;
         -ms-flex-pack: start;
         justify-content: flex-start;
-        justify-items: start;
+        justify-items: stretch;
         color: #AD5000;
       }
 
@@ -569,7 +569,7 @@ describe('custom icon', () => {
         -webkit-justify-content: flex-start;
         -ms-flex-pack: start;
         justify-content: flex-start;
-        justify-items: start;
+        justify-items: stretch;
         color: #D01E29;
       }
 
@@ -629,7 +629,7 @@ describe('custom icon', () => {
         -webkit-justify-content: flex-start;
         -ms-flex-pack: start;
         justify-content: flex-start;
-        justify-items: start;
+        justify-items: stretch;
         color: #217B00;
       }
 
