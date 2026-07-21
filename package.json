@@ -53,7 +53,7 @@
   },
   "dependencies": {
     "@emotion/core": "10.0.28",
-    "@juggle/resize-observer": "^3.4.0",
+    "@juggle/resize-observer": "3.4.0",
     "@popperjs/core": "2.4.2",
     "downshift": "9.0.8",
     "emotion": "10.0.27",

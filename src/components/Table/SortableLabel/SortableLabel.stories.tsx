@@ -17,6 +17,7 @@ export default {
   args: {
     direction: '',
     onClick: action('clicked'),
+    onChange: action('onChange'),
   },
 }
 
