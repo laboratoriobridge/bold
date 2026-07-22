@@ -1,4 +1,3 @@
-import { select } from '@storybook/addon-knobs'
 import React from 'react'
 
 import { TextColor } from '../../styles'
@@ -21,26 +20,36 @@ const colors: TextColor[] = [
 
 export default {
   title: 'Components/Textual',
+  component: Heading,
+  argTypes: {
+    color: {
+      control: 'select',
+      options: colors,
+    },
+  },
+  args: {
+    color: 'normal',
+  },
 }
 
-export const _Heading = () => (
+export const _Heading = (args) => (
   <VFlow>
-    <Heading level={1} color={select('color', colors, 'normal')}>
+    <Heading level={1} {...args}>
       Heading level 1
     </Heading>
-    <Heading level={2} color={select('color', colors, 'normal')}>
+    <Heading level={2} {...args}>
       Heading level 2
     </Heading>
-    <Heading level={3} color={select('color', colors, 'normal')}>
+    <Heading level={3} {...args}>
       Heading level 3
     </Heading>
-    <Heading level={4} color={select('color', colors, 'normal')}>
+    <Heading level={4} {...args}>
       Heading level 4
     </Heading>
-    <Heading level={5} color={select('color', colors, 'normal')}>
+    <Heading level={5} {...args}>
       Heading level 5
     </Heading>
-    <Heading level={6} color={select('color', colors, 'normal')}>
+    <Heading level={6} {...args}>
       Heading level 6
     </Heading>
   </VFlow>

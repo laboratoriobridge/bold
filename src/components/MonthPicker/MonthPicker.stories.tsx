@@ -8,6 +8,7 @@ const value = { month: today.getMonth(), year: today.getFullYear() }
 
 export default {
   title: 'Components/MonthPicker',
+  component: MonthPicker,
 }
 
 export const Default = () => <MonthPicker visibleMonth={value} onVisibleMonthChange={action('changed')} />

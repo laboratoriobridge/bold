@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { boolean, optionsKnob } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
 import { KeyMap } from '../model'
 import { getCountAggregator } from '../Aggregators/utils'
@@ -7,10 +6,6 @@ import { useLocale } from '../../../i18n'
 import { Aggregator } from '../Aggregators/model'
 import { PivotTableBoard } from './PivotTableBoard'
 import { BoardField, FieldFiltersByKey, RowColumnKeys } from './model'
-
-export default {
-  title: 'Components/PivotTable/PivotTableBoard',
-}
 
 type Fruit = {
   name: string
@@ -23,7 +18,25 @@ const numberKeyOptions = {
   'Name and Size': ['name', 'size'],
 }
 
-export const Default = () => {
+export default {
+  title: 'Components/PivotTable/PivotTableBoard',
+  component: PivotTableBoard,
+  argTypes: {
+    numberKeys: {
+      options: Object.keys(numberKeyOptions),
+      mapping: numberKeyOptions,
+      control: {
+        type: 'select',
+      },
+    },
+  },
+  args: {
+    numberKeys: [],
+    isBuilding: false,
+  },
+}
+
+export const Default = (args) => {
   const locale = useLocale()
 
   const [aggregator, setAggregator] = useState<Aggregator>(getCountAggregator(locale.aggregators))
@@ -48,8 +61,6 @@ export const Default = () => {
     ['size', { keyName: 'Size' }],
   ])
 
-  const numberKeys = optionsKnob('Number Keys', numberKeyOptions, [], { display: 'select' }) as Array<keyof Fruit>
-
   const initialFields: BoardField<Fruit>[] = [
     { key: 'name' as keyof Fruit, origin: 'row', filters: ['Apple'] },
     { key: 'size' as keyof Fruit, origin: 'column', filters: ['Medium'] },
@@ -67,8 +78,8 @@ export const Default = () => {
     <PivotTableBoard
       keys={keys}
       keyMapping={keyMapping}
-      numberKeys={numberKeys}
-      isBuilding={boolean('isBuilding', false)}
+      numberKeys={args.numberKeys}
+      isBuilding={args.isBuilding}
       onSubmit={handleSubmit}
       onReset={handleReset}
       aggregator={{

@@ -1,22 +1,21 @@
-import { boolean, number, text } from '@storybook/addon-knobs'
 import React from 'react'
 
 import { Number } from './Number'
 
 export default {
   title: 'Components/Textual',
+  component: Number,
+  args: {
+    value: 1234.56789,
+    formatOptions: {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 5,
+    },
+    placeholder: '',
+    abbrev: false,
+    prefix: '',
+    suffix: '',
+  },
 }
 
-export const _Number = () => (
-  <Number
-    value={number('value', 1234.56789)}
-    formatOptions={{
-      minimumFractionDigits: number('formatOptions.minimumFractionDigits', 2),
-      maximumFractionDigits: number('formatOptions.maximumFractionDigits', 5),
-    }}
-    placeholder={text('placeholder', '')}
-    abbrev={boolean('abbrev', false)}
-    prefix={text('prefix', '')}
-    suffix={text('sufix', '')}
-  />
-)
+export const _Number = (args) => <Number {...args} />

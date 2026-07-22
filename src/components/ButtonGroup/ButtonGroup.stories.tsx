@@ -8,6 +8,7 @@ import { ButtonGroup } from './ButtonGroup'
 
 export default {
   title: 'Components/ButtonGroup',
+  component: ButtonGroup,
 }
 
 export const Default = () => (
