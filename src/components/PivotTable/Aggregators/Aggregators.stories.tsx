@@ -1,16 +1,11 @@
 import React, { useState } from 'react'
 
-import { optionsKnob } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
 import { useLocale } from '../../../i18n'
 import { KeyMap } from '../model'
 import { Aggregators } from './Aggregators'
 import { Aggregator } from './model'
 import { getCountAggregator } from './utils'
-
-export default {
-  title: 'Components/PivotTable/Aggregators',
-}
 
 type Fruit = {
   name: string
@@ -28,7 +23,24 @@ const numberKeyOptions = {
   'Name and Size': ['name', 'size'],
 }
 
-export const Default = () => {
+export default {
+  title: 'Components/PivotTable/Aggregators',
+  component: Aggregators,
+  argTypes: {
+    numberKeys: {
+      options: Object.keys(numberKeyOptions),
+      mapping: numberKeyOptions,
+      control: {
+        type: 'select',
+      },
+    },
+  },
+  args: {
+    numberKeys: [],
+  },
+}
+
+export const Default = (args) => {
   const locale = useLocale()
 
   const initialAggregator = getCountAggregator(locale.aggregators)
@@ -47,11 +59,9 @@ export const Default = () => {
     setAggregatorKey(key)
   }
 
-  const numberKeys = optionsKnob('Number Keys', numberKeyOptions, [], { display: 'select' }) as Array<keyof Fruit>
-
   return (
     <Aggregators<Fruit>
-      numberKeys={numberKeys}
+      numberKeys={args.numberKeys}
       keyMapping={keyMapping}
       handleAggregatorChange={handleAggregatorChange}
       handleAggregatorKeyChange={handleAggregatorKeyChange}

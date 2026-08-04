@@ -9,6 +9,7 @@ import { DroppableFilter } from './types/Filter'
 
 export default {
   title: 'Components/PivotTable/Droppable',
+  component: Droppable,
 }
 
 type Fruit = {

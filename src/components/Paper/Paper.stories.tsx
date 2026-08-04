@@ -7,6 +7,7 @@ import { Paper } from './Paper'
 
 export default {
   title: 'Components/Paper',
+  component: Paper,
 }
 
 export const Default = () => (

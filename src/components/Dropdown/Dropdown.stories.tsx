@@ -1,5 +1,4 @@
 import { action } from '@storybook/addon-actions'
-import { boolean } from '@storybook/addon-knobs'
 import React, { useState } from 'react'
 import { Button } from '../Button'
 import { Icon } from '../Icon'
@@ -9,9 +8,20 @@ import { DropdownDivider } from './DropdownDivider'
 import { DropdownItem } from './DropdownItem'
 import { DropdownMenu } from './DropdownMenu'
 
-export default { title: 'Components/Dropdown' }
+export default {
+  title: 'Components/Dropdown',
+  component: Dropdown,
+  decorators: [
+    (Story) => (
+      <div style={{ minHeight: '200px' }}>
+        <Story />
+      </div>
+    ),
+  ],
+  args: { autoclose: true },
+}
 
-export const Default = () => {
+export const Default = (args) => {
   const [anchorRef, setAnchorRef] = useState<HTMLButtonElement>()
   const [open, setOpen] = useState(false)
 
@@ -21,7 +31,7 @@ export const Default = () => {
         <Icon icon='dots' />
       </Button>
 
-      <Dropdown anchorRef={anchorRef} open={open} onClose={() => setOpen(false)} autoclose={boolean('autoclose', true)}>
+      <Dropdown anchorRef={anchorRef} open={open} onClose={() => setOpen(false)} autoclose={args.autoclose}>
         <DropdownItem onClick={action('onClick Item #1')}>Item 1</DropdownItem>
         <DropdownItem onClick={action('onClick Item #2')} component='a' href=''>
           Item 2 - Link
