@@ -324,8 +324,8 @@ export const ModalOverlap = (args) => (
   </div>
 )
 
-export const WrapperAndBackdropStyle = () => {
-  const open = boolean('open', true)
+export const WrapperAndBackdropStyle = (args) => {
+  const open = args.open
   const onClose = action('close')
 
   return (
