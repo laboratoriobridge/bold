@@ -15,7 +15,7 @@ exports[`should accept the "style" prop 1`] = `
   box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
   border-radius: 4px;
   background-color: #FFFFFF;
-  min-width: 520px;
+  min-width: min(520px,100%);
   pointer-events: auto;
   overflow: hidden;
   display: grid;
@@ -46,7 +46,7 @@ exports[`should render correctly 1`] = `
   box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
   border-radius: 4px;
   background-color: #FFFFFF;
-  min-width: 520px;
+  min-width: min(520px,100%);
   pointer-events: auto;
   overflow: hidden;
   display: grid;

@@ -323,3 +323,33 @@ export const ModalOverlap = (args) => (
     <ModalMountTarget />
   </div>
 )
+
+export const WrapperAndBackdropStyle = (args) => {
+  const open = args.open
+  const onClose = action('close')
+
+  return (
+    <div>
+      <p>
+        Use <code>wrapperStyle</code> to customize the element that positions/centers the modal (for example, to make it
+        occupy the whole screen) and <code>backdropStyle</code> to customize the backdrop.
+      </p>
+
+      <Modal
+        open={open}
+        onClose={onClose}
+        wrapperStyle={{ padding: 0 }}
+        backdropStyle={{ background: 'rgba(0, 0, 0, 0.85)' }}
+        style={{ width: '100%', height: '100%', maxHeight: '100%' }}
+      >
+        <ModalHeader title='Fullscreen modal' />
+        <ModalBody>
+          <p>
+            This modal fills the whole viewport: <code>wrapperStyle</code> removes the default spacing around it and{' '}
+            <code>style</code> stretches the container. The darker backdrop comes from <code>backdropStyle</code>.
+          </p>
+        </ModalBody>
+      </Modal>
+    </div>
+  )
+}
