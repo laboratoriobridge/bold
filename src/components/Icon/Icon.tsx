@@ -30,6 +30,7 @@ export function Icon(props: IconProps) {
       fill: fill ? getIconColor(theme, fill) : 'currentColor',
       stroke: stroke && getIconColor(theme, stroke),
       fontSize: size && size + 'rem',
+      minWidth: size && size + 'rem',
     },
   }))
 
