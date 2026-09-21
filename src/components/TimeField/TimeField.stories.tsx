@@ -1,23 +1,30 @@
 import { action } from '@storybook/addon-actions'
-import { boolean, text } from '@storybook/addon-knobs'
 import React from 'react'
 
 import { TimeField } from './TimeField'
 
 export default {
   title: 'Components/TimeField',
+  component: TimeField,
+  argTypes: {
+    label: {
+      control: 'text',
+    },
+    error: {
+      control: 'text',
+    },
+  },
+  args: {
+    name: 'time',
+    label: 'Time',
+    error: '',
+    inline: false,
+    required: false,
+    disabled: false,
+    guide: true,
+    keepCharPositions: false,
+    onChange: action('changed'),
+  },
 }
 
-export const Default = () => (
-  <TimeField
-    name='time'
-    label={text('text', 'Time')}
-    error={text('error', '')}
-    inline={boolean('inline', false)}
-    required={boolean('required', false)}
-    disabled={boolean('disabled', false)}
-    guide={boolean('guide', true)}
-    keepCharPositions={boolean('keepCharPositions', false)}
-    onChange={action('changed')}
-  />
-)
+export const Default = (args) => <TimeField {...args} />

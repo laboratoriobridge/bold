@@ -1,5 +1,4 @@
 import { action } from '@storybook/addon-actions'
-import { boolean, object, text } from '@storybook/addon-knobs'
 import React, { useState } from 'react'
 import { ReferenceMonth } from '../MonthPicker'
 import { DateRange } from '../DateRangePicker'
@@ -14,6 +13,25 @@ const maxMonth: ReferenceMonth = { month: 3, year: 2021 }
 
 export default {
   title: 'Components/MonthRangePicker',
+  component: MonthRangePicker,
+  decorators: [
+    (Story) => (
+      <div style={{ minHeight: '250px' }}>
+        <Story />
+      </div>
+    ),
+  ],
+  argTypes: {
+    label: { control: 'text' },
+    error: { control: 'text' },
+  },
+  args: {
+    label: 'Month Field',
+    error: '',
+    inline: false,
+    required: false,
+    disabled: false,
+  },
 }
 
 const handleChange = (setRange: (referenceMonthRange: ReferenceMonthRange) => void) => (dateRange: DateRange) => {
@@ -41,34 +59,19 @@ const handleChange = (setRange: (referenceMonthRange: ReferenceMonthRange) => vo
   action('changed')(dateRange)
 }
 
-export const Default = () => {
+export const Default = (args) => {
   const [range, setRange] = useState<ReferenceMonthRange>(initialValue)
 
-  return (
-    <MonthRangePicker
-      label={text('label', 'Month Field')}
-      error={text('error', '')}
-      onChange={(dateRange) => handleChange(setRange)(dateRange)}
-      inline={boolean('inline', false)}
-      required={boolean('required', false)}
-      disabled={boolean('disabled', false)}
-      value={range}
-    />
-  )
+  return <MonthRangePicker {...args} onChange={(dateRange) => handleChange(setRange)(dateRange)} value={range} />
 }
 
-export const MinMax = () => {
+export const MinMax = (args) => {
   const [range, setRange] = useState<ReferenceMonthRange>(initialValue)
 
-  return (
-    <MonthRangePicker
-      label={text('label', 'Month Field')}
-      error={text('error', '')}
-      onChange={(dateRange) => handleChange(setRange)(dateRange)}
-      disabled={boolean('disabled', false)}
-      value={range}
-      minMonth={object('minMonth', minMonth)}
-      maxMonth={object('maxMonth', maxMonth)}
-    />
-  )
+  return <MonthRangePicker {...args} onChange={(dateRange) => handleChange(setRange)(dateRange)} value={range} />
+}
+
+MinMax.args = {
+  minMonth: minMonth,
+  maxMonth: maxMonth,
 }

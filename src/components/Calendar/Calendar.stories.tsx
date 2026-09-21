@@ -1,5 +1,4 @@
 import { action } from '@storybook/addon-actions'
-import { date } from '@storybook/addon-knobs'
 import React from 'react'
 
 import { Calendar } from './Calendar'
@@ -16,38 +15,42 @@ const isOddDay = (day: Date) => day.getDate() % 2 === 1
 
 export default {
   title: 'Components/Calendar',
+  component: Calendar,
+  argTypes: {
+    visibleDate: { control: 'date' },
+  },
+  args: {
+    visibleDate: new Date(),
+    onVisibleDateChange: action('onVisibleDateChange'),
+    onDayClick: action('onDayClick'),
+    onDayHover: action('onDayHover'),
+  },
 }
 
-export const Default = () => (
+export const Default = (args) => (
   <Calendar
-    visibleDate={new Date(date('visibleDate', new Date()))}
-    onVisibleDateChange={action('onVisibleDateChange')}
-    onDayClick={action('onDayClick')}
-    onDayHover={action('onDayHover')}
+    {...args}
+    visibleDate={new Date(args.visibleDate)}
     modifiers={{
       selected: isToday,
     }}
   />
 )
 
-export const DisabledDates = () => (
+export const DisabledDates = (args) => (
   <Calendar
-    visibleDate={new Date(date('visibleDate', new Date()))}
-    onVisibleDateChange={action('onVisibleDateChange')}
-    onDayClick={action('onDayClick')}
-    onDayHover={action('onDayHover')}
+    {...args}
+    visibleDate={new Date(args.visibleDate)}
     modifiers={{
       disabled: (day) => !isCurrentWeek(day),
     }}
   />
 )
 
-export const CustomModifier = () => (
+export const CustomModifier = (args) => (
   <Calendar
-    visibleDate={new Date(date('visibleDate', new Date()))}
-    onVisibleDateChange={action('onVisibleDateChange')}
-    onDayClick={action('onDayClick')}
-    onDayHover={action('onDayHover')}
+    {...args}
+    visibleDate={args.visibleDate}
     modifiers={{
       oddDays: isOddDay,
     }}

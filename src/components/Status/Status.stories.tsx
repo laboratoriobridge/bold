@@ -1,5 +1,4 @@
 import React from 'react'
-import { select } from '@storybook/addon-knobs'
 import { IconMap, Icons } from '../Icon/generated/types'
 import { Status, StatusType } from './Status'
 
@@ -14,12 +13,22 @@ const icons: Icons[] = Object.keys(IconMap) as Icons[]
 
 export default {
   title: 'Components/Status',
+  component: Status,
+  argTypes: {
+    type: {
+      control: 'select',
+      options: Object.keys(types),
+    },
+    icon: {
+      control: 'select',
+      options: icons,
+    },
+  },
+  args: { type: 'info', text: 'This is a status message' },
 }
 
-export const Default = () => {
-  const type = select('type', types, 'info')
-
-  return <Status type={type} text='This is a status message' />
+export const Default = (args) => {
+  return <Status {...args} />
 }
 
 export const Info = () => <Status type='info' text='Information message' />
@@ -30,8 +39,10 @@ export const Warning = () => <Status type='warning' text='Please review this war
 
 export const Danger = () => <Status type='danger' text='An error has occurred' />
 
-export const CustomIcon = () => {
-  const icon = select('icon', icons, 'clockOutline')
+export const CustomIcon = (args) => {
+  return <Status type='info' icon={args.icon} text='Added now' />
+}
 
-  return <Status type='info' icon={icon} text='Added now' />
+CustomIcon.args = {
+  icon: 'clockOutline',
 }

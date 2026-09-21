@@ -7,12 +7,4 @@ if (process.env.STORYBOOK_LOKI) {
   mockdate.set('2020-09-01 12:00:00')
 }
 
-export const parameters = {
-  docs: {
-    canvas: {
-      sourceState: 'shown',
-    },
-  },
-}
-
 export const decorators = [(Story, context) => withStorybookTheme(Story, context)]

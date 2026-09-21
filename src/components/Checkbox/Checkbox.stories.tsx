@@ -1,19 +1,18 @@
 import { action } from '@storybook/addon-actions'
-import { boolean, text } from '@storybook/addon-knobs'
 import React from 'react'
 
 import { Checkbox } from './Checkbox'
 
 export default {
   title: 'Components/Checkbox',
+  component: Checkbox,
+  args: {
+    label: 'Component label',
+    disabled: false,
+    indeterminate: false,
+    name: 'check',
+    onChange: action('changed'),
+  },
 }
 
-export const Default = () => (
-  <Checkbox
-    name='check'
-    label={text('label', 'Component label')}
-    disabled={boolean('disabled', false)}
-    indeterminate={boolean('indeterminate', false)}
-    onChange={action('changed')}
-  />
-)
+export const Default = (args) => <Checkbox {...args} name='check' onChange={action('changed')} />

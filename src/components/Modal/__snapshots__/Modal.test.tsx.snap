@@ -26,7 +26,7 @@ exports[`Modal should accept "depthLevel" prop and pass down to ModalContainer 1
   box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
   border-radius: 4px;
   background-color: #FFFFFF;
-  min-width: 520px;
+  min-width: min(520px,100%);
   pointer-events: auto;
   overflow: hidden;
   display: grid;
@@ -156,7 +156,7 @@ exports[`Modal should accept "style" prop and pass down to ModalContainer 1`] = 
   box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
   border-radius: 4px;
   background-color: #FFFFFF;
-  min-width: 520px;
+  min-width: min(520px,100%);
   pointer-events: auto;
   overflow: hidden;
   display: grid;
@@ -250,7 +250,7 @@ exports[`Modal should render correctly when opened 1`] = `
   box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
   border-radius: 4px;
   background-color: #FFFFFF;
-  min-width: 520px;
+  min-width: min(520px,100%);
   pointer-events: auto;
   overflow: hidden;
   display: grid;
@@ -343,7 +343,7 @@ exports[`Modal should'n add "overflow: hidden" property to document when manageO
   box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
   border-radius: 4px;
   background-color: #FFFFFF;
-  min-width: 520px;
+  min-width: min(520px,100%);
   pointer-events: auto;
   overflow: hidden;
   display: grid;
@@ -450,7 +450,7 @@ exports[`Modal sizes should accept the "auto" size and render accordingly 1`] = 
   box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
   border-radius: 4px;
   background-color: #FFFFFF;
-  min-width: 520px;
+  min-width: min(520px,100%);
   pointer-events: auto;
   overflow: hidden;
   display: grid;
@@ -537,7 +537,7 @@ exports[`Modal sizes should accept the "large" size and render accordingly 1`] =
   box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
   border-radius: 4px;
   background-color: #FFFFFF;
-  min-width: 520px;
+  min-width: min(520px,100%);
   pointer-events: auto;
   overflow: hidden;
   display: grid;
@@ -644,7 +644,7 @@ exports[`Modal sizes should accept the "medium" size and render accordingly 1`] 
   box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
   border-radius: 4px;
   background-color: #FFFFFF;
-  min-width: 520px;
+  min-width: min(520px,100%);
   pointer-events: auto;
   overflow: hidden;
   display: grid;
@@ -741,7 +741,7 @@ exports[`Modal sizes should accept the "small" size and render accordingly 1`] =
   box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
   border-radius: 4px;
   background-color: #FFFFFF;
-  min-width: 520px;
+  min-width: min(520px,100%);
   pointer-events: auto;
   overflow: hidden;
   display: grid;

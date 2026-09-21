@@ -1,4 +1,3 @@
-import { array, boolean, date, number, object, radios, text, select } from '@storybook/addon-knobs'
 import React, { useState } from 'react'
 import { Text } from '../Text'
 
@@ -17,13 +16,36 @@ import {
   ReferenceArea,
   ReferenceAreaRange,
   SeriesType,
-  OutliersType,
   RangeArea,
+  CHART_COLOR_SCHEMES,
 } from './model'
 import { PieChart } from './PieChart'
 
 export default {
   title: 'Components/Chart',
+  component: Chart,
+  args: {
+    title: 'Chart Title',
+    xAxisTitle: 'X Axis',
+    yAxisTitle: 'Y Axis',
+    xAxisDomain: ['Page A', 'Page B', 'Page C', 'Page D', 'Page E', 'Page F', 'Page G'],
+    caption:
+      'Chart description. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.',
+  },
+  argTypes: {
+    xAxis: { control: false },
+    yAxis: { control: false },
+    referenceAreas: { control: false },
+    tooltip: { control: false },
+    width: { control: false },
+    height: { control: false },
+    rangeAreas: { control: false },
+    type: { control: false },
+    colorScheme: {
+      control: 'radio',
+      options: Object.keys(CHART_COLOR_SCHEMES),
+    },
+  },
 }
 
 const lineSeries: ChartSeries<string>[] = [
@@ -224,253 +246,212 @@ const lineSeriesDate: ChartSeries<Date>[] = [
   },
 ]
 
-const outliersOption: OutliersType[] = ['auto', 'expand-domain']
-
-export const lineChart = () => {
-  const title = text('Title', 'Chart Title', 'Description')
-  const showTooltip = boolean('Show Tooltip', true, 'Description')
-  const caption = text(
-    'Caption',
-    'Chart description. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.',
-    'Description'
-  )
-  const footer = text('Footer', 'Chart footer', 'Description')
-  const showLegend = boolean('Show Legend', true, 'Description')
-  const colorScheme = radios(
-    'Color Scheme',
-    { default: 'default', pink: 'pink', gray: 'gray', blue: 'blue', orange: 'orange' },
-    'default',
-    'Description'
-  )
-  const yAxisTitle = text('Y Axis Title', 'Y Axis', 'Axes')
-  const xAxisTitle = text('X Axis Title', 'X Axis', 'Axes')
-  const xAxisDomain = array(
-    'X Axis Domain',
-    ['Page A', 'Page B', 'Page C', 'Page D', 'Page E', 'Page F', 'Page G'],
-    ',',
-    'Axes'
-  )
-  const series = object('Series', lineSeries, 'Data')
-  const outliers = select('Outliers', outliersOption, 'auto', 'Description')
-
+export const LineChart = (args) => {
   return (
     <ChartContainer>
-      <ChartHeader title={title} />
-      <ChartBody height={500} caption={caption}>
+      <ChartHeader title={args.title} />
+      <ChartBody height={500} caption={args.caption}>
         <Chart
-          series={series}
-          xAxis={{ title: xAxisTitle, domain: xAxisDomain }}
-          yAxis={{ title: yAxisTitle, domain: { init: 3000, end: 10000, step: 5500 } }}
-          tooltip={{ type: showTooltip ? 'point' : 'none' }}
-          colorScheme={colorScheme}
-          showLegend={showLegend}
-          outliers={outliers}
+          series={args.series}
+          xAxis={{ title: args.xAxisTitle, domain: args.xAxisDomain }}
+          yAxis={{ title: args.yAxisTitle, domain: { init: 3000, end: 10000, step: 5500 } }}
+          tooltip={{ type: args.showTooltip ? 'point' : 'none' }}
+          colorScheme={args.colorScheme}
+          showLegend={args.showLegend}
+          outliers={args.outliers}
         />
       </ChartBody>
-      <ChartFooter>{footer}</ChartFooter>
+      <ChartFooter>{args.footer}</ChartFooter>
     </ChartContainer>
   )
 }
 
-export const areaChart = () => {
-  const title = text('Title', 'Chart Title', 'Description')
-  const stacked = boolean('Stacked', false, 'Description')
-  const yAxisTitle = text('Y Axis Title', 'Y Axis', 'Axes')
-  const xAxisTitle = text('X Axis Title', 'X Axis', 'Axes')
-  const xAxisDomain = array('X Axis Domain', ['Page A', 'Page B', 'Page C', 'Page D'], ',', 'Axes')
-  const series = object('Series', lineSeries, 'Data')
+LineChart.args = {
+  showTooltip: true,
+  footer: 'Chart footer',
+  showLegend: true,
+  colorScheme: 'default',
+  series: lineSeries,
+  outliers: 'auto',
+}
 
+export const AreaChart = (args) => {
   return (
     <ChartContainer>
-      <ChartHeader title={title} />
+      <ChartHeader title={args.title} />
       <ChartBody height={500}>
         <Chart
           type={SeriesType.Area}
-          series={series}
-          xAxis={{ title: xAxisTitle, domain: xAxisDomain }}
-          yAxis={{ title: yAxisTitle, unit: 'cm' }}
-          stacked={stacked}
+          series={args.series}
+          xAxis={{ title: args.xAxisTitle, domain: args.xAxisDomain }}
+          yAxis={{ title: args.yAxisTitle, unit: 'cm' }}
+          stacked={args.stacked}
         />
       </ChartBody>
     </ChartContainer>
   )
 }
 
-export const columnChart = () => {
-  const title = text('Title', 'Chart Title', 'Description')
-  const stacked = boolean('Stacked', false, 'Description')
-  const yAxisTitle = text('Y Axis Title', 'Y Axis', 'Axes')
-  const xAxisTitle = text('X Axis Title', 'X Axis', 'Axes')
-  const xAxisDomain = array('X Axis Domain', ['Page A', 'Page B', 'Page C', 'Page D'], ',', 'Axes')
-  const series = object('Series', lineSeries, 'Data')
+AreaChart.args = {
+  stacked: false,
+  series: lineSeries,
+  xAxisDomain: ['Page A', 'Page B', 'Page C', 'Page D'],
+}
 
+export const columnChart = (args) => {
   return (
     <ChartContainer>
-      <ChartHeader title={title} />
+      <ChartHeader title={args.title} />
       <ChartBody height={500}>
         <Chart
           type={SeriesType.Column}
-          series={series}
-          xAxis={{ title: xAxisTitle, domain: xAxisDomain }}
-          yAxis={{ title: yAxisTitle, unit: 'cm' }}
-          stacked={stacked}
+          {...args}
+          xAxis={{ title: args.xAxisTitle, domain: args.xAxisDomain }}
+          yAxis={{ title: args.yAxisTitle, unit: 'cm' }}
         />
       </ChartBody>
     </ChartContainer>
   )
 }
 
-export const barChart = () => {
-  const title = text('Title', 'Chart Title', 'Description')
-  const stacked = boolean('Stacked', false, 'Description')
-  const xAxisTitle = text('X Axis Title', 'X Axis', 'Axes')
-  const yAxisTitle = text('Y Axis Title', 'Y Axis', 'Axes')
-  const yAxisDomain = array('X Axis Domain', ['Page A', 'Page B', 'Page C', 'Page D'], ',', 'Axes')
-  const series = object('Series', barSeries, 'Data')
+columnChart.args = {
+  stacked: false,
+  xAxisDomain: ['Page A', 'Page B', 'Page C', 'Page D'],
+  series: lineSeries,
+  colorScheme: 'default',
+}
 
+export const barChart = (args) => {
   return (
     <ChartContainer>
-      <ChartHeader title={title} />
+      <ChartHeader title={args.title} />
       <ChartBody height={500}>
         <BarChart
-          series={series}
-          yAxis={{ title: yAxisTitle, domain: yAxisDomain }}
-          xAxis={{ title: xAxisTitle, unit: 'cm' }}
-          stacked={stacked}
+          yAxis={{ title: args.yAxisTitle, domain: args.yAxisDomain }}
+          xAxis={{ title: args.xAxisTitle, unit: 'cm' }}
+          {...args}
         />
       </ChartBody>
     </ChartContainer>
   )
 }
 
-export const composedChart = () => {
-  const title = text('Title', 'Chart Title', 'Description')
-  const stacked = boolean('Stacked', false, 'Description')
-  const yAxisTitle = text('Y Axis Title', 'Y Axis', 'Axes')
-  const xAxisTitle = text('X Axis Title', 'X Axis', 'Axes')
-  const xAxisDomain = array('X Axis Domain', ['Page A', 'Page B', 'Page C', 'Page D'], ',', 'Axes')
-  const series = object('Series', composedSeries, 'Data')
+barChart.args = {
+  stacked: false,
+  yAxisDomain: ['Page A', 'Page B', 'Page C', 'Page D'],
+  series: barSeries,
+  colorScheme: 'default',
+}
 
+barChart.argTypes = {
+  outliers: { table: { disable: true } },
+}
+
+export const composedChart = (args) => {
   return (
     <ChartContainer>
-      <ChartHeader title={title} />
+      <ChartHeader title={args.title} />
       <ChartBody height={500}>
         <Chart
-          series={series}
-          xAxis={{ title: xAxisTitle, domain: xAxisDomain }}
-          yAxis={{ title: yAxisTitle, unit: 'cm' }}
-          stacked={stacked}
+          xAxis={{ title: args.xAxisTitle, domain: args.xAxisDomain }}
+          yAxis={{ title: args.yAxisTitle, unit: 'cm' }}
+          {...args}
         />
       </ChartBody>
     </ChartContainer>
   )
 }
 
-export const pieChart = () => {
-  const title = text('Title', 'Chart Title', 'Description')
-  const caption = text(
-    'Caption',
-    'Chart description. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.',
-    'Description'
-  )
-  const data = object('Series', pieData, 'Data')
+composedChart.args = {
+  stacked: false,
+  xAxisDomain: ['Page A', 'Page B', 'Page C', 'Page D'],
+  series: composedSeries,
+}
 
+export const pieChart = (args) => {
   return (
     <ChartContainer>
-      <ChartHeader title={title} />
-      <ChartBody height={500} caption={caption}>
-        <PieChart height={500} width={800} data={data} />
+      <ChartHeader title={args.title} />
+      <ChartBody height={500} caption={args.caption}>
+        <PieChart height={500} width={800} {...args} />
       </ChartBody>
     </ChartContainer>
   )
 }
 
-export const referenceArea = () => {
-  const title = text('Title', 'Chart Title', 'Description')
-  const caption = text(
-    'Caption',
-    'Chart description. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.',
-    'Description'
-  )
-  const yAxisTitle = text('Y Axis Title', 'Y Axis', 'Axes')
-  const xAxisTitle = text('X Axis Title', 'X Axis', 'Axes')
+pieChart.args = {
+  data: pieData,
+}
 
-  const height = number('Height', 500)
+pieChart.argTypes = {
+  type: { table: { disable: true } },
+  series: { table: { disable: true } },
+  xAxis: { table: { disable: true } },
+  yAxis: { table: { disable: true } },
+  referenceAreas: { table: { disable: true } },
+  rangeAreas: { table: { disable: true } },
+  tooltip: { table: { disable: true } },
+  outliers: { table: { disable: true } },
+  showLegend: { table: { disable: true } },
+  stacked: { table: { disable: true } },
+}
 
-  const series = object('Series', lineSeriesDP, 'Data')
-  const reference = object('Reference', referenceAreas, 'Data')
-
+export const referenceArea = (args) => {
   return (
     <ChartContainer>
-      <ChartHeader title={title} />
-      <ChartBody height={height} caption={caption}>
+      <ChartHeader title={args.title} />
+      <ChartBody height={args.height} caption={args.caption}>
         <Chart
-          series={series}
-          referenceAreas={reference}
-          xAxis={{ title: xAxisTitle, domain: { init: 0, end: 700, step: 100 } }}
-          yAxis={{ title: yAxisTitle, domain: { init: 0, end: 10000, step: 1000 } }}
+          {...args}
+          xAxis={{ title: args.xAxisTitle, domain: { init: 0, end: 700, step: 100 } }}
+          yAxis={{ title: args.yAxisTitle, domain: { init: 0, end: 10000, step: 1000 } }}
         />
       </ChartBody>
     </ChartContainer>
   )
 }
 
-export const boundedReferenceArea = () => {
-  const title = text('Title', 'Chart Title', 'Description')
-  const caption = text(
-    'Caption',
-    'Chart description. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.',
-    'Description'
-  )
-  const yAxisTitle = text('Y Axis Title', 'Y Axis', 'Axes')
-  const xAxisTitle = text('X Axis Title', 'X Axis', 'Axes')
+referenceArea.args = {
+  height: 500,
+  series: lineSeriesDP,
+  referenceAreas: referenceAreas,
+}
 
-  const height = number('Height', 500)
-
-  const series = object('Series', [singleLineSeries], 'Data')
-  const reference = object('Reference', boundedReferenceAreas, 'Data')
-
+export const boundedReferenceArea = (args) => {
   return (
     <ChartContainer>
-      <ChartHeader title={title} />
-      <ChartBody height={height} caption={caption}>
+      <ChartHeader title={args.title} />
+      <ChartBody height={args.height} caption={args.caption}>
         <Chart
-          series={series}
-          referenceAreas={reference}
-          xAxis={{ title: xAxisTitle, domain: { init: 0, end: 700, step: 100 } }}
-          yAxis={{ title: yAxisTitle, domain: { init: 0, end: 10000, step: 1000 } }}
+          {...args}
+          xAxis={{ title: args.xAxisTitle, domain: { init: 0, end: 700, step: 100 } }}
+          yAxis={{ title: args.yAxisTitle, domain: { init: 0, end: 10000, step: 1000 } }}
         />
       </ChartBody>
     </ChartContainer>
   )
 }
 
-export const xDateTime = () => {
-  const xAxisInit = date('Init Date', new Date(2020, 3), 'X Axis')
-  const xAxisEnd = date('End Date', new Date(2020, 4), 'X Axis')
+boundedReferenceArea.args = {
+  height: 500,
+  series: [singleLineSeries],
+  referenceAreas: boundedReferenceAreas,
+}
 
-  const step = number('Step', 10, {}, 'X Axis')
-  const stepType = radios('Step Type', { day: 'day', month: 'month', year: 'year' }, 'day', 'X Axis')
-
-  const yAxisInit = number('Init', 0, {}, 'Y Axis')
-  const yAxisEnd = number('End', 4000, {}, 'Y Axis')
-  const yAxisStep = number('Step', 1000, {}, 'Y Axis')
-
-  const series = object('Series', lineSeriesDate, 'Data')
-
+export const xDateTime = (args) => {
   return (
     <ChartContainer>
       <ChartBody height={500}>
         <Chart
           height={500}
           width={500}
-          series={series}
+          {...args}
           xAxis={{
             title: 'Date',
             domain: {
-              init: new Date(xAxisInit),
-              end: new Date(xAxisEnd),
-              step: { amount: step, unit: stepType },
+              init: new Date(args.xAxisInit),
+              end: new Date(args.xAxisEnd),
+              step: { amount: args.step, unit: args.stepType },
             },
             tickRenderer: (props) => (
               <text dy={15} {...props}>
@@ -480,9 +461,9 @@ export const xDateTime = () => {
           }}
           yAxis={{
             domain: {
-              init: yAxisInit,
-              end: yAxisEnd,
-              step: yAxisStep,
+              init: args.yAxisInit,
+              end: args.yAxisEnd,
+              step: args.yAxisStep,
             },
           }}
         />
@@ -491,14 +472,20 @@ export const xDateTime = () => {
   )
 }
 
-export const rangeSelector = () => {
-  const series = object('Series', lineSeriesDate, 'Data')
+xDateTime.args = {
+  xAxisInit: new Date(2020, 3),
+  xAxisEnd: new Date(2020, 4),
+  step: 10,
+  stepType: 'day',
+  yAxisInit: 0,
+  yAxisEnd: 4000,
+  yAxisStep: 1000,
+  series: lineSeriesDate,
+}
 
-  const selectorLabel = text('Label', 'Range', 'Selector')
-  const selectorRanges = object('Options', ranges, 'Selector')
-
+export const rangeSelector = (args) => {
   const StateKeeper = ({ children }) => {
-    const [xRange, setXRange] = useState(selectorRanges['6 months'])
+    const [xRange, setXRange] = useState(args.selectorRanges['6 months'])
 
     const xDomain = {
       init: new Date(2020, 0),
@@ -524,8 +511,8 @@ export const rangeSelector = () => {
             <ChartHeader
               title='Date Chart'
               rangeSelector={{
-                label: selectorLabel,
-                options: selectorRanges,
+                label: args.selectorLabel,
+                options: args.selectorRanges,
                 defaultOption: '6 months',
               }}
               onRangeChange={setXRange}
@@ -534,7 +521,7 @@ export const rangeSelector = () => {
               <Chart
                 height={500}
                 width={1000}
-                series={series}
+                {...args}
                 xAxis={rangedXDomain}
                 yAxis={{
                   domain: { init: 0, end: 4000, step: 1000 },
@@ -548,77 +535,67 @@ export const rangeSelector = () => {
   )
 }
 
-export const rangeArea = () => {
-  const ranges = object(
-    'Range Areas',
-    [
-      {
-        name: 'Area 1 Area 1-2 Area 1-3 Area 1-4',
-        init: 'Page A',
-        end: 'Page C',
-        mask: {
-          show: true,
-          fillOpacity: 0.6,
-          hideDots: true,
-        },
-      },
-      {
-        name: 'Area 2 Stroke 2',
-        init: 'Page E',
-        end: 'Page F',
-        tickColor: green.c60,
-        fillColor: 'none',
-        strokeColor: green.c60,
-      },
-    ] as RangeArea<string>[],
-    'Areas'
-  )
-  const series = object('Series', lineSeries, 'Data')
+rangeSelector.args = {
+  series: lineSeriesDate,
+  selectorLabel: 'Range',
+  selectorRanges: ranges,
+}
 
-  const outliers = select('Outliers', outliersOption, 'expand-domain', 'Description')
-
+export const rangeArea = (args) => {
   return (
     <ChartContainer>
       <ChartHeader title='Chart Title' />
       <ChartBody height={500}>
         <Chart<string>
           type={SeriesType.Line}
-          series={series}
-          rangeAreas={ranges}
-          xAxis={{ title: 'X Axis', domain: ['Page A', 'Page B', 'Page C', 'Page D', 'Page E', 'Page F', 'Page G'] }}
-          yAxis={{ title: 'Y Axis', domain: { init: 3000, end: 10000, step: 5500 }, unit: 'unit' }}
-          outliers={outliers}
+          {...args}
+          xAxis={{ title: args.xAxisTitle, domain: args.xAxisDomain }}
+          yAxis={{ title: args.yAxisTitle, domain: { init: 3000, end: 10000, step: 5500 }, unit: 'unit' }}
         />
       </ChartBody>
     </ChartContainer>
   )
 }
 
-export const customTooltip = () => {
-  const tooltipType = radios('Tooltip Type', { point: 'point', line: 'line' }, 'line', 'Description')
-  const yAxisTitle = text('Y Axis Title', 'Y Axis', 'Axes')
-  const xAxisTitle = text('X Axis Title', 'X Axis', 'Axes')
-  const xAxisDomain = array(
-    'X Axis Domain',
-    ['Page A', 'Page B', 'Page C', 'Page D', 'Page E', 'Page F', 'Page G'],
-    ',',
-    'Axes'
-  )
-  const series = object('Series', lineSeries, 'Data')
+rangeArea.args = {
+  rangeAreas: [
+    {
+      name: 'Area 1 Area 1-2 Area 1-3 Area 1-4',
+      init: 'Page A',
+      end: 'Page C',
+      mask: {
+        show: true,
+        fillOpacity: 0.6,
+        hideDots: true,
+      },
+    },
+    {
+      name: 'Area 2 Stroke 2',
+      init: 'Page E',
+      end: 'Page F',
+      tickColor: green.c60,
+      fillColor: 'none',
+      strokeColor: green.c60,
+    },
+  ] as RangeArea<string>[],
+  series: lineSeries,
+  outliers: 'expand-domain',
+}
 
+export const customTooltip = (args) => {
   return (
     <ChartContainer>
       <ChartHeader title='Chart Title' />
       <ChartBody height={500}>
         <Chart
           type={SeriesType.Line}
-          series={series}
-          xAxis={{ title: xAxisTitle, domain: xAxisDomain }}
-          yAxis={{ title: yAxisTitle, domain: { init: 3000, end: 10000, step: 5500 }, unit: 'unit' }}
+          {...args}
+          xAxis={{ title: args.xAxisTitle, domain: args.xAxisDomain }}
+          yAxis={{ title: args.yAxisTitle, domain: { init: 3000, end: 10000, step: 5500 }, unit: 'unit' }}
           tooltip={{
-            type: tooltipType,
+            type: args.tooltipType,
             render: (dp) =>
-              tooltipType === 'line'
+              args.tooltipType === 'line'
                 ? dp?.map((p) => (
                     <Text component='p' style={{ color: gray.c100 }} key={p.y}>{`${p.seriesName}: ${p.y} unit`}</Text>
                   ))
@@ -630,60 +607,42 @@ export const customTooltip = () => {
   )
 }
 
-export const customHeader = () => {
-  const title = text('Title', 'Chart Title', 'Description')
-  const yAxisTitle = text('Y Axis Title', 'Y Axis', 'Axes')
-  const xAxisTitle = text('X Axis Title', 'X Axis', 'Axes')
-  const xAxisDomain = array(
-    'X Axis Domain',
-    ['Page A', 'Page B', 'Page C', 'Page D', 'Page E', 'Page F', 'Page G'],
-    ',',
-    'Axes'
-  )
-  const series = object('Series', lineSeries, 'Data')
+customTooltip.args = {
+  tooltipType: 'line',
+  series: lineSeries,
+}
 
+customTooltip.argTypes = {
+  tooltipType: {
+    control: 'radio',
+    options: ['line', 'point'],
+  },
+}
+
+export const customHeader = (args) => {
   return (
     <ChartContainer>
       <h1 style={{ color: 'red', fontWeight: 'bold', padding: '1rem' }}>
         <input type='checkbox' />
-        {title}
+        {args.title}
       </h1>
       <ChartBody height={500}>
         <Chart
           type={SeriesType.Line}
-          series={series}
-          xAxis={{ title: xAxisTitle, domain: xAxisDomain }}
-          yAxis={{ title: yAxisTitle, domain: { init: 3000, end: 10000, step: 5500 }, unit: 'unit' }}
+          {...args}
+          xAxis={{ title: args.xAxisTitle, domain: args.xAxisDomain }}
+          yAxis={{ title: args.yAxisTitle, domain: { init: 3000, end: 10000, step: 5500 }, unit: 'unit' }}
         />
       </ChartBody>
     </ChartContainer>
   )
 }
 
-export const customDot = () => {
-  const dotShape = radios(
-    'Dot Shape',
-    {
-      circle: 'circle',
-      cross: 'cross',
-      diamond: 'diamond',
-      rectangle: 'rect',
-      square: 'square',
-      star: 'star',
-      triangle: 'triangle',
-    },
-    'star',
-    'Dot'
-  )
-  const yAxisTitle = text('Y Axis Title', 'Y Axis', 'Axes')
-  const xAxisTitle = text('X Axis Title', 'X Axis', 'Axes')
-  const xAxisDomain = array(
-    'X Axis Domain',
-    ['Page A', 'Page B', 'Page C', 'Page D', 'Page E', 'Page F', 'Page G'],
-    ',',
-    'Axes'
-  )
+customHeader.args = {
+  series: lineSeries,
+}
 
+export const customDot = (args) => {
   return (
     <ChartContainer>
       <ChartBody height={500}>
@@ -692,7 +651,7 @@ export const customDot = () => {
             {
               name: 'uv',
               data: [4000, 3000, 2000, 2780, 1890, 2390, 3490, 40000],
-              dot: dotShape,
+              dot: args.dotShape,
             },
             {
               name: 'pv',
@@ -700,10 +659,21 @@ export const customDot = () => {
               dashed: true,
             },
           ]}
-          xAxis={{ title: xAxisTitle, domain: xAxisDomain }}
-          yAxis={{ title: yAxisTitle, domain: { init: 3000, end: 10000, step: 5500 } }}
+          xAxis={{ title: args.xAxisTitle, domain: args.xAxisDomain }}
+          yAxis={{ title: args.yAxisTitle, domain: { init: 3000, end: 10000, step: 5500 } }}
         />
       </ChartBody>
     </ChartContainer>
   )
+}
+
+customDot.args = {
+  dotShape: 'star',
+}
+
+customDot.argTypes = {
+  dotShape: {
+    control: 'radio',
+    options: ['circle', 'cross', 'diamond', 'rect', 'square', 'star', 'triangle'],
+  },
 }

@@ -1,4 +1,3 @@
-import { number, select, text } from '@storybook/addon-knobs'
 import React from 'react'
 
 import { TextColor } from '../../styles'
@@ -36,18 +35,39 @@ const colors: TextColor[] = [
 
 export default {
   title: 'Components/Textual',
+  component: Text,
+  argTypes: {
+    variant: {
+      options: variants,
+      control: { type: 'select' },
+    },
+    component: {
+      options: components,
+      control: { type: 'select' },
+    },
+    color: {
+      options: colors,
+      control: { type: 'select' },
+    },
+    fontWeight: {
+      options: fontWeights,
+      control: { type: 'select' },
+    },
+    fontStyle: {
+      options: fontStyles,
+      control: { type: 'select' },
+    },
+    textDecoration: {
+      options: textDecorations,
+      control: { type: 'select' },
+    },
+    text: {
+      control: 'text',
+    },
+  },
+  args: {
+    text: 'Lorem ipsum',
+  },
 }
 
-export const _Text = () => (
-  <Text
-    variant={select('variant', variants, undefined)}
-    component={select('component', components as any, undefined)}
-    fontSize={number('fontSize', undefined)}
-    color={select('color', colors, undefined)}
-    fontWeight={select('fontWeight', fontWeights, undefined)}
-    fontStyle={select('fontStyle', fontStyles, undefined)}
-    textDecoration={select('textDecoration', textDecorations, undefined)}
-  >
-    {text('text', 'Lorem ipsum')}
-  </Text>
-)
+export const _Text = (args) => <Text {...args}> {args.text} </Text>

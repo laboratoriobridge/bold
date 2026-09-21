@@ -43,6 +43,24 @@ describe('Modal', () => {
     expect(document.body).toMatchSnapshot()
   })
 
+  it('should accept "wrapperStyle" prop and apply it to the element that wraps the modal', () => {
+    render(
+      <Modal open={true} wrapperStyle={{ padding: 0 }}>
+        Testing.
+      </Modal>
+    )
+    expect(getByRole(document.body, 'dialog').parentElement).toHaveStyle('padding: 0px')
+  })
+
+  it('should accept "backdropStyle" prop and apply it to the backdrop', () => {
+    const { getByTestId } = render(
+      <Modal open={true} backdropStyle={{ backgroundColor: 'rgb(255, 0, 0)' }}>
+        Testing.
+      </Modal>
+    )
+    expect(getByTestId('backdrop')).toHaveStyle('background-color: rgb(255, 0, 0)')
+  })
+
   it(`should'n add "overflow: hidden" property to document when manageOverflow is false`, () => {
     render(
       <Modal open={true} manageOverflow={false}>

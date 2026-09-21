@@ -2,7 +2,7 @@ import { Color } from 'csstype'
 import { blue, gray, orange, pink } from '../../styles/colors'
 import { TickProps } from './Tick'
 
-const CHART_COLOR_SCHEMES = {
+export const CHART_COLOR_SCHEMES = {
   blue: Object.values(blue).filter((_, i) => i % 2) as Color[],
   orange: Object.values(orange).filter((_, i) => i % 2) as Color[],
   pink: Object.values(pink).filter((_, i) => i % 2) as Color[],

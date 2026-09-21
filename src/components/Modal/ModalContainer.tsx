@@ -32,7 +32,7 @@ const createStyles = (theme: Theme, scroll: ModalScroll, hasHeader: boolean) => 
       boxShadow: theme.shadows.outer['160'],
       borderRadius: theme.radius.modal,
       backgroundColor: theme.pallete.surface.main,
-      minWidth: 520,
+      minWidth: 'min(520px, 100%)',
       pointerEvents: 'auto',
       overflow: scroll === 'body' ? 'hidden' : 'auto',
       display: 'grid',

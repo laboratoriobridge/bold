@@ -1,5 +1,4 @@
 import { action } from '@storybook/addon-actions'
-import { boolean } from '@storybook/addon-knobs'
 import React from 'react'
 
 import { Button } from '../../Button'
@@ -21,15 +20,13 @@ const rows: Row[] = [
 
 export default {
   title: 'Components/Table',
-}
-
-export const Default = () => (
-  <DataTable
-    rows={boolean('empty', false) ? [] : rows}
-    onSortChange={action('sort-change')}
-    sort={['id', '-name']}
-    loading={boolean('loading', false)}
-    columns={[
+  component: DataTable,
+  args: {
+    empty: false,
+    onSortChange: action('sort-change'),
+    sort: ['id', '-name'],
+    loading: false,
+    columns: [
       { name: 'id', header: 'ID', sortable: true, render: (row: Row) => row.id },
       { name: 'name', header: 'Name', sortable: true, render: (row: Row) => row.name },
       { name: 'age', header: 'Age', render: (row: Row) => row.age },
@@ -47,6 +44,8 @@ export const Default = () => (
           </>
         ),
       },
-    ]}
-  />
-)
+    ],
+  },
+}
+
+export const Default = (args) => <DataTable {...args} rows={args.empty ? [] : rows} />

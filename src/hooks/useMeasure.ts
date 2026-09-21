@@ -1,5 +1,5 @@
+import { ResizeObserver } from '@juggle/resize-observer'
 import { useState, useCallback } from 'react'
-import ResizeObserver from 'resize-observer-polyfill'
 
 export type ContentRect = Pick<DOMRectReadOnly, 'width' | 'height'>
 

@@ -1,4 +1,3 @@
-import { select, text } from '@storybook/addon-knobs'
 import React from 'react'
 
 import { VFlow } from '../VFlow'
@@ -9,15 +8,26 @@ const levelOptions: Array<HeadingSectionProps['level']> = [1, 2, 3, 4, 5, 6]
 
 export default {
   title: 'Components/Textual',
+  component: HeadingSection,
+  argTypes: {
+    level: {
+      control: 'select',
+      options: levelOptions,
+    },
+    title: {
+      control: 'text',
+    },
+  },
+  args: {
+    level: 1,
+    title: 'Heading section title',
+    content: 'Section content',
+  },
 }
 
-export const _HeadingSection = () => (
+export const _HeadingSection = (args) => (
   <VFlow>
-    <HeadingSection level={select('level', levelOptions, 1)} title={text('title', 'Heading section title')}>
-      {text('content', 'Section content')}
-    </HeadingSection>
-    <HeadingSection level={select('level', levelOptions, 1)} title={text('title', 'Heading section title')}>
-      {text('content', 'Section content')}
-    </HeadingSection>
+    <HeadingSection {...args}>{args.content}</HeadingSection>
+    <HeadingSection {...args}>{args.content}</HeadingSection>
   </VFlow>
 )

@@ -1,4 +1,3 @@
-import { number, select } from '@storybook/addon-knobs'
 import React from 'react'
 
 import { IconMap, Icons } from './generated/types'
@@ -8,6 +7,17 @@ const options: Icons[] = Object.keys(IconMap) as Icons[]
 
 export default {
   title: 'Components/Icon',
+  component: Icon,
+  argTypes: {
+    icon: {
+      control: 'select',
+      options,
+    },
+  },
+  args: {
+    icon: 'adjust',
+    size: 1.5,
+  },
 }
 
 const RocketIcon = (props: React.SVGProps<SVGSVGElement>) => (
@@ -24,6 +34,6 @@ const RocketIcon = (props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 )
 
-export const Default = () => <Icon icon={select('icon', options, 'adjust') as Icons} size={number('size', 1.5)} />
+export const Default = (args) => <Icon {...args} />
 
-export const Custom = () => <Icon icon={RocketIcon} size={number('size', 1.5)} />
+export const Custom = (args) => <Icon {...args} icon={RocketIcon} />

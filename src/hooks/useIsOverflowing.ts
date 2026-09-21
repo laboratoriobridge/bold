@@ -1,5 +1,5 @@
+import { ResizeObserver } from '@juggle/resize-observer'
 import { MutableRefObject, useEffect, useState } from 'react'
-import ResizeObserver from 'resize-observer-polyfill'
 
 type Dimensions = 'horizontal' | 'vertical'
 

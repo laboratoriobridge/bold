@@ -1,6 +1,6 @@
 import FocusTrap from 'focus-trap-react'
 import React, { Ref, useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import { Theme, useStyles } from '../../styles'
+import { ExternalStyles, Theme, useStyles } from '../../styles'
 import { zIndexLevel } from '../../styles/theme/zIndex'
 import { Portal } from '../Portal'
 import { FadeTransition } from '../Transition/FadeTransition'
@@ -42,6 +42,17 @@ export interface ModalProps extends ModalContainerProps {
    * @default true
    */
   closeOnBackdropClick?: boolean
+
+  /**
+   * Styles applied to the element that wraps the modal (responsible for positioning, centering and
+   * spacing). Useful, for example, to make the modal occupy the whole screen on mobile.
+   */
+  wrapperStyle?: ExternalStyles
+
+  /**
+   * Styles applied to the modal's backdrop.
+   */
+  backdropStyle?: ExternalStyles
 }
 
 export function Modal(props: ModalProps) {
@@ -56,6 +67,8 @@ export function Modal(props: ModalProps) {
     scroll = 'body',
     depthLevel,
     manageOverflow,
+    wrapperStyle,
+    backdropStyle,
     ...rest
   } = props
 
@@ -122,13 +135,17 @@ export function Modal(props: ModalProps) {
               <Portal>
                 <FocusTrap focusTrapOptions={{ fallbackFocus: () => modalRef.current }}>
                   <div className={className}>
-                    <div className={classes.modal} ref={modalRef}>
+                    <div className={css(classes.modal, wrapperStyle)} ref={modalRef}>
                       <ModalContainer ref={containerRef} style={css(classes[size], style)} {...rest}>
                         {children}
                       </ModalContainer>
                     </div>
 
-                    <ModalBackdrop depthLevel={depthLevel} onClick={closeOnBackdropClick ? onClose : undefined} />
+                    <ModalBackdrop
+                      depthLevel={depthLevel}
+                      style={backdropStyle}
+                      onClick={closeOnBackdropClick ? onClose : undefined}
+                    />
                   </div>
                 </FocusTrap>
               </Portal>
