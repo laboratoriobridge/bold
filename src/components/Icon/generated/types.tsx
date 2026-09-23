@@ -25,8 +25,12 @@ export type Icons =
   | 'appleOutline'
   | 'archiveFilled'
   | 'archiveOutline'
+  | 'areaShapeFilled'
+  | 'areaShapeOutline'
   | 'arrowDown'
   | 'arrowLeft'
+  | 'arrowMenuLeft'
+  | 'arrowMenuRight'
   | 'arrowRight'
   | 'arrowUp'
   | 'babyTreeFilled'
@@ -105,12 +109,14 @@ export type Icons =
   | 'checklistOutline'
   | 'cherryFilled'
   | 'cherryOutline'
+  | 'cigar'
   | 'clearFormat'
   | 'clip'
   | 'clockArrowFilled'
   | 'clockArrowOutline'
   | 'clockFilled'
   | 'clockOutline'
+  | 'closeInFull'
   | 'cloudFilled'
   | 'cloudOutline'
   | 'clownFaceFilled'
@@ -289,8 +295,11 @@ export type Icons =
   | 'openBookFilled'
   | 'openBookOutline'
   | 'openDoor'
+  | 'openInFull'
   | 'openInNewTabFilled'
   | 'openInNewTabOutline'
+  | 'otherPropertiesFilled'
+  | 'otherPropertiesOutline'
   | 'paintBucket'
   | 'path'
   | 'pause'
@@ -367,6 +376,7 @@ export type Icons =
   | 'skate'
   | 'skinFilled'
   | 'skinOutline'
+  | 'sleep'
   | 'smileFaceFilled'
   | 'smileFaceOutline'
   | 'sneakerFilled'
@@ -483,8 +493,12 @@ export const IconMap: {
   appleOutline: Components.AppleOutline,
   archiveFilled: Components.ArchiveFilled,
   archiveOutline: Components.ArchiveOutline,
+  areaShapeFilled: Components.AreaShapeFilled,
+  areaShapeOutline: Components.AreaShapeOutline,
   arrowDown: Components.ArrowDown,
   arrowLeft: Components.ArrowLeft,
+  arrowMenuLeft: Components.ArrowMenuLeft,
+  arrowMenuRight: Components.ArrowMenuRight,
   arrowRight: Components.ArrowRight,
   arrowUp: Components.ArrowUp,
   babyTreeFilled: Components.BabyTreeFilled,
@@ -563,12 +577,14 @@ export const IconMap: {
   checklistOutline: Components.ChecklistOutline,
   cherryFilled: Components.CherryFilled,
   cherryOutline: Components.CherryOutline,
+  cigar: Components.Cigar,
   clearFormat: Components.ClearFormat,
   clip: Components.Clip,
   clockArrowFilled: Components.ClockArrowFilled,
   clockArrowOutline: Components.ClockArrowOutline,
   clockFilled: Components.ClockFilled,
   clockOutline: Components.ClockOutline,
+  closeInFull: Components.CloseInFull,
   cloudFilled: Components.CloudFilled,
   cloudOutline: Components.CloudOutline,
   clownFaceFilled: Components.ClownFaceFilled,
@@ -747,8 +763,11 @@ export const IconMap: {
   openBookFilled: Components.OpenBookFilled,
   openBookOutline: Components.OpenBookOutline,
   openDoor: Components.OpenDoor,
+  openInFull: Components.OpenInFull,
   openInNewTabFilled: Components.OpenInNewTabFilled,
   openInNewTabOutline: Components.OpenInNewTabOutline,
+  otherPropertiesFilled: Components.OtherPropertiesFilled,
+  otherPropertiesOutline: Components.OtherPropertiesOutline,
   paintBucket: Components.PaintBucket,
   path: Components.Path,
   pause: Components.Pause,
@@ -825,6 +844,7 @@ export const IconMap: {
   skate: Components.Skate,
   skinFilled: Components.SkinFilled,
   skinOutline: Components.SkinOutline,
+  sleep: Components.Sleep,
   smileFaceFilled: Components.SmileFaceFilled,
   smileFaceOutline: Components.SmileFaceOutline,
   sneakerFilled: Components.SneakerFilled,
