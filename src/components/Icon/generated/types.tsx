@@ -306,6 +306,8 @@ export type Icons =
   | 'penFilled'
   | 'penOutline'
   | 'penTool'
+  | 'penToolFilled'
+  | 'penToolOutline'
   | 'personExercising'
   | 'personWithLaptop'
   | 'pessoaComDeficiencia'
@@ -363,6 +365,8 @@ export type Icons =
   | 'seedBagOutline'
   | 'seedFilled'
   | 'seedOutline'
+  | 'selectorToolFilled'
+  | 'selectorToolOutline'
   | 'sendFilled'
   | 'sendOutline'
   | 'shieldFilled'
@@ -379,6 +383,8 @@ export type Icons =
   | 'sleep'
   | 'smileFaceFilled'
   | 'smileFaceOutline'
+  | 'snappingFilled'
+  | 'snappingOutline'
   | 'sneakerFilled'
   | 'sneakerOutline'
   | 'soccerOutline'
@@ -774,6 +780,8 @@ export const IconMap: {
   penFilled: Components.PenFilled,
   penOutline: Components.PenOutline,
   penTool: Components.PenTool,
+  penToolFilled: Components.PenToolFilled,
+  penToolOutline: Components.PenToolOutline,
   personExercising: Components.PersonExercising,
   personWithLaptop: Components.PersonWithLaptop,
   pessoaComDeficiencia: Components.PessoaComDeficiencia,
@@ -831,6 +839,8 @@ export const IconMap: {
   seedBagOutline: Components.SeedBagOutline,
   seedFilled: Components.SeedFilled,
   seedOutline: Components.SeedOutline,
+  selectorToolFilled: Components.SelectorToolFilled,
+  selectorToolOutline: Components.SelectorToolOutline,
   sendFilled: Components.SendFilled,
   sendOutline: Components.SendOutline,
   shieldFilled: Components.ShieldFilled,
@@ -847,6 +857,8 @@ export const IconMap: {
   sleep: Components.Sleep,
   smileFaceFilled: Components.SmileFaceFilled,
   smileFaceOutline: Components.SmileFaceOutline,
+  snappingFilled: Components.SnappingFilled,
+  snappingOutline: Components.SnappingOutline,
   sneakerFilled: Components.SneakerFilled,
   sneakerOutline: Components.SneakerOutline,
   soccerOutline: Components.SoccerOutline,
