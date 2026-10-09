@@ -26,7 +26,7 @@ it('should accept "style" prop', () => {
   expect(container).toMatchSnapshot()
 })
 
-it('should render wrappers only for valid children', () => {
+it('should render only valid children', () => {
   const { container } = render(
     <VFlow>
       {null}
