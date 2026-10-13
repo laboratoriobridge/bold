@@ -6436,9 +6436,9 @@ extsprintf@^1.2.0:
   integrity sha1-4mifjzVvrWLMplo6kcXfX5VRaS8=
 
 fast-copy@^2.1.0:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/fast-copy/-/fast-copy-2.1.1.tgz#f5cbcf2df64215e59b8e43f0b2caabc19848083a"
-  integrity sha512-Qod3DdRgFZ8GUIM6ygeoZYpQ0QLW9cf/FS9KhhjlYggcSZXWAemAw8BOCO5LuYCrR3Uj3qXDVTUzOUwG8C7beQ==
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/fast-copy/-/fast-copy-2.2.0.tgz#702ffefa69c44415010b94a950b8297e1e4623df"
+  integrity sha512-+T1bBiRiRGn7aKFqD0FEebYEzYgqK/uOlKCy2stsAgqSRI4T7nxmoTd1i8XmaGXp9B47yYXvx+V65yoz3DFAUw==
 
 fast-deep-equal@^2.0.1:
   version "2.0.1"
