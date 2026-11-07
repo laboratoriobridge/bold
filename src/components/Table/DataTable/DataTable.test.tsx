@@ -129,3 +129,37 @@ describe('getHeaderProps', () => {
     expect(() => getHeaderProps('foo')).toThrowError()
   })
 })
+
+describe('data-testid props', () => {
+  const DataTableTestIds = (props: Partial<DataTableProps>) => (
+    <DataTable
+      rows={rows}
+      data-testid='people-table'
+      rowDataTestId='person'
+      columns={[
+        { name: 'id', header: 'ID', dataTestId: 'person-id', render: (row: Row) => row.id },
+        { name: 'name', header: 'Name', render: (row: Row) => row.name },
+      ]}
+      {...props}
+    />
+  )
+
+  it('should set data-testid on the table', () => {
+    const { container } = render(<DataTableTestIds />)
+    expect(container.querySelector('table').getAttribute('data-testid')).toEqual('people-table')
+  })
+
+  it('should set data-testid with the row index as suffix on each row', () => {
+    const { container } = render(<DataTableTestIds />)
+    const trs = container.querySelectorAll('tbody tr')
+    expect(trs[0].getAttribute('data-testid')).toEqual('person-0')
+    expect(trs[1].getAttribute('data-testid')).toEqual('person-1')
+  })
+
+  it('should set the column data-testid on its body cells, leaving columns without it untouched', () => {
+    const { container } = render(<DataTableTestIds />)
+    const firstRowCells = container.querySelectorAll('tbody tr:first-child td')
+    expect(firstRowCells[0].getAttribute('data-testid')).toEqual('person-id')
+    expect(firstRowCells[1].getAttribute('data-testid')).toBeNull()
+  })
+})
