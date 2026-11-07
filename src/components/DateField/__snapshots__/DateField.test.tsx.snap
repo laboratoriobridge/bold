@@ -1,32 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DateField should render correctly 1`] = `
-.emotion-7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.emotion-6 {
-  display: inline-block;
-  margin-bottom: 0rem;
-  margin-top: 0rem;
-}
-
-.emotion-6:first-of-type {
-  margin-top: 0;
-}
-
-.emotion-6:last-of-type {
-  margin-bottom: 0;
-}
-
 .emotion-6:empty {
   display: none;
+}
+
+.emotion-7 {
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-columns: minmax(0,1fr);
+  grid-auto-rows: minmax(min-content,max-content);
+  gap: 0rem;
+  justify-items: stretch;
 }
 
 .emotion-4 {
@@ -251,32 +236,17 @@ exports[`DateField should render correctly 1`] = `
 `;
 
 exports[`DateField should render correctly when disabled 1`] = `
-.emotion-7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.emotion-6 {
-  display: inline-block;
-  margin-bottom: 0rem;
-  margin-top: 0rem;
-}
-
-.emotion-6:first-of-type {
-  margin-top: 0;
-}
-
-.emotion-6:last-of-type {
-  margin-bottom: 0;
-}
-
 .emotion-6:empty {
   display: none;
+}
+
+.emotion-7 {
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-columns: minmax(0,1fr);
+  grid-auto-rows: minmax(min-content,max-content);
+  gap: 0rem;
+  justify-items: stretch;
 }
 
 .emotion-4 {
@@ -505,32 +475,17 @@ exports[`DateField should render correctly when disabled 1`] = `
 `;
 
 exports[`DateField should render correctly when opened 1`] = `
-.emotion-7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.emotion-6 {
-  display: inline-block;
-  margin-bottom: 0rem;
-  margin-top: 0rem;
-}
-
-.emotion-6:first-of-type {
-  margin-top: 0;
-}
-
-.emotion-6:last-of-type {
-  margin-bottom: 0;
-}
-
 .emotion-6:empty {
   display: none;
+}
+
+.emotion-7 {
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-columns: minmax(0,1fr);
+  grid-auto-rows: minmax(min-content,max-content);
+  gap: 0rem;
+  justify-items: stretch;
 }
 
 .emotion-4 {
@@ -721,11 +676,12 @@ exports[`DateField should render correctly when opened 1`] = `
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: minmax(min-content,max-content);
-  grid-gap: 0.5rem;
+  gap: 0.5rem;
   -webkit-box-pack: space-around;
   -webkit-justify-content: space-around;
   -ms-flex-pack: space-around;
   justify-content: space-around;
+  justify-items: stretch;
   margin-bottom: 0.5rem;
   font-weight: bold;
 }
@@ -734,11 +690,12 @@ exports[`DateField should render correctly when opened 1`] = `
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: minmax(min-content,max-content);
-  grid-gap: 0.5rem;
+  gap: 0.5rem;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  justify-items: stretch;
 }
 
 .emotion-9 {

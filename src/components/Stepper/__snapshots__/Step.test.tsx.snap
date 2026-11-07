@@ -28,32 +28,17 @@ exports[`should accept "style" prop 1`] = `
   border-top-color: #D3D4DD;
 }
 
-.emotion-5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.emotion-8 {
-  display: inline-block;
-  margin-bottom: 0rem;
-  margin-top: 0rem;
-}
-
-.emotion-8:first-of-type {
-  margin-top: 0;
-}
-
-.emotion-8:last-of-type {
-  margin-bottom: 0;
-}
-
-.emotion-8:empty {
+.emotion-4:empty {
   display: none;
+}
+
+.emotion-9 {
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-columns: minmax(0,1fr);
+  grid-auto-rows: minmax(min-content,max-content);
+  gap: 0rem;
+  justify-items: stretch;
 }
 
 .emotion-2 {
@@ -88,22 +73,13 @@ exports[`should accept "style" prop 1`] = `
   transition: all .4s ease;
 }
 
-.emotion-4 {
-  display: inline-block;
-  margin-bottom: 0.25rem;
-  margin-top: 0.25rem;
-}
-
-.emotion-4:first-of-type {
-  margin-top: 0;
-}
-
-.emotion-4:last-of-type {
-  margin-bottom: 0;
-}
-
-.emotion-4:empty {
-  display: none;
+.emotion-5 {
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-columns: minmax(0,1fr);
+  grid-auto-rows: minmax(min-content,max-content);
+  gap: 0.5rem;
+  justify-items: stretch;
 }
 
 .emotion-3 {
@@ -132,10 +108,10 @@ exports[`should accept "style" prop 1`] = `
       data-testid="step-connector"
     />
     <div
-      class="emotion-5"
+      class="emotion-9"
     >
       <div
-        class="emotion-8"
+        class="emotion-4"
       >
         <div
           class="emotion-7"
@@ -205,32 +181,17 @@ exports[`should allow override of components 1`] = `
   border-top-color: #D3D4DD;
 }
 
-.emotion-5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.emotion-8 {
-  display: inline-block;
-  margin-bottom: 0rem;
-  margin-top: 0rem;
-}
-
-.emotion-8:first-of-type {
-  margin-top: 0;
-}
-
-.emotion-8:last-of-type {
-  margin-bottom: 0;
-}
-
-.emotion-8:empty {
+.emotion-4:empty {
   display: none;
+}
+
+.emotion-9 {
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-columns: minmax(0,1fr);
+  grid-auto-rows: minmax(min-content,max-content);
+  gap: 0rem;
+  justify-items: stretch;
 }
 
 .emotion-2 {
@@ -260,22 +221,13 @@ exports[`should allow override of components 1`] = `
   height: 1.25rem;
 }
 
-.emotion-4 {
-  display: inline-block;
-  margin-bottom: 0.25rem;
-  margin-top: 0.25rem;
-}
-
-.emotion-4:first-of-type {
-  margin-top: 0;
-}
-
-.emotion-4:last-of-type {
-  margin-bottom: 0;
-}
-
-.emotion-4:empty {
-  display: none;
+.emotion-5 {
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-columns: minmax(0,1fr);
+  grid-auto-rows: minmax(min-content,max-content);
+  gap: 0.5rem;
+  justify-items: stretch;
 }
 
 .emotion-3 {
@@ -299,10 +251,10 @@ exports[`should allow override of components 1`] = `
       data-testid="step-connector"
     />
     <div
-      class="emotion-5"
+      class="emotion-9"
     >
       <div
-        class="emotion-8"
+        class="emotion-4"
       >
         <div
           class="emotion-7"
@@ -372,32 +324,17 @@ exports[`should render correctly when status is active 1`] = `
   border-top-color: #D3D4DD;
 }
 
-.emotion-5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.emotion-8 {
-  display: inline-block;
-  margin-bottom: 0rem;
-  margin-top: 0rem;
-}
-
-.emotion-8:first-of-type {
-  margin-top: 0;
-}
-
-.emotion-8:last-of-type {
-  margin-bottom: 0;
-}
-
-.emotion-8:empty {
+.emotion-4:empty {
   display: none;
+}
+
+.emotion-9 {
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-columns: minmax(0,1fr);
+  grid-auto-rows: minmax(min-content,max-content);
+  gap: 0rem;
+  justify-items: stretch;
 }
 
 .emotion-2 {
@@ -420,22 +357,13 @@ exports[`should render correctly when status is active 1`] = `
   position: relative;
 }
 
-.emotion-4 {
-  display: inline-block;
-  margin-bottom: 0.25rem;
-  margin-top: 0.25rem;
-}
-
-.emotion-4:first-of-type {
-  margin-top: 0;
-}
-
-.emotion-4:last-of-type {
-  margin-bottom: 0;
-}
-
-.emotion-4:empty {
-  display: none;
+.emotion-5 {
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-columns: minmax(0,1fr);
+  grid-auto-rows: minmax(min-content,max-content);
+  gap: 0.5rem;
+  justify-items: stretch;
 }
 
 .emotion-1 {
@@ -471,10 +399,10 @@ exports[`should render correctly when status is active 1`] = `
       data-testid="step-connector"
     />
     <div
-      class="emotion-5"
+      class="emotion-9"
     >
       <div
-        class="emotion-8"
+        class="emotion-4"
       >
         <div
           class="emotion-7"
@@ -544,32 +472,17 @@ exports[`should render correctly when status is completed 1`] = `
   border-top-color: #D3D4DD;
 }
 
-.emotion-6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.emotion-9 {
-  display: inline-block;
-  margin-bottom: 0rem;
-  margin-top: 0rem;
-}
-
-.emotion-9:first-of-type {
-  margin-top: 0;
-}
-
-.emotion-9:last-of-type {
-  margin-bottom: 0;
-}
-
-.emotion-9:empty {
+.emotion-5:empty {
   display: none;
+}
+
+.emotion-10 {
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-columns: minmax(0,1fr);
+  grid-auto-rows: minmax(min-content,max-content);
+  gap: 0rem;
+  justify-items: stretch;
 }
 
 .emotion-3 {
@@ -592,22 +505,13 @@ exports[`should render correctly when status is completed 1`] = `
   position: relative;
 }
 
-.emotion-5 {
-  display: inline-block;
-  margin-bottom: 0.25rem;
-  margin-top: 0.25rem;
-}
-
-.emotion-5:first-of-type {
-  margin-top: 0;
-}
-
-.emotion-5:last-of-type {
-  margin-bottom: 0;
-}
-
-.emotion-5:empty {
-  display: none;
+.emotion-6 {
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-columns: minmax(0,1fr);
+  grid-auto-rows: minmax(min-content,max-content);
+  gap: 0.5rem;
+  justify-items: stretch;
 }
 
 .emotion-4 {
@@ -650,10 +554,10 @@ exports[`should render correctly when status is completed 1`] = `
       data-testid="step-connector"
     />
     <div
-      class="emotion-6"
+      class="emotion-10"
     >
       <div
-        class="emotion-9"
+        class="emotion-5"
       >
         <div
           class="emotion-8"
@@ -736,32 +640,17 @@ exports[`should render correctly when status is inactive 1`] = `
   border-top-color: #D3D4DD;
 }
 
-.emotion-5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.emotion-8 {
-  display: inline-block;
-  margin-bottom: 0rem;
-  margin-top: 0rem;
-}
-
-.emotion-8:first-of-type {
-  margin-top: 0;
-}
-
-.emotion-8:last-of-type {
-  margin-bottom: 0;
-}
-
-.emotion-8:empty {
+.emotion-4:empty {
   display: none;
+}
+
+.emotion-9 {
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-columns: minmax(0,1fr);
+  grid-auto-rows: minmax(min-content,max-content);
+  gap: 0rem;
+  justify-items: stretch;
 }
 
 .emotion-2 {
@@ -791,22 +680,13 @@ exports[`should render correctly when status is inactive 1`] = `
   height: 1.25rem;
 }
 
-.emotion-4 {
-  display: inline-block;
-  margin-bottom: 0.25rem;
-  margin-top: 0.25rem;
-}
-
-.emotion-4:first-of-type {
-  margin-top: 0;
-}
-
-.emotion-4:last-of-type {
-  margin-bottom: 0;
-}
-
-.emotion-4:empty {
-  display: none;
+.emotion-5 {
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-columns: minmax(0,1fr);
+  grid-auto-rows: minmax(min-content,max-content);
+  gap: 0.5rem;
+  justify-items: stretch;
 }
 
 .emotion-3 {
@@ -829,10 +709,10 @@ exports[`should render correctly when status is inactive 1`] = `
       data-testid="step-connector"
     />
     <div
-      class="emotion-5"
+      class="emotion-9"
     >
       <div
-        class="emotion-8"
+        class="emotion-4"
       >
         <div
           class="emotion-7"
@@ -909,32 +789,17 @@ exports[`should render correctly when status is incompleted 1`] = `
   border-top-color: #D3D4DD;
 }
 
-.emotion-5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.emotion-8 {
-  display: inline-block;
-  margin-bottom: 0rem;
-  margin-top: 0rem;
-}
-
-.emotion-8:first-of-type {
-  margin-top: 0;
-}
-
-.emotion-8:last-of-type {
-  margin-bottom: 0;
-}
-
-.emotion-8:empty {
+.emotion-4:empty {
   display: none;
+}
+
+.emotion-9 {
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-columns: minmax(0,1fr);
+  grid-auto-rows: minmax(min-content,max-content);
+  gap: 0rem;
+  justify-items: stretch;
 }
 
 .emotion-2 {
@@ -969,22 +834,13 @@ exports[`should render correctly when status is incompleted 1`] = `
   transition: all .4s ease;
 }
 
-.emotion-4 {
-  display: inline-block;
-  margin-bottom: 0.25rem;
-  margin-top: 0.25rem;
-}
-
-.emotion-4:first-of-type {
-  margin-top: 0;
-}
-
-.emotion-4:last-of-type {
-  margin-bottom: 0;
-}
-
-.emotion-4:empty {
-  display: none;
+.emotion-5 {
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-columns: minmax(0,1fr);
+  grid-auto-rows: minmax(min-content,max-content);
+  gap: 0.5rem;
+  justify-items: stretch;
 }
 
 .emotion-3 {
@@ -1007,10 +863,10 @@ exports[`should render correctly when status is incompleted 1`] = `
       data-testid="step-connector"
     />
     <div
-      class="emotion-5"
+      class="emotion-9"
     >
       <div
-        class="emotion-8"
+        class="emotion-4"
       >
         <div
           class="emotion-7"

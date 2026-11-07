@@ -33,7 +33,10 @@ const createStyles = (
   container: {
     display: 'grid',
     gridAutoFlow: direction === 'horizontal' ? 'column' : 'row',
-    gridAutoColumns: direction === 'horizontal' ? 'minmax(min-content, max-content)' : undefined,
+    // No fluxo vertical a coluna implícita precisa preencher a largura do container (igual ao
+    // comportamento antigo de flex-column); sem isso ela seria dimensionada pelo conteúdo e os
+    // filhos não esticariam, exigindo `width: 100%` manual em cada uso.
+    gridAutoColumns: direction === 'horizontal' ? 'minmax(min-content, max-content)' : 'minmax(0, 1fr)',
     gridAutoRows: direction === 'vertical' ? 'minmax(min-content, max-content)' : undefined,
     gap: `${gap}rem`,
     alignItems,

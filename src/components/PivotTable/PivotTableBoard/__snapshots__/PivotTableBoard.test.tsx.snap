@@ -130,32 +130,17 @@ exports[`PivotTable - PivotTableBoard should render correctly 1`] = `
   transform: rotate(0deg);
 }
 
-.emotion-46 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.emotion-45 {
-  display: inline-block;
-  margin-bottom: 0.5rem;
-  margin-top: 0.5rem;
-}
-
-.emotion-45:first-of-type {
-  margin-top: 0;
-}
-
-.emotion-45:last-of-type {
-  margin-bottom: 0;
-}
-
 .emotion-45:empty {
   display: none;
+}
+
+.emotion-46 {
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-columns: minmax(0,1fr);
+  grid-auto-rows: minmax(min-content,max-content);
+  gap: 1rem;
+  justify-items: stretch;
 }
 
 .emotion-37 {
@@ -278,11 +263,12 @@ exports[`PivotTable - PivotTableBoard should render correctly 1`] = `
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: minmax(min-content,max-content);
-  grid-gap: 1rem;
+  gap: 1rem;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  justify-items: stretch;
 }
 
 .emotion-51 {
@@ -291,6 +277,15 @@ exports[`PivotTable - PivotTableBoard should render correctly 1`] = `
   line-height: 1.5;
   color: #24252E;
   font-weight: bold;
+}
+
+.emotion-52 {
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-columns: minmax(0,1fr);
+  grid-auto-rows: minmax(min-content,max-content);
+  gap: 0.5rem;
+  justify-items: stretch;
 }
 
 .emotion-56 {
@@ -370,11 +365,12 @@ exports[`PivotTable - PivotTableBoard should render correctly 1`] = `
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: minmax(min-content,max-content);
-  grid-gap: 1rem;
+  gap: 1rem;
   -webkit-box-pack: end;
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
+  justify-items: stretch;
 }
 
 .emotion-60 {
@@ -583,7 +579,8 @@ exports[`PivotTable - PivotTableBoard should render correctly 1`] = `
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: minmax(min-content,max-content);
-  grid-gap: 0.5rem;
+  gap: 0.5rem;
+  justify-items: stretch;
 }
 
 .emotion-44 {
@@ -924,7 +921,7 @@ exports[`PivotTable - PivotTableBoard should render correctly 1`] = `
                 Applied filters
               </span>
               <div
-                class="emotion-46"
+                class="emotion-52"
               />
             </div>
           </div>
@@ -1102,32 +1099,17 @@ exports[`PivotTable - PivotTableBoard should render with initial fields 1`] = `
   transform: rotate(0deg);
 }
 
-.emotion-45 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.emotion-44 {
-  display: inline-block;
-  margin-bottom: 0.5rem;
-  margin-top: 0.5rem;
-}
-
-.emotion-44:first-of-type {
-  margin-top: 0;
-}
-
-.emotion-44:last-of-type {
-  margin-bottom: 0;
-}
-
 .emotion-44:empty {
   display: none;
+}
+
+.emotion-45 {
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-columns: minmax(0,1fr);
+  grid-auto-rows: minmax(min-content,max-content);
+  gap: 1rem;
+  justify-items: stretch;
 }
 
 .emotion-36 {
@@ -1250,11 +1232,12 @@ exports[`PivotTable - PivotTableBoard should render with initial fields 1`] = `
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: minmax(min-content,max-content);
-  grid-gap: 1rem;
+  gap: 1rem;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  justify-items: stretch;
 }
 
 .emotion-50 {
@@ -1275,22 +1258,13 @@ exports[`PivotTable - PivotTableBoard should render with initial fields 1`] = `
   flex-wrap: wrap;
 }
 
-.emotion-55 {
-  display: inline-block;
-  margin-bottom: 0.25rem;
-  margin-top: 0.25rem;
-}
-
-.emotion-55:first-of-type {
-  margin-top: 0;
-}
-
-.emotion-55:last-of-type {
-  margin-bottom: 0;
-}
-
-.emotion-55:empty {
-  display: none;
+.emotion-65 {
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-columns: minmax(0,1fr);
+  grid-auto-rows: minmax(min-content,max-content);
+  gap: 0.5rem;
+  justify-items: stretch;
 }
 
 .emotion-69 {
@@ -1370,11 +1344,12 @@ exports[`PivotTable - PivotTableBoard should render with initial fields 1`] = `
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: minmax(min-content,max-content);
-  grid-gap: 1rem;
+  gap: 1rem;
   -webkit-box-pack: end;
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
+  justify-items: stretch;
 }
 
 .emotion-73 {
@@ -1583,18 +1558,20 @@ exports[`PivotTable - PivotTableBoard should render with initial fields 1`] = `
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: minmax(min-content,max-content);
-  grid-gap: 0.5rem;
+  gap: 0.5rem;
+  justify-items: stretch;
 }
 
 .emotion-54 {
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: minmax(min-content,max-content);
-  grid-gap: 0.25rem;
+  gap: 0.25rem;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  justify-items: stretch;
 }
 
 .emotion-52 {
@@ -1966,10 +1943,10 @@ exports[`PivotTable - PivotTableBoard should render with initial fields 1`] = `
                 Applied filters
               </span>
               <div
-                class="emotion-45"
+                class="emotion-65"
               >
                 <div
-                  class="emotion-55"
+                  class="emotion-44"
                 >
                   <div
                     class="emotion-54"
@@ -2004,7 +1981,7 @@ exports[`PivotTable - PivotTableBoard should render with initial fields 1`] = `
                   </div>
                 </div>
                 <div
-                  class="emotion-55"
+                  class="emotion-44"
                 >
                   <div
                     class="emotion-54"

@@ -1,32 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`emptyItem should render when items is empty 1`] = `
-.emotion-11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.emotion-10 {
-  display: inline-block;
-  margin-bottom: 0rem;
-  margin-top: 0rem;
-}
-
-.emotion-10:first-of-type {
-  margin-top: 0;
-}
-
-.emotion-10:last-of-type {
-  margin-bottom: 0;
-}
-
 .emotion-10:empty {
   display: none;
+}
+
+.emotion-11 {
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-columns: minmax(0,1fr);
+  grid-auto-rows: minmax(min-content,max-content);
+  gap: 0rem;
+  justify-items: stretch;
 }
 
 .emotion-3 {
@@ -349,32 +334,17 @@ exports[`emptyItem should render when items is empty 1`] = `
 `;
 
 exports[`emptyItem should render when items is null 1`] = `
-.emotion-11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.emotion-10 {
-  display: inline-block;
-  margin-bottom: 0rem;
-  margin-top: 0rem;
-}
-
-.emotion-10:first-of-type {
-  margin-top: 0;
-}
-
-.emotion-10:last-of-type {
-  margin-bottom: 0;
-}
-
 .emotion-10:empty {
   display: none;
+}
+
+.emotion-11 {
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-columns: minmax(0,1fr);
+  grid-auto-rows: minmax(min-content,max-content);
+  gap: 0rem;
+  justify-items: stretch;
 }
 
 .emotion-3 {
@@ -713,32 +683,17 @@ exports[`multiple should warn when value is NOT an array 1`] = `
 `;
 
 exports[`select custom components should accept actions inside AppendItem 1`] = `
-.emotion-18 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.emotion-17 {
-  display: inline-block;
-  margin-bottom: 0rem;
-  margin-top: 0rem;
-}
-
-.emotion-17:first-of-type {
-  margin-top: 0;
-}
-
-.emotion-17:last-of-type {
-  margin-bottom: 0;
-}
-
 .emotion-17:empty {
   display: none;
+}
+
+.emotion-18 {
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-columns: minmax(0,1fr);
+  grid-auto-rows: minmax(min-content,max-content);
+  gap: 0rem;
+  justify-items: stretch;
 }
 
 .emotion-6 {
@@ -1215,32 +1170,17 @@ exports[`select custom components should accept actions inside AppendItem 1`] = 
 `;
 
 exports[`select custom components should accept actions inside PrependItem 1`] = `
-.emotion-18 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.emotion-17 {
-  display: inline-block;
-  margin-bottom: 0rem;
-  margin-top: 0rem;
-}
-
-.emotion-17:first-of-type {
-  margin-top: 0;
-}
-
-.emotion-17:last-of-type {
-  margin-bottom: 0;
-}
-
 .emotion-17:empty {
   display: none;
+}
+
+.emotion-18 {
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-columns: minmax(0,1fr);
+  grid-auto-rows: minmax(min-content,max-content);
+  gap: 0rem;
+  justify-items: stretch;
 }
 
 .emotion-6 {
