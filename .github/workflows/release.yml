@@ -53,13 +53,13 @@ jobs:
           node-version: '24'
           registry-url: 'https://registry.npmjs.org'
 
-      #- name: Publish to npm
-      #  run: |
-      #    if [[ "${{ steps.version.outputs.tag }}" == *-* ]]; then
-      #      npm publish --ignore-scripts --access public --tag next
-      #    else
-      #      npm publish --ignore-scripts --access public
-      #    fi
+      - name: Publish to npm
+        run: |
+          if [[ "${{ steps.version.outputs.tag }}" == *-* ]]; then
+            npm publish --ignore-scripts --access public --tag next
+          else
+            npm publish --ignore-scripts --access public
+          fi
 
       - name: Push commit and tag
         run: git push origin HEAD --follow-tags
