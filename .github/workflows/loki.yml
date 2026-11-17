@@ -1,4 +1,4 @@
-name: Loki (Visual Regression Test)
+name: Loki
 
 on:
   pull_request:
