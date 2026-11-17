@@ -1,0 +1,74 @@
+name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Versão/Tag'
+        required: true
+        type: string
+
+permissions:
+  id-token: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    environment: release
+
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          token: ${{ secrets.RELEASE_TOKEN }}
+
+      - name: Set up node
+        uses: actions/setup-node@v7
+        with:
+          node-version: '16'
+          cache: 'yarn'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Lint and unit tests
+        run: yarn test
+
+      - name: Visual regression tests (loki)
+        run: yarn test:loki
+
+      - name: Build
+        run: yarn build
+
+      - name: Bump version and create tag
+        id: version
+        run: |
+          git config user.name "Bridge Release"
+          git config user.email "4728280+bridge-release@users.noreply.github.com"
+          npm version "${{ inputs.version }}" -m "chore: release %s"
+          echo "tag=v$(node -p "require('./package.json').version")" >> "$GITHUB_OUTPUT"
+
+      - name: Set up node for publish
+        uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Publish to npm
+        run: |
+          if [[ "${{ steps.version.outputs.tag }}" == *-* ]]; then
+            npm publish --ignore-scripts --access public --tag next
+          else
+            npm publish --ignore-scripts --access public
+          fi
+
+      - name: Push commit and tag
+        run: git push origin HEAD --follow-tags
+
+      - name: Create GitHub release
+        run: |
+          gh release create "${{ steps.version.outputs.tag }}" \
+            --generate-notes \
+            ${{ contains(steps.version.outputs.tag, '-') && '--prerelease' || '' }}
+        env:
+          GH_TOKEN: ${{ secrets.RELEASE_TOKEN }}
