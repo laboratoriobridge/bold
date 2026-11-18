@@ -11,6 +11,7 @@ export interface TableColumnConfig<T = any> {
   header?: React.ReactNode
   sortable?: boolean
   style?: ExternalStyles
+  dataTestId?: string
   align?: 'left' | 'center' | 'right'
   render(row: T): React.ReactNode
 }
@@ -23,6 +24,8 @@ export interface DataTableProps<T = any> extends TableProps {
   onSortChange?(sort: string[]): void
   render?(renderProps: DataTableRenderProps): React.ReactNode
   onRowClick?(row: T): any
+  'data-testid'?: string
+  rowDataTestId?: string
 }
 
 export interface DataTableRenderProps extends DataTableProps {
@@ -98,7 +101,19 @@ DataTable.defaultProps = {
 } as Partial<DataTableProps<any>>
 
 export function DataTableDefault(props: DataTableRenderProps) {
-  const { columns, rows, loading, onSortChange, sort, getHeaderProps, getColumn, render, onRowClick, ...rest } = props
+  const {
+    columns,
+    rows,
+    loading,
+    onSortChange,
+    sort,
+    getHeaderProps,
+    getColumn,
+    render,
+    onRowClick,
+    rowDataTestId,
+    ...rest
+  } = props
 
   return (
     <Table {...rest}>
@@ -111,7 +126,13 @@ export function DataTableDefault(props: DataTableRenderProps) {
           ))}
         </TableRow>
       </TableHead>
-      <TableFilledBody rows={rows} columns={columns} loading={loading} onRowClick={onRowClick} />
+      <TableFilledBody
+        rows={rows}
+        columns={columns}
+        loading={loading}
+        onRowClick={onRowClick}
+        rowDataTestId={rowDataTestId}
+      />
     </Table>
   )
 }
