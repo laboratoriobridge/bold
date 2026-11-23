@@ -182,6 +182,19 @@ it('should apply gridAutoColumns for horizontal direction', () => {
   expect(styles.gridAutoColumns).toBe('minmax(min-content,max-content)')
 })
 
+it('should stretch the implicit column to full width for vertical direction', () => {
+  const { getByTestId } = render(
+    <Flow direction='vertical' data-testid='flow-vertical'>
+      <div>Child</div>
+    </Flow>
+  )
+
+  const flow = getByTestId('flow-vertical')
+  const styles = getComputedStyle(flow)
+
+  expect(styles.gridAutoColumns).toBe('minmax(0,1fr)')
+})
+
 it('should apply gridAutoRows for vertical direction', () => {
   const { getByTestId } = render(
     <Flow direction='vertical' data-testid='flow-vertical'>
