@@ -31,6 +31,7 @@ export interface ComboboxSingleselectProps<T>
   filter?(items: ReadonlyArray<T>, filter: string): T[]
   onChange?: (newValue: T) => void
   onFilterChange?: (newValue: string) => void
+  onToggleButtonClick?: () => void
   components?: Partial<ComboboxComponents<T>>
   popperProps?: Omit<Partial<PopperProps<any>>, 'children'>
 
@@ -63,6 +64,7 @@ export function ComboboxSingleselect<T = DefaultComboboxItemType>(props: Combobo
     onClick,
     onKeyDown,
     onFilterChange,
+    onToggleButtonClick,
     filter = defaultFilter,
     inputId,
     labelId,
@@ -71,12 +73,14 @@ export function ComboboxSingleselect<T = DefaultComboboxItemType>(props: Combobo
     getItemId,
     open,
     popperProps,
+    inputRef: externalInputRef,
+    style,
     ...rest
   } = props
 
   const [itemsLoaded, setItemsLoaded] = useState(false)
   const locale = useLocale()
-  const { classes } = useStyles(createStyles)
+  const { classes, css } = useStyles(createStyles)
 
   const isAsync = typeof items === 'function'
   const getItems = useCallback(
@@ -151,7 +155,7 @@ export function ComboboxSingleselect<T = DefaultComboboxItemType>(props: Combobo
   })
   const { id: internalLabelId, ...downshiftLabelProps } = getLabelProps()
   const downshiftMenuProps = getMenuProps()
-  const { ref: toggleButtonRef, ...downshiftToggleButtonProps } = getToggleButtonProps()
+  const { ref: toggleButtonRef, ...downshiftToggleButtonProps } = getToggleButtonProps({ onClick: onToggleButtonClick })
 
   const {
     styles: { popper: popperStyles },
@@ -170,19 +174,21 @@ export function ComboboxSingleselect<T = DefaultComboboxItemType>(props: Combobo
   return (
     <>
       <FormControl {...formControlProps} labelId={internalLabelId} {...downshiftLabelProps}>
-        <TextInput
-          icon={isOpen ? 'angleUp' : 'angleDown'}
-          iconAriaLabel={isOpen ? locale.combobox.hideOptions : locale.combobox.showOptions}
-          iconPosition='right'
-          inputRef={composeRefs(inputRef, downshiftInputRef)}
-          onClear={composeHandlers(reset, onClear)}
-          invalid={invalid}
-          iconProps={downshiftToggleButtonProps}
-          iconRef={toggleButtonRef}
-          {...formControlInputProps}
-          {...downshiftInputProps}
-          {...rest}
-        />
+        <div className={css(style)}>
+          <TextInput
+            icon={isOpen ? 'angleUp' : 'angleDown'}
+            iconAriaLabel={isOpen ? locale.combobox.hideOptions : locale.combobox.showOptions}
+            iconPosition='right'
+            inputRef={composeRefs(inputRef, downshiftInputRef, externalInputRef)}
+            onClear={composeHandlers(reset, onClear)}
+            invalid={invalid}
+            iconProps={downshiftToggleButtonProps}
+            iconRef={toggleButtonRef}
+            {...formControlInputProps}
+            {...downshiftInputProps}
+            {...rest}
+          />
+        </div>
       </FormControl>
 
       {/*By the ARIA definition, the menu element should always be in the DOM*/}
