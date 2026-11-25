@@ -1,0 +1,563 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render correctly 1`] = `
+.emotion-1 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.875rem;
+  line-height: 1rem;
+  color: #24252E;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  min-width: 1.5rem;
+  min-height: 1.5rem;
+  padding: calc(0.25rem - 1px) 0.5rem;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background-color: transparent;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  outline: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  border-color: #696979;
+}
+
+.emotion-1:focus {
+  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
+}
+
+.emotion-1:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.emotion-1:not(:disabled):hover {
+  background-color: rgba(122,123,142,0.16);
+}
+
+.emotion-1:not(:disabled):active {
+  background-color: rgba(122,123,142,0.24);
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-1:not(:disabled):active:focus {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1),0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
+}
+
+.emotion-1[aria-pressed="true"] {
+  color: #0069D0;
+  background-color: #ECF0FF;
+  font-weight: bold;
+  border-color: #0069D0;
+}
+
+.emotion-1[aria-pressed="true"]:not(:disabled):hover {
+  background-color: #C5D4FF;
+}
+
+.emotion-1[aria-pressed="true"]:not(:disabled):active {
+  background-color: #C5D4FF;
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-1[aria-pressed="true"]:not(:disabled):active:focus {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1),0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
+}
+
+.emotion-0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-0::before {
+  content: attr(data-text);
+  font-weight: bold;
+  height: 0;
+  visibility: hidden;
+  overflow: hidden;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+<div>
+  <button
+    aria-pressed="false"
+    class="emotion-1"
+    type="button"
+  >
+    <span
+      class="emotion-0"
+      data-text="Button"
+    >
+      Button
+    </span>
+  </button>
+</div>
+`;
+
+exports[`should render correctly when selected 1`] = `
+.emotion-1 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.875rem;
+  line-height: 1rem;
+  color: #24252E;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  min-width: 1.5rem;
+  min-height: 1.5rem;
+  padding: calc(0.25rem - 1px) 0.5rem;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background-color: transparent;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  outline: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  border-color: #696979;
+}
+
+.emotion-1:focus {
+  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
+}
+
+.emotion-1:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.emotion-1:not(:disabled):hover {
+  background-color: rgba(122,123,142,0.16);
+}
+
+.emotion-1:not(:disabled):active {
+  background-color: rgba(122,123,142,0.24);
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-1:not(:disabled):active:focus {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1),0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
+}
+
+.emotion-1[aria-pressed="true"] {
+  color: #0069D0;
+  background-color: #ECF0FF;
+  font-weight: bold;
+  border-color: #0069D0;
+}
+
+.emotion-1[aria-pressed="true"]:not(:disabled):hover {
+  background-color: #C5D4FF;
+}
+
+.emotion-1[aria-pressed="true"]:not(:disabled):active {
+  background-color: #C5D4FF;
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-1[aria-pressed="true"]:not(:disabled):active:focus {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1),0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
+}
+
+.emotion-0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-0::before {
+  content: attr(data-text);
+  font-weight: bold;
+  height: 0;
+  visibility: hidden;
+  overflow: hidden;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+<div>
+  <button
+    aria-pressed="true"
+    class="emotion-1"
+    type="button"
+  >
+    <span
+      class="emotion-0"
+      data-text="Button"
+    >
+      Button
+    </span>
+  </button>
+</div>
+`;
+
+exports[`should render correctly with ghost skin and colors 1`] = `
+.emotion-0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-0::before {
+  content: attr(data-text);
+  font-weight: bold;
+  height: 0;
+  visibility: hidden;
+  overflow: hidden;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-1 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.875rem;
+  line-height: 1rem;
+  color: #24252E;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  min-width: 1.5rem;
+  min-height: 1.5rem;
+  padding: calc(0.25rem - 1px) 0.5rem;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background-color: transparent;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  outline: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: normal;
+}
+
+.emotion-1:focus {
+  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #D01E29;
+}
+
+.emotion-1:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.emotion-1:not(:disabled):hover {
+  background-color: rgba(122,123,142,0.16);
+}
+
+.emotion-1:not(:disabled):active {
+  background-color: rgba(122,123,142,0.24);
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-1:not(:disabled):active:focus {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1),0 0 0 2px #F0F0F5,0 0 0 4px #D01E29;
+}
+
+.emotion-1[aria-pressed="true"] {
+  color: #D01E29;
+  background-color: #FEECED;
+  font-weight: bold;
+}
+
+.emotion-1[aria-pressed="true"]:not(:disabled):hover {
+  background-color: #FAC8C9;
+}
+
+.emotion-1[aria-pressed="true"]:not(:disabled):active {
+  background-color: #FAC8C9;
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-1[aria-pressed="true"]:not(:disabled):active:focus {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1),0 0 0 2px #F0F0F5,0 0 0 4px #D01E29;
+}
+
+.emotion-3 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.875rem;
+  line-height: 1rem;
+  color: #24252E;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  min-width: 1.5rem;
+  min-height: 1.5rem;
+  padding: calc(0.25rem - 1px) 0.5rem;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background-color: transparent;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  outline: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: normal;
+}
+
+.emotion-3:focus {
+  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #217B00;
+}
+
+.emotion-3:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.emotion-3:not(:disabled):hover {
+  background-color: rgba(122,123,142,0.16);
+}
+
+.emotion-3:not(:disabled):active {
+  background-color: rgba(122,123,142,0.24);
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-3:not(:disabled):active:focus {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1),0 0 0 2px #F0F0F5,0 0 0 4px #217B00;
+}
+
+.emotion-3[aria-pressed="true"] {
+  color: #217B00;
+  background-color: #E1F6DF;
+  font-weight: bold;
+}
+
+.emotion-3[aria-pressed="true"]:not(:disabled):hover {
+  background-color: #9DE695;
+}
+
+.emotion-3[aria-pressed="true"]:not(:disabled):active {
+  background-color: #9DE695;
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-3[aria-pressed="true"]:not(:disabled):active:focus {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1),0 0 0 2px #F0F0F5,0 0 0 4px #217B00;
+}
+
+<div>
+  <button
+    aria-pressed="true"
+    class="emotion-1"
+    type="button"
+  >
+    <span
+      class="emotion-0"
+      data-text="Red"
+    >
+      Red
+    </span>
+  </button>
+  <button
+    aria-pressed="true"
+    class="emotion-3"
+    type="button"
+  >
+    <span
+      class="emotion-0"
+      data-text="Green"
+    >
+      Green
+    </span>
+  </button>
+</div>
+`;
+
+exports[`should render icon-only variant with aria-label 1`] = `
+.emotion-1 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.875rem;
+  line-height: 1rem;
+  color: #24252E;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  min-width: 1.5rem;
+  min-height: 1.5rem;
+  padding: calc(0.25rem - 1px) 0.5rem;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background-color: transparent;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  outline: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  border-color: #696979;
+  padding: calc(0.25rem - 1px);
+}
+
+.emotion-1:focus {
+  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
+}
+
+.emotion-1:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.emotion-1:not(:disabled):hover {
+  background-color: rgba(122,123,142,0.16);
+}
+
+.emotion-1:not(:disabled):active {
+  background-color: rgba(122,123,142,0.24);
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-1:not(:disabled):active:focus {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1),0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
+}
+
+.emotion-1[aria-pressed="true"] {
+  color: #0069D0;
+  background-color: #ECF0FF;
+  font-weight: bold;
+  border-color: #0069D0;
+}
+
+.emotion-1[aria-pressed="true"]:not(:disabled):hover {
+  background-color: #C5D4FF;
+}
+
+.emotion-1[aria-pressed="true"]:not(:disabled):active {
+  background-color: #C5D4FF;
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-1[aria-pressed="true"]:not(:disabled):active:focus {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1),0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
+}
+
+.emotion-0 {
+  fill: currentColor;
+  font-size: 1rem;
+}
+
+.emotion-0:not(:last-child) {
+  margin-right: 0.25rem;
+}
+
+<div>
+  <button
+    aria-label="Bold"
+    aria-pressed="false"
+    class="emotion-1"
+    title="Bold"
+    type="button"
+  >
+    <svg
+      aria-hidden="true"
+      class="emotion-0"
+      height="1em"
+      role="img"
+      viewBox="0 0 24 24"
+      width="1em"
+    >
+      <path
+        clip-rule="evenodd"
+        d="M7 17.002V7.011C7 5.671 7.668 5 9.005 5h2.747c.892 0 1.652.09 2.278.269.627.18 1.138.432 1.534.76.396.326.684.723.864 1.19.18.468.27.99.27 1.567 0 .314-.04.616-.124.908a2.76 2.76 0 01-.39.821 3.026 3.026 0 01-.682.697c-.278.208-.612.39-1.002.543.851.224 1.48.588 1.888 1.09.408.503.612 1.149.612 1.937a4.27 4.27 0 01-.32 1.662c-.212.513-.524.96-.934 1.34a4.33 4.33 0 01-1.52.894c-.604.215-1.292.322-2.066.322H9.015C7.672 19 7 18.334 7 17.002zm2.996-3.94v3.488h2.11c.396 0 .72-.055.971-.164.251-.108.448-.25.59-.422.142-.173.239-.369.292-.587.053-.217.08-.438.08-.663 0-.256-.031-.486-.093-.691a1.154 1.154 0 00-.32-.52c-.15-.14-.35-.25-.598-.326-.248-.077-.561-.115-.94-.115H9.996zm0-2.172h1.56c.332 0 .63-.025.896-.077.266-.05.492-.14.678-.269a1.21 1.21 0 00.426-.528c.097-.224.146-.506.146-.846 0-.333-.038-.61-.115-.83a1.191 1.191 0 00-.355-.534 1.435 1.435 0 00-.607-.288 3.856 3.856 0 00-.873-.087H9.996v3.46-.001z"
+        fill-rule="evenodd"
+      />
+    </svg>
+  </button>
+</div>
+`;

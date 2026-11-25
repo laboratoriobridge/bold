@@ -64,6 +64,7 @@ export default [
       { href: '/components/tag', title: 'menu-tag' },
       { href: '/components/text-field', title: 'menu-text-field' },
       { href: '/components/toast', title: 'menu-toast' },
+      { href: '/components/toggle-button', title: 'menu-toggle-button' },
       { href: '/components/tooltip', title: 'menu-tooltip' },
     ],
   },

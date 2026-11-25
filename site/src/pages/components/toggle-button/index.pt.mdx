@@ -1,0 +1,66 @@
+import { Demo } from '../../../components/Demo'
+
+# Toggle button
+
+O toggle button é um componente que permite ao usuário ativar/desativar uma opção. Sua utilização é similar ao componente de [Switch](/components/switch), porém pode ser feita em cenários de conteúdo mais denso, onde não há espaço para labels.
+
+## Quando utilizar
+
+- Seleções binárias em formulários compactos (ex.: "Sim / Não").
+- Ativação/desativação de opções em uma barra de ferramentas (ex.: Negrito, Itálico), onde as opções **não** são mutuamente exclusivas.
+- Não utilizar para navegação, como mudar o conteúdo de uma interface (utilizar [Abas](/components/tabs) ou [Content switch](/components/content-switch) nesse caso).
+- Não utilizar em cenários de seleção de elementos numa listagem (usar [Checkbox](/components/checkbox) nesse caso).
+
+## Versões
+
+O toggle button pode ser utilizado na sua versão `outline` ou na versão `ghost`. Ao selecionar uma versão, utilize a mesma no conjunto de ações (não misture diferentes versões).
+
+A versão `ghost` tem algumas especificidades a fim de garantir a acessibilidade, como o uso de fonte regular/bold nos diferentes estados, assim como a utilização preferencialmente de ícones preenchidos (`selectedIcon`) na variação com ícone. Utilize a versão ghost com responsabilidade, visto que sua pregnância é baixa na interface.
+
+<Demo src='pages/components/toggle-button/ToggleButtonSkins' />
+
+## Estrutura
+
+É um composto por três elementos: a borda, o conteúdo e a superfície. Cada um terá uma característica específica nos diferentes estados de interação.
+
+## Variantes
+
+### Com texto
+
+A variação com texto poderá ser utilizada para seleção de opções em formulários densos. Não altere a label do botão nos seus diferentes estados.
+
+<Demo src='pages/components/toggle-button/ToggleButtonText' />
+
+### Com ícone
+
+A variação com ícone pode ser utilizada em cenários ainda mais densos e também para permitir a ativação/desativação de configurações, onde as opções não são mutuamente exclusivas. É obrigatória a utilização de tooltips na aplicação desta variante, por isso a prop `aria-label` é obrigatória (e usada por padrão como texto da tooltip).
+
+<Demo src='pages/components/toggle-button/ToggleButtonIcon' />
+
+## Temas
+
+O estado selecionado do toggle button pode ser utilizado com três versões: azul, vermelha e verde. Sua utilização deve levar em consideração o objetivo da comunicação com o usuário. Utilize apenas uma cor no mesmo grupo de ações. Se estiver com dúvida, utilize a versão padrão em azul.
+
+<Demo src='pages/components/toggle-button/ToggleButtonColors' />
+
+## Multiseleção
+
+Utilize o `ToggleButtonGroup` para agrupar os botões. A prop `multiple` define se mais de um botão pode ser selecionado ao mesmo tempo.
+
+## Estados
+
+| Estado   | Descrição                                                                                    |
+| -------- | -------------------------------------------------------------------------------------------- |
+| Rest     | Estado padrão/inativo do componente, quando o botão não está sendo interagido pelo usuário.  |
+| Hover    | Acontece quando o usuário passa o mouse por cima do componente, antes de executar a ação.    |
+| Focus    | Indica qual componente está focado e poderá ser acionado pelo teclado.                       |
+| Disabled | Ocorre quando a ação não está disponível para o usuário. Vale para o padrão e o selecionado. |
+| Pressed  | Ocorre durante o clique/toque de um usuário no botão.                                        |
+
+## Acessibilidade
+
+- Quando o toggle exibe apenas um ícone (sem texto visível), é obrigatório fornecer um `aria-label` descritivo (ex.: `aria-label="Negrito"`, não apenas o ícone "B").
+- O `aria-pressed` comunica o estado atual do botão.
+- Navegação por teclado: `Tab` move o foco para o grupo (e do grupo para o próximo elemento focável), as setas `←` `→` navegam entre os toggles do grupo e `Space`/`Enter` ativam/desativam o toggle focado. Botões desabilitados saem da ordem de tabulação.
+- O estado selecionado não depende apenas de cor: a superfície, o peso da fonte e a borda também mudam.
+- Cada toggle tem área de toque mínima de 24×24px (WCAG 2.5.8) e os toggles de um grupo têm no mínimo 8px de espaçamento entre si.
