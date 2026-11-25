@@ -1,18 +1,17 @@
 import { Interpolation } from 'emotion'
 
-import { focusBoxShadow, hexToRGB, TextColor, Theme } from '../../styles'
+import { hexToRGB, Theme } from '../../styles'
 
 export type ToggleButtonSkin = 'outline' | 'ghost'
 export type ToggleButtonColor = 'blue' | 'red' | 'green'
 
 interface ColorTokens {
-  /** Border/content color of the selected state. */
+  /** Border/content color of the selected state (and of the focus ring). */
   main: string
   /** Surface of the selected state. */
   surface: string
-  /** Surface of the selected state while hovered/pressed. */
+  /** Surface of the selected state while hovered. Also the border and content of the disabled state. */
   surfaceHover: string
-  focusColor: TextColor
 }
 
 const getColorTokens = (theme: Theme, color: ToggleButtonColor): ColorTokens => {
@@ -24,26 +23,33 @@ const getColorTokens = (theme: Theme, color: ToggleButtonColor): ColorTokens => 
         main: pallete.status.danger.main,
         surface: pallete.status.danger.c90,
         surfaceHover: pallete.status.danger.c80,
-        focusColor: 'danger',
       }
     case 'green':
       return {
         main: pallete.status.success.main,
         surface: pallete.status.success.c90,
         surfaceHover: pallete.status.success.c80,
-        focusColor: 'success',
       }
     default:
       return {
         main: pallete.primary.main,
         surface: pallete.primary.c90,
         surfaceHover: pallete.primary.c80,
-        focusColor: 'primary',
       }
   }
 }
 
-const pressedShadow = 'inset 0 2px 8px 0 rgba(0, 0, 0, 0.1)'
+/**
+ * Hover surface of the default state (Figma "Gray/Hover": #393B43 at 10%).
+ */
+const hoverSurface = hexToRGB('#393B43', 0.1)
+
+const pressedShadow = 'inset 0 1px 4px 0 rgba(0, 0, 0, 0.14), inset 0 2px 4px 0 rgba(0, 0, 0, 0.08)'
+
+/**
+ * Focus ring: 1px gap and a 2px ring around the button.
+ */
+const focusRing = (theme: Theme, color: string) => `0 0 0 1px ${theme.pallete.surface.main}, 0 0 0 3px ${color}`
 
 export const createBaseStyles = (theme: Theme, color: ToggleButtonColor) => {
   const tokens = getColorTokens(theme, color)
@@ -52,31 +58,29 @@ export const createBaseStyles = (theme: Theme, color: ToggleButtonColor) => {
     button: {
       ...theme.typography.variant('main'),
       fontSize: theme.typography.sizes.button,
-      lineHeight: '1rem',
+      lineHeight: '1.5rem',
       display: 'inline-flex',
       alignItems: 'center',
       justifyContent: 'center',
-      minWidth: '1.5rem', // WCAG 2.5.8 (target size)
-      minHeight: '1.5rem',
-      padding: 'calc(0.25rem - 1px) 0.5rem', // discount border size
+      boxSizing: 'border-box', // borders are inside the size, as in the design
+      height: '2rem', // fixed size, bigger than the 24px required by WCAG 2.5.8 (target size)
+      minWidth: '2rem',
+      padding: '0 calc(0.5rem - 1px)', // discount border size
       border: '1px solid transparent',
       borderRadius: theme.radius.button,
       backgroundColor: 'transparent',
-      color: theme.pallete.text.main,
+      color: theme.pallete.gray.c20,
       cursor: 'pointer',
       userSelect: 'none',
       outline: 'none',
       transition: 'all .2s',
       '&:focus': {
-        boxShadow: focusBoxShadow(theme, tokens.focusColor),
+        boxShadow: focusRing(theme, tokens.main),
       },
       '&:disabled': {
-        opacity: 0.4,
+        color: theme.pallete.gray.c80,
         cursor: 'not-allowed',
       },
-    } as Interpolation,
-    iconOnly: {
-      padding: 'calc(0.25rem - 1px)',
     } as Interpolation,
     icon: {
       '&:not(:last-child)': {
@@ -106,35 +110,37 @@ export const createBaseStyles = (theme: Theme, color: ToggleButtonColor) => {
 
 export const createSkinStyles = (theme: Theme, skin: ToggleButtonSkin, color: ToggleButtonColor) => {
   const tokens = getColorTokens(theme, color)
+  const focusShadow = focusRing(theme, tokens.main)
 
   const selected = {
-    '&[aria-pressed="true"]': {
-      color: tokens.main,
+    color: tokens.main,
+    backgroundColor: tokens.surface,
+    fontWeight: 'bold',
+    '&:not(:disabled):hover': {
+      backgroundColor: tokens.surfaceHover,
+    },
+    '&:not(:disabled):active': {
       backgroundColor: tokens.surface,
-      fontWeight: 'bold',
-      '&:not(:disabled):hover': {
-        backgroundColor: tokens.surfaceHover,
-      },
-      '&:not(:disabled):active': {
-        backgroundColor: tokens.surfaceHover,
-        boxShadow: pressedShadow,
-      },
-      '&:not(:disabled):active:focus': {
-        boxShadow: `${pressedShadow}, ${focusBoxShadow(theme, tokens.focusColor)}`,
-      },
+      boxShadow: pressedShadow,
+    },
+    '&:not(:disabled):active:focus': {
+      boxShadow: `${pressedShadow}, ${focusShadow}`,
+    },
+    '&:disabled': {
+      color: tokens.surfaceHover,
     },
   }
 
   const common = {
     '&:not(:disabled):hover': {
-      backgroundColor: hexToRGB(theme.pallete.gray.c50, 0.16),
+      backgroundColor: hoverSurface,
     },
     '&:not(:disabled):active': {
-      backgroundColor: hexToRGB(theme.pallete.gray.c50, 0.24),
+      backgroundColor: theme.pallete.gray.c90,
       boxShadow: pressedShadow,
     },
     '&:not(:disabled):active:focus': {
-      boxShadow: `${pressedShadow}, ${focusBoxShadow(theme, tokens.focusColor)}`,
+      boxShadow: `${pressedShadow}, ${focusShadow}`,
     },
   }
 
@@ -142,8 +148,12 @@ export const createSkinStyles = (theme: Theme, skin: ToggleButtonSkin, color: To
     return {
       button: {
         fontWeight: 'normal',
+        backgroundColor: theme.pallete.surface.main,
         ...common,
-        ...selected,
+        '&[aria-pressed="true"]': {
+          ...selected,
+          borderBottomWidth: '2px', // transparent, keeps the same box model of the outline skin
+        },
       } as Interpolation,
     }
   }
@@ -151,11 +161,20 @@ export const createSkinStyles = (theme: Theme, skin: ToggleButtonSkin, color: To
   return {
     button: {
       fontWeight: 'bold',
+      backgroundColor: theme.pallete.surface.main,
       borderColor: theme.pallete.gray.c40,
       ...common,
+      '&:disabled': {
+        borderColor: theme.pallete.gray.c80,
+      },
       '&[aria-pressed="true"]': {
-        ...selected['&[aria-pressed="true"]'],
+        ...selected,
         borderColor: tokens.main,
+        borderBottomWidth: '2px',
+        '&:disabled': {
+          ...selected['&:disabled'],
+          borderColor: tokens.surfaceHover,
+        },
       },
     } as Interpolation,
   }

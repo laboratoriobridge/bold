@@ -132,7 +132,7 @@ export function ToggleButton(props: ToggleButtonProps) {
     }
   }
 
-  const classes = css(baseStyles.button, skinStyles.button, iconOnly && baseStyles.iconOnly, style)
+  const classes = css(baseStyles.button, skinStyles.button, style)
   const currentIcon = selected && selectedIcon ? selectedIcon : icon
 
   const button = (
@@ -147,7 +147,7 @@ export function ToggleButton(props: ToggleButtonProps) {
       className={classes}
       onClick={handleClick}
     >
-      {currentIcon && <Icon icon={currentIcon} size={1} style={baseStyles.icon} />}
+      {currentIcon && <Icon icon={currentIcon} style={baseStyles.icon} />}
       {typeof children === 'string' ? (
         <span className={css(baseStyles.text)} data-text={children}>
           {children}

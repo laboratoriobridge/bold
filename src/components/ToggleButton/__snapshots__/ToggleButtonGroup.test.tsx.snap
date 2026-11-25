@@ -42,8 +42,8 @@ exports[`should pass skin and color down to buttons 1`] = `
 .emotion-1 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.875rem;
-  line-height: 1rem;
-  color: #24252E;
+  line-height: 1.5rem;
+  color: #3A3A47;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -56,9 +56,10 @@ exports[`should pass skin and color down to buttons 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  min-width: 1.5rem;
-  min-height: 1.5rem;
-  padding: calc(0.25rem - 1px) 0.5rem;
+  box-sizing: border-box;
+  height: 2rem;
+  min-width: 2rem;
+  padding: 0 calc(0.5rem - 1px);
   border: 1px solid transparent;
   border-radius: 4px;
   background-color: transparent;
@@ -71,34 +72,36 @@ exports[`should pass skin and color down to buttons 1`] = `
   -webkit-transition: all .2s;
   transition: all .2s;
   font-weight: normal;
+  background-color: #FFFFFF;
 }
 
 .emotion-1:focus {
-  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #D01E29;
+  box-shadow: 0 0 0 1px #FFFFFF,0 0 0 3px #D01E29;
 }
 
 .emotion-1:disabled {
-  opacity: 0.4;
+  color: #D3D4DD;
   cursor: not-allowed;
 }
 
 .emotion-1:not(:disabled):hover {
-  background-color: rgba(122,123,142,0.16);
+  background-color: rgba(57,59,67,0.1);
 }
 
 .emotion-1:not(:disabled):active {
-  background-color: rgba(122,123,142,0.24);
-  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+  background-color: #F0F0F5;
+  box-shadow: inset 0 1px 4px 0 rgba(0,0,0,0.14),inset 0 2px 4px 0 rgba(0,0,0,0.08);
 }
 
 .emotion-1:not(:disabled):active:focus {
-  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1),0 0 0 2px #F0F0F5,0 0 0 4px #D01E29;
+  box-shadow: inset 0 1px 4px 0 rgba(0,0,0,0.14),inset 0 2px 4px 0 rgba(0,0,0,0.08),0 0 0 1px #FFFFFF,0 0 0 3px #D01E29;
 }
 
 .emotion-1[aria-pressed="true"] {
   color: #D01E29;
   background-color: #FEECED;
   font-weight: bold;
+  border-bottom-width: 2px;
 }
 
 .emotion-1[aria-pressed="true"]:not(:disabled):hover {
@@ -106,12 +109,16 @@ exports[`should pass skin and color down to buttons 1`] = `
 }
 
 .emotion-1[aria-pressed="true"]:not(:disabled):active {
-  background-color: #FAC8C9;
-  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+  background-color: #FEECED;
+  box-shadow: inset 0 1px 4px 0 rgba(0,0,0,0.14),inset 0 2px 4px 0 rgba(0,0,0,0.08);
 }
 
 .emotion-1[aria-pressed="true"]:not(:disabled):active:focus {
-  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1),0 0 0 2px #F0F0F5,0 0 0 4px #D01E29;
+  box-shadow: inset 0 1px 4px 0 rgba(0,0,0,0.14),inset 0 2px 4px 0 rgba(0,0,0,0.08),0 0 0 1px #FFFFFF,0 0 0 3px #D01E29;
+}
+
+.emotion-1[aria-pressed="true"]:disabled {
+  color: #FAC8C9;
 }
 
 <div>
@@ -152,8 +159,8 @@ exports[`should render correctly 1`] = `
 .emotion-1 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.875rem;
-  line-height: 1rem;
-  color: #24252E;
+  line-height: 1.5rem;
+  color: #3A3A47;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -166,9 +173,10 @@ exports[`should render correctly 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  min-width: 1.5rem;
-  min-height: 1.5rem;
-  padding: calc(0.25rem - 1px) 0.5rem;
+  box-sizing: border-box;
+  height: 2rem;
+  min-width: 2rem;
+  padding: 0 calc(0.5rem - 1px);
   border: 1px solid transparent;
   border-radius: 4px;
   background-color: transparent;
@@ -181,29 +189,34 @@ exports[`should render correctly 1`] = `
   -webkit-transition: all .2s;
   transition: all .2s;
   font-weight: bold;
+  background-color: #FFFFFF;
   border-color: #696979;
 }
 
 .emotion-1:focus {
-  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
+  box-shadow: 0 0 0 1px #FFFFFF,0 0 0 3px #0069D0;
 }
 
 .emotion-1:disabled {
-  opacity: 0.4;
+  color: #D3D4DD;
   cursor: not-allowed;
 }
 
 .emotion-1:not(:disabled):hover {
-  background-color: rgba(122,123,142,0.16);
+  background-color: rgba(57,59,67,0.1);
 }
 
 .emotion-1:not(:disabled):active {
-  background-color: rgba(122,123,142,0.24);
-  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+  background-color: #F0F0F5;
+  box-shadow: inset 0 1px 4px 0 rgba(0,0,0,0.14),inset 0 2px 4px 0 rgba(0,0,0,0.08);
 }
 
 .emotion-1:not(:disabled):active:focus {
-  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1),0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
+  box-shadow: inset 0 1px 4px 0 rgba(0,0,0,0.14),inset 0 2px 4px 0 rgba(0,0,0,0.08),0 0 0 1px #FFFFFF,0 0 0 3px #0069D0;
+}
+
+.emotion-1:disabled {
+  border-color: #D3D4DD;
 }
 
 .emotion-1[aria-pressed="true"] {
@@ -211,6 +224,7 @@ exports[`should render correctly 1`] = `
   background-color: #ECF0FF;
   font-weight: bold;
   border-color: #0069D0;
+  border-bottom-width: 2px;
 }
 
 .emotion-1[aria-pressed="true"]:not(:disabled):hover {
@@ -218,12 +232,17 @@ exports[`should render correctly 1`] = `
 }
 
 .emotion-1[aria-pressed="true"]:not(:disabled):active {
-  background-color: #C5D4FF;
-  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+  background-color: #ECF0FF;
+  box-shadow: inset 0 1px 4px 0 rgba(0,0,0,0.14),inset 0 2px 4px 0 rgba(0,0,0,0.08);
 }
 
 .emotion-1[aria-pressed="true"]:not(:disabled):active:focus {
-  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1),0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
+  box-shadow: inset 0 1px 4px 0 rgba(0,0,0,0.14),inset 0 2px 4px 0 rgba(0,0,0,0.08),0 0 0 1px #FFFFFF,0 0 0 3px #0069D0;
+}
+
+.emotion-1[aria-pressed="true"]:disabled {
+  color: #C5D4FF;
+  border-color: #C5D4FF;
 }
 
 .emotion-0 {
