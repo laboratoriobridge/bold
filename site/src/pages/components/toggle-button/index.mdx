@@ -1,0 +1,66 @@
+import { Demo } from '../../../components/Demo'
+
+# Toggle button
+
+Toggle button is a control that lets the user activate/deactivate an option. It is similar to [Switch](/components/switch), but it can be used in denser content, where there is no room for labels.
+
+## When to use
+
+- Binary selections in compact forms (e.g. "Yes / No").
+- Enabling/disabling options in a toolbar (e.g. Bold, Italic), where the options are **not** mutually exclusive.
+- Do not use it for navigation, such as changing the content of an interface (use [Tabs](/components/tabs) or [Content switch](/components/content-switch)).
+- Do not use it to select items in a list (use [Checkbox](/components/checkbox)).
+
+## Skins
+
+The toggle button has the `outline` and the `ghost` skins. Use the same skin for every button of an action group (do not mix them).
+
+The `ghost` skin has some specificities to guarantee accessibility: the font weight changes between regular and bold according to the state, and filled icons should preferably be used (`selectedIcon`) in the icon variation. Use it carefully, since its prominence in the interface is low.
+
+<Demo src='pages/components/toggle-button/ToggleButtonSkins' />
+
+## Structure
+
+It is composed of three layers: the **stroke**, the **content** and the **surface**. Each one has a specific appearance in each interaction state.
+
+## Variants
+
+### With text
+
+Use it to select options in dense forms. Do not change the label of the button between its states.
+
+<Demo src='pages/components/toggle-button/ToggleButtonText' />
+
+### With icon
+
+Use it in even denser scenarios, and to enable/disable settings where the options are not mutually exclusive. A tooltip is mandatory, so the `aria-label` prop is required (and used as the tooltip text by default).
+
+<Demo src='pages/components/toggle-button/ToggleButtonIcon' />
+
+## Colors
+
+The selected state can be blue, red or green. Choose it considering the goal of the communication with the user and use only one color in the same action group. When in doubt, use the default blue.
+
+<Demo src='pages/components/toggle-button/ToggleButtonColors' />
+
+## Multiple selection
+
+Use `ToggleButtonGroup` to group the buttons. The `multiple` prop defines if more than one button can be selected at the same time.
+
+## States
+
+| State    | Description                                                                       |
+| -------- | --------------------------------------------------------------------------------- |
+| Rest     | The default/inactive state, when the user is not interacting with the button.     |
+| Hover    | When the user moves the mouse over the component, before clicking.                |
+| Focus    | The component is focused and can be activated using the keyboard.                 |
+| Disabled | The action is not available to the user. Applies to default and selected buttons. |
+| Pressed  | During the click/touch of the user.                                               |
+
+## Accessibility
+
+- Icon-only buttons must have a descriptive `aria-label` (e.g. `aria-label="Bold"`, not just the icon).
+- `aria-pressed` communicates the current state of the button.
+- Keyboard: `Tab` moves the focus to the group (and from the group to the next focusable element), `←` `→` navigate between the buttons of the group, and `Space`/`Enter` activate/deactivate the focused button. Disabled buttons are removed from the tab order.
+- The selected state does not rely only on color: the surface fill, the font weight and the border also change.
+- Each button has a minimum target size of 24×24px (WCAG 2.5.8) and buttons of a group have at least 8px of spacing between them.

@@ -112,6 +112,8 @@ Array [
   "TextInput",
   "TextField",
   "TimeField",
+  "ToggleButton",
+  "ToggleButtonGroup",
   "Tooltip",
   "VFlow",
   "LocaleContext",
